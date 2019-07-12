@@ -74,3 +74,48 @@
 .md-typeset p, .md-typeset ul, .md-typeset ol, .md-typeset blockquote {
     font-size: .9em;
 }
+
+@media only screen and (min-width: 960px) {
+    img[alt$=">"] {
+        float: right;
+        margin-bottom: 1rem;
+    }
+
+    img[alt$="<"] {
+        float: left;
+    }
+
+    img[alt$="><"] {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        float: none!important;
+    }
+
+    img[alt$="|>"] {
+        margin-left: 3rem;
+    }
+
+    img[alt*=small] {
+        width: 150px;
+    }
+
+    img[alt*=medium] {
+        width: 300px;
+    }
+
+    img[alt*=big] {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    article img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        float: none!important;
+    }
+}

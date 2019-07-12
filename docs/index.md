@@ -1,5 +1,7 @@
 # Welcome to the Witnet ecosystem!
 
+![alt medium |>][apis-illustration]
+
 Witnet's mission is to enable a network of computers to act as a 
 "decentralized oracle" that retrieves, attests and delivers information
 in behalf of smart contracts in a tamper-resistant way.
@@ -84,6 +86,7 @@ can:
 funding the development of Witnet-Rust and Sheikah, as well as fostering
 the thriving ecosystem around the Witnet protocol.
 
+[apis-illustration]: assets/images/APIs.svg
 [contributing]: community/contributing.md
 [ethereum]: https://ethereum.org
 [foundation]: https://witnet.foundation
