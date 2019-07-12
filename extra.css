@@ -1,0 +1,76 @@
+.md-header {
+    box-shadow: 0 0 3rem white !important;
+    padding: .5rem 0 5rem 0;
+}
+
+.md-header-nav__title {
+    padding: 0;
+}
+
+.md-header-nav__topic {
+    color: #444;
+    font-weight: 100;
+}
+.md-header-nav__topic > strong {
+    color: #6600DE;
+    font-weight: 500;
+}
+
+.md-main__inner {
+    padding: 0;
+}
+
+.md-nav label {
+    color: #444 !important;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.md-main__inner > .md-sidebar {
+    padding: 2.4rem 0 0 0 !important;
+}
+
+.md-sidebar[data-md-state="lock"] nav.md-nav > label:first-of-type {
+    display: none;
+}
+
+.md-sidebar[data-md-state="lock"] li nav.md-nav > ul {
+    margin-bottom: 2rem;
+}
+
+.md-nav__link {
+    color: #666;
+}
+
+.md-nav__link:active, .md-nav__link--active, .md-typeset a {
+    color: #6600DE;
+}
+
+.md-content {
+    padding-top: 1rem;
+}
+
+.md-typeset h1 {
+    color: #444;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.md-typeset h2 {
+    color: #444;
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin: 2.5rem 0 -0.5rem 0;
+}
+
+.md-typeset h3 {
+    color: #666;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 1rem 0 -1rem 0;
+}
+
+.md-typeset p, .md-typeset ul, .md-typeset ol, .md-typeset blockquote {
+    font-size: .9em;
+}
