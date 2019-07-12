@@ -1,0 +1,91 @@
+site_name: 'Witnet Protocol Documentation'
+site_url: https://docs.witnet.io
+copyright: © 2018-2019 The Witnet Community. Available under <a href="https://www.gnu.org/licenses/fdl-1.3.en.html" rel="license">GNU Free Documentation License v1.3</a>
+
+nav:
+  - Learn about Witnet:
+    - Ecosystem: index.md
+    - learn/concepts.md
+    - learn/glossary.md
+  - Try Witnet:
+    - Run a Node: try/run-a-node.md
+    - try/my-first-data-request.md
+    - Using Witnet from Ethereum: try/use-from-ethereum.md
+  - Protocol specification:
+    - protocol/reputation.md
+    - protocol/sortition.md
+    - protocol/transactions.md
+    - protocol/blocks.md
+    - protocol/data-requests.md
+    - protocol/serialization.md
+  - Ethereum Bridge:
+    - ethereum/solidity-library.md
+    - ethereum/witnet-bridge-interface.md
+    - ethereum/run-a-bridge.md
+  - Witnet-Rust:
+    - Compilation: witnet-rust/compiling.md
+    - Configuration: witnet-rust/configuration.md
+  - Sheikah:
+    - sheikah/compiling.md
+  - Interfaces and APIs:
+    - Command Line Interface: interfaces/cli.md
+    - Witnet-Rust JSON-RPC: /json-rpc.md
+    - Wallet API: interfaces/wallet-api.md
+  - Community:
+    - Roadmap: community/roadmap.md
+    - community/open-source.md
+    - Contributing: community/contributing.md
+    - community/guidelines.md
+
+theme:
+  name: 'material'
+  custom_dir: 'theme'
+  favicon: 'assets/images/favicon.ico'
+  logo: 'assets/images/logo.svg" alt="Witnet Logo'
+  palette:
+    primary: 'white'
+    accent: 'deep-purple'
+
+repo_name: 'witnet/documentation'
+repo_url: 'https://github.com/witnet/documentation'
+edit_uri: 'blob/master/docs'
+remote_name: 'upstream'
+
+extra:
+  og_image: 'assets/images/logo-docs.png'
+  social:
+    - type: 'github'
+      link: 'https://github.com/witnet'
+    - type: 'reddit'
+      link: 'https://reddit.com/r/witnet'
+    - type: 'twitter'
+      link: 'https://twitter.com/witnet_io'
+
+extra_css:
+  - 'extra.css'
+
+extra_javascript:
+  - 'extra.js'
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
