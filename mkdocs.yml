@@ -29,7 +29,7 @@ nav:
     - sheikah/compiling.md
   - Interfaces and APIs:
     - Command Line Interface: interfaces/cli.md
-    - Witnet-Rust JSON-RPC: /json-rpc.md
+    - Witnet-Rust JSON-RPC: interfaces/json-rpc.md
     - Wallet API: interfaces/wallet-api.md
   - Community:
     - Roadmap: community/roadmap.md

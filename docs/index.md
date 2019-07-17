@@ -3,8 +3,8 @@
 ![alt medium |>][apis-illustration]
 
 Witnet's mission is to enable a network of computers to act as a 
-"decentralized oracle" that retrieves, attests and delivers information
-in behalf of smart contracts in a tamper-resistant way.
+**decentralized oracle** that retrieves, attests and delivers information
+in behalf of **smart contracts** in a **tamper-resistant** way.
 
 > This _Decentralized Oracle Network (DON)_ maintains and distributes a
 > _block chain_ data structure that serves as a common ledger for the
@@ -13,7 +13,7 @@ in behalf of smart contracts in a tamper-resistant way.
 > and make them liable for any misbehavior. —
 > [Witnet Whitepaper][whitepaper]
 
-Active network participants earn wit tokens for fulfilling the data
+Active network participants **earn wit tokens** for fulfilling the data
 retrieval, attestation and delivery tasks coming from different smart
 contract platforms such as [Ethereum][ethereum].
 
@@ -82,9 +82,9 @@ can:
 
 ### Witnet Foundation
 
-[Witnet Foundation][foundation] is the entity currently in charge of
-funding the development of Witnet-Rust and Sheikah, as well as fostering
-the thriving ecosystem around the Witnet protocol.
+[Witnet Foundation][foundation] is the independent entity currently in
+charge of funding the development of Witnet-Rust and Sheikah, as well
+as fostering the thriving ecosystem around the Witnet protocol.
 
 [apis-illustration]: assets/images/APIs.svg
 [contributing]: community/contributing.md
@@ -94,6 +94,6 @@ the thriving ecosystem around the Witnet protocol.
 [run-a-node]: try/run-a-node.md
 [rust]: https://rust-lang.org
 [sheikah]: https://github.com/witnet/sheikah
-[use-from-ethereum]: try/use
+[use-from-ethereum]: try/use-from-ethereum
 [witnet-rust]: https://github.com/witnet/sheikah 
 [whitepaper]: https://witnet.io/static/witnet-whitepaper.pdf
