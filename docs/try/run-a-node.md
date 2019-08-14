@@ -78,5 +78,5 @@ docker run \
     -it witnet/witnet-rust latest node server
 ```
 
-[ethereum]: /try/use-from-ethereum.md
+[ethereum]: /try/use-from-ethereum
 [roadmap]: /community/roadmap
