@@ -7,7 +7,7 @@ having to place trust in a single entity.
 
 Wait, what? Ok, lets go one step at a time.
 
-## Smart Contracts Are Not What You Think
+## Smart Contracts Are Not What You Were Told
 
 Over the last years, blockchain technology has promised to revolutionize
 business by allowing creation of "smart contracts" that, unlike paper
