@@ -481,10 +481,58 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Data Requests
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Data Requests
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../protocol/data-requests/" title="Data requests" class="md-nav__link">
-      Data requests
+    <a href="../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
+      Encoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -686,7 +734,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/json-rpc.md" title="Witnet-Rust JSON-RPC" class="md-nav__link">
+    <a href="../../interfaces/json-rpc/" title="Witnet-Rust JSON-RPC" class="md-nav__link">
       Witnet-Rust JSON-RPC
     </a>
   </li>
@@ -814,14 +862,6 @@
                 <h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
-<p><strong>Conditional payment</strong>: a Witnet transaction encumbered with a small
-  program that defines how, when and by whom the enclosed value can be
-  spent. Conditional payments can consume data coming from Witnet data
-  requests, so they can be used to trigger release of funds upon the
-  result of real world events without having to resort to more complex,
-  stateful, turing-complete smart contracts.</p>
-</li>
-<li>
 <p><strong>Data request</strong>: a digital document declaring one or more data
   sources and how data coming from those sources can be normalized and
   combined together in order to present it as a single data point to be
@@ -829,25 +869,26 @@
 </li>
 <li>
 <p><strong>Decentralized network</strong>: an overlay network in which multiple
-  untrusted computers have been set to communicate with each other as
-  peers using a network protocol, with the purpose of fulfilling some
-  common utility, without any of them having prominent or absolute
-  control over the network and without chance for anyone to disrupt the
-  functioning of the network.</p>
+  untrusted and independently operated computers have been set to
+  communicate with each other as peers using a network protocol, with
+  the purpose of fulfilling some common utility, without any of them
+  having prominent or absolute control over the network and without
+  chance for anyone to disrupt the functioning of the network.</p>
 </li>
 <li>
 <p><strong>Oracle</strong>: an entity providing smart contracts with information from
   outside their containing network. Tamper resistance is the main point
   of smart contracts, so they should only employ decentralized oracles
   in which they do not need to <em>trust the messenger</em>. Otherwise, the
-  oracle entity would become a <em>single point of failure</em>.</p>
+  oracle entity would become a <em>single point of failure</em> that would
+  defeat the purpose of using smart contracts in the first place.</p>
 </li>
 <li>
 <p><strong>Smart contract</strong>: a deterministic computer program with a high
   degree of resistance to tampering and censorship due to its concurrent
-  execution by a decentralized network of processors owned by untrusted
-  parties whose incentives deter them from colluding to alter the output
-  of the program.</p>
+  execution by a decentralized network of processors owned by
+  independent, untrusted parties whose incentives deter them from
+  colluding to alter the output of the program.</p>
 </li>
 </ul>
                 

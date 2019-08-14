@@ -20,7 +20,7 @@
     padding: 0;
 }
 
-.md-nav label {
+.md-nav.md-nav--primary > ul > li > label {
     color: #444 !important;
     font-size: 1.1em;
     font-weight: 600;
@@ -58,7 +58,7 @@
 }
 
 .md-typeset h2 {
-    color: #444;
+    color: #555;
     font-size: 2.2rem;
     font-weight: 500;
     margin: 2.5rem 0 -0.5rem 0;
@@ -68,7 +68,7 @@
     color: #666;
     font-size: 1.6rem;
     font-weight: 600;
-    margin: 1rem 0 -1rem 0;
+    margin: 2rem 0 -1rem 0;
 }
 
 .md-typeset p, .md-typeset ul, .md-typeset ol, .md-typeset blockquote {

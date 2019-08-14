@@ -397,9 +397,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Using Witnet from Ethereum
+      </label>
+    
     <a href="./" title="Using Witnet from Ethereum" class="md-nav__link md-nav__link--active">
       Using Witnet from Ethereum
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-witnet-enabled-project" title="Create a new Witnet-enabled project" class="md-nav__link">
+    Create a new Witnet-enabled project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-witnet-to-your-existing-project" title="Add Witnet to your existing project" class="md-nav__link">
+    Add Witnet to your existing project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-your-first-witnet-data-request" title="Write your first Witnet data request" class="md-nav__link">
+    Write your first Witnet data request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling-the-whole-thing" title="Compiling the whole thing" class="md-nav__link">
+    Compiling the whole thing
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -481,10 +531,58 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Data Requests
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Data Requests
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../protocol/data-requests/" title="Data requests" class="md-nav__link">
-      Data requests
+    <a href="../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
+      Encoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -686,7 +784,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/json-rpc.md" title="Witnet-Rust JSON-RPC" class="md-nav__link">
+    <a href="../../interfaces/json-rpc/" title="Witnet-Rust JSON-RPC" class="md-nav__link">
       Witnet-Rust JSON-RPC
     </a>
   </li>
@@ -798,6 +896,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-witnet-enabled-project" title="Create a new Witnet-enabled project" class="md-nav__link">
+    Create a new Witnet-enabled project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-witnet-to-your-existing-project" title="Add Witnet to your existing project" class="md-nav__link">
+    Add Witnet to your existing project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-your-first-witnet-data-request" title="Write your first Witnet data request" class="md-nav__link">
+    Write your first Witnet data request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling-the-whole-thing" title="Compiling the whole thing" class="md-nav__link">
+    Compiling the whole thing
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -812,6 +947,39 @@
                 
                 
                 <h1 id="using-witnet-from-ethereum-solidity">Using Witnet from Ethereum / Solidity<a class="headerlink" href="#using-witnet-from-ethereum-solidity" title="Permanent link">&para;</a></h1>
+<p>Using Witnet as an oracle for resolving your Ethereum smart contracts is
+really easy thanks to the <code class="codehilite">UsingWitnet</code> Solidity library.</p>
+<h2 id="create-a-new-witnet-enabled-project">Create a new Witnet-enabled project<a class="headerlink" href="#create-a-new-witnet-enabled-project" title="Permanent link">&para;</a></h2>
+<p>If you are creating a new project from scratch, the quickest way to get
+things working is using <a href="https://www.trufflesuite.com/">Truffle</a> to import a Witnet-enabled
+project template:
+<div class="codehilite"><pre><span></span><span class="go">truffle unbox witnet/truffle-box</span>
+</pre></div></p>
+<h2 id="add-witnet-to-your-existing-project">Add Witnet to your existing project<a class="headerlink" href="#add-witnet-to-your-existing-project" title="Permanent link">&para;</a></h2>
+<p>If you want to build support for Witnet into your existing project, you
+can simply add the <code class="codehilite">UsingWitnet</code> contract as a dependency:</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">npm</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">npm install --save-dev witnet-ethereum-bridge</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">yarn</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">yarn add --dev witnet-ethereum-bridge</span>
+</pre></div></div>
+</div>
+<h2 id="write-your-first-witnet-data-request">Write your first Witnet data request<a class="headerlink" href="#write-your-first-witnet-data-request" title="Permanent link">&para;</a></h2>
+<h2 id="compiling-the-whole-thing">Compiling the whole thing<a class="headerlink" href="#compiling-the-whole-thing" title="Permanent link">&para;</a></h2>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">npm</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">npm run compile</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">yarn</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">yarn compile</span>
+</pre></div></div>
+</div>
                 
                   
                 
