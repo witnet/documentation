@@ -16,7 +16,10 @@ nav:
     - protocol/sortition.md
     - protocol/transactions.md
     - protocol/blocks.md
-    - protocol/data-requests.md
+    - Data Requests:
+      - Overview: protocol/data-requests/overview.md
+      - Encoding: protocol/data-requests/radon-encoding.md
+      - Examples: protocol/data-requests/examples.md
     - protocol/serialization.md
   - Ethereum Bridge:
     - ethereum/solidity-library.md

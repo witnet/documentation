@@ -7,16 +7,16 @@ Data requests are the cornerstone of the Witnet protocol. They allow
 ## Request life cycle
 
 Once a data request has been published by a client, it will go through 4
-distinct stages: ***retrieval***, ***aggregation***, ***tally*** and
-***delivery***. These stages are linear and constitute a single,
-unidirectional data flow.
+distinct stages: ***retrieval***, ***aggregation*** and ***tally*** .
+These stages are linear and constitute a single, unidirectional data
+flow.
 
 ```
-╔═════════╗    ╔════════════════════════════╗    ╔═══════════╗    ╔═════════╗
-║ Client  ║    ║ Witnesses                  ║    ║ Miner     ║    ║ Bridge  ║
-╠═════════╣    ╠════════════════════════════╣    ╠═══════════╣    ╠═════════╣
-║ Publish ║ => ║ Retrieve => Aggregate      ║ => ║ Tally     ║ => ║ Deliver ║
-╚═════════╝    ╠────────────────────────────╣    ╚═══════════╝    ╚═════════╝
+╔═════════╗    ╔════════════════════════════╗    ╔═══════════╗
+║ Client  ║    ║ Witnesses                  ║    ║ Miner     ║
+╠═════════╣    ╠════════════════════════════╣    ╠═══════════╣
+║ Publish ║ => ║ Retrieve => Aggregate      ║ => ║ Tally     ║
+╚═════════╝    ╠────────────────────────────╣    ╚═══════════╝
                ║ Retrieve => Aggregate      ║
                ╠────────────────────────────╣
                ║ ... (as many as requested) ║
@@ -56,8 +56,8 @@ Engine.
 
 ## RAD Object Notation (RADON)
 
-The RAD Object Notation (RADON) is a declarative, functional, 
-strongly-typed, Non-Turing complete programming language.
+The RAD Object Notation (RADON) is a declarative, functional,
+strongly-typed, Non-Turing complete domain-specific language.
 
 A RADON script is formed by a list of ordered calls (tuples of operator
 byte codes and arguments) that are sequentially interpreted and applied
