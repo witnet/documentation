@@ -1,4 +1,4 @@
-# Key Concepts
+# What is Witnet?
 
 The Witnet protocol, as outlined by the [Witnet Whitepaper][whitepaper],
 allows a network of computers to act as a "decentralized oracle" that

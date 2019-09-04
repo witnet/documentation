@@ -53,7 +53,7 @@
                     {% if config.site_name == page.title %}
                     {{ config.site_name }}
                     {% else %}
-                    <a href="{{ config.site_url | default(nav.homepage.url, true) | url }}" class="md-header-nav__topic">the <strong>witnet</strong> protocol documentation</a>
+                    <a href="{{ config.site_url | default(nav.homepage.url, true) | url }}" class="md-header-nav__topic">the <strong>witnet</strong> documentation</a>
                     <span class="md-header-nav__topic">
               {% if page and page.meta and page.meta.title %}
                 {{ page.meta.title }}
