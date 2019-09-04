@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.witnet.io/protocol/blocks/">
+        <link rel="canonical" href="https://docs.witnet.io/overview/software/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Blocks - Witnet Protocol Documentation</title>
+        <title>Software - Witnet Protocol Documentation</title>
       
     
     
@@ -103,6 +103,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#witnet-software-ecosystem" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <!--
   Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
@@ -158,7 +162,7 @@
                     <a href="https://docs.witnet.io" class="md-header-nav__topic">the <strong>witnet</strong> documentation</a>
                     <span class="md-header-nav__topic">
               
-                Blocks
+                Software
               
             </span>
                     
@@ -278,10 +282,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       Overview
@@ -311,7 +317,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/concepts/" title="What is Witnet?" class="md-nav__link">
+    <a href="../concepts/" title="What is Witnet?" class="md-nav__link">
       What is Witnet?
     </a>
   </li>
@@ -321,11 +327,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../overview/software/" title="Software" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Software
+      </label>
+    
+    <a href="./" title="Software" class="md-nav__link md-nav__link--active">
       Software
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#witnet-rust" title="Witnet-rust" class="md-nav__link">
+    Witnet-rust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheikah" title="Sheikah" class="md-nav__link">
+    Sheikah
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethereum-bridge" title="Ethereum Bridge" class="md-nav__link">
+    Ethereum Bridge
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -554,12 +612,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Protocol Docs
@@ -577,7 +633,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../reputation/" title="Reputation System" class="md-nav__link">
+    <a href="../../protocol/reputation/" title="Reputation System" class="md-nav__link">
       Reputation System
     </a>
   </li>
@@ -589,7 +645,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sortition/" title="Sortition" class="md-nav__link">
+    <a href="../../protocol/sortition/" title="Sortition" class="md-nav__link">
       Sortition
     </a>
   </li>
@@ -601,7 +657,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../transactions/" title="Transactions" class="md-nav__link">
+    <a href="../../protocol/transactions/" title="Transactions" class="md-nav__link">
       Transactions
     </a>
   </li>
@@ -611,18 +667,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Blocks" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../protocol/blocks/" title="Blocks" class="md-nav__link">
       Blocks
     </a>
-    
   </li>
 
         
@@ -651,7 +700,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-requests/overview/" title="Overview" class="md-nav__link">
+    <a href="../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -663,7 +712,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
+    <a href="../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
       Encoding
     </a>
   </li>
@@ -675,7 +724,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-requests/examples/" title="Examples" class="md-nav__link">
+    <a href="../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
       Examples
     </a>
   </li>
@@ -692,7 +741,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../serialization/" title="Serialization" class="md-nav__link">
+    <a href="../../protocol/serialization/" title="Serialization" class="md-nav__link">
       Serialization
     </a>
   </li>
@@ -824,7 +873,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/glossary/" title="Glossary" class="md-nav__link">
+    <a href="../glossary/" title="Glossary" class="md-nav__link">
       Glossary
     </a>
   </li>
@@ -842,17 +891,94 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#witnet-rust" title="Witnet-rust" class="md-nav__link">
+    Witnet-rust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheikah" title="Sheikah" class="md-nav__link">
+    Sheikah
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ethereum-bridge" title="Ethereum Bridge" class="md-nav__link">
+    Ethereum Bridge
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/witnet/documentation/blob/master/docs/protocol/blocks.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/witnet/documentation/blob/master/docs/overview/software.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Blocks</h1>
-                
-                
+                <h1 id="witnet-software-ecosystem">Witnet Software ecosystem<a class="headerlink" href="#witnet-software-ecosystem" title="Permanent link">&para;</a></h1>
+<h2 id="witnet-rust">Witnet-rust<a class="headerlink" href="#witnet-rust" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><a href="https://github.com/witnet/sheikah">Witnet-rust</a> is the first open-source implementation of
+the Witnet protocol and leverages the <a href="https://rust-lang.org">Rust</a> programming
+language to achieve utmost speed, memory safety and fearless
+concurrency without compromising on performance.</p>
+</blockquote>
+<p>Witnet-Rust is experimental software running on experimental network
+protocols:</p>
+<ul>
+<li>All the main components are in place—but they need yet to be
+battle tested before mainnet. </li>
+<li><code class="codehilite">Testnet-4</code> is live. <a href="community/roadmap">Here's the roadmap</a> and this is
+  <a href="try/run-a-node.md">how to run a node</a>.</li>
+<li>The Witnet community is doing its best to make <code class="codehilite">witnet-rust</code> rock
+solid as soon as possible.</li>
+<li>[Contributions][contributing] are more than welcome.</li>
+</ul>
+<h2 id="sheikah">Sheikah<a class="headerlink" href="#sheikah" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/witnet/sheikah">Sheikah</a> is a Witnet-compatible desktop wallet, data requests
+and smart contracts development environment.</p>
+<h2 id="ethereum-bridge">Ethereum Bridge<a class="headerlink" href="#ethereum-bridge" title="Permanent link">&para;</a></h2>
+<p>The <a href="try/use-from-ethereum">Ethereum Bridge</a> is the component in charge of
+relaying data requests from Ethereum into Witnet and then communicating
+the results back to the originating contracts.</p>
+<p>The bridge is actually three different pieces of software:</p>
+<ul>
+<li>The <code class="codehilite">UsingWitnet</code> Solidity contract that Ethereum developers can
+  extend (<code class="codehilite">contract MyContract is UsingWitnet { ... }</code>).</li>
+<li>The Witnet Bridge Interface (WBI): an Ethereum contract where data
+  requests are publicly posted to.</li>
+<li>The <code class="codehilite">bridge</code> component inside Witnet-Rust, which monitors the WBI for
+  new requests and also scans </li>
+</ul>
                 
                   
                 
@@ -873,7 +999,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../transactions/" title="Transactions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../concepts/" title="What is Witnet?" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -882,19 +1008,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Transactions
+                What is Witnet?
               </span>
             </div>
           </a>
         
         
-          <a href="../data-requests/overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../try/run-a-node/" title="Run a Node" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                Run a Node
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

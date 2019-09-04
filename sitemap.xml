@@ -2,87 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://docs.witnet.io/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.witnet.io/learn/concepts/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <loc>https://docs.witnet.io/overview/concepts/</loc>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.witnet.io/learn/glossary/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <loc>https://docs.witnet.io/overview/software/</loc>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/try/run-a-node/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.witnet.io/try/my-first-data-request/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/try/use-from-ethereum/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.witnet.io/try/my-first-data-request/</loc>
+     <lastmod>2019-09-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.witnet.io/try/my-first-data-request/</loc>
+     <lastmod>2019-09-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.witnet.io/community/contributing/</loc>
+     <lastmod>2019-09-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.witnet.io/community/roadmap/</loc>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/reputation/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/sortition/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/transactions/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/blocks/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/data-requests/overview/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/data-requests/radon-encoding/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/data-requests/examples/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/protocol/serialization/</loc>
-     <lastmod>2019-08-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -102,37 +112,22 @@
     </url>
     <url>
      <loc>https://docs.witnet.io/interfaces/cli/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/interfaces/json-rpc/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.witnet.io/interfaces/wallet-api/</loc>
-     <lastmod>2019-08-15</lastmod>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.witnet.io/community/roadmap/</loc>
-     <lastmod>2019-08-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.witnet.io/community/contributing/</loc>
-     <lastmod>2019-08-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
+     <loc>https://docs.witnet.io/overview/glossary/</loc>
+     <lastmod>2019-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
