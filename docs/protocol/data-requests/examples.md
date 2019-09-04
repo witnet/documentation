@@ -8,32 +8,49 @@ returns the current weather conditions in Berlin.
 
 ### Retrieval stage
 
-```ts
-96 43 74 92 61 A7 77 65 61 74 68 65 72 74 92 61 A4 74 65 6D 70 72
+```ts tab="Javascript"
+const openWeatherMaps = new Source("https://openweathermap.org/data/2.5/weather?id=2950159&appid=b6907d289e10d714a6e88b30761fae22")
+    .asString()      // Treat the response as a string of text (retrieval always starts with `Bytes`)
+    .parseJSON()     // Parse the string, which we now to be JSON-encoded
+    .asMap()         // Treat that as a Javascript object
+    .get("weather")  // Get the value associated to the `weather` key
+    .asMap()         // Treat that as a Javascript object too
+    .get("temp")     // Now get the value associated to the `weather` key
+    .asFloat();      // Finally treat that as a floating point number
 ```
-```ts
+
+```ts tab="RADON-AST"
 [
-    STRING_PARSEJSON,       // 0x43
-    MIXED_TOMAP,            // 0x74
-    [ MAP_GET, "weather" ], // [ 0x61, "weather" ]
-    MIXED_TOMAP,            // 0x74
-    [ MAP_GET, "temp" ],    // [ 0x61, "temp" ]
-    MIXED_TOFLOAT           // 0x72
+    BYTES_ASSTRING,
+    STRING_PARSEJSON,
+    MIXED_ASMAP,
+    [ MAP_GET, "weather" ],
+    MIXED_ASMAP,
+    [ MAP_GET, "temp" ],
+    MIXED_ASFLOAT
 ]
 ```
 
-1. Parse the input `String` as a JSON document (retrieval always starts
-   with `String`),
-2. Treat the structure as `Map<String, Mixed>`,
-3. Take the value of the `"main"` key as `Mixed`,
-4. Treat the structure as `Map<String, Mixed>`.
-5. Take the value of the `"temp"` key as `Mixed`,
-6. Emit the value as `Float`.
+```ts tab="RADON-JSON"
+[ 117, 69, 116, [ 97, 'weather' ], 116, [ 97, 'temp' ], 114 ]
+```
+
+```ts tab="CBOR (Base16)"
+87187518451874821861677765617468657218748218616474656D701872
+```
+
+```ts tab="CBOR (Base64)"
+hxh1GEUYdIIYYWd3ZWF0aGVyGHSCGGFkdGVtcBhy
+```
+
+```ts tab="CBOR (Base65536)"
+䲇䱵䱅𠡴阘𔕧陥鵴𓁥𓈘䲂饡驴𒅭𓀘
+```
 
 ### Aggregation stage
 
 ```ts
-95 53 93 52 00 E2 93 52 01 32 93 52 03 02 92 56 03
+9553935200E29352013293520302925603
 ```
 ```ts
 [
@@ -59,7 +76,7 @@ cases in which we are trying to build consensus on `Integer` or `Float`
 data points.
 
 ```ts
-93 53 93 52 05 02 92 56 03
+935393520502925603
 ```
 ```ts
 [ 
@@ -83,8 +100,7 @@ the current price of a bitcoin in US dollars.
 
 ### Retrieval stage
 ```ts
-98 43 74 92 61 A3 62 70 69 74 92 61 A3 55 53 44 74 92 61 AA 72 61 74 65
-5F 66 6C 6F 61 74 72
+9843749261A3627069749261A3555344749261AA726174655F666C6F617472
 ```
 ```ts
 [
@@ -114,7 +130,7 @@ cases in which we are trying to build consensus on `Integer` or `Float`
 data points.
 
 ```ts
-93 53 93 52 05 02 92 56 03
+935393520502925603
 ```
 ```ts
 [ 
@@ -155,7 +171,7 @@ actually fall and maps that into a `String` with value `heads` or
 
 ### Retrieval stage
 ```ts
-95 43 74 92 61 A4 64 61 74 61 70 92 54 00
+9543749261A46461746170925400
 ```
 ```ts
 [
@@ -177,8 +193,7 @@ actually fall and maps that into a `String` with value `heads` or
 
 ### Aggregation stage
 ```ts
-96 53 92 52 92 CC 81 00 92 52 92 CC 81 00 92 56 03 92 32 7F 92 10 92 92
-C2 A5 68 65 61 64 73 92 C3 A5 74 61 69 6C 73
+9653925292CC8100925292CC810092560392327F92109292C2A5686561647392C3A57461696C73
 ```
 ```ts
 [

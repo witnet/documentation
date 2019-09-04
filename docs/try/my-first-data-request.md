@@ -10,22 +10,24 @@ When creating a new project from scratch, the quickest way to get
 things working is using [Truffle][truffle] to import a Witnet-enabled
 project template:
 ```console
-truffle unbox witnet/witnet-ethereum-template
+truffle unbox witnet/truffle-box
 ```
 
 If you prefer not to use Truffle, you are OK to go with plain `npm` or
 `yarn`:
 
 ```console tab="npm"
-npm init my-first-witnet-project
+mkdir my-first-witnet-project
 cd my-first-witnet-project
-npm install --save-dev witnet-request
+npm init
+npm install --save witnet-request
 ```
 
 ```console tab="yarn"
-yarn init my-first-witnet-project
+mkdir my-first-witnet-project
 cd my-first-witnet-project
-yarn add --dev witnet-request
+yarn init
+yarn add witnet-request
 ```
 
 ## Add `witnet-request` to your existing Node project
@@ -34,11 +36,11 @@ If you want to build support for Witnet into your existing project, you
 can simply add the `witnet-request` contract as a dependency:
 
 ```console tab="npm"
-npm install --save-dev witnet-request
+npm install --save witnet-request
 ```
 
 ```console tab="yarn"
-yarn add --dev witnet-request
+yarn add witnet-request
 ```
 
 ## Write your first Witnet request
@@ -247,10 +249,26 @@ export { request as default } // IMPORTANT: export the request as an ES6 module
 
 ## Next steps
 
+At this point, you have a Javascript module that when imported into your
+own projects will produce a valid Witnet data request containing the
+[RADON scripts][radon] that Witnet nodes can parse and execute.
+
+But how can you actually send the request to the network and have it
+resolved by a randomly selected sample of Witnet nodes?
+
+From here, you have a couple of options:
+
+- [Send the data request from an Ethereum smart contract][ethereum] and
+  have the result resolve the outcome of the contract .
+- [Post the data request directly into Witnet][post-directly] just for
+  the sake of attesting the data point without triggering any onchain
+  consequence.
 
 
 [truffle]: https://www.trufflesuite.com/
 [radon]: /protocol/data-requests/overview/#rad-object-notation-radon
+[ethereum]: /try/use-from-ethereum
+[post-directly]: /interfaces/json-rpc/#postDataRequest
 
 [^1]: The Witnet protocol makes no assumptions on what the data type of
 the response will be for different data sources. This allows dealing
