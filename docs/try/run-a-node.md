@@ -5,10 +5,11 @@ their own full node. Running a node on the Witnet mainnet is not
 possible before the mainnet is released. Check out the [roadmap] and
 save the dates!
 
-!!! tip
+!!! tip ""
     You do not need to run a Witnet node to use Witnet from your
     Ethereum smart contracts. __If you are a smart contracts developer,
-    what you probably want is to [use Witnet from Solidity][ethereum]__.
+    what you probably want is to
+    [connect your Ethereum contracts to external APIs using Witnet][ethereum]__.
     
 ## Using Docker
 
@@ -32,7 +33,7 @@ wits). Luckily, enabling persistence is super easy:
 
 ```bash
 docker run \
-    -v ~/.witnet-rust-testnet-3:/.witnet-rust-testnet-3 \
+    -v ~/.witnet-rust-testnet-4:/.witnet-rust-testnet-4 \
     -it witnet/witnet-rust latest node server
 ```
 
@@ -41,7 +42,7 @@ Specific versions or releases can be simply run form the the same image:
 
 ```bash
 docker run \
-    -v ~/.witnet-rust-testnet-3:/.witnet-rust-testnet-3 \
+    -v ~/.witnet-rust-testnet-4:/.witnet-rust-testnet-4 \
     -it witnet/witnet-rust 0.3.2 node server
 ```
 

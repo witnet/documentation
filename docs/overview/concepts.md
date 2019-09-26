@@ -123,7 +123,7 @@ therefore causing inconsistencies that would lead to breaking the
 network consensus.
 
 [whitepaper]: https://witnet.io/static/witnet-whitepaper.pdf
-[reputation protocol]: ../protocol/reputation.md
+[reputation protocol]: protocol/reputation
 [Stampery]: https://stampery.com
 [Witnet Foundation]: https://witnet.foundation
 [Aragon]: https://aragon.org

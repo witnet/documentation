@@ -1,10 +1,10 @@
 # Witnet Software ecosystem
 
-## Witnet-rust
-> [Witnet-rust][witnet-rust] is the first open-source implementation of
-> the Witnet protocol and leverages the [Rust][rust] programming
-> language to achieve utmost speed, memory safety and fearless
-> concurrency without compromising on performance.
+## Witnet-Rust
+> [Witnet-Rust] is the first open-source implementation of the Witnet
+> protocol and leverages the [Rust][rust] programming language to
+> achieve utmost speed, memory safety and fearless concurrency without
+> compromising on performance.
 
 Witnet-Rust is experimental software running on experimental network
 protocols:
@@ -34,12 +34,13 @@ The bridge is actually three different pieces of software:
   extend (`contract MyContract is UsingWitnet { ... }`).
 - The Witnet Bridge Interface (WBI): an Ethereum contract where data
   requests are publicly posted to.
-- The `bridge` component inside Witnet-Rust, which monitors the WBI for
-  new requests and also scans 
+- The `bridge` component inside [Witnet-Rust], which monitors the WBI
+  for new requests and also scans
 
-[roadmap]: community/roadmap
-[run-a-node]: try/run-a-node.md
+[roadmap]: /community/roadmap
+[run-a-node]: /try/run-a-node
 [rust]: https://rust-lang.org
 [sheikah]: https://github.com/witnet/sheikah
-[use-from-ethereum]: try/use-from-ethereum
-[witnet-rust]: https://github.com/witnet/sheikah 
+[use-from-ethereum]: /try/use-from-ethereum
+[Witnet-Rust]: https://github.com/witnet/sheikah 
+[contributing]: /community/contributing

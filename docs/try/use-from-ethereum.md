@@ -76,5 +76,6 @@ npm run compile
 yarn compile
 ```
 
+
 [truffle]: https://www.trufflesuite.com/
 [create-a-data-request]: try/my-first-data-request/#write-your-first-witnet-request

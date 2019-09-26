@@ -54,10 +54,10 @@ developer or node operator, there are
 [many things you can do][contributing] to spread the word!
 
 [apis-illustration]: assets/images/APIs.svg
-[ethereum]: try/use-from-ethereum.md
+[ethereum]: try/use-from-ethereum
 [foundation]: https://witnet.foundation
 [whitepaper]: https://witnet.io/static/witnet-whitepaper.pdf
-[run-a-node]: try/run-a-node.md
-[contributing]: community/contributing.md
+[run-a-node]: /try/run-a-node
+[contributing]: /community/contributing
 [Witnet-Rust]: https://github.com/witnet/witnet-rust
 [Sheikah]: https://github.com/witnet/sheikah
