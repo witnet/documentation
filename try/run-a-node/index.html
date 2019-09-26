@@ -461,8 +461,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../use-from-ethereum/" title="Connect your Ethereum contract to an API" class="md-nav__link">
-      Connect your Ethereum contract to an API
+    <a href="../use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
+      Connect your Ethereum contracts to external APIs
     </a>
   </li>
 
@@ -482,30 +482,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Tutorials
+      Tutorial
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
-    
-    <label class="md-nav__link" for="nav-3-1">
-      Beginner: Bitcoin price feed
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
-        Beginner: Bitcoin price feed
+        Tutorial
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -516,35 +497,11 @@
 
 
   <li class="md-nav__item">
-    <a href="../my-first-data-request/" title="None" class="md-nav__link">
-      None
+    <a href="../../tutorials/bitcoin-price-feed/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
-    
-    <label class="md-nav__link" for="nav-3-2">
-      Advanced: 
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        Advanced: 
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -552,14 +509,93 @@
 
 
   <li class="md-nav__item">
-    <a href="../my-first-data-request/" title="Create a Data Request" class="md-nav__link">
-      Create a Data Request
+    <a href="../../tutorials/bitcoin-price-feed/create-project/" title="1. Create a new project" class="md-nav__link">
+      1. Create a new project
     </a>
   </li>
 
         
-      </ul>
-    </nav>
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/sources/" title="2. Adding data sources" class="md-nav__link">
+      2. Adding data sources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/aggregations/" title="3. Define aggregations" class="md-nav__link">
+      3. Define aggregations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/fine-tuning/" title="4. Fine-tune the request" class="md-nav__link">
+      4. Fine-tune the request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/compiling/" title="5. Compile the request" class="md-nav__link">
+      5. Compile the request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/contract/" title="6. Write the Solidity contract" class="md-nav__link">
+      6. Write the Solidity contract
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/migrations/" title="7. Test and migrate" class="md-nav__link">
+      7. Test and migrate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/recap/" title="Recap" class="md-nav__link">
+      Recap
+    </a>
   </li>
 
         
@@ -990,10 +1026,10 @@ their own full node. Running a node on the Witnet mainnet is not
 possible before the mainnet is released. Check out the <a href="/community/roadmap">roadmap</a> and
 save the dates!</p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
 <p>You do not need to run a Witnet node to use Witnet from your
 Ethereum smart contracts. <strong>If you are a smart contracts developer,
-what you probably want is to <a href="/try/use-from-ethereum">use Witnet from Solidity</a></strong>.</p>
+what you probably want is to
+<a href="/try/use-from-ethereum">connect your Ethereum contracts to external APIs using Witnet</a></strong>.</p>
 </div>
 <h2 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h2>
 <p>The most convenient method for running a Witnet node is through the
@@ -1009,14 +1045,14 @@ testnet in just a matter on seconds.</p>
 may cause total loss of data (including private keys and thus any mined
 wits). Luckily, enabling persistence is super easy:</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
-    -v ~/.witnet-rust-testnet-3:/.witnet-rust-testnet-3 <span class="se">\</span>
+    -v ~/.witnet-rust-testnet-4:/.witnet-rust-testnet-4 <span class="se">\</span>
     -it witnet/witnet-rust latest node server
 </pre></div>
 
 <h3 id="how-to-run-specific-releases">How to run specific releases<a class="headerlink" href="#how-to-run-specific-releases" title="Permanent link">&para;</a></h3>
 <p>Specific versions or releases can be simply run form the the same image:</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
-    -v ~/.witnet-rust-testnet-3:/.witnet-rust-testnet-3 <span class="se">\</span>
+    -v ~/.witnet-rust-testnet-4:/.witnet-rust-testnet-4 <span class="se">\</span>
     -it witnet/witnet-rust <span class="m">0</span>.3.2 node server
 </pre></div>
 
@@ -1077,13 +1113,13 @@ activated with the <code class="codehilite">--debug</code> flag in the right pla
           </a>
         
         
-          <a href="../use-from-ethereum/" title="Connect your Ethereum contract to an API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Connect your Ethereum contract to an API
+                Connect your Ethereum contracts to external APIs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

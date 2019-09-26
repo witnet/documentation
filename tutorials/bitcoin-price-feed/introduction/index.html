@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.witnet.io/protocol/reputation/">
+        <link rel="canonical" href="https://docs.witnet.io/tutorials/bitcoin-price-feed/introduction/">
       
       
       
@@ -33,18 +33,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>Reputation System - Witnet Protocol Documentation</title>
+        <title>Introduction - Witnet Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -62,10 +62,10 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../../extra.css">
+      <link rel="stylesheet" href="../../../extra.css">
     
     
   </head>
@@ -103,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#reputation-system" tabindex="1" class="md-skip">
+      <a href="#basic-witnet-tutorial-how-to-create-a-decentralized-bitcoin-price-feed-on-ethereum-with-solidity-and-witnet" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -143,7 +143,7 @@
                    title="Witnet Protocol Documentation"
                    class="md-header-nav__button md-logo">
                     
-                    <img src="../../assets/images/logo.svg" alt="Witnet Logo" height="26" />
+                    <img src="../../../assets/images/logo.svg" alt="Witnet Logo" height="26" />
                     
                 </a>
             </div>
@@ -162,7 +162,7 @@
                     <a href="https://docs.witnet.io" class="md-header-nav__topic">the <strong>witnet</strong> documentation</a>
                     <span class="md-header-nav__topic">
               
-                Reputation System
+                Introduction
               
             </span>
                     
@@ -248,7 +248,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://docs.witnet.io" title="Witnet Protocol Documentation" class="md-nav__button md-logo">
       
-        <img src="../../assets/images/logo.svg" alt="Witnet Logo" width="48" height="48">
+        <img src="../../../assets/images/logo.svg" alt="Witnet Logo" width="48" height="48">
       
     </a>
     Witnet Protocol Documentation
@@ -303,7 +303,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Ecosystem" class="md-nav__link">
+    <a href="../../.." title="Ecosystem" class="md-nav__link">
       Ecosystem
     </a>
   </li>
@@ -315,7 +315,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/concepts/" title="What is Witnet?" class="md-nav__link">
+    <a href="../../../overview/concepts/" title="What is Witnet?" class="md-nav__link">
       What is Witnet?
     </a>
   </li>
@@ -327,7 +327,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/software/" title="Software" class="md-nav__link">
+    <a href="../../../overview/software/" title="Software" class="md-nav__link">
       Software
     </a>
   </li>
@@ -363,7 +363,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../try/run-a-node/" title="Run a Node" class="md-nav__link">
+    <a href="../../../try/run-a-node/" title="Run a Node" class="md-nav__link">
       Run a Node
     </a>
   </li>
@@ -375,7 +375,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../try/sheikah.md" title="Use the Sheikah wallet / IDE" class="md-nav__link">
+    <a href="../../../try/sheikah.md" title="Use the Sheikah wallet / IDE" class="md-nav__link">
       Use the Sheikah wallet / IDE
     </a>
   </li>
@@ -387,7 +387,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
+    <a href="../../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
       Connect your Ethereum contracts to external APIs
     </a>
   </li>
@@ -402,10 +402,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Tutorial
@@ -421,11 +423,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/introduction/" title="Introduction" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduction
+      </label>
+    
+    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
       Introduction
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-and-why" title="What and why" class="md-nav__link">
+    What and why
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-decentralized-will-the-price-feed-be" title="How decentralized will the price feed be" class="md-nav__link">
+    How decentralized will the price feed be
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-me-the-code-upfront" title="Show me the code upfront" class="md-nav__link">
+    Show me the code upfront
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-do-it" title="Let's do it!" class="md-nav__link">
+    Let's do it!
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -435,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/create-project/" title="1. Create a new project" class="md-nav__link">
+    <a href="../create-project/" title="1. Create a new project" class="md-nav__link">
       1. Create a new project
     </a>
   </li>
@@ -447,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/sources/" title="2. Adding data sources" class="md-nav__link">
+    <a href="../sources/" title="2. Adding data sources" class="md-nav__link">
       2. Adding data sources
     </a>
   </li>
@@ -459,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/aggregations/" title="3. Define aggregations" class="md-nav__link">
+    <a href="../aggregations/" title="3. Define aggregations" class="md-nav__link">
       3. Define aggregations
     </a>
   </li>
@@ -471,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/fine-tuning/" title="4. Fine-tune the request" class="md-nav__link">
+    <a href="../fine-tuning/" title="4. Fine-tune the request" class="md-nav__link">
       4. Fine-tune the request
     </a>
   </li>
@@ -483,7 +544,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/compiling/" title="5. Compile the request" class="md-nav__link">
+    <a href="../compiling/" title="5. Compile the request" class="md-nav__link">
       5. Compile the request
     </a>
   </li>
@@ -495,7 +556,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/contract/" title="6. Write the Solidity contract" class="md-nav__link">
+    <a href="../contract/" title="6. Write the Solidity contract" class="md-nav__link">
       6. Write the Solidity contract
     </a>
   </li>
@@ -507,7 +568,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/migrations/" title="7. Test and migrate" class="md-nav__link">
+    <a href="../migrations/" title="7. Test and migrate" class="md-nav__link">
       7. Test and migrate
     </a>
   </li>
@@ -519,7 +580,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/recap/" title="Recap" class="md-nav__link">
+    <a href="../recap/" title="Recap" class="md-nav__link">
       Recap
     </a>
   </li>
@@ -555,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../community/contributing/" title="Contributing" class="md-nav__link">
+    <a href="../../../community/contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -567,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../community/open-source.md" title="Open Source" class="md-nav__link">
+    <a href="../../../community/open-source.md" title="Open Source" class="md-nav__link">
       Open Source
     </a>
   </li>
@@ -579,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../community/roadmap/" title="Roadmap" class="md-nav__link">
+    <a href="../../../community/roadmap/" title="Roadmap" class="md-nav__link">
       Roadmap
     </a>
   </li>
@@ -594,12 +655,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Protocol Docs
@@ -615,20 +674,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Reputation System" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../protocol/reputation/" title="Reputation System" class="md-nav__link">
       Reputation System
     </a>
-    
   </li>
 
         
@@ -638,7 +688,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sortition/" title="Sortition" class="md-nav__link">
+    <a href="../../../protocol/sortition/" title="Sortition" class="md-nav__link">
       Sortition
     </a>
   </li>
@@ -650,7 +700,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../transactions/" title="Transactions" class="md-nav__link">
+    <a href="../../../protocol/transactions/" title="Transactions" class="md-nav__link">
       Transactions
     </a>
   </li>
@@ -662,7 +712,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../blocks/" title="Blocks" class="md-nav__link">
+    <a href="../../../protocol/blocks/" title="Blocks" class="md-nav__link">
       Blocks
     </a>
   </li>
@@ -693,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-requests/overview/" title="Overview" class="md-nav__link">
+    <a href="../../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -705,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
+    <a href="../../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
       Encoding
     </a>
   </li>
@@ -717,7 +767,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data-requests/examples/" title="Examples" class="md-nav__link">
+    <a href="../../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
       Examples
     </a>
   </li>
@@ -734,7 +784,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../serialization/" title="Serialization" class="md-nav__link">
+    <a href="../../../protocol/serialization/" title="Serialization" class="md-nav__link">
       Serialization
     </a>
   </li>
@@ -770,7 +820,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ethereum/run-a-bridge.md" title="None" class="md-nav__link">
+    <a href="../../../ethereum/run-a-bridge.md" title="None" class="md-nav__link">
       None
     </a>
   </li>
@@ -782,7 +832,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../witnet-rust/compiling.md" title="Compilation" class="md-nav__link">
+    <a href="../../../witnet-rust/compiling.md" title="Compilation" class="md-nav__link">
       Compilation
     </a>
   </li>
@@ -794,7 +844,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../witnet-rust/configuration.md" title="Configuration" class="md-nav__link">
+    <a href="../../../witnet-rust/configuration.md" title="Configuration" class="md-nav__link">
       Configuration
     </a>
   </li>
@@ -806,7 +856,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interfaces/cli/" title="Command Line Interface" class="md-nav__link">
+    <a href="../../../interfaces/cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
   </li>
@@ -818,7 +868,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interfaces/json-rpc/" title="Witnet-Rust JSON-RPC" class="md-nav__link">
+    <a href="../../../interfaces/json-rpc/" title="Witnet-Rust JSON-RPC" class="md-nav__link">
       Witnet-Rust JSON-RPC
     </a>
   </li>
@@ -830,7 +880,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interfaces/wallet-api/" title="Wallet API" class="md-nav__link">
+    <a href="../../../interfaces/wallet-api/" title="Wallet API" class="md-nav__link">
       Wallet API
     </a>
   </li>
@@ -866,7 +916,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/glossary/" title="Glossary" class="md-nav__link">
+    <a href="../../../overview/glossary/" title="Glossary" class="md-nav__link">
       Glossary
     </a>
   </li>
@@ -894,6 +944,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-and-why" title="What and why" class="md-nav__link">
+    What and why
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-decentralized-will-the-price-feed-be" title="How decentralized will the price feed be" class="md-nav__link">
+    How decentralized will the price feed be
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-me-the-code-upfront" title="Show me the code upfront" class="md-nav__link">
+    Show me the code upfront
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-do-it" title="Let's do it!" class="md-nav__link">
+    Let's do it!
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -904,10 +991,34 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/witnet/documentation/blob/master/docs/protocol/reputation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/witnet/documentation/blob/master/docs/tutorials/bitcoin-price-feed/introduction.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="reputation-system">Reputation System<a class="headerlink" href="#reputation-system" title="Permanent link">&para;</a></h1>
+                <h1 id="basic-witnet-tutorial-how-to-create-a-decentralized-bitcoin-price-feed-on-ethereum-with-solidity-and-witnet">Basic Witnet tutorial: how to create a decentralized Bitcoin price feed on Ethereum with Solidity and Witnet<a class="headerlink" href="#basic-witnet-tutorial-how-to-create-a-decentralized-bitcoin-price-feed-on-ethereum-with-solidity-and-witnet" title="Permanent link">&para;</a></h1>
+<h2 id="what-and-why">What and why<a class="headerlink" href="#what-and-why" title="Permanent link">&para;</a></h2>
+<p>In this example we will:</p>
+<ul>
+<li>Query <strong>two different APIs</strong> for the USD price of a bitcoin using <strong>4
+  witnessing nodes</strong> from Witnet.</li>
+<li>Tell those nodes to <strong>aggregate</strong> the values from both APIs and report
+  the result.</li>
+<li>Define how to <strong>tally</strong> the results reported by the different nodes
+  into <strong>a single data point</strong> that can be trustlessly consumed by an
+  Ethereum smart contract.</li>
+</ul>
+<h2 id="how-decentralized-will-the-price-feed-be">How decentralized will the price feed be<a class="headerlink" href="#how-decentralized-will-the-price-feed-be" title="Permanent link">&para;</a></h2>
+<h2 id="show-me-the-code-upfront">Show me the code upfront<a class="headerlink" href="#show-me-the-code-upfront" title="Permanent link">&para;</a></h2>
+<p>The final result of this tutorial is available in
+<a href="https://github.com/witnet/truffle-examples-pricefeed">this GitHub repository</a>. You can also check it out with
+Truffle:</p>
+<div class="codehilite"><pre><span></span><span class="go">mkdir PriceFeed</span>
+<span class="go">cd PriceFeed</span>
+<span class="go">truffle unbox stampery-labs/witnet-pricefeed-example</span>
+</pre></div>
+
+<h2 id="lets-do-it">Let's do it!<a class="headerlink" href="#lets-do-it" title="Permanent link">&para;</a></h2>
+<p>Ready to start? Let's begin by <a href="../create-project">creating a new Witnet-enabled Solidity
+project</a>.</p>
                 
                   
                 
@@ -928,7 +1039,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../community/roadmap/" title="Roadmap" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -937,19 +1048,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Roadmap
+                Connect your Ethereum contracts to external APIs
               </span>
             </div>
           </a>
         
         
-          <a href="../sortition/" title="Sortition" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../create-project/" title="1. Create a new project" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Sortition
+                1. Create a new project
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -977,7 +1088,7 @@
       
         
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/witnet" class="md-footer-social__link fa fa-github"></a>
     
@@ -994,11 +1105,11 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
-        <script src="../../extra.js"></script>
+        <script src="../../../extra.js"></script>
       
     
     
