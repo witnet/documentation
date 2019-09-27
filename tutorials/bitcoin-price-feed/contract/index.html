@@ -103,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#5-write-your-consumer-contract-that-will-handle-price-feed-updates" tabindex="1" class="md-skip">
+      <a href="#6-write-your-consumer-contract-that-will-handle-price-feed-updates" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -524,8 +524,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#plan-the-contract" title="Plan the contract" class="md-nav__link">
+    Plan the contract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initialize-a-basic-contract" title="Initialize a basic contract" class="md-nav__link">
     Initialize a basic contract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-the-requestupdate-method-that-launches-the-witnet-request" title="Write the requestUpdate method that launches the Witnet request" class="md-nav__link">
+    Write the requestUpdate method that launches the Witnet request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request" title="Write the resolveUpdate method that reads the result of the Witnet request" class="md-nav__link">
+    Write the resolveUpdate method that reads the result of the Witnet request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" title="Quick recap" class="md-nav__link">
+    Quick recap
   </a>
   
 </li>
@@ -547,8 +575,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../migrations/" title="7. Test and migrate" class="md-nav__link">
-      7. Test and migrate
+    <a href="../migrations/" title="7. Deploy" class="md-nav__link">
+      7. Deploy
     </a>
   </li>
 
@@ -927,8 +955,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#plan-the-contract" title="Plan the contract" class="md-nav__link">
+    Plan the contract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initialize-a-basic-contract" title="Initialize a basic contract" class="md-nav__link">
     Initialize a basic contract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-the-requestupdate-method-that-launches-the-witnet-request" title="Write the requestUpdate method that launches the Witnet request" class="md-nav__link">
+    Write the requestUpdate method that launches the Witnet request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request" title="Write the resolveUpdate method that reads the result of the Witnet request" class="md-nav__link">
+    Write the resolveUpdate method that reads the result of the Witnet request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" title="Quick recap" class="md-nav__link">
+    Quick recap
   </a>
   
 </li>
@@ -952,13 +1008,29 @@
                   <a href="https://github.com/witnet/documentation/blob/master/docs/tutorials/bitcoin-price-feed/contract.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="5-write-your-consumer-contract-that-will-handle-price-feed-updates">5. Write your consumer contract that will handle price feed updates<a class="headerlink" href="#5-write-your-consumer-contract-that-will-handle-price-feed-updates" title="Permanent link">&para;</a></h1>
+                <h1 id="6-write-your-consumer-contract-that-will-handle-price-feed-updates">6. Write your consumer contract that will handle price feed updates<a class="headerlink" href="#6-write-your-consumer-contract-that-will-handle-price-feed-updates" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p><em>This article is part of the <a href="/tutorials/bitcoin-price-feed/introduction">beginner tutorial on creating a totally decentralized Bitcoin price feed</a>
 on Ethereum with Solidity and Witnet.</em></p>
 </div>
+<h2 id="plan-the-contract">Plan the contract<a class="headerlink" href="#plan-the-contract" title="Permanent link">&para;</a></h2>
+<p>Your contract will maintain a public variable in its state that will
+contain the price of a bitcoin in US Dollars. An update of the price
+point can be requested on demand by any interested party:</p>
+<ul>
+<li>Anyone will be able to call a <code class="codehilite">requestUpdate</code> method in the contract
+  that creates a new instance of the <code class="codehilite">BitcoinPrice.sol</code> contract and
+  send it to Witnet.</li>
+<li>Once the request gets resolved, anyone will be able to call the
+<code class="codehilite">completeUpdate</code> to actually write the result into the contract state.</li>
+</ul>
+<p>It is an assumption that the mere existence of a multiparty contract
+that consumes the price feed will be enough incentive for the interested
+parties to request and complete the update always that the price point
+inside the contract differs from the actual market price more than the
+cost of performing the Witnet request.</p>
 <h2 id="initialize-a-basic-contract">Initialize a basic contract<a class="headerlink" href="#initialize-a-basic-contract" title="Permanent link">&para;</a></h2>
-<p>Let's start by creating a really barebones contract and saving it as
+<p>Let's start by creating a really bare-bones contract and saving it as
 <code class="codehilite">contracts/PriceFeed.sol</code>:</p>
 <div class="codehilite"><pre><span></span><span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">^</span><span class="mf">0.5.0</span><span class="p">;</span>
 <span class="nx">pragma</span> <span class="nx">experimental</span> <span class="nx">ABIEncoderV2</span><span class="p">;</span>
@@ -970,9 +1042,114 @@ on Ethereum with Solidity and Witnet.</em></p>
 
 <span class="c1">// Your contract needs to inherit from UsingWitnet</span>
 <span class="nx">contract</span> <span class="nx">PriceFeed</span> <span class="nx">is</span> <span class="nx">UsingWitnet</span> <span class="p">{</span>
+  <span class="nx">int128</span> <span class="kr">public</span> <span class="nx">bitcoinPrice</span><span class="p">;</span> <span class="c1">// The public Bitcoin price point</span>
+  <span class="nx">uint256</span> <span class="nx">lastRequestId</span><span class="p">;</span>      <span class="c1">// Stores the ID of the last Witnet request</span>
+  <span class="nx">bool</span> <span class="nx">pending</span><span class="p">;</span>               <span class="c1">// Tells if an update has been requested but not yet completed</span>
+  <span class="nx">Request</span> <span class="nx">request</span><span class="p">;</span>            <span class="c1">// The Witnet request object, is set in the constructor</span>
+
   <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
   <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
-  <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wbi</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wbi</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wbi</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wbi</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+    <span class="c1">// Instantiate the Witnet request</span>
+    <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BitcoinPriceRequest</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>What you are doing here is quite straightforward:</p>
+<ul>
+<li>Import <code class="codehilite">UsingWitnet.sol</code> so your contract is Witnet-enabled.</li>
+<li>Import <code class="codehilite">BitcoinPrice.sol</code> so that you can instantiate the Witnet
+  request when needed.</li>
+<li>Make your contract inherit <code class="codehilite">UsingWitnet</code>.</li>
+<li>Make the constructor receive the address of the Witnet Bridge
+  Interface (<code class="codehilite">_wbi</code>) and pass it down to the <code class="codehilite">UsingWitnet</code> constructor
+  through <code class="codehilite">UsingWitnet(_wbi)</code></li>
+</ul>
+<h2 id="write-the-requestupdate-method-that-launches-the-witnet-request">Write the <code class="codehilite">requestUpdate</code> method that launches the Witnet request<a class="headerlink" href="#write-the-requestupdate-method-that-launches-the-witnet-request" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">requestUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="p">{</span>
+  <span class="nx">require</span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;An update is already pending. Complete it first before requesting another update.&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Amount to pay to the bridge node relaying this request from Ethereum to Witnet</span>
+  <span class="nx">uint256</span> <span class="nx">_witnetRequestReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
+  <span class="c1">// Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum </span>
+  <span class="nx">uint256</span> <span class="nx">_witnetResultReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
+
+  <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result </span>
+  <span class="c1">// The `witnetPostRequest` method comes with `UsingWitnet`</span>
+  <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">_witnetRequestReward</span><span class="p">,</span> <span class="nx">_witnetResultReward</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request">Write the <code class="codehilite">resolveUpdate</code> method that reads the result of the Witnet request<a class="headerlink" href="#write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1">// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to</span>
+<span class="c1">// protect your methods from being called before the request has been successfully</span>
+<span class="c1">// relayed into Witnet.</span>
+<span class="kd">function</span> <span class="nx">completeUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="nx">witnetRequestAccepted</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">require</span><span class="p">(</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;There is no pending update.&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Read the result of the Witnet request</span>
+  <span class="c1">// The `witnetReadResult` method comes with `UsingWitnet`</span>
+  <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span> <span class="nx">memory</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">witnetReadResult</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">);</span>
+  <span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="c1">// In any case, set `pending` to false so a new update can be requested </span>
+  <span class="nx">pending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="quick-recap">Quick recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h2>
+<p>This is what the complete contract looks like:</p>
+<div class="codehilite"><pre><span></span><span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">^</span><span class="mf">0.5.0</span><span class="p">;</span>
+<span class="nx">pragma</span> <span class="nx">experimental</span> <span class="nx">ABIEncoderV2</span><span class="p">;</span>
+
+<span class="c1">// Import the UsingWitnet library that enables interacting with Witnet</span>
+<span class="kr">import</span> <span class="s2">&quot;witnet-ethereum-bridge/contracts/UsingWitnet.sol&quot;</span><span class="p">;</span>
+<span class="c1">// Import the BitcoinPrice request that you created before</span>
+<span class="kr">import</span> <span class="s2">&quot;./requests/BitcoinPrice.sol&quot;</span><span class="p">;</span>
+
+<span class="c1">// Your contract needs to inherit from UsingWitnet</span>
+<span class="nx">contract</span> <span class="nx">PriceFeed</span> <span class="nx">is</span> <span class="nx">UsingWitnet</span> <span class="p">{</span>
+  <span class="nx">int128</span> <span class="kr">public</span> <span class="nx">bitcoinPrice</span><span class="p">;</span> <span class="c1">// The public Bitcoin price point</span>
+  <span class="nx">uint256</span> <span class="nx">lastRequestId</span><span class="p">;</span>      <span class="c1">// Stores the ID of the last Witnet request</span>
+  <span class="nx">bool</span> <span class="nx">pending</span><span class="p">;</span>               <span class="c1">// Tells if an update has been requested but not yet completed</span>
+  <span class="nx">Request</span> <span class="nx">request</span><span class="p">;</span>            <span class="c1">// The Witnet request object, is set in the constructor</span>
+
+  <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
+  <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
+  <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wbi</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wbi</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+    <span class="c1">// Instantiate the Witnet request</span>
+    <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BitcoinPriceRequest</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">requestUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;An update is already pending. Complete it first before requesting another update.&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Amount to pay to the bridge node relaying this request from Ethereum to Witnet</span>
+    <span class="nx">uint256</span> <span class="nx">_witnetRequestReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
+    <span class="c1">// Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum </span>
+    <span class="nx">uint256</span> <span class="nx">_witnetResultReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
+
+    <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result </span>
+    <span class="c1">// The `witnetPostRequest` method comes with `UsingWitnet`</span>
+    <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">_witnetRequestReward</span><span class="p">,</span> <span class="nx">_witnetResultReward</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">completeUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="nx">witnetRequestAccepted</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="p">(</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;There is no pending update.&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Read the result of the Witnet request</span>
+    <span class="c1">// The `witnetReadResult` method comes with `UsingWitnet`</span>
+    <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span> <span class="nx">memory</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">witnetReadResult</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">);</span>
+    <span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> 
+      <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="c1">// In any case, set `pending` to false so a new update can be requested </span>
+    <span class="nx">pending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
                 
@@ -1010,13 +1187,13 @@ on Ethereum with Solidity and Witnet.</em></p>
           </a>
         
         
-          <a href="../migrations/" title="7. Test and migrate" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../migrations/" title="7. Deploy" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                7. Test and migrate
+                7. Deploy
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
