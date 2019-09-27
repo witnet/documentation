@@ -19,7 +19,7 @@ nav:
       - 4. Fine-tune the request: tutorials/bitcoin-price-feed/fine-tuning.md
       - 5. Compile the request: tutorials/bitcoin-price-feed/compiling.md
       - 6. Write the Solidity contract: tutorials/bitcoin-price-feed/contract.md
-      - 7. Test and migrate: tutorials/bitcoin-price-feed/migrations.md
+      - 7. Deploy: tutorials/bitcoin-price-feed/migrations.md
       - Recap: tutorials/bitcoin-price-feed/recap.md
   - Community:
       - Contributing: community/contributing.md

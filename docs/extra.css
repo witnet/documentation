@@ -14,6 +14,8 @@
 .md-header-nav__topic > strong {
     color: #6600DE;
     font-weight: 500;
+    font-size: 1.1em;
+    font-family: "Basic", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .md-main__inner {
