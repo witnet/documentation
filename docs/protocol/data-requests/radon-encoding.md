@@ -1,41 +1,42 @@
 # RADON encoding
 
-RADON scripts are encoded using [MessagePack], a very efficient, compact and widely supported data structure encoding.
+[RADON scripts][RADON] are encoded using [CBOR], a very
+efficient, compact and widely supported data structure encoding.
 
-Look for example at this impressively short (22 bytes) serialized RADON script:
+Look for example at this impressively short (28 bytes) serialized RADON script:
 ```ts
-// As bytes
-96 43 74 92 61 A7 77 65 61 74 68 65 72 74 92 61 A4 74 65 6D 70 72
+// As Hex string
+8618431874821861677765617468657218748218616474656D701872
 
 // As Base64 string
-"lkN0kmGnd2VhdGhlcnSSYaR0ZW1wcg=="
+"hhhDGHSCGGFnd2VhdGhlchh0ghhhZHRlbXAYcg=="
 
 ```
 
 Once decoded, the resulting structure will actually represent this RADON script:
 ```ts
 [
-    STRING_PARSEJSON,       // 0x43
-    MIXED_TOMAP,            // 0x74
+    STRING_PARSEJSON,       // 0x45
+    MIXED_ASMAP,            // 0x74
     [ MAP_GET, "weather" ], // [ 0x61, "weather" ]
-    MIXED_TOMAP,            // 0x74
+    MIXED_ASMAP,            // 0x74
     [ MAP_GET, "temp" ],    // [ 0x61, "temp" ]
-    MIXED_TOFLOAT           // 0x72
+    MIXED_ASFLOAT           // 0x72
 ]
 ```
 
 !!! tip
     RADON scripts are pure byte code sequences but at the same time represent high-level abstractions.
-    In an hypothetical Javascript-like representation of RADON operators, the script above may resemble:
+    In the Javascript-like representation of RADON that the [Witnet Truffle box][tutorial] uses, the script above may resemble:
     
     ```ts
-    retrieve(url)
+    new Witnet.Script()
         .parseJSON()
-        .toMap()
+        .asMap()
         .get("weather")
-        .toMap()
+        .asMap()
         .get("temp")
-        .toFloat()
+        .asFloat()
     ```
 
 !!! info "Constants"
@@ -44,5 +45,7 @@ Once decoded, the resulting structure will actually represent this RADON script:
 
     A list of constants can be found in the [Constants section][constants].
 
-[constants]: ../constants
-[MessagePack]: https://msgpack.org
+[radon]: /data-requests/overview/#rad-object-notation-radon
+[constants]: /data-requests/constants
+[CBOR]: https://cbor.io
+[tutorial]: /tutorials/bitcoin-price-feed/introduction/

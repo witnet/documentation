@@ -9,7 +9,7 @@ nav:
       - Software: overview/software.md
   - Quickstart:
       - Run a Node: try/run-a-node.md
-      - Use the Sheikah wallet / IDE: try/sheikah.md
+      #- Use the Sheikah wallet / IDE: try/sheikah.md
       - Connect your Ethereum contracts to external APIs: try/use-from-ethereum.md
   - Tutorial:
       - Introduction: tutorials/bitcoin-price-feed/introduction.md
@@ -23,25 +23,24 @@ nav:
       - Recap: tutorials/bitcoin-price-feed/recap.md
   - Community:
       - Contributing: community/contributing.md
-      - Open Source: community/open-source.md
       - Roadmap: community/roadmap.md
   - Protocol Docs:
-      - protocol/reputation.md
-      - protocol/sortition.md
-      - protocol/transactions.md
-      - protocol/blocks.md
-      - Data Requests:
+      #- protocol/reputation.md
+      #- protocol/sortition.md
+      #- protocol/transactions.md
+      #- protocol/blocks.md
+      - Witnet Requests:
           - Overview: protocol/data-requests/overview.md
           - Encoding: protocol/data-requests/radon-encoding.md
           - Examples: protocol/data-requests/examples.md
-      - protocol/serialization.md
+      #- protocol/serialization.md
   - Operator Docs:
-      - ethereum/run-a-bridge.md
-      - Compilation: witnet-rust/compiling.md
-      - Configuration: witnet-rust/configuration.md
-      - Command Line Interface: interfaces/cli.md
-      - Witnet-Rust JSON-RPC: interfaces/json-rpc.md
-      - Wallet API: interfaces/wallet-api.md
+      - Run an Ethereum bridge: ethereum/run-a-bridge.md
+      #- Compilation: witnet-rust/compiling.md
+      #- Configuration: witnet-rust/configuration.md
+      #- Command Line Interface: interfaces/cli.md
+      #- Witnet-Rust JSON-RPC: interfaces/json-rpc.md
+      #- Wallet API: interfaces/wallet-api.md
   - More:
       - overview/glossary.md
 

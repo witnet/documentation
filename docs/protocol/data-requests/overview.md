@@ -1,13 +1,13 @@
-# Data requests
+# Witnet requests
 
-Data requests are the cornerstone of the Witnet protocol. They allow
+Witnet requests are the cornerstone of the Witnet protocol. They allow
 **clients** to have **witness** nodes **retrieve**, **aggregate** and
 **deliver** data on their behalf on demand.
 
 ## Request life cycle
 
-Once a data request has been published by a client, it will go through 4
-distinct stages: ***retrieval***, ***aggregation*** and ***tally*** .
+Once a Witnet request has been published by a client, it will go through
+4 distinct stages: ***retrieval***, ***aggregation*** and ***tally*** .
 These stages are linear and constitute a single, unidirectional data
 flow.
 
@@ -40,12 +40,11 @@ all the types and the operators they provide.
 
 ## The RAD Engine
 
-The RAD Engine is the component in charge of processing data requests
-coming from Witnet clients. That is, coordinating retrieval,
-aggregation, tally and delivery of data strictly as specified in the
-requests.
+The RAD Engine is the component in charge of processing Witnet requests.
+That is, coordinating retrieval, aggregation, tally and delivery of data
+strictly as specified in the requests.
 
-All data requests contain explicit instructions on what the RAD Engine
+All Witnet requests contain explicit instructions on what the RAD Engine
 must do during every stage. These instructions, specified using
 [__RAD Object Notation (RADON)__][radon], are interpreted by the RAD
 Engine.
@@ -82,20 +81,21 @@ by the RAD Engine on the output of the previous call.
     section for an explanation on how scripts are codified and
     formatted.
 
-## Creating data requests
+## Creating Witnet requests
 
 The RAD Engine is only capable of interpreting well-formed 
 [RADON scripts][radon].
 
 Even though human beings can safely write RADON without their heads
-exploding, they are just not expected to. The **[Sheikah] desktop app**
-is intended to be used as an IDE for visually and safely composing and
-testing Witnet data requests.
+exploding, they are just not expected to. The main way to compose Witnet
+requests is using the **[Witnet Truffle box][tutorial]**, which you can
+learn about by following the [price feed tutorial][tutorial].
 
-It is also to be expected that at some point in the future, higher-level
-programming languages may exist for writing data requests in a more 
-expressive and user-friendly way.
+The **[Sheikah] desktop app** (currently under heavy development) is
+also intended to be used as an IDE for visually and safely composing and
+testing Witnet requests.
 
 [radon]: #rad-object-notation-radon
 [encoding]: /protocol/data-requests/radon/encoding/
 [sheikah]: https://github.com/witnet/sheikah
+[tutorial]: /tutorials/bitcoin-price-feed/introduction/
