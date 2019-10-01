@@ -28,6 +28,40 @@
     font-weight: 600;
 }
 
+.md-nav.md-nav--secondary > .disclaimer {
+    color: #666;
+    border: 1px solid #999;
+    border-left: 2px solid coral;
+    border-radius: 4px;
+    font-size: .9em;
+    line-height: 1.5em;
+    margin: 15px 10px;
+    opacity: .5;
+    padding: 15px;
+    transition: opacity .2s ease;
+}
+
+.md-nav.md-nav--secondary > .disclaimer > p {
+    margin: 8px 0 2px;
+}
+
+.md-nav.md-nav--secondary > .disclaimer > p > a {
+    color: coral;
+}
+
+.md-nav.md-nav--secondary > .disclaimer:before {
+    color: coral;
+    content: "⚠️ WARNING";
+    display: block;
+    font-size: .9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.md-nav.md-nav--secondary > .disclaimer:hover {
+    opacity: 1;
+}
+
 .md-main__inner > .md-sidebar {
     padding: 2.4rem 0 0 0 !important;
 }
