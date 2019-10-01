@@ -437,36 +437,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#create-a-new-witnet-enabled-project" title="Create a new Witnet-enabled project" class="md-nav__link">
-    Create a new Witnet-enabled project
+  <a href="#write-your-first-witnet-powered-ethereum-contract" title="Write your first Witnet-powered Ethereum contract" class="md-nav__link">
+    Write your first Witnet-powered Ethereum contract
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#add-witnet-to-your-existing-project" title="Add Witnet to your existing project" class="md-nav__link">
-    Add Witnet to your existing project
+  <a href="#how-can-ethereum-contracts-communicate-with-witnet" title="How can Ethereum contracts communicate with Witnet?" class="md-nav__link">
+    How can Ethereum contracts communicate with Witnet?
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#write-your-first-witnet-data-request" title="Write your first Witnet data request" class="md-nav__link">
-    Write your first Witnet data request
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
-  <a href="#writing-a-solidity-contract-that-uses-the-witnet-request" title="Writing a Solidity contract that uses the Witnet request" class="md-nav__link">
-    Writing a Solidity contract that uses the Witnet request
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
-  <a href="#compiling-the-whole-thing" title="Compiling the whole thing" class="md-nav__link">
-    Compiling the whole thing
+  <a href="#do-i-need-wit-tokens-for-using-witnet-from-ethereum" title="Do I need Wit tokens for using Witnet from Ethereum?" class="md-nav__link">
+    Do I need Wit tokens for using Witnet from Ethereum?
   </a>
   
 </li>
@@ -888,36 +874,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#create-a-new-witnet-enabled-project" title="Create a new Witnet-enabled project" class="md-nav__link">
-    Create a new Witnet-enabled project
+  <a href="#write-your-first-witnet-powered-ethereum-contract" title="Write your first Witnet-powered Ethereum contract" class="md-nav__link">
+    Write your first Witnet-powered Ethereum contract
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#add-witnet-to-your-existing-project" title="Add Witnet to your existing project" class="md-nav__link">
-    Add Witnet to your existing project
+  <a href="#how-can-ethereum-contracts-communicate-with-witnet" title="How can Ethereum contracts communicate with Witnet?" class="md-nav__link">
+    How can Ethereum contracts communicate with Witnet?
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#write-your-first-witnet-data-request" title="Write your first Witnet data request" class="md-nav__link">
-    Write your first Witnet data request
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
-  <a href="#writing-a-solidity-contract-that-uses-the-witnet-request" title="Writing a Solidity contract that uses the Witnet request" class="md-nav__link">
-    Writing a Solidity contract that uses the Witnet request
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
-  <a href="#compiling-the-whole-thing" title="Compiling the whole thing" class="md-nav__link">
-    Compiling the whole thing
+  <a href="#do-i-need-wit-tokens-for-using-witnet-from-ethereum" title="Do I need Wit tokens for using Witnet from Ethereum?" class="md-nav__link">
+    Do I need Wit tokens for using Witnet from Ethereum?
   </a>
   
 </li>
@@ -954,67 +926,26 @@
                 
                 <h1 id="using-witnet-from-ethereum-solidity">Using Witnet from Ethereum / Solidity<a class="headerlink" href="#using-witnet-from-ethereum-solidity" title="Permanent link">&para;</a></h1>
 <p>Using Witnet as an oracle for resolving your Ethereum smart contracts is
-really easy thanks to the <code class="codehilite">UsingWitnet</code> Solidity library.</p>
-<h2 id="create-a-new-witnet-enabled-project">Create a new Witnet-enabled project<a class="headerlink" href="#create-a-new-witnet-enabled-project" title="Permanent link">&para;</a></h2>
-<p>If you are creating a new project from scratch, the quickest way to get
-things working is using <a href="https://www.trufflesuite.com/">Truffle</a> to import a Witnet-enabled
-project template:
-<div class="codehilite"><pre><span></span><span class="go">truffle unbox witnet/truffle-box</span>
-</pre></div></p>
-<h2 id="add-witnet-to-your-existing-project">Add Witnet to your existing project<a class="headerlink" href="#add-witnet-to-your-existing-project" title="Permanent link">&para;</a></h2>
-<p>If you want to build support for Witnet into your existing Solidity
-project, you can simply add the <code class="codehilite">UsingWitnet</code> contract as a dependency,
-which is distributed inside the <code class="codehilite">witnet-ethereum-bridge</code> npm package:</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">npm</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">npm install --save witnet-ethereum-bridge</span>
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">yarn</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">yarn add witnet-ethereum-bridge</span>
-</pre></div></div>
-</div>
-<h2 id="write-your-first-witnet-data-request">Write your first Witnet data request<a class="headerlink" href="#write-your-first-witnet-data-request" title="Permanent link">&para;</a></h2>
-<p>We have put together <a href="try/my-first-data-request/#write-your-first-witnet-request">this comprehensive tutorial on how to create a
-Witnet data request</a> so that you can get started
-in a matter of minutes.</p>
-<h2 id="writing-a-solidity-contract-that-uses-the-witnet-request">Writing a Solidity contract that uses the Witnet request<a class="headerlink" href="#writing-a-solidity-contract-that-uses-the-witnet-request" title="Permanent link">&para;</a></h2>
-<p>Once you are done with <a href="try/my-first-data-request/#write-your-first-witnet-request">the tutorial on how to create your first data
-request</a>, you can directly go back to this
-section and dive deep into the next step: writing a Solidity contract
-that deploys a Witnet request, has it resolved and reacts to its result.</p>
-<p>Let's start from scratch:</p>
-<div class="codehilite"><pre><span></span><span class="nx">contract</span> <span class="nx">PriceFeed</span> <span class="p">{}</span>
-</pre></div>
-
-<p>Now let's import the <code class="codehilite">UsingWitnet</code> contract and inherit from it:
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="s2">&quot;witnet-ethereum-bridge/contracts/UsingWitnet.sol&quot;</span>
-
-<span class="nx">contract</span> <span class="nx">PriceFeed</span> <span class="nx">is</span> <span class="nx">UsingWitnet</span> <span class="p">{}</span>
-</pre></div></p>
-<p>What are we inheriting here? Among other Witnet-related utilities, the
-<code class="codehilite">UsingWitnet</code> contract injects the following methods into any inheriting
-contract:</p>
-<ul>
-<li><code class="codehilite">postWitnetRequest</code>, which allows you to post an instance of a request
-  to the Witnet Decentralized Oracle Network.</li>
-<li><code class="codehilite">readWitnetResult</code>, which allows you to retrieve the result of
-  previously posted requests so that your contract can decide based on
-  its value.</li>
-</ul>
-<h2 id="compiling-the-whole-thing">Compiling the whole thing<a class="headerlink" href="#compiling-the-whole-thing" title="Permanent link">&para;</a></h2>
-<p>Compiling the requests and contracts is as simply as it gets:</p>
-<div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">npm</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">npm run compile</span>
-</pre></div></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">yarn</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="go">yarn compile</span>
-</pre></div></div>
-</div>
+really easy thanks to the Witnet <a href="https://www.trufflesuite.com/">Truffle</a> box and the
+<code class="codehilite">UsingWitnet</code> Solidity library.</p>
+<h2 id="write-your-first-witnet-powered-ethereum-contract">Write your first Witnet-powered Ethereum contract<a class="headerlink" href="#write-your-first-witnet-powered-ethereum-contract" title="Permanent link">&para;</a></h2>
+<p>The Witnet community has put together
+<a href="/tutorials/bitcoin-price-feed/introduction">this comprehensive tutorial on how to create a
+price feed Ethereum contract using Solidity, Truffle and Witnet</a>
+so that you can get started in a matter of minutes.</p>
+<h2 id="how-can-ethereum-contracts-communicate-with-witnet">How can Ethereum contracts communicate with Witnet?<a class="headerlink" href="#how-can-ethereum-contracts-communicate-with-witnet" title="Permanent link">&para;</a></h2>
+<p>Witnet is a separate blockchain. However, communication between Ethereum
+and Witnet is actually made possible thanks to the Witnet Bridge
+Interface and the <em>bridge nodes</em>, which are nodes that operate in both
+blockchains and get randomly selected for performing the job of relaying
+requests and responses back and forth between the two.</p>
+<p>This system, which resembles the architecture of a sidechain, is better
+described in <a href="https://medium.com/witnet/ethereum-loves-witnet-9a3fd21e6f5c">this Medium post</a>.</p>
+<h2 id="do-i-need-wit-tokens-for-using-witnet-from-ethereum">Do I need Wit tokens for using Witnet from Ethereum?<a class="headerlink" href="#do-i-need-wit-tokens-for-using-witnet-from-ethereum" title="Permanent link">&para;</a></h2>
+<p><strong>No!</strong> Using Witnet from Ethereum is specially convenient because you
+do not need to own or pay any Wit tokens: you pay the bridge nodes using
+ETH and then they spend their own Wit tokens when posting your requests
+into Witnet in your behalf.</p>
                 
                   
                 
