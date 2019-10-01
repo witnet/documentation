@@ -92,6 +92,13 @@ const tally = new Witnet.Tally(aggregator)   // Create a new tally function
 Now it is time to put everything together and
 [fine-tune the request][next].
 
+!!! question "Remember: You are not alone!"
+    You are invited to join the [Witnet Community Discord][discord].
+    Members of the Witnet community will be happy to answer your
+    questions and doubts, as well as assisting you through this
+    tutorial.
+
+[discord]: https://discord.gg/X4uurfP
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [fold]: https://en.wikipedia.org/wiki/Fold_(higher-order_function)
 [next]: /tutorials/bitcoin-price-feed/fine-tuning

@@ -151,6 +151,13 @@ export { request as default }
 
 Time to go ahead and [compile the request][next].
 
+!!! question "Remember: You are not alone!"
+    You are invited to join the [Witnet Community Discord][discord].
+    Members of the Witnet community will be happy to answer your
+    questions and doubts, as well as assisting you through this
+    tutorial.
+
+[discord]: https://discord.gg/X4uurfP
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [POSIX]: https://en.wikipedia.org/wiki/Unix_time
 [next]: /tutorials/bitcoin-price-feed/compiling

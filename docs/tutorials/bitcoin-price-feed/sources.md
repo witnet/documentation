@@ -130,6 +130,13 @@ Please make sure you save the `requests/BitcoinPrice.js` file.
 You are done with the sources for now. Let's move forward into
 [defining aggregation and tally scripts][next].
 
+!!! question "Remember: You are not alone!"
+    You are invited to join the [Witnet Community Discord][discord].
+    Members of the Witnet community will be happy to answer your
+    questions and doubts, as well as assisting you through this
+    tutorial.
+
+[discord]: https://discord.gg/X4uurfP
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [next]: /tutorials/bitcoin-price-feed/aggregations
 [radon]: /protocol/data-requests/overview/#rad-object-notation-radon

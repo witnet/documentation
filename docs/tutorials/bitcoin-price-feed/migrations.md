@@ -85,13 +85,10 @@ compiler once again.
 Deploying your contract into Truffle's own local Ethereum network is as
 easy as it gets:
 
-```console tab="npm"
+```console
 truffle migrate
 ```
 
-```console tab="yarn"
-truffle migrate
-```
 
 Please take into account that Truffle's own local network lacks any
 bridging capability with Witnet. This means that it is a good option for
@@ -116,6 +113,13 @@ roadmap][roadmap] for more information on mainnet support.
 The Truffle documentation has a comprehensive guide on [interacting with
 your contracts][interacting].
 
+!!! question "Remember: You are not alone!"
+    You are invited to join the [Witnet Community Discord][discord].
+    Members of the Witnet community will be happy to answer your
+    questions and doubts, as well as assisting you through this
+    tutorial.
+
+[discord]: https://discord.gg/X4uurfP
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [roadmap]: /community/roadmap
 [interacting]: https://www.trufflesuite.com/docs/truffle/getting-started/interacting-with-your-contracts

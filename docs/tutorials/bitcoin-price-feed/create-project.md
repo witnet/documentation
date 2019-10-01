@@ -41,6 +41,13 @@ bitcoin-price-feed
 You are now ready to move forward into
 [defining the data sources to be used][next].
 
+!!! question "Remember: You are not alone!"
+    You are invited to join the [Witnet Community Discord][discord].
+    Members of the Witnet community will be happy to answer your
+    questions and doubts, as well as assisting you through this
+    tutorial.
+
+[discord]: https://discord.gg/X4uurfP
 [truffle]: https://www.trufflesuite.com/
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [next]: /tutorials/bitcoin-price-feed/sources

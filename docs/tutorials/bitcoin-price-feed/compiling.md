@@ -45,5 +45,12 @@ and instantiate from your own contracts.
 Now the next step is pretty straightforward:
 [write your main consumer contract][next].
 
+!!! question "Remember: You are not alone!"
+    You are invited to join the [Witnet Community Discord][discord].
+    Members of the Witnet community will be happy to answer your
+    questions and doubts, as well as assisting you through this
+    tutorial.
+
+[discord]: https://discord.gg/X4uurfP
 [migrations]: /tutorials/bitcoin-price-feed/migrations
 [next]: /tutorials/bitcoin-price-feed/contract
