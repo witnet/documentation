@@ -15,6 +15,12 @@ In this tutorial you will:
   variable and handles updates using Witnet.
 - Compile and deploy the entire flow into a local Ethereum network.
 
+!!! tip ""
+    Remember: using Witnet from Ethereum is specially convenient because
+    you do not need to own or pay any Wit tokens: you pay the bridge
+    nodes using ETH and then they spend their own Wit tokens when 
+    posting your requests into Witnet in your behalf. 
+
 ## How decentralized will this price feed be
 
 None of the parties involved in the process of deploying, updating and
