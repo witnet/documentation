@@ -88,7 +88,7 @@
     padding-top: 1rem;
 }
 
-.md-content__inner p a:not([href*=witnet]):after {
+.md-content__inner p a:not([href^="/"]):after {
     content: "";
     display: inline-block;
     margin-left: 1px;
