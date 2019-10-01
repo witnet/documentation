@@ -103,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#data-requests" tabindex="1" class="md-skip">
+      <a href="#witnet-requests" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -375,18 +375,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../try/sheikah.md" title="Use the Sheikah wallet / IDE" class="md-nav__link">
-      Use the Sheikah wallet / IDE
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
       Connect your Ethereum contracts to external APIs
     </a>
@@ -567,18 +555,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../community/open-source.md" title="Open Source" class="md-nav__link">
-      Open Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../community/roadmap/" title="Roadmap" class="md-nav__link">
       Roadmap
     </a>
@@ -615,67 +591,19 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../../reputation/" title="Reputation System" class="md-nav__link">
-      Reputation System
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../sortition/" title="Sortition" class="md-nav__link">
-      Sortition
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../transactions/" title="Transactions" class="md-nav__link">
-      Transactions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blocks/" title="Blocks" class="md-nav__link">
-      Blocks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
     
-    <label class="md-nav__link" for="nav-5-5">
-      Data Requests
+    <label class="md-nav__link" for="nav-5-1">
+      Witnet Requests
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-5">
-        Data Requests
+      <label class="md-nav__title" for="nav-5-1">
+        Witnet Requests
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -702,51 +630,93 @@
       Overview
     </a>
     
-      
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
 <nav class="md-nav md-nav--secondary">
-  
-  
     
-  
-  
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
+        
         <li class="md-nav__item">
   <a href="#request-life-cycle" title="Request life cycle" class="md-nav__link">
     Request life cycle
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#the-rad-engine" title="The RAD Engine" class="md-nav__link">
     The RAD Engine
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#rad-object-notation-radon" title="RAD Object Notation (RADON)" class="md-nav__link">
     RAD Object Notation (RADON)
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
-  <a href="#creating-data-requests" title="Creating data requests" class="md-nav__link">
-    Creating data requests
+  <a href="#creating-witnet-requests" title="Creating Witnet requests" class="md-nav__link">
+    Creating Witnet requests
   </a>
   
 </li>
-      
-      
-      
-      
-      
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
     </ul>
-  
+    
 </nav>
+<aside class="disclaimer">
+
+</aside>
     
   </li>
 
@@ -780,18 +750,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../serialization/" title="Serialization" class="md-nav__link">
-      Serialization
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -822,68 +780,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ethereum/run-a-bridge.md" title="None" class="md-nav__link">
-      None
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../witnet-rust/compiling.md" title="Compilation" class="md-nav__link">
-      Compilation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../witnet-rust/configuration.md" title="Configuration" class="md-nav__link">
-      Configuration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../interfaces/cli/" title="Command Line Interface" class="md-nav__link">
-      Command Line Interface
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../interfaces/json-rpc/" title="Witnet-Rust JSON-RPC" class="md-nav__link">
-      Witnet-Rust JSON-RPC
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../interfaces/wallet-api/" title="Wallet API" class="md-nav__link">
-      Wallet API
+    <a href="../../../ethereum/run-a-bridge.md" title="Run an Ethereum bridge" class="md-nav__link">
+      Run an Ethereum bridge
     </a>
   </li>
 
@@ -939,51 +837,93 @@
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
+                    <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
 <nav class="md-nav md-nav--secondary">
-  
-  
     
-  
-  
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
+        
         <li class="md-nav__item">
   <a href="#request-life-cycle" title="Request life cycle" class="md-nav__link">
     Request life cycle
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#the-rad-engine" title="The RAD Engine" class="md-nav__link">
     The RAD Engine
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#rad-object-notation-radon" title="RAD Object Notation (RADON)" class="md-nav__link">
     RAD Object Notation (RADON)
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
-  <a href="#creating-data-requests" title="Creating data requests" class="md-nav__link">
-    Creating data requests
+  <a href="#creating-witnet-requests" title="Creating Witnet requests" class="md-nav__link">
+    Creating Witnet requests
   </a>
   
 </li>
-      
-      
-      
-      
-      
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
     </ul>
-  
+    
 </nav>
+<aside class="disclaimer">
+
+</aside>
                   </div>
                 </div>
               </div>
@@ -996,13 +936,13 @@
                   <a href="https://github.com/witnet/documentation/blob/master/docs/protocol/data-requests/overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="data-requests">Data requests<a class="headerlink" href="#data-requests" title="Permanent link">&para;</a></h1>
-<p>Data requests are the cornerstone of the Witnet protocol. They allow
+                <h1 id="witnet-requests">Witnet requests<a class="headerlink" href="#witnet-requests" title="Permanent link">&para;</a></h1>
+<p>Witnet requests are the cornerstone of the Witnet protocol. They allow
 <strong>clients</strong> to have <strong>witness</strong> nodes <strong>retrieve</strong>, <strong>aggregate</strong> and
 <strong>deliver</strong> data on their behalf on demand.</p>
 <h2 id="request-life-cycle">Request life cycle<a class="headerlink" href="#request-life-cycle" title="Permanent link">&para;</a></h2>
-<p>Once a data request has been published by a client, it will go through 4
-distinct stages: <strong><em>retrieval</em></strong>, <strong><em>aggregation</em></strong> and <strong><em>tally</em></strong> .
+<p>Once a Witnet request has been published by a client, it will go through
+4 distinct stages: <strong><em>retrieval</em></strong>, <strong><em>aggregation</em></strong> and <strong><em>tally</em></strong> .
 These stages are linear and constitute a single, unidirectional data
 flow.</p>
 <div class="codehilite"><pre><span></span>╔═════════╗    ╔════════════════════════════╗    ╔═══════════╗
@@ -1029,11 +969,10 @@ will start with an <code class="codehilite">Array&lt;Integer&gt;</code>, that is
 <a href="#rad-object-notation-radon">RADON documentation</a>, which provides a detailed description of
 all the types and the operators they provide.</p>
 <h2 id="the-rad-engine">The RAD Engine<a class="headerlink" href="#the-rad-engine" title="Permanent link">&para;</a></h2>
-<p>The RAD Engine is the component in charge of processing data requests
-coming from Witnet clients. That is, coordinating retrieval,
-aggregation, tally and delivery of data strictly as specified in the
-requests.</p>
-<p>All data requests contain explicit instructions on what the RAD Engine
+<p>The RAD Engine is the component in charge of processing Witnet requests.
+That is, coordinating retrieval, aggregation, tally and delivery of data
+strictly as specified in the requests.</p>
+<p>All Witnet requests contain explicit instructions on what the RAD Engine
 must do during every stage. These instructions, specified using
 <a href="#rad-object-notation-radon"><strong>RAD Object Notation (RADON)</strong></a>, are interpreted by the RAD
 Engine.</p>
@@ -1064,16 +1003,16 @@ reading and then head yourself to the <a href="/protocol/data-requests/radon/enc
 section for an explanation on how scripts are codified and
 formatted.</p>
 </div>
-<h2 id="creating-data-requests">Creating data requests<a class="headerlink" href="#creating-data-requests" title="Permanent link">&para;</a></h2>
+<h2 id="creating-witnet-requests">Creating Witnet requests<a class="headerlink" href="#creating-witnet-requests" title="Permanent link">&para;</a></h2>
 <p>The RAD Engine is only capable of interpreting well-formed 
 <a href="#rad-object-notation-radon">RADON scripts</a>.</p>
 <p>Even though human beings can safely write RADON without their heads
-exploding, they are just not expected to. The <strong><a href="https://github.com/witnet/sheikah">Sheikah</a> desktop app</strong>
-is intended to be used as an IDE for visually and safely composing and
-testing Witnet data requests.</p>
-<p>It is also to be expected that at some point in the future, higher-level
-programming languages may exist for writing data requests in a more 
-expressive and user-friendly way.</p>
+exploding, they are just not expected to. The main way to compose Witnet
+requests is using the <strong><a href="/tutorials/bitcoin-price-feed/introduction/">Witnet Truffle box</a></strong>, which you can
+learn about by following the <a href="/tutorials/bitcoin-price-feed/introduction/">price feed tutorial</a>.</p>
+<p>The <strong><a href="https://github.com/witnet/sheikah">Sheikah</a> desktop app</strong> (currently under heavy development) is
+also intended to be used as an IDE for visually and safely composing and
+testing Witnet requests.</p>
                 
                   
                 
@@ -1094,7 +1033,7 @@ expressive and user-friendly way.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../blocks/" title="Blocks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../../community/roadmap/" title="Roadmap" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1103,7 +1042,7 @@ expressive and user-friendly way.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Blocks
+                Roadmap
               </span>
             </div>
           </a>

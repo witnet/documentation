@@ -375,18 +375,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../try/sheikah.md" title="Use the Sheikah wallet / IDE" class="md-nav__link">
-      Use the Sheikah wallet / IDE
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
       Connect your Ethereum contracts to external APIs
     </a>
@@ -513,58 +501,100 @@
       6. Write the Solidity contract
     </a>
     
-      
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
 <nav class="md-nav md-nav--secondary">
-  
-  
     
-  
-  
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
+        
         <li class="md-nav__item">
   <a href="#plan-the-contract" title="Plan the contract" class="md-nav__link">
     Plan the contract
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#initialize-a-basic-contract" title="Initialize a basic contract" class="md-nav__link">
     Initialize a basic contract
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#write-the-requestupdate-method-that-launches-the-witnet-request" title="Write the requestUpdate method that launches the Witnet request" class="md-nav__link">
     Write the requestUpdate method that launches the Witnet request
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request" title="Write the resolveUpdate method that reads the result of the Witnet request" class="md-nav__link">
     Write the resolveUpdate method that reads the result of the Witnet request
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#quick-recap" title="Quick recap" class="md-nav__link">
     Quick recap
   </a>
   
 </li>
-      
-      
-      
-      
-      
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
     </ul>
-  
+    
 </nav>
+<aside class="disclaimer">
+
+</aside>
     
   </li>
 
@@ -635,18 +665,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../community/open-source.md" title="Open Source" class="md-nav__link">
-      Open Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../community/roadmap/" title="Roadmap" class="md-nav__link">
       Roadmap
     </a>
@@ -682,64 +700,16 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../protocol/reputation/" title="Reputation System" class="md-nav__link">
-      Reputation System
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/sortition/" title="Sortition" class="md-nav__link">
-      Sortition
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/transactions/" title="Transactions" class="md-nav__link">
-      Transactions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/blocks/" title="Blocks" class="md-nav__link">
-      Blocks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
     
-    <label class="md-nav__link" for="nav-5-5">
-      Data Requests
+    <label class="md-nav__link" for="nav-5-1">
+      Witnet Requests
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-5">
-        Data Requests
+      <label class="md-nav__title" for="nav-5-1">
+        Witnet Requests
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -785,18 +755,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/serialization/" title="Serialization" class="md-nav__link">
-      Serialization
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -827,68 +785,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ethereum/run-a-bridge.md" title="None" class="md-nav__link">
-      None
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../witnet-rust/compiling.md" title="Compilation" class="md-nav__link">
-      Compilation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../witnet-rust/configuration.md" title="Configuration" class="md-nav__link">
-      Configuration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../interfaces/cli/" title="Command Line Interface" class="md-nav__link">
-      Command Line Interface
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../interfaces/json-rpc/" title="Witnet-Rust JSON-RPC" class="md-nav__link">
-      Witnet-Rust JSON-RPC
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../interfaces/wallet-api/" title="Wallet API" class="md-nav__link">
-      Wallet API
+    <a href="../../../ethereum/run-a-bridge.md" title="Run an Ethereum bridge" class="md-nav__link">
+      Run an Ethereum bridge
     </a>
   </li>
 
@@ -944,58 +842,100 @@
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
+                    <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
 <nav class="md-nav md-nav--secondary">
-  
-  
     
-  
-  
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
+        
         <li class="md-nav__item">
   <a href="#plan-the-contract" title="Plan the contract" class="md-nav__link">
     Plan the contract
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#initialize-a-basic-contract" title="Initialize a basic contract" class="md-nav__link">
     Initialize a basic contract
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#write-the-requestupdate-method-that-launches-the-witnet-request" title="Write the requestUpdate method that launches the Witnet request" class="md-nav__link">
     Write the requestUpdate method that launches the Witnet request
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request" title="Write the resolveUpdate method that reads the result of the Witnet request" class="md-nav__link">
     Write the resolveUpdate method that reads the result of the Witnet request
   </a>
   
 </li>
-      
+        
         <li class="md-nav__item">
   <a href="#quick-recap" title="Quick recap" class="md-nav__link">
     Quick recap
   </a>
   
 </li>
-      
-      
-      
-      
-      
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
     </ul>
-  
+    
 </nav>
+<aside class="disclaimer">
+
+</aside>
                   </div>
                 </div>
               </div>
@@ -1152,6 +1092,14 @@ cost of performing the Witnet request.</p>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+
+<div class="admonition question">
+<p class="admonition-title">Remember: You are not alone!</p>
+<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
+Members of the Witnet community will be happy to answer your
+questions and doubts, as well as assisting you through this
+tutorial.</p>
+</div>
                 
                   
                 
