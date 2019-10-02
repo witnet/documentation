@@ -38,7 +38,7 @@ nav:
       - Run an Ethereum bridge: ethereum/run-a-bridge.md
       #- Compilation: witnet-rust/compiling.md
       #- Configuration: witnet-rust/configuration.md
-      #- Command Line Interface: interfaces/cli.md
+      - Command Line Interface: interfaces/cli.md
       #- Witnet-Rust JSON-RPC: interfaces/json-rpc.md
       #- Wallet API: interfaces/wallet-api.md
   - More:
