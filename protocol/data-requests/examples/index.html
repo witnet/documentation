@@ -1095,11 +1095,11 @@ returns the current weather conditions in Berlin.</p>
 <label for="__tab_1_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span>
   <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>
-  <span class="nx">ANY_ASMAP</span><span class="p">,</span>
+  <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;weather&quot;</span> <span class="p">],</span>
-  <span class="nx">ANY_ASMAP</span><span class="p">,</span>
+  <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span> <span class="p">],</span>
-  <span class="nx">ANY_ASFLOAT</span>
+  <span class="nx">BYTES_ASFLOAT</span>
 <span class="p">]</span>
 </pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_2" />
@@ -1216,13 +1216,13 @@ the current price of a bitcoin in US dollars.</p>
 <label for="__tab_4_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span>
   <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>
-  <span class="nx">ANY_ASMAP</span><span class="p">,</span>
+  <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">MAP_GET</span> <span class="p">,</span> <span class="s2">&quot;bpi&quot;</span> <span class="p">],</span>
-  <span class="nx">ANY_ASMAP</span><span class="p">,</span>
+  <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;USD&quot;</span> <span class="p">],</span>
-  <span class="nx">ANY_ASMAP</span><span class="p">,</span>
+  <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;rate_float&quot;</span> <span class="p">],</span>
-  <span class="nx">ANY_ASFLOAT</span>
+  <span class="nx">BYTES_ASFLOAT</span>
 <span class="p">]</span>
 </pre></div></div>
 <input name="__tabs_4" type="radio" id="__tab_4_2" />
@@ -1323,11 +1323,11 @@ actually fall and maps that into a <code class="codehilite">String</code> with v
 <label for="__tab_6_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">[</span>
   <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>
-  <span class="nx">ANY_TOMAP</span><span class="p">,</span>
+  <span class="nx">BYTES_TOMAP</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span> <span class="p">],</span>
-  <span class="nx">ANY_TOARRAY</span><span class="p">,</span>
+  <span class="nx">BYTES_TOARRAY</span><span class="p">,</span>
   <span class="p">[</span> <span class="nx">ARRAY_GET</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
-  <span class="nx">ANY_ASARRAY</span>
+  <span class="nx">BYTES_ASARRAY</span>
 <span class="p">]</span>
 </pre></div></div>
 <input name="__tabs_6" type="radio" id="__tab_6_2" />
