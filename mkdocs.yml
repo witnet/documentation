@@ -26,7 +26,7 @@ nav:
       - Roadmap: community/roadmap.md
   - Protocol Docs:
       #- protocol/reputation.md
-      #- protocol/sortition.md
+      - protocol/sortition.md
       #- protocol/transactions.md
       #- protocol/blocks.md
       - Witnet Requests:
