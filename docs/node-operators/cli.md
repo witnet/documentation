@@ -233,5 +233,5 @@ witnet node send --pkh=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 
 {"jsonrpc":"2.0","result":"e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id":"1"}
 ```
 
-[jsonrpc]: json-rpc/
-[configuration]: ../configuration/toml-file/
+[jsonrpc]: /node-operators/json-rpc
+[configuration]: /node-operators/configuration

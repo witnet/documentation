@@ -35,12 +35,12 @@ nav:
           - Examples: protocol/data-requests/examples.md
       #- protocol/serialization.md
   - Operator Docs:
-      - Run an Ethereum bridge: ethereum/run-a-bridge.md
+      #- Run an Ethereum bridge: node-operators/ethereum-bridge.md
       #- Compilation: witnet-rust/compiling.md
       #- Configuration: witnet-rust/configuration.md
-      - Command Line Interface: interfaces/cli.md
-      #- Witnet-Rust JSON-RPC: interfaces/json-rpc.md
-      #- Wallet API: interfaces/wallet-api.md
+      - Command Line Interface: node-operators/cli.md
+      #- Witnet-Rust JSON-RPC: node-operators/json-rpc.md
+      #- Wallet API: node-operators/wallet-api.md
   - More:
       - overview/glossary.md
 
