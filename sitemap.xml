@@ -96,12 +96,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.witnet.io/interfaces/cli/</loc>
+     <loc>https://docs.witnet.io/node-operators/cli/</loc>
      <lastmod>2019-10-02</lastmod>
      <changefreq>daily</changefreq>
     </url>

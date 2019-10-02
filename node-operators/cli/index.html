@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.witnet.io/interfaces/cli/">
+        <link rel="canonical" href="https://docs.witnet.io/node-operators/cli/">
       
       
       
@@ -675,18 +675,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../../ethereum/run-a-bridge.md" title="Run an Ethereum bridge" class="md-nav__link">
-      Run an Ethereum bridge
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -1029,11 +1017,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/witnet/documentation/blob/master/docs/interfaces/cli.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/witnet/documentation/blob/master/docs/node-operators/cli.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="command-line-interface-cli">Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permanent link">&para;</a></h1>
-<p>The cli subcommand provides a human-friendly command-line interface to the node <a href="json-rpc/">JSON-RPC API</a>.</p>
+<p>The cli subcommand provides a human-friendly command-line interface to the node <a href="/node-operators/json-rpc">JSON-RPC API</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>See all the available options by running the help command.
 <code class="codehilite">cargo run --</code> can be used to replace <code class="codehilite">witnet</code> in a development environment.</p>
@@ -1045,7 +1033,7 @@ cargo run -- node --help
 <div class="codehilite"><pre><span></span>witnet node blockchain --help
 </pre></div>
 
-<p>The JSON-RPC server address is obtained from the <a href="../configuration/toml-file/">configuration file</a>.
+<p>The JSON-RPC server address is obtained from the <a href="/node-operators/configuration">configuration file</a>.
 The path of this file can be set using the <code class="codehilite">-c</code> or <code class="codehilite">--config</code> flag.
 This flag must appear before <code class="codehilite">node</code>.</p>
 <div class="codehilite"><pre><span></span>witnet -c witnet.toml node blockchain
