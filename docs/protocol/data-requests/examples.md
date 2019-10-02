@@ -21,11 +21,11 @@ new Witnet.Script()
 ```ts tab="RADON-AST"
 [
   STRING_PARSEJSON,
-  ANY_ASMAP,
+  BYTES_ASMAP,
   [ MAP_GET, "weather" ],
-  ANY_ASMAP,
+  BYTES_ASMAP,
   [ MAP_GET, "temp" ],
-  ANY_ASFLOAT
+  BYTES_ASFLOAT
 ]
 ```
 
@@ -141,13 +141,13 @@ new Witnet.Script([Witnet.TYPES.STRING])
 ```ts tab="RADON-AST"
 [
   STRING_PARSEJSON,
-  ANY_ASMAP,
+  BYTES_ASMAP,
   [ MAP_GET , "bpi" ],
-  ANY_ASMAP,
+  BYTES_ASMAP,
   [ MAP_GET, "USD" ],
-  ANY_ASMAP,
+  BYTES_ASMAP,
   [ MAP_GET, "rate_float" ],
-  ANY_ASFLOAT
+  BYTES_ASFLOAT
 ]
 ```
 
@@ -251,11 +251,11 @@ new Witnet.Script([Witnet.TYPES.STRING])
 ```ts tab="RADON-AST"
 [
   STRING_PARSEJSON,
-  ANY_TOMAP,
+  BYTES_TOMAP,
   [ MAP_GET, "data" ],
-  ANY_TOARRAY,
+  BYTES_TOARRAY,
   [ ARRAY_GET, 0 ],
-  ANY_ASARRAY
+  BYTES_ASARRAY
 ]
 ```
 
