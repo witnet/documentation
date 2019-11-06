@@ -16,7 +16,7 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregation script
   .setTally(tally)           // Set the tally script
-  .setQuorum(4, 2)           // Set witness count
+  .setQuorum(4, 2, 5)        // Set witness count
   .setFees(10, 1, 1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 
@@ -42,31 +42,41 @@ every single aspect of their life cycle:
 ### Set the quorum
 
 ```javascript
-.setQuorum(witnesses_count, backup_witnesses_count)
+.setQuorum(witnesses, backup_witnesses, extra_reveal_rounds)
 ```
 
-The `witnesses_count` is the minimum number of Witnet nodes that will be
+The `witnesses` is the minimum number of Witnet nodes that will be
 resolving each specific request.
 
-In general, the higher the count, the safer the request. However, fees
-should be proportional to this number.
+In general, the higher the number of witnesses, the safer the request.
+However, fees should be proportional to this number.
 
 The actual number of nodes that will resolve each request is guaranteed
-to be equal or greater than the specified count. If for some reason the
+to be equal than the specified number. If for some reason the
 network fails to assign the request to enough nodes, it will be
 reassigned in every subsequent epoch to a different randomly-selected
-set of nodes until the count is reached.
+set of nodes until the required number is reached.
 
-The `backup_witnesses_count` is the number of Witnet nodes that will be
-used as a backup in case some of the originally assigned nodes fail to
+The `backup_witnesses` is the number of Witnet nodes that will be used
+as a backup in case some of the originally assigned nodes fail to
 fulfill their commitments.
 
-A higher `backup_witnesses_count` implies more fees but also guarantees
+A higher `backup_witnesses` number implies more fees but also guarantees
 that the request will be timely resolved. In the other hand, if you use
-small `backup_witnesses_count` values, the risk is that your request
-will need to be retried many times and therefore the result may be
-potentially inaccurate (in case the queried data point changes very
-fast).
+small `backup_witnesses` values, the risk is that your request will need
+to be retried many times and therefore the result may be potentially
+inaccurate (in case the queried data point changes very fast).
+
+The `extra_reveal_rounds` number is how many extra epochs will Witnet
+nodes be given for revealing their partial results. A number of rounds
+greater than `0` strengthens the security of a Witnet request by
+preventing miners from withholding reveal transactions—as the subsequent
+miners can include any reveal transactions withheld by a former miner.
+This parameter is actually an upper threshold, i.e. the request will get
+tallied and finalized as soon as the number of reveals equals the number
+of commitments. If not set, this parameter defaults to `1`. This
+parameter has no impact on the price of the request.
+
 
 ### Set the fees
 ```javascript
@@ -76,18 +86,34 @@ fast).
 Witnet allows parametrization of many of the economic incentives that
 affect the life cycle of your requests. Namely, those incentives are:
 
+- `request_fee`: the amount of wit tokens that will be earned by the
+  Witnet miner that publishes your request in a block.
 - `reward`: the amount of wit tokens that every each of the Witnet nodes
   assigned to your request will earn if they honestly fulfill their
   commitments and reveals.
-- `commit_fee`: the amount of wit tokens that will be earned by the
-  first Witnet miner that puts in a block as many commitment
-  transactions as the `witnesses_count`.
-- `reveal_fee`: the amount of wit tokens that will be earned by the
-  first Witnet miner that puts in a block as many reveal transactions as
-  the `witnesses_count`.
-- `tally_fee`: the amount of wit tokens that will be earned by the first
+- `commit_fee`: the amount of wit tokens that will be earned by Witnet
+  miners for each each valid commitment transaction they include in a
+  block.
+- `reveal_fee`: the amount of wit tokens that will be earned by Witnet
+  miners for each valid reveal transaction they include in a block.
+- `tally_fee`: the amount of wit tokens that will be earned by the
   Witnet miner that publishes in a block the tally of all the reveal
   transactions related to your request.
+
+!!! question "How can I compute the total cost of a request?"
+    The total cost of a Witnet request equals:
+    
+    ```
+    request_fee + witnesses * (reward + commit_fee + reveal_fee) + tally_fee
+    ```
+    
+    There are two special cases in which some fees are automatically 
+    refunded to the requester upon an eventual tally:
+    
+    - For every valid reveal that later does not pass the filters in the
+      tally stage (aka *outliers*), you get `reward` back.
+    - For every missing reveal after the `extra_reveal_rounds` threshold
+      is reached, you get `reward + reveal_fee` back.
 
 ### Set the schedule
 ```javascript
@@ -141,7 +167,7 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregation script
   .setTally(tally)           // Set the tally script
-  .setQuorum(4, 2)           // Set witness count
+  .setQuorum(4, 2, 5)        // Set witness count
   .setFees(10, 1, 1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 
