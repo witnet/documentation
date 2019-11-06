@@ -992,7 +992,7 @@ that you will need to export:</p>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="c1">// Set witness count</span>
   <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
@@ -1014,27 +1014,35 @@ every single aspect of their life cycle:</p>
   date and time in the future.</li>
 </ul>
 <h3 id="set-the-quorum">Set the quorum<a class="headerlink" href="#set-the-quorum" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses_count</span><span class="p">,</span> <span class="nx">backup_witnesses_count</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses</span><span class="p">,</span> <span class="nx">backup_witnesses</span><span class="p">,</span> <span class="nx">extra_reveal_rounds</span><span class="p">)</span>
 </pre></div>
 
-<p>The <code class="codehilite">witnesses_count</code> is the minimum number of Witnet nodes that will be
+<p>The <code class="codehilite">witnesses</code> is the minimum number of Witnet nodes that will be
 resolving each specific request.</p>
-<p>In general, the higher the count, the safer the request. However, fees
-should be proportional to this number.</p>
+<p>In general, the higher the number of witnesses, the safer the request.
+However, fees should be proportional to this number.</p>
 <p>The actual number of nodes that will resolve each request is guaranteed
-to be equal or greater than the specified count. If for some reason the
+to be equal than the specified number. If for some reason the
 network fails to assign the request to enough nodes, it will be
 reassigned in every subsequent epoch to a different randomly-selected
-set of nodes until the count is reached.</p>
-<p>The <code class="codehilite">backup_witnesses_count</code> is the number of Witnet nodes that will be
-used as a backup in case some of the originally assigned nodes fail to
+set of nodes until the required number is reached.</p>
+<p>The <code class="codehilite">backup_witnesses</code> is the number of Witnet nodes that will be used
+as a backup in case some of the originally assigned nodes fail to
 fulfill their commitments.</p>
-<p>A higher <code class="codehilite">backup_witnesses_count</code> implies more fees but also guarantees
+<p>A higher <code class="codehilite">backup_witnesses</code> number implies more fees but also guarantees
 that the request will be timely resolved. In the other hand, if you use
-small <code class="codehilite">backup_witnesses_count</code> values, the risk is that your request
-will need to be retried many times and therefore the result may be
-potentially inaccurate (in case the queried data point changes very
-fast).</p>
+small <code class="codehilite">backup_witnesses</code> values, the risk is that your request will need
+to be retried many times and therefore the result may be potentially
+inaccurate (in case the queried data point changes very fast).</p>
+<p>The <code class="codehilite">extra_reveal_rounds</code> number is how many extra epochs will Witnet
+nodes be given for revealing their partial results. A number of rounds
+greater than <code class="codehilite">0</code> strengthens the security of a Witnet request by
+preventing miners from withholding reveal transactions—as the subsequent
+miners can include any reveal transactions withheld by a former miner.
+This parameter is actually an upper threshold, i.e. the request will get
+tallied and finalized as soon as the number of reveals equals the number
+of commitments. If not set, this parameter defaults to <code class="codehilite">1</code>. This
+parameter has no impact on the price of the request.</p>
 <h3 id="set-the-fees">Set the fees<a class="headerlink" href="#set-the-fees" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="nx">reward</span><span class="p">,</span> <span class="nx">commit_fee</span><span class="p">,</span> <span class="nx">reveal_fee</span><span class="p">,</span> <span class="nx">tally_fee</span><span class="p">)</span>
 </pre></div>
@@ -1042,19 +1050,35 @@ fast).</p>
 <p>Witnet allows parametrization of many of the economic incentives that
 affect the life cycle of your requests. Namely, those incentives are:</p>
 <ul>
+<li><code class="codehilite">request_fee</code>: the amount of wit tokens that will be earned by the
+  Witnet miner that publishes your request in a block.</li>
 <li><code class="codehilite">reward</code>: the amount of wit tokens that every each of the Witnet nodes
   assigned to your request will earn if they honestly fulfill their
   commitments and reveals.</li>
-<li><code class="codehilite">commit_fee</code>: the amount of wit tokens that will be earned by the
-  first Witnet miner that puts in a block as many commitment
-  transactions as the <code class="codehilite">witnesses_count</code>.</li>
-<li><code class="codehilite">reveal_fee</code>: the amount of wit tokens that will be earned by the
-  first Witnet miner that puts in a block as many reveal transactions as
-  the <code class="codehilite">witnesses_count</code>.</li>
-<li><code class="codehilite">tally_fee</code>: the amount of wit tokens that will be earned by the first
+<li><code class="codehilite">commit_fee</code>: the amount of wit tokens that will be earned by Witnet
+  miners for each each valid commitment transaction they include in a
+  block.</li>
+<li><code class="codehilite">reveal_fee</code>: the amount of wit tokens that will be earned by Witnet
+  miners for each valid reveal transaction they include in a block.</li>
+<li><code class="codehilite">tally_fee</code>: the amount of wit tokens that will be earned by the
   Witnet miner that publishes in a block the tally of all the reveal
   transactions related to your request.</li>
 </ul>
+<div class="admonition question">
+<p class="admonition-title">How can I compute the total cost of a request?</p>
+<p>The total cost of a Witnet request equals:</p>
+<div class="codehilite"><pre><span></span>request_fee + witnesses * (reward + commit_fee + reveal_fee) + tally_fee
+</pre></div>
+
+<p>There are two special cases in which some fees are automatically 
+refunded to the requester upon an eventual tally:</p>
+<ul>
+<li>For every valid reveal that later does not pass the filters in the
+  tally stage (aka <em>outliers</em>), you get <code class="codehilite">reward</code> back.</li>
+<li>For every missing reveal after the <code class="codehilite">extra_reveal_rounds</code> threshold
+  is reached, you get <code class="codehilite">reward + reveal_fee</code> back.</li>
+</ul>
+</div>
 <h3 id="set-the-schedule">Set the schedule<a class="headerlink" href="#set-the-schedule" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">)</span>
 </pre></div>
@@ -1102,7 +1126,7 @@ look more or less like this:</p>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="c1">// Set witness count</span>
   <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
