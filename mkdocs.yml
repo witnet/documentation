@@ -38,6 +38,7 @@ nav:
       #- Run an Ethereum bridge: node-operators/ethereum-bridge.md
       #- Compilation: witnet-rust/compiling.md
       #- Configuration: witnet-rust/configuration.md
+      - Hardware requirements: node-operators/hardware-requirements.md
       - Command Line Interface: node-operators/cli.md
       #- Witnet-Rust JSON-RPC: node-operators/json-rpc.md
       #- Wallet API: node-operators/wallet-api.md
