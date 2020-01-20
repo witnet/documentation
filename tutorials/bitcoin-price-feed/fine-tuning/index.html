@@ -449,8 +449,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../aggregations/" title="3. Define aggregations" class="md-nav__link">
-      3. Define aggregations
+    <a href="../aggregations/" title="3. Define aggregator / tally" class="md-nav__link">
+      3. Define aggregator / tally
     </a>
   </li>
 
@@ -582,7 +582,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -800,6 +800,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../node-operators/hardware-requirements/" title="Hardware requirements" class="md-nav__link">
+      Hardware requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
@@ -962,7 +974,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -992,7 +1004,7 @@ that you will need to export:</p>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>     <span class="c1">// Set witness count</span>
   <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
@@ -1014,7 +1026,7 @@ every single aspect of their life cycle:</p>
   date and time in the future.</li>
 </ul>
 <h3 id="set-the-quorum">Set the quorum<a class="headerlink" href="#set-the-quorum" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses</span><span class="p">,</span> <span class="nx">backup_witnesses</span><span class="p">,</span> <span class="nx">extra_reveal_rounds</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses</span><span class="p">,</span> <span class="nx">backup_witnesses</span><span class="p">,</span> <span class="nx">extra_reveal_rounds</span><span class="p">,</span> <span class="nx">minimum_consensus</span><span class="p">)</span>
 </pre></div>
 
 <p>The <code class="codehilite">witnesses</code> is the minimum number of Witnet nodes that will be
@@ -1043,6 +1055,13 @@ This parameter is actually an upper threshold, i.e. the request will get
 tallied and finalized as soon as the number of reveals equals the number
 of commitments. If not set, this parameter defaults to <code class="codehilite">1</code>. This
 parameter has no impact on the price of the request.</p>
+<p>The <code class="codehilite">minimum_consensus</code> percentage allows to define a threshold for
+aborting resolution of a request if the witnessing nodes did not arrive
+to broad consensus. That is, aggregator and tally functions will not be
+applied if the ratio of valid values vs. errors is below this threshold.
+<em>E.g. a <code class="codehilite">minimum_consensus</code> threshold of <code class="codehilite">70</code> requires a <code class="codehilite">70%</code> of the
+witnesses to report a valid value, otherwise the result of the request
+will be an error stating "insufficient consensus"</em>.</p>
 <h3 id="set-the-fees">Set the fees<a class="headerlink" href="#set-the-fees" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="nx">reward</span><span class="p">,</span> <span class="nx">commit_fee</span><span class="p">,</span> <span class="nx">reveal_fee</span><span class="p">,</span> <span class="nx">tally_fee</span><span class="p">)</span>
 </pre></div>
@@ -1095,38 +1114,44 @@ look more or less like this:</p>
 
 <span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
 <span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span> <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>     <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `last` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>   <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
 <span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span>       <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `bpi` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `USD` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `rate_float` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>         <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 
-<span class="c1">// Computes the average mean of the two sources using a reducer</span>
-<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">([</span><span class="nx">bitstamp</span><span class="p">,</span> <span class="nx">coindesk</span><span class="p">])</span> <span class="c1">// Create a new aggregation</span>
-  <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span><span class="p">)</span>                   <span class="c1">// Reduce the input `Array` using the average mean</span>
+<span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
+<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// values that pass the filter.</span>
+<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
+  <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span> <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
+<span class="p">})</span>
 
-<span class="c1">// Computes the average mean of the values reported by multiple nodes using a reducer</span>
-<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span>   <span class="c1">// Create a new tally function</span>
-  <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span><span class="p">)</span> <span class="c1">// Reduce the input `Array` using the average mean</span>
+<span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
+<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// values that pass the filter.</span>
+<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
+  <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
+<span class="p">})</span>
 
 <span class="c1">// This is the Witnet.Request object that needs to be exported</span>
 <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Request</span><span class="p">()</span>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">bitstamp</span><span class="p">)</span>       <span class="c1">// Use source 1</span>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
-  <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
-  <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregator function</span>
+  <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally function</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>    <span class="c1">// Set witness count</span>
   <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
@@ -1162,7 +1187,7 @@ tutorial.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../aggregations/" title="3. Define aggregations" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../aggregations/" title="3. Define aggregator / tally" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1171,7 +1196,7 @@ tutorial.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                3. Define aggregations
+                3. Define aggregator / tally
               </span>
             </div>
           </a>

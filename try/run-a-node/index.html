@@ -425,8 +425,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#using-docker" title="Using Docker" class="md-nav__link">
-    Using Docker
+  <a href="#hardware-requirements" title="Hardware requirements" class="md-nav__link">
+    Hardware requirements
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#up-and-running-in-1-minute-using-docker" title="Up and running in 1 minute, using Docker" class="md-nav__link">
+    Up and running in 1 minute, using Docker
   </a>
   
     <nav class="md-nav">
@@ -453,15 +460,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#debug-mode" title="Debug mode" class="md-nav__link">
-    Debug mode
+      </ul>
+    </nav>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#open-your-ports" title="Open your ports!" class="md-nav__link">
+    Open your ports!
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+        <li class="md-nav__item">
+  <a href="#what-about-witnet-data-requests" title="What about Witnet data requests?" class="md-nav__link">
+    What about Witnet data requests?
+  </a>
   
 </li>
         
@@ -479,7 +493,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -565,8 +579,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/bitcoin-price-feed/aggregations/" title="3. Define aggregations" class="md-nav__link">
-      3. Define aggregations
+    <a href="../../tutorials/bitcoin-price-feed/aggregations/" title="3. Define aggregator / tally" class="md-nav__link">
+      3. Define aggregator / tally
     </a>
   </li>
 
@@ -793,6 +807,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../node-operators/hardware-requirements/" title="Hardware requirements" class="md-nav__link">
+      Hardware requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
@@ -894,8 +920,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#using-docker" title="Using Docker" class="md-nav__link">
-    Using Docker
+  <a href="#hardware-requirements" title="Hardware requirements" class="md-nav__link">
+    Hardware requirements
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#up-and-running-in-1-minute-using-docker" title="Up and running in 1 minute, using Docker" class="md-nav__link">
+    Up and running in 1 minute, using Docker
   </a>
   
     <nav class="md-nav">
@@ -922,15 +955,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#debug-mode" title="Debug mode" class="md-nav__link">
-    Debug mode
+      </ul>
+    </nav>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#open-your-ports" title="Open your ports!" class="md-nav__link">
+    Open your ports!
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+        <li class="md-nav__item">
+  <a href="#what-about-witnet-data-requests" title="What about Witnet data requests?" class="md-nav__link">
+    What about Witnet data requests?
+  </a>
   
 </li>
         
@@ -948,7 +988,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -975,7 +1015,9 @@ Ethereum smart contracts. <strong>If you are a smart contracts developer,
 what you probably want is to
 <a href="/try/use-from-ethereum">connect your Ethereum contracts to external APIs using Witnet</a></strong>.</p>
 </div>
-<h2 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h2>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
+<p>Hardware requirements are <a href="/node-operators/hardware-requirements">listed in the node operators docs</a>.</p>
+<h2 id="up-and-running-in-1-minute-using-docker">Up and running in 1 minute, using Docker<a class="headerlink" href="#up-and-running-in-1-minute-using-docker" title="Permanent link">&para;</a></h2>
 <p>The most convenient method for running a Witnet node is through the
 <code class="codehilite">witnet/witnet-rust</code> Docker image.</p>
 <p>This docker image downloads and runs a witnet-rust node in the latest
@@ -989,15 +1031,15 @@ testnet in just a matter on seconds.</p>
 may cause total loss of data (including private keys and thus any mined
 wits). Luckily, enabling persistence is super easy:</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
-    -v ~/.witnet-rust-testnet-4:/.witnet-rust-testnet-4 <span class="se">\</span>
+    -v ~/.witnet-rust-testnet-6:/.witnet-rust-testnet-6 <span class="se">\</span>
     -it witnet/witnet-rust latest node server
 </pre></div>
 
 <h3 id="how-to-run-specific-releases">How to run specific releases<a class="headerlink" href="#how-to-run-specific-releases" title="Permanent link">&para;</a></h3>
 <p>Specific versions or releases can be simply run form the the same image:</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
-    -v ~/.witnet-rust-testnet-4:/.witnet-rust-testnet-4 <span class="se">\</span>
-    -it witnet/witnet-rust <span class="m">0</span>.3.2 node server
+    -v ~/.witnet-rust-testnet-6:/.witnet-rust-testnet-6 <span class="se">\</span>
+    -it witnet/witnet-rust <span class="m">0</span>.6.0 node server
 </pre></div>
 
 <h3 id="how-to-execute-cli-commands-on-the-running-node">How to execute CLI commands on the running node<a class="headerlink" href="#how-to-execute-cli-commands-on-the-running-node" title="Permanent link">&para;</a></h3>
@@ -1007,21 +1049,32 @@ with:</p>
 </pre></div>
 
 <p>Then, you can run CLI commands on the running node with this simple
-one-liner. In this example, it will show the latest blocks in the chain:</p>
-<div class="codehilite"><pre><span></span>docker <span class="nb">exec</span> -i &lt;container_id&gt; ./witnet node blockchain
+one-liner. In this example, it will show many "satowits" your has mined
+so far:</p>
+<div class="codehilite"><pre><span></span>docker <span class="nb">exec</span> -i &lt;container_id&gt; ./witnet node getBalance
 </pre></div>
 
-<h3 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
-<p>Debug mode shows more info on what is happening under the hood. It is
-activated with the <code class="codehilite">--debug</code> flag in the right place:</p>
-<div class="codehilite"><pre><span></span>docker run -it witnet/witnet-rust latest --debug node server
-</pre></div>
-
-<p>Passing the <code class="codehilite">RUST_LOG=witnet=debug</code> environment flag does the same:</p>
-<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
-    -e <span class="nv">RUST_LOG</span><span class="o">=</span><span class="nv">witnet</span><span class="o">=</span>debug <span class="se">\</span>
-    -it witnet/witnet-rust latest node server
-</pre></div>
+<p>The node operators docs contain a <a href="/node-operators/cli">quick cheatsheet listing all the
+supported CLI commands</a>.</p>
+<h2 id="open-your-ports">Open your ports!<a class="headerlink" href="#open-your-ports" title="Permanent link">&para;</a></h2>
+<p>The best way to contribute to the growth and sustainability of the
+Witnet network is <strong>opening up the listening port of your node</strong> to the
+open Internet, so that other nodes in the network can download block
+chain data from yours and <strong>your transactions can be broadcast more
+quickly</strong>.</p>
+<p>Depending on your setup, this will normally imply changing the settings
+on your router or firewall so as to <strong>forward all incoming connections
+to port <code class="codehilite">21337</code> from your external IP</strong> into the IP of the device or
+interface where the node is running. In some cases, you may also have to
+run the Docker image with <code class="codehilite">docker run --network=host</code> so as to allow
+<code class="codehilite">witnet-rust</code> to bind to the IP of the host.</p>
+<h2 id="what-about-witnet-data-requests">What about Witnet data requests?<a class="headerlink" href="#what-about-witnet-data-requests" title="Permanent link">&para;</a></h2>
+<p>As soon as your node is synced, it will be able to start resolving data
+requests from others. You can learn how to produce Witnet requests by
+following the <a href="/tutorials/bitcoin-price-feed/introduction">tutorial on how to create a Bitcoin price feed using
+Ethereum and Witnet</a>. In addition, we will be soon releasing a
+user-friendly editor in the <a href="https://github.com/aesedepece/sheikah">Sheikah desktop app</a> that will
+enable to compose data requests and RADON scripts visually.</p>
                 
                   
                 

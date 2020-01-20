@@ -38,7 +38,7 @@
     
     
       
-        <title>3. Define aggregations - Witnet Protocol Documentation</title>
+        <title>3. Define aggregator / tally - Witnet Protocol Documentation</title>
       
     
     
@@ -103,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#3-define-aggregation-and-tally-functions" tabindex="1" class="md-skip">
+      <a href="#3-define-the-aggregator-and-tally-functions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -162,7 +162,7 @@
                     <a href="https://docs.witnet.io" class="md-header-nav__topic">the <strong>witnet</strong> documentation</a>
                     <span class="md-header-nav__topic">
               
-                3. Define aggregations
+                3. Define aggregator / tally
               
             </span>
                     
@@ -458,11 +458,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        3. Define aggregations
+        3. Define aggregator / tally
       </label>
     
-    <a href="./" title="3. Define aggregations" class="md-nav__link md-nav__link--active">
-      3. Define aggregations
+    <a href="./" title="3. Define aggregator / tally" class="md-nav__link md-nav__link--active">
+      3. Define aggregator / tally
     </a>
     
       <!--
@@ -509,8 +509,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#what-is-an-aggregation-function" title="What is an aggregation function?" class="md-nav__link">
-    What is an aggregation function?
+  <a href="#what-is-an-aggregator" title="What is an aggregator?" class="md-nav__link">
+    What is an aggregator?
   </a>
   
 </li>
@@ -557,7 +557,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -787,6 +787,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../node-operators/hardware-requirements/" title="Hardware requirements" class="md-nav__link">
+      Hardware requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
@@ -888,8 +900,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#what-is-an-aggregation-function" title="What is an aggregation function?" class="md-nav__link">
-    What is an aggregation function?
+  <a href="#what-is-an-aggregator" title="What is an aggregator?" class="md-nav__link">
+    What is an aggregator?
   </a>
   
 </li>
@@ -936,7 +948,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -952,80 +964,105 @@
                   <a href="https://github.com/witnet/documentation/blob/master/docs/tutorials/bitcoin-price-feed/aggregations.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="3-define-aggregation-and-tally-functions">3. Define aggregation and tally functions<a class="headerlink" href="#3-define-aggregation-and-tally-functions" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p><em>This article is part of the
+                <h1 id="3-define-the-aggregator-and-tally-functions">3. Define the aggregator and tally functions<a class="headerlink" href="#3-define-the-aggregator-and-tally-functions" title="Permanent link">&para;</a></h1>
+<p>!!! note "" <em>This article is part of the
 <a href="/tutorials/bitcoin-price-feed/introduction">beginner tutorial on creating a totally decentralized Bitcoin price feed</a>
 on Ethereum with Solidity and Witnet.</em></p>
-</div>
-<h2 id="what-is-an-aggregation-function">What is an aggregation function?<a class="headerlink" href="#what-is-an-aggregation-function" title="Permanent link">&para;</a></h2>
-<p>An aggregation function is a Witnet script that defines how to reduce
-the result of multiple sources into a single data point. They are
-similar to Javascript's <code class="codehilite"><span class="na">.reduce</span><span class="p">()</span></code> method or the
-<a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><code class="codehilite">fold</code> higher-order function</a> from many programming languages.</p>
+<h2 id="what-is-an-aggregator">What is an aggregator?<a class="headerlink" href="#what-is-an-aggregator" title="Permanent link">&para;</a></h2>
+<p>Aggregators define how to reduce or merge the result of multiple sources
+into a single data point. They are similar to Javascript's <code class="codehilite"><span class="na">.reduce</span><span class="p">()</span></code>
+method or the <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><code class="codehilite">fold</code> higher-order function</a> from many programming
+languages.</p>
+<p>In addition, aggregation functions give the chance to filter out any
+outliers by using one or more statistical primitives.</p>
 <ul>
-<li><strong>Every Witnet request needs to have one and only one aggregation
+<li><strong>Every Witnet request needs to have exactly one aggregator
   function</strong>.</li>
-<li>Aggregation functions always start with an <code class="codehilite">Array</code> containing the output
-value of each of the source scripts.</li>
-<li>When a Witnet node is assigned a request it retrieves every source,
-  applies the source companion scripts on the retrieved data, collect
-  those into an <code class="codehilite">Array</code>, then apply the aggregation script on it.</li>
+<li>Aggregators contain <strong>zero, one or more filters</strong>.</li>
+<li>Aggregators contain <strong>exactly one reducer</strong>.</li>
+<li>When a Witnet node gets a request assigned for resolution, it
+  retrieves every source, applies the source companion scripts on the
+  retrieved data, collects the results into an <code class="codehilite">Array</code>, and then apply
+  the aggregator on it, first running the filters and eventually the
+  reducer.</li>
 </ul>
 <h2 id="what-is-a-tally-function">What is a tally function?<a class="headerlink" href="#what-is-a-tally-function" title="Permanent link">&para;</a></h2>
-<p>Tally functions are really similar to aggregation functions, but instead
-of aggregating multiple sources, they aggregate the results reported by
-multiple Witnet nodes.</p>
+<p>Tallies are really similar to aggregators, but instead of merging
+multiple sources, they merge the results reported by multiple Witnet
+nodes.</p>
 <h2 id="lets-average-multiple-sources">Let's average multiple sources<a class="headerlink" href="#lets-average-multiple-sources" title="Permanent link">&para;</a></h2>
-<p>In this case, you will be using an aggregation function that returns the
-average mean of the <code class="codehilite">Float</code> values coming from the two sources that you
-defined before:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Computes the average mean of the two sources using a reducer</span>
-<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">([</span><span class="nx">bitstamp</span><span class="p">,</span> <span class="nx">coindesk</span><span class="p">])</span> <span class="c1">// Create a new aggregation</span>
-  <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span><span class="p">)</span>                   <span class="c1">// Reduce the input `Array` using the average mean</span>
+<p>In this case, you will be using an aggregator that filters out any
+outliers coming from the two sources that you defined before, and
+returns the average mean of the <code class="codehilite">Float</code> values that pass the filter:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
+<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// values that pass the filter.</span>
+<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
+  <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span> <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
+<span class="p">})</span>
 </pre></div>
 
 <p>That will be enough to reduce the <code class="codehilite">Array</code> containing the <code class="codehilite">Float</code>
 responses of the two sources into a single <code class="codehilite">Float</code> that represents the
-average mean. You can now continue with the tally function.</p>
+average mean of non-outliers values. You can now continue with the tally
+function.</p>
 <h2 id="tally-by-average">Tally by average<a class="headerlink" href="#tally-by-average" title="Permanent link">&para;</a></h2>
 <p>For this tutorial, you will be using a tally function that is quite
-equivalent as the aggregation function:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Computes the average mean of the values reported by multiple nodes using a reducer</span>
-<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span>   <span class="c1">// Create a new tally function</span>
-  <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span><span class="p">)</span> <span class="c1">// Reduce the input `Array` using the average mean</span>
+equivalent to the aggregation function:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
+<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// values that pass the filter.</span>
+<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
+  <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
+<span class="p">})</span>
 </pre></div>
 
+<p>Note however that in this case the deviation filter is using a narrower
+threshold (<code class="codehilite">1.0</code> instead of <code class="codehilite">1.5</code>). This is to make sure that malicious
+data points will not affect the final result, and that the witnesses
+that produced such outliers will be punished for their misbehavior.</p>
 <h2 id="quick-recap">Quick recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h2>
 <p>At this point, <code class="codehilite">requests/BitcoinPrice.js</code>  should look like this:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
 <span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span> <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>     <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `last` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>   <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
 <span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span>       <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `bpi` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `USD` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `rate_float` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>         <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 
-<span class="c1">// Computes the average mean of the two sources using a reducer</span>
-<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">([</span><span class="nx">bitstamp</span><span class="p">,</span> <span class="nx">coindesk</span><span class="p">])</span> <span class="c1">// Create a new aggregation</span>
-  <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span><span class="p">)</span>                   <span class="c1">// Reduce the input `Array` using the average mean</span>
+<span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
+<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// values that pass the filter.</span>
+<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
+  <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span> <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
+<span class="p">})</span>
 
-<span class="c1">// Computes the average mean of the values reported by multiple nodes using a reducer</span>
-<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span>   <span class="c1">// Create a new tally function</span>
-  <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span><span class="p">)</span> <span class="c1">// Reduce the input `Array` using the average mean</span>
+<span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
+<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// values that pass the filter.</span>
+<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
+  <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
+   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
+<span class="p">})</span>
 </pre></div>
 
 <p>Now it is time to put everything together and

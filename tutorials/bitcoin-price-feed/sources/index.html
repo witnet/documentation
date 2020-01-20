@@ -525,8 +525,8 @@
 </li>
         
         <li class="md-nav__item">
-  <a href="#next-step-define-aggregations" title="Next step: define aggregations" class="md-nav__link">
-    Next step: define aggregations
+  <a href="#next-step-define-aggregator-and-tally-functions" title="Next step: define aggregator and tally functions" class="md-nav__link">
+    Next step: define aggregator and tally functions
   </a>
   
 </li>
@@ -545,7 +545,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -559,8 +559,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../aggregations/" title="3. Define aggregations" class="md-nav__link">
-      3. Define aggregations
+    <a href="../aggregations/" title="3. Define aggregator / tally" class="md-nav__link">
+      3. Define aggregator / tally
     </a>
   </li>
 
@@ -787,6 +787,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../node-operators/hardware-requirements/" title="Hardware requirements" class="md-nav__link">
+      Hardware requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
@@ -916,8 +928,8 @@
 </li>
         
         <li class="md-nav__item">
-  <a href="#next-step-define-aggregations" title="Next step: define aggregations" class="md-nav__link">
-    Next step: define aggregations
+  <a href="#next-step-define-aggregator-and-tally-functions" title="Next step: define aggregator and tally functions" class="md-nav__link">
+    Next step: define aggregator and tally functions
   </a>
   
 </li>
@@ -936,7 +948,7 @@
     
     <aside class="disclaimer">
         <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage—named <em>testnet-4</em>—and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
         <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
     </aside>
 </nav>
@@ -992,24 +1004,18 @@ transform one into another so they can be averaged.</p>
 <label for="__tab_1_0">Source 1: Bitstamp</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
 <span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span> <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>     <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `last` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>   <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 </pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_1" />
 <label for="__tab_1_1">Source 2: CoinDesk</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
 <span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span>       <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `bpi` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `USD` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `rate_float` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>         <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 </pre></div></div>
 </div>
 <p>These scripts are quite self-explanatory, but there are a few details
@@ -1021,12 +1027,12 @@ that are worth noticing:</p>
   as you would expect from Javascript method chaining or
   <a href="https://en.wikipedia.org/wiki/Builder_pattern">the builder pattern</a>.</li>
 <li>Source scripts always start with a <code class="codehilite">String</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>.</li>
-<li>Type conversions are explicit, i.e. you need to use <code class="codehilite"><span class="na">.asString</span><span class="p">()</span></code>,
-  <code class="codehilite"><span class="na">.asMap</span><span class="p">()</span></code>, <code class="codehilite"><span class="na">.asFloat</span><span class="p">()</span></code>, etc<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>.</li>
 <li>Key-value data structures (roughly alike to Javascript <em>objects</em>,
   Python <em>dictionaries</em> or Solidity <em>mappings</em>) are called <em>maps</em>.</li>
 <li>Values in maps cannot be accessed directly by name as <code class="codehilite"><span class="na">.keyName</span></code> but
-  rather accessed through a call to the <code class="codehilite"><span class="na">.get</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> operator.</li>
+  rather accessed through a call to one of the <code class="codehilite"><span class="na">.getArray</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
+  <code class="codehilite"><span class="na">.getBoolean</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getInteger</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getFloat</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
+  <code class="codehilite"><span class="na">.getInteger</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getMap</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> or <code class="codehilite"><span class="na">.getString</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> operators.</li>
 <li>The final return type of a script is that of its last operator.</li>
 <li>For any combination of known input type and RADON script, the output
   type can be easily guessed upon compilation.</li>
@@ -1040,22 +1046,16 @@ sources above into it:</p>
 
 <span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
 <span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span> <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>     <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `last` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>   <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
 <span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span>       <span class="c1">// Parse the string, which you now to be JSON-encoded</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `bpi` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>        <span class="c1">// Get the value associated to the `USD` key</span>
-  <span class="p">.</span><span class="nx">asMap</span><span class="p">()</span>           <span class="c1">// Treat that as a Javascript object</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the value associated to the `rate_float` key</span>
-  <span class="p">.</span><span class="nx">asFloat</span><span class="p">()</span>         <span class="c1">// Treat that as a floating point number</span>
+  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
+  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
+  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 </pre></div>
 
 <p>Notice the <code class="codehilite">import</code> instruction on top, which makes possible using all
@@ -1064,9 +1064,9 @@ the tools that the Witnet Javascript library provides:</p>
 </pre></div>
 
 <p>Please make sure you save the <code class="codehilite">requests/BitcoinPrice.js</code> file.</p>
-<h2 id="next-step-define-aggregations">Next step: define aggregations<a class="headerlink" href="#next-step-define-aggregations" title="Permanent link">&para;</a></h2>
+<h2 id="next-step-define-aggregator-and-tally-functions">Next step: define aggregator and tally functions<a class="headerlink" href="#next-step-define-aggregator-and-tally-functions" title="Permanent link">&para;</a></h2>
 <p>You are done with the sources for now. Let's move forward into
-<a href="/tutorials/bitcoin-price-feed/aggregations">defining aggregation and tally scripts</a>.</p>
+<a href="/tutorials/bitcoin-price-feed/aggregations">defining the aggregation and tally functions</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
 <p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
@@ -1128,13 +1128,13 @@ scripts.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="
           </a>
         
         
-          <a href="../aggregations/" title="3. Define aggregations" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../aggregations/" title="3. Define aggregator / tally" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                3. Define aggregations
+                3. Define aggregator / tally
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
