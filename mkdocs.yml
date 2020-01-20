@@ -15,7 +15,7 @@ nav:
       - Introduction: tutorials/bitcoin-price-feed/introduction.md
       - 1. Create a new project: tutorials/bitcoin-price-feed/create-project.md
       - 2. Adding data sources: tutorials/bitcoin-price-feed/sources.md
-      - 3. Define aggregations: tutorials/bitcoin-price-feed/aggregations.md
+      - 3. Define aggregator / tally: tutorials/bitcoin-price-feed/aggregations.md
       - 4. Fine-tune the request: tutorials/bitcoin-price-feed/fine-tuning.md
       - 5. Compile the request: tutorials/bitcoin-price-feed/compiling.md
       - 6. Write the Solidity contract: tutorials/bitcoin-price-feed/contract.md

@@ -16,7 +16,7 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregation script
   .setTally(tally)           // Set the tally script
-  .setQuorum(4, 2, 5)        // Set witness count
+  .setQuorum(4, 2, 5, 7)     // Set witness count
   .setFees(10, 1, 1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 
@@ -42,7 +42,7 @@ every single aspect of their life cycle:
 ### Set the quorum
 
 ```javascript
-.setQuorum(witnesses, backup_witnesses, extra_reveal_rounds)
+.setQuorum(witnesses, backup_witnesses, extra_reveal_rounds, minimum_consensus)
 ```
 
 The `witnesses` is the minimum number of Witnet nodes that will be
@@ -77,6 +77,13 @@ tallied and finalized as soon as the number of reveals equals the number
 of commitments. If not set, this parameter defaults to `1`. This
 parameter has no impact on the price of the request.
 
+The `minimum_consensus` percentage allows to define a threshold for
+aborting resolution of a request if the witnessing nodes did not arrive
+to broad consensus. That is, aggregator and tally functions will not be
+applied if the ratio of valid values vs. errors is below this threshold.
+*E.g. a `minimum_consensus` threshold of `70` requires a `70%` of the
+witnesses to report a valid value, otherwise the result of the request
+will be an error stating "insufficient consensus"*.
 
 ### Set the fees
 ```javascript
@@ -136,38 +143,44 @@ import * as Witnet from "witnet-requests"
 
 // Retrieves USD price of a bitcoin from the BitStamp API
 const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-  .parseJSON() // Parse the string, which you now to be JSON-encoded
-  .asMap()     // Treat that as a Javascript object
-  .get("last") // Get the value associated to the `last` key
-  .asFloat()   // Treat that as a floating point number
-
+  .parseMapJSON()   // Parse a `Map` from the retrieved `String`
+  .getFloat("last") // Get the `Float` value associated to the `last` key
+  
 // Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
 // The JSON here is a bit more complex, thus more operators are needed
 const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
-  .parseJSON()       // Parse the string, which you now to be JSON-encoded
-  .asMap()           // Treat that as a Javascript object
-  .get("bpi")        // Get the value associated to the `bpi` key
-  .asMap()           // Treat that as a Javascript object
-  .get("USD")        // Get the value associated to the `USD` key
-  .asMap()           // Treat that as a Javascript object
-  .get("rate_float") // Get the value associated to the `rate_float` key
-  .asFloat()         // Treat that as a floating point number
+  .parseMapJSON()         // Parse a `Map` from the retrieved `String`
+  .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
+  .getMap("USD")          // Get the `Map` value associated to the `USD` key
+  .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
 
-// Computes the average mean of the two sources using a reducer
-const aggregator = new Witnet.Aggregator([bitstamp, coindesk]) // Create a new aggregation
-  .reduce(Witnet.Types.REDUCERS.averageMean)                   // Reduce the input `Array` using the average mean
+// Filters out any value that is more than 1.5 times the standard
+// deviationaway from the average, then computes the average mean of the
+// values that pass the filter.
+const aggregator = new Witnet.Aggregator({
+  filters: [
+   [ Witnet.Types.FILTERS.deviationStandard, 1.5 ]
+  ],
+  reducer: Witnet.Types.REDUCERS.averageMean
+})
 
-// Computes the average mean of the values reported by multiple nodes using a reducer
-const tally = new Witnet.Tally(aggregator)   // Create a new tally function
-  .reduce(Witnet.Types.REDUCERS.averageMean) // Reduce the input `Array` using the average mean
+// Filters out any value that is more than 1.5 times the standard
+// deviationaway from the average, then computes the average mean of the
+// values that pass the filter.
+const tally = new Witnet.Tally({
+  filters: [
+   [ Witnet.Types.FILTERS.deviationStandard, 1.0 ]
+  ],
+  reducer: Witnet.Types.REDUCERS.averageMean
+})
 
 // This is the Witnet.Request object that needs to be exported
 const request = new Witnet.Request()
   .addSource(bitstamp)       // Use source 1
   .addSource(coindesk)       // Use source 2
-  .setAggregator(aggregator) // Set the aggregation script
-  .setTally(tally)           // Set the tally script
-  .setQuorum(4, 2, 5)        // Set witness count
+  .setAggregator(aggregator) // Set the aggregator function
+  .setTally(tally)           // Set the tally function
+  .setQuorum(4, 2, 5, 70)    // Set witness count
   .setFees(10, 1, 1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 

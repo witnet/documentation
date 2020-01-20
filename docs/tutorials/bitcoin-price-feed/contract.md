@@ -91,10 +91,16 @@ function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
   // Read the result of the Witnet request
   // The `witnetReadResult` method comes with `UsingWitnet`
   Witnet.Result memory result = witnetReadResult(lastRequestId);
+
   // If the Witnet request succeeded, decode the result and update the price point
+  // If it failed, log the error message
   if (result.isOk()) {
     bitcoinPrice = result.asInt128();
+  } else {
+    (, string memory errorMessage) = result.asErrorMessage();
+    emit Error(errorMessage);
   }
+    
   // In any case, set `pending` to false so a new update can be requested 
   pending = false;
 }
@@ -119,6 +125,9 @@ contract PriceFeed is UsingWitnet {
   uint256 lastRequestId;      // Stores the ID of the last Witnet request
   bool pending;               // Tells if an update has been requested but not yet completed
   Request request;            // The Witnet request object, is set in the constructor
+  
+  // Allows logging errors
+  event Error(string);
 
   // This constructor does a nifty trick to tell the `UsingWitnet` library where
   // to find the Witnet contracts on whatever Ethereum network you use.
@@ -146,9 +155,14 @@ contract PriceFeed is UsingWitnet {
     // Read the result of the Witnet request
     // The `witnetReadResult` method comes with `UsingWitnet`
     Witnet.Result memory result = witnetReadResult(lastRequestId);
+
     // If the Witnet request succeeded, decode the result and update the price point
+    // If it failed, log the error message
     if (result.isOk()) 
       bitcoinPrice = result.asInt128();
+    } else {
+      (, string memory errorMessage) = result.asErrorMessage();
+      emit Error(errorMessage);
     }
     // In any case, set `pending` to false so a new update can be requested 
     pending = false;

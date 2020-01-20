@@ -36,7 +36,7 @@ bitcoin-price-feed
 └── witnet          // Witnet libraries⁠⁠—nothing too interesting
 ```
 
-## Next step: define aggregations
+## Next step: adding data sources
 
 You are now ready to move forward into
 [defining the data sources to be used][next].

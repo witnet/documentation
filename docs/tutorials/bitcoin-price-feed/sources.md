@@ -47,24 +47,18 @@ In this tutorial, you will be defining two data sources—one for querying
 ```javascript tab="Source 1: Bitstamp"
 // Retrieves USD price of a bitcoin from the BitStamp API
 const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-  .parseJSON() // Parse the string, which you now to be JSON-encoded
-  .asMap()     // Treat that as a Javascript object
-  .get("last") // Get the value associated to the `last` key
-  .asFloat()   // Treat that as a floating point number
+  .parseMapJSON()   // Parse a `Map` from the retrieved `String`
+  .getFloat("last") // Get the `Float` value associated to the `last` key
 ```
 
 ```javascript tab="Source 2: CoinDesk"
 // Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
 // The JSON here is a bit more complex, thus more operators are needed
 const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
-  .parseJSON()       // Parse the string, which you now to be JSON-encoded
-  .asMap()           // Treat that as a Javascript object
-  .get("bpi")        // Get the value associated to the `bpi` key
-  .asMap()           // Treat that as a Javascript object
-  .get("USD")        // Get the value associated to the `USD` key
-  .asMap()           // Treat that as a Javascript object
-  .get("rate_float") // Get the value associated to the `rate_float` key
-  .asFloat()         // Treat that as a floating point number
+  .parseMapJSON()         // Parse a `Map` from the retrieved `String`
+  .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
+  .getMap("USD")          // Get the `Map` value associated to the `USD` key
+  .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
 ```
 
 These scripts are quite self-explanatory, but there are a few details
@@ -76,12 +70,12 @@ that are worth noticing:
   as you would expect from Javascript method chaining or
   [the builder pattern][builder].
 - Source scripts always start with a `String`[^1].
-- Type conversions are explicit, i.e. you need to use `.asString()`,
-  `.asMap()`, `.asFloat()`, etc[^2].
 - Key-value data structures (roughly alike to Javascript *objects*,
   Python *dictionaries* or Solidity *mappings*) are called *maps*.
 - Values in maps cannot be accessed directly by name as `.keyName` but
-  rather accessed through a call to the `.get("keyName")` operator.
+  rather accessed through a call to one of the `.getArray("keyName")`,
+  `.getBoolean("keyName")`, `.getInteger("keyName")`, `.getFloat("keyName")`,
+  `.getInteger("keyName")`, `.getMap("keyName")` or `.getString("keyName")` operators.
 - The final return type of a script is that of its last operator.
 - For any combination of known input type and RADON script, the output
   type can be easily guessed upon compilation.
@@ -98,22 +92,16 @@ import * as Witnet from "witnet-requests"
 
 // Retrieves USD price of a bitcoin from the BitStamp API
 const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-  .parseJSON() // Parse the string, which you now to be JSON-encoded
-  .asMap()     // Treat that as a Javascript object
-  .get("last") // Get the value associated to the `last` key
-  .asFloat()   // Treat that as a floating point number
-
+  .parseMapJSON()   // Parse a `Map` from the retrieved `String`
+  .getFloat("last") // Get the `Float` value associated to the `last` key
+  
 // Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
 // The JSON here is a bit more complex, thus more operators are needed
 const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
-  .parseJSON()       // Parse the string, which you now to be JSON-encoded
-  .asMap()           // Treat that as a Javascript object
-  .get("bpi")        // Get the value associated to the `bpi` key
-  .asMap()           // Treat that as a Javascript object
-  .get("USD")        // Get the value associated to the `USD` key
-  .asMap()           // Treat that as a Javascript object
-  .get("rate_float") // Get the value associated to the `rate_float` key
-  .asFloat()         // Treat that as a floating point number
+  .parseMapJSON()         // Parse a `Map` from the retrieved `String`
+  .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
+  .getMap("USD")          // Get the `Map` value associated to the `USD` key
+  .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
 ```
 
 Notice the `import` instruction on top, which makes possible using all
@@ -125,10 +113,10 @@ import * as Witnet from "witnet-requests"
 
 Please make sure you save the `requests/BitcoinPrice.js` file.
   
-## Next step: define aggregations
+## Next step: define aggregator and tally functions
 
 You are done with the sources for now. Let's move forward into
-[defining aggregation and tally scripts][next].
+[defining the aggregation and tally functions][next].
 
 !!! question "Remember: You are not alone!"
     You are invited to join the [Witnet Community Discord][discord].
