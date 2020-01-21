@@ -1003,6 +1003,9 @@ cost of performing the Witnet request.</p>
   <span class="nx">bool</span> <span class="nx">pending</span><span class="p">;</span>               <span class="c1">// Tells if an update has been requested but not yet completed</span>
   <span class="nx">Request</span> <span class="nx">request</span><span class="p">;</span>            <span class="c1">// The Witnet request object, is set in the constructor</span>
 
+  <span class="c1">// Allows logging errors</span>
+  <span class="nx">event</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
+
   <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
   <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
   <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wbi</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wbi</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
@@ -1027,11 +1030,11 @@ cost of performing the Witnet request.</p>
   <span class="nx">require</span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;An update is already pending. Complete it first before requesting another update.&quot;</span><span class="p">);</span>
 
   <span class="c1">// Amount to pay to the bridge node relaying this request from Ethereum to Witnet</span>
-  <span class="nx">uint256</span> <span class="nx">_witnetRequestReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
-  <span class="c1">// Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum </span>
-  <span class="nx">uint256</span> <span class="nx">_witnetResultReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
+  <span class="nx">uint256</span> <span class="nx">_witnetRequestReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">szabo</span><span class="p">;</span>
+  <span class="c1">// Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum</span>
+  <span class="nx">uint256</span> <span class="nx">_witnetResultReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">szabo</span><span class="p">;</span>
 
-  <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result </span>
+  <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result</span>
   <span class="c1">// The `witnetPostRequest` method comes with `UsingWitnet`</span>
   <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">_witnetRequestReward</span><span class="p">,</span> <span class="nx">_witnetResultReward</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1051,13 +1054,13 @@ cost of performing the Witnet request.</p>
   <span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
   <span class="c1">// If it failed, log the error message</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> <span class="p">{</span>
-    <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
+      <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="p">(,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">();</span>
+    <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span> <span class="nx">_errorCode</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">();</span>
     <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="c1">// In any case, set `pending` to false so a new update can be requested </span>
+  <span class="c1">// In any case, set `pending` to false so a new update can be requested</span>
   <span class="nx">pending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -1093,15 +1096,18 @@ cost of performing the Witnet request.</p>
     <span class="nx">require</span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;An update is already pending. Complete it first before requesting another update.&quot;</span><span class="p">);</span>
 
     <span class="c1">// Amount to pay to the bridge node relaying this request from Ethereum to Witnet</span>
-    <span class="nx">uint256</span> <span class="nx">_witnetRequestReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
-    <span class="c1">// Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum </span>
-    <span class="nx">uint256</span> <span class="nx">_witnetResultReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">micro</span>
+    <span class="nx">uint256</span> <span class="nx">_witnetRequestReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">szabo</span><span class="p">;</span>
+    <span class="c1">// Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum</span>
+    <span class="nx">uint256</span> <span class="nx">_witnetResultReward</span> <span class="o">=</span> <span class="mi">100</span> <span class="nx">szabo</span><span class="p">;</span>
 
-    <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result </span>
+    <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result</span>
     <span class="c1">// The `witnetPostRequest` method comes with `UsingWitnet`</span>
     <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">_witnetRequestReward</span><span class="p">,</span> <span class="nx">_witnetResultReward</span><span class="p">);</span>
   <span class="p">}</span>
 
+  <span class="c1">// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to</span>
+  <span class="c1">// protect your methods from being called before the request has been successfully</span>
+  <span class="c1">// relayed into Witnet.</span>
   <span class="kd">function</span> <span class="nx">completeUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="nx">witnetRequestAccepted</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">require</span><span class="p">(</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;There is no pending update.&quot;</span><span class="p">);</span>
 
@@ -1111,13 +1117,14 @@ cost of performing the Witnet request.</p>
 
     <span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
     <span class="c1">// If it failed, log the error message</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> 
-      <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="p">(,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">();</span>
+      <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span> <span class="nx">_errorCode</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">();</span>
       <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="c1">// In any case, set `pending` to false so a new update can be requested </span>
+
+    <span class="c1">// In any case, set `pending` to false so a new update can be requested</span>
     <span class="nx">pending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
