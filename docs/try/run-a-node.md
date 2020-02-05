@@ -20,20 +20,28 @@ Hardware requirements are [listed in the node operators docs][hardware-requireme
 The most convenient method for running a Witnet node is through the
 `witnet/witnet-rust` Docker image.
 
-This docker image downloads and runs a witnet-rust node in the latest
+First off, you need Docker to be installed in the computer where you will
+be running the node. Remember that some GNU/Linux distributions require some
+[extra steps][docker-extra-steps] for getting Docker to work.   
+
+The Witnet docker image downloads and runs a witnet-rust node in the latest
 testnet in just a matter on seconds.
 
-If that's exactly what you want, you can just run this and enjoy:
+If that's exactly what you want, and you don't care about mining, you can
+just run this command and enjoy:
 
 ```bash
 docker run -it witnet/witnet-rust latest node server
 ```
 
+However, if you want to preserve the tokens that you may mine, please make
+sure you enable persistence as explained below.
+
 ### How to enable persistence
 
-Be careful though, as running the image without mounting any volumes
-may cause total loss of data (including private keys and thus any mined
-wits). Luckily, enabling persistence is super easy:
+Running the image without mounting any volumes may cause total loss of data
+(including private keys and thus any mined wits). Luckily, enabling
+persistence is super easy:
 
 ```bash
 docker run \
@@ -101,3 +109,4 @@ enable to compose data requests and RADON scripts visually.
 [tutorial]: /tutorials/bitcoin-price-feed/introduction
 [Sheikah]: https://github.com/aesedepece/sheikah
 [hardware-requirements]: /node-operators/hardware-requirements
+[docker-extra-steps]: https://docs.docker.com/install/linux/linux-postinstall/
