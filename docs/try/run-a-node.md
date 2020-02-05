@@ -49,15 +49,6 @@ docker run \
     -it witnet/witnet-rust latest node server
 ```
 
-### How to run specific releases
-Specific versions or releases can be simply run form the the same image:
-
-```bash
-docker run \
-    -v ~/.witnet-rust-testnet-6:/.witnet-rust-testnet-6 \
-    -it witnet/witnet-rust 0.6.0 node server
-```
-
 ### How to execute CLI commands on the running node
 
 First you need to get the `CONTAINER ID` or `NAME` of the running node
