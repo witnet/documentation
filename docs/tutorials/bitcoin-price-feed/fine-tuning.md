@@ -16,7 +16,7 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregation script
   .setTally(tally)           // Set the tally script
-  .setQuorum(4, 2, 5, 7)     // Set witness count
+  .setQuorum(4, 2)           // Set witness count
   .setFees(10, 1, 1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 
@@ -42,7 +42,7 @@ every single aspect of their life cycle:
 ### Set the quorum
 
 ```javascript
-.setQuorum(witnesses, backup_witnesses, extra_reveal_rounds, minimum_consensus)
+.setQuorum(witnesses, backup_witnesses)
 ```
 
 The `witnesses` is the minimum number of Witnet nodes that will be
@@ -66,6 +66,29 @@ that the request will be timely resolved. In the other hand, if you use
 small `backup_witnesses` values, the risk is that your request will need
 to be retried many times and therefore the result may be potentially
 inaccurate (in case the queried data point changes very fast).
+
+#### Optional arguments for `.setQuorum`
+
+The `.setQuorum` method accepts three more optional arguments:
+
+```javascript
+.setQuorum(
+  witnesses,
+  backup_witnesses,
+  extra_commit_rounds,
+  extra_reveal_rounds,
+  minimum_consensus
+)
+```  
+
+The `extra_commit_rounds` number is how many extra epochs will Witnet
+nodes be given for commiting their partial results. A number of rounds
+greater than `0` strengthens the chances of a Witnet request being
+resolved to a value instead of timing out. This parameter is actually an
+upper threshold, i.e. the request will progress into reveal stage as
+soon as the number of commitments equals the number of required witnesses.
+If not set, this parameter defaults to `1`. This parameter has no impact
+on the price of the request.
 
 The `extra_reveal_rounds` number is how many extra epochs will Witnet
 nodes be given for revealing their partial results. A number of rounds
@@ -180,7 +203,7 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregator function
   .setTally(tally)           // Set the tally function
-  .setQuorum(4, 2, 5, 70)    // Set witness count
+  .setQuorum(4, 2,)          // Set witness count
   .setFees(10, 1, 1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 

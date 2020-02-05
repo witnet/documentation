@@ -32,8 +32,7 @@ bitcoin-price-feed
 │   └── requests    // Where Witnet requests end up after compilation
 ├── migrations      // Deployment scripts
 ├── requests        // Witnet request source code (.js files)
-├── test            // Scripts for testing your contracts
-└── witnet          // Witnet libraries⁠⁠—nothing too interesting
+└── test            // Scripts for testing your contracts
 ```
 
 ## Next step: adding data sources
