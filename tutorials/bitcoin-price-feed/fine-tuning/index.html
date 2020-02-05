@@ -540,6 +540,19 @@
     Set the quorum
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-arguments-for-setquorum" title="Optional arguments for .setQuorum" class="md-nav__link">
+    Optional arguments for .setQuorum
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -944,6 +957,19 @@
     Set the quorum
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-arguments-for-setquorum" title="Optional arguments for .setQuorum" class="md-nav__link">
+    Optional arguments for .setQuorum
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1016,7 +1042,7 @@ that you will need to export:</p>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>     <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
   <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
@@ -1038,7 +1064,7 @@ every single aspect of their life cycle:</p>
   date and time in the future.</li>
 </ul>
 <h3 id="set-the-quorum">Set the quorum<a class="headerlink" href="#set-the-quorum" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses</span><span class="p">,</span> <span class="nx">backup_witnesses</span><span class="p">,</span> <span class="nx">extra_reveal_rounds</span><span class="p">,</span> <span class="nx">minimum_consensus</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses</span><span class="p">,</span> <span class="nx">backup_witnesses</span><span class="p">)</span>
 </pre></div>
 
 <p>The <code class="codehilite">witnesses</code> is the minimum number of Witnet nodes that will be
@@ -1058,6 +1084,25 @@ that the request will be timely resolved. In the other hand, if you use
 small <code class="codehilite">backup_witnesses</code> values, the risk is that your request will need
 to be retried many times and therefore the result may be potentially
 inaccurate (in case the queried data point changes very fast).</p>
+<h4 id="optional-arguments-for-setquorum">Optional arguments for <code class="codehilite"><span class="na">.setQuorum</span></code><a class="headerlink" href="#optional-arguments-for-setquorum" title="Permanent link">&para;</a></h4>
+<p>The <code class="codehilite"><span class="na">.setQuorum</span></code> method accepts three more optional arguments:</p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span>
+  <span class="nx">witnesses</span><span class="p">,</span>
+  <span class="nx">backup_witnesses</span><span class="p">,</span>
+  <span class="nx">extra_commit_rounds</span><span class="p">,</span>
+  <span class="nx">extra_reveal_rounds</span><span class="p">,</span>
+  <span class="nx">minimum_consensus</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>The <code class="codehilite">extra_commit_rounds</code> number is how many extra epochs will Witnet
+nodes be given for commiting their partial results. A number of rounds
+greater than <code class="codehilite">0</code> strengthens the chances of a Witnet request being
+resolved to a value instead of timing out. This parameter is actually an
+upper threshold, i.e. the request will progress into reveal stage as
+soon as the number of commitments equals the number of required witnesses.
+If not set, this parameter defaults to <code class="codehilite">1</code>. This parameter has no impact
+on the price of the request.</p>
 <p>The <code class="codehilite">extra_reveal_rounds</code> number is how many extra epochs will Witnet
 nodes be given for revealing their partial results. A number of rounds
 greater than <code class="codehilite">0</code> strengthens the security of a Witnet request by
@@ -1163,7 +1208,7 @@ look more or less like this:</p>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregator function</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally function</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>    <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,)</span>          <span class="c1">// Set witness count</span>
   <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
