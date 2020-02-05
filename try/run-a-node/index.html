@@ -1032,16 +1032,22 @@ what you probably want is to
 <h2 id="up-and-running-in-1-minute-using-docker">Up and running in 1 minute, using Docker<a class="headerlink" href="#up-and-running-in-1-minute-using-docker" title="Permanent link">&para;</a></h2>
 <p>The most convenient method for running a Witnet node is through the
 <code class="codehilite">witnet/witnet-rust</code> Docker image.</p>
-<p>This docker image downloads and runs a witnet-rust node in the latest
+<p>First off, you need Docker to be installed in the computer where you will
+be running the node. Remember that some GNU/Linux distributions require some
+<a href="https://docs.docker.com/install/linux/linux-postinstall/">extra steps</a> for getting Docker to work.   </p>
+<p>The Witnet docker image downloads and runs a witnet-rust node in the latest
 testnet in just a matter on seconds.</p>
-<p>If that's exactly what you want, you can just run this and enjoy:</p>
+<p>If that's exactly what you want, and you don't care about mining, you can
+just run this command and enjoy:</p>
 <div class="codehilite"><pre><span></span>docker run -it witnet/witnet-rust latest node server
 </pre></div>
 
+<p>However, if you want to preserve the tokens that you may mine, please make
+sure you enable persistence as explained below.</p>
 <h3 id="how-to-enable-persistence">How to enable persistence<a class="headerlink" href="#how-to-enable-persistence" title="Permanent link">&para;</a></h3>
-<p>Be careful though, as running the image without mounting any volumes
-may cause total loss of data (including private keys and thus any mined
-wits). Luckily, enabling persistence is super easy:</p>
+<p>Running the image without mounting any volumes may cause total loss of data
+(including private keys and thus any mined wits). Luckily, enabling
+persistence is super easy:</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
     -v ~/.witnet-rust-testnet-6:/.witnet-rust-testnet-6 <span class="se">\</span>
     -it witnet/witnet-rust latest node server
