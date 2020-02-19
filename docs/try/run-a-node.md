@@ -85,6 +85,8 @@ interface where the node is running. In some cases, you may also have to
 run the Docker image with `docker run --network=host` so as to allow
 `witnet-rust` to bind to the IP of the host.
 
+To check if the port is correctly opened, you can telnet your external IP with `telnet "IP" 21337` from the Internet. You should see an incoming connection on the logs for which the handshake timeouts.
+
 ## What about Witnet data requests?
 
 As soon as your node is synced, it will be able to start resolving data
