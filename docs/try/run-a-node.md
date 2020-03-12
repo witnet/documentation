@@ -27,43 +27,23 @@ be running the node. Remember that some GNU/Linux distributions require some
 The Witnet docker image downloads and runs a witnet-rust node in the latest
 testnet in just a matter on seconds.
 
-If that's exactly what you want, and you don't care about mining, you can
-just run this command and enjoy:
+Starting a node is as easy as it gets:
 
 ```bash
-docker run -it witnet/witnet-rust latest node server
-```
-
-However, if you want to preserve the tokens that you may mine, please make
-sure you enable persistence as explained below.
-
-### How to enable persistence
-
-Running the image without mounting any volumes may cause total loss of data
-(including private keys and thus any mined wits). Luckily, enabling
-persistence is super easy:
-
-```bash
-docker run \
-    -v ~/.witnet-rust-testnet-6:/.witnet-rust-testnet-6 \
-    -it witnet/witnet-rust latest node server
+docker run 
+    -v ~/.witnet:/.witnet \
+    -n witnet_node \
+    witnet/witnet-rust
 ```
 
 ### How to execute CLI commands on the running node
-
-First you need to get the `CONTAINER ID` or `NAME` of the running node
-with:
-
-```bash
-docker ps
-```
 
 Then, you can run CLI commands on the running node with this simple
 one-liner. In this example, it will show many "satowits" your has mined
 so far:
 
 ```bash
-docker exec -i <container_id> ./witnet node getBalance
+docker exec -i witnet_node ./witnet node getBalance
 ```
 
 The node operators docs contain a [quick cheatsheet listing all the
@@ -78,6 +58,11 @@ open Internet, so that other nodes in the network can download block
 chain data from yours and **your transactions can be broadcast more
 quickly**.
 
+For this feature to be effective, you will also need your IP address to
+be static and public. If you are operating a node in your home network,
+you can request your ISP to assign you a static IP address and disable
+[CGN] on it.
+
 Depending on your setup, this will normally imply changing the settings
 on your router or firewall so as to **forward all incoming connections
 to port `21337` from your external IP** into the IP of the device or
@@ -85,7 +70,9 @@ interface where the node is running. In some cases, you may also have to
 run the Docker image with `docker run --network=host` so as to allow
 `witnet-rust` to bind to the IP of the host.
 
-To check if the port is correctly opened, you can telnet your external IP with `telnet "IP" 21337` from the Internet. You should see an incoming connection on the logs for which the handshake timeouts.
+To check if the port is correctly opened, you can telnet your external
+IP with `telnet "IP" 21337` from the Internet. You should see an incoming
+connection on the logs for which the handshake timeouts.
 
 ## What about Witnet data requests?
 
@@ -103,3 +90,4 @@ enable to compose data requests and RADON scripts visually.
 [Sheikah]: https://github.com/aesedepece/sheikah
 [hardware-requirements]: /node-operators/hardware-requirements
 [docker-extra-steps]: https://docs.docker.com/install/linux/linux-postinstall/
+[CGN]: https://en.wikipedia.org/wiki/Carrier-grade_NAT
