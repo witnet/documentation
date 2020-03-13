@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Basic&display=swap');
 
+html {
+    font-size: 20px;
+}
+
 .md-header {
     box-shadow: 0 0 3rem white !important;
-    padding: .5rem 0 5rem 0;
+    padding: .5rem 0 3rem 0;
 }
 
 .md-header-nav__title {
@@ -73,7 +77,7 @@
 }
 
 .md-sidebar[data-md-state="lock"] li nav.md-nav > ul {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .md-nav__link {
@@ -85,7 +89,11 @@
 }
 
 .md-content {
-    padding-top: 1rem;
+    padding: 1.6rem 0 2rem 0;
+}
+
+.md-content__inner.md-typeset {
+    margin-bottom: 0 !important;
 }
 
 .md-content__inner p a:not([href^="/"]):after {
@@ -99,23 +107,23 @@
 
 .md-typeset h1 {
     color: #444;
-    font-size: 2.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
     margin: 0;
 }
 
 .md-typeset h2 {
     color: #555;
-    font-size: 2.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    margin: 2.5rem 0 -0.5rem 0;
+    margin: 1.5rem 0 -0.5rem 0;
 }
 
 .md-typeset h3 {
     color: #666;
-    font-size: 1.6rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin: 2rem 0 -1rem 0;
+    margin: 1rem 0 -.4rem 0;
 }
 
 .md-typeset p, .md-typeset ul, .md-typeset ol, .md-typeset blockquote {
