@@ -30,9 +30,9 @@ testnet in just a matter on seconds.
 Starting a node is as easy as it gets:
 
 ```bash
-docker run 
-    -v ~/.witnet:/.witnet \
-    -n witnet_node \
+docker run \
+    --volume ~/.witnet:/.witnet \
+    --name witnet_node \
     witnet/witnet-rust
 ```
 
@@ -43,7 +43,7 @@ one-liner. In this example, it will show many "satowits" your has mined
 so far:
 
 ```bash
-docker exec -i witnet_node ./witnet node getBalance
+docker exec witnet_node ./witnet node getBalance
 ```
 
 The node operators docs contain a [quick cheatsheet listing all the
