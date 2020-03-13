@@ -30,7 +30,7 @@ testnet in just a matter on seconds.
 Starting a node is as easy as it gets:
 
 ```bash
-docker run \
+docker run -d \
     --volume ~/.witnet:/.witnet \
     --name witnet_node \
     witnet/witnet-rust
