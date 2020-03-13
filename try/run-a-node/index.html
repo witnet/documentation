@@ -992,9 +992,9 @@ be running the node. Remember that some GNU/Linux distributions require some
 <p>The Witnet docker image downloads and runs a witnet-rust node in the latest
 testnet in just a matter on seconds.</p>
 <p>Starting a node is as easy as it gets:</p>
-<div class="codehilite"><pre><span></span><code>docker run 
-    -v ~/.witnet:/.witnet <span class="se">\</span>
-    -n witnet_node <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
+    --volume ~/.witnet:/.witnet <span class="se">\</span>
+    --name witnet_node <span class="se">\</span>
     witnet/witnet-rust
 </code></pre></div>
 
@@ -1002,7 +1002,7 @@ testnet in just a matter on seconds.</p>
 <p>Then, you can run CLI commands on the running node with this simple
 one-liner. In this example, it will show many "satowits" your has mined
 so far:</p>
-<div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> -i witnet_node ./witnet node getBalance
+<div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> witnet_node ./witnet node getBalance
 </code></pre></div>
 
 <p>The node operators docs contain a <a href="/node-operators/cli">quick cheatsheet listing all the
