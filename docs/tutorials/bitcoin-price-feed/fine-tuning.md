@@ -118,7 +118,7 @@ affect the life cycle of your requests. Namely, those incentives are:
 
 - `request_fee`: the amount of wit tokens that will be earned by the
   Witnet miner that publishes your request in a block.
-- `reward`: the amount of wit tokens that every each of the Witnet nodes
+- `reward`: the amount of wit tokens that each of the Witnet nodes
   assigned to your request will earn if they honestly fulfill their
   commitments and reveals.
 - `commit_fee`: the amount of wit tokens that will be earned by Witnet
