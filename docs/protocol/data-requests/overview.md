@@ -96,6 +96,6 @@ also intended to be used as an IDE for visually and safely composing and
 testing Witnet requests.
 
 [radon]: #rad-object-notation-radon
-[encoding]: /protocol/data-requests/radon/encoding/
+[encoding]: /protocol/data-requests/radon-encoding/
 [sheikah]: https://github.com/witnet/sheikah
 [tutorial]: /tutorials/bitcoin-price-feed/introduction/
