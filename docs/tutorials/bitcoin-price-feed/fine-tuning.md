@@ -106,7 +106,8 @@ to broad consensus. That is, aggregator and tally functions will not be
 applied if the ratio of valid values vs. errors is below this threshold.
 *E.g. a `minimum_consensus` threshold of `70` requires a `70%` of the
 witnesses to report a valid value, otherwise the result of the request
-will be an error stating "insufficient consensus"*.
+will be an error stating "insufficient consensus"*. If not set, this
+parameter defaults to `51`.
 
 ### Set the fees
 ```javascript
