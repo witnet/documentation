@@ -1,8 +1,9 @@
 # 3. Define the aggregator and tally functions
 
-!!! note "" *This article is part of the
-[beginner tutorial on creating a totally decentralized Bitcoin price feed][intro]
-on Ethereum with Solidity and Witnet.*
+!!! note "" 
+    *This article is part of the
+    [beginner tutorial on creating a totally decentralized Bitcoin price feed][intro]
+    on Ethereum with Solidity and Witnet.*
 
 ## What is an aggregator?
 
