@@ -44,7 +44,7 @@ contract PriceFeed is UsingWitnet {
   Request request;            // The Witnet request object, is set in the constructor
 
   // Allows logging errors
-  event Error(string);
+  event Error(uint64, string);
 
   // This constructor does a nifty trick to tell the `UsingWitnet` library where
   // to find the Witnet contracts on whatever Ethereum network you use.
@@ -101,7 +101,7 @@ function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
       bitcoinPrice = result.asInt128();
   } else {
     (Witnet.ErrorCodes errorCode, string memory errorMessage) = result.asErrorMessage();
-    emit Error(errorCode, errorMessage);
+    emit Error(uint64(errorCode), errorMessage);
   }
 
   // In any case, set `pending` to false so a new update can be requested
@@ -168,7 +168,7 @@ contract PriceFeed is UsingWitnet {
         bitcoinPrice = result.asInt128();
     } else {
       (Witnet.ErrorCodes errorCode, string memory errorMessage) = result.asErrorMessage();
-      emit Error(errorCode, errorMessage);
+      emit Error(uint64(errorCode), errorMessage);
     }
 
     // In any case, set `pending` to false so a new update can be requested
