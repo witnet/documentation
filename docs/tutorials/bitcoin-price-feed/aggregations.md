@@ -40,7 +40,7 @@ returns the average mean of the `Float` values that pass the filter:
 
 ```javascript
 // Filters out any value that is more than 1.5 times the standard
-// deviationaway from the average, then computes the average mean of the
+// deviation away from the average, then computes the average mean of the
 // values that pass the filter.
 const aggregator = new Witnet.Aggregator({
   filters: [
@@ -62,7 +62,7 @@ equivalent to the aggregation function:
 
 ```javascript
 // Filters out any value that is more than 1.5 times the standard
-// deviationaway from the average, then computes the average mean of the
+// deviation away from the average, then computes the average mean of the
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
@@ -98,7 +98,7 @@ const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice
   .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
 
 // Filters out any value that is more than 1.5 times the standard
-// deviationaway from the average, then computes the average mean of the
+// deviation away from the average, then computes the average mean of the
 // values that pass the filter.
 const aggregator = new Witnet.Aggregator({
   filters: [
@@ -108,7 +108,7 @@ const aggregator = new Witnet.Aggregator({
 })
 
 // Filters out any value that is more than 1.5 times the standard
-// deviationaway from the average, then computes the average mean of the
+// deviation away from the average, then computes the average mean of the
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
