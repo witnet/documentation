@@ -959,9 +959,11 @@
                 
                 
                 <h1 id="3-define-the-aggregator-and-tally-functions">3. Define the aggregator and tally functions<a class="headerlink" href="#3-define-the-aggregator-and-tally-functions" title="Permanent link">&para;</a></h1>
-<p>!!! note "" <em>This article is part of the
+<div class="admonition note">
+<p><em>This article is part of the
 <a href="/tutorials/bitcoin-price-feed/introduction">beginner tutorial on creating a totally decentralized Bitcoin price feed</a>
 on Ethereum with Solidity and Witnet.</em></p>
+</div>
 <h2 id="what-is-an-aggregator">What is an aggregator?<a class="headerlink" href="#what-is-an-aggregator" title="Permanent link">&para;</a></h2>
 <p>Aggregators define how to reduce or merge the result of multiple sources
 into a single data point. They are similar to Javascript's <code class="codehilite"><span class="na">.reduce</span><span class="p">()</span></code>
@@ -989,7 +991,7 @@ nodes.</p>
 outliers coming from the two sources that you defined before, and
 returns the average mean of the <code class="codehilite"><span class="err">Float</span></code> values that pass the filter:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
-<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
 <span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
@@ -1007,7 +1009,7 @@ function.</p>
 <p>For this tutorial, you will be using a tally function that is quite
 equivalent to the aggregation function:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
-<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
 <span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
@@ -1039,7 +1041,7 @@ that produced such outliers will be punished for their misbehavior.</p>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 
 <span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
-<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
 <span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
@@ -1049,7 +1051,7 @@ that produced such outliers will be punished for their misbehavior.</p>
 <span class="p">})</span>
 
 <span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
-<span class="c1">// deviationaway from the average, then computes the average mean of the</span>
+<span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
 <span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>

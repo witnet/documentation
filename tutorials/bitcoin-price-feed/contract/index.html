@@ -998,7 +998,7 @@ cost of performing the Witnet request.</p>
   <span class="nx">Request</span> <span class="nx">request</span><span class="p">;</span>            <span class="c1">// The Witnet request object, is set in the constructor</span>
 
   <span class="c1">// Allows logging errors</span>
-  <span class="nx">event</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
+  <span class="nx">event</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">uint64</span><span class="p">,</span> <span class="nx">string</span><span class="p">);</span>
 
   <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
   <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
@@ -1051,7 +1051,7 @@ cost of performing the Witnet request.</p>
       <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span> <span class="nx">errorCode</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">();</span>
-    <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">errorCode</span><span class="p">,</span> <span class="nx">errorMessage</span><span class="p">);</span>
+    <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">uint64</span><span class="p">(</span><span class="nx">errorCode</span><span class="p">),</span> <span class="nx">errorMessage</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="c1">// In any case, set `pending` to false so a new update can be requested</span>
@@ -1115,7 +1115,7 @@ cost of performing the Witnet request.</p>
         <span class="nx">bitcoinPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asInt128</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span> <span class="nx">errorCode</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">)</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">();</span>
-      <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">errorCode</span><span class="p">,</span> <span class="nx">errorMessage</span><span class="p">);</span>
+      <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">uint64</span><span class="p">(</span><span class="nx">errorCode</span><span class="p">),</span> <span class="nx">errorMessage</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="c1">// In any case, set `pending` to false so a new update can be requested</span>

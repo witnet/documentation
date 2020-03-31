@@ -1100,7 +1100,8 @@ to broad consensus. That is, aggregator and tally functions will not be
 applied if the ratio of valid values vs. errors is below this threshold.
 <em>E.g. a <code class="codehilite"><span class="err">minimum_consensus</span></code> threshold of <code class="codehilite"><span class="err">70</span></code> requires a <code class="codehilite"><span class="err">70%</span></code> of the
 witnesses to report a valid value, otherwise the result of the request
-will be an error stating "insufficient consensus"</em>.</p>
+will be an error stating "insufficient consensus"</em>. If not set, this
+parameter defaults to <code class="codehilite"><span class="err">51</span></code>.</p>
 <h3 id="set-the-fees">Set the fees<a class="headerlink" href="#set-the-fees" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="nx">reward</span><span class="p">,</span> <span class="nx">commit_fee</span><span class="p">,</span> <span class="nx">reveal_fee</span><span class="p">,</span> <span class="nx">tally_fee</span><span class="p">)</span>
 </code></pre></div>
@@ -1110,7 +1111,7 @@ affect the life cycle of your requests. Namely, those incentives are:</p>
 <ul>
 <li><code class="codehilite"><span class="err">request_fee</span></code>: the amount of wit tokens that will be earned by the
   Witnet miner that publishes your request in a block.</li>
-<li><code class="codehilite"><span class="err">reward</span></code>: the amount of wit tokens that every each of the Witnet nodes
+<li><code class="codehilite"><span class="err">reward</span></code>: the amount of wit tokens that each of the Witnet nodes
   assigned to your request will earn if they honestly fulfill their
   commitments and reveals.</li>
 <li><code class="codehilite"><span class="err">commit_fee</span></code>: the amount of wit tokens that will be earned by Witnet
