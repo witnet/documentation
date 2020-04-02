@@ -175,7 +175,7 @@ a key that doesn't match your committer identity, you should
 [discord]: https://discord.gg/FDPPv7H
 [telegram]: https://t.me/witnetio
 [GitHub]: https://github.com/witnet/witnet-rust
-[first-issue]: https://github.com/witnet/witnet-rust/labels/good%20first%20issue
+[first-issue]: https://github.com/witnet/witnet-rust/labels/good%20first%20issue%20%F0%9F%91%8B
 [convention]: https://www.conventionalcommits.org/en/v1.0.0-beta.2/
 [GPG Suite]: https://gpgtools.org/
 [Gpg4win]: https://www.gpg4win.org/
