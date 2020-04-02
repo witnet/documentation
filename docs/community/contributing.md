@@ -170,18 +170,14 @@ a key that doesn't match your committer identity, you should
 [tell Git about your signing key][signing-key].
 
 
-[code]: https://github.com/witnet/witnet-rust/blob/master/.github/CODE_OF_CONDUCT.md
-[issues]: https://github.com/witnet/rust-witnet/issues
+[code]: https://github.com/witnet/witnet-rust/blob/master/CODE_OF_CONDUCT.md
+[issues]: https://github.com/witnet/witnet-rust/issues
 [discord]: https://discord.gg/FDPPv7H
 [telegram]: https://t.me/witnetio
 [GitHub]: https://github.com/witnet/witnet-rust
-[first-issue]: https://github.com/witnet/witnet-rust/labels/good%20first%20issue
+[first-issue]: https://github.com/witnet/witnet-rust/labels/good%20first%20issue%20%F0%9F%91%8B
 [convention]: https://www.conventionalcommits.org/en/v1.0.0-beta.2/
 [GPG Suite]: https://gpgtools.org/
 [Gpg4win]: https://www.gpg4win.org/
 [gpg-agent]: http://linux.die.net/man/1/gpg-agent
 [signing-key]: https://help.github.com/en/articles/telling-git-about-your-signing-key
-[grin]: https://github.com/mimblewimble/grin/blob/master/CONTRIBUTING.md
-[aragonjs]: https://wiki.aragon.one/submodules/aragon.js/CONTRIBUTING/
-[CC0]: https://github.com/aragon/aragon-wiki/blob/master/LICENSE
-[apache]: https://github.com/mimblewimble/grin/blob/master/LICENSE
