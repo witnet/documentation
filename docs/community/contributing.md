@@ -170,7 +170,7 @@ a key that doesn't match your committer identity, you should
 [tell Git about your signing key][signing-key].
 
 
-[code]: https://github.com/witnet/witnet-rust/blob/master/.github/CODE_OF_CONDUCT.md
+[code]: https://github.com/witnet/witnet-rust/blob/master/CODE_OF_CONDUCT.md
 [issues]: https://github.com/witnet/rust-witnet/issues
 [discord]: https://discord.gg/FDPPv7H
 [telegram]: https://t.me/witnetio
