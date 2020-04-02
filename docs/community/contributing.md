@@ -171,7 +171,7 @@ a key that doesn't match your committer identity, you should
 
 
 [code]: https://github.com/witnet/witnet-rust/blob/master/CODE_OF_CONDUCT.md
-[issues]: https://github.com/witnet/rust-witnet/issues
+[issues]: https://github.com/witnet/witnet-rust/issues
 [discord]: https://discord.gg/FDPPv7H
 [telegram]: https://t.me/witnetio
 [GitHub]: https://github.com/witnet/witnet-rust
