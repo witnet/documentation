@@ -182,6 +182,5 @@ a key that doesn't match your committer identity, you should
 [gpg-agent]: http://linux.die.net/man/1/gpg-agent
 [signing-key]: https://help.github.com/en/articles/telling-git-about-your-signing-key
 [grin]: https://github.com/mimblewimble/grin/blob/master/CONTRIBUTING.md
-[aragonjs]: https://wiki.aragon.one/submodules/aragon.js/CONTRIBUTING/
 [CC0]: https://github.com/aragon/aragon-wiki/blob/master/LICENSE
 [apache]: https://github.com/mimblewimble/grin/blob/master/LICENSE
