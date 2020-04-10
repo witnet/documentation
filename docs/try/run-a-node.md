@@ -87,7 +87,7 @@ enable to compose data requests and RADON scripts visually.
 [roadmap]: /community/roadmap
 [CLI]: /node-operators/cli
 [tutorial]: /tutorials/bitcoin-price-feed/introduction
-[Sheikah]: https://github.com/aesedepece/sheikah
+[Sheikah]: https://github.com/witnet/sheikah
 [hardware-requirements]: /node-operators/hardware-requirements
 [docker-extra-steps]: https://docs.docker.com/install/linux/linux-postinstall/
 [CGN]: https://en.wikipedia.org/wiki/Carrier-grade_NAT
