@@ -53,4 +53,5 @@ Now the next step is pretty straightforward:
 
 [discord]: https://discord.gg/X4uurfP
 [migrations]: /tutorials/bitcoin-price-feed/migrations
+[intro]: /tutorials/bitcoin-price-feed/introduction
 [next]: /tutorials/bitcoin-price-feed/contract
