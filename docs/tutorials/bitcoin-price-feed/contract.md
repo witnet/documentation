@@ -1,8 +1,9 @@
 # 6. Write your consumer contract that will handle price feed updates
 
 !!! note ""
-    *This article is part of the [beginner tutorial on creating a totally decentralized Bitcoin price feed][intro]
-    on Ethereum with Solidity and Witnet.*
+    *This article is part of the [beginner tutorial on creating a totally
+    decentralized Bitcoin price feed][intro] on Ethereum with Solidity and
+    Witnet.*
 
 ## Plan the contract
 

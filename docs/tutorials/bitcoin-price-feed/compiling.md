@@ -1,8 +1,9 @@
 # 5. Compile the request
 
 !!! note ""
-    *This article is part of the [beginner tutorial on creating a totally decentralized Bitcoin price feed][intro]
-    on Ethereum with Solidity and Witnet.*
+    *This article is part of the [beginner tutorial on creating a totally
+    decentralized Bitcoin price feed][intro] on Ethereum with Solidity and
+    Witnet.*
 
 Compiling the request could not be easier:
 

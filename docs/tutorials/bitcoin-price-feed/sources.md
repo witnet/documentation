@@ -1,9 +1,9 @@
 # 2. Choose and add data sources for the price feed
 
 !!! note ""
-    *This article is part of the
-    [beginner tutorial on creating a totally decentralized Bitcoin price feed][intro]
-    on Ethereum with Solidity and Witnet.*
+    *This article is part of the [beginner tutorial on creating a totally
+    decentralized Bitcoin price feed][intro] on Ethereum with Solidity and
+    Witnet.*
 
 ## A quick intro on Witnet data sources
 

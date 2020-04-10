@@ -1,9 +1,9 @@
 # 1. Create a new Witnet-enabled project
 
 !!! note ""
-    *This article is part of the
-    [beginner tutorial on creating a totally decentralized Bitcoin price feed][intro]
-    on Ethereum with Solidity and Witnet.*
+    *This article is part of the [beginner tutorial on creating a totally
+    decentralized Bitcoin price feed][intro] on Ethereum with Solidity and
+    Witnet.*
 
 ## Using the Witnet Truffle Box
 
