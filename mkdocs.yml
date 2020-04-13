@@ -9,6 +9,7 @@ nav:
       - Software: overview/software.md
   - Quickstart:
       - Run a Node: try/run-a-node.md
+      - From source code: try/from-source.md
       #- Use the Sheikah wallet / IDE: try/sheikah.md
       - Connect your Ethereum contracts to external APIs: try/use-from-ethereum.md
   - Tutorial:
