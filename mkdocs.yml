@@ -41,6 +41,7 @@ nav:
       #- Compilation: witnet-rust/compiling.md
       #- Configuration: witnet-rust/configuration.md
       - Hardware requirements: node-operators/hardware-requirements.md
+      - Run as systemd service: node-operators/systemd-service.md
       - Command Line Interface: node-operators/cli.md
       #- Witnet-Rust JSON-RPC: node-operators/json-rpc.md
       #- Wallet API: node-operators/wallet-api.md
