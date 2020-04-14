@@ -11,7 +11,7 @@ Follow installation instructions for your operating system provided on [rustup.r
 ### Compilation dependencies
 
 ```console tab="GNU/Linux (apt)"
-apt install -y clang git libssl-dev protobuf-compiler librocksdb-dev
+apt install -y clang git libssl-dev protobuf-compiler librocksdb-dev pkg-config
 ```
 
 ```console tab="macOS"
