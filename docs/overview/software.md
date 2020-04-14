@@ -43,4 +43,4 @@ The bridge is actually three different pieces of software:
 [sheikah]: https://github.com/witnet/sheikah
 [use-from-ethereum]: /try/use-from-ethereum
 [Witnet-Rust]: https://github.com/witnet/sheikah 
-[contributing]: /community/contributing
+[contributing]: /developer/contributing
