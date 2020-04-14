@@ -58,6 +58,6 @@ developer or node operator, there are
 [foundation]: https://witnet.foundation
 [whitepaper]: https://witnet.io/static/witnet-whitepaper.pdf
 [run-a-node]: /try/run-a-node
-[contributing]: /community/contributing
+[contributing]: /developer/contributing
 [Witnet-Rust]: https://github.com/witnet/witnet-rust
 [Sheikah]: https://github.com/witnet/sheikah

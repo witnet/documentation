@@ -9,7 +9,6 @@ nav:
       - Software: overview/software.md
   - Quickstart:
       - Run a Node: try/run-a-node.md
-      - From source code: try/from-source.md
       #- Use the Sheikah wallet / IDE: try/sheikah.md
       - Connect your Ethereum contracts to external APIs: try/use-from-ethereum.md
   - Tutorial:
@@ -23,8 +22,10 @@ nav:
       - 7. Deploy: tutorials/bitcoin-price-feed/migrations.md
       - Recap: tutorials/bitcoin-price-feed/recap.md
   - Community:
-      - Contributing: community/contributing.md
       - Roadmap: community/roadmap.md
+  - Developer Docs:
+      - Compile from source code: developer/from-source.md
+      - Contributing: developer/contributing.md
   - Protocol Docs:
       #- protocol/reputation.md
       - protocol/sortition.md
