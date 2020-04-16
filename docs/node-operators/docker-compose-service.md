@@ -1,6 +1,6 @@
 # Run as `docker-compose` services
 
-## Prerequesites
+## Prerequisites
 
 * Install the current stable release of Docker Compose:
 
