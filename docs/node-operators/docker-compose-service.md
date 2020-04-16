@@ -1,5 +1,7 @@
 # Run as `docker-compose` services
 
+## Prerequesites
+
 * Install the current stable release of Docker Compose:
 
 ```sh
@@ -21,11 +23,27 @@ cd
 git clone https://github.com/witnet/witnet-rust.git
 ```
 
-* Go in the directory you are interested in:
+## Go in the directory you are interested in
+
+### for only one node
 
 ```sh
 cd witnet-rust/docker/compose/bertux-operator-stable/
 ```
+
+### for only one node
+
+```sh
+cd witnet-rust/docker/compose/bertux-operator-stable/
+```
+
+### for few nodes (example: 5)
+
+```sh
+cd witnet-rust/docker/compose/bertux-operator-5/
+```
+
+## Usage of docker-compose
 
 * Start up the service:
 
