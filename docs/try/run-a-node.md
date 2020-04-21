@@ -33,6 +33,7 @@ Starting a node is as easy as it gets:
 docker run -d \
     --volume ~/.witnet:/.witnet \
     --name witnet_node \
+    --publish 21337:21337 \
     witnet/witnet-rust
 ```
 
@@ -66,9 +67,7 @@ you can request your ISP to assign you a static IP address and disable
 Depending on your setup, this will normally imply changing the settings
 on your router or firewall so as to **forward all incoming connections
 to port `21337` from your external IP** into the IP of the device or
-interface where the node is running. In some cases, you may also have to
-run the Docker image with `docker run --network=host` so as to allow
-`witnet-rust` to bind to the IP of the host.
+interface where the node is running. 
 
 To check if the port is correctly opened, you can telnet your external
 IP with `telnet "IP" 21337` from the Internet. You should see an incoming
