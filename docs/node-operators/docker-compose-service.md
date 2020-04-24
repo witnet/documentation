@@ -31,12 +31,6 @@ git clone https://github.com/witnet/witnet-rust.git
 cd witnet-rust/docker/compose/bertux-operator-stable/
 ```
 
-### for only one node
-
-```sh
-cd witnet-rust/docker/compose/bertux-operator-stable/
-```
-
 ### for few nodes (example: 5)
 
 ```sh
