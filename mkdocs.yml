@@ -27,6 +27,7 @@ nav:
   - Developer Docs:
       - Compile from source code: developer/from-source.md
       - Contributing: developer/contributing.md
+      - Wallet API: developer/wallet-api.md
   - Protocol Docs:
       #- protocol/reputation.md
       - protocol/sortition.md
