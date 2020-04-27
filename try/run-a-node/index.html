@@ -847,6 +847,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../node-operators/docker-compose-service/" title="Run as docker-compose service" class="md-nav__link">
+      Run as docker-compose service
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
@@ -1043,6 +1055,7 @@ testnet in just a matter on seconds.</p>
 <div class="codehilite"><pre><span></span><code>docker run -d <span class="se">\</span>
     --volume ~/.witnet:/.witnet <span class="se">\</span>
     --name witnet_node <span class="se">\</span>
+    --publish <span class="m">21337</span>:21337 <span class="se">\</span>
     witnet/witnet-rust
 </code></pre></div>
 
@@ -1068,9 +1081,7 @@ you can request your ISP to assign you a static IP address and disable
 <p>Depending on your setup, this will normally imply changing the settings
 on your router or firewall so as to <strong>forward all incoming connections
 to port <code class="codehilite"><span class="err">21337</span></code> from your external IP</strong> into the IP of the device or
-interface where the node is running. In some cases, you may also have to
-run the Docker image with <code class="codehilite"><span class="err">docker run --network=host</span></code> so as to allow
-<code class="codehilite"><span class="err">witnet-rust</span></code> to bind to the IP of the host.</p>
+interface where the node is running. </p>
 <p>To check if the port is correctly opened, you can telnet your external
 IP with <code class="codehilite"><span class="err">telnet &quot;IP&quot; 21337</span></code> from the Internet. You should see an incoming
 connection on the logs for which the handshake timeouts.</p>

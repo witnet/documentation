@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.witnet.io/tutorials/bitcoin-price-feed/sources/">
+        <link rel="canonical" href="https://docs.witnet.io/node-operators/docker-compose-service/">
       
       
       
@@ -33,18 +33,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>2. Adding data sources - Witnet Protocol Documentation</title>
+        <title>Run as docker-compose service - Witnet Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -62,10 +62,10 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../../../extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#2-choose-and-add-data-sources-for-the-price-feed" tabindex="0" class="md-skip">
+      <a href="#run-as-docker-compose-services" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -129,7 +129,7 @@
                    title="Witnet Protocol Documentation"
                    class="md-header-nav__button md-logo">
                     
-                    <img src="../../../assets/images/logo.svg" alt="Witnet Logo" height="26" />
+                    <img src="../../assets/images/logo.svg" alt="Witnet Logo" height="26" />
                     
                 </a>
             </div>
@@ -148,7 +148,7 @@
                     <a href="https://docs.witnet.io" class="md-header-nav__topic">the <strong>witnet</strong> documentation</a>
                     <span class="md-header-nav__topic">
               
-                2. Adding data sources
+                Run as docker-compose service
               
             </span>
                     
@@ -232,7 +232,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://docs.witnet.io" title="Witnet Protocol Documentation" class="md-nav__button md-logo">
       
-        <img alt="logo" src="../../../assets/images/logo.svg" alt="Witnet Logo" width="48" height="48">
+        <img alt="logo" src="../../assets/images/logo.svg" alt="Witnet Logo" width="48" height="48">
       
     </a>
     Witnet Protocol Documentation
@@ -285,7 +285,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Ecosystem" class="md-nav__link">
+    <a href="../.." title="Ecosystem" class="md-nav__link">
       Ecosystem
     </a>
   </li>
@@ -297,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/concepts/" title="What is Witnet?" class="md-nav__link">
+    <a href="../../overview/concepts/" title="What is Witnet?" class="md-nav__link">
       What is Witnet?
     </a>
   </li>
@@ -309,7 +309,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/software/" title="Software" class="md-nav__link">
+    <a href="../../overview/software/" title="Software" class="md-nav__link">
       Software
     </a>
   </li>
@@ -345,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../try/run-a-node/" title="Run a Node" class="md-nav__link">
+    <a href="../../try/run-a-node/" title="Run a Node" class="md-nav__link">
       Run a Node
     </a>
   </li>
@@ -357,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
+    <a href="../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
       Connect your Ethereum contracts to external APIs
     </a>
   </li>
@@ -372,12 +372,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Tutorial
@@ -395,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../tutorials/bitcoin-price-feed/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -407,8 +405,322 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-project/" title="1. Create a new project" class="md-nav__link">
+    <a href="../../tutorials/bitcoin-price-feed/create-project/" title="1. Create a new project" class="md-nav__link">
       1. Create a new project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/sources/" title="2. Adding data sources" class="md-nav__link">
+      2. Adding data sources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/aggregations/" title="3. Define aggregator / tally" class="md-nav__link">
+      3. Define aggregator / tally
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/fine-tuning/" title="4. Fine-tune the request" class="md-nav__link">
+      4. Fine-tune the request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/compiling/" title="5. Compile the request" class="md-nav__link">
+      5. Compile the request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/contract/" title="6. Write the Solidity contract" class="md-nav__link">
+      6. Write the Solidity contract
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/migrations/" title="7. Deploy" class="md-nav__link">
+      7. Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/recap/" title="Recap" class="md-nav__link">
+      Recap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Community
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Community
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../community/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Developer Docs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Developer Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/from-source/" title="Compile from source code" class="md-nav__link">
+      Compile from source code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Protocol Docs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Protocol Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/sortition/" title="Sortition" class="md-nav__link">
+      Sortition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Witnet Requests
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Witnet Requests
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
+      Encoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Operator Docs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Operator Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hardware-requirements/" title="Hardware requirements" class="md-nav__link">
+      Hardware requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../systemd-service/" title="Run as systemd service" class="md-nav__link">
+      Run as systemd service
     </a>
   </li>
 
@@ -428,11 +740,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2. Adding data sources
+        Run as docker-compose service
       </label>
     
-    <a href="./" title="2. Adding data sources" class="md-nav__link md-nav__link--active">
-      2. Adding data sources
+    <a href="./" title="Run as docker-compose service" class="md-nav__link md-nav__link--active">
+      Run as docker-compose service
     </a>
     
       <!--
@@ -479,36 +791,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#a-quick-intro-on-witnet-data-sources" class="md-nav__link">
-    A quick intro on Witnet data sources
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#choose-your-sources-carefully" class="md-nav__link">
-    Choose your sources carefully
+  <a href="#go-in-the-directory-you-are-interested-in" class="md-nav__link">
+    Go in the directory you are interested in
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-only-one-node" class="md-nav__link">
+    for only one node
   </a>
   
 </li>
         
-        <li class="md-nav__item">
-  <a href="#introducing-smart-data-sources" class="md-nav__link">
-    Introducing smart data sources
+          <li class="md-nav__item">
+  <a href="#for-few-nodes-example-5" class="md-nav__link">
+    for few nodes (example: 5)
   </a>
   
 </li>
         
-        <li class="md-nav__item">
-  <a href="#where-do-i-put-the-sources" class="md-nav__link">
-    Where do I put the sources?
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#next-step-define-aggregator-and-tally-functions" class="md-nav__link">
-    Next step: define aggregator and tally functions
+  <a href="#usage-of-docker-compose" class="md-nav__link">
+    Usage of docker-compose
   </a>
   
 </li>
@@ -541,319 +859,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aggregations/" title="3. Define aggregator / tally" class="md-nav__link">
-      3. Define aggregator / tally
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../fine-tuning/" title="4. Fine-tune the request" class="md-nav__link">
-      4. Fine-tune the request
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../compiling/" title="5. Compile the request" class="md-nav__link">
-      5. Compile the request
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../contract/" title="6. Write the Solidity contract" class="md-nav__link">
-      6. Write the Solidity contract
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../migrations/" title="7. Deploy" class="md-nav__link">
-      7. Deploy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../recap/" title="Recap" class="md-nav__link">
-      Recap
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Community
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Community
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../community/roadmap/" title="Roadmap" class="md-nav__link">
-      Roadmap
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Developer Docs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Developer Docs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../developer/from-source/" title="Compile from source code" class="md-nav__link">
-      Compile from source code
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../developer/contributing/" title="Contributing" class="md-nav__link">
-      Contributing
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Protocol Docs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Protocol Docs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/sortition/" title="Sortition" class="md-nav__link">
-      Sortition
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
-    
-    <label class="md-nav__link" for="nav-6-2">
-      Witnet Requests
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
-        Witnet Requests
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
-      Encoding
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
-      Examples
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Operator Docs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Operator Docs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../node-operators/hardware-requirements/" title="Hardware requirements" class="md-nav__link">
-      Hardware requirements
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../node-operators/systemd-service/" title="Run as systemd service" class="md-nav__link">
-      Run as systemd service
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../node-operators/docker-compose-service/" title="Run as docker-compose service" class="md-nav__link">
-      Run as docker-compose service
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
+    <a href="../cli/" title="Command Line Interface" class="md-nav__link">
       Command Line Interface
     </a>
   </li>
@@ -889,7 +895,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/glossary/" title="Glossary" class="md-nav__link">
+    <a href="../../overview/glossary/" title="Glossary" class="md-nav__link">
       Glossary
     </a>
   </li>
@@ -954,36 +960,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#a-quick-intro-on-witnet-data-sources" class="md-nav__link">
-    A quick intro on Witnet data sources
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#choose-your-sources-carefully" class="md-nav__link">
-    Choose your sources carefully
+  <a href="#go-in-the-directory-you-are-interested-in" class="md-nav__link">
+    Go in the directory you are interested in
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-only-one-node" class="md-nav__link">
+    for only one node
   </a>
   
 </li>
         
-        <li class="md-nav__item">
-  <a href="#introducing-smart-data-sources" class="md-nav__link">
-    Introducing smart data sources
+          <li class="md-nav__item">
+  <a href="#for-few-nodes-example-5" class="md-nav__link">
+    for few nodes (example: 5)
   </a>
   
 </li>
         
-        <li class="md-nav__item">
-  <a href="#where-do-i-put-the-sources" class="md-nav__link">
-    Where do I put the sources?
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#next-step-define-aggregator-and-tally-functions" class="md-nav__link">
-    Next step: define aggregator and tally functions
+  <a href="#usage-of-docker-compose" class="md-nav__link">
+    Usage of docker-compose
   </a>
   
 </li>
@@ -1015,138 +1027,72 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/witnet/documentation/blob/master/docs/tutorials/bitcoin-price-feed/sources.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/witnet/documentation/blob/master/docs/node-operators/docker-compose-service.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="2-choose-and-add-data-sources-for-the-price-feed">2. Choose and add data sources for the price feed<a class="headerlink" href="#2-choose-and-add-data-sources-for-the-price-feed" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p><em>This article is part of the <a href="/tutorials/bitcoin-price-feed/introduction">beginner tutorial on creating a totally
-decentralized Bitcoin price feed</a> on Ethereum with Solidity and
-Witnet.</em></p>
-</div>
-<h2 id="a-quick-intro-on-witnet-data-sources">A quick intro on Witnet data sources<a class="headerlink" href="#a-quick-intro-on-witnet-data-sources" title="Permanent link">&para;</a></h2>
-<p><strong>Data sources are each of the endpoints from which you want Witnet to
-retrieve the data</strong>. Most times, these will be the URLs of public APIs.</p>
-<p>There is no limit to the number of sources in a single Witnet
-request—although the more sources, the higher the fees will be.</p>
-<p><strong>Each source can have a companion script</strong> that lists operations that
-we want the witnesses to apply on the retrieved data. This enables you
-to get the information of your interest extracted out of larger data
-structures like JSON objects.</p>
-<h2 id="choose-your-sources-carefully">Choose your sources carefully<a class="headerlink" href="#choose-your-sources-carefully" title="Permanent link">&para;</a></h2>
-<p>Just like your friends—and your enemies—your <strong>data sources need to be
-chosen wisely</strong>. The <em><a href="https://en.wikipedia.org/wiki/Garbage_in,_garbage_out">Garbage In, Garbage Out</a></em> principle really
-applies here. Regardless of the many <em>checks-and-balances</em>,
-well-designed incentives and security measures that the Witnet protocol
-implements, if the data sources in your Witnet requests are not
-reliable, either will your contracts be.</p>
-<p>The more data sources and the more reliable they are, the more
-trust-mitigated your Witnet requests will become. That is, your
-contracts will be more resilient to downtime, failure or corruption of
-each separate source.</p>
-<h2 id="introducing-smart-data-sources">Introducing smart data sources<a class="headerlink" href="#introducing-smart-data-sources" title="Permanent link">&para;</a></h2>
-<p>The scripting language used in Witnet requests is quite rich indeed: in
-addition to selecting specific pieces of data, you can also transform
-those so they are uniform and can be compared or aggregated together.
-E.g. imagine a request that queries weather data. One source may use
-Celsius and the other may use Fahrenheit, but you will tell Witnet to
-transform one into another so they can be averaged.</p>
-<p>In this tutorial, you will be defining two data sources—one for querying
-<a href="https://www.bitstamp.net/api/ticker/">Bitstamp</a> and the other for <a href="https://www.bitstamp.net/api/ticker/">CoinDesk</a>:</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">Source 1: Bitstamp</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
-<span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
-  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
-</code></pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Source 2: CoinDesk</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
-<span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
-<span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
-  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
-  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
-  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
-</code></pre></div></div>
-</div>
-<p>These scripts are quite self-explanatory, but there are a few details
-that are worth noticing:</p>
+                <h1 id="run-as-docker-compose-services">Run as <code class="codehilite"><span class="err">docker-compose</span></code> services<a class="headerlink" href="#run-as-docker-compose-services" title="Permanent link">&para;</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The operators and data types that can be used are defined by the
-  <a href="/protocol/data-requests/overview/#rad-object-notation-radon">RADON domain-specific language</a>.</li>
-<li>Each operator is applied on the output of the previous operator, just
-  as you would expect from Javascript method chaining or
-  <a href="https://en.wikipedia.org/wiki/Builder_pattern">the builder pattern</a>.</li>
-<li>Source scripts always start with a <code class="codehilite"><span class="err">String</span></code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</li>
-<li>Key-value data structures (roughly alike to Javascript <em>objects</em>,
-  Python <em>dictionaries</em> or Solidity <em>mappings</em>) are called <em>maps</em>.</li>
-<li>Values in maps cannot be accessed directly by name as <code class="codehilite"><span class="na">.keyName</span></code> but
-  rather accessed through a call to one of the <code class="codehilite"><span class="na">.getArray</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
-  <code class="codehilite"><span class="na">.getBoolean</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getInteger</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getFloat</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
-  <code class="codehilite"><span class="na">.getInteger</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getMap</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> or <code class="codehilite"><span class="na">.getString</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> operators.</li>
-<li>The final return type of a script is that of its last operator.</li>
-<li>For any combination of known input type and RADON script, the output
-  type can be easily guessed upon compilation.</li>
-<li><strong>All source scripts MUST return exactly the same type</strong> (<code class="codehilite"><span class="err">Float</span></code> in
-  this case).</li>
+<li>Install the current stable release of Docker Compose:</li>
 </ul>
-<h2 id="where-do-i-put-the-sources">Where do I put the sources?<a class="headerlink" href="#where-do-i-put-the-sources" title="Permanent link">&para;</a></h2>
-<p>Let's create a new <code class="codehilite"><span class="err">requests/BitcoinPrice.js</span></code> file and copy the two example
-sources above into it:</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
-
-<span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
-<span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
-  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
-
-<span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
-<span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
-<span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
-  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
-  <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
-  <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
+<div class="codehilite"><pre><span></span><code>sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/1.25.4/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 </code></pre></div>
 
-<p>Notice the <code class="codehilite"><span class="err">import</span></code> instruction on top, which makes possible using all
-the tools that the Witnet Javascript library provides:</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
+<ul>
+<li>Test the installation of Docker Compose:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker-compose --version
 </code></pre></div>
 
-<p>Please make sure you save the <code class="codehilite"><span class="err">requests/BitcoinPrice.js</span></code> file.</p>
-<h2 id="next-step-define-aggregator-and-tally-functions">Next step: define aggregator and tally functions<a class="headerlink" href="#next-step-define-aggregator-and-tally-functions" title="Permanent link">&para;</a></h2>
-<p>You are done with the sources for now. Let's move forward into
-<a href="/tutorials/bitcoin-price-feed/aggregations">defining the aggregation and tally functions</a>.</p>
-<div class="admonition question">
-<p class="admonition-title">Remember: You are not alone!</p>
-<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
-Members of the Witnet community will be happy to answer your
-questions and doubts, as well as assisting you through this
-tutorial.</p>
-</div>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>In future versions, the Witnet protocol will make no assumptions
-on what the data type of the server response will be for different data
-sources. This will allow dealing with formats other than plain text,
-such as multimedia files and any other kind of binaries. Therefore,
-source scripts will start with <code class="codehilite"><span class="err">Bytes</span></code> as the input type and it will be
-totally up to the requester to specify whether those bytes should be
-interpreted as a <code class="codehilite"><span class="err">String</span></code>, <code class="codehilite"><span class="err">Integer</span></code> or whatnot.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>One of the key features in the future RADON 2.0 version will be
-implicit type casting, which will dramatically cut off the size of
-scripts.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<ul>
+<li>Clone the project's GitHub repository into your home directory:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span>
+git clone https://github.com/witnet/witnet-rust.git
+</code></pre></div>
+
+<h2 id="go-in-the-directory-you-are-interested-in">Go in the directory you are interested in<a class="headerlink" href="#go-in-the-directory-you-are-interested-in" title="Permanent link">&para;</a></h2>
+<h3 id="for-only-one-node">for only one node<a class="headerlink" href="#for-only-one-node" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> witnet-rust/docker/compose/bertux-operator-stable/
+</code></pre></div>
+
+<h3 id="for-few-nodes-example-5">for few nodes (example: 5)<a class="headerlink" href="#for-few-nodes-example-5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> witnet-rust/docker/compose/bertux-operator-5/
+</code></pre></div>
+
+<h2 id="usage-of-docker-compose">Usage of docker-compose<a class="headerlink" href="#usage-of-docker-compose" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Start up the service:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker-compose up -d
+</code></pre></div>
+
+<ul>
+<li>Follow the logs of the service:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker-compose logs -f
+</code></pre></div>
+
+<ul>
+<li>When you want to stop the service:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker-compose stop
+</code></pre></div>
+
+<ul>
+<li>When you want to remove the service:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker-compose down
+</code></pre></div>
+
+<ul>
+<li>Every time you change the <code class="codehilite"><span class="err">docker-compose.yaml</span></code> file, you need to recreate the services by <code class="codehilite"><span class="err">docker-compose</span></code>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker-compose down
+docker-compose up -d
+</code></pre></div>
                 
                   
                 
@@ -1168,7 +1114,7 @@ scripts.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to fo
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create-project/" title="1. Create a new project" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../systemd-service/" title="Run as systemd service" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1177,19 +1123,19 @@ scripts.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to fo
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1. Create a new project
+                Run as systemd service
               </span>
             </div>
           </a>
         
         
-          <a href="../aggregations/" title="3. Define aggregator / tally" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../cli/" title="Command Line Interface" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                3. Define aggregator / tally
+                Command Line Interface
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1216,7 +1162,7 @@ scripts.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to fo
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/witnet" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
@@ -1232,11 +1178,11 @@ scripts.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to fo
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
-        <script src="../../../extra.js"></script>
+        <script src="../../extra.js"></script>
       
     
   </body>
