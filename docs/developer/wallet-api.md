@@ -18,7 +18,9 @@ node_url = "127.0.0.1:21338"
 | [validate_mnemonics](#validate_mnemonics)   | seed_source, seed_data                           | `valid`                                       |
 | [create_wallet](#create_wallet)             | name, caption, seed_source, seed_data, password  | `wallet_id`                                   |
 | [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
-| [update_wallet](#update_wallet)             | `wallet_id`, `session_id`, `name`, `caption`     | `success`                                     |
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`     | `success`                                     |
+| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
+| [close_session](#close_session)             | `session_id`                                     | `success`                                     |
 
 
 
@@ -267,5 +269,75 @@ Response:
     "success": true
   },
   "id": 1
+}
+```
+
+
+### lock_wallet
+
+The JsonRPC method `lock_wallet` is used to *lock* the wallet with the specified id and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+  	"method": "lock_wallet",
+  	"params": {
+    	"session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
+    	"wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  	},
+  	"id": "1"
+}
+```
+
+Response:
+
+- `success`: *Boolean*, reporting if the wallet was successfully locked.
+
+```json
+{
+	"jsonrpc": "2.0",
+  	"result": {
+      "success": true
+    },
+  	"id": "1"
+}
+```
+
+
+### close_session
+
+The JsonRPC method `close_session` is used to close an active session without locking the currently unlocked wallet.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+
+```json
+{
+	"jsonrpc": "2.0",
+	"method": "close_session",
+  	"params": {
+    	"session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02"
+  	},
+  	"id": "1"
+}
+```
+
+Response:
+
+- `success`: *Boolean*, reporting if the wallet was successfully locked.
+
+```json
+{
+	"jsonrpc": "2.0",
+  	"result": {
+      "success": true
+    },
+  	"id": "1"
 }
 ```
