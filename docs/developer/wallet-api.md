@@ -14,10 +14,11 @@ node_url = "127.0.0.1:21338"
 | Method Name                                 | Request Params                                   | Response                                      |
 | ------------------------------------------- | ------------------------------------------------ | --------------------------------------------- |
 | [get_wallet_infos](#get_wallet_infos)       | (none)                                           | `wallet_info[]`                               |
-| [create_mnemonics](#create_mnemonics)       | length                                           | `string`                                      |
-| [validate_mnemonics](#validate_mnemonics)   | seed_source, seed_data                           | `boolean`                                     |
-| [create_wallet](#create_wallet)             | name, caption, seed_source, seed_data, password  | `boolean`                                     |
+| [create_mnemonics](#create_mnemonics)       | length                                           | `mnemonics`                                   |
+| [validate_mnemonics](#validate_mnemonics)   | seed_source, seed_data                           | `valid`                                       |
+| [create_wallet](#create_wallet)             | name, caption, seed_source, seed_data, password  | `wallet_id`                                   |
 | [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
+| [update_wallet](#update_wallet)             | `wallet_id`, `session_id`, `name`, `caption`     | `success`                                     |
 
 
 
@@ -195,7 +196,7 @@ Request with parameters:
   "method": "unlock_wallet",
   "params": {
     "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
-    "password": "12345678",
+    "password": "12345678"
   },
   "id": 1
 }
@@ -229,3 +230,42 @@ Response:
 }
 ```
 
+
+### update_wallet
+
+The JsonRPC method `update_wallet` is used to update the name and/or caption of an existing wallet.
+
+Request with parameters:
+
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
+- `name`: *String*, human-friendly name for your the wallet.
+- `caption`: *String*, human-friendly caption for your the wallet.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "update_wallet",
+  "params": {
+    "session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
+    "name": "New Name",
+    "caption": "New Caption"
+  },
+  "id": 1
+}
+```
+
+Response:
+
+- `success`: *Boolean*, reporting if the wallet's update was successfull.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "success": true
+  },
+  "id": 1
+}
+```
