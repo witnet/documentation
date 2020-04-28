@@ -26,6 +26,9 @@ node_url = "127.0.0.1:21338"
 | [get_addresses](#get_addresses)             | `session_id`, `wallet_id`                        | `address`, `path`                             |
 | [rpc.on](#rpc.on)                           | `session_id`                                     | (`subscription_id`)                           |
 | [rpc.off](#rpc.off)                         | `[subscription_id]`                              
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`     | `success`                                     |
+| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
+| [close_session](#close_session)             | `session_id`                                     | `success`                                     |
 
 
 
