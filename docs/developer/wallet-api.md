@@ -17,11 +17,7 @@ node_url = "127.0.0.1:21338"
 | [create_mnemonics](#create_mnemonics)       | length                                           | `string`                                      |
 | [validate_mnemonics](#validate_mnemonics)   | seed_source, seed_data                           | `boolean`                                     |
 | [create_wallet](#create_wallet)             | name, caption, seed_source, seed_data, password  | `boolean`                                     |
-| Method Name                                             | Request Params                  | Response          |
-| ------------------------------------------------------- | ------------------------------- | ----------------- |
-| [get_wallet_infos](#get_wallet_infos)                   | (none)                          | `wallet_info[]`   |
-| [create_mnemonics](#create_mnemonics)                   | length                          | `string`          |
-| [validate_mnemonics](#validate_mnemonics)               | seed_source, seed_data          | `boolean`         |
+| [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
 
 
 
@@ -184,5 +180,52 @@ Response:
 ```
 
 
+### unlock_wallet
 
-- `wallet_id`: *String*, ID associated with the given wallet.
+The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session id until it expires.
+
+Request with parameters:
+
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `password`: *String*, the password that unlocks the wallet.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "unlock_wallet",
+  "params": {
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
+    "password": "12345678",
+  },
+  "id": 1
+}
+```
+
+Response:
+
+- `session_id`: *number*, generated identifier for the current wallet session.
+- `session_expiration_secs`: *number*, amount of seconds after which the session will expire.
+- `account_balance`: *number*, wallet's account balance in nano Wits.
+- `name`: *String*, human-friendly name for your the wallet.
+- `caption`: *String*, human-friendly caption for your the wallet.
+- `current_account`: *number*, identifies the current active account in the session (the current version only supports the default account `0`).
+- `available_accounts`: *Array<number>*, list of available accounts in the wallet.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "account_balance": 0,
+    "available_accounts": [
+      0
+    ],
+    "caption": null,
+    "current_account": 0,
+    "name": null,
+    "session_expiration_secs": 3200,
+    "session_id": "9c4f690a50de45b91bb4a5d7fc964c6853ca4eb29fa4ed3e2c9ddfd3e2da45e7"
+  },
+  "id": 1
+}
+```
+
