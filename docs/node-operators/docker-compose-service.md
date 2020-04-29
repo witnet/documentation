@@ -10,6 +10,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
+* Install the current stable release of parallel:
+
+```sh
+sudo apt install parallel
+parallel --citation
+```
+
 * Test the installation of Docker Compose:
 
 ```sh
