@@ -20,7 +20,7 @@ docker-compose --version
 
 ```sh
 cd
-git clone https://github.com/witnet/witnet-rust.git
+git clone https://github.com/witnet/witnet-operator-tools.git
 ```
 
 ## Go in the directory you are interested in
@@ -28,13 +28,13 @@ git clone https://github.com/witnet/witnet-rust.git
 ### for only one node
 
 ```sh
-cd witnet-rust/docker/compose/bertux-operator-stable/
+cd witnet-operator-tools/docker/compose/bertux-operator-stable/
 ```
 
 ### for few nodes (example: 5)
 
 ```sh
-cd witnet-rust/docker/compose/bertux-operator-5/
+cd witnet-operator-tools/docker/compose/bertux-operator-5/
 ```
 
 ## Usage of docker-compose
