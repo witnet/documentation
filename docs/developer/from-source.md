@@ -30,7 +30,7 @@ cd witnet-rust
 ## Get the latest genesis_block.json
 
 ```console
-curl https://raw.githubusercontent.com/witnet/genesis_block/latest/genesis_block.json -o genesis_block.json
+curl https://raw.githubusercontent.com/witnet/genesis_block/master/latest/genesis_block.json -o genesis_block.json
 ```
 
 ## Compile and run with `cargo`
