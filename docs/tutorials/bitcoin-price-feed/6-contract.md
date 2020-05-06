@@ -17,8 +17,6 @@ point can be requested on demand by any interested party:
 - Once the request is resolved, anyone will be able to call the
 `completeUpdate` and write the result into the contract state.
 
-The assumption is that the mere existence of a multiparty contract that consumes the price feed will be enough incentive for the interested parties to request and complete the update so long as the price point inside the contract differs from the actual market price more than the cost of performing the Witnet request.
-
 ## Initialize a basic contract
 
 Let's start by creating a bare-bones contract and saving it as
