@@ -8,7 +8,7 @@
 ## What is an aggregator?
 
 Aggregators define how to reduce or merge the result of multiple sources
-into a single data point. They are similar to Javascript's `.reduce()`
+into a single data point. They are similar to JavaScript's `.reduce()`
 method or the [`fold` higher-order function][fold] from many programming
 languages.
 
@@ -22,7 +22,7 @@ outliers by using one or more statistical primitives.
 - When a Witnet node gets a request assigned for resolution, it
   retrieves every source, applies the source companion scripts on the
   retrieved data, collects the results into an `Array`, and then apply
-  the aggregator on it, first running the filters and eventually the
+  the aggregator on it, first running the filters and later the
   reducer.
 
 
@@ -57,8 +57,8 @@ function.
 
 ## Tally by average
 
-For this tutorial, you will be using a tally function that is quite
-equivalent to the aggregation function:
+For this tutorial, we will be using a tally function that is quite
+similar to the aggregation function:
 
 ```javascript
 // Filters out any value that is more than 1.5 times the standard
@@ -72,8 +72,8 @@ const tally = new Witnet.Tally({
 })
 ```
 
-Note however that in this case the deviation filter is using a narrower
-threshold (`1.0` instead of `1.5`). This is to make sure that malicious
+Note, however, that in this case the deviation filter is using a narrower
+threshold (`1.0` instead of `1.5`). This is to ensure that malicious
 data points will not affect the final result, and that the witnesses
 that produced such outliers will be punished for their misbehavior.
 
@@ -122,12 +122,13 @@ Now it is time to put everything together and
 [fine-tune the request][next].
 
 !!! question "Remember: You are not alone!"
-    You are invited to join the [Witnet Community Discord][discord].
+    Join the Witnet Community [Discord] or [Telegram].
     Members of the Witnet community will be happy to answer your
-    questions and doubts, as well as assisting you through this
+    questions and assist you through this
     tutorial.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [fold]: https://en.wikipedia.org/wiki/Fold_(higher-order_function)
 [next]: /tutorials/bitcoin-price-feed/fine-tuning
