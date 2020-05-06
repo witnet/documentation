@@ -173,7 +173,7 @@ contract PriceFeed is UsingWitnet {
 
 ```
 
-We can now [prepare to deploy!][next].
+We can now [prepare to deploy][next]!
 
 !!! question "Remember: You are not alone!"
     You are invited to join the [Witnet Community Discord][discord].
