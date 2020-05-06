@@ -1,12 +1,13 @@
-# Quick recap on what you built
+# Quick recap on what you've built
 
 **Congratulations!**
 
-You already built your first Solidity contract using
+You've now built your first Solidity contract using
 Witnet to trustlessly consume external APIs.
 
-What will you build next? Feel free to drop by the
-[Witnet Community Discord][discord] and let us know any ideas, doubts or
-suggestions.
+What will you build next? Join the
+Witnet Community [Discord] or [Telegram] groups and let us know any ideas or
+suggestions you have.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
