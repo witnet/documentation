@@ -1,6 +1,6 @@
 # Basic Witnet tutorial: how to create a decentralized Bitcoin price feed on Ethereum with Solidity and Witnet
 
-## What and why
+## What and why?
 
 In this tutorial you will:
 
@@ -16,12 +16,12 @@ In this tutorial you will:
 - Compile and deploy the entire flow into a local Ethereum network.
 
 !!! tip ""
-    Remember: using Witnet from Ethereum is specially convenient because
-    you do not need to own or pay any Wit tokens: you pay the bridge
-    nodes using ETH and then they spend their own Wit tokens when 
+    Remember: using Witnet from Ethereum is particularly convenient because
+    you do not need to own or pay any wit tokens: you pay the bridge
+    nodes using ETH and then they spend their own wit tokens when  
     posting your requests into Witnet in your behalf. 
 
-## How decentralized will this price feed be
+## How decentralized will this price feed be?
 
 None of the parties involved in the process of deploying, updating and
 using the price feed will have any power to tamper with the integrity of
@@ -34,11 +34,11 @@ the data points it provides:
 - The price is averaged from two different public APIs, thus mitigating
   their influence in the final price.
 - The data is relayed by 4 different Witnet nodes, whose reported data
-  points get aggregated and averaged, filtering out any outliers so as
+  points are aggregated and averaged, filtering out any outliers so as
   to cancel any malicious reporter who may try to leverage a slight
   drift of the data point.
 
-## Show me the code upfront
+## What will the code look like?
 
 The final result of this tutorial is available in
 [this GitHub repository][pricefeed]. You can also check it out with
@@ -50,17 +50,18 @@ cd PriceFeed
 truffle unbox stampery-labs/witnet-pricefeed-example
 ```
 
-## Let's do it!
+## Ready to start? 
 
-Ready to start? Let's begin by [creating a new Witnet-enabled Solidity
+Let's begin by [creating a new Witnet-enabled Solidity
 project][create-project].
 
 !!! question "Remember: You are not alone!"
-    You are invited to join the [Witnet Community Discord][discord].
+    Join the Witnet Community [Discord] or [Telegram].
     Members of the Witnet community will be happy to answer your
-    questions and doubts, as well as assisting you through this
+    questions and assist you through this
     tutorial.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
 [pricefeed]: https://github.com/stampery-labs/witnet-pricefeed-example
 [create-project]: /tutorials/bitcoin-price-feed/create-project
