@@ -43,8 +43,7 @@ As you can see, the contract contains the byte code for the request you
 just wrote, exported as a Solidity contract that you can then import
 and instantiate from your own contracts.
 
-Now the next step is pretty straightforward:
-[write your main consumer contract][next].
+The next step is to [write your main consumer contract][next].
 
 !!! question "Remember: You are not alone!"
     You are invited to join the [Witnet Community Discord][discord].
