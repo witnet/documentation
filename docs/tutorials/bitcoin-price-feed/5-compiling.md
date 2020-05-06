@@ -22,10 +22,10 @@ The `compile-requests` npm task will:
 3. Try to compile the requests into Witnet bytecode.
 4. Put the bytecode into auxiliary Solidity contracts that you can
    import into your own contracts.
-5. Write [migration files][migrations] with default constructor
+5. Write [migration files][deploy] with default constructor
    arguments that you can later customize.
 
-If you go and look at the `contracts/requests` folder, you will notice a
+If you now take a look in the `contracts/requests` folder, you will notice a
 new file called `BitcoinPrice.sol`. It will contain something like this:
 
 ```solidity
@@ -40,7 +40,7 @@ contract BitcoinPriceRequest is Request {
 ```
 
 As you can see, the contract contains the byte code for the request you
-just wrote, exported as a Solidity contract that you can in turn import
+just wrote, exported as a Solidity contract that you can then import
 and instantiate from your own contracts.
 
 Now the next step is pretty straightforward:
@@ -53,6 +53,6 @@ Now the next step is pretty straightforward:
     tutorial.
 
 [discord]: https://discord.gg/X4uurfP
-[migrations]: /tutorials/bitcoin-price-feed/migrations
+[deploy]: /tutorials/bitcoin-price-feed/7-deploy
 [intro]: /tutorials/bitcoin-price-feed/introduction
-[next]: /tutorials/bitcoin-price-feed/contract
+[next]: /tutorials/bitcoin-price-feed/6-contract
