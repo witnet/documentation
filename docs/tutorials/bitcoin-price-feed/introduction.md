@@ -16,9 +16,9 @@ In this tutorial you will:
 - Compile and deploy the entire flow into a local Ethereum network.
 
 !!! tip ""
-    Remember: using Witnet from Ethereum is specially convenient because
-    you do not need to own or pay any Wit tokens: you pay the bridge
-    nodes using ETH and then they spend their own Wit tokens when 
+    Remember: using Witnet from Ethereum is particularly convenient, as
+    you do not need to own or pay any WIT tokens: you pay the bridge
+    nodes using ETH and then they spend their own WIT tokens when 
     posting your requests into Witnet in your behalf. 
 
 ## How decentralized will this price feed be
@@ -34,7 +34,7 @@ the data points it provides:
 - The price is averaged from two different public APIs, thus mitigating
   their influence in the final price.
 - The data is relayed by 4 different Witnet nodes, whose reported data
-  points get aggregated and averaged, filtering out any outliers so as
+  points are aggregated and averaged, filtering out any outliers so as
   to cancel any malicious reporter who may try to leverage a slight
   drift of the data point.
 
