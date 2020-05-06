@@ -25,7 +25,7 @@ The `compile-requests` npm task will:
 5. Write [migration files][migrations] with default constructor
    arguments that you can later customize.
 
-If you go and look at the `contracts/requests` folder, you will notice a
+If you now take a look in the `contracts/requests` folder, you will notice a
 new file called `BitcoinPrice.sol`. It will contain something like this:
 
 ```solidity
@@ -40,19 +40,19 @@ contract BitcoinPriceRequest is Request {
 ```
 
 As you can see, the contract contains the byte code for the request you
-just wrote, exported as a Solidity contract that you can in turn import
+just wrote, exported as a Solidity contract that you can then import
 and instantiate from your own contracts.
 
-Now the next step is pretty straightforward:
-[write your main consumer contract][next].
+The next step is to [write your main consumer contract][next].
 
 !!! question "Remember: You are not alone!"
-    You are invited to join the [Witnet Community Discord][discord].
+    Join the Witnet Community [Discord] or [Telegram].
     Members of the Witnet community will be happy to answer your
-    questions and doubts, as well as assisting you through this
+    questions and assist you through this
     tutorial.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
 [migrations]: /tutorials/bitcoin-price-feed/migrations
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [next]: /tutorials/bitcoin-price-feed/contract
