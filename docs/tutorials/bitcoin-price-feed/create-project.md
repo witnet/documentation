@@ -18,8 +18,7 @@ truffle unbox witnet/truffle-box
 ```
 
 You can keep reading this page to learn more about the Truffle box
-boilerplate, but if you are feeling impatient you can [jump into the
-next step][next].
+boilerplate, but if you are feeling impatient you can [jump straight to defining data sources][next].
 
 ### Project folder structure
 
@@ -41,12 +40,13 @@ You are now ready to move forward into
 [defining the data sources to be used][next].
 
 !!! question "Remember: You are not alone!"
-    You are invited to join the [Witnet Community Discord][discord].
+    Join the Witnet Community [Discord] or [Telegram].
     Members of the Witnet community will be happy to answer your
-    questions and doubts, as well as assisting you through this
+    questions and assist you through this
     tutorial.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
 [truffle]: https://www.trufflesuite.com/
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [next]: /tutorials/bitcoin-price-feed/sources
