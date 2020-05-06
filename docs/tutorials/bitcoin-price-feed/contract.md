@@ -184,4 +184,4 @@ We can now [prepare to deploy][next]!
 [Discord]: https://discord.gg/X4uurfP
 [Telegram]: https://t.me/witnetio
 [intro]: /tutorials/bitcoin-price-feed/introduction
-[next]: /tutorials/bitcoin-price-feed/compiling
+[next]: /tutorials/bitcoin-price-feed/migrations
