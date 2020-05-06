@@ -44,9 +44,7 @@ Developers can:
 
 ## Witnet Foundation
 
-[Witnet Foundation][foundation] is the independent entity currently in
-charge of funding the development of Witnet-Rust and Sheikah, as well
-as fostering the thriving ecosystem around the Witnet protocol.
+The Witnet Foundation is an independent entity, designated to fund the development of Witnet-Rust and Sheikah and foster a thriving and engaged ecosystem around the Witnet protocol.
 
 ## Other contributions
 The Witnet community is open to everyone. Even if you are not a
@@ -55,7 +53,6 @@ developer or node operator, there are
 
 [apis-illustration]: assets/images/APIs.svg
 [ethereum]: try/use-from-ethereum
-[foundation]: https://witnet.foundation
 [whitepaper]: https://witnet.io/witnet-whitepaper.pdf
 [run-a-node]: /try/run-a-node
 [contributing]: /developer/contributing
