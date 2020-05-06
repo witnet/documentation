@@ -48,4 +48,4 @@ You are now ready to move forward into
 [discord]: https://discord.gg/X4uurfP
 [truffle]: https://www.trufflesuite.com/
 [intro]: /tutorials/bitcoin-price-feed/introduction
-[next]: /tutorials/bitcoin-price-feed/3-sources
+[next]: /tutorials/bitcoin-price-feed/2-sources
