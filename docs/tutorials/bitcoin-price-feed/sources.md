@@ -8,12 +8,12 @@
 ## A quick intro on Witnet data sources
 
 **Data sources are each of the endpoints from which you want Witnet to
-retrieve the data**. Most times, these will be the URLs of public APIs.
+retrieve the data**. Most of the time, these will be the URLs of public APIs.
 
 There is no limit to the number of sources in a single Witnet
-request—although the more sources, the higher the fees will be.
+request - although the more sources, the higher the fees will be.
 
-**Each source can have a companion script** that lists operations that
+**Each source can have a companion script** that lists the operations
 we want the witnesses to apply on the retrieved data. This enables you
 to get the information of your interest extracted out of larger data
 structures like JSON objects.
@@ -21,27 +21,27 @@ structures like JSON objects.
 ## Choose your sources carefully
 
 Just like your friends—and your enemies—your **data sources need to be
-chosen wisely**. The *[Garbage In, Garbage Out][GIGO]* principle really
+chosen wisely**. The *[Garbage In, Garbage Out][GIGO]* principle
 applies here. Regardless of the many *checks-and-balances*,
 well-designed incentives and security measures that the Witnet protocol
 implements, if the data sources in your Witnet requests are not
-reliable, either will your contracts be.
+reliable, your contracts won't be either.
 
-The more data sources and the more reliable they are, the more
-trust-mitigated your Witnet requests will become. That is, your
+The more **reliable** data sources you list, the more
+trust-mitigated your Witnet requests will become. In other words, your
 contracts will be more resilient to downtime, failure or corruption of
 each separate source.
 
 ## Introducing smart data sources
 
-The scripting language used in Witnet requests is quite rich indeed: in
+The scripting language used in Witnet requests is very flexible: in
 addition to selecting specific pieces of data, you can also transform
-those so they are uniform and can be compared or aggregated together.
-E.g. imagine a request that queries weather data. One source may use
-Celsius and the other may use Fahrenheit, but you will tell Witnet to
-transform one into another so they can be averaged.
+them so they are uniform and can be compared or aggregated together.
+For example, imagine a request that queries weather data. One source may use
+Celsius and the other may use Fahrenheit. You can tell Witnet to
+transform them both to Celcius so they can be averaged.
 
-In this tutorial, you will be defining two data sources—one for querying
+In this tutorial, you will be defining two data sources — one querying
 [Bitstamp] and the other for [CoinDesk]:
 
 ```javascript tab="Source 1: Bitstamp"
@@ -53,7 +53,7 @@ const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
 
 ```javascript tab="Source 2: CoinDesk"
 // Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
-// The JSON here is a bit more complex, thus more operators are needed
+// The JSON here is a bit more complex, so more operators are needed
 const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
   .parseMapJSON()         // Parse a `Map` from the retrieved `String`
   .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
@@ -61,8 +61,7 @@ const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice
   .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
 ```
 
-These scripts are quite self-explanatory, but there are a few details
-that are worth noticing:
+A few things worth noticing:
 
 - The operators and data types that can be used are defined by the
   [RADON domain-specific language][radon].
@@ -70,10 +69,10 @@ that are worth noticing:
   as you would expect from Javascript method chaining or
   [the builder pattern][builder].
 - Source scripts always start with a `String`[^1].
-- Key-value data structures (roughly alike to Javascript *objects*,
+- Key-value data structures (roughly similar to Javascript *objects*,
   Python *dictionaries* or Solidity *mappings*) are called *maps*.
 - Values in maps cannot be accessed directly by name as `.keyName` but
-  rather accessed through a call to one of the `.getArray("keyName")`,
+  instead through a call to one of the `.getArray("keyName")`,
   `.getBoolean("keyName")`, `.getInteger("keyName")`, `.getFloat("keyName")`,
   `.getInteger("keyName")`, `.getMap("keyName")` or `.getString("keyName")` operators.
 - The final return type of a script is that of its last operator.
@@ -104,7 +103,7 @@ const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice
   .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
 ```
 
-Notice the `import` instruction on top, which makes possible using all
+Notice the `import` instruction at the top, which makes it possible to use all
 the tools that the Witnet Javascript library provides:
 
 ```javascript
@@ -119,12 +118,13 @@ You are done with the sources for now. Let's move forward into
 [defining the aggregation and tally functions][next].
 
 !!! question "Remember: You are not alone!"
-    You are invited to join the [Witnet Community Discord][discord].
+    Join the Witnet Community [Discord] or [Telegram].
     Members of the Witnet community will be happy to answer your
-    questions and doubts, as well as assisting you through this
+    questions and assist you through this
     tutorial.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [next]: /tutorials/bitcoin-price-feed/aggregations
 [radon]: /protocol/data-requests/overview/#rad-object-notation-radon
@@ -135,12 +135,12 @@ You are done with the sources for now. Let's move forward into
 
 [^1]: In future versions, the Witnet protocol will make no assumptions
 on what the data type of the server response will be for different data
-sources. This will allow dealing with formats other than plain text,
-such as multimedia files and any other kind of binaries. Therefore,
-source scripts will start with `Bytes` as the input type and it will be
+sources. This will allow for formats other than plain text,
+such as multimedia files and any kind of binaries. Therefore,
+source scripts will start with `Bytes` as the input type; it will be
 totally up to the requester to specify whether those bytes should be
-interpreted as a `String`, `Integer` or whatnot.
+interpreted as a `String`, `Integer` etc.
 
-[^2]: One of the key features in the future RADON 2.0 version will be
-implicit type casting, which will dramatically cut off the size of
+[^2]: One of the key features in RADON 2.0 will be
+implicit type casting, which will dramatically reduce the size of
 scripts.
