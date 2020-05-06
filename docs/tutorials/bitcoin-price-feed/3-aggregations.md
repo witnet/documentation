@@ -130,4 +130,4 @@ Now it is time to put everything together and
 [discord]: https://discord.gg/X4uurfP
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [fold]: https://en.wikipedia.org/wiki/Fold_(higher-order_function)
-[next]: /tutorials/bitcoin-price-feed/fine-tuning
+[next]: /tutorials/bitcoin-price-feed/4-fine-tuning
