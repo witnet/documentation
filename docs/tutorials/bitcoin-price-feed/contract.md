@@ -14,18 +14,12 @@ point can be requested on demand by any interested party:
 - Anyone will be able to call a `requestUpdate` method in the contract
   that creates a new instance of the `BitcoinPrice.sol` contract and
   send it to Witnet.
-- Once the request gets resolved, anyone will be able to call the
-`completeUpdate` to actually write the result into the contract state.
-
-It is an assumption that the mere existence of a multiparty contract
-that consumes the price feed will be enough incentive for the interested
-parties to request and complete the update always that the price point
-inside the contract differs from the actual market price more than the
-cost of performing the Witnet request.
+- Once the request is resolved, anyone will be able to call the
+`completeUpdate` and write the result into the contract state.
 
 ## Initialize a basic contract
 
-Let's start by creating a really bare-bones contract and saving it as
+Let's start by creating a bare-bones contract and saving it as
 `contracts/PriceFeed.sol`:
 
 ```js
@@ -56,11 +50,11 @@ contract PriceFeed is UsingWitnet {
 }
 ```
 
-What you are doing here is quite straightforward:
+Executing the above will:
 
 - Import `UsingWitnet.sol` so your contract is Witnet-enabled.
 - Import `BitcoinPrice.sol` so that you can instantiate the Witnet
-  request when needed.
+  request when necessary.
 - Make your contract inherit `UsingWitnet`.
 - Make the constructor receive the address of the Witnet Bridge
   Interface (`_wbi`) and pass it down to the `UsingWitnet` constructor
@@ -86,7 +80,7 @@ function requestUpdate() public payable {
 ## Write the `resolveUpdate` method that reads the result of the Witnet request
 
 ```js
-// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
+// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows you to
 // protect your methods from being called before the request has been successfully
 // relayed into Witnet.
 function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
@@ -105,7 +99,7 @@ function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
     emit Error(uint64(errorCode), errorMessage);
   }
 
-  // In any case, set `pending` to false so a new update can be requested
+  // In either case, set `pending` to false so a new update can be requested
   pending = false;
 }
 ```
@@ -130,10 +124,10 @@ contract PriceFeed is UsingWitnet {
   bool pending;               // Tells if an update has been requested but not yet completed
   Request request;            // The Witnet request object, is set in the constructor
 
-  // Allows logging errors
+  // Allow logging errors
   event Error(uint64, string);
 
-  // This constructor does a nifty trick to tell the `UsingWitnet` library where
+  // This constructor carries out a clever trick to tell the `UsingWitnet` library where
   // to find the Witnet contracts on whatever Ethereum network you use.
   constructor (address _wbi) UsingWitnet(_wbi) public {
     // Instantiate the Witnet request
@@ -153,7 +147,7 @@ contract PriceFeed is UsingWitnet {
     lastRequestId = witnetPostRequest(request, _witnetRequestReward, _witnetResultReward);
   }
 
-  // The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
+  // The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows you to
   // protect your methods from being called before the request has been successfully
   // relayed into Witnet.
   function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
@@ -179,11 +173,15 @@ contract PriceFeed is UsingWitnet {
 
 ```
 
+We can now [prepare to deploy][next]!
+
 !!! question "Remember: You are not alone!"
-    You are invited to join the [Witnet Community Discord][discord].
+    Join the Witnet Community [Discord] or [Telegram].
     Members of the Witnet community will be happy to answer your
-    questions and doubts, as well as assisting you through this
+    questions and assist you through this
     tutorial.
 
-[discord]: https://discord.gg/X4uurfP
+[Discord]: https://discord.gg/X4uurfP
+[Telegram]: https://t.me/witnetio
 [intro]: /tutorials/bitcoin-price-feed/introduction
+[next]: /tutorials/bitcoin-price-feed/compiling
