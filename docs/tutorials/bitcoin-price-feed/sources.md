@@ -11,7 +11,7 @@
 retrieve the data**. Most of the time, these will be the URLs of public APIs.
 
 There is no limit to the number of sources in a single Witnet
-request - although the more sources, the higher the fees will be.
+request — although the more sources, the higher the fees will be.
 
 **Each source can have a companion script** that lists the operations
 we want the witnesses to apply on the retrieved data. This enables you
