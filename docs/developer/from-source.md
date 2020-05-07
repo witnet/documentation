@@ -4,7 +4,7 @@
 
 ### Rust 
 
-`witnet-rust` has been developed using the Rust programming language.
+`witnet-rust` is being developed using the Rust programming language.
 You need to install Rust on your system to be able to compile the source code.
 Follow installation instructions for your operating system provided on [rustup.rs][rustup]
 
