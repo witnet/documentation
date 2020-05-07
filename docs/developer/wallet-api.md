@@ -21,6 +21,7 @@ node_url = "127.0.0.1:21338"
 | [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`     | `success`                                     |
 | [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
 | [close_session](#close_session)             | `session_id`                                     | `success`                                     |
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`                        | `address`, `path`                             |
 
 
 
@@ -341,3 +342,39 @@ Response:
   	"id": "1"
 }
 ```
+
+
+### generate_address
+
+The JsonRPC method `generate_address` is used to generate a new external address for the given wallet and session id.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+	"method": "generate_address",
+  	"params": {
+  		"session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02"
+  		"wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  	},
+  	"id": "1",
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "address": "twit1gtvu9a37w9sxaej30grp9rpxkkwwjk3pq0jqf9",
+    "path": "m/3'/4919'/0'/0/0"
+  },
+  "id": "1"
+}
+```
+
