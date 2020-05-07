@@ -1,9 +1,8 @@
 # Running a Node in the Witnet Testnet
 
-The Witnet testnet is open for anyone to join and test it by running
-their own full node. Running a node on the Witnet mainnet is not
-possible before the mainnet is released. Check out the [roadmap] and
-save the dates!
+The Witnet Testnet is open for anyone to join and test it by running
+their own full node. Running a node on the Witnet Mainnet is not
+possible before Mainnet is launched. 
 
 !!! tip ""
     You do not need to run a Witnet node to use Witnet from your
@@ -20,14 +19,14 @@ Hardware requirements are [listed in the node operators docs][hardware-requireme
 The most convenient method for running a Witnet node is through the
 `witnet/witnet-rust` Docker image.
 
-First off, you need Docker to be installed in the computer where you will
-be running the node. Remember that some GNU/Linux distributions require some
-[extra steps][docker-extra-steps] for getting Docker to work.   
+Firstly, you need to install Docker on the device you will
+be running the node from. Note: some GNU/Linux distributions require some
+[extra steps][docker-extra-steps] to get Docker up and running.   
 
 The Witnet docker image downloads and runs a witnet-rust node in the latest
-testnet in just a matter on seconds.
+Testnet in just a matter on seconds.
 
-Starting a node is as easy as it gets:
+To start a node, use:
 
 ```bash
 docker run -d \
@@ -39,9 +38,8 @@ docker run -d \
 
 ### How to execute CLI commands on the running node
 
-Then, you can run CLI commands on the running node with this simple
-one-liner. In this example, it will show many "satowits" your has mined
-so far:
+With your node running, you can execute CLI commands with this simple
+one-liner. Using the CLI example below, you can find out how many "satowits" your node has mined:
 
 ```bash
 docker exec witnet_node ./witnet node getBalance
@@ -54,9 +52,9 @@ supported CLI commands][CLI].
 ## Open your ports!
 
 The best way to contribute to the growth and sustainability of the
-Witnet network is **opening up the listening port of your node** to the
-open Internet, so that other nodes in the network can download block
-chain data from yours and **your transactions can be broadcast more
+Witnet network is by **opening up the listening port of your node**, 
+so that other nodes in the network can download block
+chain data from you and **your transactions can be broadcasted more
 quickly**.
 
 For this feature to be effective, you will also need your IP address to
@@ -80,7 +78,7 @@ requests from others. You can learn how to produce Witnet requests by
 following the [tutorial on how to create a Bitcoin price feed using
 Ethereum and Witnet][tutorial]. In addition, we will be soon releasing a
 user-friendly editor in the [Sheikah desktop app][Sheikah] that will
-enable to compose data requests and RADON scripts visually.
+enable to compose data requests and RADON scripts visually. In the meantime, or you can play around with [this community-built request editor][witnet.tools].
 
 ## Customize configuration
 
