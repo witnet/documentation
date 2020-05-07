@@ -50,7 +50,7 @@ contract PriceFeed is UsingWitnet {
 }
 ```
 
-Executing the above will:
+The above will:
 
 - Import `UsingWitnet.sol` so your contract is Witnet-enabled.
 - Import `BitcoinPrice.sol` so that you can instantiate the Witnet
