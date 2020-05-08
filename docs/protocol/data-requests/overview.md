@@ -51,7 +51,7 @@ Engine.
 
 !!! info ""
     Just in case you were wondering, *RAD* stands for *Retrieve*,
-    *Aggregate* and *Deliver*.
+    *Attest* and *Deliver*.
 
 ## RAD Object Notation (RADON)
 
@@ -86,8 +86,7 @@ by the RAD Engine on the output of the previous call.
 The RAD Engine is only capable of interpreting well-formed 
 [RADON scripts][radon].
 
-Even though human beings can safely write RADON without their heads
-exploding, they are just not expected to. The main way to compose Witnet
+Even though human beings **can** write RADON, it's not the best method. The standard way to compose Witnet
 requests is using the **[Witnet Truffle box][tutorial]**, which you can
 learn about by following the [price feed tutorial][tutorial].
 
