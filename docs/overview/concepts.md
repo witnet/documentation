@@ -5,20 +5,18 @@ allows a network of computers to act as a "decentralized oracle" that
 retrieves, attests and delivers information to smart contracts without
 having to place trust in a single entity.
 
-Wait, what? Ok, lets go one step at a time.
-
 ## Smart Contracts Are Not What You Were Told
 
 Over the last years, blockchain technology has promised to revolutionize
 business by allowing creation of "smart contracts" that, unlike paper
 contracts, are impossible to breach.
 
-Actually, those smart contracts are nothing more than small programs
-that can be run in a trustless manner. That is: once they are created,
+In reality, those smart contracts are nothing more than small programs
+that can be run in a trustless manner. That is, once they are created,
 no one can stop them from doing exactly what they were created for. They
-just obey their own source code, and censorship is just impossible.
+obey their own source code, and censorship is impossible.
 
-This is a really powerful idea. If you can write a smart contract that:
+If you can write a smart contract that:
 
 1. implements the logic of an agreement, and
 2. can execute the clauses of the contract on its own (like paying Alice or Bob depending on the outcome of some event),
@@ -28,7 +26,7 @@ no room for contestation. Boom :bomb:.
 
 ## Blockchain Oracles, And Their Problem
 
-Given that smart contracts need to be completely deterministic[^1], they
+Given that smart contracts must be completely deterministic[^1], they
 do not support input of data from non-deterministic sources such as APIs
 or websites.
 
@@ -41,7 +39,7 @@ Of course, as the creator of a smart contract, you can create a method
 that allows you and only you to act as an "oracle" by introducing
 information from the outside at will. But you would be completely
 breaking the trustless nature of a smart contract. If trust is put in a
-single entity, there you have a single point of failure that can easily
+single entity, then you have a single point of failure that can easily
 be hacked or corrupted.
 
 Smart contracts connected to the real world will not be completely
@@ -57,51 +55,47 @@ smart contracts to any online data source. Sport results, stock prices,
 weather forecasts or even other blockchains can be easily queried
 (preferably through APIs).
 
-The protocol describes a distributed network of peer nodes—which we
-fondly call _witnesses_—who earn Wit tokens as a reward for retrieving
+The protocol describes a distributed network of peer nodes—
+colloquially named _witnesses_- who earn Wit tokens as a reward for retrieving
 web data and reporting it directly to the smart contracts.
 
 The bottom line is that a considerable number of randomly selected,
 anonymous peers retrieving information from one or more sources can
-converge into a single truth about the data they retrieved if a majority
-of them are incentivized to report the retrieved data honestly and they
+converge into a single truth about the data they retrieved, if a majority
+of them are incentivized to report the retrieved data honestly, and they
 apply a common consensus algorithm that resolves inconsistencies.
 
 This Decentralized Oracle Network (DON) maintains and distributes a
-block chain data structure that serves as a common ledger for the
-operation of the protocol as well as for the wit token, which is central
-to incentivizing the network players to abide by the protocol and make
-them liable for any misbehavior. Witnesses are also in charge of
+block chain data structure that serves as a common ledger both for the
+operation of the protocol, and for the wit token (which incentives
+the network players to abide by the protocol and ensures they are
+liable for any misbehavior). Witnesses are also in charge of
 validating transactions in the network and bundling them into blocks
 that get appended to the blockchain periodically.
 
-The process by which witnesses retrieve, attest and deliver data in
+The process by which witnesses retrieve, attest and deliver data on
 behalf of the smart contracts is in some way similar to mining in other
 blockchains. However, fulfilling these tasks and collecting the rewards
-is not that expensive in terms of computation.
+is not computationally expensive.
 
-The protocol has been conceived to ensure utmost decentralization and
-fairnes, so each witness' weight in the network is not aligned to their
+The protocol has been designed to ensure utmost decentralization and
+fairness, so each witness' weight within the network is not aligned to their
 computing power. Instead, the probability for every witness to be
 assigned tasks or mine new blocks is directly proportional to their past
 performance in terms of honesty: their reputation.
 
 !!! tip
-    Of course, the so-called miners are not actual human beings sitting
-    in front of a computer, fulfilling assignments coming from an
-    Internet overlord that commands them to use their web browser to
-    navigate to a certain website and take a snapshot or copy some text
-    that they must report.
-    Indeed, the miners are just computers running a software
-    (Witnet-rust) that automatically receive and execute a series of
-    tasks without the owner of the computer having to actively do
-    anything else than installing it.
+    Of course, the "miners" are not actual human beings sitting
+    in front of a computer, manually fulfilling assignments.
+    Instead, the "miners" are just computers running a software
+    (witnet-rust) that automatically receive and execute a series of
+    tasks.
 
 ## 100% Truth, 0% Trust
 
 Data retrieved, attested and delivered using the Witnet protocol is
-reliable not because of authority but because it comes from anonymous
-nodes who are incentivized to remain honest and to compete for rewards.
+reliable not because of a central authority, but because it comes from anonymous
+nodes, incentivized to remain honest and to compete for rewards.
 
 In addition, integrity of this data is guaranteed by a consensus
 algorithm that detects fraudsters, who are immediately punished.
@@ -112,7 +106,7 @@ middle and long term incentives for them to abide by the protocol and
 not to tamper with the data they broker.
 
 !!! info
-    Please note that Witnet's aim is not spotting fake data, but
+    Please note that Witnet's aim is not to spot fake data, but
     guaranteeing a 1:1 match between what is published online—regardless
     of its truthness—and the data that is eventually delivered the smart
     contracts.
@@ -122,11 +116,5 @@ values when executed across all the nodes maintaining the blockchain,
 therefore causing inconsistencies that would lead to breaking the
 network consensus.
 
-[whitepaper]: https://witnet.io/static/witnet-whitepaper.pdf
+[whitepaper]: https://witnet.io/witnet-whitepaper.pdf
 [reputation protocol]: protocol/reputation
-[Stampery]: https://stampery.com
-[Witnet Foundation]: https://witnet.foundation
-[Aragon]: https://aragon.org
-[Trailbot]: https://trailbot.io
-[Mongoaudit]: https://mongoaud.it
-[Loqui IM]: https://loqui.im
