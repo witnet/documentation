@@ -1,6 +1,6 @@
 # Run as `systemd` service
 
-The `runner.sh` script automatically download and install the latest version of the Witnet node software (`witnet-rust`). It can also be used to update it to the latest version because it will keep all the block chain data and the configuration file in the hidden `.witnet` directory.
+The `runner.sh` script automatically downloads and installs the latest version of the Witnet node software (`witnet-rust`). It can also be used to update to the latest version, since it will keep all the block chain data and the configuration file in the hidden `.witnet` directory.
 
 For Testnet 7.3 and greater, the configuration file needs to be customized with the public IP and port of the node, which must be set at the `public_addr` field in `witnet.toml` .
 
