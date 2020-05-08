@@ -3,7 +3,7 @@
 ## What's the weather in Berlin?
 
 The following retrieval, aggregation and tally scripts operate on the
-result of [this query to the OpenWeatherMap API ][openweathermap] that
+result of [this query to the OpenWeatherMap API ][openweathermap] and
 returns the current weather conditions in Berlin.
 
 ### Retrieval stage
@@ -85,7 +85,7 @@ new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.FLOAT])
 ### Tally stage
 
 The following tally script is quite generic but should work for most
-cases in which we are trying to build consensus on `Integer` or `Float`
+cases where we are trying to build consensus on `Integer` or `Float`
 data points.
 
 ```ts tab="Javascript"
@@ -181,7 +181,7 @@ new Witnet.Script([Witnet.TYPES.STRING])
 ### Aggregation stage
 
 The following tally script is quite generic but should work for most
-cases in which we are trying to build consensus on `Integer` or `Float`
+cases where we are trying to build consensus on `Integer` or `Float`
 data points.
 
 ```ts tab="Javascript"
@@ -232,8 +232,8 @@ witness nodes, which will produce a point in the `[0, 255]` range that
 is normally distributed around the half-range, i.e. it will fall in any
 of the `[0, 127]` or `[128, 255]` sub-ranges with a 50% probability.
 
-Finally, it checks in which side of the half-range did the point
-actually fall and maps that into a `String` with value `heads` or
+Finally, it checks which side of the half-range the point
+actually fell, and maps that onto a `String` with value `heads` or
 `tails`.
 
 ### Retrieval stage
