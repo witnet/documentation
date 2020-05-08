@@ -10,8 +10,8 @@ Witnet-Rust is experimental software running on experimental network
 protocols:
 
 - All the main components are in place—but they need yet to be
-battle tested before mainnet. 
-- `Testnet-4` is live. [Here's the roadmap][roadmap] and this is
+battle tested before Mainnet. 
+- `Testnet-8` is live. [Here's the roadmap][roadmap] and this is
   [how to run a node][run-a-node].
 - The Witnet community is doing its best to make `witnet-rust` rock
 solid as soon as possible.
@@ -28,7 +28,7 @@ The [Ethereum Bridge][use-from-ethereum] is the component in charge of
 relaying data requests from Ethereum into Witnet and then communicating
 the results back to the originating contracts.
 
-The bridge is actually three different pieces of software:
+The bridge is composed of three different pieces of software:
 
 - The `UsingWitnet` Solidity contract that Ethereum developers can
   extend (`contract MyContract is UsingWitnet { ... }`).
