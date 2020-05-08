@@ -38,7 +38,7 @@ git clone https://github.com/witnet/witnet-operator-tools.git
 cd witnet-operator-tools/docker/compose/bertux-operator-stable/
 ```
 
-### for few nodes (example: 5)
+### for several nodes (example: 5)
 
 ```sh
 cd witnet-operator-tools/docker/compose/bertux-operator-5/
