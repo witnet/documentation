@@ -3,7 +3,7 @@
 [RADON scripts][RADON] are encoded using [CBOR], a very
 efficient, compact and widely supported data structure encoding.
 
-Look for example at this impressively short (28 bytes) serialized RADON script:
+Look for example at this succinct (28 bytes) serialized RADON script:
 ```ts
 // As Hex string
 8618431874821861677765617468657218748218616474656D701872
@@ -13,7 +13,7 @@ Look for example at this impressively short (28 bytes) serialized RADON script:
 
 ```
 
-Once decoded, the resulting structure will actually represent this RADON script:
+Once decoded, the resulting structure will represent this RADON script:
 ```ts
 [
     STRING_PARSEJSON,       // 0x45
@@ -26,7 +26,7 @@ Once decoded, the resulting structure will actually represent this RADON script:
 ```
 
 !!! tip
-    RADON scripts are pure byte code sequences but at the same time represent high-level abstractions.
+    RADON scripts are pure byte code sequences, and at the same time represent high-level abstractions.
     In the Javascript-like representation of RADON that the [Witnet Truffle box][tutorial] uses, the script above may resemble:
     
     ```ts
