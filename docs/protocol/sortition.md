@@ -14,7 +14,7 @@ As specified, if the VRF output falls below the target value, then the node is e
 
 There are several properties that a cryptographic sortition needs to fullfil. The utilization of Verifiable Random Functions to select committees offers us the following properties:
 
-- **Collision resistance** - its difficult to discover two inputs that map to the same output.
+- **Collision resistance** - it is difficult to discover two inputs that map to the same output.
 - **Pseudorandomness** - the output is indistinguishable from random by anyone without the secret key.
 - **Trusted uniqueness** - with a public key, a VRF input m corresponds to a unique output β.
 - **Verifiability** - with a public key and a VRF output, nodes can verify whether the VRF was computed correctly.
