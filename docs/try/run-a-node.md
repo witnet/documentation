@@ -82,6 +82,24 @@ Ethereum and Witnet][tutorial]. In addition, we will be soon releasing a
 user-friendly editor in the [Sheikah desktop app][Sheikah] that will
 enable to compose data requests and RADON scripts visually.
 
+## Customize configuration
+
+A custom `witnet.toml` file can be used to configure parameters of the node.
+Settings like the JSON-RPC server socket address and the directory path of
+the database files can be customized. More details and a file example can
+be [found here][toml].
+
+The path to the TOML file can be set when starting the node:
+```
+docker run -d \
+    --volume ~/.witnet:/.witnet \
+    --volume /path/to/custom/witnet.toml:/witnet.toml \
+    --name witnet_node \
+    --publish 21337:21337 \
+    witnet/witnet-rust
+```
+
+
 [ethereum]: /try/use-from-ethereum
 [roadmap]: /community/roadmap
 [CLI]: /node-operators/cli
@@ -90,3 +108,4 @@ enable to compose data requests and RADON scripts visually.
 [hardware-requirements]: /node-operators/hardware-requirements
 [docker-extra-steps]: https://docs.docker.com/install/linux/linux-postinstall/
 [CGN]: https://en.wikipedia.org/wiki/Carrier-grade_NAT
+[toml]: https://github.com/witnet/witnet-rust/blob/master/docs/configuration/toml-file.md
