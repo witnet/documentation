@@ -869,28 +869,26 @@
                 
                 <h1 id="hardware-requirements-of-running-a-witnet-node">Hardware requirements of running a Witnet node<a class="headerlink" href="#hardware-requirements-of-running-a-witnet-node" title="Permanent link">&para;</a></h1>
 <p>Witnet mining uses a
-<a href="https://witnet.io/about#consensus">probabilistic <strong>BFT-alike consensus algorithm</strong></a> — long
-story short: <strong>no Proof-of-Work is needed</strong>. In addition, <code class="codehilite"><span class="err">witnet-rust</span></code>
-is written in <strong>Rust</strong>, one of the most <strong>performant and secure</strong>
-programming languages. When compiled, the resulting binary is tailored
+<a href="https://witnet.io/about#consensus">probabilistic <strong>BFT-alike consensus algorithm</strong></a>, so <strong>no Proof-of-Work is necessary</strong>. In addition, <code class="codehilite"><span class="err">witnet-rust</span></code>
+is written in <strong>Rust</strong>, one of the most <strong>performance-focussed and secure</strong>
+programming languages available. When compiled, the resulting binary is tailored
 to each specific platform, which guarantees <strong>near-zero overhead</strong>.</p>
-<p><strong>The hardware requirements for running a full node are thus incredibly
+<p><strong>The hardware requirements for running a full node are therefore incredibly
 low</strong>. Obviously, the more resources you spare when provisioning your
-machine, the better it will perform and the better it will stand the
-test of time.</p>
+machine, the better it will perform and the less likely you are to face problems.</p>
 <p>This is a quick checklist on what to look for:</p>
 <ul>
-<li><strong>A good amount of disk space</strong> (something in the hundreds of GBs) is
+<li><strong>A good amount of disk space</strong> (somewhere in the 100s of GBs) is
   better for long term storage of the blockchain.</li>
 <li><strong>Any modern laptop or desktop</strong> will run it flawlessly.</li>
 <li>Virtual private servers (VPS) should work too. Take into account
   however that <strong>some cloud providers may restrict the use of blockchain
   protocols</strong>. Also, your node may get <a href="https://medium.com/witnet/the-p2p-bucketing-system-in-witnet-d893dce4b8c5">poor connectivity with the rest
   of the network because of bucketing</a>.</li>
-<li><strong>Raspberry Pis</strong>, specially the <em>Pi 3 Model B</em> and <em>Pi 4 Model B</em>,
-  are also supported and in our experience they are a great, inexpensive
-  way of running a Witnet node. As a fun experiment, <a href="https://twitter.com/aesedepece/status/1105901233162866688">a $15 Raspberry Pi
-  Zero is capable of mining blocks on the Witnet Testnet</a>.</li>
+<li><strong>Raspberry Pis</strong>, especially the <em>Pi 3 Model B</em> and <em>Pi 4 Model B</em>,
+  are also supported and, in our experience, are a great, inexpensive
+  way of running a Witnet node. For example, <a href="https://twitter.com/aesedepece/status/1105901233162866688">here's a $15 Raspberry Pi
+  Zero mining blocks on the Witnet Testnet in 2019</a>.</li>
 </ul>
                 
                   

@@ -1113,20 +1113,20 @@ every single aspect of their life cycle:</p>
 <p>The <code class="codehilite"><span class="err">witnesses</span></code> is the minimum number of Witnet nodes that will be
 resolving each specific request.</p>
 <p>In general, the higher the number of witnesses, the safer the request.
-However, fees should be proportional to this number.</p>
+However, a higher number of witnesses generally means higher fees.</p>
 <p>The actual number of nodes that will resolve each request is guaranteed
-to be equal than the specified number. If for some reason the
+to be equal to the specified number. If for some reason the
 network fails to assign the request to enough nodes, it will be
 reassigned in every subsequent epoch to a different randomly-selected
 set of nodes until the required number is reached.</p>
 <p>The <code class="codehilite"><span class="err">backup_witnesses</span></code> is the number of Witnet nodes that will be used
 as a backup in case some of the originally assigned nodes fail to
 fulfill their commitments.</p>
-<p>A higher <code class="codehilite"><span class="err">backup_witnesses</span></code> number implies more fees but also guarantees
-that the request will be timely resolved. In the other hand, if you use
-small <code class="codehilite"><span class="err">backup_witnesses</span></code> values, the risk is that your request will need
+<p>A higher <code class="codehilite"><span class="err">backup_witnesses</span></code> value corresponds with higher fees but also guarantees
+that the request will be resolved in a timely fashion. On the other hand,
+a small <code class="codehilite"><span class="err">backup_witnesses</span></code> value comes with the risk that your request will need
 to be retried many times and therefore the result may be potentially
-inaccurate (in case the queried data point changes very fast).</p>
+inaccurate (especially if the queried data point changes rapidly).</p>
 <h4 id="optional-arguments-for-setquorum">Optional arguments for <code class="codehilite"><span class="na">.setQuorum</span></code><a class="headerlink" href="#optional-arguments-for-setquorum" title="Permanent link">&para;</a></h4>
 <p>The <code class="codehilite"><span class="na">.setQuorum</span></code> method accepts three more optional arguments:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span>
@@ -1138,37 +1138,37 @@ inaccurate (in case the queried data point changes very fast).</p>
 <span class="p">)</span>
 </code></pre></div>
 
-<p>The <code class="codehilite"><span class="err">extra_commit_rounds</span></code> number is how many extra epochs will Witnet
-nodes be given for commiting their partial results. A number of rounds
+<p>The <code class="codehilite"><span class="err">extra_commit_rounds</span></code> number specifies how many extra epochs Witnet
+nodes will be given for committing their partial results. A number
 greater than <code class="codehilite"><span class="err">0</span></code> strengthens the chances of a Witnet request being
 resolved to a value instead of timing out. This parameter is actually an
-upper threshold, i.e. the request will progress into reveal stage as
+upper threshold, i.e. the request will progress into a reveal stage as
 soon as the number of commitments equals the number of required witnesses.
 If not set, this parameter defaults to <code class="codehilite"><span class="err">1</span></code>. This parameter has no impact
 on the price of the request.</p>
-<p>The <code class="codehilite"><span class="err">extra_reveal_rounds</span></code> number is how many extra epochs will Witnet
-nodes be given for revealing their partial results. A number of rounds
+<p>The <code class="codehilite"><span class="err">extra_reveal_rounds</span></code> number specifies how many extra epochs Witnet
+nodes will be given to reveal their partial results. A number
 greater than <code class="codehilite"><span class="err">0</span></code> strengthens the security of a Witnet request by
 preventing miners from withholding reveal transactions—as the subsequent
 miners can include any reveal transactions withheld by a former miner.
-This parameter is actually an upper threshold, i.e. the request will get
+This parameter is actually an upper threshold, i.e. the request will be
 tallied and finalized as soon as the number of reveals equals the number
 of commitments. If not set, this parameter defaults to <code class="codehilite"><span class="err">1</span></code>. This
 parameter has no impact on the price of the request.</p>
-<p>The <code class="codehilite"><span class="err">minimum_consensus</span></code> percentage allows to define a threshold for
+<p>The <code class="codehilite"><span class="err">minimum_consensus</span></code> percentage allows users to define a threshold for
 aborting resolution of a request if the witnessing nodes did not arrive
-to broad consensus. That is, aggregator and tally functions will not be
+at broad consensus. That is, aggregator and tally functions will not be
 applied if the ratio of valid values vs. errors is below this threshold.
-<em>E.g. a <code class="codehilite"><span class="err">minimum_consensus</span></code> threshold of <code class="codehilite"><span class="err">70</span></code> requires a <code class="codehilite"><span class="err">70%</span></code> of the
-witnesses to report a valid value, otherwise the result of the request
-will be an error stating "insufficient consensus"</em>. If not set, this
+<em>E.g. a <code class="codehilite"><span class="err">minimum_consensus</span></code> threshold of <code class="codehilite"><span class="err">70</span></code> requires <code class="codehilite"><span class="err">70%</span></code> of the
+witnesses to report a valid value, otherwise the request
+will result in an error, stating "insufficient consensus"</em>. If not set, this
 parameter defaults to <code class="codehilite"><span class="err">51</span></code>.</p>
 <h3 id="set-the-fees">Set the fees<a class="headerlink" href="#set-the-fees" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="nx">reward</span><span class="p">,</span> <span class="nx">commit_fee</span><span class="p">,</span> <span class="nx">reveal_fee</span><span class="p">,</span> <span class="nx">tally_fee</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Witnet allows parametrization of many of the economic incentives that
-affect the life cycle of your requests. Namely, those incentives are:</p>
+affect the life cycle of your requests. These incentives include:</p>
 <ul>
 <li><code class="codehilite"><span class="err">request_fee</span></code>: the amount of wit tokens that will be earned by the
   Witnet miner that publishes your request in a block.</li>
@@ -1181,8 +1181,8 @@ affect the life cycle of your requests. Namely, those incentives are:</p>
 <li><code class="codehilite"><span class="err">reveal_fee</span></code>: the amount of wit tokens that will be earned by Witnet
   miners for each valid reveal transaction they include in a block.</li>
 <li><code class="codehilite"><span class="err">tally_fee</span></code>: the amount of wit tokens that will be earned by the
-  Witnet miner that publishes in a block the tally of all the reveal
-  transactions related to your request.</li>
+  Witnet miner that publishes the tally of all the reveal
+  transactions related to your request in a block.</li>
 </ul>
 <div class="admonition question">
 <p class="admonition-title">How can I compute the total cost of a request?</p>
@@ -1203,7 +1203,7 @@ refunded to the requester upon an eventual tally:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Witnet requests can be scheduled for resolution in a particular date and
+<p>Witnet requests can be scheduled for resolution on a particular date and
 time in the future.</p>
 <p>Timestamps need to be provided as <a href="https://en.wikipedia.org/wiki/Unix_time">POSIX timestamps</a>, i.e.
 seconds elapsed from 00:00:00 UTC on 1 January 1970 until the desired
@@ -1263,9 +1263,9 @@ look more or less like this:</p>
 <p>Time to go ahead and <a href="/tutorials/bitcoin-price-feed/compiling">compile the request</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
-<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
+<p>Join the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> or <a href="https://t.me/witnetio">Telegram</a>.
 Members of the Witnet community will be happy to answer your
-questions and doubts, as well as assisting you through this
+questions and assist you through this
 tutorial.</p>
 </div>
                 

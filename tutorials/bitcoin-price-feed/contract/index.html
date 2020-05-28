@@ -1032,16 +1032,11 @@ point can be requested on demand by any interested party:</p>
 <li>Anyone will be able to call a <code class="codehilite"><span class="err">requestUpdate</span></code> method in the contract
   that creates a new instance of the <code class="codehilite"><span class="err">BitcoinPrice.sol</span></code> contract and
   send it to Witnet.</li>
-<li>Once the request gets resolved, anyone will be able to call the
-<code class="codehilite"><span class="err">completeUpdate</span></code> to actually write the result into the contract state.</li>
+<li>Once the request is resolved, anyone will be able to call the
+<code class="codehilite"><span class="err">completeUpdate</span></code> and write the result into the contract state.</li>
 </ul>
-<p>It is an assumption that the mere existence of a multiparty contract
-that consumes the price feed will be enough incentive for the interested
-parties to request and complete the update always that the price point
-inside the contract differs from the actual market price more than the
-cost of performing the Witnet request.</p>
 <h2 id="initialize-a-basic-contract">Initialize a basic contract<a class="headerlink" href="#initialize-a-basic-contract" title="Permanent link">&para;</a></h2>
-<p>Let's start by creating a really bare-bones contract and saving it as
+<p>Let's start by creating a bare-bones contract and saving it as
 <code class="codehilite"><span class="err">contracts/PriceFeed.sol</span></code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">^</span><span class="mf">0.5.0</span><span class="p">;</span>
 <span class="nx">pragma</span> <span class="nx">experimental</span> <span class="nx">ABIEncoderV2</span><span class="p">;</span>
@@ -1070,11 +1065,11 @@ cost of performing the Witnet request.</p>
 <span class="p">}</span>
 </code></pre></div>
 
-<p>What you are doing here is quite straightforward:</p>
+<p>The above will:</p>
 <ul>
 <li>Import <code class="codehilite"><span class="err">UsingWitnet.sol</span></code> so your contract is Witnet-enabled.</li>
 <li>Import <code class="codehilite"><span class="err">BitcoinPrice.sol</span></code> so that you can instantiate the Witnet
-  request when needed.</li>
+  request when necessary.</li>
 <li>Make your contract inherit <code class="codehilite"><span class="err">UsingWitnet</span></code>.</li>
 <li>Make the constructor receive the address of the Witnet Bridge
   Interface (<code class="codehilite"><span class="err">_wbi</span></code>) and pass it down to the <code class="codehilite"><span class="err">UsingWitnet</span></code> constructor
@@ -1096,7 +1091,7 @@ cost of performing the Witnet request.</p>
 </code></pre></div>
 
 <h2 id="write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request">Write the <code class="codehilite"><span class="err">resolveUpdate</span></code> method that reads the result of the Witnet request<a class="headerlink" href="#write-the-resolveupdate-method-that-reads-the-result-of-the-witnet-request" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows you to</span>
 <span class="c1">// protect your methods from being called before the request has been successfully</span>
 <span class="c1">// relayed into Witnet.</span>
 <span class="kd">function</span> <span class="nx">completeUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="nx">witnetRequestAccepted</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">)</span> <span class="p">{</span>
@@ -1115,7 +1110,7 @@ cost of performing the Witnet request.</p>
     <span class="nx">emit</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">uint64</span><span class="p">(</span><span class="nx">errorCode</span><span class="p">),</span> <span class="nx">errorMessage</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="c1">// In any case, set `pending` to false so a new update can be requested</span>
+  <span class="c1">// In either case, set `pending` to false so a new update can be requested</span>
   <span class="nx">pending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1137,10 +1132,10 @@ cost of performing the Witnet request.</p>
   <span class="nx">bool</span> <span class="nx">pending</span><span class="p">;</span>               <span class="c1">// Tells if an update has been requested but not yet completed</span>
   <span class="nx">Request</span> <span class="nx">request</span><span class="p">;</span>            <span class="c1">// The Witnet request object, is set in the constructor</span>
 
-  <span class="c1">// Allows logging errors</span>
+  <span class="c1">// Allow logging errors</span>
   <span class="nx">event</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">uint64</span><span class="p">,</span> <span class="nx">string</span><span class="p">);</span>
 
-  <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
+  <span class="c1">// This constructor carries out a clever trick to tell the `UsingWitnet` library where</span>
   <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
   <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wbi</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wbi</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
     <span class="c1">// Instantiate the Witnet request</span>
@@ -1160,7 +1155,7 @@ cost of performing the Witnet request.</p>
     <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">_witnetRequestReward</span><span class="p">,</span> <span class="nx">_witnetResultReward</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="c1">// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to</span>
+  <span class="c1">// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows you to</span>
   <span class="c1">// protect your methods from being called before the request has been successfully</span>
   <span class="c1">// relayed into Witnet.</span>
   <span class="kd">function</span> <span class="nx">completeUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="nx">witnetRequestAccepted</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">)</span> <span class="p">{</span>
@@ -1185,11 +1180,12 @@ cost of performing the Witnet request.</p>
 <span class="p">}</span>
 </code></pre></div>
 
+<p>We can now <a href="/tutorials/bitcoin-price-feed/migrations">prepare to deploy</a>!</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
-<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
+<p>Join the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> or <a href="https://t.me/witnetio">Telegram</a>.
 Members of the Witnet community will be happy to answer your
-questions and doubts, as well as assisting you through this
+questions and assist you through this
 tutorial.</p>
 </div>
                 

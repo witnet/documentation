@@ -447,6 +447,13 @@
   
 </li>
         
+        <li class="md-nav__item">
+  <a href="#customize-configuration" class="md-nav__link">
+    Customize configuration
+  </a>
+  
+</li>
+        
 
         <!-- Source files -->
         
@@ -1000,6 +1007,13 @@
   
 </li>
         
+        <li class="md-nav__item">
+  <a href="#customize-configuration" class="md-nav__link">
+    Customize configuration
+  </a>
+  
+</li>
+        
 
         <!-- Source files -->
         
@@ -1031,10 +1045,9 @@
                 
                 
                 <h1 id="running-a-node-in-the-witnet-testnet">Running a Node in the Witnet Testnet<a class="headerlink" href="#running-a-node-in-the-witnet-testnet" title="Permanent link">&para;</a></h1>
-<p>The Witnet testnet is open for anyone to join and test it by running
-their own full node. Running a node on the Witnet mainnet is not
-possible before the mainnet is released. Check out the <a href="/community/roadmap">roadmap</a> and
-save the dates!</p>
+<p>The Witnet Testnet is open for anyone to join and test it by running
+their own full node. Running a node on the Witnet Mainnet is not
+possible before Mainnet is launched. </p>
 <div class="admonition tip">
 <p>You do not need to run a Witnet node to use Witnet from your
 Ethereum smart contracts. <strong>If you are a smart contracts developer,
@@ -1046,12 +1059,12 @@ what you probably want is to
 <h2 id="up-and-running-in-1-minute-using-docker">Up and running in 1 minute, using Docker<a class="headerlink" href="#up-and-running-in-1-minute-using-docker" title="Permanent link">&para;</a></h2>
 <p>The most convenient method for running a Witnet node is through the
 <code class="codehilite"><span class="err">witnet/witnet-rust</span></code> Docker image.</p>
-<p>First off, you need Docker to be installed in the computer where you will
-be running the node. Remember that some GNU/Linux distributions require some
-<a href="https://docs.docker.com/install/linux/linux-postinstall/">extra steps</a> for getting Docker to work.   </p>
+<p>Firstly, you need to install Docker on the device you will
+be running the node from. Note: some GNU/Linux distributions require some
+<a href="https://docs.docker.com/install/linux/linux-postinstall/">extra steps</a> to get Docker up and running.   </p>
 <p>The Witnet docker image downloads and runs a witnet-rust node in the latest
-testnet in just a matter on seconds.</p>
-<p>Starting a node is as easy as it gets:</p>
+Testnet in just a matter on seconds.</p>
+<p>To start a node, use:</p>
 <div class="codehilite"><pre><span></span><code>docker run -d <span class="se">\</span>
     --volume ~/.witnet:/.witnet <span class="se">\</span>
     --name witnet_node <span class="se">\</span>
@@ -1060,9 +1073,8 @@ testnet in just a matter on seconds.</p>
 </code></pre></div>
 
 <h3 id="how-to-execute-cli-commands-on-the-running-node">How to execute CLI commands on the running node<a class="headerlink" href="#how-to-execute-cli-commands-on-the-running-node" title="Permanent link">&para;</a></h3>
-<p>Then, you can run CLI commands on the running node with this simple
-one-liner. In this example, it will show many "satowits" your has mined
-so far:</p>
+<p>With your node running, you can execute CLI commands with this simple
+one-liner. Using the CLI example below, you can find out how many "satowits" your node has mined:</p>
 <div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> witnet_node ./witnet node getBalance
 </code></pre></div>
 
@@ -1070,9 +1082,9 @@ so far:</p>
 supported CLI commands</a>.</p>
 <h2 id="open-your-ports">Open your ports!<a class="headerlink" href="#open-your-ports" title="Permanent link">&para;</a></h2>
 <p>The best way to contribute to the growth and sustainability of the
-Witnet network is <strong>opening up the listening port of your node</strong> to the
-open Internet, so that other nodes in the network can download block
-chain data from yours and <strong>your transactions can be broadcast more
+Witnet network is by <strong>opening up the listening port of your node</strong>, 
+so that other nodes in the network can download block
+chain data from you and <strong>your transactions can be broadcasted more
 quickly</strong>.</p>
 <p>For this feature to be effective, you will also need your IP address to
 be static and public. If you are operating a node in your home network,
@@ -1091,7 +1103,20 @@ requests from others. You can learn how to produce Witnet requests by
 following the <a href="/tutorials/bitcoin-price-feed/introduction">tutorial on how to create a Bitcoin price feed using
 Ethereum and Witnet</a>. In addition, we will be soon releasing a
 user-friendly editor in the <a href="https://github.com/witnet/sheikah">Sheikah desktop app</a> that will
-enable to compose data requests and RADON scripts visually.</p>
+enable to compose data requests and RADON scripts visually. In the meantime, or you can play around with [this community-built request editor][witnet.tools].</p>
+<h2 id="customize-configuration">Customize configuration<a class="headerlink" href="#customize-configuration" title="Permanent link">&para;</a></h2>
+<p>A custom <code class="codehilite"><span class="err">witnet.toml</span></code> file can be used to configure parameters of the node.
+Settings like the JSON-RPC server socket address and the directory path of
+the database files can be customized. More details and a file example can
+be <a href="https://github.com/witnet/witnet-rust/blob/master/docs/configuration/toml-file.md">found here</a>.</p>
+<p>The path to the TOML file can be set when starting the node:
+<div class="codehilite"><pre><span></span><code><span class="err">docker run -d \</span>
+<span class="err">    --volume ~/.witnet:/.witnet \</span>
+<span class="err">    --volume /path/to/custom/witnet.toml:/witnet.toml \</span>
+<span class="err">    --name witnet_node \</span>
+<span class="err">    --publish 21337:21337 \</span>
+<span class="err">    witnet/witnet-rust</span>
+</code></pre></div></p>
                 
                   
                 

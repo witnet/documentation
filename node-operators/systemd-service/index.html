@@ -868,7 +868,7 @@
                 
                 
                 <h1 id="run-as-systemd-service">Run as <code class="codehilite"><span class="err">systemd</span></code> service<a class="headerlink" href="#run-as-systemd-service" title="Permanent link">&para;</a></h1>
-<p>The <code class="codehilite"><span class="err">runner.sh</span></code> script automatically download and install the latest version of the Witnet node software (<code class="codehilite"><span class="err">witnet-rust</span></code>). It can also be used to update it to the latest version because it will keep all the block chain data and the configuration file in the hidden <code class="codehilite"><span class="na">.witnet</span></code> directory.</p>
+<p>The <code class="codehilite"><span class="err">runner.sh</span></code> script automatically downloads and installs the latest version of the Witnet node software (<code class="codehilite"><span class="err">witnet-rust</span></code>). It can also be used to update to the latest version, since it will keep all the block chain data and the configuration file in the hidden <code class="codehilite"><span class="na">.witnet</span></code> directory.</p>
 <p>For Testnet 7.3 and greater, the configuration file needs to be customized with the public IP and port of the node, which must be set at the <code class="codehilite"><span class="err">public_addr</span></code> field in <code class="codehilite"><span class="err">witnet.toml</span></code> .</p>
 <ul>
 <li>Create the <code class="codehilite"><span class="err">witnet</span></code> user dedicated to running the node:</li>
@@ -899,19 +899,19 @@ git clone https://github.com/witnet/witnet-operator-tools.git
 <ul>
 <li>Every time you change the <code class="codehilite"><span class="err">witnet.service</span></code> file, you need to reload the <code class="codehilite"><span class="err">systemd</span></code> daemon:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>systemctl daemon-reload
+<div class="codehilite"><pre><span></span><code>sudo systemctl daemon-reload
 </code></pre></div>
 
 <ul>
 <li>Enable the service:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>systemctl <span class="nb">enable</span> witnet.service
+<div class="codehilite"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> witnet.service
 </code></pre></div>
 
 <ul>
 <li>Start the service:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>systemctl start witnet.service
+<div class="codehilite"><pre><span></span><code>sudo systemctl start witnet.service
 </code></pre></div>
 
 <ul>
@@ -923,7 +923,7 @@ git clone https://github.com/witnet/witnet-operator-tools.git
 <ul>
 <li>When you want to restart the service:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>systemctl restart witnet.service
+<div class="codehilite"><pre><span></span><code>sudo systemctl restart witnet.service
 </code></pre></div>
                 
                   

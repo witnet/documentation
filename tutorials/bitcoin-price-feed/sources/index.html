@@ -1026,32 +1026,32 @@ Witnet.</em></p>
 </div>
 <h2 id="a-quick-intro-on-witnet-data-sources">A quick intro on Witnet data sources<a class="headerlink" href="#a-quick-intro-on-witnet-data-sources" title="Permanent link">&para;</a></h2>
 <p><strong>Data sources are each of the endpoints from which you want Witnet to
-retrieve the data</strong>. Most times, these will be the URLs of public APIs.</p>
+retrieve the data</strong>. Most of the time, these will be the URLs of public APIs.</p>
 <p>There is no limit to the number of sources in a single Witnet
-request—although the more sources, the higher the fees will be.</p>
-<p><strong>Each source can have a companion script</strong> that lists operations that
+request — although the more sources, the higher the fees will be.</p>
+<p><strong>Each source can have a companion script</strong> that lists the operations
 we want the witnesses to apply on the retrieved data. This enables you
 to get the information of your interest extracted out of larger data
 structures like JSON objects.</p>
 <h2 id="choose-your-sources-carefully">Choose your sources carefully<a class="headerlink" href="#choose-your-sources-carefully" title="Permanent link">&para;</a></h2>
 <p>Just like your friends—and your enemies—your <strong>data sources need to be
-chosen wisely</strong>. The <em><a href="https://en.wikipedia.org/wiki/Garbage_in,_garbage_out">Garbage In, Garbage Out</a></em> principle really
+chosen wisely</strong>. The <em><a href="https://en.wikipedia.org/wiki/Garbage_in,_garbage_out">Garbage In, Garbage Out</a></em> principle
 applies here. Regardless of the many <em>checks-and-balances</em>,
 well-designed incentives and security measures that the Witnet protocol
 implements, if the data sources in your Witnet requests are not
-reliable, either will your contracts be.</p>
-<p>The more data sources and the more reliable they are, the more
-trust-mitigated your Witnet requests will become. That is, your
+reliable, your contracts won't be either.</p>
+<p>The more <strong>reliable</strong> data sources you list, the more
+trust-mitigated your Witnet requests will become. In other words, your
 contracts will be more resilient to downtime, failure or corruption of
 each separate source.</p>
 <h2 id="introducing-smart-data-sources">Introducing smart data sources<a class="headerlink" href="#introducing-smart-data-sources" title="Permanent link">&para;</a></h2>
-<p>The scripting language used in Witnet requests is quite rich indeed: in
+<p>The scripting language used in Witnet requests is very flexible: in
 addition to selecting specific pieces of data, you can also transform
-those so they are uniform and can be compared or aggregated together.
-E.g. imagine a request that queries weather data. One source may use
-Celsius and the other may use Fahrenheit, but you will tell Witnet to
-transform one into another so they can be averaged.</p>
-<p>In this tutorial, you will be defining two data sources—one for querying
+them so they are uniform and can be compared or aggregated together.
+For example, imagine a request that queries weather data. One source may use
+Celsius and the other may use Fahrenheit. You can tell Witnet to
+transform them both to Celcius so they can be averaged.</p>
+<p>In this tutorial, you will be defining two data sources — one querying
 <a href="https://www.bitstamp.net/api/ticker/">Bitstamp</a> and the other for <a href="https://www.bitstamp.net/api/ticker/">CoinDesk</a>:</p>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
@@ -1064,7 +1064,7 @@ transform one into another so they can be averaged.</p>
 <input name="__tabs_1" type="radio" id="__tab_1_1" />
 <label for="__tab_1_1">Source 2: CoinDesk</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
-<span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
+<span class="c1">// The JSON here is a bit more complex, so more operators are needed</span>
 <span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
@@ -1072,8 +1072,7 @@ transform one into another so they can be averaged.</p>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 </code></pre></div></div>
 </div>
-<p>These scripts are quite self-explanatory, but there are a few details
-that are worth noticing:</p>
+<p>A few things worth noticing:</p>
 <ul>
 <li>The operators and data types that can be used are defined by the
   <a href="/protocol/data-requests/overview/#rad-object-notation-radon">RADON domain-specific language</a>.</li>
@@ -1081,10 +1080,10 @@ that are worth noticing:</p>
   as you would expect from Javascript method chaining or
   <a href="https://en.wikipedia.org/wiki/Builder_pattern">the builder pattern</a>.</li>
 <li>Source scripts always start with a <code class="codehilite"><span class="err">String</span></code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</li>
-<li>Key-value data structures (roughly alike to Javascript <em>objects</em>,
+<li>Key-value data structures (roughly similar to Javascript <em>objects</em>,
   Python <em>dictionaries</em> or Solidity <em>mappings</em>) are called <em>maps</em>.</li>
 <li>Values in maps cannot be accessed directly by name as <code class="codehilite"><span class="na">.keyName</span></code> but
-  rather accessed through a call to one of the <code class="codehilite"><span class="na">.getArray</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
+  instead through a call to one of the <code class="codehilite"><span class="na">.getArray</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
   <code class="codehilite"><span class="na">.getBoolean</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getInteger</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getFloat</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>,
   <code class="codehilite"><span class="na">.getInteger</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code>, <code class="codehilite"><span class="na">.getMap</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> or <code class="codehilite"><span class="na">.getString</span><span class="p">(</span><span class="s">&quot;keyName&quot;</span><span class="p">)</span></code> operators.</li>
 <li>The final return type of a script is that of its last operator.</li>
@@ -1112,7 +1111,7 @@ sources above into it:</p>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 </code></pre></div>
 
-<p>Notice the <code class="codehilite"><span class="err">import</span></code> instruction on top, which makes possible using all
+<p>Notice the <code class="codehilite"><span class="err">import</span></code> instruction at the top, which makes it possible to use all
 the tools that the Witnet Javascript library provides:</p>
 <div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
 </code></pre></div>
@@ -1123,9 +1122,9 @@ the tools that the Witnet Javascript library provides:</p>
 <a href="/tutorials/bitcoin-price-feed/aggregations">defining the aggregation and tally functions</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
-<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
+<p>Join the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> or <a href="https://t.me/witnetio">Telegram</a>.
 Members of the Witnet community will be happy to answer your
-questions and doubts, as well as assisting you through this
+questions and assist you through this
 tutorial.</p>
 </div>
 <div class="footnote">
@@ -1134,15 +1133,15 @@ tutorial.</p>
 <li id="fn:1">
 <p>In future versions, the Witnet protocol will make no assumptions
 on what the data type of the server response will be for different data
-sources. This will allow dealing with formats other than plain text,
-such as multimedia files and any other kind of binaries. Therefore,
-source scripts will start with <code class="codehilite"><span class="err">Bytes</span></code> as the input type and it will be
+sources. This will allow for formats other than plain text,
+such as multimedia files and any kind of binaries. Therefore,
+source scripts will start with <code class="codehilite"><span class="err">Bytes</span></code> as the input type; it will be
 totally up to the requester to specify whether those bytes should be
-interpreted as a <code class="codehilite"><span class="err">String</span></code>, <code class="codehilite"><span class="err">Integer</span></code> or whatnot.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+interpreted as a <code class="codehilite"><span class="err">String</span></code>, <code class="codehilite"><span class="err">Integer</span></code> etc.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>One of the key features in the future RADON 2.0 version will be
-implicit type casting, which will dramatically cut off the size of
+<p>One of the key features in RADON 2.0 will be
+implicit type casting, which will dramatically reduce the size of
 scripts.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>

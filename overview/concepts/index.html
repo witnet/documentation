@@ -1005,20 +1005,19 @@
                 
                 
                 <h1 id="what-is-witnet">What is Witnet?<a class="headerlink" href="#what-is-witnet" title="Permanent link">&para;</a></h1>
-<p>The Witnet protocol, as outlined by the <a href="https://witnet.io/static/witnet-whitepaper.pdf">Witnet Whitepaper</a>,
+<p>The Witnet protocol, as outlined by the <a href="https://witnet.io/witnet-whitepaper.pdf">Witnet Whitepaper</a>,
 allows a network of computers to act as a "decentralized oracle" that
 retrieves, attests and delivers information to smart contracts without
 having to place trust in a single entity.</p>
-<p>Wait, what? Ok, lets go one step at a time.</p>
 <h2 id="smart-contracts-are-not-what-you-were-told">Smart Contracts Are Not What You Were Told<a class="headerlink" href="#smart-contracts-are-not-what-you-were-told" title="Permanent link">&para;</a></h2>
 <p>Over the last years, blockchain technology has promised to revolutionize
 business by allowing creation of "smart contracts" that, unlike paper
 contracts, are impossible to breach.</p>
-<p>Actually, those smart contracts are nothing more than small programs
-that can be run in a trustless manner. That is: once they are created,
+<p>In reality, those smart contracts are nothing more than small programs
+that can be run in a trustless manner. That is, once they are created,
 no one can stop them from doing exactly what they were created for. They
-just obey their own source code, and censorship is just impossible.</p>
-<p>This is a really powerful idea. If you can write a smart contract that:</p>
+obey their own source code, and censorship is impossible.</p>
+<p>If you can write a smart contract that:</p>
 <ol>
 <li>implements the logic of an agreement, and</li>
 <li>can execute the clauses of the contract on its own (like paying Alice or Bob depending on the outcome of some event),</li>
@@ -1026,7 +1025,7 @@ just obey their own source code, and censorship is just impossible.</p>
 <p>then you have a contract that is capable of enforcing itself and leaves
 no room for contestation. Boom <img alt="💣" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f4a3.svg" title=":bomb:" />.</p>
 <h2 id="blockchain-oracles-and-their-problem">Blockchain Oracles, And Their Problem<a class="headerlink" href="#blockchain-oracles-and-their-problem" title="Permanent link">&para;</a></h2>
-<p>Given that smart contracts need to be completely deterministic<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, they
+<p>Given that smart contracts must be completely deterministic<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, they
 do not support input of data from non-deterministic sources such as APIs
 or websites.</p>
 <p>As a result, smart contracts are mostly isolated from the rest of the
@@ -1037,7 +1036,7 @@ its source code, but also on the input data it operates upon.</p>
 that allows you and only you to act as an "oracle" by introducing
 information from the outside at will. But you would be completely
 breaking the trustless nature of a smart contract. If trust is put in a
-single entity, there you have a single point of failure that can easily
+single entity, then you have a single point of failure that can easily
 be hacked or corrupted.</p>
 <p>Smart contracts connected to the real world will not be completely
 trustless and will not release their full potential until we have ways
@@ -1048,46 +1047,42 @@ to feed them information trustlessly.</p>
 smart contracts to any online data source. Sport results, stock prices,
 weather forecasts or even other blockchains can be easily queried
 (preferably through APIs).</p>
-<p>The protocol describes a distributed network of peer nodes—which we
-fondly call <em>witnesses</em>—who earn Wit tokens as a reward for retrieving
+<p>The protocol describes a distributed network of peer nodes—
+colloquially named <em>witnesses</em>- who earn Wit tokens as a reward for retrieving
 web data and reporting it directly to the smart contracts.</p>
 <p>The bottom line is that a considerable number of randomly selected,
 anonymous peers retrieving information from one or more sources can
-converge into a single truth about the data they retrieved if a majority
-of them are incentivized to report the retrieved data honestly and they
+converge into a single truth about the data they retrieved, if a majority
+of them are incentivized to report the retrieved data honestly, and they
 apply a common consensus algorithm that resolves inconsistencies.</p>
 <p>This Decentralized Oracle Network (DON) maintains and distributes a
-block chain data structure that serves as a common ledger for the
-operation of the protocol as well as for the wit token, which is central
-to incentivizing the network players to abide by the protocol and make
-them liable for any misbehavior. Witnesses are also in charge of
+block chain data structure that serves as a common ledger both for the
+operation of the protocol, and for the wit token (which incentives
+the network players to abide by the protocol and ensures they are
+liable for any misbehavior). Witnesses are also in charge of
 validating transactions in the network and bundling them into blocks
 that get appended to the blockchain periodically.</p>
-<p>The process by which witnesses retrieve, attest and deliver data in
+<p>The process by which witnesses retrieve, attest and deliver data on
 behalf of the smart contracts is in some way similar to mining in other
 blockchains. However, fulfilling these tasks and collecting the rewards
-is not that expensive in terms of computation.</p>
-<p>The protocol has been conceived to ensure utmost decentralization and
-fairnes, so each witness' weight in the network is not aligned to their
+is not computationally expensive.</p>
+<p>The protocol has been designed to ensure utmost decentralization and
+fairness, so each witness' weight within the network is not aligned to their
 computing power. Instead, the probability for every witness to be
 assigned tasks or mine new blocks is directly proportional to their past
 performance in terms of honesty: their reputation.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Of course, the so-called miners are not actual human beings sitting
-in front of a computer, fulfilling assignments coming from an
-Internet overlord that commands them to use their web browser to
-navigate to a certain website and take a snapshot or copy some text
-that they must report.
-Indeed, the miners are just computers running a software
-(Witnet-rust) that automatically receive and execute a series of
-tasks without the owner of the computer having to actively do
-anything else than installing it.</p>
+<p>Of course, the "miners" are not actual human beings sitting
+in front of a computer, manually fulfilling assignments.
+Instead, the "miners" are just computers running a software
+(witnet-rust) that automatically receive and execute a series of
+tasks.</p>
 </div>
 <h2 id="100-truth-0-trust">100% Truth, 0% Trust<a class="headerlink" href="#100-truth-0-trust" title="Permanent link">&para;</a></h2>
 <p>Data retrieved, attested and delivered using the Witnet protocol is
-reliable not because of authority but because it comes from anonymous
-nodes who are incentivized to remain honest and to compete for rewards.</p>
+reliable not because of a central authority, but because it comes from anonymous
+nodes, incentivized to remain honest and to compete for rewards.</p>
 <p>In addition, integrity of this data is guaranteed by a consensus
 algorithm that detects fraudsters, who are immediately punished.</p>
 <p>The progressive <a href="protocol/reputation">reputation protocol</a> plays a central role in
@@ -1096,7 +1091,7 @@ middle and long term incentives for them to abide by the protocol and
 not to tamper with the data they broker.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Please note that Witnet's aim is not spotting fake data, but
+<p>Please note that Witnet's aim is not to spot fake data, but
 guaranteeing a 1:1 match between what is published online—regardless
 of its truthness—and the data that is eventually delivered the smart
 contracts.</p>

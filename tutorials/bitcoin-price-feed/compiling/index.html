@@ -894,7 +894,7 @@ Witnet.</em></p>
 <li>Write <a href="/tutorials/bitcoin-price-feed/migrations">migration files</a> with default constructor
    arguments that you can later customize.</li>
 </ol>
-<p>If you go and look at the <code class="codehilite"><span class="err">contracts/requests</span></code> folder, you will notice a
+<p>If you now take a look in the <code class="codehilite"><span class="err">contracts/requests</span></code> folder, you will notice a
 new file called <code class="codehilite"><span class="err">BitcoinPrice.sol</span></code>. It will contain something like this:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">pragma solidity</span><span class=" -WhiteSpace"> </span><span class="o">^</span><span class="k">0.5.0</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
@@ -907,15 +907,14 @@ new file called <code class="codehilite"><span class="err">BitcoinPrice.sol</spa
 </code></pre></div>
 
 <p>As you can see, the contract contains the byte code for the request you
-just wrote, exported as a Solidity contract that you can in turn import
+just wrote, exported as a Solidity contract that you can then import
 and instantiate from your own contracts.</p>
-<p>Now the next step is pretty straightforward:
-<a href="/tutorials/bitcoin-price-feed/contract">write your main consumer contract</a>.</p>
+<p>The next step is to <a href="/tutorials/bitcoin-price-feed/contract">write your main consumer contract</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
-<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
+<p>Join the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> or <a href="https://t.me/witnetio">Telegram</a>.
 Members of the Witnet community will be happy to answer your
-questions and doubts, as well as assisting you through this
+questions and assist you through this
 tutorial.</p>
 </div>
                 

@@ -1026,7 +1026,7 @@ Witnet.</em></p>
 </div>
 <h2 id="what-is-an-aggregator">What is an aggregator?<a class="headerlink" href="#what-is-an-aggregator" title="Permanent link">&para;</a></h2>
 <p>Aggregators define how to reduce or merge the result of multiple sources
-into a single data point. They are similar to Javascript's <code class="codehilite"><span class="na">.reduce</span><span class="p">()</span></code>
+into a single data point. They are similar to JavaScript's <code class="codehilite"><span class="na">.reduce</span><span class="p">()</span></code>
 method or the <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><code class="codehilite"><span class="err">fold</span></code> higher-order function</a> from many programming
 languages.</p>
 <p>In addition, aggregation functions give the chance to filter out any
@@ -1039,7 +1039,7 @@ outliers by using one or more statistical primitives.</p>
 <li>When a Witnet node gets a request assigned for resolution, it
   retrieves every source, applies the source companion scripts on the
   retrieved data, collects the results into an <code class="codehilite"><span class="err">Array</span></code>, and then apply
-  the aggregator on it, first running the filters and eventually the
+  the aggregator on it, first running the filters and later the
   reducer.</li>
 </ul>
 <h2 id="what-is-a-tally-function">What is a tally function?<a class="headerlink" href="#what-is-a-tally-function" title="Permanent link">&para;</a></h2>
@@ -1066,8 +1066,8 @@ responses of the two sources into a single <code class="codehilite"><span class=
 average mean of non-outliers values. You can now continue with the tally
 function.</p>
 <h2 id="tally-by-average">Tally by average<a class="headerlink" href="#tally-by-average" title="Permanent link">&para;</a></h2>
-<p>For this tutorial, you will be using a tally function that is quite
-equivalent to the aggregation function:</p>
+<p>For this tutorial, we will be using a tally function that is quite
+similar to the aggregation function:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
@@ -1079,8 +1079,8 @@ equivalent to the aggregation function:</p>
 <span class="p">})</span>
 </code></pre></div>
 
-<p>Note however that in this case the deviation filter is using a narrower
-threshold (<code class="codehilite"><span class="err">1.0</span></code> instead of <code class="codehilite"><span class="err">1.5</span></code>). This is to make sure that malicious
+<p>Note, however, that in this case the deviation filter is using a narrower
+threshold (<code class="codehilite"><span class="err">1.0</span></code> instead of <code class="codehilite"><span class="err">1.5</span></code>). This is to ensure that malicious
 data points will not affect the final result, and that the witnesses
 that produced such outliers will be punished for their misbehavior.</p>
 <h2 id="quick-recap">Quick recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h2>
@@ -1125,9 +1125,9 @@ that produced such outliers will be punished for their misbehavior.</p>
 <a href="/tutorials/bitcoin-price-feed/fine-tuning">fine-tune the request</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
-<p>You are invited to join the <a href="https://discord.gg/X4uurfP">Witnet Community Discord</a>.
+<p>Join the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> or <a href="https://t.me/witnetio">Telegram</a>.
 Members of the Witnet community will be happy to answer your
-questions and doubts, as well as assisting you through this
+questions and assist you through this
 tutorial.</p>
 </div>
                 

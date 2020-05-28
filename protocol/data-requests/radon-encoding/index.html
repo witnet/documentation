@@ -872,14 +872,14 @@
                 <h1 id="radon-encoding">RADON encoding<a class="headerlink" href="#radon-encoding" title="Permanent link">&para;</a></h1>
 <p><a href="/data-requests/overview/#rad-object-notation-radon">RADON scripts</a> are encoded using <a href="https://cbor.io">CBOR</a>, a very
 efficient, compact and widely supported data structure encoding.</p>
-<p>Look for example at this impressively short (28 bytes) serialized RADON script:
+<p>Look for example at this succinct (28 bytes) serialized RADON script:
 <div class="codehilite"><pre><span></span><code><span class="c1">// As Hex string</span>
 <span class="mi">8618431874821861677765617468657218748218616474656</span><span class="nx">D701872</span>
 
 <span class="c1">// As Base64 string</span>
 <span class="s2">&quot;hhhDGHSCGGFnd2VhdGhlchh0ghhhZHRlbXAYcg==&quot;</span>
 </code></pre></div></p>
-<p>Once decoded, the resulting structure will actually represent this RADON script:
+<p>Once decoded, the resulting structure will represent this RADON script:
 <div class="codehilite"><pre><span></span><code><span class="p">[</span>
     <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>       <span class="c1">// 0x45</span>
     <span class="nx">MIXED_ASMAP</span><span class="p">,</span>            <span class="c1">// 0x74</span>
@@ -891,7 +891,7 @@ efficient, compact and widely supported data structure encoding.</p>
 </code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>RADON scripts are pure byte code sequences but at the same time represent high-level abstractions.
+<p>RADON scripts are pure byte code sequences, and at the same time represent high-level abstractions.
 In the Javascript-like representation of RADON that the <a href="/tutorials/bitcoin-price-feed/introduction/">Witnet Truffle box</a> uses, the script above may resemble:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Script</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">parseJSON</span><span class="p">()</span>

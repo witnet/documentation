@@ -1143,7 +1143,7 @@
                 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
 <h2 id="whats-the-weather-in-berlin">What's the weather in Berlin?<a class="headerlink" href="#whats-the-weather-in-berlin" title="Permanent link">&para;</a></h2>
 <p>The following retrieval, aggregation and tally scripts operate on the
-result of <a href="https://openweathermap.org/data/2.5/weather?id=2950159&amp;appid=b6907d289e10d714a6e88b30761fae22">this query to the OpenWeatherMap API </a> that
+result of <a href="https://openweathermap.org/data/2.5/weather?id=2950159&amp;appid=b6907d289e10d714a6e88b30761fae22">this query to the OpenWeatherMap API </a> and
 returns the current weather conditions in Berlin.</p>
 <h3 id="retrieval-stage">Retrieval stage<a class="headerlink" href="#retrieval-stage" title="Permanent link">&para;</a></h3>
 <div class="superfences-tabs">
@@ -1226,7 +1226,7 @@ returns the current weather conditions in Berlin.</p>
 </ol>
 <h3 id="tally-stage">Tally stage<a class="headerlink" href="#tally-stage" title="Permanent link">&para;</a></h3>
 <p>The following tally script is quite generic but should work for most
-cases in which we are trying to build consensus on <code class="codehilite"><span class="err">Integer</span></code> or <code class="codehilite"><span class="err">Float</span></code>
+cases where we are trying to build consensus on <code class="codehilite"><span class="err">Integer</span></code> or <code class="codehilite"><span class="err">Float</span></code>
 data points.</p>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
@@ -1322,7 +1322,7 @@ the current price of a bitcoin in US dollars.</p>
 </ol>
 <h3 id="aggregation-stage_1">Aggregation stage<a class="headerlink" href="#aggregation-stage_1" title="Permanent link">&para;</a></h3>
 <p>The following tally script is quite generic but should work for most
-cases in which we are trying to build consensus on <code class="codehilite"><span class="err">Integer</span></code> or <code class="codehilite"><span class="err">Float</span></code>
+cases where we are trying to build consensus on <code class="codehilite"><span class="err">Integer</span></code> or <code class="codehilite"><span class="err">Float</span></code>
 data points.</p>
 <div class="superfences-tabs">
 <input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
@@ -1370,8 +1370,8 @@ laboratory.</p>
 witness nodes, which will produce a point in the <code class="codehilite"><span class="err">[0, 255]</span></code> range that
 is normally distributed around the half-range, i.e. it will fall in any
 of the <code class="codehilite"><span class="err">[0, 127]</span></code> or <code class="codehilite"><span class="err">[128, 255]</span></code> sub-ranges with a 50% probability.</p>
-<p>Finally, it checks in which side of the half-range did the point
-actually fall and maps that into a <code class="codehilite"><span class="err">String</span></code> with value <code class="codehilite"><span class="err">heads</span></code> or
+<p>Finally, it checks which side of the half-range the point
+actually fell, and maps that onto a <code class="codehilite"><span class="err">String</span></code> with value <code class="codehilite"><span class="err">heads</span></code> or
 <code class="codehilite"><span class="err">tails</span></code>.</p>
 <h3 id="retrieval-stage_2">Retrieval stage<a class="headerlink" href="#retrieval-stage_2" title="Permanent link">&para;</a></h3>
 <div class="superfences-tabs">
