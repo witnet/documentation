@@ -418,18 +418,19 @@
     Up and running in 1 minute, using Docker
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
-          <li class="md-nav__item">
-  <a href="#how-to-execute-cli-commands-on-the-running-node" class="md-nav__link">
-    How to execute CLI commands on the running node
+        <li class="md-nav__item">
+  <a href="#now-what" class="md-nav__link">
+    Now what?
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+        <li class="md-nav__item">
+  <a href="#how-to-interact-with-your-node" class="md-nav__link">
+    How to interact with your node
+  </a>
   
 </li>
         
@@ -978,18 +979,19 @@
     Up and running in 1 minute, using Docker
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
-          <li class="md-nav__item">
-  <a href="#how-to-execute-cli-commands-on-the-running-node" class="md-nav__link">
-    How to execute CLI commands on the running node
+        <li class="md-nav__item">
+  <a href="#now-what" class="md-nav__link">
+    Now what?
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+        <li class="md-nav__item">
+  <a href="#how-to-interact-with-your-node" class="md-nav__link">
+    How to interact with your node
+  </a>
   
 </li>
         
@@ -1065,21 +1067,43 @@ be running the node from. Note: some GNU/Linux distributions require some
 <p>The Witnet docker image downloads and runs a witnet-rust node in the latest
 Testnet in just a matter on seconds.</p>
 <p>To start a node, use:</p>
-<div class="codehilite"><pre><span></span><code>docker run -d <span class="se">\</span>
-    --volume ~/.witnet:/.witnet <span class="se">\</span>
-    --name witnet_node <span class="se">\</span>
-    --publish <span class="m">21337</span>:21337 <span class="se">\</span>
-    witnet/witnet-rust
-</code></pre></div>
-
-<h3 id="how-to-execute-cli-commands-on-the-running-node">How to execute CLI commands on the running node<a class="headerlink" href="#how-to-execute-cli-commands-on-the-running-node" title="Permanent link">&para;</a></h3>
-<p>With your node running, you can execute CLI commands with this simple
-one-liner. Using the CLI example below, you can find out how many "satowits" your node has mined:</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Multiline</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d \</span>
+<span class="go">    --name witnet_node \</span>
+<span class="go">    --volume ~/.witnet:/.witnet \</span>
+<span class="go">    --publish 21337:21337 \</span>
+<span class="go">    --restart always \</span>
+<span class="go">    witnet/witnet-rust</span>
+</code></pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">One-liner</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust</span>
+</code></pre></div></div>
+</div>
+<h2 id="now-what">Now what?<a class="headerlink" href="#now-what" title="Permanent link">&para;</a></h2>
+<p>As soon as the <code class="codehilite"><span class="err">witnet_node</span></code> container is up, it will do the following things in order:</p>
+<ol>
+<li>Try to <strong>open connections to other nodes</strong> in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.</li>
+<li>Discover what is the <strong>tip of the block chain</strong>, and <strong>download all the blocks</strong> from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.</li>
+<li>Go into <strong><em>Live</em> status</strong>. In Live status, your node will <strong>validate transactions and blocks</strong> in real time, and it will try itself to <strong>propose block candidates</strong>. Getting your first block proposal accepted by the network is not easy, and can take from a few minutes up to 48 hours (or more!) due to the probabilistic nature of the <a href="https://medium.com/witnet/cryptographic-sortition-in-blockchains-the-importance-of-vrfs-ad5c20a4e018">cryptographic sortition</a> algorithm that rules the system.</li>
+<li>While in Live status, your node will also try to participate in <strong>resolving <em>data requests</em></strong>. As with minting blocks, being assigned a request for the first time can take some time: from several minutes up to 48 hours (or more!). Once you have resolved at least one request, your node will earn reputation and it will start getting assignments more often.</li>
+</ol>
+<h2 id="how-to-interact-with-your-node">How to interact with your node<a class="headerlink" href="#how-to-interact-with-your-node" title="Permanent link">&para;</a></h2>
+<p>You can check if your node is doing well at any time through the node's own command line interface (CLI).
+Using the CLI example below, you can find out how many <em><a href="/overview/glossary">nanowits</a></em> your node has minted:</p>
 <div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> witnet_node ./witnet node getBalance
 </code></pre></div>
 
 <p>The node operators docs contain a <a href="/node-operators/cli">quick cheatsheet listing all the
 supported CLI commands</a>.</p>
+<div class="admonition tip">
+<p>Do not worry if your balance is 0 for the first hours or days!
+That is perfectly normal. Getting your first block proposal accepted
+by the network can take quite a while. As your node proves some
+reliability over time, it will mint blocks more often.</p>
+</div>
 <h2 id="open-your-ports">Open your ports!<a class="headerlink" href="#open-your-ports" title="Permanent link">&para;</a></h2>
 <p>The best way to contribute to the growth and sustainability of the
 Witnet network is by <strong>opening up the listening port of your node</strong>, 
@@ -1103,20 +1127,31 @@ requests from others. You can learn how to produce Witnet requests by
 following the <a href="/tutorials/bitcoin-price-feed/introduction">tutorial on how to create a Bitcoin price feed using
 Ethereum and Witnet</a>. In addition, we will be soon releasing a
 user-friendly editor in the <a href="https://github.com/witnet/sheikah">Sheikah desktop app</a> that will
-enable to compose data requests and RADON scripts visually. In the meantime, or you can play around with [this community-built request editor][witnet.tools].</p>
+enable to compose data requests and RADON scripts visually. In the meantime,
+you can play around with <a href="https://witnet.tools/tools/ide">this community-built request editor</a>.</p>
 <h2 id="customize-configuration">Customize configuration<a class="headerlink" href="#customize-configuration" title="Permanent link">&para;</a></h2>
 <p>A custom <code class="codehilite"><span class="err">witnet.toml</span></code> file can be used to configure parameters of the node.
 Settings like the JSON-RPC server socket address and the directory path of
 the database files can be customized. More details and a file example can
 be <a href="https://github.com/witnet/witnet-rust/blob/master/docs/configuration/toml-file.md">found here</a>.</p>
-<p>The path to the TOML file can be set when starting the node:
-<div class="codehilite"><pre><span></span><code><span class="err">docker run -d \</span>
-<span class="err">    --volume ~/.witnet:/.witnet \</span>
-<span class="err">    --volume /path/to/custom/witnet.toml:/witnet.toml \</span>
-<span class="err">    --name witnet_node \</span>
-<span class="err">    --publish 21337:21337 \</span>
-<span class="err">    witnet/witnet-rust</span>
-</code></pre></div></p>
+<p>The path to the TOML file can be set when starting the node (please remember
+to replace the path in the example):</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Multiline</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d \</span>
+<span class="go">    --name witnet_node \</span>
+<span class="go">    --volume ~/.witnet:/.witnet \</span>
+<span class="go">    --volume /path/to/custom/witnet.toml:/witnet.toml \</span>
+<span class="go">    --publish 21337:21337 \</span>
+<span class="go">    --restart always \</span>
+<span class="go">    witnet/witnet-rust</span>
+</code></pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">One-liner</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d --name witnet_node --volume ~/.witnet:/.witnet --volume /path/to/custom/witnet.toml:/witnet.toml --publish 21337:21337 --restart always witnet/witnet-rust</span>
+</code></pre></div></div>
+</div>
                 
                   
                 
