@@ -6,29 +6,29 @@ The cli subcommand provides a human-friendly command-line interface to the node 
 
 See all the available options by running the help command using docker, binary or cargo.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node --help
+```console tab="Docker"
+docker exec  witnet_node ./witnet node --help
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node --help
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node --help
 ```
 
-To get more information about a particular command, for instance `blockchain`:
+To get more information about any specific command, simply add `--help` at the end. For instance, this will show the available options for the `blockchain` command:
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node blockchain --help
+```console tab="Docker"
+docker exec  witnet_node ./witnet node blockchain --help
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node blockchain --help
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node blockchain --help
 ```
 
@@ -36,65 +36,65 @@ The JSON-RPC server address is obtained from the [configuration file][configurat
 The path of this file can be set using the `-c` or `--config` flag.
 This flag must appear before `node`.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node -c witnet.toml node blockchain
+```console tab="Docker"
+docker exec  witnet_node ./witnet node -c witnet.toml node blockchain
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet -c witnet.toml node blockchain
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- -c witnet.toml node blockchain
 ```
 
 You can use the `-n` flag to easily overwrite the node address.
 This flag must appear after the command name.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node -c witnet.toml node blockchain -n "127.0.0.1:1234"
+```console tab="Docker"
+docker exec  witnet_node ./witnet node -c witnet.toml node blockchain -n "127.0.0.1:1234"
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet -c witnet.toml node blockchain -n "127.0.0.1:1234"
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- -c witnet.toml node blockchain -n "127.0.0.1:1234"
 ```
 
 If there is any error, the process will return a non-zero exit code.
 
-```text tab="docker"
-docker exec -i witnet_node ./witnet node node blockchain
+```text tab="Docker"
+docker exec  witnet_node ./witnet node node blockchain
 Error: Connection refused (os error 111)
 ```
 
-```text tab="binary"
+```text tab="Binary"
 witnet node blockchain
 Error: Connection refused (os error 111)
 ```
 
-```text tab="cargo"
+```text tab="Cargo"
 cargo run -- node blockchain
 Error: Connection refused (os error 111)
 ```
 
 The executable implements the usual logging API, which can be enabled using `RUST_LOG=witnet=debug`:
 
-```text tab="docker"
-$ docker exec -i witnet_node ./witnet node blockchain
+```text tab="Docker"
+$ docker exec  witnet_node ./witnet node blockchain
 INFO 2019-01-03T12:04:43Z: witnet::json_rpc_client: Connecting to JSON-RPC server at 127.0.0.1:21338
 ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
 ```
 
-```text tab="binary"
+```text tab="Binary"
 $ RUST_LOG=witnet=debug witnet node blockchain
 INFO 2019-01-03T12:04:43Z: witnet::json_rpc_client: Connecting to JSON-RPC server at 127.0.0.1:21338
 ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
 ```
 
-```text tab="cargo"
+```text tab="Cargo"
 $ RUST_LOG=witnet=debug cargo run -- node blockchain
 INFO 2019-01-03T12:04:43Z: witnet::json_rpc_client: Connecting to JSON-RPC server at 127.0.0.1:21338
 ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
@@ -104,20 +104,20 @@ ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
 
 ### address
 
-Get the public key hash of the node.
+Get the identifier of the node that acts as its address when interacting with the protocol through transactions.
 
 This is the address used for mining blocks, resolving data requests, and
 receiving value transfer transactions.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node address
+```console tab="Docker"
+docker exec  witnet_node ./witnet node address
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node address
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node address
 ```
 
@@ -129,21 +129,21 @@ twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 
 ### balance
 
-Get total balance of the given account.
+Get total balance of a given Witnet address. Balances are shown in wits.
 
-* `--address=address`: Public key hash for which to get balance. If omitted, defaults to the node pkh.
+* `--address=address`: address for which to get balance. If omitted, defaults to the node's own address.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node balance
-docker exec -i witnet_node ./witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+```console tab="Docker"
+docker exec  witnet_node ./witnet node balance
+docker exec  witnet_node ./witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node balance
 witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node balance
 cargo run -- node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
@@ -151,22 +151,22 @@ cargo run -- node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 Example output:
 
 ```
-34099999950005
+34099.999950005 wits
 ```
 
 ### block
 
-Find a block by its hash.
+Print out detailed information about a block being queried by its hash.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
+```console tab="Docker"
+docker exec  witnet_node ./witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
 ```
 
@@ -180,43 +180,43 @@ Example output:
 
 ### blockchain
 
-List of block hashes.
+ List block hashes in the local block chain, matched with their epochs.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node blockchain
+```console tab="Docker"
+docker exec  witnet_node ./witnet node blockchain
 ```
 
-```sh tab="cargo"
+```console tab="Binary"
 witnet node blockchain
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo --run node blockchain
 ```
 
-This method accepts two optional arguments.
+This method accepts two optional arguments:
 
 * `--epoch=n`: the first epoch for which to show block hashes. A negative epoch means "n epochs ago".
 * `--limit=n`: the number of epochs. If zero, unlimited.
 
-```sh tab="docker"
+```console tab="Docker"
 # Get all the block hashes from the genesis block
-docker exec -i witnet_node ./witnet node blockchain --epoch=0 --limit=0
+docker exec  witnet_node ./witnet node blockchain --epoch=0 --limit=0
 
 # Get the block hashes from epochs [0, 19]
-docker exec -i witnet_node ./witnet node blockchain --epoch=0 --limit=20
+docker exec  witnet_node ./witnet node blockchain --epoch=0 --limit=20
 
 # Get the block hashes from the last 10 epochs
-docker exec -i witnet_node ./witnet node blockchain --epoch=-10 --limit=0
+docker exec  witnet_node ./witnet node blockchain --epoch=-10 --limit=0
 
 # Get the block hash from 10 epochs ago
-docker exec -i witnet_node ./witnet node blockchain --epoch=-10 --limit=1
+docker exec  witnet_node ./witnet node blockchain --epoch=-10 --limit=1
 
 # Get the block hash from the last block
-docker exec -i witnet_node ./witnet node blockchain --epoch=-1 --limit=1
+docker exec  witnet_node ./witnet node blockchain --epoch=-1 --limit=1
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 # Get all the block hashes from the genesis block
 witnet node blockchain --epoch=0 --limit=0
 
@@ -233,7 +233,7 @@ witnet node blockchain --epoch=-10 --limit=1
 witnet node blockchain --epoch=-1 --limit=1
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 # Get all the block hashes from the genesis block
 cargo run -- node blockchain --epoch=0 --limit=0
 
@@ -260,21 +260,21 @@ block for epoch #76229 had digest 8dd75bb0d5475a93c27c4166677fbb3bc154e6731c7e07
 
 Show information about a data request.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```console tab="Docker"
+docker exec  witnet_node ./witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
 Example output:
 
-```json
+```txt
 Report for data request 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d:
 Deployed in block 159045c67d97e284588be4da89a43319735919144b2aaf1468e7eae6682f42b6 by twit10smy4dez7dpuc8yk3ck2qzgtuaa4vx3nqh5ysl
 FINISHED with 2 commits and 2 reveals
@@ -286,17 +286,17 @@ Reveals:
 Tally: RadonTypes::RadonFloat(10172.642950000001)
 ```
 
-NOTE: if you want to see the request stages in real time you can use the `watch` command.
+If you want to see the request move forwards through its different stages in real time you can use the `watch` command while it is being resolved:
 
-```sh tab="docker"
-watch --color docker exec -i witnet_node ./witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```console tab="Docker"
+watch --color docker exec  witnet_node ./witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 watch --color witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 watch --color cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
@@ -306,70 +306,70 @@ Create a value transfer transaction that joins UTXOs.
 
 The following arguments must be provided.
 
-* `--value=amount`: value.
-* `--fee=fee`: fee.
+* `--value=amount`: amount in nanoWits.
+* `--fee=fee`: miner fee in nanoWits.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node joinTransaction --value=100 --fee=1
+```console tab="Docker"
+docker exec  witnet_node ./witnet node joinTransaction --value=100 --fee=1
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node joinTransaction --value=100 --fee=1
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node joinTransaction --value=100 --fee=1
 ```
 
 ### knownPeers
 
-Get the list of peers known by the node.
+Get the list of peer addresses known to the node. These addresses are tagged as:
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node knownPeers
+```console tab="Docker"
+docker exec  witnet_node ./witnet node knownPeers
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node knownPeers
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node knownPeers
 ```
 
 ### masterKeyExport
 
-Export the node master key.
+Export the node's master private key. Please keep this totally secret. Anyone with knowledge of this key has full access to all your wit tokens.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node masterKeyExport
+```console tab="Docker"
+docker exec  witnet_node ./witnet node masterKeyExport
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node masterkeyExport
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node masterkeyExport
 ```
 
 ### nodeStats
 
-Get the node stats.
+Display local node stats.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node nodeStats
+```console tab="Docker"
+docker exec  witnet_node ./witnet node nodeStats
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node nodeStats
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node nodeStats
 ```
 
-The output shows information about your node :
+Among other information, this shows counters for proposed and accepted blocks and participations in resolving data requests ("commitments"):
 
 Block mining stats
 
@@ -397,53 +397,57 @@ Data Request mining stats:
 
 ```
 
+!!! tip
+    Note that it is perfectly normal for a node to show 0 "blocks included" or "accepted commits" for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.
+
 ### output
 
-Find an output of a transaction.
+Display a transaction output, as referred by it's "output pointer", that is, `<transaction_id>:<output_index>`.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```console tab="Docker"
+docker exec  witnet_node ./witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d:0
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
 ```
 
 ### peers
 
-Get the list of peers connected to the node.
+List inbound and outbound connections currently established by the node.
+Outbound connections are those initiated on our side, and inbound connections are those that were initiated by peer nodes.
+A node that does not announce a public address (IP and port) will normally have no inbound connections, as there is no way for other nodes to discover a valid network route to it.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node peers
+```console tab="Docker"
+docker exec  witnet_node ./witnet node peers
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node peers
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node peers
 ```
 
 ### raw
 
 The `raw` command allows sending raw JSON-RPC requests from the command line.
-It can be used in an interactive way: each line of user input will be sent
-to the JSON-RPC server without any modifications:
+It can be used in an interactive way (don't forget the `-i` flag when using Docker): each line of user input will be sent to the JSON-RPC server without any modifications:
 
-```sh tab="docker"
+```console tab="Docker"
 $ docker exec -i witnet_node ./witnet node raw
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 $ witnet -c witnet.toml node raw
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 $ cargo run -- -c witnet.toml node raw
 ```
 
@@ -467,42 +471,42 @@ bye
 {"jsonrpc":"2.0","error":{"code":-32700,"message":"Parse error"},"id":null}
 ```
 
-Alternatively, the input can be read from a file using pipes, as is usual in Unix-like environments. For instance, the request `bitcoin_price.json` from the [witnet-rust reposity](https://github.com/witnet/witnet-rust/tree/master/examples) can be sent using the command `raw`.
+Alternatively, the input can be read from a file using pipes, as is usual in Unix-like environments. For instance, the  `bitcoin_price.json` data request example from the [witnet-rust reposity](https://github.com/witnet/witnet-rust/tree/master/examples) can be easily deployed into the network using the `raw` command like this:
 
-``` tab="docker"
-cat example/bitcoin_price.json | docker exec -i witnet_node ./witnet node raw
+``` tab="Docker"
+cat examples/bitcoin_price.json | docker exec -i witnet_node ./witnet node raw
 {"jsonrpc":"2.0","result":"06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d","id":"1"}
 ```
 
-``` tab="binary"
-cat example/bitcoin_price.json | witnet node raw
+``` tab="Binary"
+cat examples/bitcoin_price.json | witnet node raw
 {"jsonrpc":"2.0","result":"06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d","id":"1"}
 ```
 
-``` tab="cargo"
-cat example/bitcoin_price.json | cargo run -- node raw
+``` tab="Cargo"
+cat examples/bitcoin_price.json | cargo run -- node raw
 {"jsonrpc":"2.0","result":"06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d","id":"1"}
 ```
 
-### repuation
+### reputation
 
-Get the reputation of the given account.
+Displays the reputation score associated with a given Witnet address.
 
-* `--address=address`: Public key hash for which to get balance. If omitted, defaults to the node pkh.
+* `--address=address`: address for which to get reputation score. If omitted, defaults to the node's own address.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node repuation
-docker exec -i witnet_node ./witnet node repuation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+```console tab="Docker"
+docker exec  witnet_node ./witnet node reputation
+docker exec  witnet_node ./witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
 
-```sh tab="binary"
-witnet node repuation
-witnet node repuation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+```console tab="Binary"
+witnet node reputation
+witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
 
-```sh tab="cargo"
-cargo run -- node repuation
-cargo run -- node repuation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+```console tab="Cargo"
+cargo run -- node reputation
+cargo run -- node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
 
 Example output:
@@ -511,18 +515,22 @@ Example output:
 Identity twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr has 1 reputation and is active
 ```
 
-Adding the flag `--all` shows all the nodes having non-zero repuation.
+Adding the flag `--all` flag lists all the nodes having non-zero reputation.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node repuation --all
+!!! tip
+    Note that it is perfectly normal for a node to show 0 reputation for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.
+
+
+```console tab="Docker"
+docker exec  witnet_node ./witnet node reputation --all
 ```
 
-```sh tab="binary"
-witnet node repuation --all
+```console tab="Binary"
+witnet node reputation --all
 ```
 
-```sh tab="cargo"
-cargo run -- node repuation --all
+```console tab="Cargo"
+cargo run -- node reputation --all
 ```
 
 Example output:
@@ -536,111 +544,95 @@ Total Reputation: {
 
 ### send
 
-Create a value transfer transaction.
+Create and broadcast a value transfer transaction. That is, send some amount of wit tokens from the node's own balance into a different Witnet address.
 
-* `--address=pkh`: public key hash of the destination.
-* `--value=amount`: value.
-* `--fee=fee`: fee.
+* `--address=address`: recipient address.
+* `--value=amount`: amount in nanoWits.
+* `--fee=fee`: miner fee in nanoWits.
 * `--time-lock=timestamp`: optional time lock for the created output: the receiver will not be able to spend
 the output until the timestamp is reached. 0 means no time-lock.
 
 On success, returns the transaction hash:
 
-``` tab="docker"
-docker exec -i witnet_node ./witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
+``` tab="Docker"
+docker exec  witnet_node ./witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
 {"jsonrpc":"2.0","result":"a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349","id":"1"}
 ```
 
-``` tab="binary"
+``` tab="Binary"
 witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
 {"jsonrpc":"2.0","result":"a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349","id":"1"}
 ```
 
-``` tab="cargo"
+``` tab="Cargo"
 cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
 {"jsonrpc":"2.0","result":"a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349","id":"1"}
 ```
 
 On error, returns the error message:
 
-``` tab="docker"
-docker exec -i witnet_node ./witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
+``` tab="Docker"
+docker exec  witnet_node ./witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
 {"jsonrpc":"2.0","error":{"code":-32603,"message":"Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 > 39649999949502"},"id":"1"}
 ```
 
-``` tab="binary"
+``` tab="Binary"
 witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
 {"jsonrpc":"2.0","error":{"code":-32603,"message":"Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 > 39649999949502"},"id":"1"}
 ```
 
-``` tab="cargo"
+``` tab="Cargo"
 cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
 {"jsonrpc":"2.0","error":{"code":-32603,"message":"Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 > 39649999949502"},"id":"1"}
 ```
 
 Example with time lock set to 2019-10-01
 
-``` tab="docker"
-docker exec -i witnet_node ./witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
+``` tab="Docker"
+docker exec  witnet_node ./witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
 {"jsonrpc":"2.0","result":"e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id":"1"}
 ```
 
-``` tab="binary"
+``` tab="Binary"
 witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
 {"jsonrpc":"2.0","result":"e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id":"1"}
 ```
 
-``` tab="cargo"
+``` tab="Cargo"
 cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
 {"jsonrpc":"2.0","result":"e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id":"1"}
 ```
 
-### send-request
+### sendRequest
 
-Send a serialized data request.
+Send a serialized data request. An example of how to create such a request can be found in the [tutorial](https://docs.witnet.io/tutorials/bitcoin-price-feed/introduction/).
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node send-request 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```console tab="Docker"
+docker exec  witnet_node ./witnet node sendRequest --hex "data request output serialized in hexadecimal format"
 ```
 
-```sh tab="cargo"
-cargo run -- node send-request 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```console tab="Cargo"
+cargo run -- node sendRequest --hex "data request output serialized in hexadecimal format"
 ```
 
-```sh tab="binary"
-witnet node send-request 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```console tab="Binary"
+witnet node sendRequest --hex "data request output serialized in hexadecimal format"
 ```
 
 ### server
 
 Run a Witnet node server.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node server
+```console tab="Docker"
+docker exec  witnet_node ./witnet node server
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node server
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node server
-```
-
-### show-config
-
-Dump the loaded config in Toml format to stdout.
-
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node show-config
-```
-
-```sh tab="binary"
-witnet node show-config
-```
-
-```sh tab="cargo"
-cargo run -- node show-config
 ```
 
 ### splitTransaction
@@ -649,35 +641,35 @@ Create a value transfer transaction that splits UTXOs.
 
 The following arguments must be provided:
 
-* `--value=amount`: value.
-* `--size=size`:size.
-* `--fee=fee`: fee.
+* `--value=amount`: amount in nanoWits.
+* `--size=size`:amount in nanoWits of each UTXO.
+* `--fee=fee`: miner fee in nanoWits.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node joinTransaction --value=100 --size=3 --fee=1
+```console tab="Docker"
+docker exec  witnet_node ./witnet node joinTransaction --value=100 --size=3 --fee=1
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node joinTransaction --value=100 --size=3 --fee=1
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node joinTransaction --value=100 --size=3 --fee=1
 ```
 
 ### transaction
 
-Find a transaction by its hash.
+Print out detailed information about a transaction being queried by its hash.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
+```console tab="Docker"
+docker exec  witnet_node ./witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
 ```
 
@@ -691,27 +683,27 @@ Example output:
 
 ### utxos
 
-Get the unspent transaction outputs of the node. This informes you about how many UTXOs your node have that can be spent in data requests, i.e. they are ready to be used as collateral.
+Get the unspent transaction outputs of the node. This shows how many UTXOs are available for your node to spend or collateralize.
 
-```sh tab="docker"
-docker exec -i witnet_node ./witnet node utxos
+```console tab="Docker"
+docker exec  witnet_node ./witnet node utxos
 ```
 
-```sh tab="binary"
+```console tab="Binary"
 witnet node utxos
 ```
 
-```sh tab="cargo"
+```console tab="Cargo"
 cargo run -- node utxos
 ```
 
 The output includes information about:
 
 * `Total number of utxos`
-* `Total number of utxos bigger than collateral minimun`
+* `Total number of utxos bigger than collateral minimum`
 * `Total number of utxos older than collateral coinage`
 
-The flag `--long` can be added to the command to get more details.
+The flag `--long` can be added to the command to get a detailed list of the UTXOs and whether each of them is spendable or collateralizable at this time.
 
 [jsonrpc]: /node-operators/json-rpc
 [configuration]: /node-operators/configuration
