@@ -8,6 +8,7 @@ For Testnet 7.3 and greater, the configuration file needs to be customized with 
 
 ```sh
 sudo apt install ca-certificates
+sudo update-ca-certificates
 ```
 
 * Create the `witnet` user dedicated to running the node:
