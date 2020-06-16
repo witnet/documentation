@@ -22,6 +22,8 @@ node_url = "127.0.0.1:21338"
 | [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
 | [close_session](#close_session)             | `session_id`                                     | `success`                                     |
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`                        | `address`, `path`                             |
+| [rpc.on](#rpc.on)                           | `session_id`                                     | (`subscription_id`)                           |
+| [rpc.off](#rpc.off)                         | `[subscription_id]`                              |                                               |
 
 
 
@@ -322,10 +324,10 @@ Request with parameters:
 {
 	"jsonrpc": "2.0",
 	"method": "close_session",
-  	"params": {
-    	"session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02"
-  	},
-  	"id": "1"
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02"
+  },
+  "id": "1"
 }
 ```
 
@@ -346,7 +348,7 @@ Response:
 
 ### generate_address
 
-The JsonRPC method `generate_address` is used to generate a new external address for the given wallet and session id.
+The JsonRPC method `generate_address` is used to derive deterministically a new external address for the given wallet and session id.
 
 Request with parameters:
 
@@ -357,15 +359,18 @@ Request with parameters:
 {
 	"jsonrpc": "2.0",
 	"method": "generate_address",
-  	"params": {
-  		"session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02"
-  		"wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
-  	},
-  	"id": "1",
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  },
+  "id": "1",
 }
 ```
 
 Response:
+
+- `address`: *String*, address derived deterministically.
+- `path`: *String*, derivation path used to generate the address.
 
 ```json
 {
@@ -378,3 +383,106 @@ Response:
 }
 ```
 
+
+### rpc.on
+
+Use this method `rpc.on` to subscribe to update events related to your session wallets.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+
+```json
+{
+  "method": "rpc.on",
+  "params": {
+    "session_id": "d4fe394eb9b82b4116f15d821bfb95cf1ddc912bc8fc1d6b2ab1f9c6e37269c4"
+  },
+  "id": "1",
+  "jsonrpc": "2.0"
+}
+```
+
+The response is:
+
+- `result`: *String*, subscription identifier that you can use to unsubscribe from notifications. See [rpc.off](#rpc.off).
+
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "221794a024ddaee0b0a0e9cb6bfd8f00fed86855134d917255f3cfac3dc84f2b",
+  "id": "1"
+}
+```
+
+Here is an example of a block event sent out by a node:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "notifications",
+  "params": [
+    {
+      "events": [
+        {
+          "Block": {
+            "block_hash": "eb44b8169b155896c323ab392430fe43efde4bd7c896a932c39dfa262738522d",
+            "epoch": 293566
+          }
+        }
+      ],
+      "status": {
+        "account": {
+          "balance": 0,
+          "id": 0
+        },
+        "node": {
+          "address": "127.0.0.1:21338",
+          "last_beacon": {
+            "checkpoint": 293566,
+            "hashPrevBlock": "eb44b8169b155896c323ab392430fe43efde4bd7c896a932c39dfa262738522d"
+          },
+          "network": "Mainnet"
+        },
+        "session": "c8a58658d4d2785e407e77a3dc7e04ac05c5dc66ab76eb0e0d031642ea20e42a",
+        "wallet": {
+          "id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
+          "last_sync": {
+            "checkpoint": 293565,
+            "hashPrevBlock": "44877f15997b2b791f0da65027c447bce4935554fbc46de449b2219ff5568973"
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+
+### rpc.off
+
+Use this method `rpc.off` to unsubscribe from previous subscriptions.
+
+Request with parameters:
+
+- `<data>`: *Array<String>*, subscription identifiers assigned to you when subscribed to wallet sesions. See [rpc.on](#rpc.on).
+
+```json
+{
+  "method": "rpc.off",
+  "params": ["221794a024ddaee0b0a0e9cb6bfd8f00fed86855134d917255f3cfac3dc84f2b"],
+  "id": "1",
+  "jsonrpc": "2.0"
+}
+```
+
+The response for a successful unsubscribe:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": null,
+  "id": "1"
+}
+```
