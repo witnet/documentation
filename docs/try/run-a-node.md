@@ -17,16 +17,15 @@ Hardware requirements are [listed in the node operators docs][hardware-requireme
 ## Up and running in 1 minute, using Docker
 
 The most convenient method for running a Witnet node is through the
-`witnet/witnet-rust` Docker image.
+`witnet/witnet-rust` Docker image. For alternate installation methods or
+more complex setups, take a look at the [docker-compose] and [systemd] integrations.
 
-Firstly, you need to install Docker on the device you will
+Firstly, you need to [install Docker][docker] on the device you will
 be running the node from. Note: some GNU/Linux distributions require some
 [extra steps][docker-extra-steps] to get Docker up and running.   
 
-The Witnet docker image downloads and runs a witnet-rust node in the latest
-Testnet in just a matter on seconds.
-
-To start a node, use:
+The Witnet docker image downloads and runs a Witnet node in the latest
+Testnet in just a matter on seconds. To start a node, use:
 
 ```console tab="Multiline"
 docker run -d \
@@ -41,54 +40,41 @@ docker run -d \
 docker run -d --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
 ```
 
+!!! warning "Raspberry Pi 4 users"
+    For some reason, Raspbian on Raspberry Pi 4 (not the case for older versions) requires your containers to operate
+    in privileged mode. When running the command above, simply add the `--privileged` flag:
+    ```console
+    docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
+    ```
+
 ## Now what?
 
-As soon as the `witnet_node` container is up, it will do the following things in order:
+There are two **important** things you should do now to make the most of
+your Witnet node:
 
-1. Try to **open connections to other nodes** in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.
-2. Discover what is the **tip of the block chain**, and **download all the blocks** from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.
-3. Go into **_Live_ status**. In Live status, your node will **validate transactions and blocks** in real time, and it will try itself to **propose block candidates**. Getting your first block proposal accepted by the network is not easy, and can take from a few minutes up to 48 hours (or more!) due to the probabilistic nature of the [cryptographic sortition] algorithm that rules the system.
-4. While in Live status, your node will also try to participate in **resolving _data requests_**. As with minting blocks, being assigned a request for the first time can take some time: from several minutes up to 48 hours (or more!). Once you have resolved at least one request, your node will earn reputation and it will start getting assignments more often.
-
-## How to interact with your node
-
-You can check if your node is doing well at any time through the node's own command line interface (CLI).
-Using the CLI example below, you can find out how many _[nanowits]_ your node has minted:
-
-```bash
-docker exec witnet_node ./witnet node getBalance
-```
-
-The node operators docs contain a [quick cheatsheet listing all the
-supported CLI commands][CLI].
-
-!!! tip "" 
-    Do not worry if your balance is 0 for the first hours or days!
-    That is perfectly normal. Getting your first block proposal accepted
-    by the network can take quite a while. As your node proves some
-    reliability over time, it will mint blocks more often.
+1. [Open ports](#open-your-ports) as explained below.
+2. Follow the [Next Steps][next] guide to learn how to check the node
+ status, progress and statistics. 
 
 ## Open your ports!
 
 The best way to contribute to the growth and sustainability of the
 Witnet network is by **opening up the listening port of your node**, 
-so that other nodes in the network can download block
-chain data from you and **your transactions can be broadcasted more
-quickly**.
+so that other nodes in the network can download block chain data from
+you and **your transactions can be broadcasted more quickly**.
 
 For this feature to be effective, you will also need your IP address to
-be static and public. If you are operating a node in your home network,
-you can request your ISP to assign you a static IP address and disable
-[CGN] on it.
+be public (and ideally, static). If you are operating a node in your home
+network, you can request your ISP to assign you a static IP address or at
+least disable [CGN] on it.
 
 Depending on your setup, this will normally imply changing the settings
 on your router or firewall so as to **forward all incoming connections
 to port `21337` from your external IP** into the IP of the device or
 interface where the node is running. 
 
-To check if the port is correctly opened, you can telnet your external
-IP with `telnet "IP" 21337` from the Internet. You should see an incoming
-connection on the logs for which the handshake timeouts.
+You can find out how to verify that your ports are open in the [Next Steps][next]
+guide.
 
 ## What about Witnet data requests?
 
@@ -99,30 +85,6 @@ Ethereum and Witnet][tutorial]. In addition, we will be soon releasing a
 user-friendly editor in the [Sheikah desktop app][Sheikah] that will
 enable to compose data requests and RADON scripts visually. In the meantime,
 you can play around with [this community-built request editor][witnet.tools].
-
-## Customize configuration
-
-A custom `witnet.toml` file can be used to configure parameters of the node.
-Settings like the JSON-RPC server socket address and the directory path of
-the database files can be customized. More details and a file example can
-be [found here][toml].
-
-The path to the TOML file can be set when starting the node (please remember
-to replace the path in the example):
-
-```console tab="Multiline"
-docker run -d \
-    --name witnet_node \
-    --volume ~/.witnet:/.witnet \
-    --volume /path/to/custom/witnet.toml:/witnet.toml \
-    --publish 21337:21337 \
-    --restart always \
-    witnet/witnet-rust
-```
-
-```console tab="One-liner"
-docker run -d --name witnet_node --volume ~/.witnet:/.witnet --volume /path/to/custom/witnet.toml:/witnet.toml --publish 21337:21337 --restart always witnet/witnet-rust
-```
 
 [ethereum]: /try/use-from-ethereum
 [roadmap]: /community/roadmap
@@ -135,4 +97,7 @@ docker run -d --name witnet_node --volume ~/.witnet:/.witnet --volume /path/to/c
 [toml]: https://github.com/witnet/witnet-rust/blob/master/docs/configuration/toml-file.md
 [witnet.tools]: https://witnet.tools/tools/ide
 [nanowits]: /overview/glossary
-[cryptographic sortition]: https://medium.com/witnet/cryptographic-sortition-in-blockchains-the-importance-of-vrfs-ad5c20a4e018
+[docker-compose]: /node-operators/docker-compose-service
+[systemd]: /node-operators/systemd-service
+[docker]: https://docs.docker.com/get-docker/
+[next]: /try/next-steps/
