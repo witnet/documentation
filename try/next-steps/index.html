@@ -1120,6 +1120,7 @@ Please be patient, new identities in the system are subject to a slow start for 
 <p>Here are some useful commands that you can use to keep track of how your node is performing in the network.
 A complete documentation of all the CLI methods is available in the <a href="/node-operators/cli">node operator docs</a>. </p>
 <h3 id="nodestats">nodeStats<a class="headerlink" href="#nodestats" title="Permanent link">&para;</a></h3>
+<p>Among other information, this shows the synchronization state of your node, as well as counters for proposed and accepted blocks and participations in resolving data requests ("commitments").</p>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Docker</label>
@@ -1134,8 +1135,8 @@ A complete documentation of all the CLI methods is available in the <a href="/no
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node nodeStats</span>
 </code></pre></div></div>
 </div>
-<p>Among other information, this shows the synchronization state of your node, as well as counters for proposed and accepted blocks and participations in resolving data requests ("commitments"):</p>
 <h3 id="balance">balance<a class="headerlink" href="#balance" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite"><span class="err">balance</span></code> command will print your node's current balance.</p>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
 <label for="__tab_2_0">Docker</label>
@@ -1150,8 +1151,8 @@ A complete documentation of all the CLI methods is available in the <a href="/no
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node balance</span>
 </code></pre></div></div>
 </div>
-<p>The <code class="codehilite"><span class="err">balance</span></code> command will print your node's current balance.</p>
 <h3 id="reputation">reputation<a class="headerlink" href="#reputation" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite"><span class="err">reputation</span></code> command will print your node's current reputation score.</p>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
 <label for="__tab_3_0">Docker</label>
@@ -1166,7 +1167,6 @@ A complete documentation of all the CLI methods is available in the <a href="/no
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node reputation</span>
 </code></pre></div></div>
 </div>
-<p>The <code class="codehilite"><span class="err">reputation</span></code> command will print your node's current reputation score.</p>
 <div class="admonition tip">
 <p class="admonition-title">Reputation is tricky</p>
 <p>Despite its name, the <em>reputation</em> metric that exists in the Witnet protocol is not as vital as reputation is in real life.
