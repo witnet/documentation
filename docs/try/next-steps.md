@@ -24,6 +24,8 @@ A complete documentation of all the CLI methods is available in the [node operat
 
 ### nodeStats 
 
+Among other information, this shows the synchronization state of your node, as well as counters for proposed and accepted blocks and participations in resolving data requests ("commitments").
+
 ```console tab="Docker"
 docker exec  witnet_node witnet node nodeStats
 ```
@@ -36,9 +38,9 @@ cargo run --release -- node nodeStats
 witnet node nodeStats
 ```
 
-Among other information, this shows counters for proposed and accepted blocks and participations in resolving data requests ("commitments"):
-
 ### balance
+
+The `balance` command will print your node's current balance.
 
 ```console tab="Docker"
 docker exec witnet_node witnet node balance
@@ -52,9 +54,10 @@ cargo run --release -- node balance
 witnet node balance
 ```
 
-The `balance` command will print your node's current balance.
 
 ### reputation
+
+The `reputation` command will print your node's current reputation score.
 
 ```console tab="Docker"
 docker exec witnet_node witnet node reputation
@@ -68,7 +71,6 @@ cargo run --release -- node reputation
 witnet node reputation
 ```
 
-The `reputation` command will print your node's current reputation score.
 
 !!! tip "Reputation is tricky"
     Despite its name, the *reputation* metric that exists in the Witnet protocol is not as vital as reputation is in real life.
@@ -118,7 +120,91 @@ witnet node peers
     below how to customize the configuration file. The parameter you need to
     adjust is `public_addr`.
 
-## Customize configuration
+## Back up your private master key
+
+Doing a backup of the private master key of your node is a great way to keep
+your wit tokens safe.
+
+This command will print your master key into your console terminal:
+
+```console tab="Docker"
+docker exec witnet_node witnet node masterKeyExport
+```
+
+```console tab="Cargo"
+cargo run --release -- node masterKeyExport
+```
+
+```console tab="Binary"
+witnet node masterKeyExport
+```
+
+You can add the `--write` flag to write a backup of your master key into a file
+in the configuration directory of your node (`~/.witnet/config` by default):
+
+```console tab="Docker"
+docker exec witnet_node witnet node masterKeyExport --write
+```
+
+```console tab="Cargo"
+cargo run --release -- node masterKeyExport --write
+```
+
+```console tab="Binary"
+witnet node masterKeyExport --write
+```
+
+It is recommended to **move or copy the resulting file into a safe place**. Writing
+it into a piece of paper and keeping it somewhere safe from light, water, fire 
+(and eyes) is the best option.
+
+**Please keep this totally secret**. Anyone with knowledge of this key has full access to
+all your wit tokens.
+
+**Importing master keys is only allowed when creating a new node**, as overwriting a
+existing key could be dangerous. The process is quite simple:
+
+```console tab="Docker + nano"
+mkdir -p ~/.witnet/config
+
+nano ~/.witnet/config/master.key 
+
+# Now enter your master key into the file editor, save with Ctrl+O and exit with Ctrl+X
+
+docker run -d \
+    --name witnet_node \
+    --volume ~/.witnet:/.witnet \
+    --publish 21337:21337 \
+    --restart always \
+    witnet/witnet-rust
+    node server --master-key-import /.witnet/config/master.key
+```
+
+```console tab="Docker + vim"
+mkdir -p ~/.witnet/config
+
+vim ~/.witnet/config/master.key 
+
+# Now enter your master key into the file editor, save and exit by typing Escape, then ":wq" and Enter 
+
+docker run -d \
+    --name witnet_node \
+    --volume ~/.witnet:/.witnet \
+    --publish 21337:21337 \
+    --restart always \
+    witnet/witnet-rust
+    node server --master-key-import /.witnet/config/master.key
+```
+
+```console tab="Binary"
+witnet node server --master-key-import ~/.witnet/config/master.key
+```
+
+!!! danger "Never use the same master key on multiple nodes at once"
+    Operating multiple nodes with the same master key is a terrible idea.
+    You may find your nodes exposed to double-spend issues and severe slashing.
+
+## Customize configuration if needed
 
 A custom `witnet.toml` configuration file can be used to adjust some parameters
 of the node. The configuration file itself contains detailed explanations for each
@@ -130,15 +216,15 @@ be found in the `~/.witnet/config` folder, right in your user's directory.
 You can easily edit the configuration file like this:
 
 ```console tab="Vim (Mac OS)"
-vim /users/$USER/.witnet/config/witnet.toml
+vim ~/.witnet/config/witnet.toml
 ```
 
 ```console tab="Vim (GNU/Linux)"
-vim /home/$USER/.witnet/config/witnet.toml
+vim ~/.witnet/config/witnet.toml
 ```
 
 ```console tab="Nano (GNU/Linux)"
-nano /home/$USER/.witnet/config/witnet.toml
+nano ~/.witnet/config/witnet.toml
 ```
 
 

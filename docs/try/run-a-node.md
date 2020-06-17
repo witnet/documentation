@@ -40,8 +40,8 @@ docker run -d \
 docker run -d --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
 ```
 
-!!! warning "Raspberry Pi 4 users"
-    For some reason, Raspbian on Raspberry Pi 4 (not the case for older versions) requires your containers to operate
+!!! warning "Raspberry Pi users"
+    For some reason, Raspbian on Raspberry Pi (all versions) requires your containers to operate
     in privileged mode. When running the command above, simply add the `--privileged` flag:
     ```console
     docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
