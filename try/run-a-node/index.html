@@ -428,13 +428,6 @@
 </li>
         
         <li class="md-nav__item">
-  <a href="#how-to-interact-with-your-node" class="md-nav__link">
-    How to interact with your node
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
   <a href="#open-your-ports" class="md-nav__link">
     Open your ports!
   </a>
@@ -444,13 +437,6 @@
         <li class="md-nav__item">
   <a href="#what-about-witnet-data-requests" class="md-nav__link">
     What about Witnet data requests?
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
-  <a href="#customize-configuration" class="md-nav__link">
-    Customize configuration
   </a>
   
 </li>
@@ -474,6 +460,18 @@
     </aside>
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../next-steps/" title="Next Steps" class="md-nav__link">
+      Next Steps
+    </a>
   </li>
 
         
@@ -989,13 +987,6 @@
 </li>
         
         <li class="md-nav__item">
-  <a href="#how-to-interact-with-your-node" class="md-nav__link">
-    How to interact with your node
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
   <a href="#open-your-ports" class="md-nav__link">
     Open your ports!
   </a>
@@ -1005,13 +996,6 @@
         <li class="md-nav__item">
   <a href="#what-about-witnet-data-requests" class="md-nav__link">
     What about Witnet data requests?
-  </a>
-  
-</li>
-        
-        <li class="md-nav__item">
-  <a href="#customize-configuration" class="md-nav__link">
-    Customize configuration
   </a>
   
 </li>
@@ -1060,13 +1044,13 @@ what you probably want is to
 <p>Hardware requirements are <a href="/node-operators/hardware-requirements">listed in the node operators docs</a>.</p>
 <h2 id="up-and-running-in-1-minute-using-docker">Up and running in 1 minute, using Docker<a class="headerlink" href="#up-and-running-in-1-minute-using-docker" title="Permanent link">&para;</a></h2>
 <p>The most convenient method for running a Witnet node is through the
-<code class="codehilite"><span class="err">witnet/witnet-rust</span></code> Docker image.</p>
-<p>Firstly, you need to install Docker on the device you will
+<code class="codehilite"><span class="err">witnet/witnet-rust</span></code> Docker image. For alternate installation methods or
+more complex setups, take a look at the <a href="/node-operators/docker-compose-service">docker-compose</a> and <a href="/node-operators/systemd-service">systemd</a> integrations.</p>
+<p>Firstly, you need to <a href="https://docs.docker.com/get-docker/">install Docker</a> on the device you will
 be running the node from. Note: some GNU/Linux distributions require some
 <a href="https://docs.docker.com/install/linux/linux-postinstall/">extra steps</a> to get Docker up and running.   </p>
-<p>The Witnet docker image downloads and runs a witnet-rust node in the latest
-Testnet in just a matter on seconds.</p>
-<p>To start a node, use:</p>
+<p>The Witnet docker image downloads and runs a Witnet node in the latest
+Testnet in just a matter on seconds. To start a node, use:</p>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Multiline</label>
@@ -1082,45 +1066,36 @@ Testnet in just a matter on seconds.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust</span>
 </code></pre></div></div>
 </div>
-<h2 id="now-what">Now what?<a class="headerlink" href="#now-what" title="Permanent link">&para;</a></h2>
-<p>As soon as the <code class="codehilite"><span class="err">witnet_node</span></code> container is up, it will do the following things in order:</p>
-<ol>
-<li>Try to <strong>open connections to other nodes</strong> in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.</li>
-<li>Discover what is the <strong>tip of the block chain</strong>, and <strong>download all the blocks</strong> from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.</li>
-<li>Go into <strong><em>Live</em> status</strong>. In Live status, your node will <strong>validate transactions and blocks</strong> in real time, and it will try itself to <strong>propose block candidates</strong>. Getting your first block proposal accepted by the network is not easy, and can take from a few minutes up to 48 hours (or more!) due to the probabilistic nature of the <a href="https://medium.com/witnet/cryptographic-sortition-in-blockchains-the-importance-of-vrfs-ad5c20a4e018">cryptographic sortition</a> algorithm that rules the system.</li>
-<li>While in Live status, your node will also try to participate in <strong>resolving <em>data requests</em></strong>. As with minting blocks, being assigned a request for the first time can take some time: from several minutes up to 48 hours (or more!). Once you have resolved at least one request, your node will earn reputation and it will start getting assignments more often.</li>
-</ol>
-<h2 id="how-to-interact-with-your-node">How to interact with your node<a class="headerlink" href="#how-to-interact-with-your-node" title="Permanent link">&para;</a></h2>
-<p>You can check if your node is doing well at any time through the node's own command line interface (CLI).
-Using the CLI example below, you can find out how many <em><a href="/overview/glossary">nanowits</a></em> your node has minted:</p>
-<div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> witnet_node ./witnet node getBalance
-</code></pre></div>
-
-<p>The node operators docs contain a <a href="/node-operators/cli">quick cheatsheet listing all the
-supported CLI commands</a>.</p>
-<div class="admonition tip">
-<p>Do not worry if your balance is 0 for the first hours or days!
-That is perfectly normal. Getting your first block proposal accepted
-by the network can take quite a while. As your node proves some
-reliability over time, it will mint blocks more often.</p>
+<div class="admonition warning">
+<p class="admonition-title">Raspberry Pi 4 users</p>
+<p>For some reason, Raspbian on Raspberry Pi 4 (not the case for older versions) requires your containers to operate
+in privileged mode. When running the command above, simply add the <code class="codehilite"><span class="err">--privileged</span></code> flag:
+<div class="codehilite"><pre><span></span><code><span class="go">docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust</span>
+</code></pre></div></p>
 </div>
+<h2 id="now-what">Now what?<a class="headerlink" href="#now-what" title="Permanent link">&para;</a></h2>
+<p>There are two <strong>important</strong> things you should do now to make the most of
+your Witnet node:</p>
+<ol>
+<li><a href="#open-your-ports">Open ports</a> as explained below.</li>
+<li>Follow the <a href="/try/next-steps/">Next Steps</a> guide to learn how to check the node
+ status, progress and statistics. </li>
+</ol>
 <h2 id="open-your-ports">Open your ports!<a class="headerlink" href="#open-your-ports" title="Permanent link">&para;</a></h2>
 <p>The best way to contribute to the growth and sustainability of the
 Witnet network is by <strong>opening up the listening port of your node</strong>, 
-so that other nodes in the network can download block
-chain data from you and <strong>your transactions can be broadcasted more
-quickly</strong>.</p>
+so that other nodes in the network can download block chain data from
+you and <strong>your transactions can be broadcasted more quickly</strong>.</p>
 <p>For this feature to be effective, you will also need your IP address to
-be static and public. If you are operating a node in your home network,
-you can request your ISP to assign you a static IP address and disable
-<a href="https://en.wikipedia.org/wiki/Carrier-grade_NAT">CGN</a> on it.</p>
+be public (and ideally, static). If you are operating a node in your home
+network, you can request your ISP to assign you a static IP address or at
+least disable <a href="https://en.wikipedia.org/wiki/Carrier-grade_NAT">CGN</a> on it.</p>
 <p>Depending on your setup, this will normally imply changing the settings
 on your router or firewall so as to <strong>forward all incoming connections
 to port <code class="codehilite"><span class="err">21337</span></code> from your external IP</strong> into the IP of the device or
 interface where the node is running. </p>
-<p>To check if the port is correctly opened, you can telnet your external
-IP with <code class="codehilite"><span class="err">telnet &quot;IP&quot; 21337</span></code> from the Internet. You should see an incoming
-connection on the logs for which the handshake timeouts.</p>
+<p>You can find out how to verify that your ports are open in the <a href="/try/next-steps/">Next Steps</a>
+guide.</p>
 <h2 id="what-about-witnet-data-requests">What about Witnet data requests?<a class="headerlink" href="#what-about-witnet-data-requests" title="Permanent link">&para;</a></h2>
 <p>As soon as your node is synced, it will be able to start resolving data
 requests from others. You can learn how to produce Witnet requests by
@@ -1129,29 +1104,6 @@ Ethereum and Witnet</a>. In addition, we will be soon releasing a
 user-friendly editor in the <a href="https://github.com/witnet/sheikah">Sheikah desktop app</a> that will
 enable to compose data requests and RADON scripts visually. In the meantime,
 you can play around with <a href="https://witnet.tools/tools/ide">this community-built request editor</a>.</p>
-<h2 id="customize-configuration">Customize configuration<a class="headerlink" href="#customize-configuration" title="Permanent link">&para;</a></h2>
-<p>A custom <code class="codehilite"><span class="err">witnet.toml</span></code> file can be used to configure parameters of the node.
-Settings like the JSON-RPC server socket address and the directory path of
-the database files can be customized. More details and a file example can
-be <a href="https://github.com/witnet/witnet-rust/blob/master/docs/configuration/toml-file.md">found here</a>.</p>
-<p>The path to the TOML file can be set when starting the node (please remember
-to replace the path in the example):</p>
-<div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">Multiline</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d \</span>
-<span class="go">    --name witnet_node \</span>
-<span class="go">    --volume ~/.witnet:/.witnet \</span>
-<span class="go">    --volume /path/to/custom/witnet.toml:/witnet.toml \</span>
-<span class="go">    --publish 21337:21337 \</span>
-<span class="go">    --restart always \</span>
-<span class="go">    witnet/witnet-rust</span>
-</code></pre></div></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">One-liner</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker run -d --name witnet_node --volume ~/.witnet:/.witnet --volume /path/to/custom/witnet.toml:/witnet.toml --publish 21337:21337 --restart always witnet/witnet-rust</span>
-</code></pre></div></div>
-</div>
                 
                   
                 
@@ -1188,13 +1140,13 @@ to replace the path in the example):</p>
           </a>
         
         
-          <a href="../use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../next-steps/" title="Next Steps" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Connect your Ethereum contracts to external APIs
+                Next Steps
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
