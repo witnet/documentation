@@ -44,7 +44,7 @@ Request (no parameters):
 }
 ```
 
-Response with an array of all wallets stored inn the server with their information, `infos[]`, containing:
+Response with an array of all wallets stored in the server with their information, `infos[]`, containing:
 
 - `id`: *String*, ID associated with the given wallet. 
 - `name`: *String*, human-friendly name for the given wallet.
@@ -110,7 +110,7 @@ Response:
 
 ### validate_mnemonics
 
-The JsonRPC method `validate_mnemonics` is used to validate that validity of the seed source that might be used to generate a new wallet.
+The JsonRPC method `validate_mnemonics` is used to verify that validity of the seed source that might be used to generate a new wallet.
 
 Request with parameters:
 
@@ -131,7 +131,7 @@ Request with parameters:
 
 Response:
 
-- `valid`: *Boolean*, true if valid seed in form of *mnemonics* or *xpriv*.
+- `valid`: *Boolean*, true if valid seed in form of *mnemonics* or `xprv`.
 
 ```json
 {
@@ -150,9 +150,9 @@ The JsonRPC method `create_wallet` is used to generate a new Master Key for an e
 
 Request with parameters:
 
-- `name` (optional): *String*, human-friendly name for your the wallet.
-- `caption` (optional): *String*, human-friendly caption for your the wallet.
-- `seed_source`: *`"mnemonics" | "xprv"`* literal to identify if the seed source is of the type *mnemonics* or *xprv* and determines how the HD wallet master key will be generated from the data sent in the `seedData` param.
+- `name` (optional): *String*, human-friendly name for the wallet.
+- `caption` (optional): *String*, human-friendly caption for the wallet.
+- `seed_source`: *`"mnemonics" | "xprv"`* literal to identify if the seed source is of the type *mnemonics* or *xprv* and determine how the HD wallet master key will be generated from the data sent in the `seedData` parameter.
 - `seed_data`: *String*, data used for generating the new HD wallet master key.
 - `password`: *String*, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.
 
@@ -188,7 +188,7 @@ Response:
 
 ### unlock_wallet
 
-The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session id until it expires.
+The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
 
 Request with parameters:
 
@@ -212,8 +212,8 @@ Response:
 - `session_id`: *number*, generated identifier for the current wallet session.
 - `session_expiration_secs`: *number*, amount of seconds after which the session will expire.
 - `account_balance`: *number*, wallet's account balance in nano Wits.
-- `name`: *String*, human-friendly name for your the wallet.
-- `caption`: *String*, human-friendly caption for your the wallet.
+- `name`: *String*, human-friendly name for the wallet.
+- `caption`: *String*, human-friendly caption for the wallet.
 - `current_account`: *number*, identifies the current active account in the session (the current version only supports the default account `0`).
 - `available_accounts`: *Array<number>*, list of available accounts in the wallet.
 
@@ -244,8 +244,8 @@ Request with parameters:
 
 - `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 - `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
-- `name`: *String*, human-friendly name for your the wallet.
-- `caption`: *String*, human-friendly caption for your the wallet.
+- `name`: *String*, human-friendly name for the wallet.
+- `caption`: *String*, human-friendly caption for the wallet.
 
 ```json
 {
@@ -278,11 +278,11 @@ Response:
 
 ### lock_wallet
 
-The JsonRPC method `lock_wallet` is used to *lock* the wallet with the specified id and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
+The JsonRPC method `lock_wallet` is used to *lock* the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 
 ```json
@@ -318,7 +318,7 @@ The JsonRPC method `close_session` is used to close an active session without lo
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 
 ```json
 {
@@ -333,7 +333,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet was successfully locked.
+- `success`: *Boolean*, reporting if the wallet was successfully closed.
 
 ```json
 {
@@ -348,11 +348,11 @@ Response:
 
 ### generate_address
 
-The JsonRPC method `generate_address` is used to derive deterministically a new external address for the given wallet and session id.
+The JsonRPC method `generate_address` is used to derive deterministically a new external address for the given wallet and session ID.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 
 ```json
@@ -390,7 +390,7 @@ Use this method `rpc.on` to subscribe to update events related to your session w
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 
 ```json
 {
@@ -405,7 +405,7 @@ Request with parameters:
 
 The response is:
 
-- `result`: *String*, subscription identifier that you can use to unsubscribe from notifications. See [rpc.off](#rpc.off).
+- `result`: *String*, subscription identifier that can be used to unsubscribe from notifications. See [rpc.off](#rpc.off).
 
 
 ```json
@@ -466,7 +466,7 @@ Use this method `rpc.off` to unsubscribe from previous subscriptions.
 
 Request with parameters:
 
-- `<data>`: *Array<String>*, subscription identifiers assigned to you when subscribed to wallet sesions. See [rpc.on](#rpc.on).
+- `<data>`: *Array<String>*, subscription identifiers assigned when subscribing to wallet sessions. See [rpc.on](#rpc.on).
 
 ```json
 {
