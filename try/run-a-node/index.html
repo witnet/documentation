@@ -1067,8 +1067,8 @@ Testnet in just a matter on seconds. To start a node, use:</p>
 </code></pre></div></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Raspberry Pi 4 users</p>
-<p>For some reason, Raspbian on Raspberry Pi 4 (not the case for older versions) requires your containers to operate
+<p class="admonition-title">Raspberry Pi users</p>
+<p>For some reason, Raspbian on Raspberry Pi (all versions) requires your containers to operate
 in privileged mode. When running the command above, simply add the <code class="codehilite"><span class="err">--privileged</span></code> flag:
 <div class="codehilite"><pre><span></span><code><span class="go">docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust</span>
 </code></pre></div></p>

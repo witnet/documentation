@@ -883,6 +883,13 @@
 <p>The <code class="codehilite"><span class="err">runner.sh</span></code> script automatically downloads and installs the latest version of the Witnet node software (<code class="codehilite"><span class="err">witnet-rust</span></code>). It can also be used to update to the latest version, since it will keep all the block chain data and the configuration file in the hidden <code class="codehilite"><span class="na">.witnet</span></code> directory.</p>
 <p>For Testnet 7.3 and greater, the configuration file needs to be customized with the public IP and port of the node, which must be set at the <code class="codehilite"><span class="err">public_addr</span></code> field in <code class="codehilite"><span class="err">witnet.toml</span></code> .</p>
 <ul>
+<li>Install latest version of ca-certificates to download safely from GitHub:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>sudo apt install ca-certificates
+sudo update-ca-certificates
+</code></pre></div>
+
+<ul>
 <li>Create the <code class="codehilite"><span class="err">witnet</span></code> user dedicated to running the node:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo adduser witnet
