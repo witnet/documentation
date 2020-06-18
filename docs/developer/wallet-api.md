@@ -17,13 +17,14 @@ node_url = "127.0.0.1:21338"
 | [create_mnemonics](#create_mnemonics)       | length                                           | `mnemonics`                                   |
 | [validate_mnemonics](#validate_mnemonics)   | seed_source, seed_data                           | `valid`                                       |
 | [create_wallet](#create_wallet)             | name, caption, seed_source, seed_data, password  | `wallet_id`                                   |
-| [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
 | [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`     | `success`                                     |
+| [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
 | [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
 | [close_session](#close_session)             | `session_id`                                     | `success`                                     |
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`                        | `address`, `path`                             |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                        | `total`      
 | [rpc.on](#rpc.on)                           | `session_id`                                     | (`subscription_id`)                           |
-| [rpc.off](#rpc.off)                         | `[subscription_id]`                              |                                               |
+| [rpc.off](#rpc.off)                         | `[subscription_id]`                              
 
 
 
@@ -80,7 +81,7 @@ The JsonRPC method `create_mnemonics` is used to generate a [BIP39 mnemonic sent
 
 Request with parameters:
 
-- `length`: *integer* indicating how many words the mnemonic sentence should have. Must be one of these: `12`, `15`, `18`, `21` or `24`.
+- `length`: *integer*, indicating how many words the mnemonic sentence should have. Must be one of these: `12`, `15`, `18`, `21` or `24`.
 
 ```json
 {
@@ -114,8 +115,8 @@ The JsonRPC method `validate_mnemonics` is used to verify that validity of the s
 
 Request with parameters:
 
-- `seed_source`: *`"mnemonics" | "xprv"`* literal to identify if the seed source is of the type *mnemonics* or *xprv*.
-- `seed_data`: *String* containing the used seed data, either a list of mnemonic words or a `xprv`.
+- `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv*.
+- `seed_data`: *String*, containing the used seed data, either a list of mnemonic words or a `xprv`.
 
 ```json
 {
@@ -152,7 +153,7 @@ Request with parameters:
 
 - `name` (optional): *String*, human-friendly name for the wallet.
 - `caption` (optional): *String*, human-friendly caption for the wallet.
-- `seed_source`: *`"mnemonics" | "xprv"`* literal to identify if the seed source is of the type *mnemonics* or *xprv* and determine how the HD wallet master key will be generated from the data sent in the `seedData` parameter.
+- `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv* and determine how the HD wallet master key will be generated from the data sent in the `seedData` parameter.
 - `seed_data`: *String*, data used for generating the new HD wallet master key.
 - `password`: *String*, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.
 
@@ -363,7 +364,7 @@ Request with parameters:
     "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
     "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
   },
-  "id": "1",
+  "id": "1"
 }
 ```
 
@@ -378,6 +379,42 @@ Response:
   "result": {
     "address": "twit1gtvu9a37w9sxaej30grp9rpxkkwwjk3pq0jqf9",
     "path": "m/3'/4919'/0'/0/0"
+  },
+  "id": "1"
+}
+```
+
+
+### get_balance
+
+The JsonRPC method `get_balance` is used to query the current balance for a given wallet.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+	"method": "get_balance",
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  },
+  "id": "1"
+}
+```
+
+Response:
+
+- `total`: *String*, total balance of the wallet in nanoWits (including timelocked transactions).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "total": "0"
   },
   "id": "1"
 }
