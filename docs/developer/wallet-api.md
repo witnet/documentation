@@ -596,3 +596,86 @@ The response for a successful unsubscribe:
   "id": "1"
 }
 ```
+
+### get_addresses
+
+The method `get_addresses` displays the addresses existing relative to a specific wallet and session ID.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `offset`:
+- `limit`:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "get_addresses",
+  "params": {
+    "session_id": "8de89eecfceb9e3253334ad018e299c950bfbed1bedfb1bd15fecdc7f477b0c1",
+    "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
+    "offset": 0,
+    "limit": 25
+  },
+  "id": "1"
+}
+```
+
+The response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "addresses": [
+      {
+        "account": 0,
+        "address": "wit12054ktgle4xj9q28jx24mx7cn59cv6fjha2mqs",
+        "index": 1,
+        "info": {
+          "first_payment_date": null,
+          "label": null,
+          "last_payment_date": null,
+          "received_amount": 0,
+          "received_payments": []
+        },
+        "keychain": 0,
+        "path": "m/3'/4919'/0'/0/1",
+        "pkh": "twit12054ktgle4xj9q28jx24mx7cn59cv6fjegrlqp"
+      },
+      {
+        "account": 0,
+        "address": "wit1eghyyar76nuvdfu0h70f4gmxruj2rw4g8x2nn8",
+        "index": 0,
+        "info": {
+          "first_payment_date": 1592488020,
+          "label": null,
+          "last_payment_date": 1592488260,
+          "received_amount": 1125000000000,
+          "received_payments": [
+            "a38377bad7debf3a4da3eae1e0d50a178c5577b151da2b0a8615db320cdd0e41:1",
+            "e77c701418327e3162592efcd592a61644339505f3273603d64568dbc0f97848:1",
+            "f0effc407ffe5100111b0d47ca45fb7613e49b20eb845679e72fdfa02c406263:1",
+            "e1c0a6520860015f72ba4fd5da99779f8552e3764381c43cab1c56dd09dc4230:1",
+            "14ea87edb37ca9291251aee55a0c56e9213a60a70129285b3d7993125dd413f5:1",
+            "937e5500ca33260859d42848e26e79916dd001e7eb246e7c9529fc4827ec54a9:1",
+            "1628daf2320c1eeb8abdcfc5f269f40c59c0d865375502b9730083e65521032a:1",
+            "a34bf612433b2d649736c2c29dbc20c9a0904485373aafdb7f2915626ec5467d:1",
+            "b4eac054728930603418e113c74bdb9af076958903ce6a0ccf2a5d1fdf2b926b:1"
+          ]
+        },
+        "keychain": 0,
+        "path": "m/3'/4919'/0'/0/0",
+        "pkh": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk"
+      }
+    ],
+    "total": 2
+  },
+  "id": "1"
+}
+```
+
+### Shutdown
+
+
