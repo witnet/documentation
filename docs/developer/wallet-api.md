@@ -11,26 +11,21 @@ node_url = "127.0.0.1:21338"
 
 ## Summary
 
-| Method Name                                 | Request Params                                   | Response                                      |
-| ------------------------------------------- | ------------------------------------------------ | --------------------------------------------- |
-| [get_wallet_infos](#get_wallet_infos)       | (none)                                           | `wallet_info[]`                               |
-| [create_mnemonics](#create_mnemonics)       | length                                           | `mnemonics`                                   |
-| [validate_mnemonics](#validate_mnemonics)   | seed_source, seed_data                           | `valid`                                       |
-| [create_wallet](#create_wallet)             | name, caption, seed_source, seed_data, password  | `wallet_id`                                   |
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`     | `success`                                     |
-| [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
-| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
-| [close_session](#close_session)             | `session_id`                                     | `success`                                     |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                        | `total`      
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`                        | `address`, `path`                             |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`                        | `address`, `path`                             |
-| [rpc.on](#rpc.on)                           | `session_id`                                     | (`subscription_id`)                           |
-| [rpc.off](#rpc.off)                         | `[subscription_id]`                              
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`     | `success`                                     |
-| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
-| [close_session](#close_session)             | `session_id`                                     | `success`                                     |
-
-
+| Method Name                                 | Request Params                                           | Response                                      |
+| ------------------------------------------- | -------------------------------------------------------- | --------------------------------------------- |
+| [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                               |
+| [create_mnemonics](#create_mnemonics)       | `length`                                                 | `mnemonics`                                   |
+| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                               | `valid`                                       |
+| [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`| `wallet_id`                                   |
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`             | `success`                                     |
+| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                  | `session_id`, `session_expiration_secs`, ...  |
+| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                                | `success`                                     |
+| [close_session](#close_session)             | `session_id`                                             | `success`                                     |
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`                                | `address`, `path`                             |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`      
+| [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                           | 
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             |
+| [shutdown](#shutdown)                       | `session_id`                                             |
 
 ## Wallet API Endpoints:
 
@@ -678,4 +673,17 @@ The response:
 
 ### Shutdown
 
+To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.
 
+Request with parameters:
+
+```json
+{
+  "method": "shutdown",
+  "params": {
+    "session_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c"
+  },
+  "id": "1",
+  "jsonrpc": "2.0"
+}
+```
