@@ -13,65 +13,21 @@ node_url = "127.0.0.1:21338"
 
 | Method Name                                 | Request Params                                           | Response                                      |
 | ------------------------------------------- | -------------------------------------------------------- | --------------------------------------------- |
-| [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                               |
 | [create_mnemonics](#create_mnemonics)       | `length`                                                 | `mnemonics`                                   |
-| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                               | `valid`                                       |
 | [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`| `wallet_id`                                   |
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`             | `success`                                     |
-| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                  | `session_id`, `session_expiration_secs`, ...  |
-| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                                | `success`                                     |
 | [close_session](#close_session)             | `session_id`                                             | `success`                                     |
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`                                | `address`, `path`                             |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`      
-| [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                           | 
 | [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`      
+| [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                               |
+| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                                | `success`                                     |
+| [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                           | 
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`             | `success`                                     |
 | [shutdown](#shutdown)                       | `session_id`                                             |
+| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                  | `session_id`, `session_expiration_secs`, ...  |
+| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                               | `valid`                                       |
 
 ## Wallet API Endpoints:
-
-
-### get_wallet_infos
-    
-The JsonRPC method `get_wallet_infos` returns a list of all wallets with names and captions stored on the wallet server database.
-
-Request (no parameters):
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "get_wallet_infos",
-  "id": "1"
-}
-```
-
-Response with an array of all wallets stored in the server with their information, `infos[]`, containing:
-
-- `id`: *String*, ID associated with the given wallet. 
-- `name`: *String*, human-friendly name for the given wallet.
-- `caption`: *String*, human-friendly caption for the given wallet.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": 
-  {
-    "infos": 
-    [
-      {
-        "caption":null, 
-        "id":"81ccbf4548cfeba37cef93dc64e7f0d8fb410e3967bb40160a36aa362943c520",
-        "name":null
-      },
-      {
-        "caption":"caption text",
-        "id":"9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
-        "name":"wallet name"
-      }		
-    ]
-  },
-  "id": 1
-}
-```
 
 
 ### create_mnemonics
@@ -102,42 +58,6 @@ Response:
   "jsonrpc": "2.0",
   "result": {
     "mnemonics": "day voice lake monkey suit bread occur own cattle visit object ordinary"
-  },
-  "id": 1
-}
-```
-
-
-### validate_mnemonics
-
-The JsonRPC method `validate_mnemonics` is used to verify that validity of the seed source that might be used to generate a new wallet.
-
-Request with parameters:
-
-- `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv*.
-- `seed_data`: *String*, containing the used seed data, either a list of mnemonic words or a `xprv`.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "validate_mnemonics",
-  "params": { 
-  	"seed_source": "mnemonics",
-    "seed_data": "day voice lake monkey suit bread occur own cattle visit object ordinary"
-  },
-  "id": 1
-}
-```
-
-Response:
-
-- `valid`: *Boolean*, true if valid seed in form of *mnemonics* or `xprv`.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "valid": true
   },
   "id": 1
 }
@@ -184,133 +104,6 @@ Response:
   "id": 1
 }
 ```
-
-
-### unlock_wallet
-
-The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
-
-Request with parameters:
-
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `password`: *String*, the password that unlocks the wallet.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "unlock_wallet",
-  "params": {
-    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
-    "password": "12345678"
-  },
-  "id": 1
-}
-```
-
-Response:
-
-- `session_id`: *number*, generated identifier for the current wallet session.
-- `session_expiration_secs`: *number*, amount of seconds after which the session will expire.
-- `account_balance`: *number*, wallet's account balance in nano Wits.
-- `name`: *String*, human-friendly name for the wallet.
-- `caption`: *String*, human-friendly caption for the wallet.
-- `current_account`: *number*, identifies the current active account in the session (the current version only supports the default account `0`).
-- `available_accounts`: *Array<number>*, list of available accounts in the wallet.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "account_balance": 0,
-    "available_accounts": [
-      0
-    ],
-    "caption": null,
-    "current_account": 0,
-    "name": null,
-    "session_expiration_secs": 3200,
-    "session_id": "9c4f690a50de45b91bb4a5d7fc964c6853ca4eb29fa4ed3e2c9ddfd3e2da45e7"
-  },
-  "id": 1
-}
-```
-
-
-### update_wallet
-
-The JsonRPC method `update_wallet` is used to update the name and/or caption of an existing wallet.
-
-Request with parameters:
-
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
-- `name`: *String*, human-friendly name for the wallet.
-- `caption`: *String*, human-friendly caption for the wallet.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "update_wallet",
-  "params": {
-    "session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
-    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
-    "name": "New Name",
-    "caption": "New Caption"
-  },
-  "id": 1
-}
-```
-
-Response:
-
-- `success`: *Boolean*, reporting if the wallet's update was successfull.
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "success": true
-  },
-  "id": 1
-}
-```
-
-
-### lock_wallet
-
-The JsonRPC method `lock_wallet` is used to *lock* the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
-
-Request with parameters:
-
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-
-```json
-{
-	"jsonrpc": "2.0",
-  	"method": "lock_wallet",
-  	"params": {
-    	"session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
-    	"wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
-  	},
-  	"id": "1"
-}
-```
-
-Response:
-
-- `success`: *Boolean*, reporting if the wallet was successfully locked.
-
-```json
-{
-	"jsonrpc": "2.0",
-  	"result": {
-      "success": true
-    },
-  	"id": "1"
-}
-```
-
 
 ### close_session
 
@@ -419,6 +212,7 @@ Response:
 }
 ```
 
+### get_addresses
 
 ### get_addresses
 
@@ -564,112 +358,45 @@ Here is an example of a block event sent out by a node:
 }
 ```
 
+### update_wallet
 
-### rpc.off
-
-Use this method `rpc.off` to unsubscribe from previous subscriptions.
+The JsonRPC method `update_wallet` is used to update the name and/or caption of an existing wallet.
 
 Request with parameters:
 
-- `<data>`: *Array<String>*, subscription identifiers assigned when subscribing to wallet sessions. See [rpc.on](#rpc.on).
-
-```json
-{
-  "method": "rpc.off",
-  "params": ["221794a024ddaee0b0a0e9cb6bfd8f00fed86855134d917255f3cfac3dc84f2b"],
-  "id": "1",
-  "jsonrpc": "2.0"
-}
-```
-
-The response for a successful unsubscribe:
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
+- `name`: *String*, human-friendly name for the wallet.
+- `caption`: *String*, human-friendly caption for the wallet.
 
 ```json
 {
   "jsonrpc": "2.0",
-  "result": null,
-  "id": "1"
-}
-```
-
-### get_addresses
-
-The method `get_addresses` displays the addresses existing relative to a specific wallet and session ID.
-
-Request with parameters:
-
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `offset`:
-- `limit`:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "get_addresses",
+  "method": "update_wallet",
   "params": {
-    "session_id": "8de89eecfceb9e3253334ad018e299c950bfbed1bedfb1bd15fecdc7f477b0c1",
-    "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
-    "offset": 0,
-    "limit": 25
+    "session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
+    "name": "New Name",
+    "caption": "New Caption"
   },
-  "id": "1"
+  "id": 1
 }
 ```
 
-The response:
+Response:
+
+- `success`: *Boolean*, reporting if the wallet's update was successfull.
 
 ```json
 {
   "jsonrpc": "2.0",
   "result": {
-    "addresses": [
-      {
-        "account": 0,
-        "address": "wit12054ktgle4xj9q28jx24mx7cn59cv6fjha2mqs",
-        "index": 1,
-        "info": {
-          "first_payment_date": null,
-          "label": null,
-          "last_payment_date": null,
-          "received_amount": 0,
-          "received_payments": []
-        },
-        "keychain": 0,
-        "path": "m/3'/4919'/0'/0/1",
-        "pkh": "twit12054ktgle4xj9q28jx24mx7cn59cv6fjegrlqp"
-      },
-      {
-        "account": 0,
-        "address": "wit1eghyyar76nuvdfu0h70f4gmxruj2rw4g8x2nn8",
-        "index": 0,
-        "info": {
-          "first_payment_date": 1592488020,
-          "label": null,
-          "last_payment_date": 1592488260,
-          "received_amount": 1125000000000,
-          "received_payments": [
-            "a38377bad7debf3a4da3eae1e0d50a178c5577b151da2b0a8615db320cdd0e41:1",
-            "e77c701418327e3162592efcd592a61644339505f3273603d64568dbc0f97848:1",
-            "f0effc407ffe5100111b0d47ca45fb7613e49b20eb845679e72fdfa02c406263:1",
-            "e1c0a6520860015f72ba4fd5da99779f8552e3764381c43cab1c56dd09dc4230:1",
-            "14ea87edb37ca9291251aee55a0c56e9213a60a70129285b3d7993125dd413f5:1",
-            "937e5500ca33260859d42848e26e79916dd001e7eb246e7c9529fc4827ec54a9:1",
-            "1628daf2320c1eeb8abdcfc5f269f40c59c0d865375502b9730083e65521032a:1",
-            "a34bf612433b2d649736c2c29dbc20c9a0904485373aafdb7f2915626ec5467d:1",
-            "b4eac054728930603418e113c74bdb9af076958903ce6a0ccf2a5d1fdf2b926b:1"
-          ]
-        },
-        "keychain": 0,
-        "path": "m/3'/4919'/0'/0/0",
-        "pkh": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk"
-      }
-    ],
-    "total": 2
+    "success": true
   },
-  "id": "1"
+  "id": 1
 }
 ```
+
 
 ### Shutdown
 
@@ -687,3 +414,101 @@ Request with parameters:
   "jsonrpc": "2.0"
 }
 ```
+
+
+### unlock_wallet
+
+The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
+
+Request with parameters:
+
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `password`: *String*, the password that unlocks the wallet.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "unlock_wallet",
+  "params": {
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
+    "password": "12345678"
+  },
+  "id": 1
+}
+```
+
+Response:
+
+- `session_id`: *number*, generated identifier for the current wallet session.
+- `session_expiration_secs`: *number*, amount of seconds after which the session will expire.
+- `account_balance`: *number*, wallet's account balance in nano Wits.
+- `name`: *String*, human-friendly name for the wallet.
+- `caption`: *String*, human-friendly caption for the wallet.
+- `current_account`: *number*, identifies the current active account in the session (the current version only supports the default account `0`).
+- `available_accounts`: *Array<number>*, list of available accounts in the wallet.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "account_balance": 0,
+    "available_accounts": [
+      0
+    ],
+    "caption": null,
+    "current_account": 0,
+    "name": null,
+    "session_expiration_secs": 3200,
+    "session_id": "9c4f690a50de45b91bb4a5d7fc964c6853ca4eb29fa4ed3e2c9ddfd3e2da45e7"
+  },
+  "id": 1
+}
+```
+
+### validate_mnemonics
+
+The JsonRPC method `validate_mnemonics` is used to verify that validity of the seed source that might be used to generate a new wallet.
+
+Request with parameters:
+
+- `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv*.
+- `seed_data`: *String*, containing the used seed data, either a list of mnemonic words or a `xprv`.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "validate_mnemonics",
+  "params": { 
+  	"seed_source": "mnemonics",
+    "seed_data": "day voice lake monkey suit bread occur own cattle visit object ordinary"
+  },
+  "id": 1
+}
+```
+
+Response:
+
+- `valid`: *Boolean*, true if valid seed in form of *mnemonics* or `xprv`.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "valid": true
+  },
+  "id": 1
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
