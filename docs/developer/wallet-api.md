@@ -21,8 +21,9 @@ node_url = "127.0.0.1:21338"
 | [unlock_wallet](#unlock_wallet)             | wallet_id, password                              | `session_id`, `session_expiration_secs`, ...  |
 | [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                        | `success`                                     |
 | [close_session](#close_session)             | `session_id`                                     | `success`                                     |
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`                        | `address`, `path`                             |
 | [get_balance](#get_balance)                 | `session_id`, `wallet_id`                        | `total`      
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`                        | `address`, `path`                             |
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`                        | `address`, `path`                             |
 | [rpc.on](#rpc.on)                           | `session_id`                                     | (`subscription_id`)                           |
 | [rpc.off](#rpc.off)                         | `[subscription_id]`                              
 
@@ -347,6 +348,42 @@ Response:
 ```
 
 
+### get_balance
+
+The JsonRPC method `get_balance` is used to query the current balance for a given wallet.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+	"method": "get_balance",
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  },
+  "id": "1"
+}
+```
+
+Response:
+
+- `total`: *String*, total balance of the wallet in nanoWits (including timelocked transactions).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "total": "0"
+  },
+  "id": "1"
+}
+```
+
+
 ### generate_address
 
 The JsonRPC method `generate_address` is used to derive deterministically a new external address for the given wallet and session ID.
@@ -385,36 +422,69 @@ Response:
 ```
 
 
-### get_balance
+### get_addresses
 
-The JsonRPC method `get_balance` is used to query the current balance for a given wallet.
+The JsonRPC method `get_addresses` is used to query for a list of previously derived addresses given a wallet and session ID.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `offset` (optional): *number*, initial position of the address list to be queried (by default is set to `0`).
+- `limit` (optional): *number*, size of the address list to be returned (by default is set to `25`).
 
 ```json
 {
-	"jsonrpc": "2.0",
-	"method": "get_balance",
+  "jsonrpc": "2.0",
+  "method": "get_addresses",
   "params": {
-    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
-    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+    "session_id": "9bcb54bf7494c21c29ef97256f6741b5b5bd5cb31d09d38e5ce98699010beea7",
+    "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
+    "offset": 0,
+    "limit": 25
   },
   "id": "1"
 }
 ```
 
-Response:
+Response with an array of addresses and additional relatedinformation:
 
-- `total`: *String*, total balance of the wallet in nanoWits (including timelocked transactions).
+- `addresses`: *Array<Address>*, list of queried addresses with additional information.
+  - `account`: *number*, identifies the current account in the session (the current version only supports the default account `0`).
+  - `address`: *String*, address serialized in Bech32 format.
+  - `index`: *number*, sequential index used to derive address.
+  - `info`: *String*, additional information with balance movements and dates.
+    - `first_payment_date`: *number*, date of first received movement in UTC format (Coordinated Universal Time).
+    - `label`: *String*, user-defined label for this address.
+    - `last_payment_date`: *number*, date of last received movement in UTC format (Coordinated Universal Time).
+    - `received_amount`: *number*, total amount (in nanoWits) received by this address.
+    - `received_payments`: *Array<String>*, list of Unspent Transaction Outputs (UTXOs) proving funds to this address.
+  - `keychain`: *number*, `change` value of the derivation path (See [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)).
+  - `path`: *String*, derivation path used to generate the address.
 
 ```json
 {
   "jsonrpc": "2.0",
   "result": {
-    "total": "0"
+    "addresses": [
+      {
+        "account": 0,
+        "address": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4g8x2nn8",
+        "index": 0,
+        "info": {
+          "first_payment_date": 1592476860,
+          "label": null,
+          "last_payment_date": 1592476860,
+          "received_amount": 125000000000,
+          "received_payments": [
+            "78bd0d8e4ef8ab67d4f18b357545f9dc73f63b7bf97a9a20c69b91b9e17ba985:1"
+          ]
+        },
+        "keychain": 0,
+        "path": "m/3'/4919'/0'/0/0",
+      }
+    ],
+    "total": 1
   },
   "id": "1"
 }
