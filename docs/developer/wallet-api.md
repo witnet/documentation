@@ -13,17 +13,22 @@ node_url = "127.0.0.1:21338"
 
 | Method Name                                 | Request Params                                           | Response                                      |
 | ------------------------------------------- | -------------------------------------------------------- | --------------------------------------------- |
+| [create_data_req](#create_data_req)         | `session_id`, `wallet_id`, `request`, `fee`              |                                               |
 | [create_mnemonics](#create_mnemonics)       | `length`                                                 | `mnemonics`                                   |
+| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `pkh`, `value`, `fee`         |                                               |
 | [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`| `wallet_id`                                   |
 | [close_session](#close_session)             | `session_id`                                             | `success`                                     |
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`                                | `address`, `path`                             |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`      
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             |                                               |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`                                       |
 | [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                               |
 | [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                                | `success`                                     |
+| [run_rad_request](#run_rad_request)         | `request`
 | [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                           | 
 | [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`             | `success`                                     |
-| [shutdown](#shutdown)                       | `session_id`                                             |
+| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                 |                                               |
+| [shutdown](#shutdown)                       | `session_id`                                             |                                               |
+| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`
 | [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                  | `session_id`, `session_expiration_secs`, ...  |
 | [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                               | `valid`                                       |
 
@@ -139,42 +144,6 @@ Response:
 ```
 
 
-### get_balance
-
-The JsonRPC method `get_balance` is used to query the current balance for a given wallet.
-
-Request with parameters:
-
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-
-```json
-{
-	"jsonrpc": "2.0",
-	"method": "get_balance",
-  "params": {
-    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
-    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
-  },
-  "id": "1"
-}
-```
-
-Response:
-
-- `total`: *String*, total balance of the wallet in nanoWits (including timelocked transactions).
-
-```json
-{
-  "jsonrpc": "2.0",
-  "result": {
-    "total": "0"
-  },
-  "id": "1"
-}
-```
-
-
 ### generate_address
 
 The JsonRPC method `generate_address` is used to derive deterministically a new external address for the given wallet and session ID.
@@ -211,8 +180,6 @@ Response:
   "id": "1"
 }
 ```
-
-### get_addresses
 
 ### get_addresses
 
@@ -278,6 +245,103 @@ Response with an array of addresses and additional relatedinformation:
     ],
     "total": 1
   },
+  "id": "1"
+}
+```
+
+### get_balance
+
+The JsonRPC method `get_balance` is used to query the current balance for a given wallet.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+	"method": "get_balance",
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  },
+  "id": "1"
+}
+```
+
+Response:
+
+- `total`: *String*, total balance of the wallet in nanoWits (including timelocked transactions).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "total": "0"
+  },
+  "id": "1"
+}
+```
+
+### lock_wallet
+
+The JsonRPC method `lock_wallet` is used to *lock* the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+  	"method": "lock_wallet",
+  	"params": {
+    	"session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
+    	"wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  	},
+  	"id": "1"
+}
+```
+
+Response:
+
+- `success`: *Boolean*, reporting if the wallet was successfully locked.
+
+```json
+{
+	"jsonrpc": "2.0",
+  	"result": {
+      "success": true
+    },
+  	"id": "1"
+}
+```
+
+### rpc.off
+
+Use this method `rpc.off` to unsubscribe from previous subscriptions.
+
+Request with parameters:
+
+- `<data>`: *Array<String>*, subscription identifiers assigned when subscribing to wallet sessions. See [rpc.on](#rpc.on).
+
+```json
+{
+  "method": "rpc.off",
+  "params": ["221794a024ddaee0b0a0e9cb6bfd8f00fed86855134d917255f3cfac3dc84f2b"],
+  "id": "1",
+  "jsonrpc": "2.0"
+}
+```
+
+The response for a successful unsubscribe:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": null,
   "id": "1"
 }
 ```
@@ -500,6 +564,16 @@ Response:
 }
 ```
 
+
+### create_data_req
+
+### send_transaction
+
+### create_vtt
+
+### run_rad_request
+
+### sign_data
 
 
 
