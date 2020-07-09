@@ -102,6 +102,31 @@ ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
 
 ## Commands
 
+### addPeers
+
+Add addresses to the node's peers and try to connect to them.
+
+The IP addresses are expected in format: list of "address:port" separated by spaces.
+
+```console tab="Docker"
+docker exec witnet_node witnet node addPeers 52.166.178.145:21337 52.166.178.145:22337
+```
+
+```console tab="Binary"
+witnet node addPeers 52.166.178.145:12337 52.166.178.145:22337
+```
+
+```console tab="Cargo"
+cargo run -- node addPeers 52.166.178.145:12337 52.166.178.145:22337
+```
+
+Example output:
+
+```
+Successfully added peer addresses: ["52.166.178.145:12337", "52.166.178.145:22337"]
+```
+
+
 ### address
 
 Get the identifier of the node that acts as its address when interacting with the protocol through transactions.
@@ -351,6 +376,23 @@ witnet node masterkeyExport
 
 ```console tab="Cargo"
 cargo run -- node masterkeyExport
+```
+
+### minerList
+
+
+Display the list of block hashes for each epoch, their miners and the numbers of blocks mined by each address.
+
+```console tab="Docker"
+docker exec  witnet_node ./witnet node minerList
+```
+
+```console tab="Binary"
+witnet node minerList
+```
+
+```console tab="Cargo"
+cargo run -- node minerList
 ```
 
 ### nodeStats
