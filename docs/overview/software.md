@@ -37,6 +37,23 @@ The bridge is composed of three different pieces of software:
 - The `bridge` component inside [Witnet-Rust], which monitors the WBI
   for new requests and also scans
 
+## Open source libraries
+
+### Verifiable Random Functions (VRFs)
+
+- [vrf-solidity]: fast and effective library for VRFs written in Solidity
+- [vrf-rs]: implementation of Elliptic Curve VRFs written in Rust
+
+### Elliptic Curve
+
+- [elliptic-curve-solidity]: implementation of Elliptic Curve arithmetic operations written in Solidity
+
+### Bonneh-Lynn-Shacham (BLS) signatures
+
+- [bls-solidity]: fast and effective library for 256-bit Barreto-Naehrig (BN256) curve operations written in Solidity
+- [bls-signatures-rs]: implementation of BLS signatures written in Rust
+
+
 [roadmap]: /community/roadmap
 [run-a-node]: /try/run-a-node
 [rust]: https://rust-lang.org
@@ -44,3 +61,8 @@ The bridge is composed of three different pieces of software:
 [use-from-ethereum]: /try/use-from-ethereum
 [Witnet-Rust]: https://github.com/witnet/sheikah 
 [contributing]: /developer/contributing
+[vrf-solidity]: https://github.com/witnet/vrf-solidity
+[vrf-rs]: https://github.com/witnet/vrf-rs
+[elliptic-curve-solidity]: https://github.com/witnet/elliptic-curve-solidity
+[bls-solidity]: https://github.com/witnet/bls-solidity
+[bls-signatures-rs]: https://github.com/witnet/bls-signatures-rs
