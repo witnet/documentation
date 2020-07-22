@@ -11,145 +11,199 @@ node_url = "127.0.0.1:21338"
 
 ## Summary
 
-| Method Name                                 | Request Params                                           | Response                                      |
-| ------------------------------------------- | -------------------------------------------------------- | --------------------------------------------- |
-| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`              |                                               |
-| [create_mnemonics](#create_mnemonics)       | `length`                                                 | `mnemonics`                                   |
-| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `pkh`, `value`, `fee`         |                                               |
-| [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`| `wallet_id`                                   |
-| [close_session](#close_session)             | `session_id`                                             | `success`                                     |
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`                                | `address`, `path`                             |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             |                                               |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`                                       |
-| [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                               |
-| [lock_wallet](#update_wallet)               | `session_id`, `wallet_id`                                | `success`                                     |
-| [run_rad_request](#run_rad_request)         | `request`
-| [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                           | 
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`             | `success`                                     |
-| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                 |                                               |
-| [shutdown](#shutdown)                       | `session_id`                                             |                                               |
-| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`
-| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                  | `session_id`, `session_expiration_secs`, ...  |
-| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                               | `valid`                                       |
+| Method Name                                 | Request Params                                           | Response                                             |
+| ------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------- |
+| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`              | `bytes`, `transaction`, `transaction_id`             |
+| [create_mnemonics](#create_mnemonics)       | `length`                                                 | `mnemonics`                                          |
+| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `pkh`, `value`, `fee`         | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`| `wallet_id`                                          |
+| [close_session](#close_session)             | `session_id`                                             | `success`                                            |
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`                                | `address`, `path`                                    |
+| [get](#get)                                 | `session_id`, `wallet_id`, `key`                         | `value`                                              |
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             | `address[]`, `total`                                 |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`                                              |
+| [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, `offset`, `limit`             | `transactions[]`, `total`                            | 
+| [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                                      |
+| [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                | `success`                                            |
+| [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                    | (none)                                               | 
+| [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                                  | 
+| [run_rad_request](#run_rad_request)         | `request`                                                | `result`                                             | 
+| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                 | (none)                                               | x
+| [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                | (none)                                               |
+| [shutdown](#shutdown)                       | `session_id`                                             | (none)                                               |
+| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`         | `chaincode`, `public_key`, `signature`               | 
+| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                  | `session_id`, `session_expiration_secs`, ...         |
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`             | `success`                                            |
+| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                               | `valid`                                              |
 
-## Wallet API Endpoints:
+
+## Wallet API Endpoints
+
 
 ### create_data_request
 
-The method `create_data_request` creates a data request from the wallet using.
+The method `create_data_request` creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method [send_transaction](#send_transaction)).
 
 Request with parameters:
 
 - `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
 - `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `fee`: *integer*, amount in nanowits.
-- `request`: a struct with parameters: data request with CBOR codification, `collateral`, amout in nanoWits,`witness_reward`, amout in nanoWits,`witnesses`, minimum number of witnet nodes that must perform the request,`commit_fee`, amout in nanoWits., `reveal_fee`, amout in nanoWits.,`tally_fee`, amout in nanoWits and`min_consensus_percentage`, minimum of consensus required to consider the request as valid.
+- `fee`: *number*, amount in nanoWitswill be earned by the miner that publishes the request.
+- `request`: *DataRequestOutput*, a struct with required data request fields.
+  - `data_request`: *RADRequest*, data request with CBOR codification.
+  - `witness_reward`: *number*, reward in nanoWits to the witnesses of the data request.
+  - `witnesses`: *number*, minimum number of witnet nodes that must perform the request.
+  - `commit_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid commitment transaction.
+  - `reveal_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid reveal transaction.
+  - `tally_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid tally transaction.
+  - `min_consensus_percentage`: *number*, , minimum of consensus required to consider the request as valid.
+  - `collateral`: *number*, collateral amount in nanoWits.
 
-As an example , this data request created a data request that retrives the last bitcoin blockhash from three different sources.
+More information about the parameters can be found in the tutorial of [data request parameters fine-tuning](https://docs.witnet.io/tutorials/bitcoin-price-feed/fine-tuning/).
+
+As an example, this data request created a data request that retrives the last Bitcoin blockhash from three different sources:
+
 ```json
 {
-    "jsonrpc": "2.0",
-    "method": "create_data_request",
-    "id": "1",
-    "params": {
-"session_id": "678f4320d8f8ff1a9f86f56f20f0c6a76fba92db0e8e5b1fd2f21092de985f3e",
-"wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
-"request": {
-            "data_request": {
-                "time_lock": 0,
-                "retrieve": [
-                    {
-                        "kind": "HTTP-GET",
-                        "url": "https://blockchain.info/q/latesthash",
-                        "script": [
-                            128
-                        ]
-                    },
-                    {
-                        "kind": "HTTP-GET",
-                        "url": "https://api-r.bitcoinchain.com/v1/status",
-                        "script": [
-                            130,
-                            24,
-                            119,
-                            130,
-                            24,
-                            103,
-                            100,
-                            104,
-                            97,
-                            115,
-                            104
-                        ]
-                    },
-                    {
-                        "kind": "HTTP-GET",
-                        "url": "https://api.blockchair.com/bitcoin/stats",
-                        "script": [
-                            131,
-                            24,
-                            119,
-                            130,
-                            24,
-                            102,
-                            100,
-                            100,
-                            97,
-                            116,
-                            97,
-                            130,
-                            24,
-                            103,
-                            111,
-                            98,
-                            101,
-                            115,
-                            116,
-                            95,
-                            98,
-                            108,
-                            111,
-                            99,
-                            107,
-                            95,
-                            104,
-                            97,
-                            115,
-                            104
-                        ]
-                    }
-                ],
-                "aggregate": {
-                    "filters": [],
-                    "reducer": 2
-                },
-                "tally": {
-                    "filters": [
-                        {
-                            "op": 8,
-                            "args": []
-                        }
-                    ],
-                    "reducer": 2
-                }
-            },
-            "witness_reward": 1000,
-            "witnesses": 3,
-            "commit_fee": 10,
-            "reveal_fee": 10,
-            "tally_fee": 30,
-            "min_consensus_percentage": 51,
-            "collateral": 1000000000
-},
-        "fee": 0
-    }
+  "jsonrpc": "2.0",
+  "method": "create_data_request",
+  "id": "1",
+  "params": {
+    "session_id": "678f4320d8f8ff1a9f86f56f20f0c6a76fba92db0e8e5b1fd2f21092de985f3e",
+    "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
+    "request": {
+      "data_request": {
+        "time_lock": 0,
+        "retrieve": [
+          {
+            "kind": "HTTP-GET",
+            "url": "https://blockchain.info/q/latesthash",
+            "script": [
+              128
+            ]
+          },
+          {
+            "kind": "HTTP-GET",
+            "url": "https://api-r.bitcoinchain.com/v1/status",
+            "script": [130, 24, 119, 130, 24, 103, 100, 104, 97, 115, 104]
+          }
+        ],
+        "aggregate": {
+          "filters": [],
+          "reducer": 2
+        },
+        "tally": {
+          "filters": [
+            {
+              "op": 8,
+              "args": []
+            }
+          ],
+          "reducer": 2
+        }
+      },
+      "witness_reward": 1000,
+      "witnesses": 3,
+      "commit_fee": 10,
+      "reveal_fee": 10,
+      "tally_fee": 30,
+      "min_consensus_percentage": 51,
+      "collateral": 1000000000
+    },
+    "fee": 0
+  }
 }
 ```
 
-Returns the data request:
+The `create_data_request` response will include the following data:
+
+- `bytes`: *String*, data request bytes represented in hexadecimal format.
+- `transaction`: *DataRequest*, all transactional information regarding the created data request.
+  - `body`: Includes the data request output, inputs and outputs of the transaction.
+  - `signatures`: The signature of the transaction and the public key
+- `transaction_id`: *String*, unique transaction identifier.
+
+Example of a `create_data_request` response:
 
 ```json
-{"jsonrpc":"2.0","result":{"bytes":"1297030aa0020a280a260a220a201a79a8689f9ede624043993b620e6042d2b7e80573c19f6752328db4a25c6fc41001121f0a160a14e6635e52a21ab22eaf27bdd036dd104b25d712c310eeabd2d4d1031ad2010abc011229122468747470733a2f2f626c6f636b636861696e2e696e666f2f712f6c6174657374686173681a01801237122868747470733a2f2f6170692d722e626974636f696e636861696e2e636f6d2f76312f7374617475731a0b8218778218676468617368124a122868747470733a2f2f6170692e626c6f636b63686169722e636f6d2f626974636f696e2f73746174731a1e83187782186664646174618218676f626573745f626c6f636b5f686173681a02100222060a020808100210e8071803200a280a301e3833408094ebdc0312720a4b0a490a473045022100dc671fb90cab42baa3a8e26bcd91da954b05299840539288624518ecc3b85140022033d6d65405ada2a72a1a55bb33577a76ef9ab320b58df96a4ce0ab498042620212230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00","transaction":{"DataRequest":{"body":{"dr_output":{"collateral":1000000000,"commit_fee":10,"data_request":{"aggregate":{"filters":[],"reducer":2},"retrieve":[{"kind":"HTTP-GET","script":[128],"url":"https:\/\/blockchain.info\/q\/latesthash"},{"kind":"HTTP-GET","script":[130,24,119,130,24,103,100,104,97,115,104],"url":"https:\/\/api-r.bitcoinchain.com\/v1\/status"},{"kind":"HTTP-GET","script":[131,24,119,130,24,102,100,100,97,116,97,130,24,103,111,98,101,115,116,95,98,108,111,99,107,95,104,97,115,104],"url":"https:\/\/api.blockchair.com\/bitcoin\/stats"}],"tally":{"filters":[{"args":[],"op":8}],"reducer":2},"time_lock":0},"min_consensus_percentage":51,"reveal_fee":10,"tally_fee":30,"witness_reward":1000,"witnesses":3},"inputs":[{"output_pointer":"1a79a8689f9ede624043993b620e6042d2b7e80573c19f6752328db4a25c6fc4:1"}],"outputs":[{"pkh":"twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq","time_lock":0,"value":124999996910}]},"signatures":[{"public_key":{"bytes":[240,172,217,126,192,17,184,117,55,104,136,179,83,143,112,100,78,42,213,55,246,17,105,233,91,124,112,49,118,146,93,0],"compressed":3},"signature":{"Secp256k1":{"der":[48,69,2,33,0,220,103,31,185,12,171,66,186,163,168,226,107,205,145,218,149,75,5,41,152,64,83,146,136,98,69,24,236,195,184,81,64,2,32,51,214,214,84,5,173,162,167,42,26,85,187,51,87,122,118,239,154,179,32,181,141,249,106,76,224,171,73,128,66,98,2]}}}]}},"transaction_id":"b7dbb6fdbf5f07ab6d0b037a9e2119d102172f372ffcdf4630122d1b2914ae02"},"id":"1"}
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "bytes": "1297030aa0020a280a260a220a201a79a8689f9ede624043993b620e6042d2b7e80573c19f6752328db4a25c6fc41001121f0a160a14e6635e52a21ab22eaf27bdd036dd104b25d712c310eeabd2d4d1031ad2010abc011229122468747470733a2f2f626c6f636b636861696e2e696e666f2f712f6c6174657374686173681a01801237122868747470733a2f2f6170692d722e626974636f696e636861696e2e636f6d2f76312f7374617475731a0b8218778218676468617368124a122868747470733a2f2f6170692e626c6f636b63686169722e636f6d2f626974636f696e2f73746174731a1e83187782186664646174618218676f626573745f626c6f636b5f686173681a02100222060a020808100210e8071803200a280a301e3833408094ebdc0312720a4b0a490a473045022100dc671fb90cab42baa3a8e26bcd91da954b05299840539288624518ecc3b85140022033d6d65405ada2a72a1a55bb33577a76ef9ab320b58df96a4ce0ab498042620212230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00",
+    "transaction": {
+      "DataRequest": {
+        "body": {
+          "dr_output": {
+            "collateral": 1000000000,
+            "commit_fee": 10,
+            "data_request": {
+              "aggregate": {
+                "filters": [],
+                "reducer": 2
+              },
+              "retrieve": [
+                {
+                  "kind": "HTTP-GET",
+                  "script": [
+                    128
+                  ],
+                  "url": "https:\/\/blockchain.info\/q\/latesthash"
+                },
+                {
+                  "kind": "HTTP-GET",
+                  "script": [130,24,119,130,24,103,100,104,97,115,104],
+                  "url": "https:\/\/api-r.bitcoinchain.com\/v1\/status"
+                }
+              ],
+              "tally": {
+                "filters": [
+                  {
+                    "args": [],
+                    "op": 8
+                  }
+                ],
+                "reducer": 2
+              },
+              "time_lock": 0
+            },
+            "min_consensus_percentage": 51,
+            "reveal_fee": 10,
+            "tally_fee": 30,
+            "witness_reward": 1000,
+            "witnesses": 3
+          },
+          "inputs": [
+            {
+              "output_pointer": "1a79a8689f9ede624043993b620e6042d2b7e80573c19f6752328db4a25c6fc4:1"
+            }
+          ],
+          "outputs": [
+            {
+              "pkh": "twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq",
+              "time_lock": 0,
+              "value": 124999996910
+            }
+          ]
+        },
+        "signatures": [
+          {
+            "public_key": {
+              "bytes": [240,172,217,126,192,17,184,117,55,104,136,179,83,143,112,100,78,42,213,55,246,17,105,233,91,124,112,49,118,146,93,0],
+              "compressed": 3
+            },
+            "signature": {
+              "Secp256k1": {
+                "der": [48,69,2,33,0,220,103,31,185,12,171,66,186,163,168,226,107,205,145,218,149,75,5,41,152,64,83,146,136,98,69,24,236,195,184,81,64,2,32,51,214,214,84,5,173,162,167,42,26,85,187,51,87,122,118,239,154,179,32,181,141,249,106,76,224,171,73,128,66,98,2]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "transaction_id": "b7dbb6fdbf5f07ab6d0b037a9e2119d102172f372ffcdf4630122d1b2914ae02"
+  },
+  "id": "1"
+}
 ```
 
 
@@ -159,7 +213,7 @@ The JsonRPC method `create_mnemonics` is used to generate a [BIP39 mnemonic sent
 
 Request with parameters:
 
-- `length`: *integer*, indicating how many words the mnemonic sentence should have. Must be one of these: `12`, `15`, `18`, `21` or `24`.
+- `length`: *number*, indicating how many words the mnemonic sentence should have. Must be one of these: `12`, `15`, `18`, `21` or `24`.
 
 ```json
 {
@@ -188,11 +242,11 @@ Response:
 
 ### create_vtt
 
-Creates a value transfer transaction.
+The method `create_vtt` is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method [send_transaction](#send_transaction)).
 
 Request with parameters:
 
-- `time_lock`: *Integer*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
+- `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
 - `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 - `address`: *String*, the recipient address.
@@ -219,32 +273,71 @@ Example:
 }
 ```
 
-The response includes all the information about the transaction:
+The `create_vtt` response will include all the information about the transaction:
 
-- `bytes`: the bytes of the transaction.
+- `bytes`: *String*, data request bytes represented in hexadecimal format.
 - `metadata`: description of the outcome of the transaction, includes
-    - `fee`: miner fee in nanoWits.
-    - `to`: the address of the reciever.
-    - `value`: value that has been transferd in nanoWits.
-
-- `transaction`:
-    - `ValueTransfer`:
-        - `body`: Includes the inputs and outputas of the transaction.
-            - `inputs`: output_pointer.
-            - `outputs`: the pkh, the time_locak and value.
-        - `signatures`: The signature of the transaction and the public key
-            - `public_key`
-            - `signature`
-
-- `transaction_id`: the ID of the transaction.
-
+    - `fee`: *number*, miner fee in nanoWits.
+    - `to`: *String*, the address of the reciever.
+    - `value`: *number*, value that has been transferd in nanoWits.
+- `transaction`: *ValueTransfer*, all transactional information regarding the created value transfer.
+  - `body`: Includes the inputs and outputs of the transaction.
+  - `signatures`: The signature of the transaction and the public key
+- `transaction_id`: *String*, unique transaction identifier.
 
  Example of a `create_vtt` response:
 
 ```json
- { "jsonrpc": "2.0", "result": { "bytes": "0add010a670a280a260a220a204c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add1001121a0a160a149a6c45dc0d8546ab8a3fca85def0cbff89cdfb521001121f0a160a1425e15594103fde1d9864807d091923ab648d6d1f10fec3d2d4d10312720a4b0a490a4730450221008e0c49acdcc92f63c6c71aa1ce7bb4d0524775c8e0af9d597d1b8bdfd8d2741e02201edd0d276786f7fcf319c4157501dca9c74457cac3b385a7475e6de85e1d826712230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00", "metadata": { "fee": 448, "to": "wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f", "value": 1 }, "transaction": { "ValueTransfer": { "body": { "inputs": [ { "output_pointer": "4c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add:1" } ], "outputs": [ { "pkh": "twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c", "time_lock": 0, "value": 1 }, { "pkh": "twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs", "time_lock": 0, "value": 124999999998 } ] }, "signatures": [ { "public_key": { "bytes": [ 240, 172, 217, 126, 192, 17, 184, 117, 55, 104, 136, 179, 83, 143, 112, 100, 78, 42, 213, 55, 246, 17, 105, 233, 91, 124, 112, 49, 118, 146, 93, 0 ], "compressed": 3 }, "signature": { "Secp256k1": { "der": [ 48, 69, 2, 33, 0, 142, 12, 73, 172, 220, 201, 47, 99, 198, 199, 26, 161, 206, 123, 180, 208, 82, 71, 117, 200, 224, 175, 157, 89, 125, 27, 139, 223, 216, 210, 116, 30, 2, 32, 30, 221, 13, 39, 103, 134, 247, 252, 243, 25, 196, 21, 117, 1, 220, 169, 199, 68, 87, 202, 195, 179, 133, 167, 71, 94, 109, 232, 94, 29, 130, 103 ] } } } ] } }, "transaction_id": "66387166eba2d8af0b55bf309b9557ae812bdec0039fc45ece1f744ed309816f" }, "id": 18 }
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "bytes": "0add010a670a280a260a220a204c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add1001121a0a160a149a6c45dc0d8546ab8a3fca85def0cbff89cdfb521001121f0a160a1425e15594103fde1d9864807d091923ab648d6d1f10fec3d2d4d10312720a4b0a490a4730450221008e0c49acdcc92f63c6c71aa1ce7bb4d0524775c8e0af9d597d1b8bdfd8d2741e02201edd0d276786f7fcf319c4157501dca9c74457cac3b385a7475e6de85e1d826712230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00",
+    "metadata": {
+      "fee": 448,
+      "to": "wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f",
+      "value": 1
+    },
+    "transaction": {
+      "ValueTransfer": {
+        "body": {
+          "inputs": [
+            {
+              "output_pointer": "4c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add:1"
+            }
+          ],
+          "outputs": [
+            {
+              "pkh": "twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c",
+              "time_lock": 0,
+              "value": 1
+            },
+            {
+              "pkh": "twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs",
+              "time_lock": 0,
+              "value": 124999999998
+            }
+          ]
+        },
+        "signatures": [
+          {
+            "public_key": {
+              "bytes": [240, 172, 217, 126, 192, 17, 184, 117, 55, 104, 136, 179, 83, 143, 112, 100, 78, 42, 213, 55, 246, 17, 105, 233, 91, 124, 112, 49, 118, 146, 93, 0],
+              "compressed": 3
+            },
+            "signature": {
+              "Secp256k1": {
+                "der": [48, 69, 2, 33, 0, 142, 12, 73, 172, 220, 201, 47, 99, 198, 199, 26, 161, 206, 123, 180, 208, 82, 71, 117, 200, 224, 175, 157, 89, 125, 27, 139, 223, 216, 210, 116, 30, 2, 32, 30, 221, 13, 39, 103, 134, 247, 252, 243, 25, 196, 21, 117, 1, 220, 169, 199, 68, 87, 202, 195, 179, 133, 167, 71, 94, 109, 232, 94, 29, 130, 103]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "transaction_id": "66387166eba2d8af0b55bf309b9557ae812bdec0039fc45ece1f744ed309816f"
+  },
+  "id": 18
+}
 ```
-
 
 
 ### create_wallet
@@ -287,6 +380,7 @@ Response:
   "id": 1
 }
 ```
+
 
 ### close_session
 
@@ -465,6 +559,7 @@ Response with an array of addresses and additional related information:
   "id": "1"
 }
 ```
+
 
 ### get_balance
 
@@ -663,8 +758,6 @@ Response:
 ```
 
 
-
-
 ### rpc.off
 
 Use this method `rpc.off` to unsubscribe from previous subscriptions.
@@ -768,71 +861,182 @@ Here is an example of a block event sent out by a node:
 }
 ```
 
+
 ### run_rad_request
 
 The JsonRPC method `run_rad_request` is used to execute a RAD request in order to test it functionally before deploying it on the network.
 
 The request has as parameter a `rad_request`, which has itself as parameters:
 
-- `time_lock`: *Integer*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
-- `retrive`: *retrive-object*, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.
-- `aggregate`: *aggregate-object*, includes the operators needed to perform the aggregation from the retrive.
-- `tally`: *aggregate-object*, includes the operators needed to perform the tally after the aggregation.
-
+- `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
+- `retrieve`: *Array<Retrieve>*, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.
+- `aggregate`: *Aggregate*, includes the operators needed to perform the aggregation from the retrieves.
+- `tally`: *Tally*, includes the operators needed to perform the tally after the aggregation.
 
 Example:
 
 ```json
-{"jsonrpc":"2.0","method":"run_rad_request","params":{
- "rad_request": {
-        "time_lock": 0,
-        "retrieve": [
+{
+  "jsonrpc": "2.0",
+  "method": "run_rad_request",
+  "params": {
+    "rad_request": {
+      "time_lock": 0,
+      "retrieve": [
+        {
+          "kind": "HTTP-GET",
+          "url": "https://csrng.net/csrng/csrng.php?min=0&max=100",
+          "script": [131, 24, 118, 130, 24, 24, 0, 130, 24, 100, 102, 114, 97, 110, 100, 111, 109]
+        }
+      ],
+      "aggregate": {
+        "filters": [],
+        "reducer": 2
+      },
+      "tally": {
+        "filters": [
           {
-            "kind": "HTTP-GET",
-            "url": "https://csrng.net/csrng/csrng.php?min=0&max=100",
-            "script": [
-              131,
-              24,
-              118,
-              130,
-              24,
-              24,
-              0,
-              130,
-              24,
-              100,
-              102,
-              114,
-              97,
-              110,
-              100,
-              111,
-              109
-            ]
+            "op": 8,
+            "args": []
           }
         ],
-        "aggregate": {
-                    "filters": [],
-                    "reducer": 2
-                },
-    "tally": {
-                    "filters": [
-                        {
-                            "op": 8,
-                            "args": []
-                        }
-                    ],
-                    "reducer": 2
-                }
-            }
-        },"id":1}
-
+        "reducer": 2
+      }
+    }
+  },
+  "id": 1
+}
 ```
 
-The response includes all the partial results of the request:
+The response includes all the partial results of the request for the three different stages (`retrieve`, `aggregate` and `tally`).
 
 ```json
-{ "jsonrpc": "2.0", "result": { "result": { "aggregate": { "metadata": "Aggregation", "partial_results": [ { "RadonArray": [ { "RadonFloat": 98 } ] }, { "RadonFloat": 98 } ], "result": { "RadonFloat": 98 }, "running_time": { "nanos": 148354, "secs": 0 } }, "retrieve": [ { "metadata": "Retrieval", "partial_results": [ { "RadonString": "[{\"status\":\"success\",\"min\":0,\"max\":100,\"random\":98}]" }, { "RadonArray": [ { "RadonMap": { "max": { "RadonFloat": 100 }, "min": { "RadonFloat": 0 }, "random": { "RadonFloat": 98 }, "status": { "RadonString": "success" } } } ] }, { "RadonMap": { "max": { "RadonFloat": 100 }, "min": { "RadonFloat": 0 }, "random": { "RadonFloat": 98 }, "status": { "RadonString": "success" } } }, { "RadonFloat": 98 } ], "result": { "RadonFloat": 98 }, "running_time": { "nanos": 3303591, "secs": 0 } } ], "tally": { "metadata": { "Tally": { "consensus": 1, "errors": [ false ], "liars": [ false ] } }, "partial_results": [ { "RadonArray": [ { "RadonFloat": 98 } ] }, { "RadonArray": [ { "RadonFloat": 98 } ] }, { "RadonFloat": 98 } ], "result": { "RadonFloat": 98 }, "running_time": { "nanos": 214414, "secs": 0 } } } }, "id": 1 }
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "result": {
+      "retrieve": [
+        {
+          "metadata": "Retrieval",
+          "partial_results": [
+            {
+              "RadonString": "[{\"status\":\"success\",\"min\":0,\"max\":100,\"random\":98}]"
+            },
+            {
+              "RadonArray": [
+                {
+                  "RadonMap": {
+                    "max": {
+                      "RadonFloat": 100
+                    },
+                    "min": {
+                      "RadonFloat": 0
+                    },
+                    "random": {
+                      "RadonFloat": 98
+                    },
+                    "status": {
+                      "RadonString": "success"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "RadonMap": {
+                "max": {
+                  "RadonFloat": 100
+                },
+                "min": {
+                  "RadonFloat": 0
+                },
+                "random": {
+                  "RadonFloat": 98
+                },
+                "status": {
+                  "RadonString": "success"
+                }
+              }
+            },
+            {
+              "RadonFloat": 98
+            }
+          ],
+          "result": {
+            "RadonFloat": 98
+          },
+          "running_time": {
+            "nanos": 3303591,
+            "secs": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "metadata": "Aggregation",
+        "partial_results": [
+          {
+            "RadonArray": [
+              {
+                "RadonFloat": 98
+              }
+            ]
+          },
+          {
+            "RadonFloat": 98
+          }
+        ],
+        "result": {
+          "RadonFloat": 98
+        },
+        "running_time": {
+          "nanos": 148354,
+          "secs": 0
+        }
+      },
+      "tally": {
+        "metadata": {
+          "Tally": {
+            "consensus": 1,
+            "errors": [
+              false
+            ],
+            "liars": [
+              false
+            ]
+          }
+        },
+        "partial_results": [
+          {
+            "RadonArray": [
+              {
+                "RadonFloat": 98
+              }
+            ]
+          },
+          {
+            "RadonArray": [
+              {
+                "RadonFloat": 98
+              }
+            ]
+          },
+          {
+            "RadonFloat": 98
+          }
+        ],
+        "result": {
+          "RadonFloat": 98
+        },
+        "running_time": {
+          "nanos": 214414,
+          "secs": 0
+        }
+      }
+    }
+  },
+  "id": 1
+}
+```
 
 
 ### send_transaction
@@ -906,15 +1110,14 @@ The response contains the result of the Witnet node JsonRpc response.
 
 ### set
 
-The method `set` allows to  set a value to a key in the wallet data base.
-
+The method `set` allows to store key-value data in the wallet database.
 
 Request with parameters:
-- `wallet_id`:
-- `session_id`: 
-- `key`: *String*
-- `value`: *Object*
 
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `key`: *String*, key under which the value will be stored.
+- `value`: *Object*, JSON object to be stored.
 
 ```json
 {
@@ -924,23 +1127,21 @@ Request with parameters:
     "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
     "session_id": "3cf194594d69c3b2b80a11f30953da96599dd2dd56cf72db838abba092cea3df",
     "key": "templates",
-    "value": {     
-  "name": "object"
-  }
-},
-  "id": 13
+    "value": {
+      "name": "object"
+    }
+  },
+  "id": 1
 }
-
 ```
 
-Response
+Response:
 
 ```json
-×
 {
   "jsonrpc": "2.0",
   "result": null,
-  "id": 13
+  "id": 1
 }
 ```
 
@@ -955,14 +1156,15 @@ Request with parameters:
 
 ```json
 {
+  "jsonrpc": "2.0",
   "method": "shutdown",
   "params": {
     "session_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c"
   },
-  "id": "1",
-  "jsonrpc": "2.0"
+  "id": "1"
 }
 ```
+
 
 ### sign_data
 
@@ -973,9 +1175,9 @@ The parameters are:
 - `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
 - `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 - `data`: *String*, the data to be signed.
-- `extended_pk`: *Bool*, if this flag is set to true, extended public key will be include (`chaincode`).
+- `extended_pk`: *Bool*, if this flag is set to true, extended public key will be include (`chaincode`). If leaked, wallet public addresses might be derived.
 
-Example
+Example:
 
 ```json
 {
@@ -988,16 +1190,16 @@ Example
     "extended_pk": true
   },
   "id": 1
+}
 ```
 
 The response includes the parameters:
 
-- `chaincode`:
+- `chaincode`: *String*, cryptographic material used to derive keys.
 - `public_key`:*String*, the wallet's public key.
 - `signture`:*String*, the signature.
 
 ```json
-
 {
   "jsonrpc": "2.0",
   "result": {
@@ -1008,6 +1210,7 @@ The response includes the parameters:
   "id": 1
 }
 ```
+
 
 ### unlock_wallet
 
@@ -1099,7 +1302,6 @@ Response:
 ```
 
 
-
 ### validate_mnemonics
 
 The JsonRPC method `validate_mnemonics` is used to verify that validity of the seed source that might be used to generate a new wallet.
@@ -1134,7 +1336,3 @@ Response:
   "id": 1
 }
 ```
-
-
-
-
