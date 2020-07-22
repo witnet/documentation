@@ -745,16 +745,74 @@ The response includes all the partial results of the request:
 ```json
 { "jsonrpc": "2.0", "result": { "result": { "aggregate": { "metadata": "Aggregation", "partial_results": [ { "RadonArray": [ { "RadonFloat": 98 } ] }, { "RadonFloat": 98 } ], "result": { "RadonFloat": 98 }, "running_time": { "nanos": 148354, "secs": 0 } }, "retrieve": [ { "metadata": "Retrieval", "partial_results": [ { "RadonString": "[{\"status\":\"success\",\"min\":0,\"max\":100,\"random\":98}]" }, { "RadonArray": [ { "RadonMap": { "max": { "RadonFloat": 100 }, "min": { "RadonFloat": 0 }, "random": { "RadonFloat": 98 }, "status": { "RadonString": "success" } } } ] }, { "RadonMap": { "max": { "RadonFloat": 100 }, "min": { "RadonFloat": 0 }, "random": { "RadonFloat": 98 }, "status": { "RadonString": "success" } } }, { "RadonFloat": 98 } ], "result": { "RadonFloat": 98 }, "running_time": { "nanos": 3303591, "secs": 0 } } ], "tally": { "metadata": { "Tally": { "consensus": 1, "errors": [ false ], "liars": [ false ] } }, "partial_results": [ { "RadonArray": [ { "RadonFloat": 98 } ] }, { "RadonArray": [ { "RadonFloat": 98 } ] }, { "RadonFloat": 98 } ], "result": { "RadonFloat": 98 }, "running_time": { "nanos": 214414, "secs": 0 } } } }, "id": 1 }
 
-```
-
-
-
-
 
 ### send_transaction
 
+The method `send_transaction` is used to broadcast a given transaction to the Witnet network. Apart from the `wallet_id` and `session_id`, it requires an already created transaction (e.g. by using the methods [create_vtt](#create_vtt)) or [create_data_request](#create_data_request)).
 
+The request requires the following parameters:
 
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `transaction`: *Transaction*, serialized transaction object. It can be created by using the methods [create_vtt](#create_vtt)) or [create_data_request](#create_data_request).
+
+Example of a `send_transaction` for sending 500 nanoWits to an address.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "send_transaction",
+  "params": {
+    "wallet_id": "92e724030ed4e0d9c8fafd0ed617e2f7fb08512a36d6e12d30a44a63117aad0d",
+    "session_id": "4e373de7144dc08bc0a2b2efad52c902f4661453328523e42a02201c66716803",
+    "transaction": {
+      "ValueTransfer": {
+        "body": {
+          "inputs": [
+            {
+              "output_pointer": "5d438cb68c5c24228f6c12d0bb33235159118230948410bfd1e41b7e239d944d:1"
+            }
+          ],
+          "outputs": [
+            {
+              "pkh": "twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7",
+              "time_lock": 0,
+              "value": 500
+            },
+            {
+              "pkh": "twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l",
+              "time_lock": 0,
+              "value": 49470
+            }
+          ]
+        },
+        "signatures": [
+          {
+            "public_key": {
+              "bytes": [216,133,176,114,224,176,158,76,90,139,124,204,254,172,133,198,205,208,230,93,215,92,47,195,175,136,164,40,81,166,143,83],
+              "compressed": 3
+            },
+            "signature": {
+              "Secp256k1": {
+                "der": [48,69,2,33,0,238,241,230,193,168,58,205,87,171,157,12,135,233,221,65,131,187,192,197,31,245,202,88,142,137,124,135,28,190,159,190,246,2,32,42,20,65,244,88,251,91,131,13,68,10,82,194,250,36,181,109,200,113,112,237,209,43,212,74,247,128,30,80,111,251,192]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "id": 1
+}
+```
+
+The response contains the result of the Witnet node JsonRpc response.
+
+{
+  "jsonrpc": "2.0",
+  "result": true,
+  "id": 1
+}
 
 
 ### set
