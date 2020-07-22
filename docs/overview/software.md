@@ -37,14 +37,14 @@ The bridge is composed of three different pieces of software:
 - The `bridge` component inside [Witnet-Rust], which monitors the WBI
   for new requests and also scans
 
-## Open source libraries and development
+## Open source libraries
 
-### Verifiable Random Function (VRFs) implementations
+### Verifiable Random Functions (VRFs)
 
 - [vrf-solidity]: fast and effective library for VRFs written in Solidity
 - [vrf-rs]: implementation of Elliptic Curve VRFs written in Rust
 
-### Elliptic Curve libraries
+### Elliptic Curve
 
 - [elliptic-curve-solidity]: implementation of Elliptic Curve arithmetic operations written in Solidity
 
