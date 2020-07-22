@@ -501,6 +501,95 @@ Response:
 }
 ```
 
+
+### get_transactions
+
+The JsonRPC method `get_transactions` is used to query for a list of transactions given a wallet and session ID.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `offset` (optional): *number*, initial position of the transaction list to be queried (by default is set to `0`).
+- `limit` (optional): *number*, size of the transaction list to be returned (by default is set to `25`).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "get_transactions",
+  "params": {
+    "session_id": "9bcb54bf7494c21c29ef97256f6741b5b5bd5cb31d09d38e5ce98699010beea7",
+    "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
+    "offset": 0,
+    "limit": 25
+  },
+  "id": "1"
+}
+```
+
+Response with an array of transactions and additional related information:
+
+- `total`: *number*, total amount of wallet transactions.
+- `transactions`: *Array<BalanceMovement>*, list of queried transactions with additional information.
+  - `amount`: *number*, transaction value.
+  - `type`: *`"POSITIVE"|"NEGATIVE"`*, type of balance movement in relation to the wallet. 
+  - `transaction`: *Transaction*, additional transaction information.
+    - `block`: *Block*, information of block in which the transaction was included.
+      - `block_hash`: *String*, block hash in hexadecimal format.
+      - `epoch`: *number* block epoch.
+    - `data`: *TransactionData*, additional type-specific transaction data. The supported transaction types are `value_transfer`, `data_request`, `tally`, `mint` and `commit`.
+    - `hash`: *String*, transaction hash in hexadecimal format used as identifier.
+    - `miner_fee`: *number*, amount of nanoWits for the block miner.
+    - `timestamp`: *number*, transaction date in UTC format (Coordinated Universal Time).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "total": 2,
+    "transactions": [
+      {
+        "amount": 123,
+        "transaction": {
+          "block": {
+            "block_hash": "161fc079d3d7b8cd13af18bc615aaf24802bc1e64abd387d6d37be68c94fe8ec",
+            "epoch": 53555
+          },
+          "data": {
+            "value_transfer": {
+              "inputs": [
+                {
+                  "address": "twit1r204scrl8djuljdn3gp8tgauzrl3x3c5dgl5wh",
+                  "value": 125000000000
+                }
+              ],
+              "outputs": [
+                {
+                  "address": "twit1yur5cmrz5vkc35p8fgg5c5la3yrl6yamwq02r6",
+                  "time_lock": 0,
+                  "value": 123
+                },
+                {
+                  "address": "twit1r204scrl8djuljdn3gp8tgauzrl3x3c5dgl5wh",
+                  "time_lock": 0,
+                  "value": 124999999865
+                }
+              ]
+            }
+          },
+          "hash": "c2cf7cfce47f1645a97b199cac532496b5490fd1dd2d7b6da24818d964ff18ab",
+          "miner_fee": 12,
+          "timestamp": 1595406375
+        },
+        "type": "POSITIVE"
+      }
+    ]
+  },
+  "id": "1"
+}
+```
+
+
 ### get_wallet_infos
 
 The JsonRPC method `get_wallet_infos` displays the information about the wallet.
