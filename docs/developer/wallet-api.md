@@ -359,6 +359,45 @@ Response:
 }
 ```
 
+
+### get
+
+The method `get` allows to retrieve a previous stored key-value data in the wallet database.
+
+Request with parameters:
+
+- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `key`: *String*, key under which the value will be stored.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "get",
+  "params": {
+    "wallet_id": "d5b53a4c40388a9be87acaf5a4dec9fd5c48f94913734bff88a08b18a618c76b",
+    "session_id": "5982a279bbd201192f9d3685975c6cebb714ac32dea00cfea80e2013d510e35e",
+    "key": "templates"
+  },
+  "id": 1
+}
+```
+
+Response:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "value": {
+      "name": "object"
+    }
+  },
+  "id": 1
+}
+```
+
+
 ### get_addresses
 
 The JsonRPC method `get_addresses` is used to query for a list of previously derived addresses given a wallet and session ID.
