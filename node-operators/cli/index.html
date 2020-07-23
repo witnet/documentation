@@ -842,6 +842,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#addpeers" class="md-nav__link">
+    addPeers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#address" class="md-nav__link">
     address
   </a>
@@ -893,6 +900,13 @@
           <li class="md-nav__item">
   <a href="#masterkeyexport" class="md-nav__link">
     masterKeyExport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minerlist" class="md-nav__link">
+    minerList
   </a>
   
 </li>
@@ -1111,6 +1125,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#addpeers" class="md-nav__link">
+    addPeers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#address" class="md-nav__link">
     address
   </a>
@@ -1162,6 +1183,13 @@
           <li class="md-nav__item">
   <a href="#masterkeyexport" class="md-nav__link">
     masterKeyExport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minerlist" class="md-nav__link">
+    minerList
   </a>
   
 </li>
@@ -1384,21 +1412,42 @@ ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
 </code></pre></div></div>
 </div>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h3 id="addpeers">addPeers<a class="headerlink" href="#addpeers" title="Permanent link">&para;</a></h3>
+<p>Add addresses to the node's peers and try to connect to them.</p>
+<p>The IP addresses are expected in format: list of "address:port" separated by spaces.</p>
+<div class="superfences-tabs">
+<input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
+<label for="__tab_7_0">Docker</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node addPeers 52.166.178.145:21337 52.166.178.145:22337</span>
+</code></pre></div></div>
+<input name="__tabs_7" type="radio" id="__tab_7_1" />
+<label for="__tab_7_1">Binary</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node addPeers 52.166.178.145:12337 52.166.178.145:22337</span>
+</code></pre></div></div>
+<input name="__tabs_7" type="radio" id="__tab_7_2" />
+<label for="__tab_7_2">Cargo</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node addPeers 52.166.178.145:12337 52.166.178.145:22337</span>
+</code></pre></div></div>
+</div>
+<p>Example output:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">Successfully added peer addresses: [&quot;52.166.178.145:12337&quot;, &quot;52.166.178.145:22337&quot;]</span>
+</code></pre></div>
+
 <h3 id="address">address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h3>
 <p>Get the identifier of the node that acts as its address when interacting with the protocol through transactions.</p>
 <p>This is the address used for mining blocks, resolving data requests, and
 receiving value transfer transactions.</p>
 <div class="superfences-tabs">
-<input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
-<label for="__tab_7_0">Docker</label>
+<input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
+<label for="__tab_8_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node address</span>
 </code></pre></div></div>
-<input name="__tabs_7" type="radio" id="__tab_7_1" />
-<label for="__tab_7_1">Binary</label>
+<input name="__tabs_8" type="radio" id="__tab_8_1" />
+<label for="__tab_8_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node address</span>
 </code></pre></div></div>
-<input name="__tabs_7" type="radio" id="__tab_7_2" />
-<label for="__tab_7_2">Cargo</label>
+<input name="__tabs_8" type="radio" id="__tab_8_2" />
+<label for="__tab_8_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node address</span>
 </code></pre></div></div>
 </div>
@@ -1412,18 +1461,18 @@ receiving value transfer transactions.</p>
 <li><code class="codehilite"><span class="err">--address=address</span></code>: address for which to get balance. If omitted, defaults to the node's own address.</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
-<label for="__tab_8_0">Docker</label>
+<input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
+<label for="__tab_9_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node balance</span>
 <span class="go">docker exec witnet_node witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
 </code></pre></div></div>
-<input name="__tabs_8" type="radio" id="__tab_8_1" />
-<label for="__tab_8_1">Binary</label>
+<input name="__tabs_9" type="radio" id="__tab_9_1" />
+<label for="__tab_9_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node balance</span>
 <span class="go">witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
 </code></pre></div></div>
-<input name="__tabs_8" type="radio" id="__tab_8_2" />
-<label for="__tab_8_2">Cargo</label>
+<input name="__tabs_9" type="radio" id="__tab_9_2" />
+<label for="__tab_9_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node balance</span>
 <span class="go">cargo run -- node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
 </code></pre></div></div>
@@ -1435,16 +1484,16 @@ receiving value transfer transactions.</p>
 <h3 id="block">block<a class="headerlink" href="#block" title="Permanent link">&para;</a></h3>
 <p>Print out detailed information about a block being queried by its hash.</p>
 <div class="superfences-tabs">
-<input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
-<label for="__tab_9_0">Docker</label>
+<input name="__tabs_10" type="radio" id="__tab_10_0" checked="checked" />
+<label for="__tab_10_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4</span>
 </code></pre></div></div>
-<input name="__tabs_9" type="radio" id="__tab_9_1" />
-<label for="__tab_9_1">Binary</label>
+<input name="__tabs_10" type="radio" id="__tab_10_1" />
+<label for="__tab_10_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4</span>
 </code></pre></div></div>
-<input name="__tabs_9" type="radio" id="__tab_9_2" />
-<label for="__tab_9_2">Cargo</label>
+<input name="__tabs_10" type="radio" id="__tab_10_2" />
+<label for="__tab_10_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4</span>
 </code></pre></div></div>
 </div>
@@ -1456,16 +1505,16 @@ receiving value transfer transactions.</p>
 <h3 id="blockchain">blockchain<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h3>
 <p>List block hashes in the local block chain, matched with their epochs.</p>
 <div class="superfences-tabs">
-<input name="__tabs_10" type="radio" id="__tab_10_0" checked="checked" />
-<label for="__tab_10_0">Docker</label>
+<input name="__tabs_11" type="radio" id="__tab_11_0" checked="checked" />
+<label for="__tab_11_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node blockchain</span>
 </code></pre></div></div>
-<input name="__tabs_10" type="radio" id="__tab_10_1" />
-<label for="__tab_10_1">Binary</label>
+<input name="__tabs_11" type="radio" id="__tab_11_1" />
+<label for="__tab_11_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node blockchain</span>
 </code></pre></div></div>
-<input name="__tabs_10" type="radio" id="__tab_10_2" />
-<label for="__tab_10_2">Cargo</label>
+<input name="__tabs_11" type="radio" id="__tab_11_2" />
+<label for="__tab_11_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo --run node blockchain</span>
 </code></pre></div></div>
 </div>
@@ -1475,8 +1524,8 @@ receiving value transfer transactions.</p>
 <li><code class="codehilite"><span class="err">--limit=n</span></code>: the number of epochs. If zero, unlimited.</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_11" type="radio" id="__tab_11_0" checked="checked" />
-<label for="__tab_11_0">Docker</label>
+<input name="__tabs_12" type="radio" id="__tab_12_0" checked="checked" />
+<label for="__tab_12_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">#</span> Get all the block hashes from the genesis block
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=0 --limit=0</span>
 
@@ -1492,8 +1541,8 @@ receiving value transfer transactions.</p>
 <span class="gp">#</span> Get the block <span class="nb">hash</span> from the last block
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=-1 --limit=1</span>
 </code></pre></div></div>
-<input name="__tabs_11" type="radio" id="__tab_11_1" />
-<label for="__tab_11_1">Binary</label>
+<input name="__tabs_12" type="radio" id="__tab_12_1" />
+<label for="__tab_12_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">#</span> Get all the block hashes from the genesis block
 <span class="go">witnet node blockchain --epoch=0 --limit=0</span>
 
@@ -1509,8 +1558,8 @@ receiving value transfer transactions.</p>
 <span class="gp">#</span> Get the block <span class="nb">hash</span> from the last block
 <span class="go">witnet node blockchain --epoch=-1 --limit=1</span>
 </code></pre></div></div>
-<input name="__tabs_11" type="radio" id="__tab_11_2" />
-<label for="__tab_11_2">Cargo</label>
+<input name="__tabs_12" type="radio" id="__tab_12_2" />
+<label for="__tab_12_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">#</span> Get all the block hashes from the genesis block
 <span class="go">cargo run -- node blockchain --epoch=0 --limit=0</span>
 
@@ -1534,16 +1583,16 @@ receiving value transfer transactions.</p>
 <h3 id="datarequestreport">dataRequestReport<a class="headerlink" href="#datarequestreport" title="Permanent link">&para;</a></h3>
 <p>Show information about a data request.</p>
 <div class="superfences-tabs">
-<input name="__tabs_12" type="radio" id="__tab_12_0" checked="checked" />
-<label for="__tab_12_0">Docker</label>
+<input name="__tabs_13" type="radio" id="__tab_13_0" checked="checked" />
+<label for="__tab_13_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
-<input name="__tabs_12" type="radio" id="__tab_12_1" />
-<label for="__tab_12_1">Binary</label>
+<input name="__tabs_13" type="radio" id="__tab_13_1" />
+<label for="__tab_13_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
-<input name="__tabs_12" type="radio" id="__tab_12_2" />
-<label for="__tab_12_2">Cargo</label>
+<input name="__tabs_13" type="radio" id="__tab_13_2" />
+<label for="__tab_13_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
 </div>
@@ -1561,16 +1610,16 @@ receiving value transfer transactions.</p>
 
 <p>If you want to see the request move forwards through its different stages in real time you can use the <code class="codehilite"><span class="err">watch</span></code> command while it is being resolved:</p>
 <div class="superfences-tabs">
-<input name="__tabs_13" type="radio" id="__tab_13_0" checked="checked" />
-<label for="__tab_13_0">Docker</label>
+<input name="__tabs_14" type="radio" id="__tab_14_0" checked="checked" />
+<label for="__tab_14_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">watch --color docker exec witnet_node witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
-<input name="__tabs_13" type="radio" id="__tab_13_1" />
-<label for="__tab_13_1">Binary</label>
+<input name="__tabs_14" type="radio" id="__tab_14_1" />
+<label for="__tab_14_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">watch --color witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
-<input name="__tabs_13" type="radio" id="__tab_13_2" />
-<label for="__tab_13_2">Cargo</label>
+<input name="__tabs_14" type="radio" id="__tab_14_2" />
+<label for="__tab_14_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">watch --color cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
 </div>
@@ -1582,64 +1631,80 @@ receiving value transfer transactions.</p>
 <li><code class="codehilite"><span class="err">--fee=fee</span></code>: miner fee in nanoWits.</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_14" type="radio" id="__tab_14_0" checked="checked" />
-<label for="__tab_14_0">Docker</label>
+<input name="__tabs_15" type="radio" id="__tab_15_0" checked="checked" />
+<label for="__tab_15_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node joinTransaction --value=100 --fee=1</span>
 </code></pre></div></div>
-<input name="__tabs_14" type="radio" id="__tab_14_1" />
-<label for="__tab_14_1">Binary</label>
+<input name="__tabs_15" type="radio" id="__tab_15_1" />
+<label for="__tab_15_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node joinTransaction --value=100 --fee=1</span>
 </code></pre></div></div>
-<input name="__tabs_14" type="radio" id="__tab_14_2" />
-<label for="__tab_14_2">Cargo</label>
+<input name="__tabs_15" type="radio" id="__tab_15_2" />
+<label for="__tab_15_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node joinTransaction --value=100 --fee=1</span>
 </code></pre></div></div>
 </div>
 <h3 id="knownpeers">knownPeers<a class="headerlink" href="#knownpeers" title="Permanent link">&para;</a></h3>
 <p>Get the list of peer addresses known to the node. These addresses are tagged as:</p>
 <div class="superfences-tabs">
-<input name="__tabs_15" type="radio" id="__tab_15_0" checked="checked" />
-<label for="__tab_15_0">Docker</label>
+<input name="__tabs_16" type="radio" id="__tab_16_0" checked="checked" />
+<label for="__tab_16_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node knownPeers</span>
 </code></pre></div></div>
-<input name="__tabs_15" type="radio" id="__tab_15_1" />
-<label for="__tab_15_1">Binary</label>
+<input name="__tabs_16" type="radio" id="__tab_16_1" />
+<label for="__tab_16_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node knownPeers</span>
 </code></pre></div></div>
-<input name="__tabs_15" type="radio" id="__tab_15_2" />
-<label for="__tab_15_2">Cargo</label>
+<input name="__tabs_16" type="radio" id="__tab_16_2" />
+<label for="__tab_16_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node knownPeers</span>
 </code></pre></div></div>
 </div>
 <h3 id="masterkeyexport">masterKeyExport<a class="headerlink" href="#masterkeyexport" title="Permanent link">&para;</a></h3>
 <p>Export the node's master private key. Please keep this totally secret. Anyone with knowledge of this key has full access to all your wit tokens.</p>
 <div class="superfences-tabs">
-<input name="__tabs_16" type="radio" id="__tab_16_0" checked="checked" />
-<label for="__tab_16_0">Docker</label>
+<input name="__tabs_17" type="radio" id="__tab_17_0" checked="checked" />
+<label for="__tab_17_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node masterKeyExport</span>
 </code></pre></div></div>
-<input name="__tabs_16" type="radio" id="__tab_16_1" />
-<label for="__tab_16_1">Binary</label>
+<input name="__tabs_17" type="radio" id="__tab_17_1" />
+<label for="__tab_17_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node masterkeyExport</span>
 </code></pre></div></div>
-<input name="__tabs_16" type="radio" id="__tab_16_2" />
-<label for="__tab_16_2">Cargo</label>
+<input name="__tabs_17" type="radio" id="__tab_17_2" />
+<label for="__tab_17_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node masterkeyExport</span>
+</code></pre></div></div>
+</div>
+<h3 id="minerlist">minerList<a class="headerlink" href="#minerlist" title="Permanent link">&para;</a></h3>
+<p>Display the list of block hashes for each epoch, their miners and the numbers of blocks mined by each address.</p>
+<div class="superfences-tabs">
+<input name="__tabs_18" type="radio" id="__tab_18_0" checked="checked" />
+<label for="__tab_18_0">Docker</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec  witnet_node ./witnet node minerList</span>
+</code></pre></div></div>
+<input name="__tabs_18" type="radio" id="__tab_18_1" />
+<label for="__tab_18_1">Binary</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node minerList</span>
+</code></pre></div></div>
+<input name="__tabs_18" type="radio" id="__tab_18_2" />
+<label for="__tab_18_2">Cargo</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node minerList</span>
 </code></pre></div></div>
 </div>
 <h3 id="nodestats">nodeStats<a class="headerlink" href="#nodestats" title="Permanent link">&para;</a></h3>
 <p>Display local node stats.</p>
 <div class="superfences-tabs">
-<input name="__tabs_17" type="radio" id="__tab_17_0" checked="checked" />
-<label for="__tab_17_0">Docker</label>
+<input name="__tabs_19" type="radio" id="__tab_19_0" checked="checked" />
+<label for="__tab_19_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node nodeStats</span>
 </code></pre></div></div>
-<input name="__tabs_17" type="radio" id="__tab_17_1" />
-<label for="__tab_17_1">Cargo</label>
+<input name="__tabs_19" type="radio" id="__tab_19_1" />
+<label for="__tab_19_1">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node nodeStats</span>
 </code></pre></div></div>
-<input name="__tabs_17" type="radio" id="__tab_17_2" />
-<label for="__tab_17_2">Binary</label>
+<input name="__tabs_19" type="radio" id="__tab_19_2" />
+<label for="__tab_19_2">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node nodeStats</span>
 </code></pre></div></div>
 </div>
@@ -1674,16 +1739,16 @@ receiving value transfer transactions.</p>
 <h3 id="output">output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
 <p>Display a transaction output, as referred by it's "output pointer", that is, <code class="codehilite"><span class="err">&lt;transaction_id&gt;:&lt;output_index&gt;</span></code>.</p>
 <div class="superfences-tabs">
-<input name="__tabs_18" type="radio" id="__tab_18_0" checked="checked" />
-<label for="__tab_18_0">Docker</label>
+<input name="__tabs_20" type="radio" id="__tab_20_0" checked="checked" />
+<label for="__tab_20_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d:0</span>
 </code></pre></div></div>
-<input name="__tabs_18" type="radio" id="__tab_18_1" />
-<label for="__tab_18_1">Binary</label>
+<input name="__tabs_20" type="radio" id="__tab_20_1" />
+<label for="__tab_20_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
-<input name="__tabs_18" type="radio" id="__tab_18_2" />
-<label for="__tab_18_2">Cargo</label>
+<input name="__tabs_20" type="radio" id="__tab_20_2" />
+<label for="__tab_20_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>
 </code></pre></div></div>
 </div>
@@ -1692,16 +1757,16 @@ receiving value transfer transactions.</p>
 Outbound connections are those initiated on our side, and inbound connections are those that were initiated by peer nodes.
 A node that does not announce a public address (IP and port) will normally have no inbound connections, as there is no way for other nodes to discover a valid network route to it.</p>
 <div class="superfences-tabs">
-<input name="__tabs_19" type="radio" id="__tab_19_0" checked="checked" />
-<label for="__tab_19_0">Docker</label>
+<input name="__tabs_21" type="radio" id="__tab_21_0" checked="checked" />
+<label for="__tab_21_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node peers</span>
 </code></pre></div></div>
-<input name="__tabs_19" type="radio" id="__tab_19_1" />
-<label for="__tab_19_1">Binary</label>
+<input name="__tabs_21" type="radio" id="__tab_21_1" />
+<label for="__tab_21_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node peers</span>
 </code></pre></div></div>
-<input name="__tabs_19" type="radio" id="__tab_19_2" />
-<label for="__tab_19_2">Cargo</label>
+<input name="__tabs_21" type="radio" id="__tab_21_2" />
+<label for="__tab_21_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node peers</span>
 </code></pre></div></div>
 </div>
@@ -1709,16 +1774,16 @@ A node that does not announce a public address (IP and port) will normally have 
 <p>The <code class="codehilite"><span class="err">raw</span></code> command allows sending raw JSON-RPC requests from the command line.
 It can be used in an interactive way (don't forget the <code class="codehilite"><span class="err">-i</span></code> flag when using Docker): each line of user input will be sent to the JSON-RPC server without any modifications:</p>
 <div class="superfences-tabs">
-<input name="__tabs_20" type="radio" id="__tab_20_0" checked="checked" />
-<label for="__tab_20_0">Docker</label>
+<input name="__tabs_22" type="radio" id="__tab_22_0" checked="checked" />
+<label for="__tab_22_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$</span> docker <span class="nb">exec</span> -i witnet_node witnet node raw
 </code></pre></div></div>
-<input name="__tabs_20" type="radio" id="__tab_20_1" />
-<label for="__tab_20_1">Binary</label>
+<input name="__tabs_22" type="radio" id="__tab_22_1" />
+<label for="__tab_22_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$</span> witnet -c witnet.toml node raw
 </code></pre></div></div>
-<input name="__tabs_20" type="radio" id="__tab_20_2" />
-<label for="__tab_20_2">Cargo</label>
+<input name="__tabs_22" type="radio" id="__tab_22_2" />
+<label for="__tab_22_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$</span> cargo run -- -c witnet.toml node raw
 </code></pre></div></div>
 </div>
@@ -1738,18 +1803,18 @@ the first line is a request, the second line is a response.</p>
 </code></pre></div></p>
 <p>Alternatively, the input can be read from a file using pipes, as is usual in Unix-like environments. For instance, the  <code class="codehilite"><span class="err">bitcoin_price.json</span></code> data request example from the <a href="https://github.com/witnet/witnet-rust/tree/master/examples">witnet-rust reposity</a> can be easily deployed into the network using the <code class="codehilite"><span class="err">raw</span></code> command like this:</p>
 <div class="superfences-tabs">
-<input name="__tabs_21" type="radio" id="__tab_21_0" checked="checked" />
-<label for="__tab_21_0">Docker</label>
+<input name="__tabs_23" type="radio" id="__tab_23_0" checked="checked" />
+<label for="__tab_23_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cat examples/bitcoin_price.json | docker exec -i witnet_node witnet node raw</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
-<input name="__tabs_21" type="radio" id="__tab_21_1" />
-<label for="__tab_21_1">Binary</label>
+<input name="__tabs_23" type="radio" id="__tab_23_1" />
+<label for="__tab_23_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cat examples/bitcoin_price.json | witnet node raw</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
-<input name="__tabs_21" type="radio" id="__tab_21_2" />
-<label for="__tab_21_2">Cargo</label>
+<input name="__tabs_23" type="radio" id="__tab_23_2" />
+<label for="__tab_23_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cat examples/bitcoin_price.json | cargo run -- node raw</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
@@ -1760,18 +1825,18 @@ the first line is a request, the second line is a response.</p>
 <li><code class="codehilite"><span class="err">--address=address</span></code>: address for which to get reputation score. If omitted, defaults to the node's own address.</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_22" type="radio" id="__tab_22_0" checked="checked" />
-<label for="__tab_22_0">Docker</label>
+<input name="__tabs_24" type="radio" id="__tab_24_0" checked="checked" />
+<label for="__tab_24_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node reputation</span>
 <span class="go">docker exec witnet_node witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
 </code></pre></div></div>
-<input name="__tabs_22" type="radio" id="__tab_22_1" />
-<label for="__tab_22_1">Binary</label>
+<input name="__tabs_24" type="radio" id="__tab_24_1" />
+<label for="__tab_24_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node reputation</span>
 <span class="go">witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
 </code></pre></div></div>
-<input name="__tabs_22" type="radio" id="__tab_22_2" />
-<label for="__tab_22_2">Cargo</label>
+<input name="__tabs_24" type="radio" id="__tab_24_2" />
+<label for="__tab_24_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node reputation</span>
 <span class="go">cargo run -- node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
 </code></pre></div></div>
@@ -1786,16 +1851,16 @@ the first line is a request, the second line is a response.</p>
 <p>Note that it is perfectly normal for a node to show 0 reputation for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.</p>
 </div>
 <div class="superfences-tabs">
-<input name="__tabs_23" type="radio" id="__tab_23_0" checked="checked" />
-<label for="__tab_23_0">Docker</label>
+<input name="__tabs_25" type="radio" id="__tab_25_0" checked="checked" />
+<label for="__tab_25_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node reputation --all</span>
 </code></pre></div></div>
-<input name="__tabs_23" type="radio" id="__tab_23_1" />
-<label for="__tab_23_1">Binary</label>
+<input name="__tabs_25" type="radio" id="__tab_25_1" />
+<label for="__tab_25_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node reputation --all</span>
 </code></pre></div></div>
-<input name="__tabs_23" type="radio" id="__tab_23_2" />
-<label for="__tab_23_2">Cargo</label>
+<input name="__tabs_25" type="radio" id="__tab_25_2" />
+<label for="__tab_25_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node reputation --all</span>
 </code></pre></div></div>
 </div>
@@ -1817,54 +1882,54 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 </ul>
 <p>On success, returns the transaction hash:</p>
 <div class="superfences-tabs">
-<input name="__tabs_24" type="radio" id="__tab_24_0" checked="checked" />
-<label for="__tab_24_0">Docker</label>
+<input name="__tabs_26" type="radio" id="__tab_26_0" checked="checked" />
+<label for="__tab_26_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
-<input name="__tabs_24" type="radio" id="__tab_24_1" />
-<label for="__tab_24_1">Binary</label>
+<input name="__tabs_26" type="radio" id="__tab_26_1" />
+<label for="__tab_26_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
-<input name="__tabs_24" type="radio" id="__tab_24_2" />
-<label for="__tab_24_2">Cargo</label>
+<input name="__tabs_26" type="radio" id="__tab_26_2" />
+<label for="__tab_26_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
 </div>
 <p>On error, returns the error message:</p>
 <div class="superfences-tabs">
-<input name="__tabs_25" type="radio" id="__tab_25_0" checked="checked" />
-<label for="__tab_25_0">Docker</label>
+<input name="__tabs_27" type="radio" id="__tab_27_0" checked="checked" />
+<label for="__tab_27_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="s s-Atom">docker</span> <span class="s s-Atom">exec</span> <span class="s s-Atom">witnet_node</span> <span class="s s-Atom">witnet</span> <span class="s s-Atom">node</span> <span class="s s-Atom">send</span> <span class="s s-Atom">--address</span><span class="o">=</span><span class="s s-Atom">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="s s-Atom">--value</span><span class="o">=</span><span class="mi">9999999999999999999</span> <span class="s s-Atom">--fee</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="s s-Atom">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:-</span><span class="mi">32603</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 &gt; 39649999949502&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
 </code></pre></div></div>
-<input name="__tabs_25" type="radio" id="__tab_25_1" />
-<label for="__tab_25_1">Binary</label>
+<input name="__tabs_27" type="radio" id="__tab_27_1" />
+<label for="__tab_27_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="s s-Atom">witnet</span> <span class="s s-Atom">node</span> <span class="s s-Atom">send</span> <span class="s s-Atom">--address</span><span class="o">=</span><span class="s s-Atom">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="s s-Atom">--value</span><span class="o">=</span><span class="mi">9999999999999999999</span> <span class="s s-Atom">--fee</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="s s-Atom">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:-</span><span class="mi">32603</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 &gt; 39649999949502&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
 </code></pre></div></div>
-<input name="__tabs_25" type="radio" id="__tab_25_2" />
-<label for="__tab_25_2">Cargo</label>
+<input name="__tabs_27" type="radio" id="__tab_27_2" />
+<label for="__tab_27_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="s s-Atom">cargo</span> <span class="s s-Atom">run</span> <span class="s s-Atom">--</span> <span class="s s-Atom">node</span> <span class="s s-Atom">send</span> <span class="s s-Atom">--address</span><span class="o">=</span><span class="s s-Atom">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="s s-Atom">--value</span><span class="o">=</span><span class="mi">9999999999999999999</span> <span class="s s-Atom">--fee</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="s s-Atom">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:-</span><span class="mi">32603</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 &gt; 39649999949502&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="s s-Atom">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
 </code></pre></div></div>
 </div>
 <p>Example with time lock set to 2019-10-01</p>
 <div class="superfences-tabs">
-<input name="__tabs_26" type="radio" id="__tab_26_0" checked="checked" />
-<label for="__tab_26_0">Docker</label>
+<input name="__tabs_28" type="radio" id="__tab_28_0" checked="checked" />
+<label for="__tab_28_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
-<input name="__tabs_26" type="radio" id="__tab_26_1" />
-<label for="__tab_26_1">Binary</label>
+<input name="__tabs_28" type="radio" id="__tab_28_1" />
+<label for="__tab_28_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
-<input name="__tabs_26" type="radio" id="__tab_26_2" />
-<label for="__tab_26_2">Cargo</label>
+<input name="__tabs_28" type="radio" id="__tab_28_2" />
+<label for="__tab_28_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000</span>
 <span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17&quot;,&quot;id&quot;:&quot;1&quot;}</span>
 </code></pre></div></div>
@@ -1872,32 +1937,32 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 <h3 id="sendrequest">sendRequest<a class="headerlink" href="#sendrequest" title="Permanent link">&para;</a></h3>
 <p>Send a serialized data request. An example of how to create such a request can be found in the <a href="https://docs.witnet.io/tutorials/bitcoin-price-feed/introduction/">tutorial</a>.</p>
 <div class="superfences-tabs">
-<input name="__tabs_27" type="radio" id="__tab_27_0" checked="checked" />
-<label for="__tab_27_0">Docker</label>
+<input name="__tabs_29" type="radio" id="__tab_29_0" checked="checked" />
+<label for="__tab_29_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node sendRequest --hex &quot;data request output serialized in hexadecimal format&quot;</span>
 </code></pre></div></div>
-<input name="__tabs_27" type="radio" id="__tab_27_1" />
-<label for="__tab_27_1">Cargo</label>
+<input name="__tabs_29" type="radio" id="__tab_29_1" />
+<label for="__tab_29_1">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node sendRequest --hex &quot;data request output serialized in hexadecimal format&quot;</span>
 </code></pre></div></div>
-<input name="__tabs_27" type="radio" id="__tab_27_2" />
-<label for="__tab_27_2">Binary</label>
+<input name="__tabs_29" type="radio" id="__tab_29_2" />
+<label for="__tab_29_2">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node sendRequest --hex &quot;data request output serialized in hexadecimal format&quot;</span>
 </code></pre></div></div>
 </div>
 <h3 id="server">server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h3>
 <p>Run a Witnet node server.</p>
 <div class="superfences-tabs">
-<input name="__tabs_28" type="radio" id="__tab_28_0" checked="checked" />
-<label for="__tab_28_0">Docker</label>
+<input name="__tabs_30" type="radio" id="__tab_30_0" checked="checked" />
+<label for="__tab_30_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node server</span>
 </code></pre></div></div>
-<input name="__tabs_28" type="radio" id="__tab_28_1" />
-<label for="__tab_28_1">Binary</label>
+<input name="__tabs_30" type="radio" id="__tab_30_1" />
+<label for="__tab_30_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node server</span>
 </code></pre></div></div>
-<input name="__tabs_28" type="radio" id="__tab_28_2" />
-<label for="__tab_28_2">Cargo</label>
+<input name="__tabs_30" type="radio" id="__tab_30_2" />
+<label for="__tab_30_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node server</span>
 </code></pre></div></div>
 </div>
@@ -1910,32 +1975,32 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 <li><code class="codehilite"><span class="err">--fee=fee</span></code>: miner fee in nanoWits.</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_29" type="radio" id="__tab_29_0" checked="checked" />
-<label for="__tab_29_0">Docker</label>
+<input name="__tabs_31" type="radio" id="__tab_31_0" checked="checked" />
+<label for="__tab_31_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node joinTransaction --value=100 --size=3 --fee=1</span>
 </code></pre></div></div>
-<input name="__tabs_29" type="radio" id="__tab_29_1" />
-<label for="__tab_29_1">Binary</label>
+<input name="__tabs_31" type="radio" id="__tab_31_1" />
+<label for="__tab_31_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node joinTransaction --value=100 --size=3 --fee=1</span>
 </code></pre></div></div>
-<input name="__tabs_29" type="radio" id="__tab_29_2" />
-<label for="__tab_29_2">Cargo</label>
+<input name="__tabs_31" type="radio" id="__tab_31_2" />
+<label for="__tab_31_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node joinTransaction --value=100 --size=3 --fee=1</span>
 </code></pre></div></div>
 </div>
 <h3 id="transaction">transaction<a class="headerlink" href="#transaction" title="Permanent link">&para;</a></h3>
 <p>Print out detailed information about a transaction being queried by its hash.</p>
 <div class="superfences-tabs">
-<input name="__tabs_30" type="radio" id="__tab_30_0" checked="checked" />
-<label for="__tab_30_0">Docker</label>
+<input name="__tabs_32" type="radio" id="__tab_32_0" checked="checked" />
+<label for="__tab_32_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5</span>
 </code></pre></div></div>
-<input name="__tabs_30" type="radio" id="__tab_30_1" />
-<label for="__tab_30_1">Binary</label>
+<input name="__tabs_32" type="radio" id="__tab_32_1" />
+<label for="__tab_32_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5</span>
 </code></pre></div></div>
-<input name="__tabs_30" type="radio" id="__tab_30_2" />
-<label for="__tab_30_2">Cargo</label>
+<input name="__tabs_32" type="radio" id="__tab_32_2" />
+<label for="__tab_32_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5</span>
 </code></pre></div></div>
 </div>
@@ -1947,16 +2012,16 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 <h3 id="utxos">utxos<a class="headerlink" href="#utxos" title="Permanent link">&para;</a></h3>
 <p>Get the unspent transaction outputs of the node. This shows how many UTXOs are available for your node to spend or collateralize.</p>
 <div class="superfences-tabs">
-<input name="__tabs_31" type="radio" id="__tab_31_0" checked="checked" />
-<label for="__tab_31_0">Docker</label>
+<input name="__tabs_33" type="radio" id="__tab_33_0" checked="checked" />
+<label for="__tab_33_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node utxos</span>
 </code></pre></div></div>
-<input name="__tabs_31" type="radio" id="__tab_31_1" />
-<label for="__tab_31_1">Binary</label>
+<input name="__tabs_33" type="radio" id="__tab_33_1" />
+<label for="__tab_33_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node utxos</span>
 </code></pre></div></div>
-<input name="__tabs_31" type="radio" id="__tab_31_2" />
-<label for="__tab_31_2">Cargo</label>
+<input name="__tabs_33" type="radio" id="__tab_33_2" />
+<label for="__tab_33_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node utxos</span>
 </code></pre></div></div>
 </div>
