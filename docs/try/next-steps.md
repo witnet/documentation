@@ -4,7 +4,7 @@
 
 As soon as the `witnet_node` container is up, it will do the following things in order:
 
-1. Try to **open connections to other nodes** in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.
+1. Try to **open connections to other nodes** in the network. It needs 12 "outbound" connections. This should take from several seconds to a few minutes.
 2. Discover what is the **tip of the block chain**, and **download all the blocks** from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.
 3. Go into **_Synced_ status**. In Synced status, your node will **validate transactions and blocks** in real time, and it will try itself to **propose block candidates** and participate in **resolving _data requests_**.
 
@@ -76,6 +76,7 @@ witnet node reputation
     Despite its name, the *reputation* metric that exists in the Witnet protocol is not as vital as reputation is in real life.
     The reputation score of a node gives a rough idea about its performance, but it is heavily influenced by randomness and luck.
     It is perfectly normal that the reputation score goes up and down over time, sometimes smoothly, sometimes more abruptly.
+    Likewise, there is probably nothing wrong if your node shows 0 reputation points or is marked as "not active".
     Do not get too obsessed about it!
     
 ## Check ports and incoming connections
@@ -176,7 +177,7 @@ docker run -d \
     --volume ~/.witnet:/.witnet \
     --publish 21337:21337 \
     --restart always \
-    witnet/witnet-rust
+    witnet/witnet-rust \
     node server --master-key-import /.witnet/config/master.key
 ```
 
@@ -192,7 +193,7 @@ docker run -d \
     --volume ~/.witnet:/.witnet \
     --publish 21337:21337 \
     --restart always \
-    witnet/witnet-rust
+    witnet/witnet-rust \
     node server --master-key-import /.witnet/config/master.key
 ```
 
