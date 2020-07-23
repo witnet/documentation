@@ -1,0 +1,2724 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://docs.witnet.io/developer/wallet-api/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Wallet API - Witnet Protocol Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#wallet-server-api" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+    <!-- Top-level navigation -->
+    <nav class="md-header-nav md-grid">
+        <div class="md-flex">
+
+            <!-- Link to home -->
+            <div class="md-flex__cell md-flex__cell--shrink">
+                <a href="https://docs.witnet.io"
+                   title="Witnet Protocol Documentation"
+                   class="md-header-nav__button md-logo">
+                    
+                    <img src="../../assets/images/logo.svg" alt="Witnet Logo" height="26" />
+                    
+                </a>
+            </div>
+
+            <!-- Button to toggle drawer -->
+            <div class="md-flex__cell md-flex__cell--shrink">
+                <label class="md-icon md-icon--menu md-header-nav__button"
+                       for="__drawer"></label>
+            </div>
+
+            <!-- Header title -->
+            <div class="md-flex__cell md-flex__cell--stretch">
+                <div class="md-flex__ellipsis md-header-nav__title"
+                     data-md-component="title">
+                    
+                    <a href="https://docs.witnet.io" class="md-header-nav__topic">the <strong>witnet</strong> documentation</a>
+                    <span class="md-header-nav__topic">
+              
+                Wallet API
+              
+            </span>
+                    
+                </div>
+            </div>
+
+            <!-- Button to open search dialogue -->
+            <div class="md-flex__cell md-flex__cell--shrink">
+                
+                <label class="md-icon md-icon--search md-header-nav__button"
+                       for="__search"></label>
+
+                <!-- Search interface -->
+                
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                
+            </div>
+
+            <!-- Repository containing source -->
+            
+            <div class="md-flex__cell md-flex__cell--shrink">
+                <div class="md-header-nav__source">
+                    
+
+
+  
+
+<a href="https://github.com/witnet/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    witnet/documentation
+  </div>
+</a>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.witnet.io" title="Witnet Protocol Documentation" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../assets/images/logo.svg" alt="Witnet Logo" width="48" height="48">
+      
+    </a>
+    Witnet Protocol Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/witnet/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    witnet/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Ecosystem" class="md-nav__link">
+      Ecosystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/concepts/" title="What is Witnet?" class="md-nav__link">
+      What is Witnet?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/software/" title="Software" class="md-nav__link">
+      Software
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Quickstart
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Quickstart
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../try/run-a-node/" title="Run a Node" class="md-nav__link">
+      Run a Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../try/next-steps/" title="Next Steps" class="md-nav__link">
+      Next Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../try/use-from-ethereum/" title="Connect your Ethereum contracts to external APIs" class="md-nav__link">
+      Connect your Ethereum contracts to external APIs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/create-project/" title="1. Create a new project" class="md-nav__link">
+      1. Create a new project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/sources/" title="2. Adding data sources" class="md-nav__link">
+      2. Adding data sources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/aggregations/" title="3. Define aggregator / tally" class="md-nav__link">
+      3. Define aggregator / tally
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/fine-tuning/" title="4. Fine-tune the request" class="md-nav__link">
+      4. Fine-tune the request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/compiling/" title="5. Compile the request" class="md-nav__link">
+      5. Compile the request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/contract/" title="6. Write the Solidity contract" class="md-nav__link">
+      6. Write the Solidity contract
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/migrations/" title="7. Deploy" class="md-nav__link">
+      7. Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/bitcoin-price-feed/recap/" title="Recap" class="md-nav__link">
+      Recap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Community
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Community
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../community/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Developer Docs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Developer Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../from-source/" title="Compile from source code" class="md-nav__link">
+      Compile from source code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Wallet API
+      </label>
+    
+    <a href="./" title="Wallet API" class="md-nav__link md-nav__link--active">
+      Wallet API
+    </a>
+    
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary">
+    
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#wallet-api-endpoints" class="md-nav__link">
+    Wallet API Endpoints
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_data_request" class="md-nav__link">
+    create_data_request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_mnemonics" class="md-nav__link">
+    create_mnemonics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_vtt" class="md-nav__link">
+    create_vtt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_wallet" class="md-nav__link">
+    create_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_session" class="md-nav__link">
+    close_session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_address" class="md-nav__link">
+    generate_address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_addresses" class="md-nav__link">
+    get_addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_balance" class="md-nav__link">
+    get_balance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_transactions" class="md-nav__link">
+    get_transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_wallet_infos" class="md-nav__link">
+    get_wallet_infos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lock_wallet" class="md-nav__link">
+    lock_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcoff" class="md-nav__link">
+    rpc.off
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcon" class="md-nav__link">
+    rpc.on
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_rad_request" class="md-nav__link">
+    run_rad_request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send_transaction" class="md-nav__link">
+    send_transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign_data" class="md-nav__link">
+    sign_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlock_wallet" class="md-nav__link">
+    unlock_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_wallet" class="md-nav__link">
+    update_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate_mnemonics" class="md-nav__link">
+    validate_mnemonics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
+    </ul>
+    
+    <aside class="disclaimer">
+        <p>The Witnet protocol and related software are work in progress.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
+    </aside>
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Protocol Docs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Protocol Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/sortition/" title="Sortition" class="md-nav__link">
+      Sortition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Witnet Requests
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Witnet Requests
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/radon-encoding/" title="Encoding" class="md-nav__link">
+      Encoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/data-requests/examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Operator Docs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Operator Docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node-operators/hardware-requirements/" title="Hardware requirements" class="md-nav__link">
+      Hardware requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node-operators/systemd-service/" title="Run as systemd service" class="md-nav__link">
+      Run as systemd service
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node-operators/docker-compose-service/" title="Run as docker-compose service" class="md-nav__link">
+      Run as docker-compose service
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node-operators/cli/" title="Command Line Interface" class="md-nav__link">
+      Command Line Interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      More
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        More
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary">
+    
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#wallet-api-endpoints" class="md-nav__link">
+    Wallet API Endpoints
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_data_request" class="md-nav__link">
+    create_data_request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_mnemonics" class="md-nav__link">
+    create_mnemonics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_vtt" class="md-nav__link">
+    create_vtt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_wallet" class="md-nav__link">
+    create_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_session" class="md-nav__link">
+    close_session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate_address" class="md-nav__link">
+    generate_address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_addresses" class="md-nav__link">
+    get_addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_balance" class="md-nav__link">
+    get_balance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_transactions" class="md-nav__link">
+    get_transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_wallet_infos" class="md-nav__link">
+    get_wallet_infos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lock_wallet" class="md-nav__link">
+    lock_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcoff" class="md-nav__link">
+    rpc.off
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcon" class="md-nav__link">
+    rpc.on
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run_rad_request" class="md-nav__link">
+    run_rad_request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send_transaction" class="md-nav__link">
+    send_transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign_data" class="md-nav__link">
+    sign_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlock_wallet" class="md-nav__link">
+    unlock_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_wallet" class="md-nav__link">
+    update_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate_mnemonics" class="md-nav__link">
+    validate_mnemonics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
+    </ul>
+    
+    <aside class="disclaimer">
+        <p>The Witnet protocol and related software are work in progress.</p>
+        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
+        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
+    </aside>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/witnet/documentation/blob/master/docs/developer/wallet-api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="wallet-server-api">Wallet Server API<a class="headerlink" href="#wallet-server-api" title="Permanent link">&para;</a></h1>
+<p>The wallet exposes a JSON-RPC API over Websocket by default at the URL <code class="codehilite"><span class="err">127.0.0.1:21338</span></code>.
+It can be set in the Witnet configuration file as follows:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[wallet]</span>
+<span class="n">node_url</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1:21338&quot;</span>
+</code></pre></div>
+
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th>Request Params</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#create_data_request">create_data_request</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">request</span></code>, <code class="codehilite"><span class="err">fee</span></code></td>
+<td><code class="codehilite"><span class="err">bytes</span></code>, <code class="codehilite"><span class="err">transaction</span></code>, <code class="codehilite"><span class="err">transaction_id</span></code></td>
+</tr>
+<tr>
+<td><a href="#create_mnemonics">create_mnemonics</a></td>
+<td><code class="codehilite"><span class="err">length</span></code></td>
+<td><code class="codehilite"><span class="err">mnemonics</span></code></td>
+</tr>
+<tr>
+<td><a href="#create_vtt">create_vtt</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">pkh</span></code>, <code class="codehilite"><span class="err">value</span></code>, <code class="codehilite"><span class="err">fee</span></code></td>
+<td><code class="codehilite"><span class="err">bytes</span></code>, <code class="codehilite"><span class="err">metadata</span></code>, <code class="codehilite"><span class="err">transaction</span></code>, <code class="codehilite"><span class="err">transaction_id</span></code></td>
+</tr>
+<tr>
+<td><a href="#create_wallet">create_wallet</a></td>
+<td><code class="codehilite"><span class="err">name</span></code>, <code class="codehilite"><span class="err">caption</span></code>, <code class="codehilite"><span class="err">seed_source</span></code>, <code class="codehilite"><span class="err">seed_data</span></code>, <code class="codehilite"><span class="err">password</span></code></td>
+<td><code class="codehilite"><span class="err">wallet_id</span></code></td>
+</tr>
+<tr>
+<td><a href="#close_session">close_session</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code></td>
+<td><code class="codehilite"><span class="err">success</span></code></td>
+</tr>
+<tr>
+<td><a href="#generate_address">generate_address</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code></td>
+<td><code class="codehilite"><span class="err">address</span></code>, <code class="codehilite"><span class="err">path</span></code></td>
+</tr>
+<tr>
+<td><a href="#get">get</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">key</span></code></td>
+<td><code class="codehilite"><span class="err">value</span></code></td>
+</tr>
+<tr>
+<td><a href="#get_addresses">get_addresses</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">offset</span></code>, <code class="codehilite"><span class="err">limit</span></code></td>
+<td><code class="codehilite"><span class="err">address[]</span></code>, <code class="codehilite"><span class="err">total</span></code></td>
+</tr>
+<tr>
+<td><a href="#get_balance">get_balance</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code></td>
+<td><code class="codehilite"><span class="err">total</span></code></td>
+</tr>
+<tr>
+<td><a href="#get_transactions">get_transactions</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">offset</span></code>, <code class="codehilite"><span class="err">limit</span></code></td>
+<td><code class="codehilite"><span class="err">transactions[]</span></code>, <code class="codehilite"><span class="err">total</span></code></td>
+</tr>
+<tr>
+<td><a href="#get_wallet_infos">get_wallet_infos</a></td>
+<td>(none)</td>
+<td><code class="codehilite"><span class="err">wallet_info[]</span></code></td>
+</tr>
+<tr>
+<td><a href="#lock_wallet">lock_wallet</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code></td>
+<td><code class="codehilite"><span class="err">success</span></code></td>
+</tr>
+<tr>
+<td><a href="#rpc.off">rpc.off</a></td>
+<td>(<code class="codehilite"><span class="err">subscription_id[]</span></code>)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><a href="#rpc.on">rpc.on</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code></td>
+<td>(<code class="codehilite"><span class="err">subscription_id</span></code>)</td>
+</tr>
+<tr>
+<td><a href="#run_rad_request">run_rad_request</a></td>
+<td><code class="codehilite"><span class="err">request</span></code></td>
+<td><code class="codehilite"><span class="err">result</span></code></td>
+</tr>
+<tr>
+<td><a href="#send_transaction">send_transaction</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">transaction</span></code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><a href="#set">set</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">key</span></code>, <code class="codehilite"><span class="err">value</span></code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><a href="#shutdown">shutdown</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><a href="#sign_data">sign_data</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">data</span></code>, <code class="codehilite"><span class="err">extended_pk</span></code></td>
+<td><code class="codehilite"><span class="err">chaincode</span></code>, <code class="codehilite"><span class="err">public_key</span></code>, <code class="codehilite"><span class="err">signature</span></code></td>
+</tr>
+<tr>
+<td><a href="#unlock_wallet">unlock_wallet</a></td>
+<td><code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">password</span></code></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">session_expiration_secs</span></code>, ...</td>
+</tr>
+<tr>
+<td><a href="#update_wallet">update_wallet</a></td>
+<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">name</span></code>, <code class="codehilite"><span class="err">caption</span></code></td>
+<td><code class="codehilite"><span class="err">success</span></code></td>
+</tr>
+<tr>
+<td><a href="#validate_mnemonics">validate_mnemonics</a></td>
+<td><code class="codehilite"><span class="err">seed_source</span></code>, <code class="codehilite"><span class="err">seed_data</span></code></td>
+<td><code class="codehilite"><span class="err">valid</span></code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="wallet-api-endpoints">Wallet API Endpoints<a class="headerlink" href="#wallet-api-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="create_data_request">create_data_request<a class="headerlink" href="#create_data_request" title="Permanent link">&para;</a></h3>
+<p>The method <code class="codehilite"><span class="err">create_data_request</span></code> creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method <a href="#send_transaction">send_transaction</a>).</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, amount in nanoWitswill be earned by the miner that publishes the request.</li>
+<li><code class="codehilite"><span class="err">request</span></code>: <em>DataRequestOutput</em>, a struct with required data request fields.</li>
+<li><code class="codehilite"><span class="err">data_request</span></code>: <em>RADRequest</em>, data request with CBOR codification.</li>
+<li><code class="codehilite"><span class="err">witness_reward</span></code>: <em>number</em>, reward in nanoWits to the witnesses of the data request.</li>
+<li><code class="codehilite"><span class="err">witnesses</span></code>: <em>number</em>, minimum number of witnet nodes that must perform the request.</li>
+<li><code class="codehilite"><span class="err">commit_fee</span></code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid commitment transaction.</li>
+<li><code class="codehilite"><span class="err">reveal_fee</span></code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid reveal transaction.</li>
+<li><code class="codehilite"><span class="err">tally_fee</span></code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid tally transaction.</li>
+<li><code class="codehilite"><span class="err">min_consensus_percentage</span></code>: <em>number</em>, , minimum of consensus required to consider the request as valid.</li>
+<li><code class="codehilite"><span class="err">collateral</span></code>: <em>number</em>, collateral amount in nanoWits.</li>
+</ul>
+<p>More information about the parameters can be found in the tutorial of <a href="https://docs.witnet.io/tutorials/bitcoin-price-feed/fine-tuning/">data request parameters fine-tuning</a>.</p>
+<p>As an example, this data request created a data request that retrives the last Bitcoin blockhash from three different sources:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;create_data_request&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;678f4320d8f8ff1a9f86f56f20f0c6a76fba92db0e8e5b1fd2f21092de985f3e&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;data_request&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;retrieve&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP-GET&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://blockchain.info/q/latesthash&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="mi">128</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP-GET&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api-r.bitcoinchain.com/v1/status&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">104</span><span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;aggregate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="nt">&quot;reducer&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;tally&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;op&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+              <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;reducer&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;witness_reward&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="nt">&quot;witnesses&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;commit_fee&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nt">&quot;reveal_fee&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nt">&quot;tally_fee&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="nt">&quot;min_consensus_percentage&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+      <span class="nt">&quot;collateral&quot;</span><span class="p">:</span> <span class="mi">1000000000</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The <code class="codehilite"><span class="err">create_data_request</span></code> response will include the following data:</p>
+<ul>
+<li><code class="codehilite"><span class="err">bytes</span></code>: <em>String</em>, data request bytes represented in hexadecimal format.</li>
+<li><code class="codehilite"><span class="err">transaction</span></code>: <em>DataRequest</em>, all transactional information regarding the created data request.</li>
+<li><code class="codehilite"><span class="err">body</span></code>: Includes the data request output, inputs and outputs of the transaction.</li>
+<li><code class="codehilite"><span class="err">signatures</span></code>: The signature of the transaction and the public key</li>
+<li><code class="codehilite"><span class="err">transaction_id</span></code>: <em>String</em>, unique transaction identifier.</li>
+</ul>
+<p>Example of a <code class="codehilite"><span class="err">create_data_request</span></code> response:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;bytes&quot;</span><span class="p">:</span> <span class="s2">&quot;1297030aa0020a280a260a220a201a79a8689f9ede624043993b620e6042d2b7e80573c19f6752328db4a25c6fc41001121f0a160a14e6635e52a21ab22eaf27bdd036dd104b25d712c310eeabd2d4d1031ad2010abc011229122468747470733a2f2f626c6f636b636861696e2e696e666f2f712f6c6174657374686173681a01801237122868747470733a2f2f6170692d722e626974636f696e636861696e2e636f6d2f76312f7374617475731a0b8218778218676468617368124a122868747470733a2f2f6170692e626c6f636b63686169722e636f6d2f626974636f696e2f73746174731a1e83187782186664646174618218676f626573745f626c6f636b5f686173681a02100222060a020808100210e8071803200a280a301e3833408094ebdc0312720a4b0a490a473045022100dc671fb90cab42baa3a8e26bcd91da954b05299840539288624518ecc3b85140022033d6d65405ada2a72a1a55bb33577a76ef9ab320b58df96a4ce0ab498042620212230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;transaction&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;DataRequest&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;dr_output&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;collateral&quot;</span><span class="p">:</span> <span class="mi">1000000000</span><span class="p">,</span>
+            <span class="nt">&quot;commit_fee&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;data_request&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;aggregate&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="nt">&quot;reducer&quot;</span><span class="p">:</span> <span class="mi">2</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;retrieve&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP-GET&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="mi">128</span>
+                  <span class="p">],</span>
+                  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https:\/\/blockchain.info\/q\/latesthash&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP-GET&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">130</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">119</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">104</span><span class="p">],</span>
+                  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https:\/\/api-r.bitcoinchain.com\/v1\/status&quot;</span>
+                <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="nt">&quot;tally&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                    <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="nt">&quot;op&quot;</span><span class="p">:</span> <span class="mi">8</span>
+                  <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;reducer&quot;</span><span class="p">:</span> <span class="mi">2</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;min_consensus_percentage&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+            <span class="nt">&quot;reveal_fee&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;tally_fee&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="nt">&quot;witness_reward&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="nt">&quot;witnesses&quot;</span><span class="p">:</span> <span class="mi">3</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;output_pointer&quot;</span><span class="p">:</span> <span class="s2">&quot;1a79a8689f9ede624043993b620e6042d2b7e80573c19f6752328db4a25c6fc4:1&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">124999996910</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;bytes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">240</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">217</span><span class="p">,</span><span class="mi">126</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">184</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">233</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="nt">&quot;compressed&quot;</span><span class="p">:</span> <span class="mi">3</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;Secp256k1&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;der&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">48</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">186</span><span class="p">,</span><span class="mi">163</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">107</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">184</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">167</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">122</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">154</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">249</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span> <span class="s2">&quot;b7dbb6fdbf5f07ab6d0b037a9e2119d102172f372ffcdf4630122d1b2914ae02&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="create_mnemonics">create_mnemonics<a class="headerlink" href="#create_mnemonics" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">create_mnemonics</span></code> is used to generate a <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39 mnemonic sentence</a> that can be used to generate a new <a href="https://en.bitcoinwiki.org/wiki/Deterministic_wallet">HD wallet</a>.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">length</span></code>: <em>number</em>, indicating how many words the mnemonic sentence should have. Must be one of these: <code class="codehilite"><span class="err">12</span></code>, <code class="codehilite"><span class="err">15</span></code>, <code class="codehilite"><span class="err">18</span></code>, <code class="codehilite"><span class="err">21</span></code> or <code class="codehilite"><span class="err">24</span></code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;create_mnemonics&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span> 
+    <span class="nt">&quot;length&quot;</span><span class="p">:</span> <span class="mi">12</span> 
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">mnemonics</span></code>: <em>String</em>, list of words of the mnemonic sentences.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;mnemonics&quot;</span><span class="p">:</span> <span class="s2">&quot;day voice lake monkey suit bread occur own cattle visit object ordinary&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="create_vtt">create_vtt<a class="headerlink" href="#create_vtt" title="Permanent link">&para;</a></h3>
+<p>The method <code class="codehilite"><span class="err">create_vtt</span></code> is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method <a href="#send_transaction">send_transaction</a>).</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">time_lock</span></code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, the recipient address.</li>
+<li><code class="codehilite"><span class="err">amount</span></code>: <em>number</em>, value to transfer in nanoWits.</li>
+<li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, miner fee in nanoWits.</li>
+<li><code class="codehilite"><span class="err">label</span></code>: <em>String</em>, optional label to refer the vtt.</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;create_vtt&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;7bbb8d1bec5419451fa57ae686de93d26e8d265b9328f5dc2f1e6e28acac4201&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">18</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The <code class="codehilite"><span class="err">create_vtt</span></code> response will include all the information about the transaction:</p>
+<ul>
+<li><code class="codehilite"><span class="err">bytes</span></code>: <em>String</em>, data request bytes represented in hexadecimal format.</li>
+<li><code class="codehilite"><span class="err">metadata</span></code>: description of the outcome of the transaction, includes<ul>
+<li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, miner fee in nanoWits.</li>
+<li><code class="codehilite"><span class="err">to</span></code>: <em>String</em>, the address of the reciever.</li>
+<li><code class="codehilite"><span class="err">value</span></code>: <em>number</em>, value that has been transferd in nanoWits.</li>
+</ul>
+</li>
+<li><code class="codehilite"><span class="err">transaction</span></code>: <em>ValueTransfer</em>, all transactional information regarding the created value transfer.</li>
+<li><code class="codehilite"><span class="err">body</span></code>: Includes the inputs and outputs of the transaction.</li>
+<li><code class="codehilite"><span class="err">signatures</span></code>: The signature of the transaction and the public key</li>
+<li><code class="codehilite"><span class="err">transaction_id</span></code>: <em>String</em>, unique transaction identifier.</li>
+</ul>
+<p>Example of a <code class="codehilite"><span class="err">create_vtt</span></code> response:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;bytes&quot;</span><span class="p">:</span> <span class="s2">&quot;0add010a670a280a260a220a204c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add1001121a0a160a149a6c45dc0d8546ab8a3fca85def0cbff89cdfb521001121f0a160a1425e15594103fde1d9864807d091923ab648d6d1f10fec3d2d4d10312720a4b0a490a4730450221008e0c49acdcc92f63c6c71aa1ce7bb4d0524775c8e0af9d597d1b8bdfd8d2741e02201edd0d276786f7fcf319c4157501dca9c74457cac3b385a7475e6de85e1d826712230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">448</span><span class="p">,</span>
+      <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;transaction&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;ValueTransfer&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;output_pointer&quot;</span><span class="p">:</span> <span class="s2">&quot;4c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add:1&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">124999999998</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;bytes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">240</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">217</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">184</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">136</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">143</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">213</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">246</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">146</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="nt">&quot;compressed&quot;</span><span class="p">:</span> <span class="mi">3</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;Secp256k1&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;der&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">142</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">161</span><span class="p">,</span> <span class="mi">206</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">208</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mi">223</span><span class="p">,</span> <span class="mi">216</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">221</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">134</span><span class="p">,</span> <span class="mi">247</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">195</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">133</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">103</span><span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span> <span class="s2">&quot;66387166eba2d8af0b55bf309b9557ae812bdec0039fc45ece1f744ed309816f&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">18</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="create_wallet">create_wallet<a class="headerlink" href="#create_wallet" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">create_wallet</span></code> is used to generate a new Master Key for an empty <a href="https://en.bitcoinwiki.org/wiki/Deterministic_wallet">HD wallet</a> that is stored encrypted in the file system.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">name</span></code> (optional): <em>String</em>, human-friendly name for the wallet.</li>
+<li><code class="codehilite"><span class="err">caption</span></code> (optional): <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite"><span class="err">seed_source</span></code>: <em><code class="codehilite"><span class="err">&quot;mnemonics&quot;|&quot;xprv&quot;</span></code></em>, literal to identify if the seed source is of the type <em>mnemonics</em> or <em>xprv</em> and determine how the HD wallet master key will be generated from the data sent in the <code class="codehilite"><span class="err">seedData</span></code> parameter.</li>
+<li><code class="codehilite"><span class="err">seed_data</span></code>: <em>String</em>, data used for generating the new HD wallet master key.</li>
+<li><code class="codehilite"><span class="err">password</span></code>: <em>String</em>, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;create_wallet&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wallet #1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;caption&quot;</span><span class="p">:</span> <span class="s2">&quot;Personal use&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;seed_source&quot;</span><span class="p">:</span> <span class="s2">&quot;mnemonics&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;seed_data&quot;</span><span class="p">:</span> <span class="s2">&quot;exotic demand way fatigue skull poverty happy divide scrub seed jeans novel&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated with the given wallet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="close_session">close_session<a class="headerlink" href="#close_session" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">close_session</span></code> is used to close an active session without locking the currently unlocked wallet.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;close_session&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">success</span></code>: <em>Boolean</em>, reporting if the wallet was successfully closed.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="generate_address">generate_address<a class="headerlink" href="#generate_address" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">generate_address</span></code> is used to derive deterministically a new external address for the given wallet and session ID.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;generate_address&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, address derived deterministically.</li>
+<li><code class="codehilite"><span class="err">path</span></code>: <em>String</em>, derivation path used to generate the address.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1gtvu9a37w9sxaej30grp9rpxkkwwjk3pq0jqf9&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;m/3&#39;/4919&#39;/0&#39;/0/0&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="get">get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
+<p>The method <code class="codehilite"><span class="err">get</span></code> allows to retrieve a previous stored key-value data in the wallet database.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">key</span></code>: <em>String</em>, key under which the value will be stored.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;get&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;d5b53a4c40388a9be87acaf5a4dec9fd5c48f94913734bff88a08b18a618c76b&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;5982a279bbd201192f9d3685975c6cebb714ac32dea00cfea80e2013d510e35e&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;templates&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="get_addresses">get_addresses<a class="headerlink" href="#get_addresses" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">get_addresses</span></code> is used to query for a list of previously derived addresses given a wallet and session ID.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">offset</span></code> (optional): <em>number</em>, initial position of the address list to be queried (by default is set to <code class="codehilite"><span class="err">0</span></code>).</li>
+<li><code class="codehilite"><span class="err">limit</span></code> (optional): <em>number</em>, size of the address list to be returned (by default is set to <code class="codehilite"><span class="err">25</span></code>).</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;get_addresses&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9bcb54bf7494c21c29ef97256f6741b5b5bd5cb31d09d38e5ce98699010beea7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">25</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response with an array of addresses and additional related information:</p>
+<ul>
+<li><code class="codehilite"><span class="err">addresses</span></code>: <em>Array<Address></em>, list of queried addresses with additional information.</li>
+<li><code class="codehilite"><span class="err">account</span></code>: <em>number</em>, identifies the current account in the session (the current version only supports the default account <code class="codehilite"><span class="err">0</span></code>).</li>
+<li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, address serialized in Bech32 format.</li>
+<li><code class="codehilite"><span class="err">index</span></code>: <em>number</em>, sequential index used to derive address.</li>
+<li><code class="codehilite"><span class="err">info</span></code>: <em>String</em>, additional information with balance movements and dates.<ul>
+<li><code class="codehilite"><span class="err">first_payment_date</span></code>: <em>number</em>, date of first received movement in UTC format (Coordinated Universal Time).</li>
+<li><code class="codehilite"><span class="err">label</span></code>: <em>String</em>, user-defined label for this address.</li>
+<li><code class="codehilite"><span class="err">last_payment_date</span></code>: <em>number</em>, date of last received movement in UTC format (Coordinated Universal Time).</li>
+<li><code class="codehilite"><span class="err">received_amount</span></code>: <em>number</em>, total amount (in nanoWits) received by this address.</li>
+<li><code class="codehilite"><span class="err">received_payments</span></code>: <em>Array<String></em>, list of Unspent Transaction Outputs (UTXOs) proving funds to this address.</li>
+</ul>
+</li>
+<li><code class="codehilite"><span class="err">keychain</span></code>: <em>number</em>, <code class="codehilite"><span class="err">change</span></code> value of the derivation path (See <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP-44</a>).</li>
+<li><code class="codehilite"><span class="err">path</span></code>: <em>String</em>, derivation path used to generate the address.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1eghyyar76nuvdfu0h70f4gmxruj2rw4g8x2nn8&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;info&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;first_payment_date&quot;</span><span class="p">:</span> <span class="mi">1592476860</span><span class="p">,</span>
+          <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;last_payment_date&quot;</span><span class="p">:</span> <span class="mi">1592476860</span><span class="p">,</span>
+          <span class="nt">&quot;received_amount&quot;</span><span class="p">:</span> <span class="mi">125000000000</span><span class="p">,</span>
+          <span class="nt">&quot;received_payments&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;78bd0d8e4ef8ab67d4f18b357545f9dc73f63b7bf97a9a20c69b91b9e17ba985:1&quot;</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;keychain&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;m/3&#39;/4919&#39;/0&#39;/0/0&quot;</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="get_balance">get_balance<a class="headerlink" href="#get_balance" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">get_balance</span></code> is used to query the current balance for a given wallet.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned to you when you unlocked the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;get_balance&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">total</span></code>: <em>String</em>, total balance of the wallet in nanoWits (including timelocked transactions).</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="get_transactions">get_transactions<a class="headerlink" href="#get_transactions" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">get_transactions</span></code> is used to query for a list of transactions given a wallet and session ID.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">offset</span></code> (optional): <em>number</em>, initial position of the transaction list to be queried (by default is set to <code class="codehilite"><span class="err">0</span></code>).</li>
+<li><code class="codehilite"><span class="err">limit</span></code> (optional): <em>number</em>, size of the transaction list to be returned (by default is set to <code class="codehilite"><span class="err">25</span></code>).</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;get_transactions&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9bcb54bf7494c21c29ef97256f6741b5b5bd5cb31d09d38e5ce98699010beea7&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">25</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response with an array of transactions and additional related information:</p>
+<ul>
+<li><code class="codehilite"><span class="err">total</span></code>: <em>number</em>, total amount of wallet transactions.</li>
+<li><code class="codehilite"><span class="err">transactions</span></code>: <em>Array<BalanceMovement></em>, list of queried transactions with additional information.</li>
+<li><code class="codehilite"><span class="err">amount</span></code>: <em>number</em>, transaction value.</li>
+<li><code class="codehilite"><span class="err">type</span></code>: <em><code class="codehilite"><span class="err">&quot;POSITIVE&quot;|&quot;NEGATIVE&quot;</span></code></em>, type of balance movement in relation to the wallet. </li>
+<li><code class="codehilite"><span class="err">transaction</span></code>: <em>Transaction</em>, additional transaction information.<ul>
+<li><code class="codehilite"><span class="err">block</span></code>: <em>Block</em>, information of block in which the transaction was included.</li>
+<li><code class="codehilite"><span class="err">block_hash</span></code>: <em>String</em>, block hash in hexadecimal format.</li>
+<li><code class="codehilite"><span class="err">epoch</span></code>: <em>number</em> block epoch.</li>
+<li><code class="codehilite"><span class="err">data</span></code>: <em>TransactionData</em>, additional type-specific transaction data. The supported transaction types are <code class="codehilite"><span class="err">value_transfer</span></code>, <code class="codehilite"><span class="err">data_request</span></code>, <code class="codehilite"><span class="err">tally</span></code>, <code class="codehilite"><span class="err">mint</span></code> and <code class="codehilite"><span class="err">commit</span></code>.</li>
+<li><code class="codehilite"><span class="err">hash</span></code>: <em>String</em>, transaction hash in hexadecimal format used as identifier.</li>
+<li><code class="codehilite"><span class="err">miner_fee</span></code>: <em>number</em>, amount of nanoWits for the block miner.</li>
+<li><code class="codehilite"><span class="err">timestamp</span></code>: <em>number</em>, transaction date in UTC format (Coordinated Universal Time).</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;transactions&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="nt">&quot;transaction&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;block&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;block_hash&quot;</span><span class="p">:</span> <span class="s2">&quot;161fc079d3d7b8cd13af18bc615aaf24802bc1e64abd387d6d37be68c94fe8ec&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;epoch&quot;</span><span class="p">:</span> <span class="mi">53555</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value_transfer&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1r204scrl8djuljdn3gp8tgauzrl3x3c5dgl5wh&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">125000000000</span>
+                <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1yur5cmrz5vkc35p8fgg5c5la3yrl6yamwq02r6&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">123</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1r204scrl8djuljdn3gp8tgauzrl3x3c5dgl5wh&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">124999999865</span>
+                <span class="p">}</span>
+              <span class="p">]</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;c2cf7cfce47f1645a97b199cac532496b5490fd1dd2d7b6da24818d964ff18ab&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;miner_fee&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+          <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mi">1595406375</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;POSITIVE&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="get_wallet_infos">get_wallet_infos<a class="headerlink" href="#get_wallet_infos" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">get_wallet_infos</span></code> displays the information about the wallet.</p>
+<p>This method has no parameters, as an example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;get_wallet_infos&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">caption</span></code>: <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite"><span class="err">id</span></code>: <em>String</em>, wallet ID.</li>
+<li><code class="codehilite"><span class="err">name</span></code>:<em>String</em>, human-friendly name for the wallet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;infos&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;caption&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="lock_wallet">lock_wallet<a class="headerlink" href="#lock_wallet" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">lock_wallet</span></code> is used to <em>lock</em> the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;lock_wallet&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">success</span></code>: <em>Boolean</em>, reporting if the wallet was successfully locked.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="rpcoff">rpc.off<a class="headerlink" href="#rpcoff" title="Permanent link">&para;</a></h3>
+<p>Use this method <code class="codehilite"><span class="err">rpc.off</span></code> to unsubscribe from previous subscriptions.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">&lt;data&gt;</span></code>: <em>Array<String></em>, subscription identifiers assigned when subscribing to wallet sessions. See <a href="#rpc.on">rpc.on</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;rpc.off&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;221794a024ddaee0b0a0e9cb6bfd8f00fed86855134d917255f3cfac3dc84f2b&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The response for a successful unsubscribe:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="rpcon">rpc.on<a class="headerlink" href="#rpcon" title="Permanent link">&para;</a></h3>
+<p>Use this method <code class="codehilite"><span class="err">rpc.on</span></code> to subscribe to update events related to your session wallets.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;rpc.on&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;d4fe394eb9b82b4116f15d821bfb95cf1ddc912bc8fc1d6b2ab1f9c6e37269c4&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The response is:</p>
+<ul>
+<li><code class="codehilite"><span class="err">result</span></code>: <em>String</em>, subscription identifier that can be used to unsubscribe from notifications. See <a href="#rpc.off">rpc.off</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;221794a024ddaee0b0a0e9cb6bfd8f00fed86855134d917255f3cfac3dc84f2b&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Here is an example of a block event sent out by a node:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;notifications&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;events&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Block&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;block_hash&quot;</span><span class="p">:</span> <span class="s2">&quot;eb44b8169b155896c323ab392430fe43efde4bd7c896a932c39dfa262738522d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;epoch&quot;</span><span class="p">:</span> <span class="mi">293566</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;account&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1:21338&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;last_beacon&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;checkpoint&quot;</span><span class="p">:</span> <span class="mi">293566</span><span class="p">,</span>
+            <span class="nt">&quot;hashPrevBlock&quot;</span><span class="p">:</span> <span class="s2">&quot;eb44b8169b155896c323ab392430fe43efde4bd7c896a932c39dfa262738522d&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;network&quot;</span><span class="p">:</span> <span class="s2">&quot;Mainnet&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;session&quot;</span><span class="p">:</span> <span class="s2">&quot;c8a58658d4d2785e407e77a3dc7e04ac05c5dc66ab76eb0e0d031642ea20e42a&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;wallet&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;last_sync&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;checkpoint&quot;</span><span class="p">:</span> <span class="mi">293565</span><span class="p">,</span>
+            <span class="nt">&quot;hashPrevBlock&quot;</span><span class="p">:</span> <span class="s2">&quot;44877f15997b2b791f0da65027c447bce4935554fbc46de449b2219ff5568973&quot;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="run_rad_request">run_rad_request<a class="headerlink" href="#run_rad_request" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">run_rad_request</span></code> is used to execute a RAD request in order to test it functionally before deploying it on the network.</p>
+<p>The request has as parameter a <code class="codehilite"><span class="err">rad_request</span></code>, which has itself as parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">time_lock</span></code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
+<li><code class="codehilite"><span class="err">retrieve</span></code>: <em>Array<Retrieve></em>, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.</li>
+<li><code class="codehilite"><span class="err">aggregate</span></code>: <em>Aggregate</em>, includes the operators needed to perform the aggregation from the retrieves.</li>
+<li><code class="codehilite"><span class="err">tally</span></code>: <em>Tally</em>, includes the operators needed to perform the tally after the aggregation.</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;run_rad_request&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;rad_request&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;retrieve&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP-GET&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://csrng.net/csrng/csrng.php?min=0&amp;max=100&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">131</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">109</span><span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;aggregate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;reducer&quot;</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tally&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;op&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[]</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;reducer&quot;</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The response includes all the partial results of the request for the three different stages (<code class="codehilite"><span class="err">retrieve</span></code>, <code class="codehilite"><span class="err">aggregate</span></code> and <code class="codehilite"><span class="err">tally</span></code>).</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;retrieve&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="s2">&quot;Retrieval&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;partial_results&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;RadonString&quot;</span><span class="p">:</span> <span class="s2">&quot;[{\&quot;status\&quot;:\&quot;success\&quot;,\&quot;min\&quot;:0,\&quot;max\&quot;:100,\&quot;random\&quot;:98}]&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;RadonArray&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;RadonMap&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;max&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">100</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;min&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;random&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;RadonString&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span>
+                    <span class="p">}</span>
+                  <span class="p">}</span>
+                <span class="p">}</span>
+              <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;RadonMap&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;max&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">100</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;min&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;random&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;RadonString&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;running_time&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;nanos&quot;</span><span class="p">:</span> <span class="mi">3303591</span><span class="p">,</span>
+            <span class="nt">&quot;secs&quot;</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;aggregate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="s2">&quot;Aggregation&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;partial_results&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;RadonArray&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;running_time&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;nanos&quot;</span><span class="p">:</span> <span class="mi">148354</span><span class="p">,</span>
+          <span class="nt">&quot;secs&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tally&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;Tally&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;consensus&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="kc">false</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;liars&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="kc">false</span>
+            <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;partial_results&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;RadonArray&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;RadonArray&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;RadonFloat&quot;</span><span class="p">:</span> <span class="mi">98</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;running_time&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;nanos&quot;</span><span class="p">:</span> <span class="mi">214414</span><span class="p">,</span>
+          <span class="nt">&quot;secs&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="send_transaction">send_transaction<a class="headerlink" href="#send_transaction" title="Permanent link">&para;</a></h3>
+<p>The method <code class="codehilite"><span class="err">send_transaction</span></code> is used to broadcast a given transaction to the Witnet network. Apart from the <code class="codehilite"><span class="err">wallet_id</span></code> and <code class="codehilite"><span class="err">session_id</span></code>, it requires an already created transaction (e.g. by using the methods <a href="#create_vtt">create_vtt</a>) or <a href="#create_data_request">create_data_request</a>).</p>
+<p>The request requires the following parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">transaction</span></code>: <em>Transaction</em>, serialized transaction object. It can be created by using the methods <a href="#create_vtt">create_vtt</a>) or <a href="#create_data_request">create_data_request</a>.</li>
+</ul>
+<p>Example of a <code class="codehilite"><span class="err">send_transaction</span></code> for sending 500 nanoWits to an address.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;send_transaction&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;92e724030ed4e0d9c8fafd0ed617e2f7fb08512a36d6e12d30a44a63117aad0d&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4e373de7144dc08bc0a2b2efad52c902f4661453328523e42a02201c66716803&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;transaction&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;ValueTransfer&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;output_pointer&quot;</span><span class="p">:</span> <span class="s2">&quot;5d438cb68c5c24228f6c12d0bb33235159118230948410bfd1e41b7e239d944d:1&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">500</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">49470</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;bytes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">216</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">176</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">176</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">254</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">215</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">175</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">83</span><span class="p">],</span>
+              <span class="nt">&quot;compressed&quot;</span><span class="p">:</span> <span class="mi">3</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;Secp256k1&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;der&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">48</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">135</span><span class="p">,</span><span class="mi">233</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">142</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">135</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">244</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">82</span><span class="p">,</span><span class="mi">194</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span><span class="mi">209</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">192</span><span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The response contains the result of the Witnet node JsonRpc response.</p>
+<p>{
+  "jsonrpc": "2.0",
+  "result": true,
+  "id": 1
+}</p>
+<h3 id="set">set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
+<p>The method <code class="codehilite"><span class="err">set</span></code> allows to store key-value data in the wallet database.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">key</span></code>: <em>String</em>, key under which the value will be stored.</li>
+<li><code class="codehilite"><span class="err">value</span></code>: <em>Object</em>, JSON object to be stored.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;3cf194594d69c3b2b80a11f30953da96599dd2dd56cf72db838abba092cea3df&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;templates&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
+<p>To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;shutdown&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="sign_data">sign_data<a class="headerlink" href="#sign_data" title="Permanent link">&para;</a></h3>
+<p>This method uses the wallet's master key to sign message data.</p>
+<p>The parameters are:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">data</span></code>: <em>String</em>, the data to be signed.</li>
+<li><code class="codehilite"><span class="err">extended_pk</span></code>: <em>Bool</em>, if this flag is set to true, extended public key will be include (<code class="codehilite"><span class="err">chaincode</span></code>). If leaked, wallet public addresses might be derived.</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;sign_data&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;61078ed2685b82854b1d40b23e200994e80a04c2e2ba82e0e92c7adb9e348cad&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;extended_pk&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The response includes the parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">chaincode</span></code>: <em>String</em>, cryptographic material used to derive keys.</li>
+<li><code class="codehilite"><span class="err">public_key</span></code>:<em>String</em>, the wallet's public key.</li>
+<li><code class="codehilite"><span class="err">signture</span></code>:<em>String</em>, the signature.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;chaincode&quot;</span><span class="p">:</span> <span class="s2">&quot;c42185b347af99f7fbb4bf41f8ea1e9b1be70f1a4507f7cbe62e99f487af4af4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;025aaf8c0fd8598a5486085900e1ffe464ef4241281a5fff80389235740d3f19d2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;30450221008fb3756fb3056df78cd43d0f2abe97a60c203eeb6d5e2180b9f7abad7ade375102207a488ae575abb88f1eaddfdbe72ad1c4738c62f8e96c448c5f7b1ad478199e5d&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="unlock_wallet">unlock_wallet<a class="headerlink" href="#unlock_wallet" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">unlock_wallet</span></code> is used to <em>unlock</em> the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">password</span></code>: <em>String</em>, the password that unlocks the wallet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;unlock_wallet&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier for the current wallet session.</li>
+<li><code class="codehilite"><span class="err">session_expiration_secs</span></code>: <em>number</em>, amount of seconds after which the session will expire.</li>
+<li><code class="codehilite"><span class="err">account_balance</span></code>: <em>number</em>, wallet's account balance in nano Wits.</li>
+<li><code class="codehilite"><span class="err">name</span></code>: <em>String</em>, human-friendly name for the wallet.</li>
+<li><code class="codehilite"><span class="err">caption</span></code>: <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite"><span class="err">current_account</span></code>: <em>number</em>, identifies the current active account in the session (the current version only supports the default account <code class="codehilite"><span class="err">0</span></code>).</li>
+<li><code class="codehilite"><span class="err">available_accounts</span></code>: <em>Array<number></em>, list of available accounts in the wallet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;account_balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;available_accounts&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mi">0</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;caption&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;current_account&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;session_expiration_secs&quot;</span><span class="p">:</span> <span class="mi">3200</span><span class="p">,</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9c4f690a50de45b91bb4a5d7fc964c6853ca4eb29fa4ed3e2c9ddfd3e2da45e7&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="update_wallet">update_wallet<a class="headerlink" href="#update_wallet" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">update_wallet</span></code> is used to update the name and/or caption of an existing wallet.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
+<li><code class="codehilite"><span class="err">name</span></code>: <em>String</em>, human-friendly name for the wallet.</li>
+<li><code class="codehilite"><span class="err">caption</span></code>: <em>String</em>, human-friendly caption for the wallet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;update_wallet&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Name&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;caption&quot;</span><span class="p">:</span> <span class="s2">&quot;New Caption&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">success</span></code>: <em>Boolean</em>, reporting if the wallet's update was successfull.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="validate_mnemonics">validate_mnemonics<a class="headerlink" href="#validate_mnemonics" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="err">validate_mnemonics</span></code> is used to verify that validity of the seed source that might be used to generate a new wallet.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite"><span class="err">seed_source</span></code>: <em><code class="codehilite"><span class="err">&quot;mnemonics&quot;|&quot;xprv&quot;</span></code></em>, literal to identify if the seed source is of the type <em>mnemonics</em> or <em>xprv</em>.</li>
+<li><code class="codehilite"><span class="err">seed_data</span></code>: <em>String</em>, containing the used seed data, either a list of mnemonic words or a <code class="codehilite"><span class="err">xprv</span></code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;validate_mnemonics&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span> 
+    <span class="nt">&quot;seed_source&quot;</span><span class="p">:</span> <span class="s2">&quot;mnemonics&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;seed_data&quot;</span><span class="p">:</span> <span class="s2">&quot;day voice lake monkey suit bread occur own cattle visit object ordinary&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code class="codehilite"><span class="err">valid</span></code>: <em>Boolean</em>, true if valid seed in form of <em>mnemonics</em> or <code class="codehilite"><span class="err">xprv</span></code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;valid&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../contributing/" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Contributing
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../protocol/sortition/" title="Sortition" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Sortition
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © 2018-2019 The Witnet Community. Available under <a href="https://www.gnu.org/licenses/fdl-1.3.en.html" rel="license">GNU Free Documentation License v1.3</a>
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/witnet" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://reddit.com/r/witnet" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://twitter.com/witnet_io" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+        <script src="../../extra.js"></script>
+      
+    
+  </body>
+</html>

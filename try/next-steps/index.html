@@ -744,6 +744,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/wallet-api/" title="Wallet API" class="md-nav__link">
+      Wallet API
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1116,7 +1128,7 @@
 <h2 id="the-first-minutes-and-hours-in-your-nodes-life">The first minutes and hours in your node's life<a class="headerlink" href="#the-first-minutes-and-hours-in-your-nodes-life" title="Permanent link">&para;</a></h2>
 <p>As soon as the <code class="codehilite"><span class="err">witnet_node</span></code> container is up, it will do the following things in order:</p>
 <ol>
-<li>Try to <strong>open connections to other nodes</strong> in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.</li>
+<li>Try to <strong>open connections to other nodes</strong> in the network. It needs 12 "outbound" connections. This should take from several seconds to a few minutes.</li>
 <li>Discover what is the <strong>tip of the block chain</strong>, and <strong>download all the blocks</strong> from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.</li>
 <li>Go into <strong><em>Synced</em> status</strong>. In Synced status, your node will <strong>validate transactions and blocks</strong> in real time, and it will try itself to <strong>propose block candidates</strong> and participate in <strong>resolving <em>data requests</em></strong>.</li>
 </ol>
@@ -1186,6 +1198,7 @@ A complete documentation of all the CLI methods is available in the <a href="/no
 <p>Despite its name, the <em>reputation</em> metric that exists in the Witnet protocol is not as vital as reputation is in real life.
 The reputation score of a node gives a rough idea about its performance, but it is heavily influenced by randomness and luck.
 It is perfectly normal that the reputation score goes up and down over time, sometimes smoothly, sometimes more abruptly.
+Likewise, there is probably nothing wrong if your node shows 0 reputation points or is marked as "not active".
 Do not get too obsessed about it!</p>
 </div>
 <h2 id="check-ports-and-incoming-connections">Check ports and incoming connections<a class="headerlink" href="#check-ports-and-incoming-connections" title="Permanent link">&para;</a></h2>
@@ -1286,7 +1299,7 @@ existing key could be dangerous. The process is quite simple:</p>
 <span class="go">    --volume ~/.witnet:/.witnet \</span>
 <span class="go">    --publish 21337:21337 \</span>
 <span class="go">    --restart always \</span>
-<span class="go">    witnet/witnet-rust</span>
+<span class="go">    witnet/witnet-rust \</span>
 <span class="go">    node server --master-key-import /.witnet/config/master.key</span>
 </code></pre></div></div>
 <input name="__tabs_8" type="radio" id="__tab_8_1" />
@@ -1302,7 +1315,7 @@ existing key could be dangerous. The process is quite simple:</p>
 <span class="go">    --volume ~/.witnet:/.witnet \</span>
 <span class="go">    --publish 21337:21337 \</span>
 <span class="go">    --restart always \</span>
-<span class="go">    witnet/witnet-rust</span>
+<span class="go">    witnet/witnet-rust \</span>
 <span class="go">    node server --master-key-import /.witnet/config/master.key</span>
 </code></pre></div></div>
 <input name="__tabs_8" type="radio" id="__tab_8_2" />
