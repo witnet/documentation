@@ -14,7 +14,7 @@ This is a quick checklist on what to look for:
 
 - **At least 2GB of RAM** to ensure your node doesn't crash during heavy network activity.
 - **A good amount of disk space** (somewhere in the 100s of GBs) is
-  better for long term storage of the blockchain. The node will not grow any more than 50GB per year.
+  better for long term storage of the blockchain. The node is expected not to grow any more than 75GB per year.
 - **Any modern laptop or desktop** will run it flawlessly.
 - Virtual private servers (VPS) should work too. [Here's a tutorial to set up a Witnet node on the popular VPS service, Digital Ocean][vpstutorial]. Take into account
   however that **some cloud providers may restrict the use of blockchain
