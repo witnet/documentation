@@ -19,7 +19,7 @@ This is a quick checklist on what to look for:
 - Virtual private servers (VPS) should work too. [Here is a tutorial to set up a Witnet node on the popular VPS service, Digital Ocean][vpstutorial]. Take into account
   however that **some cloud providers may restrict the use of blockchain
   protocols**. Also, your node may get [poor connectivity with the rest
-  of the network because of bucketing][bucketing], especially if you're running the node from a popular IP range (for example, from a well-known VPS service such as Digital Ocean).
+  of the network because of bucketing][bucketing], especially if you are running the node from a popular IP range (for example, from a well-known VPS service such as Digital Ocean).
 - **Raspberry Pis**, especially the *Pi 3 Model B* and *Pi 4 Model B*,
   are also supported and, in our experience, are a great, inexpensive
   way of running a Witnet node. [Here is a tutorial on how to set up a Witnet node on a Raspberry Pi][pitutorial] and [here is a $15 Raspberry Pi
