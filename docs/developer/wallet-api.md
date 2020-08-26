@@ -252,7 +252,7 @@ Request with parameters:
 - `address`: *String*, the recipient address.
 - `amount`: *number*, value to transfer in nanoWits.
 - `fee`: *number*, miner fee in nanoWits.
-- `label`: *String*, optional label to refer the vtt.
+- `label` (optional): *String*, label to refer the vtt.
 
 Example:
 
@@ -1149,10 +1149,11 @@ Response:
 ### shutdown
 
 To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.
+If no `session_id` is provided, wallet will be shutdown only if there are no open sessions.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+- `session_id` (optional): *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 
 ```json
 {
