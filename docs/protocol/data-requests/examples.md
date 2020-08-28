@@ -22,9 +22,9 @@ new Witnet.Script()
 [
   STRING_PARSEJSON,
   BYTES_ASMAP,
-  [ MAP_GET, "weather" ],
+  [MAP_GET, "weather"],
   BYTES_ASMAP,
-  [ MAP_GET, "temp" ],
+  [MAP_GET, "temp"],
   BYTES_ASFLOAT
 ]
 ```
@@ -33,9 +33,9 @@ new Witnet.Script()
 [
   69,
   116,
-  [ 97, "weather" ], 
+  [97, "weather"], 
   116,
-  [ 97, "temp" ], 
+  [97, "temp"], 
   114
 ]
 ```
@@ -56,19 +56,19 @@ new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.FLOAT])
 
 ```ts tab="RADON-AST"
 [
-  [ ARRAY_FILTER, FILTER_GREATERTHAN, -30 ],
-  [ ARRAY_FILTER, FILTER_LESSTHAN, 50 ],
-  [ ARRAY_FILTER, FILTER_DEVIATIONSTANDARD, 2 ],
-  [ ARRAY_REDUCE, REDUCER_AVERAGEMEAN ]
+  [ARRAY_FILTER, FILTER_GREATERTHAN, -30],
+  [ARRAY_FILTER, FILTER_LESSTHAN, 50],
+  [ARRAY_FILTER, FILTER_DEVIATIONSTANDARD, 2],
+  [ARRAY_REDUCE, REDUCER_AVERAGEMEAN]
 ]
 ```
 
 ```ts tab="RADON-JSON"
 [
-  [ 83, 0, -30 ],
-  [ 83, 1, 50 ],
-  [ 83, 5 ],
-  [ 87, 3 ]
+  [83, 0, -30],
+  [83, 1, 50],
+  [83, 5],
+  [87, 3]
 ]
 ```
 
@@ -96,15 +96,15 @@ new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.FLOAT])
 
 ```ts tab="RADON-AST"
 [ 
-  [ ARRAY_FILTER, FILTER_DEVIATIONSTANDARD, 2 ],
-  [ ARRAY_REDUCE, REDUCER_AVERAGEMEAN ]
+  [ARRAY_FILTER, FILTER_DEVIATIONSTANDARD, 2],
+  [ARRAY_REDUCE, REDUCER_AVERAGEMEAN]
 ]
 ```
 
 ```ts tab="RADON-JSON"
 [
-  [ 83, 5, 2 ],
-  [ 87, 3 ]
+  [83, 5, 2],
+  [87, 3]
 ]
 ```
 
@@ -142,11 +142,11 @@ new Witnet.Script([Witnet.TYPES.STRING])
 [
   STRING_PARSEJSON,
   BYTES_ASMAP,
-  [ MAP_GET , "bpi" ],
+  [MAP_GET , "bpi"],
   BYTES_ASMAP,
-  [ MAP_GET, "USD" ],
+  [MAP_GET, "USD"],
   BYTES_ASMAP,
-  [ MAP_GET, "rate_float" ],
+  [MAP_GET, "rate_float"],
   BYTES_ASFLOAT
 ]
 ```
@@ -155,11 +155,11 @@ new Witnet.Script([Witnet.TYPES.STRING])
 [
   69,
   116,
-  [ 97, "bpi" ],
+  [97, "bpi"],
   116,
-  [ 97, "usd" ],
+  [97, "usd"],
   116,
-  [ 97, "rate_float" ],
+  [97, "rate_float"],
   114
 ]
 ```
@@ -192,15 +192,15 @@ new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.FLOAT])
 
 ```ts tab="RADON-AST"
 [ 
-  [ ARRAY_FILTER, FILTER_DEVIATIONSTANDARD, 2 ],
-  [ ARRAY_REDUCE, REDUCER_AVERAGEMEAN ]
+  [ARRAY_FILTER, FILTER_DEVIATIONSTANDARD, 2],
+  [ARRAY_REDUCE, REDUCER_AVERAGEMEAN]
 ]
 ```
 
 ```ts tab="RADON-JSON"
 [
-  [ 83, 5, 2 ],
-  [ 87, 3 ]
+  [83, 5, 2],
+  [87, 3]
 ]
 ```
 
@@ -252,9 +252,9 @@ new Witnet.Script([Witnet.TYPES.STRING])
 [
   STRING_PARSEJSON,
   BYTES_TOMAP,
-  [ MAP_GET, "data" ],
+  [MAP_GET, "data"],
   BYTES_TOARRAY,
-  [ ARRAY_GET, 0 ],
+  [ARRAY_GET, 0],
   BYTES_ASARRAY
 ]
 ```
@@ -263,9 +263,9 @@ new Witnet.Script([Witnet.TYPES.STRING])
 [
   69,
   116,
-  [ 97, "data" ],
+  [97, "data"],
   112,
-  [ 85, 0 ],
+  [85, 0],
   115
 ]
 ```
@@ -296,23 +296,23 @@ new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.INTEGER])
 
 ```ts tab="RADON-AST"
 [
-  [ ARRAY_FILTER, FILTER_GREATEROREQUALTHAN, 0 ],
-  [ ARRAY_FILTER, FILTER_LESSOREQUALTHAN, 255 ],
-  [ ARRAY_REDUCE, REDUCER_AVERAGEMEAN ],
+  [ARRAY_FILTER, FILTER_GREATEROREQUALTHAN, 0],
+  [ARRAY_FILTER, FILTER_LESSOREQUALTHAN, 255],
+  [ARRAY_REDUCE, REDUCER_AVERAGEMEAN],
   FLOAT_ROUND,
-  [ INTEGER_GREATERTHAN, 127 ],
-  [ INTEGER_MATCH, { true: "tails" }, "heads" ]
+  [INTEGER_GREATERTHAN, 127],
+  [INTEGER_MATCH, { true: "tails" }, "heads"]
 ]
 ```
 
 ```ts tab="RADON-JSON"
 [
-  [ 83, 129, 0 ],
-  [ 83, 128, 255 ],
-  [ 87, 3 ],
+  [83, 129, 0],
+  [83, 128, 255],
+  [87, 3],
   60,
-  [ 36, 127 ],
-  [ 16, { true: 'tails' }, 'heads' ]
+  [36, 127],
+  [16, {true: 'tails'}, 'heads']
 ]
 ```
 

@@ -44,7 +44,7 @@ returns the average mean of the `Float` values that pass the filter:
 // values that pass the filter.
 const aggregator = new Witnet.Aggregator({
   filters: [
-   [ Witnet.Types.FILTERS.deviationStandard, 1.5 ]
+   [Witnet.Types.FILTERS.deviationStandard, 1.5]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })
@@ -66,7 +66,7 @@ similar to the aggregation function:
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
-   [ Witnet.Types.FILTERS.deviationStandard, 1.0 ]
+   [Witnet.Types.FILTERS.deviationStandard, 1.0]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })
@@ -102,7 +102,7 @@ const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice
 // values that pass the filter.
 const aggregator = new Witnet.Aggregator({
   filters: [
-   [ Witnet.Types.FILTERS.deviationStandard, 1.5 ]
+   [Witnet.Types.FILTERS.deviationStandard, 1.5]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })
@@ -112,7 +112,7 @@ const aggregator = new Witnet.Aggregator({
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
-   [ Witnet.Types.FILTERS.deviationStandard, 1.0 ]
+   [Witnet.Types.FILTERS.deviationStandard, 1.0]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })
