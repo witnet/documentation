@@ -532,32 +532,34 @@ cat examples/bitcoin_price.json | cargo run -- node raw
 
 ### reputation
 
-Displays the reputation score associated with a given Witnet address.
+Displays the reputation score associated with a given Witnet address and its elegibility to mine a block.
 
 * `--address=address`: address for which to get reputation score. If omitted, defaults to the node's own address.
 
 ```console tab="Docker"
 docker exec witnet_node witnet node reputation
-docker exec witnet_node witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+docker exec witnet_node witnet node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4
 ```
 
 ```console tab="Binary"
 witnet node reputation
-witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+witnet node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4
 ```
 
 ```console tab="Cargo"
 cargo run -- node reputation
-cargo run -- node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+cargo run -- node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4
 ```
 
 Example output:
 
 ```
-Identity twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr has 1 reputation and is active
+[A] twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4 -> Reputation: 1, Eligibility: 28.571429%
 ```
 
-Adding the flag `--all` flag lists all the nodes having non-zero reputation.
+The parameter `[A]` notifies that the node is active.
+
+Adding the flag `--all` lists all the nodes active and their elegibility. It also lists the nodes with reputation grater than 0 but not active, if any.
 
 !!! tip
     Note that it is perfectly normal for a node to show 0 reputation for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.
@@ -579,8 +581,10 @@ Example output:
 
 ```
 Total Reputation: {
-    [A] twit1t99a5r6d0lqstl8rdkqw3ywfs2y4zwqhy5zprt: 1
-    [A] twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr: 1
+    [A] twit1hgert0dwtfmfcnv34epvjyhwamny20vkx09zjc -> Reputation: 2, Eligibility: 42.857143%
+    [A] twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4 -> Reputation: 1, Eligibility: 28.571429%
+    [A] twit18gqex3jg4pazz5am2588fc89qyvg350gs603j2 -> Reputation: 1, Eligibility: 28.571429%
+
 }
 ```
 
