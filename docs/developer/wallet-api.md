@@ -1115,13 +1115,51 @@ Example of a `send_transaction` for sending 500 nanoWits to an address.
 }
 ```
 
-The response contains the result of the Witnet node JsonRpc response.
+The response includes the JsonRPC response after sending the transaction to the node API and the balance movement that affects the wallet:
 
+- `balance_movement`: *BalanceMovement*, the wallet balance movement, which is pending and has not yet been indexed into a block.
+- `jsonrpc_result`: *Bool*, the result of sending the transaction to the node using the `intentory` JsonRPC API method.
+
+```
 {
   "jsonrpc": "2.0",
-  "result": true,
+  "result": {
+    "balance_movement": {
+      "amount": 1,
+      "transaction": {
+        "block": {
+          "block_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "epoch": 0
+        },
+        "confirmed": false,
+        "data": {
+          "value_transfer": {
+            "inputs": [],
+            "outputs": [
+              {
+                "address": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk",
+                "time_lock": 0,
+                "value": 1
+              },
+              {
+                "address": "twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq",
+                "time_lock": 0,
+                "value": 998
+              }
+            ]
+          }
+        },
+        "hash": "ddab6bee4c95800cca06b3d1e2fafd5f47b97e73f8b6725916ccac6be6537041",
+        "miner_fee": 0,
+        "timestamp": 1601544326
+      },
+      "type": "NEGATIVE"
+    },
+    "jsonrpc_result": true
+  },
   "id": 1
 }
+```
 
 
 ### set
