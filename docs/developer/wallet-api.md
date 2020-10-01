@@ -21,14 +21,14 @@ node_url = "127.0.0.1:21338"
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`                                | `address`, `path`                                    |
 | [get](#get)                                 | `session_id`, `wallet_id`, `key`                         | `value`                                              |
 | [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`             | `address[]`, `total`                                 |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `total`                                              |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                | `confirmed`, `local`, `unconfirmed`                  |
 | [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, `offset`, `limit`             | `transactions[]`, `total`                            | 
 | [get_wallet_infos](#get_wallet_infos)       | (none)                                                   | `wallet_info[]`                                      |
 | [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                | `success`                                            |
 | [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                    | (none)                                               | 
 | [rpc.on](#rpc.on)                           | `session_id`                                             | (`subscription_id`)                                  | 
 | [run_rad_request](#run_rad_request)         | `request`                                                | `result`                                             | 
-| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                 | (none)                                               | x
+| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                 | `balance_movement`, `jsonrpc_result`                 |
 | [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                | (none)                                               |
 | [shutdown](#shutdown)                       | `session_id`                                             | (none)                                               |
 | [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`         | `chaincode`, `public_key`, `signature`               | 
