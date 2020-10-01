@@ -582,15 +582,29 @@ Request with parameters:
 }
 ```
 
-Response:
+Response with different types of balances:
 
-- `total`: *String*, total balance of the wallet in nanoWits (including timelocked transactions).
+- `local`: *number*, amount of local pending movements not yet indexed in a block.
+- `unconfirmed`: *BalanceInfo*, total amount of wallet's funds after last block, but not yet confirmed by a superblock.
+  - `available`: *number*, unconfirmed expendable funds.
+  - `locked`: *number*, unconfirmed time-locked funds.
+- `confirmed`: *BalanceInfo*, total amount of wallet's funds after last confirmed superblock.
+  - `available`: *number*, confirmed expendable funds.
+  - `locked`: *number*, confirmed time-locked funds.
 
 ```json
 {
   "jsonrpc": "2.0",
   "result": {
-    "total": "0"
+    "confirmed": {
+      "available": 0,
+      "locked": 0
+    },
+    "local": 0,
+    "unconfirmed": {
+      "available": 0,
+      "locked": 0
+    }
   },
   "id": "1"
 }
