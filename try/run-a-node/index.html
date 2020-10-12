@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#running-a-node-in-the-witnet-testnet" tabindex="0" class="md-skip">
+      <a href="#running-a-node-in-the-witnet-mainnet" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -1042,10 +1042,8 @@
                   <a href="https://github.com/witnet/documentation/blob/master/docs/try/run-a-node.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="running-a-node-in-the-witnet-testnet">Running a Node in the Witnet Testnet<a class="headerlink" href="#running-a-node-in-the-witnet-testnet" title="Permanent link">&para;</a></h1>
-<p>The Witnet Testnet is open for anyone to join and test it by running
-their own full node. Running a node on the Witnet Mainnet is not
-possible before Mainnet is launched. </p>
+                <h1 id="running-a-node-in-the-witnet-mainnet">Running a Node in the Witnet Mainnet<a class="headerlink" href="#running-a-node-in-the-witnet-mainnet" title="Permanent link">&para;</a></h1>
+<p>The Witnet Mainnet is open for anyone to join and and run their own full node.</p>
 <div class="admonition tip">
 <p>You do not need to run a Witnet node to use Witnet from your
 Ethereum smart contracts. <strong>If you are a smart contracts developer,
@@ -1061,8 +1059,8 @@ more complex setups, take a look at the <a href="/node-operators/docker-compose-
 <p>Firstly, you need to <a href="https://docs.docker.com/get-docker/">install Docker</a> on the device you will
 be running the node from. Note: some GNU/Linux distributions require some
 <a href="https://docs.docker.com/install/linux/linux-postinstall/">extra steps</a> to get Docker up and running.   </p>
-<p>The Witnet docker image downloads and runs a Witnet node in the latest
-Testnet in just a matter on seconds. To start a node, use:</p>
+<p>The Witnet docker image downloads and runs a Witnet node in in just a matter on seconds.
+To start a node, use:</p>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Multiline</label>
@@ -1080,7 +1078,7 @@ Testnet in just a matter on seconds. To start a node, use:</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Raspberry Pi users</p>
-<p>For some reason, Raspbian on Raspberry Pi (all versions) requires your containers to operate
+<p>For some reason, Docker on Raspbian for all Raspberry models requires your containers to operate
 in privileged mode. When running the command above, simply add the <code class="codehilite"><span class="err">--privileged</span></code> flag:
 <div class="codehilite"><pre><span></span><code><span class="go">docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust</span>
 </code></pre></div></p>

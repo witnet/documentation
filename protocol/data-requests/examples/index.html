@@ -1186,9 +1186,9 @@ returns the current weather conditions in Berlin.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>
   <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;weather&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;weather&quot;</span><span class="p">],</span>
   <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span><span class="p">],</span>
   <span class="nx">BYTES_ASFLOAT</span>
 <span class="p">]</span>
 </code></pre></div></div>
@@ -1197,9 +1197,9 @@ returns the current weather conditions in Berlin.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="mi">69</span><span class="p">,</span>
   <span class="mi">116</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;weather&quot;</span> <span class="p">],</span> 
+  <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;weather&quot;</span><span class="p">],</span> 
   <span class="mi">116</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span> <span class="p">],</span> 
+  <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;temp&quot;</span><span class="p">],</span> 
   <span class="mi">114</span>
 <span class="p">]</span>
 </code></pre></div></div>
@@ -1221,19 +1221,19 @@ returns the current weather conditions in Berlin.</p>
 <input name="__tabs_2" type="radio" id="__tab_2_1" />
 <label for="__tab_2_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_GREATERTHAN</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_LESSTHAN</span><span class="p">,</span> <span class="mi">50</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_DEVIATIONSTANDARD</span><span class="p">,</span> <span class="mi">2</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span> <span class="p">]</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_GREATERTHAN</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_LESSTHAN</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_DEVIATIONSTANDARD</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_2" type="radio" id="__tab_2_2" />
 <label for="__tab_2_2">RADON-JSON</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">5</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">87</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_2" type="radio" id="__tab_2_3" />
@@ -1262,15 +1262,15 @@ data points.</p>
 <input name="__tabs_3" type="radio" id="__tab_3_1" />
 <label for="__tab_3_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span> 
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_DEVIATIONSTANDARD</span><span class="p">,</span> <span class="mi">2</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span> <span class="p">]</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_DEVIATIONSTANDARD</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_3" type="radio" id="__tab_3_2" />
 <label for="__tab_3_2">RADON-JSON</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">87</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_3" type="radio" id="__tab_3_3" />
@@ -1307,11 +1307,11 @@ the current price of a bitcoin in US dollars.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>
   <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">MAP_GET</span> <span class="p">,</span> <span class="s2">&quot;bpi&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">MAP_GET</span> <span class="p">,</span> <span class="s2">&quot;bpi&quot;</span><span class="p">],</span>
   <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;USD&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;USD&quot;</span><span class="p">],</span>
   <span class="nx">BYTES_ASMAP</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;rate_float&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;rate_float&quot;</span><span class="p">],</span>
   <span class="nx">BYTES_ASFLOAT</span>
 <span class="p">]</span>
 </code></pre></div></div>
@@ -1320,11 +1320,11 @@ the current price of a bitcoin in US dollars.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="mi">69</span><span class="p">,</span>
   <span class="mi">116</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;bpi&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;bpi&quot;</span><span class="p">],</span>
   <span class="mi">116</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;usd&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;usd&quot;</span><span class="p">],</span>
   <span class="mi">116</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;rate_float&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;rate_float&quot;</span><span class="p">],</span>
   <span class="mi">114</span>
 <span class="p">]</span>
 </code></pre></div></div>
@@ -1358,15 +1358,15 @@ data points.</p>
 <input name="__tabs_5" type="radio" id="__tab_5_1" />
 <label for="__tab_5_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span> 
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_DEVIATIONSTANDARD</span><span class="p">,</span> <span class="mi">2</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span> <span class="p">]</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_DEVIATIONSTANDARD</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_5" type="radio" id="__tab_5_2" />
 <label for="__tab_5_2">RADON-JSON</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">87</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_5" type="radio" id="__tab_5_3" />
@@ -1414,9 +1414,9 @@ actually fell, and maps that onto a <code class="codehilite"><span class="err">S
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="nx">STRING_PARSEJSON</span><span class="p">,</span>
   <span class="nx">BYTES_TOMAP</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">MAP_GET</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">],</span>
   <span class="nx">BYTES_TOARRAY</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">ARRAY_GET</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_GET</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
   <span class="nx">BYTES_ASARRAY</span>
 <span class="p">]</span>
 </code></pre></div></div>
@@ -1425,9 +1425,9 @@ actually fell, and maps that onto a <code class="codehilite"><span class="err">S
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
   <span class="mi">69</span><span class="p">,</span>
   <span class="mi">116</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span> <span class="p">],</span>
+  <span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">],</span>
   <span class="mi">112</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+  <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
   <span class="mi">115</span>
 <span class="p">]</span>
 </code></pre></div></div>
@@ -1460,23 +1460,23 @@ actually fell, and maps that onto a <code class="codehilite"><span class="err">S
 <input name="__tabs_7" type="radio" id="__tab_7_1" />
 <label for="__tab_7_1">RADON-AST</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_GREATEROREQUALTHAN</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_LESSOREQUALTHAN</span><span class="p">,</span> <span class="mi">255</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span> <span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_GREATEROREQUALTHAN</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_FILTER</span><span class="p">,</span> <span class="nx">FILTER_LESSOREQUALTHAN</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVERAGEMEAN</span><span class="p">],</span>
   <span class="nx">FLOAT_ROUND</span><span class="p">,</span>
-  <span class="p">[</span> <span class="nx">INTEGER_GREATERTHAN</span><span class="p">,</span> <span class="mi">127</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="nx">INTEGER_MATCH</span><span class="p">,</span> <span class="p">{</span> <span class="kc">true</span><span class="o">:</span> <span class="s2">&quot;tails&quot;</span> <span class="p">},</span> <span class="s2">&quot;heads&quot;</span> <span class="p">]</span>
+  <span class="p">[</span><span class="nx">INTEGER_GREATERTHAN</span><span class="p">,</span> <span class="mi">127</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">INTEGER_MATCH</span><span class="p">,</span> <span class="p">{</span> <span class="kc">true</span><span class="o">:</span> <span class="s2">&quot;tails&quot;</span> <span class="p">},</span> <span class="s2">&quot;heads&quot;</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_7" type="radio" id="__tab_7_2" />
 <label for="__tab_7_2">RADON-JSON</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="p">[</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">3</span> <span class="p">],</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">129</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">83</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">87</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
   <span class="mi">60</span><span class="p">,</span>
-  <span class="p">[</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">127</span> <span class="p">],</span>
-  <span class="p">[</span> <span class="mi">16</span><span class="p">,</span> <span class="p">{</span> <span class="kc">true</span><span class="o">:</span> <span class="s1">&#39;tails&#39;</span> <span class="p">},</span> <span class="s1">&#39;heads&#39;</span> <span class="p">]</span>
+  <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">127</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="p">{</span><span class="kc">true</span><span class="o">:</span> <span class="s1">&#39;tails&#39;</span><span class="p">},</span> <span class="s1">&#39;heads&#39;</span><span class="p">]</span>
 <span class="p">]</span>
 </code></pre></div></div>
 <input name="__tabs_7" type="radio" id="__tab_7_3" />

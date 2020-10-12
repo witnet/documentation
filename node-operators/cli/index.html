@@ -1820,7 +1820,7 @@ the first line is a request, the second line is a response.</p>
 </code></pre></div></div>
 </div>
 <h3 id="reputation">reputation<a class="headerlink" href="#reputation" title="Permanent link">&para;</a></h3>
-<p>Displays the reputation score associated with a given Witnet address.</p>
+<p>Displays the reputation score associated with a given Witnet address and its elegibility to mine a block.</p>
 <ul>
 <li><code class="codehilite"><span class="err">--address=address</span></code>: address for which to get reputation score. If omitted, defaults to the node's own address.</li>
 </ul>
@@ -1828,24 +1828,25 @@ the first line is a request, the second line is a response.</p>
 <input name="__tabs_24" type="radio" id="__tab_24_0" checked="checked" />
 <label for="__tab_24_0">Docker</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">docker exec witnet_node witnet node reputation</span>
-<span class="go">docker exec witnet_node witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
+<span class="go">docker exec witnet_node witnet node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4</span>
 </code></pre></div></div>
 <input name="__tabs_24" type="radio" id="__tab_24_1" />
 <label for="__tab_24_1">Binary</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node reputation</span>
-<span class="go">witnet node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
+<span class="go">witnet node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4</span>
 </code></pre></div></div>
 <input name="__tabs_24" type="radio" id="__tab_24_2" />
 <label for="__tab_24_2">Cargo</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node reputation</span>
-<span class="go">cargo run -- node reputation --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
+<span class="go">cargo run -- node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4</span>
 </code></pre></div></div>
 </div>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Identity twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr has 1 reputation and is active</span>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="n">twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Reputation</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">Eligibility</span><span class="p">:</span><span class="w"> </span><span class="mf">28.571429</span><span class="o">%</span><span class="w"></span>
 </code></pre></div>
 
-<p>Adding the flag <code class="codehilite"><span class="err">--all</span></code> flag lists all the nodes having non-zero reputation.</p>
+<p>The parameter <code class="codehilite"><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"></span></code> notifies that the node is active.</p>
+<p>Adding the flag <code class="codehilite"><span class="err">--all</span></code> lists all the nodes active and their elegibility. It also lists the nodes with reputation grater than 0 but not active, if any.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Note that it is perfectly normal for a node to show 0 reputation for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.</p>
@@ -1866,8 +1867,10 @@ the first line is a request, the second line is a response.</p>
 </div>
 <p>Example output:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">Total</span><span class="w"> </span><span class="nl">Reputation</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="nl">twit1t99a5r6d0lqstl8rdkqw3ywfs2y4zwqhy5zprt</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="nl">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="n">twit1hgert0dwtfmfcnv34epvjyhwamny20vkx09zjc</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Reputation</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nl">Eligibility</span><span class="p">:</span><span class="w"> </span><span class="mf">42.857143</span><span class="o">%</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="n">twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Reputation</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">Eligibility</span><span class="p">:</span><span class="w"> </span><span class="mf">28.571429</span><span class="o">%</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="n">twit18gqex3jg4pazz5am2588fc89qyvg350gs603j2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Reputation</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">Eligibility</span><span class="p">:</span><span class="w"> </span><span class="mf">28.571429</span><span class="o">%</span><span class="w"></span>
+
 <span class="err">}</span><span class="w"></span>
 </code></pre></div>
 

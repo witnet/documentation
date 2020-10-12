@@ -1109,8 +1109,8 @@ that you will need to export:</p>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
-  <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
   <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
 <span class="c1">// Do not forget to export the request object</span>
@@ -1255,7 +1255,7 @@ look more or less like this:</p>
 <span class="c1">// values that pass the filter.</span>
 <span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
-   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span> <span class="p">]</span>
+   <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
   <span class="p">],</span>
   <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
 <span class="p">})</span>
@@ -1265,7 +1265,7 @@ look more or less like this:</p>
 <span class="c1">// values that pass the filter.</span>
 <span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
-   <span class="p">[</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span> <span class="p">]</span>
+   <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
   <span class="p">],</span>
   <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
 <span class="p">})</span>

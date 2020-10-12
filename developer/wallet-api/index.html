@@ -1648,7 +1648,7 @@ It can be set in the Witnet configuration file as follows:</p>
 <li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, the recipient address.</li>
 <li><code class="codehilite"><span class="err">amount</span></code>: <em>number</em>, value to transfer in nanoWits.</li>
 <li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, miner fee in nanoWits.</li>
-<li><code class="codehilite"><span class="err">label</span></code>: <em>String</em>, optional label to refer the vtt.</li>
+<li><code class="codehilite"><span class="err">label</span></code> (optional): <em>String</em>, label to refer the vtt.</li>
 </ul>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -2463,10 +2463,11 @@ It can be set in the Witnet configuration file as follows:</p>
 </code></pre></div>
 
 <h3 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
-<p>To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.</p>
+<p>To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.
+If no <code class="codehilite"><span class="err">session_id</span></code> is provided, wallet will be shutdown only if there are no open sessions.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite"><span class="err">session_id</span></code> (optional): <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
