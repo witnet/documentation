@@ -1,8 +1,6 @@
-# Running a Node in the Witnet Testnet
+# Running a Node in the Witnet Mainnet
 
-The Witnet Testnet is open for anyone to join and test it by running
-their own full node. Running a node on the Witnet Mainnet is not
-possible before Mainnet is launched. 
+The Witnet Mainnet is open for anyone to join and and run their own full node.
 
 !!! tip ""
     You do not need to run a Witnet node to use Witnet from your
@@ -24,8 +22,8 @@ Firstly, you need to [install Docker][docker] on the device you will
 be running the node from. Note: some GNU/Linux distributions require some
 [extra steps][docker-extra-steps] to get Docker up and running.   
 
-The Witnet docker image downloads and runs a Witnet node in the latest
-Testnet in just a matter on seconds. To start a node, use:
+The Witnet docker image downloads and runs a Witnet node in in just a matter on seconds.
+To start a node, use:
 
 ```console tab="Multiline"
 docker run -d \
@@ -41,7 +39,7 @@ docker run -d --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:213
 ```
 
 !!! warning "Raspberry Pi users"
-    For some reason, Raspbian on Raspberry Pi (all versions) requires your containers to operate
+    For some reason, Docker on Raspbian for all Raspberry models requires your containers to operate
     in privileged mode. When running the command above, simply add the `--privileged` flag:
     ```console
     docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
