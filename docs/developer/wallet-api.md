@@ -15,7 +15,7 @@ node_url = "127.0.0.1:21338"
 | ------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------- |
 | [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`                             | `bytes`, `transaction`, `transaction_id`             |
 | [create_mnemonics](#create_mnemonics)       | `length`                                                                | `mnemonics`                                          |
-| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `pkh`, `value`, `fee`                        | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `address`, `value`, `fee`, (`time_lock`)     | `bytes`, `metadata`, `transaction`, `transaction_id` |
 | [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`, (`overwrite`)| `wallet_id`                                          |
 | [close_session](#close_session)             | `session_id`                                                            | `success`                                            |
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                                 | `address`, `path`                                    |
@@ -180,7 +180,7 @@ Example of a `create_data_request` response:
           ],
           "outputs": [
             {
-              "pkh": "twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq",
+              "address": "twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq",
               "time_lock": 0,
               "value": 124999996910
             }
@@ -310,12 +310,12 @@ The `create_vtt` response will include all the information about the transaction
           ],
           "outputs": [
             {
-              "pkh": "twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c",
+              "address": "twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c",
               "time_lock": 0,
               "value": 1
             },
             {
-              "pkh": "twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs",
+              "address": "twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs",
               "time_lock": 0,
               "value": 124999999998
             }
@@ -1126,12 +1126,12 @@ Example of a `send_transaction` for sending 500 nanoWits to an address.
           ],
           "outputs": [
             {
-              "pkh": "twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7",
+              "address": "twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7",
               "time_lock": 0,
               "value": 500
             },
             {
-              "pkh": "twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l",
+              "address": "twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l",
               "time_lock": 0,
               "value": 49470
             }
