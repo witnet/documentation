@@ -294,7 +294,7 @@ The `create_vtt` response will include all the information about the transaction
   "result": {
     "bytes": "0add010a670a280a260a220a204c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add1001121a0a160a149a6c45dc0d8546ab8a3fca85def0cbff89cdfb521001121f0a160a1425e15594103fde1d9864807d091923ab648d6d1f10fec3d2d4d10312720a4b0a490a4730450221008e0c49acdcc92f63c6c71aa1ce7bb4d0524775c8e0af9d597d1b8bdfd8d2741e02201edd0d276786f7fcf319c4157501dca9c74457cac3b385a7475e6de85e1d826712230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00",
     "metadata": {
-      "fee": 448,
+      "fee": 1,
       "time_lock": 0,
       "to": "wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f",
       "value": 1
