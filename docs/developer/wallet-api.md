@@ -20,7 +20,7 @@ node_url = "127.0.0.1:21338"
 | [close_session](#close_session)             | `session_id`                                                          | `success`                                            |
 | [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                               | `address`, `path`                                    |
 | [get](#get)                                 | `session_id`, `wallet_id`, `key`                                      | `value`                                              |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`                          | `address[]`, `total`                                 |
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`, (`external`)            | `address[]`, `total`                                 |
 | [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                             | `confirmed`, `local`, `unconfirmed`                  |
 | [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, `offset`, `limit`                          | `transactions[]`, `total`                            | 
 | [get_wallet_infos](#get_wallet_infos)       | (none)                                                                | `wallet_info[]`                                      |
@@ -507,6 +507,7 @@ Request with parameters:
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 - `offset` (optional): *number*, initial position of the address list to be queried (by default is set to `0`).
 - `limit` (optional): *number*, size of the address list to be returned (by default is set to `25`).
+- `external` (optional): *Boolean*, if set to false it will get internal addresses.
 
 ```json
 {
