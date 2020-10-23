@@ -34,7 +34,7 @@ node_url = "127.0.0.1:21338"
 | [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                      | `chaincode`, `public_key`, `signature`               | 
 | [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                               | `session_id`, `session_expiration_secs`, ...         |
 | [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`                          | `success`                                            |
-| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                                            | `valid`                                              |
+| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                                            | `exist`, `wallet_id`                                 |
 
 
 ## Wallet API Endpoints
@@ -1388,7 +1388,8 @@ Response:
 {
   "jsonrpc": "2.0",
   "result": {
-    "valid": true
+    "exist": false,
+    "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
   },
   "id": 1
 }
