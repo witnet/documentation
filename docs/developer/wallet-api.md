@@ -18,7 +18,7 @@ node_url = "127.0.0.1:21338"
 | [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `pkh`, `value`, `fee`                      | `bytes`, `metadata`, `transaction`, `transaction_id` |
 | [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`, `overwrite`| `wallet_id`                                          |
 | [close_session](#close_session)             | `session_id`                                                          | `success`                                            |
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`                                             | `address`, `path`                                    |
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                               | `address`, `path`                                    |
 | [get](#get)                                 | `session_id`, `wallet_id`, `key`                                      | `value`                                              |
 | [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, `offset`, `limit`                          | `address[]`, `total`                                 |
 | [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                             | `confirmed`, `local`, `unconfirmed`                  |
@@ -428,6 +428,7 @@ Request with parameters:
 
 - `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+- `external` (optional): *Boolean*, if set to false it will generate an internal address.
 
 ```json
 {
