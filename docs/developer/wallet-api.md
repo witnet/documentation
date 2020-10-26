@@ -34,7 +34,7 @@ node_url = "127.0.0.1:21338"
 | [shutdown](#shutdown)                       | `session_id`                                                            | (none)                                               |
 | [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                        | `chaincode`, `public_key`, `signature`               | 
 | [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                                 | `session_id`, `session_expiration_secs`, ...         |
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `caption`                            | `success`                                            |
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, `name`, `description`                        | `success`                                            |
 | [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`                                              | `exist`, `wallet_id`                                 |
 
 
@@ -1367,8 +1367,8 @@ Request with parameters:
 
 - `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
 - `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
-- `name`: *String*, human-friendly name for the wallet.
-- `caption`: *String*, human-friendly caption for the wallet.
+- `name`: *String*, wallet name shown in [get_wallet_infos](#get_wallet_infos).
+- `description`: *String*, wallet private description (only available for authenticated clients after [unlock_wallet](#unlock_wallet)).
 
 ```json
 {
@@ -1378,7 +1378,7 @@ Request with parameters:
     "session_id": "f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870",
     "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667",
     "name": "New Name",
-    "caption": "New Caption"
+    "description": "New Description"
   },
   "id": 1
 }
