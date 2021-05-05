@@ -873,11 +873,6 @@
 
     <!-- Render item list -->
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -891,22 +886,20 @@
                   <a href="https://github.com/witnet/documentation/blob/master/docs/node-operators/systemd-service.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="run-as-systemd-service">Run as <code class="codehilite"><span class="err">systemd</span></code> service<a class="headerlink" href="#run-as-systemd-service" title="Permanent link">&para;</a></h1>
-<p>The <code class="codehilite"><span class="err">runner.sh</span></code> script automatically downloads and installs the latest version of the Witnet node software (<code class="codehilite"><span class="err">witnet-rust</span></code>). It can also be used to update to the latest version, since it will keep all the block chain data and the configuration file in the hidden <code class="codehilite"><span class="na">.witnet</span></code> directory.</p>
-<p>For Testnet 7.3 and greater, the configuration file needs to be customized with the public IP and port of the node, which must be set at the <code class="codehilite"><span class="err">public_addr</span></code> field in <code class="codehilite"><span class="err">witnet.toml</span></code> .</p>
+                <h1 id="run-as-systemd-service">Run as <code class="codehilite">systemd</code> service<a class="headerlink" href="#run-as-systemd-service" title="Permanent link">&para;</a></h1>
+<p>The <code class="codehilite">runner.sh</code> script automatically downloads and installs the latest version of the Witnet node software (<code class="codehilite">witnet-rust</code>). It can also be used to update to the latest version, since it will keep all the block chain data and the configuration file in the hidden <code class="codehilite"><span class="na">.witnet</span></code> directory.</p>
+<p>For Testnet 7.3 and greater, the configuration file needs to be customized with the public IP and port of the node, which must be set at the <code class="codehilite">public_addr</code> field in <code class="codehilite">witnet.toml</code> .</p>
 <ul>
 <li>Install latest version of ca-certificates to download safely from GitHub:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo apt install ca-certificates
 sudo update-ca-certificates
 </code></pre></div>
-
 <ul>
-<li>Create the <code class="codehilite"><span class="err">witnet</span></code> user dedicated to running the node:</li>
+<li>Create the <code class="codehilite">witnet</code> user dedicated to running the node:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo adduser witnet
 </code></pre></div>
-
 <ul>
 <li>Clone the project's GitHub repository into your home directory and enter it:</li>
 </ul>
@@ -914,43 +907,36 @@ sudo update-ca-certificates
 git clone https://github.com/witnet/witnet-operator-tools.git
 <span class="nb">cd</span> witnet-operator-tools
 </code></pre></div>
-
 <ul>
-<li>Install latest version with the <code class="codehilite"><span class="err">witnet</span></code> user dedicated to running the node:</li>
+<li>Install latest version with the <code class="codehilite">witnet</code> user dedicated to running the node:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo -u witnet ./systemd/runner.sh
 </code></pre></div>
-
 <ul>
-<li>Copy the <code class="codehilite"><span class="err">witnet.service</span></code> file into <code class="codehilite"><span class="err">/lib/systemd/system/</span></code>:</li>
+<li>Copy the <code class="codehilite">witnet.service</code> file into <code class="codehilite">/lib/systemd/system/</code>:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo cp systemd/witnet.service /lib/systemd/system/witnet.service
 </code></pre></div>
-
 <ul>
-<li>Every time you change the <code class="codehilite"><span class="err">witnet.service</span></code> file, you need to reload the <code class="codehilite"><span class="err">systemd</span></code> daemon:</li>
+<li>Every time you change the <code class="codehilite">witnet.service</code> file, you need to reload the <code class="codehilite">systemd</code> daemon:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo systemctl daemon-reload
 </code></pre></div>
-
 <ul>
 <li>Enable the service:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> witnet.service
 </code></pre></div>
-
 <ul>
 <li>Start the service:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>sudo systemctl start witnet.service
 </code></pre></div>
-
 <ul>
 <li>See the logs of the service:</li>
 </ul>
 <div class="codehilite"><pre><span></span><code>journalctl -f -u witnet.service
 </code></pre></div>
-
 <ul>
 <li>When you want to restart the service:</li>
 </ul>

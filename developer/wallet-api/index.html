@@ -709,6 +709,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#export_master_key" class="md-nav__link">
+    export_master_key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generate_address" class="md-nav__link">
     generate_address
   </a>
@@ -767,6 +774,13 @@
           <li class="md-nav__item">
   <a href="#rpcon" class="md-nav__link">
     rpc.on
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resync_wallet" class="md-nav__link">
+    resync_wallet
   </a>
   
 </li>
@@ -844,11 +858,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1167,6 +1176,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#export_master_key" class="md-nav__link">
+    export_master_key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generate_address" class="md-nav__link">
     generate_address
   </a>
@@ -1225,6 +1241,13 @@
           <li class="md-nav__item">
   <a href="#rpcon" class="md-nav__link">
     rpc.on
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resync_wallet" class="md-nav__link">
+    resync_wallet
   </a>
   
 </li>
@@ -1302,11 +1325,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1321,12 +1339,11 @@
                 
                 
                 <h1 id="wallet-server-api">Wallet Server API<a class="headerlink" href="#wallet-server-api" title="Permanent link">&para;</a></h1>
-<p>The wallet exposes a JSON-RPC API over Websocket by default at the URL <code class="codehilite"><span class="err">127.0.0.1:21338</span></code>.
+<p>The wallet exposes a JSON-RPC API over Websocket by default at the URL <code class="codehilite"><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mf">21338</span></code>.
 It can be set in the Witnet configuration file as follows:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">[wallet]</span>
 <span class="n">node_url</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1:21338&quot;</span>
 </code></pre></div>
-
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1339,133 +1356,144 @@ It can be set in the Witnet configuration file as follows:</p>
 <tbody>
 <tr>
 <td><a href="#create_data_request">create_data_request</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">request</span></code>, <code class="codehilite"><span class="err">fee</span></code></td>
-<td><code class="codehilite"><span class="err">bytes</span></code>, <code class="codehilite"><span class="err">transaction</span></code>, <code class="codehilite"><span class="err">transaction_id</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">request</code>, <code class="codehilite">fee</code>, (<code class="codehilite">fee_type</code>)</td>
+<td><code class="codehilite">bytes</code>, <code class="codehilite">transaction</code>, <code class="codehilite">transaction_id</code></td>
 </tr>
 <tr>
 <td><a href="#create_mnemonics">create_mnemonics</a></td>
-<td><code class="codehilite"><span class="err">length</span></code></td>
-<td><code class="codehilite"><span class="err">mnemonics</span></code></td>
+<td><code class="codehilite">length</code></td>
+<td><code class="codehilite">mnemonics</code></td>
 </tr>
 <tr>
 <td><a href="#create_vtt">create_vtt</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">pkh</span></code>, <code class="codehilite"><span class="err">value</span></code>, <code class="codehilite"><span class="err">fee</span></code></td>
-<td><code class="codehilite"><span class="err">bytes</span></code>, <code class="codehilite"><span class="err">metadata</span></code>, <code class="codehilite"><span class="err">transaction</span></code>, <code class="codehilite"><span class="err">transaction_id</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">address</code>, <code class="codehilite">value</code>, <code class="codehilite">fee</code>, (<code class="codehilite">time_lock</code>), (<code class="codehilite">fee_type</code>)</td>
+<td><code class="codehilite">bytes</code>, <code class="codehilite">metadata</code>, <code class="codehilite">transaction</code>, <code class="codehilite">transaction_id</code></td>
 </tr>
 <tr>
 <td><a href="#create_wallet">create_wallet</a></td>
-<td><code class="codehilite"><span class="err">name</span></code>, <code class="codehilite"><span class="err">caption</span></code>, <code class="codehilite"><span class="err">seed_source</span></code>, <code class="codehilite"><span class="err">seed_data</span></code>, <code class="codehilite"><span class="err">password</span></code></td>
-<td><code class="codehilite"><span class="err">wallet_id</span></code></td>
+<td><code class="codehilite">name</code>, <code class="codehilite">caption</code>, <code class="codehilite">seed_source</code>, <code class="codehilite">seed_data</code>, <code class="codehilite">password</code>, (<code class="codehilite">overwrite</code>), (<code class="codehilite">backup_password</code>)</td>
+<td><code class="codehilite">wallet_id</code></td>
+</tr>
+<tr>
+<td><a href="#export_master_key">export_master_key</a></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">password</code></td>
+<td><code class="codehilite">private_key</code></td>
 </tr>
 <tr>
 <td><a href="#close_session">close_session</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code></td>
-<td><code class="codehilite"><span class="err">success</span></code></td>
+<td><code class="codehilite">session_id</code></td>
+<td><code class="codehilite">success</code></td>
 </tr>
 <tr>
 <td><a href="#generate_address">generate_address</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code></td>
-<td><code class="codehilite"><span class="err">address</span></code>, <code class="codehilite"><span class="err">path</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, (<code class="codehilite">external</code>)</td>
+<td><code class="codehilite">address</code>, <code class="codehilite">path</code></td>
 </tr>
 <tr>
 <td><a href="#get">get</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">key</span></code></td>
-<td><code class="codehilite"><span class="err">value</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">key</code></td>
+<td><code class="codehilite">value</code></td>
 </tr>
 <tr>
 <td><a href="#get_addresses">get_addresses</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">offset</span></code>, <code class="codehilite"><span class="err">limit</span></code></td>
-<td><code class="codehilite"><span class="err">address[]</span></code>, <code class="codehilite"><span class="err">total</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">offset</code>, <code class="codehilite">limit</code>, (<code class="codehilite">external</code>)</td>
+<td><code class="codehilite">address[]</code>, <code class="codehilite">total</code></td>
 </tr>
 <tr>
 <td><a href="#get_balance">get_balance</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code></td>
-<td><code class="codehilite"><span class="err">total</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code></td>
+<td><code class="codehilite">confirmed</code>, <code class="codehilite">local</code>, <code class="codehilite">unconfirmed</code></td>
 </tr>
 <tr>
 <td><a href="#get_transactions">get_transactions</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">offset</span></code>, <code class="codehilite"><span class="err">limit</span></code></td>
-<td><code class="codehilite"><span class="err">transactions[]</span></code>, <code class="codehilite"><span class="err">total</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">offset</code>, <code class="codehilite">limit</code></td>
+<td><code class="codehilite">transactions[]</code>, <code class="codehilite">total</code></td>
 </tr>
 <tr>
 <td><a href="#get_wallet_infos">get_wallet_infos</a></td>
 <td>(none)</td>
-<td><code class="codehilite"><span class="err">wallet_info[]</span></code></td>
+<td><code class="codehilite">wallet_info[]</code></td>
 </tr>
 <tr>
 <td><a href="#lock_wallet">lock_wallet</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code></td>
-<td><code class="codehilite"><span class="err">success</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code></td>
+<td><code class="codehilite">success</code></td>
 </tr>
 <tr>
 <td><a href="#rpc.off">rpc.off</a></td>
-<td>(<code class="codehilite"><span class="err">subscription_id[]</span></code>)</td>
+<td>(<code class="codehilite">subscription_id[]</code>)</td>
 <td>(none)</td>
 </tr>
 <tr>
 <td><a href="#rpc.on">rpc.on</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code></td>
-<td>(<code class="codehilite"><span class="err">subscription_id</span></code>)</td>
+<td><code class="codehilite">session_id</code></td>
+<td>(<code class="codehilite">subscription_id</code>)</td>
+</tr>
+<tr>
+<td><a href="#resync_wallet">resync_wallet</a></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code></td>
+<td><code class="codehilite">success</code></td>
 </tr>
 <tr>
 <td><a href="#run_rad_request">run_rad_request</a></td>
-<td><code class="codehilite"><span class="err">request</span></code></td>
-<td><code class="codehilite"><span class="err">result</span></code></td>
+<td><code class="codehilite">request</code></td>
+<td><code class="codehilite">result</code></td>
 </tr>
 <tr>
 <td><a href="#send_transaction">send_transaction</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">transaction</span></code></td>
-<td>(none)</td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">transaction</code></td>
+<td><code class="codehilite">balance_movement</code>, <code class="codehilite">jsonrpc_result</code></td>
 </tr>
 <tr>
 <td><a href="#set">set</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">key</span></code>, <code class="codehilite"><span class="err">value</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">key</code>, <code class="codehilite">value</code></td>
 <td>(none)</td>
 </tr>
 <tr>
 <td><a href="#shutdown">shutdown</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code></td>
+<td><code class="codehilite">session_id</code></td>
 <td>(none)</td>
 </tr>
 <tr>
 <td><a href="#sign_data">sign_data</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">data</span></code>, <code class="codehilite"><span class="err">extended_pk</span></code></td>
-<td><code class="codehilite"><span class="err">chaincode</span></code>, <code class="codehilite"><span class="err">public_key</span></code>, <code class="codehilite"><span class="err">signature</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">data</code>, <code class="codehilite">extended_pk</code></td>
+<td><code class="codehilite">chaincode</code>, <code class="codehilite">public_key</code>, <code class="codehilite">signature</code></td>
 </tr>
 <tr>
 <td><a href="#unlock_wallet">unlock_wallet</a></td>
-<td><code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">password</span></code></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">session_expiration_secs</span></code>, ...</td>
+<td><code class="codehilite">wallet_id</code>, <code class="codehilite">password</code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">session_expiration_secs</code>, ...</td>
 </tr>
 <tr>
 <td><a href="#update_wallet">update_wallet</a></td>
-<td><code class="codehilite"><span class="err">session_id</span></code>, <code class="codehilite"><span class="err">wallet_id</span></code>, <code class="codehilite"><span class="err">name</span></code>, <code class="codehilite"><span class="err">caption</span></code></td>
-<td><code class="codehilite"><span class="err">success</span></code></td>
+<td><code class="codehilite">session_id</code>, <code class="codehilite">wallet_id</code>, <code class="codehilite">name</code>, <code class="codehilite">description</code></td>
+<td><code class="codehilite">success</code></td>
 </tr>
 <tr>
 <td><a href="#validate_mnemonics">validate_mnemonics</a></td>
-<td><code class="codehilite"><span class="err">seed_source</span></code>, <code class="codehilite"><span class="err">seed_data</span></code></td>
-<td><code class="codehilite"><span class="err">valid</span></code></td>
+<td><code class="codehilite">seed_source</code>, <code class="codehilite">seed_data</code></td>
+<td><code class="codehilite">exist</code>, <code class="codehilite">wallet_id</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="wallet-api-endpoints">Wallet API Endpoints<a class="headerlink" href="#wallet-api-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="create_data_request">create_data_request<a class="headerlink" href="#create_data_request" title="Permanent link">&para;</a></h3>
-<p>The method <code class="codehilite"><span class="err">create_data_request</span></code> creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method <a href="#send_transaction">send_transaction</a>).</p>
+<p>The method <code class="codehilite">create_data_request</code> creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method <a href="#send_transaction">send_transaction</a>).</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, amount in nanoWitswill be earned by the miner that publishes the request.</li>
-<li><code class="codehilite"><span class="err">request</span></code>: <em>DataRequestOutput</em>, a struct with required data request fields.</li>
-<li><code class="codehilite"><span class="err">data_request</span></code>: <em>RADRequest</em>, data request with CBOR codification.</li>
-<li><code class="codehilite"><span class="err">witness_reward</span></code>: <em>number</em>, reward in nanoWits to the witnesses of the data request.</li>
-<li><code class="codehilite"><span class="err">witnesses</span></code>: <em>number</em>, minimum number of witnet nodes that must perform the request.</li>
-<li><code class="codehilite"><span class="err">commit_fee</span></code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid commitment transaction.</li>
-<li><code class="codehilite"><span class="err">reveal_fee</span></code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid reveal transaction.</li>
-<li><code class="codehilite"><span class="err">tally_fee</span></code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid tally transaction.</li>
-<li><code class="codehilite"><span class="err">min_consensus_percentage</span></code>: <em>number</em>, , minimum of consensus required to consider the request as valid.</li>
-<li><code class="codehilite"><span class="err">collateral</span></code>: <em>number</em>, collateral amount in nanoWits.</li>
+<li><code class="codehilite">session_id</code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">fee</code>: <em>number</em>, amount in nanoWitswill be earned by the miner that publishes the request.</li>
+<li><code class="codehilite">fee_type</code>: (optional) <em>String</em>, fee type chosen between <em><code class="codehilite">weighted</code></em> or <em><code class="codehilite">absolute</code></em>. Defaults to <em><code class="codehilite">weighted</code></em> if not inserted.</li>
+<li><code class="codehilite">request</code>: <em>DataRequestOutput</em>, a struct with required data request fields.</li>
+<li><code class="codehilite">data_request</code>: <em>RADRequest</em>, data request with CBOR codification.</li>
+<li><code class="codehilite">witness_reward</code>: <em>number</em>, reward in nanoWits to the witnesses of the data request.</li>
+<li><code class="codehilite">witnesses</code>: <em>number</em>, minimum number of witnet nodes that must perform the request.</li>
+<li><code class="codehilite">commit_fee</code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid commitment transaction.</li>
+<li><code class="codehilite">reveal_fee</code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid reveal transaction.</li>
+<li><code class="codehilite">tally_fee</code>: <em>number</em>, amount in nanoWits that will be earned by the miner for each each valid tally transaction.</li>
+<li><code class="codehilite">min_consensus_percentage</code>: <em>number</em>, , minimum of consensus required to consider the request as valid.</li>
+<li><code class="codehilite">collateral</code>: <em>number</em>, collateral amount in nanoWits.</li>
 </ul>
 <p>More information about the parameters can be found in the tutorial of <a href="https://docs.witnet.io/tutorials/bitcoin-price-feed/fine-tuning/">data request parameters fine-tuning</a>.</p>
 <p>As an example, this data request created a data request that retrives the last Bitcoin blockhash from three different sources:</p>
@@ -1519,16 +1547,15 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p>The <code class="codehilite"><span class="err">create_data_request</span></code> response will include the following data:</p>
+<p>The <code class="codehilite">create_data_request</code> response will include the following data:</p>
 <ul>
-<li><code class="codehilite"><span class="err">bytes</span></code>: <em>String</em>, data request bytes represented in hexadecimal format.</li>
-<li><code class="codehilite"><span class="err">transaction</span></code>: <em>DataRequest</em>, all transactional information regarding the created data request.</li>
-<li><code class="codehilite"><span class="err">body</span></code>: Includes the data request output, inputs and outputs of the transaction.</li>
-<li><code class="codehilite"><span class="err">signatures</span></code>: The signature of the transaction and the public key</li>
-<li><code class="codehilite"><span class="err">transaction_id</span></code>: <em>String</em>, unique transaction identifier.</li>
+<li><code class="codehilite">bytes</code>: <em>String</em>, data request bytes represented in hexadecimal format.</li>
+<li><code class="codehilite">transaction</code>: <em>DataRequest</em>, all transactional information regarding the created data request.</li>
+<li><code class="codehilite">body</code>: Includes the data request output, inputs and outputs of the transaction.</li>
+<li><code class="codehilite">signatures</code>: The signature of the transaction and the public key</li>
+<li><code class="codehilite">transaction_id</code>: <em>String</em>, unique transaction identifier.</li>
 </ul>
-<p>Example of a <code class="codehilite"><span class="err">create_data_request</span></code> response:</p>
+<p>Example of a <code class="codehilite">create_data_request</code> response:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1582,7 +1609,7 @@ It can be set in the Witnet configuration file as follows:</p>
           <span class="p">],</span>
           <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq&quot;</span><span class="p">,</span>
               <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">124999996910</span>
             <span class="p">}</span>
@@ -1608,12 +1635,11 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="create_mnemonics">create_mnemonics<a class="headerlink" href="#create_mnemonics" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">create_mnemonics</span></code> is used to generate a <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39 mnemonic sentence</a> that can be used to generate a new <a href="https://en.bitcoinwiki.org/wiki/Deterministic_wallet">HD wallet</a>.</p>
+<p>The JsonRPC method <code class="codehilite">create_mnemonics</code> is used to generate a <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP39 mnemonic sentence</a> that can be used to generate a new <a href="https://en.bitcoinwiki.org/wiki/Deterministic_wallet">HD wallet</a>.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">length</span></code>: <em>number</em>, indicating how many words the mnemonic sentence should have. Must be one of these: <code class="codehilite"><span class="err">12</span></code>, <code class="codehilite"><span class="err">15</span></code>, <code class="codehilite"><span class="err">18</span></code>, <code class="codehilite"><span class="err">21</span></code> or <code class="codehilite"><span class="err">24</span></code>.</li>
+<li><code class="codehilite">length</code>: <em>number</em>, indicating how many words the mnemonic sentence should have. Must be one of these: <code class="codehilite"><span class="mf">12</span></code>, <code class="codehilite"><span class="mf">15</span></code>, <code class="codehilite"><span class="mf">18</span></code>, <code class="codehilite"><span class="mf">21</span></code> or <code class="codehilite"><span class="mf">24</span></code>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1624,10 +1650,9 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">mnemonics</span></code>: <em>String</em>, list of words of the mnemonic sentences.</li>
+<li><code class="codehilite">mnemonics</code>: <em>String</em>, list of words of the mnemonic sentences.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1637,18 +1662,18 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="create_vtt">create_vtt<a class="headerlink" href="#create_vtt" title="Permanent link">&para;</a></h3>
-<p>The method <code class="codehilite"><span class="err">create_vtt</span></code> is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method <a href="#send_transaction">send_transaction</a>).</p>
+<p>The method <code class="codehilite">create_vtt</code> is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method <a href="#send_transaction">send_transaction</a>).</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">time_lock</span></code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, the recipient address.</li>
-<li><code class="codehilite"><span class="err">amount</span></code>: <em>number</em>, value to transfer in nanoWits.</li>
-<li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, miner fee in nanoWits.</li>
-<li><code class="codehilite"><span class="err">label</span></code> (optional): <em>String</em>, label to refer the vtt.</li>
+<li><code class="codehilite">time_lock</code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">address</code>: <em>String</em>, the recipient address.</li>
+<li><code class="codehilite">amount</code>: <em>number</em>, value to transfer in nanoWits.</li>
+<li><code class="codehilite">fee</code>: <em>number</em>, miner fee in nanoWits.</li>
+<li><code class="codehilite">fee_type</code> (optional): <em>String</em>, fee type chosen between <em><code class="codehilite">weighted</code></em> or <em><code class="codehilite">absolute</code></em>. Defaults to <em><code class="codehilite">weighted</code></em> if not inserted.</li>
+<li><code class="codehilite">label</code> (optional): <em>String</em>, label to refer the vtt.</li>
 </ul>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -1666,28 +1691,29 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">18</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p>The <code class="codehilite"><span class="err">create_vtt</span></code> response will include all the information about the transaction:</p>
+<p>The <code class="codehilite">create_vtt</code> response will include all the information about the transaction:</p>
 <ul>
-<li><code class="codehilite"><span class="err">bytes</span></code>: <em>String</em>, data request bytes represented in hexadecimal format.</li>
-<li><code class="codehilite"><span class="err">metadata</span></code>: description of the outcome of the transaction, includes<ul>
-<li><code class="codehilite"><span class="err">fee</span></code>: <em>number</em>, miner fee in nanoWits.</li>
-<li><code class="codehilite"><span class="err">to</span></code>: <em>String</em>, the address of the reciever.</li>
-<li><code class="codehilite"><span class="err">value</span></code>: <em>number</em>, value that has been transferd in nanoWits.</li>
+<li><code class="codehilite">bytes</code>: <em>String</em>, data request bytes represented in hexadecimal format.</li>
+<li><code class="codehilite">metadata</code>: description of the outcome of the transaction, includes<ul>
+<li><code class="codehilite">fee</code>: <em>number</em>, miner fee in nanoWits.</li>
+<li><code class="codehilite">time_lock</code>: <em>number</em>, indicates the epoch from which the funds will be available, before this epoch the funds are blocked.</li>
+<li><code class="codehilite">to</code>: <em>String</em>, the address of the reciever.</li>
+<li><code class="codehilite">value</code>: <em>number</em>, value that has been transferd in nanoWits.</li>
 </ul>
 </li>
-<li><code class="codehilite"><span class="err">transaction</span></code>: <em>ValueTransfer</em>, all transactional information regarding the created value transfer.</li>
-<li><code class="codehilite"><span class="err">body</span></code>: Includes the inputs and outputs of the transaction.</li>
-<li><code class="codehilite"><span class="err">signatures</span></code>: The signature of the transaction and the public key</li>
-<li><code class="codehilite"><span class="err">transaction_id</span></code>: <em>String</em>, unique transaction identifier.</li>
+<li><code class="codehilite">transaction</code>: <em>ValueTransfer</em>, all transactional information regarding the created value transfer.</li>
+<li><code class="codehilite">body</code>: Includes the inputs and outputs of the transaction.</li>
+<li><code class="codehilite">signatures</code>: The signature of the transaction and the public key</li>
+<li><code class="codehilite">transaction_id</code>: <em>String</em>, unique transaction identifier.</li>
 </ul>
-<p>Example of a <code class="codehilite"><span class="err">create_vtt</span></code> response:</p>
+<p>Example of a <code class="codehilite">create_vtt</code> response:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;bytes&quot;</span><span class="p">:</span> <span class="s2">&quot;0add010a670a280a260a220a204c4cc66b8bf7828797596ded89db7ddb1cd5b44dc18007738ef3d40e089a6add1001121a0a160a149a6c45dc0d8546ab8a3fca85def0cbff89cdfb521001121f0a160a1425e15594103fde1d9864807d091923ab648d6d1f10fec3d2d4d10312720a4b0a490a4730450221008e0c49acdcc92f63c6c71aa1ce7bb4d0524775c8e0af9d597d1b8bdfd8d2741e02201edd0d276786f7fcf319c4157501dca9c74457cac3b385a7475e6de85e1d826712230a2103f0acd97ec011b875376888b3538f70644e2ad537f61169e95b7c703176925d00&quot;</span><span class="p">,</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">448</span><span class="p">,</span>
+      <span class="nt">&quot;fee&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f&quot;</span><span class="p">,</span>
       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">},</span>
@@ -1701,12 +1727,12 @@ It can be set in the Witnet configuration file as follows:</p>
           <span class="p">],</span>
           <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c&quot;</span><span class="p">,</span>
               <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1yhs4t9qs8l0pmxrysp7sjxfr4djg6mgldk69zs&quot;</span><span class="p">,</span>
               <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">124999999998</span>
             <span class="p">}</span>
@@ -1732,16 +1758,17 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">18</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="create_wallet">create_wallet<a class="headerlink" href="#create_wallet" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">create_wallet</span></code> is used to generate a new Master Key for an empty <a href="https://en.bitcoinwiki.org/wiki/Deterministic_wallet">HD wallet</a> that is stored encrypted in the file system.</p>
+<p>The JsonRPC method <code class="codehilite">create_wallet</code> is used to generate a new Master Key for an empty <a href="https://en.bitcoinwiki.org/wiki/Deterministic_wallet">HD wallet</a> that is stored encrypted in the file system.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">name</span></code> (optional): <em>String</em>, human-friendly name for the wallet.</li>
-<li><code class="codehilite"><span class="err">caption</span></code> (optional): <em>String</em>, human-friendly caption for the wallet.</li>
-<li><code class="codehilite"><span class="err">seed_source</span></code>: <em><code class="codehilite"><span class="err">&quot;mnemonics&quot;|&quot;xprv&quot;</span></code></em>, literal to identify if the seed source is of the type <em>mnemonics</em> or <em>xprv</em> and determine how the HD wallet master key will be generated from the data sent in the <code class="codehilite"><span class="err">seedData</span></code> parameter.</li>
-<li><code class="codehilite"><span class="err">seed_data</span></code>: <em>String</em>, data used for generating the new HD wallet master key.</li>
-<li><code class="codehilite"><span class="err">password</span></code>: <em>String</em>, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.</li>
+<li><code class="codehilite">name</code> (optional): <em>String</em>, human-friendly name for the wallet.</li>
+<li><code class="codehilite">caption</code> (optional): <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite">seed_source</code>: <em><code class="codehilite">&quot;mnemonics&quot;|&quot;xprv&quot;</code></em>, literal to identify if the seed source is of the type <em>mnemonics</em> or <em>xprv</em> and determine how the HD wallet master key will be generated from the data sent in the <code class="codehilite">seedData</code> parameter.</li>
+<li><code class="codehilite">seed_data</code>: <em>String</em>, data used for generating the new HD wallet master key.</li>
+<li><code class="codehilite">password</code>: <em>String</em>, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.</li>
+<li><code class="codehilite">overwrite</code> (optional): <em>Boolean</em>, in case that seed data was previously used for creating another wallet, this flag will overwrite the previous wallet with the new one.</li>
+<li><code class="codehilite">backup_password</code> (optional): <em>String</em>, in case that seed source is <code class="codehilite">&quot;xprv&quot;</code>, <code class="codehilite">seed_data</code> must be decrypted with this parameter . </li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1751,15 +1778,16 @@ It can be set in the Witnet configuration file as follows:</p>
     <span class="nt">&quot;caption&quot;</span><span class="p">:</span> <span class="s2">&quot;Personal use&quot;</span><span class="p">,</span>
     <span class="nt">&quot;seed_source&quot;</span><span class="p">:</span> <span class="s2">&quot;mnemonics&quot;</span><span class="p">,</span>
     <span class="nt">&quot;seed_data&quot;</span><span class="p">:</span> <span class="s2">&quot;exotic demand way fatigue skull poverty happy divide scrub seed jeans novel&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span>
+    <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;backup_password&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated with the given wallet.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated with the given wallet.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1769,12 +1797,11 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="close_session">close_session<a class="headerlink" href="#close_session" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">close_session</span></code> is used to close an active session without locking the currently unlocked wallet.</p>
+<p>The JsonRPC method <code class="codehilite">close_session</code> is used to close an active session without locking the currently unlocked wallet.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1785,10 +1812,9 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">success</span></code>: <em>Boolean</em>, reporting if the wallet was successfully closed.</li>
+<li><code class="codehilite">success</code>: <em>Boolean</em>, reporting if the wallet was successfully closed.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1798,13 +1824,45 @@ It can be set in the Witnet configuration file as follows:</p>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<h3 id="generate_address">generate_address<a class="headerlink" href="#generate_address" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">generate_address</span></code> is used to derive deterministically a new external address for the given wallet and session ID.</p>
+<h3 id="export_master_key">export_master_key<a class="headerlink" href="#export_master_key" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite"><span class="n">export_master_key</span></code> is used to export the master key of an existing wallet. This key is encrypted with a user-defined password using AES-CBC.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">password</code>: <em>String</em>, user-defined password used to encrypt the key.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;create_wallet&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span><span class="p">:</span>
+    <span class="s2">&quot;12345678&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Response:</p>
+<ul>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated with the given wallet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="generate_address">generate_address<a class="headerlink" href="#generate_address" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite">generate_address</code> is used to derive deterministically a new external address for the given wallet and session ID.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">external</code> (optional): <em>Boolean</em>, if set to false it will generate an internal address.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1816,11 +1874,10 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, address derived deterministically.</li>
-<li><code class="codehilite"><span class="err">path</span></code>: <em>String</em>, derivation path used to generate the address.</li>
+<li><code class="codehilite">address</code>: <em>String</em>, address derived deterministically.</li>
+<li><code class="codehilite">path</code>: <em>String</em>, derivation path used to generate the address.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1831,14 +1888,13 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="get">get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
-<p>The method <code class="codehilite"><span class="err">get</span></code> allows to retrieve a previous stored key-value data in the wallet database.</p>
+<p>The method <code class="codehilite">get</code> allows to retrieve a previous stored key-value data in the wallet database.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">key</span></code>: <em>String</em>, key under which the value will be stored.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">key</code>: <em>String</em>, key under which the value will be stored.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1851,7 +1907,6 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1863,15 +1918,15 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="get_addresses">get_addresses<a class="headerlink" href="#get_addresses" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">get_addresses</span></code> is used to query for a list of previously derived addresses given a wallet and session ID.</p>
+<p>The JsonRPC method <code class="codehilite">get_addresses</code> is used to query for a list of previously derived addresses given a wallet and session ID.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">offset</span></code> (optional): <em>number</em>, initial position of the address list to be queried (by default is set to <code class="codehilite"><span class="err">0</span></code>).</li>
-<li><code class="codehilite"><span class="err">limit</span></code> (optional): <em>number</em>, size of the address list to be returned (by default is set to <code class="codehilite"><span class="err">25</span></code>).</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">offset</code> (optional): <em>number</em>, initial position of the address list to be queried (by default is set to <code class="codehilite"><span class="mf">0</span></code>).</li>
+<li><code class="codehilite">limit</code> (optional): <em>number</em>, size of the address list to be returned (by default is set to <code class="codehilite"><span class="mf">25</span></code>).</li>
+<li><code class="codehilite">external</code> (optional): <em>Boolean</em>, if set to false it will get internal addresses.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1885,23 +1940,22 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response with an array of addresses and additional related information:</p>
 <ul>
-<li><code class="codehilite"><span class="err">addresses</span></code>: <em>Array<Address></em>, list of queried addresses with additional information.</li>
-<li><code class="codehilite"><span class="err">account</span></code>: <em>number</em>, identifies the current account in the session (the current version only supports the default account <code class="codehilite"><span class="err">0</span></code>).</li>
-<li><code class="codehilite"><span class="err">address</span></code>: <em>String</em>, address serialized in Bech32 format.</li>
-<li><code class="codehilite"><span class="err">index</span></code>: <em>number</em>, sequential index used to derive address.</li>
-<li><code class="codehilite"><span class="err">info</span></code>: <em>String</em>, additional information with balance movements and dates.<ul>
-<li><code class="codehilite"><span class="err">first_payment_date</span></code>: <em>number</em>, date of first received movement in UTC format (Coordinated Universal Time).</li>
-<li><code class="codehilite"><span class="err">label</span></code>: <em>String</em>, user-defined label for this address.</li>
-<li><code class="codehilite"><span class="err">last_payment_date</span></code>: <em>number</em>, date of last received movement in UTC format (Coordinated Universal Time).</li>
-<li><code class="codehilite"><span class="err">received_amount</span></code>: <em>number</em>, total amount (in nanoWits) received by this address.</li>
-<li><code class="codehilite"><span class="err">received_payments</span></code>: <em>Array<String></em>, list of Unspent Transaction Outputs (UTXOs) proving funds to this address.</li>
+<li><code class="codehilite">addresses</code>: <em>Array<Address></em>, list of queried addresses with additional information.</li>
+<li><code class="codehilite">account</code>: <em>number</em>, identifies the current account in the session (the current version only supports the default account <code class="codehilite"><span class="mf">0</span></code>).</li>
+<li><code class="codehilite">address</code>: <em>String</em>, address serialized in Bech32 format.</li>
+<li><code class="codehilite">index</code>: <em>number</em>, sequential index used to derive address.</li>
+<li><code class="codehilite">info</code>: <em>String</em>, additional information with balance movements and dates.<ul>
+<li><code class="codehilite">first_payment_date</code>: <em>number</em>, date of first received movement in UTC format (Coordinated Universal Time).</li>
+<li><code class="codehilite">label</code>: <em>String</em>, user-defined label for this address.</li>
+<li><code class="codehilite">last_payment_date</code>: <em>number</em>, date of last received movement in UTC format (Coordinated Universal Time).</li>
+<li><code class="codehilite">received_amount</code>: <em>number</em>, total amount (in nanoWits) received by this address.</li>
+<li><code class="codehilite">received_payments</code>: <em>Array<String></em>, list of Unspent Transaction Outputs (UTXOs) proving funds to this address.</li>
 </ul>
 </li>
-<li><code class="codehilite"><span class="err">keychain</span></code>: <em>number</em>, <code class="codehilite"><span class="err">change</span></code> value of the derivation path (See <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP-44</a>).</li>
-<li><code class="codehilite"><span class="err">path</span></code>: <em>String</em>, derivation path used to generate the address.</li>
+<li><code class="codehilite">keychain</code>: <em>number</em>, <code class="codehilite">change</code> value of the derivation path (See <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP-44</a>).</li>
+<li><code class="codehilite">path</code>: <em>String</em>, derivation path used to generate the address.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1929,13 +1983,12 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="get_balance">get_balance<a class="headerlink" href="#get_balance" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">get_balance</span></code> is used to query the current balance for a given wallet.</p>
+<p>The JsonRPC method <code class="codehilite">get_balance</code> is used to query the current balance for a given wallet.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned to you when you unlocked the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned to you when you unlocked the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1947,28 +2000,40 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p>Response:</p>
+<p>Response with different types of balances:</p>
 <ul>
-<li><code class="codehilite"><span class="err">total</span></code>: <em>String</em>, total balance of the wallet in nanoWits (including timelocked transactions).</li>
+<li><code class="codehilite">local</code>: <em>number</em>, amount of local pending movements not yet indexed in a block.</li>
+<li><code class="codehilite">unconfirmed</code>: <em>BalanceInfo</em>, total amount of wallet's funds after last block, but not yet confirmed by a superblock.</li>
+<li><code class="codehilite">available</code>: <em>number</em>, unconfirmed expendable funds.</li>
+<li><code class="codehilite">locked</code>: <em>number</em>, unconfirmed time-locked funds.</li>
+<li><code class="codehilite">confirmed</code>: <em>BalanceInfo</em>, total amount of wallet's funds after last confirmed superblock.</li>
+<li><code class="codehilite">available</code>: <em>number</em>, confirmed expendable funds.</li>
+<li><code class="codehilite">locked</code>: <em>number</em>, confirmed time-locked funds.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+    <span class="nt">&quot;confirmed&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;available&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;locked&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;local&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;unconfirmed&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;available&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;locked&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="get_transactions">get_transactions<a class="headerlink" href="#get_transactions" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">get_transactions</span></code> is used to query for a list of transactions given a wallet and session ID.</p>
+<p>The JsonRPC method <code class="codehilite">get_transactions</code> is used to query for a list of transactions given a wallet and session ID.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">offset</span></code> (optional): <em>number</em>, initial position of the transaction list to be queried (by default is set to <code class="codehilite"><span class="err">0</span></code>).</li>
-<li><code class="codehilite"><span class="err">limit</span></code> (optional): <em>number</em>, size of the transaction list to be returned (by default is set to <code class="codehilite"><span class="err">25</span></code>).</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">offset</code> (optional): <em>number</em>, initial position of the transaction list to be queried (by default is set to <code class="codehilite"><span class="mf">0</span></code>).</li>
+<li><code class="codehilite">limit</code> (optional): <em>number</em>, size of the transaction list to be returned (by default is set to <code class="codehilite"><span class="mf">25</span></code>).</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1982,21 +2047,20 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response with an array of transactions and additional related information:</p>
 <ul>
-<li><code class="codehilite"><span class="err">total</span></code>: <em>number</em>, total amount of wallet transactions.</li>
-<li><code class="codehilite"><span class="err">transactions</span></code>: <em>Array<BalanceMovement></em>, list of queried transactions with additional information.</li>
-<li><code class="codehilite"><span class="err">amount</span></code>: <em>number</em>, transaction value.</li>
-<li><code class="codehilite"><span class="err">type</span></code>: <em><code class="codehilite"><span class="err">&quot;POSITIVE&quot;|&quot;NEGATIVE&quot;</span></code></em>, type of balance movement in relation to the wallet. </li>
-<li><code class="codehilite"><span class="err">transaction</span></code>: <em>Transaction</em>, additional transaction information.<ul>
-<li><code class="codehilite"><span class="err">block</span></code>: <em>Block</em>, information of block in which the transaction was included.</li>
-<li><code class="codehilite"><span class="err">block_hash</span></code>: <em>String</em>, block hash in hexadecimal format.</li>
-<li><code class="codehilite"><span class="err">epoch</span></code>: <em>number</em> block epoch.</li>
-<li><code class="codehilite"><span class="err">data</span></code>: <em>TransactionData</em>, additional type-specific transaction data. The supported transaction types are <code class="codehilite"><span class="err">value_transfer</span></code>, <code class="codehilite"><span class="err">data_request</span></code>, <code class="codehilite"><span class="err">tally</span></code>, <code class="codehilite"><span class="err">mint</span></code> and <code class="codehilite"><span class="err">commit</span></code>.</li>
-<li><code class="codehilite"><span class="err">hash</span></code>: <em>String</em>, transaction hash in hexadecimal format used as identifier.</li>
-<li><code class="codehilite"><span class="err">miner_fee</span></code>: <em>number</em>, amount of nanoWits for the block miner.</li>
-<li><code class="codehilite"><span class="err">timestamp</span></code>: <em>number</em>, transaction date in UTC format (Coordinated Universal Time).</li>
+<li><code class="codehilite">total</code>: <em>number</em>, total amount of wallet transactions.</li>
+<li><code class="codehilite">transactions</code>: <em>Array<BalanceMovement></em>, list of queried transactions with additional information.</li>
+<li><code class="codehilite">amount</code>: <em>number</em>, transaction value.</li>
+<li><code class="codehilite">type</code>: <em><code class="codehilite">&quot;POSITIVE&quot;|&quot;NEGATIVE&quot;</code></em>, type of balance movement in relation to the wallet. </li>
+<li><code class="codehilite">transaction</code>: <em>Transaction</em>, additional transaction information.<ul>
+<li><code class="codehilite">block</code>: <em>Block</em>, information of block in which the transaction was included.</li>
+<li><code class="codehilite">block_hash</code>: <em>String</em>, block hash in hexadecimal format.</li>
+<li><code class="codehilite">epoch</code>: <em>number</em> block epoch.</li>
+<li><code class="codehilite">data</code>: <em>TransactionData</em>, additional type-specific transaction data. The supported transaction types are <code class="codehilite">value_transfer</code>, <code class="codehilite">data_request</code>, <code class="codehilite">tally</code>, <code class="codehilite">mint</code> and <code class="codehilite">commit</code>.</li>
+<li><code class="codehilite">hash</code>: <em>String</em>, transaction hash in hexadecimal format used as identifier.</li>
+<li><code class="codehilite">miner_fee</code>: <em>number</em>, amount of nanoWits for the block miner.</li>
+<li><code class="codehilite">timestamp</code>: <em>number</em>, transaction date in UTC format (Coordinated Universal Time).</li>
 </ul>
 </li>
 </ul>
@@ -2045,9 +2109,8 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="get_wallet_infos">get_wallet_infos<a class="headerlink" href="#get_wallet_infos" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">get_wallet_infos</span></code> displays the information about the wallet.</p>
+<p>The JsonRPC method <code class="codehilite">get_wallet_infos</code> displays the information about the wallet.</p>
 <p>This method has no parameters, as an example:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2055,12 +2118,11 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">caption</span></code>: <em>String</em>, human-friendly caption for the wallet.</li>
-<li><code class="codehilite"><span class="err">id</span></code>: <em>String</em>, wallet ID.</li>
-<li><code class="codehilite"><span class="err">name</span></code>:<em>String</em>, human-friendly name for the wallet.</li>
+<li><code class="codehilite">caption</code>: <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite">id</code>: <em>String</em>, wallet ID.</li>
+<li><code class="codehilite">name</code>:<em>String</em>, human-friendly name for the wallet.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2076,13 +2138,12 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="lock_wallet">lock_wallet<a class="headerlink" href="#lock_wallet" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">lock_wallet</span></code> is used to <em>lock</em> the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.</p>
+<p>The JsonRPC method <code class="codehilite">lock_wallet</code> is used to <em>lock</em> the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2094,10 +2155,9 @@ It can be set in the Witnet configuration file as follows:</p>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">success</span></code>: <em>Boolean</em>, reporting if the wallet was successfully locked.</li>
+<li><code class="codehilite">success</code>: <em>Boolean</em>, reporting if the wallet was successfully locked.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2107,12 +2167,11 @@ It can be set in the Witnet configuration file as follows:</p>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="rpcoff">rpc.off<a class="headerlink" href="#rpcoff" title="Permanent link">&para;</a></h3>
-<p>Use this method <code class="codehilite"><span class="err">rpc.off</span></code> to unsubscribe from previous subscriptions.</p>
+<p>Use this method <code class="codehilite">rpc.off</code> to unsubscribe from previous subscriptions.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">&lt;data&gt;</span></code>: <em>Array<String></em>, subscription identifiers assigned when subscribing to wallet sessions. See <a href="#rpc.on">rpc.on</a>.</li>
+<li><code class="codehilite">&lt;data&gt;</code>: <em>Array<String></em>, subscription identifiers assigned when subscribing to wallet sessions. See <a href="#rpc.on">rpc.on</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;rpc.off&quot;</span><span class="p">,</span>
@@ -2121,7 +2180,6 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>The response for a successful unsubscribe:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2129,12 +2187,11 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="rpcon">rpc.on<a class="headerlink" href="#rpcon" title="Permanent link">&para;</a></h3>
-<p>Use this method <code class="codehilite"><span class="err">rpc.on</span></code> to subscribe to update events related to your session wallets.</p>
+<p>Use this method <code class="codehilite">rpc.on</code> to subscribe to update events related to your session wallets.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;rpc.on&quot;</span><span class="p">,</span>
@@ -2145,10 +2202,9 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>The response is:</p>
 <ul>
-<li><code class="codehilite"><span class="err">result</span></code>: <em>String</em>, subscription identifier that can be used to unsubscribe from notifications. See <a href="#rpc.off">rpc.off</a>.</li>
+<li><code class="codehilite">result</code>: <em>String</em>, subscription identifier that can be used to unsubscribe from notifications. See <a href="#rpc.off">rpc.off</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2156,7 +2212,6 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Here is an example of a block event sent out by a node:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2197,15 +2252,44 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<h3 id="run_rad_request">run_rad_request<a class="headerlink" href="#run_rad_request" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">run_rad_request</span></code> is used to execute a RAD request in order to test it functionally before deploying it on the network.</p>
-<p>The request has as parameter a <code class="codehilite"><span class="err">rad_request</span></code>, which has itself as parameters:</p>
+<h3 id="resync_wallet">resync_wallet<a class="headerlink" href="#resync_wallet" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite">resync_wallet</code> is used to trigger a re-synchronization of the wallet with the specified ID. 
+The wallet will reset all previously synchronized wallet data and it will index again all previous blockchain transactions.</p>
+<p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">time_lock</span></code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
-<li><code class="codehilite"><span class="err">retrieve</span></code>: <em>Array<Retrieve></em>, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.</li>
-<li><code class="codehilite"><span class="err">aggregate</span></code>: <em>Aggregate</em>, includes the operators needed to perform the aggregation from the retrieves.</li>
-<li><code class="codehilite"><span class="err">tally</span></code>: <em>Tally</em>, includes the operators needed to perform the tally after the aggregation.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;resync_wallet&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Response:</p>
+<ul>
+<li><code class="codehilite">success</code>: <em>Boolean</em>, reporting if the wallet has successfully re-synchronized.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="run_rad_request">run_rad_request<a class="headerlink" href="#run_rad_request" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code class="codehilite">run_rad_request</code> is used to execute a RAD request in order to test it functionally before deploying it on the network.</p>
+<p>The request has as parameter a <code class="codehilite">rad_request</code>, which has itself as parameters:</p>
+<ul>
+<li><code class="codehilite">time_lock</code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
+<li><code class="codehilite">retrieve</code>: <em>Array<Retrieve></em>, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.</li>
+<li><code class="codehilite"><span class="n">aggregate</span></code>: <em>Aggregate</em>, includes the operators needed to perform the aggregation from the retrieves.</li>
+<li><code class="codehilite">tally</code>: <em>Tally</em>, includes the operators needed to perform the tally after the aggregation.</li>
 </ul>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -2239,8 +2323,7 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p>The response includes all the partial results of the request for the three different stages (<code class="codehilite"><span class="err">retrieve</span></code>, <code class="codehilite"><span class="err">aggregate</span></code> and <code class="codehilite"><span class="err">tally</span></code>).</p>
+<p>The response includes all the partial results of the request for the three different stages (<code class="codehilite">retrieve</code>, <code class="codehilite"><span class="n">aggregate</span></code> and <code class="codehilite">tally</code>).</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2367,16 +2450,15 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="send_transaction">send_transaction<a class="headerlink" href="#send_transaction" title="Permanent link">&para;</a></h3>
-<p>The method <code class="codehilite"><span class="err">send_transaction</span></code> is used to broadcast a given transaction to the Witnet network. Apart from the <code class="codehilite"><span class="err">wallet_id</span></code> and <code class="codehilite"><span class="err">session_id</span></code>, it requires an already created transaction (e.g. by using the methods <a href="#create_vtt">create_vtt</a>) or <a href="#create_data_request">create_data_request</a>).</p>
+<p>The method <code class="codehilite">send_transaction</code> is used to broadcast a given transaction to the Witnet network. Apart from the <code class="codehilite">wallet_id</code> and <code class="codehilite">session_id</code>, it requires an already created transaction (e.g. by using the methods <a href="#create_vtt">create_vtt</a>) or <a href="#create_data_request">create_data_request</a>).</p>
 <p>The request requires the following parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">transaction</span></code>: <em>Transaction</em>, serialized transaction object. It can be created by using the methods <a href="#create_vtt">create_vtt</a>) or <a href="#create_data_request">create_data_request</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">transaction</code>: <em>Transaction</em>, serialized transaction object. It can be created by using the methods <a href="#create_vtt">create_vtt</a>) or <a href="#create_data_request">create_data_request</a>.</li>
 </ul>
-<p>Example of a <code class="codehilite"><span class="err">send_transaction</span></code> for sending 500 nanoWits to an address.</p>
+<p>Example of a <code class="codehilite">send_transaction</code> for sending 500 nanoWits to an address.</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;send_transaction&quot;</span><span class="p">,</span>
@@ -2393,12 +2475,12 @@ It can be set in the Witnet configuration file as follows:</p>
           <span class="p">],</span>
           <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7&quot;</span><span class="p">,</span>
               <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">500</span>
             <span class="p">},</span>
             <span class="p">{</span>
-              <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l&quot;</span><span class="p">,</span>
               <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">49470</span>
             <span class="p">}</span>
@@ -2423,21 +2505,58 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p>The response contains the result of the Witnet node JsonRpc response.</p>
-<p>{
-  "jsonrpc": "2.0",
-  "result": true,
-  "id": 1
-}</p>
+<p>The response includes the JsonRPC response after sending the transaction to the node API and the balance movement that affects the wallet:</p>
+<ul>
+<li><code class="codehilite">balance_movement</code>: <em>BalanceMovement</em>, the wallet balance movement, which is pending and has not yet been indexed into a block.</li>
+<li><code class="codehilite">jsonrpc_result</code>: <em>Bool</em>, the result of sending the transaction to the node using the <code class="codehilite">intentory</code> JsonRPC API method.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;balance_movement&quot;: {
+      &quot;amount&quot;: 1,
+      &quot;transaction&quot;: {
+        &quot;block&quot;: {
+          &quot;block_hash&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+          &quot;epoch&quot;: 0
+        },
+        &quot;confirmed&quot;: false,
+        &quot;data&quot;: {
+          &quot;value_transfer&quot;: {
+            &quot;inputs&quot;: [],
+            &quot;outputs&quot;: [
+              {
+                &quot;address&quot;: &quot;twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk&quot;,
+                &quot;time_lock&quot;: 0,
+                &quot;value&quot;: 1
+              },
+              {
+                &quot;address&quot;: &quot;twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq&quot;,
+                &quot;time_lock&quot;: 0,
+                &quot;value&quot;: 998
+              }
+            ]
+          }
+        },
+        &quot;hash&quot;: &quot;ddab6bee4c95800cca06b3d1e2fafd5f47b97e73f8b6725916ccac6be6537041&quot;,
+        &quot;miner_fee&quot;: 0,
+        &quot;timestamp&quot;: 1601544326
+      },
+      &quot;type&quot;: &quot;NEGATIVE&quot;
+    },
+    &quot;jsonrpc_result&quot;: true
+  },
+  &quot;id&quot;: 1
+}
+</code></pre></div>
 <h3 id="set">set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
-<p>The method <code class="codehilite"><span class="err">set</span></code> allows to store key-value data in the wallet database.</p>
+<p>The method <code class="codehilite">set</code> allows to store key-value data in the wallet database.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
-<li><code class="codehilite"><span class="err">key</span></code>: <em>String</em>, key under which the value will be stored.</li>
-<li><code class="codehilite"><span class="err">value</span></code>: <em>Object</em>, JSON object to be stored.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">key</code>: <em>String</em>, key under which the value will be stored.</li>
+<li><code class="codehilite">value</code>: <em>Object</em>, JSON object to be stored.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2453,7 +2572,6 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2461,13 +2579,12 @@ It can be set in the Witnet configuration file as follows:</p>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
 <p>To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.
-If no <code class="codehilite"><span class="err">session_id</span></code> is provided, wallet will be shutdown only if there are no open sessions.</p>
+If no <code class="codehilite">session_id</code> is provided, wallet will be shutdown only if there are no open sessions.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code> (optional): <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code class="codehilite">session_id</code> (optional): <em>String</em>, session ID assigned when unlocking the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2478,15 +2595,14 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="sign_data">sign_data<a class="headerlink" href="#sign_data" title="Permanent link">&para;</a></h3>
 <p>This method uses the wallet's master key to sign message data.</p>
 <p>The parameters are:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">data</span></code>: <em>String</em>, the data to be signed.</li>
-<li><code class="codehilite"><span class="err">extended_pk</span></code>: <em>Bool</em>, if this flag is set to true, extended public key will be include (<code class="codehilite"><span class="err">chaincode</span></code>). If leaked, wallet public addresses might be derived.</li>
+<li><code class="codehilite">session_id</code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">data</code>: <em>String</em>, the data to be signed.</li>
+<li><code class="codehilite">extended_pk</code>: <em>Bool</em>, if this flag is set to true, extended public key will be include (<code class="codehilite">chaincode</code>). If leaked, wallet public addresses might be derived.</li>
 </ul>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -2501,12 +2617,11 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>The response includes the parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">chaincode</span></code>: <em>String</em>, cryptographic material used to derive keys.</li>
-<li><code class="codehilite"><span class="err">public_key</span></code>:<em>String</em>, the wallet's public key.</li>
-<li><code class="codehilite"><span class="err">signture</span></code>:<em>String</em>, the signature.</li>
+<li><code class="codehilite">chaincode</code>: <em>String</em>, cryptographic material used to derive keys.</li>
+<li><code class="codehilite">public_key</code>:<em>String</em>, the wallet's public key.</li>
+<li><code class="codehilite">signture</code>:<em>String</em>, the signature.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2518,13 +2633,12 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="unlock_wallet">unlock_wallet<a class="headerlink" href="#unlock_wallet" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">unlock_wallet</span></code> is used to <em>unlock</em> the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.</p>
+<p>The JsonRPC method <code class="codehilite">unlock_wallet</code> is used to <em>unlock</em> the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">password</span></code>: <em>String</em>, the password that unlocks the wallet.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">password</code>: <em>String</em>, the password that unlocks the wallet.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2536,16 +2650,15 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier for the current wallet session.</li>
-<li><code class="codehilite"><span class="err">session_expiration_secs</span></code>: <em>number</em>, amount of seconds after which the session will expire.</li>
-<li><code class="codehilite"><span class="err">account_balance</span></code>: <em>number</em>, wallet's account balance in nano Wits.</li>
-<li><code class="codehilite"><span class="err">name</span></code>: <em>String</em>, human-friendly name for the wallet.</li>
-<li><code class="codehilite"><span class="err">caption</span></code>: <em>String</em>, human-friendly caption for the wallet.</li>
-<li><code class="codehilite"><span class="err">current_account</span></code>: <em>number</em>, identifies the current active account in the session (the current version only supports the default account <code class="codehilite"><span class="err">0</span></code>).</li>
-<li><code class="codehilite"><span class="err">available_accounts</span></code>: <em>Array<number></em>, list of available accounts in the wallet.</li>
+<li><code class="codehilite">session_id</code>: <em>number</em>, generated identifier for the current wallet session.</li>
+<li><code class="codehilite">session_expiration_secs</code>: <em>number</em>, amount of seconds after which the session will expire.</li>
+<li><code class="codehilite">account_balance</code>: <em>number</em>, wallet's account balance in nano Wits.</li>
+<li><code class="codehilite">name</code>: <em>String</em>, human-friendly name for the wallet.</li>
+<li><code class="codehilite">caption</code>: <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite">current_account</code>: <em>number</em>, identifies the current active account in the session (the current version only supports the default account <code class="codehilite"><span class="mf">0</span></code>).</li>
+<li><code class="codehilite">available_accounts</code>: <em>Array<number></em>, list of available accounts in the wallet.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2563,15 +2676,14 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="update_wallet">update_wallet<a class="headerlink" href="#update_wallet" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">update_wallet</span></code> is used to update the name and/or caption of an existing wallet.</p>
+<p>The JsonRPC method <code class="codehilite">update_wallet</code> is used to update the name and/or caption of an existing wallet.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">wallet_id</span></code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
-<li><code class="codehilite"><span class="err">session_id</span></code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
-<li><code class="codehilite"><span class="err">name</span></code>: <em>String</em>, human-friendly name for the wallet.</li>
-<li><code class="codehilite"><span class="err">caption</span></code>: <em>String</em>, human-friendly caption for the wallet.</li>
+<li><code class="codehilite">wallet_id</code>: <em>String</em>, the ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">session_id</code>: <em>number</em>, generated identifier obtained from unlocking the wallet. See <a href="#unlock_wallet">Unlock Wallet</a>.</li>
+<li><code class="codehilite">name</code>: <em>String</em>, wallet name shown in <a href="#get_wallet_infos">get_wallet_infos</a>.</li>
+<li><code class="codehilite">description</code>: <em>String</em>, wallet private description (only available for authenticated clients after <a href="#unlock_wallet">unlock_wallet</a>).</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2580,15 +2692,14 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
     <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;f1188c907e581f067ac589cf962c7f4fea9443e93d8df10a945e7d17fae49870&quot;</span><span class="p">,</span>
     <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span><span class="p">,</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Name&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;caption&quot;</span><span class="p">:</span> <span class="s2">&quot;New Caption&quot;</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;New Description&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">success</span></code>: <em>Boolean</em>, reporting if the wallet's update was successfull.</li>
+<li><code class="codehilite">success</code>: <em>Boolean</em>, reporting if the wallet's update was successfull.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2598,13 +2709,12 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="validate_mnemonics">validate_mnemonics<a class="headerlink" href="#validate_mnemonics" title="Permanent link">&para;</a></h3>
-<p>The JsonRPC method <code class="codehilite"><span class="err">validate_mnemonics</span></code> is used to verify that validity of the seed source that might be used to generate a new wallet.</p>
+<p>The JsonRPC method <code class="codehilite">validate_mnemonics</code> is used to verify that validity of the seed source that might be used to generate a new wallet.</p>
 <p>Request with parameters:</p>
 <ul>
-<li><code class="codehilite"><span class="err">seed_source</span></code>: <em><code class="codehilite"><span class="err">&quot;mnemonics&quot;|&quot;xprv&quot;</span></code></em>, literal to identify if the seed source is of the type <em>mnemonics</em> or <em>xprv</em>.</li>
-<li><code class="codehilite"><span class="err">seed_data</span></code>: <em>String</em>, containing the used seed data, either a list of mnemonic words or a <code class="codehilite"><span class="err">xprv</span></code>.</li>
+<li><code class="codehilite">seed_source</code>: <em><code class="codehilite">&quot;mnemonics&quot;|&quot;xprv&quot;</code></em>, literal to identify if the seed source is of the type <em>mnemonics</em> or <em>xprv</em>.</li>
+<li><code class="codehilite">seed_data</code>: <em>String</em>, containing the used seed data, either a list of mnemonic words or a <code class="codehilite">xprv</code>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -2616,15 +2726,15 @@ If no <code class="codehilite"><span class="err">session_id</span></code> is pro
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Response:</p>
 <ul>
-<li><code class="codehilite"><span class="err">valid</span></code>: <em>Boolean</em>, true if valid seed in form of <em>mnemonics</em> or <code class="codehilite"><span class="err">xprv</span></code>.</li>
+<li><code class="codehilite">valid</code>: <em>Boolean</em>, true if valid seed in form of <em>mnemonics</em> or <code class="codehilite">xprv</code>.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;valid&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="nt">&quot;exist&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>

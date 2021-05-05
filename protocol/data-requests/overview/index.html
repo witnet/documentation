@@ -767,11 +767,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1012,11 +1007,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1039,26 +1029,25 @@
 4 distinct stages: <strong><em>retrieval</em></strong>, <strong><em>aggregation</em></strong> and <strong><em>tally</em></strong> .
 These stages are linear and constitute a single, unidirectional data
 flow.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">╔═════════╗    ╔════════════════════════════╗    ╔═══════════╗</span>
-<span class="err">║ Client  ║    ║ Witnesses                  ║    ║ Miner     ║</span>
-<span class="err">╠═════════╣    ╠════════════════════════════╣    ╠═══════════╣</span>
-<span class="err">║ Publish ║ =&gt; ║ Retrieve =&gt; Aggregate      ║ =&gt; ║ Tally     ║</span>
-<span class="err">╚═════════╝    ╠────────────────────────────╣    ╚═══════════╝</span>
-<span class="err">               ║ Retrieve =&gt; Aggregate      ║</span>
-<span class="err">               ╠────────────────────────────╣</span>
-<span class="err">               ║ ... (as many as requested) ║</span>
-<span class="err">               ╚════════════════════════════╝</span>
+<div class="codehilite"><pre><span></span><code><span class="err">╔═════════╗</span>    <span class="err">╔════════════════════════════╗</span>    <span class="err">╔═══════════╗</span>
+<span class="err">║</span> <span class="n">Client</span>  <span class="err">║</span>    <span class="err">║</span> <span class="n">Witnesses</span>                  <span class="err">║</span>    <span class="err">║</span> <span class="n">Miner</span>     <span class="err">║</span>
+<span class="err">╠═════════╣</span>    <span class="err">╠════════════════════════════╣</span>    <span class="err">╠═══════════╣</span>
+<span class="err">║</span> <span class="n">Publish</span> <span class="err">║</span> <span class="o">=&gt;</span> <span class="err">║</span> <span class="n">Retrieve</span> <span class="o">=&gt;</span> <span class="n">Aggregate</span>      <span class="err">║</span> <span class="o">=&gt;</span> <span class="err">║</span> <span class="n">Tally</span>     <span class="err">║</span>
+<span class="err">╚═════════╝</span>    <span class="err">╠────────────────────────────╣</span>    <span class="err">╚═══════════╝</span>
+               <span class="err">║</span> <span class="n">Retrieve</span> <span class="o">=&gt;</span> <span class="n">Aggregate</span>      <span class="err">║</span>
+               <span class="err">╠────────────────────────────╣</span>
+               <span class="err">║</span> <span class="p">...</span> <span class="p">(</span><span class="n">as</span> <span class="n">many</span> <span class="n">as</span> <span class="n">requested</span><span class="p">)</span> <span class="err">║</span>
+               <span class="err">╚════════════════════════════╝</span>
 </code></pre></div>
-
 <p>For the sake of deterministic execution, data flowing through the
 different stages is strongly typed. The type of a value or data
 structure defines the operations that can be done on the data.</p>
 <p>For each stage, the data type of the input is the same as the data type
 of the output of previous stage. Particularly, the aggregation and
 tally stages gather multiple values or structures emitted by their
-precedent stages, so they always receive an <code class="codehilite"><span class="err">Array</span></code>, i.e. if the
-<strong>retrieval</strong> stage returned an <code class="codehilite"><span class="err">Integer</span></code>, the <strong>aggregation</strong> stage
-will start with an <code class="codehilite"><span class="err">Array&lt;Integer&gt;</span></code>, that is, an array of <code class="codehilite"><span class="err">Integer</span></code>s.</p>
+precedent stages, so they always receive an <code class="codehilite">Array</code>, i.e. if the
+<strong>retrieval</strong> stage returned an <code class="codehilite">Integer</code>, the <strong>aggregation</strong> stage
+will start with an <code class="codehilite">Array&lt;Integer&gt;</code>, that is, an array of <code class="codehilite">Integer</code>s.</p>
 <p>For more information on data types, you can read the
 <a href="#rad-object-notation-radon">RADON documentation</a>, which provides a detailed description of
 all the types and the operators they provide.</p>
@@ -1082,16 +1071,14 @@ byte codes and arguments) that are sequentially interpreted and applied
 by the RAD Engine on the output of the previous call.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>When applied on an <code class="codehilite"><span class="err">Array&lt;Integer&gt;</span></code>, this very simple 4-bytes RADON
-script will compute the average mean of all the <code class="codehilite"><span class="err">Integer</span></code>s:</p>
-<div class="codehilite"><pre><span></span><code><span class="mi">91</span> <span class="mi">92</span> <span class="mi">56</span> <span class="mi">03</span>
+<p>When applied on an <code class="codehilite">Array&lt;Integer&gt;</code>, this very simple 4-bytes RADON
+script will compute the average mean of all the <code class="codehilite">Integer</code>s:</p>
+<div class="codehilite"><pre><span></span><code><span class="mf">91</span> <span class="mf">92</span> <span class="mf">56</span> <span class="mo">03</span>
 </code></pre></div>
-
 <div class="codehilite"><pre><span></span><code><span class="p">[</span>
     <span class="p">[</span> <span class="nx">OP_ARRAY_REDUCE</span><span class="p">,</span> <span class="nx">REDUCER_AVG_MEAN</span> <span class="p">]</span>   <span class="c1">// [ 0x56, 0x03 ]</span>
 <span class="p">]</span>
 </code></pre></div>
-
 <p>Do not worry if you do not understand this script just yet. Keep on
 reading and then head yourself to the <a href="/protocol/data-requests/radon-encoding/">RADON encoding</a>
 section for an explanation on how scripts are codified and

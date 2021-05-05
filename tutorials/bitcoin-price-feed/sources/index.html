@@ -537,11 +537,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1024,11 +1019,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1081,7 +1071,7 @@ transform them both to Celcius so they can be averaged.</p>
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Source 1: Bitstamp</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
-<span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 </code></pre></div></div>
@@ -1089,7 +1079,7 @@ transform them both to Celcius so they can be averaged.</p>
 <label for="__tab_1_1">Source 2: CoinDesk</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, so more operators are needed</span>
-<span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
@@ -1103,7 +1093,7 @@ transform them both to Celcius so they can be averaged.</p>
 <li>Each operator is applied on the output of the previous operator, just
   as you would expect from Javascript method chaining or
   <a href="https://en.wikipedia.org/wiki/Builder_pattern">the builder pattern</a>.</li>
-<li>Source scripts always start with a <code class="codehilite"><span class="err">String</span></code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</li>
+<li>Source scripts always start with a <code class="codehilite">String</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</li>
 <li>Key-value data structures (roughly similar to Javascript <em>objects</em>,
   Python <em>dictionaries</em> or Solidity <em>mappings</em>) are called <em>maps</em>.</li>
 <li>Values in maps cannot be accessed directly by name as <code class="codehilite"><span class="na">.keyName</span></code> but
@@ -1113,34 +1103,32 @@ transform them both to Celcius so they can be averaged.</p>
 <li>The final return type of a script is that of its last operator.</li>
 <li>For any combination of known input type and RADON script, the output
   type can be easily guessed upon compilation.</li>
-<li><strong>All source scripts MUST return exactly the same type</strong> (<code class="codehilite"><span class="err">Float</span></code> in
+<li><strong>All source scripts MUST return exactly the same type</strong> (<code class="codehilite">Float</code> in
   this case).</li>
 </ul>
 <h2 id="where-do-i-put-the-sources">Where do I put the sources?<a class="headerlink" href="#where-do-i-put-the-sources" title="Permanent link">&para;</a></h2>
-<p>Let's create a new <code class="codehilite"><span class="err">requests/BitcoinPrice.js</span></code> file and copy the two example
+<p>Let's create a new <code class="codehilite">requests/BitcoinPrice.js</code> file and copy the two example
 sources above into it:</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Witnet</span> <span class="k">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
-<span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
-<span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;rate_float&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `rate_float` key</span>
 </code></pre></div>
-
-<p>Notice the <code class="codehilite"><span class="err">import</span></code> instruction at the top, which makes it possible to use all
+<p>Notice the <code class="codehilite">import</code> instruction at the top, which makes it possible to use all
 the tools that the Witnet Javascript library provides:</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Witnet</span> <span class="k">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
 </code></pre></div>
-
-<p>Please make sure you save the <code class="codehilite"><span class="err">requests/BitcoinPrice.js</span></code> file.</p>
+<p>Please make sure you save the <code class="codehilite">requests/BitcoinPrice.js</code> file.</p>
 <h2 id="next-step-define-aggregator-and-tally-functions">Next step: define aggregator and tally functions<a class="headerlink" href="#next-step-define-aggregator-and-tally-functions" title="Permanent link">&para;</a></h2>
 <p>You are done with the sources for now. Let's move forward into
 <a href="/tutorials/bitcoin-price-feed/aggregations">defining the aggregation and tally functions</a>.</p>
@@ -1159,9 +1147,9 @@ tutorial.</p>
 on what the data type of the server response will be for different data
 sources. This will allow for formats other than plain text,
 such as multimedia files and any kind of binaries. Therefore,
-source scripts will start with <code class="codehilite"><span class="err">Bytes</span></code> as the input type; it will be
+source scripts will start with <code class="codehilite">Bytes</code> as the input type; it will be
 totally up to the requester to specify whether those bytes should be
-interpreted as a <code class="codehilite"><span class="err">String</span></code>, <code class="codehilite"><span class="err">Integer</span></code> etc.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+interpreted as a <code class="codehilite">String</code>, <code class="codehilite">Integer</code> etc.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>One of the key features in RADON 2.0 will be

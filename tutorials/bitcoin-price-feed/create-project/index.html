@@ -517,11 +517,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1008,11 +1003,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1049,14 +1039,13 @@ boilerplate, but if you are feeling impatient you can <a href="/tutorials/bitcoi
 <h3 id="project-folder-structure">Project folder structure<a class="headerlink" href="#project-folder-structure" title="Permanent link">&para;</a></h3>
 <p>After <em>unboxing</em> you should find yourself in a project that has been
 populated with the following directory structure:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">bitcoin-price-feed</span>
-<span class="err">├── contracts       // Where your Solidity contracts will be</span>
-<span class="err">│   └── requests    // Where Witnet requests end up after compilation</span>
-<span class="err">├── migrations      // Deployment scripts</span>
-<span class="err">├── requests        // Witnet request source code (.js files)</span>
-<span class="err">└── test            // Scripts for testing your contracts</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">bitcoin</span><span class="o">-</span><span class="nv">price</span><span class="o">-</span><span class="nv">feed</span>
+├── <span class="nv">contracts</span>       <span class="o">//</span> <span class="nv">Where</span> <span class="nv">your</span> <span class="nv">Solidity</span> <span class="nv">contracts</span> <span class="nv">will</span> <span class="nv">be</span>
+│   └── <span class="nv">requests</span>    <span class="o">//</span> <span class="nv">Where</span> <span class="nv">Witnet</span> <span class="nv">requests</span> <span class="k">end</span> <span class="nv">up</span> <span class="nv">after</span> <span class="nv">compilation</span>
+├── <span class="nv">migrations</span>      <span class="o">//</span> <span class="nv">Deployment</span> <span class="nv">scripts</span>
+├── <span class="nv">requests</span>        <span class="o">//</span> <span class="nv">Witnet</span> <span class="nv">request</span> <span class="nv">source</span> <span class="nv">code</span> <span class="ss">(</span>.<span class="nv">js</span> <span class="nv">files</span><span class="ss">)</span>
+└── <span class="nv">test</span>            <span class="o">//</span> <span class="nv">Scripts</span> <span class="k">for</span> <span class="nv">testing</span> <span class="nv">your</span> <span class="nv">contracts</span>
 </code></pre></div>
-
 <h2 id="next-step-adding-data-sources">Next step: adding data sources<a class="headerlink" href="#next-step-adding-data-sources" title="Permanent link">&para;</a></h2>
 <p>You are now ready to move forward into
 <a href="/tutorials/bitcoin-price-feed/sources">defining the data sources to be used</a>.</p>

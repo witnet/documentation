@@ -506,11 +506,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1106,11 +1101,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1126,7 +1116,7 @@
                 
                 <h1 id="i-got-my-witnet-node-running-whats-next">I got my Witnet node running. What's next?<a class="headerlink" href="#i-got-my-witnet-node-running-whats-next" title="Permanent link">&para;</a></h1>
 <h2 id="the-first-minutes-and-hours-in-your-nodes-life">The first minutes and hours in your node's life<a class="headerlink" href="#the-first-minutes-and-hours-in-your-nodes-life" title="Permanent link">&para;</a></h2>
-<p>As soon as the <code class="codehilite"><span class="err">witnet_node</span></code> container is up, it will do the following things in order:</p>
+<p>As soon as the <code class="codehilite">witnet_node</code> container is up, it will do the following things in order:</p>
 <ol>
 <li>Try to <strong>open connections to other nodes</strong> in the network. It needs 12 "outbound" connections. This should take from several seconds to a few minutes.</li>
 <li>Discover what is the <strong>tip of the block chain</strong>, and <strong>download all the blocks</strong> from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.</li>
@@ -1162,7 +1152,7 @@ A complete documentation of all the CLI methods is available in the <a href="/no
 </code></pre></div></div>
 </div>
 <h3 id="balance">balance<a class="headerlink" href="#balance" title="Permanent link">&para;</a></h3>
-<p>The <code class="codehilite"><span class="err">balance</span></code> command will print your node's current balance.</p>
+<p>The <code class="codehilite">balance</code> command will print your node's current balance.</p>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
 <label for="__tab_2_0">Docker</label>
@@ -1178,7 +1168,7 @@ A complete documentation of all the CLI methods is available in the <a href="/no
 </code></pre></div></div>
 </div>
 <h3 id="reputation">reputation<a class="headerlink" href="#reputation" title="Permanent link">&para;</a></h3>
-<p>The <code class="codehilite"><span class="err">reputation</span></code> command will print your node's current reputation score.</p>
+<p>The <code class="codehilite">reputation</code> command will print your node's current reputation score.</p>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
 <label for="__tab_3_0">Docker</label>
@@ -1219,7 +1209,7 @@ telnet your_public_ip <span class="m">21337</span>
 </code></pre></div></div>
 </div>
 <p>The final check to verify that your port is correctly forwarded is using the
-<code class="codehilite"><span class="err">peers</span></code> method to look if any of the peer connections is tagged as "inbound":</p>
+<code class="codehilite">peers</code> method to look if any of the peer connections is tagged as "inbound":</p>
 <div class="superfences-tabs">
 <input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
 <label for="__tab_5_0">Docker</label>
@@ -1238,11 +1228,11 @@ telnet your_public_ip <span class="m">21337</span>
 <p class="admonition-title">Multiple nodes in the same device or network</p>
 <p>Multiple Witnet nodes can run in the same device or network and still get
 incoming connections. This is possible by forwarding a different external
-port (e.g. <code class="codehilite"><span class="err">22337</span></code>) to the port of your second node.</p>
+port (e.g. <code class="codehilite"><span class="mf">22337</span></code>) to the port of your second node.</p>
 <p>However, your second node may require setting an additional parameter in
 its configuration file so that it is aware of the new port. Please read
 below how to customize the configuration file. The parameter you need to
-adjust is <code class="codehilite"><span class="err">public_addr</span></code>.</p>
+adjust is <code class="codehilite">public_addr</code>.</p>
 </div>
 <h2 id="back-up-your-private-master-key">Back up your private master key<a class="headerlink" href="#back-up-your-private-master-key" title="Permanent link">&para;</a></h2>
 <p>Doing a backup of the private master key of your node is a great way to keep
@@ -1262,8 +1252,8 @@ your wit tokens safe.</p>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">witnet node masterKeyExport</span>
 </code></pre></div></div>
 </div>
-<p>You can add the <code class="codehilite"><span class="err">--write</span></code> flag to write a backup of your master key into a file
-in the configuration directory of your node (<code class="codehilite"><span class="err">~/.witnet/config</span></code> by default):</p>
+<p>You can add the <code class="codehilite">--write</code> flag to write a backup of your master key into a file
+in the configuration directory of your node (<code class="codehilite">~/.witnet/config</code> by default):</p>
 <div class="superfences-tabs">
 <input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
 <label for="__tab_7_0">Docker</label>
@@ -1292,7 +1282,7 @@ existing key could be dangerous. The process is quite simple:</p>
 
 <span class="go">nano ~/.witnet/config/master.key </span>
 
-<span class="gp">#</span> Now enter your master key into the file editor, save with Ctrl+O and <span class="nb">exit</span> with Ctrl+X
+<span class="gp"># </span>Now enter your master key into the file editor, save with Ctrl+O and <span class="nb">exit</span> with Ctrl+X
 
 <span class="go">docker run -d \</span>
 <span class="go">    --name witnet_node \</span>
@@ -1308,7 +1298,7 @@ existing key could be dangerous. The process is quite simple:</p>
 
 <span class="go">vim ~/.witnet/config/master.key </span>
 
-<span class="gp">#</span> Now enter your master key into the file editor, save and <span class="nb">exit</span> by typing Escape, <span class="k">then</span> <span class="s2">&quot;:wq&quot;</span> and Enter 
+<span class="gp"># </span>Now enter your master key into the file editor, save and <span class="nb">exit</span> by typing Escape, <span class="k">then</span> <span class="s2">&quot;:wq&quot;</span> and Enter 
 
 <span class="go">docker run -d \</span>
 <span class="go">    --name witnet_node \</span>
@@ -1329,11 +1319,11 @@ existing key could be dangerous. The process is quite simple:</p>
 You may find your nodes exposed to double-spend issues and severe slashing.</p>
 </div>
 <h2 id="customize-configuration-if-needed">Customize configuration if needed<a class="headerlink" href="#customize-configuration-if-needed" title="Permanent link">&para;</a></h2>
-<p>A custom <code class="codehilite"><span class="err">witnet.toml</span></code> configuration file can be used to adjust some parameters
+<p>A custom <code class="codehilite">witnet.toml</code> configuration file can be used to adjust some parameters
 of the node. The configuration file itself contains detailed explanations for each
 parameter.</p>
-<p>If you created your node following this guide, your <code class="codehilite"><span class="err">witnet.toml</span></code> file will
-be found in the <code class="codehilite"><span class="err">~/.witnet/config</span></code> folder, right in your user's directory.</p>
+<p>If you created your node following this guide, your <code class="codehilite">witnet.toml</code> file will
+be found in the <code class="codehilite">~/.witnet/config</code> folder, right in your user's directory.</p>
 <p>You can easily edit the configuration file like this:</p>
 <div class="superfences-tabs">
 <input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
@@ -1352,10 +1342,10 @@ be found in the <code class="codehilite"><span class="err">~/.witnet/config</spa
 <h2 id="long-term-maintenance-of-your-node">Long term maintenance of your node<a class="headerlink" href="#long-term-maintenance-of-your-node" title="Permanent link">&para;</a></h2>
 <p>There are some operations that are recommended from time to time to make sure your node is in perfect order:</p>
 <ul>
-<li>Give a look to the result of the <code class="codehilite"><span class="err">nodeStats</span></code>, <code class="codehilite"><span class="err">balance</span></code> and <code class="codehilite"><span class="err">reputation</span></code> commands.</li>
+<li>Give a look to the result of the <code class="codehilite">nodeStats</code>, <code class="codehilite">balance</code> and <code class="codehilite">reputation</code> commands.</li>
 <li>Check that you are getting incoming connections as explained above.</li>
 <li>Keep an eye on announcements for software and networks upgrades through the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> and <a href="https://t.me/witnetio">Telegram</a> to make sure that you are running the latest release, which should give your node the best performance, liveness and security. </li>
-<li>Restart your node once in a while (e.g. <code class="codehilite"><span class="err">docker restart witnet_node</span></code>) so that the node can perform some housekeeping operations. This helps reducing memory footprint and optimize disk space. </li>
+<li>Restart your node once in a while (e.g. <code class="codehilite">docker restart witnet_node</code>) so that the node can perform some housekeeping operations. This helps reducing memory footprint and optimize disk space. </li>
 </ul>
                 
                   

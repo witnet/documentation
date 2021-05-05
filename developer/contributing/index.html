@@ -753,11 +753,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1144,11 +1139,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1185,8 +1175,8 @@ what already exists and submit a pull request on <a href="https://github.com/wit
 <p>The <a href="https://github.com/witnet/witnet-rust/issues">list of issues</a> is a good place to start, especially the
 ones tagged as "<a href="https://github.com/witnet/witnet-rust/labels/good%20first%20issue%20%F0%9F%91%8B">good first issue</a>" or "help wanted" (but
 don't let that stop you from looking at others). If you're looking for
-additional ideas, try to search <code class="codehilite"><span class="err">TODO</span></code> comments for suggestions on minor
-to major improvements. <code class="codehilite"><span class="err">grep</span></code> is your friend.</p>
+additional ideas, try to search <code class="codehilite">TODO</code> comments for suggestions on minor
+to major improvements. <code class="codehilite">grep</code> is your friend.</p>
 <p>Pull requests adding more tests or documentation are rewarded with an immense amount of positive karma.</p>
 <h3 id="reporting-bugs">Reporting bugs<a class="headerlink" href="#reporting-bugs" title="Permanent link">&para;</a></h3>
 <p>This section guides you through submitting a bug report. This helps
@@ -1226,7 +1216,7 @@ reproduce the problem:</p>
 <li>Can you reliably reproduce the issue? If not, provide details about
   how often the problem happens and under which conditions it normally
   happens.</li>
-<li>Are you running <code class="codehilite"><span class="err">witnet-rust</span></code> from a pre-compiled binary or from the
+<li>Are you running <code class="codehilite">witnet-rust</code> from a pre-compiled binary or from the
   source code?</li>
 <li>What's your operating system and version?</li>
 </ul>
@@ -1270,17 +1260,17 @@ generation of changelogs.</p>
 <div class="admonition examples">
 <p class="admonition-title">Examples</p>
 <p>These are some examples of good commit messages:</p>
-<p><div class="codehilite"><pre><span></span><code><span class="n">feat</span><span class="p">(</span><span class="n">mining</span><span class="p">):</span> <span class="n">use</span> <span class="n">a</span> <span class="n">random</span> <span class="n">nonce</span> <span class="k">as</span> <span class="k">input</span> <span class="k">in</span> <span class="n">mint</span> <span class="n">transactions</span>
+<p><div class="codehilite"><pre><span></span><code><span class="nv">feat</span><span class="ss">(</span><span class="nv">mining</span><span class="ss">)</span>: <span class="nv">use</span> <span class="nv">a</span> <span class="k">random</span> <span class="nv">nonce</span> <span class="nv">as</span> <span class="nv">input</span> <span class="nv">in</span> <span class="nv">mint</span> <span class="nv">transactions</span>
 
-<span class="n">BREAKING</span> <span class="n">CHANGE</span><span class="p">:</span> <span class="n">former</span> <span class="n">mint</span> <span class="n">transactions</span> <span class="n">containing</span> <span class="k">no</span> <span class="n">inputs</span> <span class="n">will</span> <span class="n">be</span> <span class="n">rendered</span> <span class="n">invalid</span> 
+<span class="nv">BREAKING</span> <span class="nv">CHANGE</span>: <span class="nv">former</span> <span class="nv">mint</span> <span class="nv">transactions</span> <span class="nv">containing</span> <span class="nv">no</span> <span class="nv">inputs</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">rendered</span> <span class="nv">invalid</span> 
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code><span class="nf">refactor</span><span class="p">(</span><span class="n">config</span><span class="p">):</span> <span class="n">make</span> <span class="ss">`config`</span> <span class="n">actor</span> <span class="k">return</span> <span class="n">settings</span> <span class="k">as</span> <span class="ss">`Option`</span><span class="n">s</span>
+<div class="codehilite"><pre><span></span><code><span class="n">refactor</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="o">:</span> <span class="n">make</span> <span class="n n-Quoted">`config`</span> <span class="n">actor</span> <span class="k">return</span> <span class="k">set</span><span class="n">tings</span> <span class="k">as</span> <span class="n n-Quoted">`Option`</span><span class="n">s</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code><span class="n">docs</span><span class="p">:</span> <span class="k">add</span> <span class="n">RADON</span> <span class="ss">`FLOAT_TOSTRING`</span> <span class="n">opcode</span>
+<div class="codehilite"><pre><span></span><code><span class="n">docs</span><span class="o">:</span> <span class="k">add</span> <span class="n">RADON</span> <span class="n n-Quoted">`FLOAT_TOSTRING`</span> <span class="n">opcode</span>
 
-<span class="n">this</span> <span class="n">operator</span> <span class="n">converts</span> <span class="n">any</span> <span class="n">floating</span> <span class="n">point</span> <span class="n">number</span> <span class="k">into</span> <span class="n">a</span> <span class="n">UTF8</span> <span class="n">string</span>
+<span class="n">this</span> <span class="n">operator</span> <span class="n">converts</span> <span class="k">any</span> <span class="n">floating</span> <span class="kt">point</span> <span class="k">number</span> <span class="k">into</span> <span class="n">a</span> <span class="n">UTF8</span> <span class="k">string</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code><span class="nf">chore</span><span class="p">(</span><span class="n">cargo</span><span class="p">):</span> <span class="n">upgrade</span> <span class="ss">`actix`</span> <span class="k">to</span> <span class="n">version</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">.</span><span class="mi">1</span>
+<div class="codehilite"><pre><span></span><code><span class="n">chore</span><span class="p">(</span><span class="n">cargo</span><span class="p">)</span><span class="o">:</span> <span class="k">upgrade</span> <span class="n n-Quoted">`actix`</span> <span class="k">to</span> <span class="n">version</span> <span class="mf">0.8.1</span>
 
 <span class="n">fix</span> <span class="c1">#503</span>
 </code></pre></div></p>
@@ -1290,8 +1280,8 @@ generation of changelogs.</p>
 their authors using PGP.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To configure your Git client to sign commits by default for a local repository, in Git versions 2.0.0 and above, run <code class="codehilite"><span class="err">git config commit.gpgsign true</span></code>.
-To sign all commits by default in any local repository on your computer, run <code class="codehilite"><span class="err">git config --global commit.gpgsign true</span></code>.</p>
+<p>To configure your Git client to sign commits by default for a local repository, in Git versions 2.0.0 and above, run <code class="codehilite">git config commit.gpgsign true</code>.
+To sign all commits by default in any local repository on your computer, run <code class="codehilite">git config --global commit.gpgsign true</code>.</p>
 <p>To store your GPG key passphrase so you don't have to enter it every time you sign a commit, we recommend using the following tools:</p>
 <ul>
 <li>For Mac users, the <a href="https://gpgtools.org/">GPG Suite</a> allows you to store your GPG key passphrase in the Mac OS Keychain.</li>

@@ -549,11 +549,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1024,11 +1019,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1051,7 +1041,7 @@ Witnet.</em></p>
 <h2 id="what-is-an-aggregator">What is an aggregator?<a class="headerlink" href="#what-is-an-aggregator" title="Permanent link">&para;</a></h2>
 <p>Aggregators define how to reduce or merge the result of multiple sources
 into a single data point. They are similar to JavaScript's <code class="codehilite"><span class="na">.reduce</span><span class="p">()</span></code>
-method or the <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><code class="codehilite"><span class="err">fold</span></code> higher-order function</a> from many programming
+method or the <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><code class="codehilite">fold</code> higher-order function</a> from many programming
 languages.</p>
 <p>In addition, aggregation functions give the chance to filter out any
 outliers by using one or more statistical primitives.</p>
@@ -1062,7 +1052,7 @@ outliers by using one or more statistical primitives.</p>
 <li>Aggregators contain <strong>exactly one reducer</strong>.</li>
 <li>When a Witnet node gets a request assigned for resolution, it
   retrieves every source, applies the source companion scripts on the
-  retrieved data, collects the results into an <code class="codehilite"><span class="err">Array</span></code>, and then apply
+  retrieved data, collects the results into an <code class="codehilite">Array</code>, and then apply
   the aggregator on it, first running the filters and later the
   reducer.</li>
 </ul>
@@ -1073,20 +1063,19 @@ nodes.</p>
 <h2 id="lets-average-multiple-sources">Let's average multiple sources<a class="headerlink" href="#lets-average-multiple-sources" title="Permanent link">&para;</a></h2>
 <p>In this case, you will be using an aggregator that filters out any
 outliers coming from the two sources that you defined before, and
-returns the average mean of the <code class="codehilite"><span class="err">Float</span></code> values that pass the filter:</p>
+returns the average mean of the <code class="codehilite">Float</code> values that pass the filter:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
-<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
    <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
   <span class="p">],</span>
   <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
 <span class="p">})</span>
 </code></pre></div>
-
-<p>That will be enough to reduce the <code class="codehilite"><span class="err">Array</span></code> containing the <code class="codehilite"><span class="err">Float</span></code>
-responses of the two sources into a single <code class="codehilite"><span class="err">Float</span></code> that represents the
+<p>That will be enough to reduce the <code class="codehilite">Array</code> containing the <code class="codehilite">Float</code>
+responses of the two sources into a single <code class="codehilite">Float</code> that represents the
 average mean of non-outliers values. You can now continue with the tally
 function.</p>
 <h2 id="tally-by-average">Tally by average<a class="headerlink" href="#tally-by-average" title="Permanent link">&para;</a></h2>
@@ -1095,30 +1084,29 @@ similar to the aggregation function:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
-<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
    <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
   <span class="p">],</span>
   <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
 <span class="p">})</span>
 </code></pre></div>
-
 <p>Note, however, that in this case the deviation filter is using a narrower
-threshold (<code class="codehilite"><span class="err">1.0</span></code> instead of <code class="codehilite"><span class="err">1.5</span></code>). This is to ensure that malicious
+threshold (<code class="codehilite"><span class="mf">1.0</span></code> instead of <code class="codehilite"><span class="mf">1.5</span></code>). This is to ensure that malicious
 data points will not affect the final result, and that the witnesses
 that produced such outliers will be punished for their misbehavior.</p>
 <h2 id="quick-recap">Quick recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h2>
-<p>At this point, <code class="codehilite"><span class="err">requests/BitcoinPrice.js</span></code>  should look like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
+<p>At this point, <code class="codehilite">requests/BitcoinPrice.js</code>  should look like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Witnet</span> <span class="k">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
-<span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
-<span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
@@ -1127,7 +1115,7 @@ that produced such outliers will be punished for their misbehavior.</p>
 <span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
-<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
    <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
   <span class="p">],</span>
@@ -1137,14 +1125,13 @@ that produced such outliers will be punished for their misbehavior.</p>
 <span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviation away from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
-<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
    <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
   <span class="p">],</span>
   <span class="nx">reducer</span><span class="o">:</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">REDUCERS</span><span class="p">.</span><span class="nx">averageMean</span>
 <span class="p">})</span>
 </code></pre></div>
-
 <p>Now it is time to put everything together and
 <a href="/tutorials/bitcoin-price-feed/fine-tuning">fine-tune the request</a>.</p>
 <div class="admonition question">

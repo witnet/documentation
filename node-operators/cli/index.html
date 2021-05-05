@@ -1005,11 +1005,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1288,11 +1283,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1324,7 +1314,7 @@
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- node --help</span>
 </code></pre></div></div>
 </div>
-<p>To get more information about any specific command, simply add <code class="codehilite"><span class="err">--help</span></code> at the end. For instance, this will show the available options for the <code class="codehilite"><span class="err">blockchain</span></code> command:</p>
+<p>To get more information about any specific command, simply add <code class="codehilite">--help</code> at the end. For instance, this will show the available options for the <code class="codehilite">blockchain</code> command:</p>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
 <label for="__tab_2_0">Docker</label>
@@ -1340,8 +1330,8 @@
 </code></pre></div></div>
 </div>
 <p>The JSON-RPC server address is obtained from the <a href="/node-operators/configuration">configuration file</a>.
-The path of this file can be set using the <code class="codehilite"><span class="err">-c</span></code> or <code class="codehilite"><span class="err">--config</span></code> flag.
-This flag must appear before <code class="codehilite"><span class="err">node</span></code>.</p>
+The path of this file can be set using the <code class="codehilite">-c</code> or <code class="codehilite">--config</code> flag.
+This flag must appear before <code class="codehilite">node</code>.</p>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
 <label for="__tab_3_0">Docker</label>
@@ -1356,7 +1346,7 @@ This flag must appear before <code class="codehilite"><span class="err">node</sp
 <div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="go">cargo run -- -c witnet.toml node blockchain</span>
 </code></pre></div></div>
 </div>
-<p>You can use the <code class="codehilite"><span class="err">-n</span></code> flag to easily overwrite the node address.
+<p>You can use the <code class="codehilite">-n</code> flag to easily overwrite the node address.
 This flag must appear after the command name.</p>
 <div class="superfences-tabs">
 <input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
@@ -1390,7 +1380,7 @@ Error: Connection refused (os error 111)
 Error: Connection refused (os error 111)
 </code></pre></div></div>
 </div>
-<p>The executable implements the usual logging API, which can be enabled using <code class="codehilite"><span class="err">RUST_LOG=witnet=debug</span></code>:</p>
+<p>The executable implements the usual logging API, which can be enabled using <code class="codehilite">RUST_LOG=witnet=debug</code>:</p>
 <div class="superfences-tabs">
 <input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
 <label for="__tab_6_0">Docker</label>
@@ -1430,9 +1420,8 @@ ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
 </code></pre></div></div>
 </div>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Successfully added peer addresses: [&quot;52.166.178.145:12337&quot;, &quot;52.166.178.145:22337&quot;]</span>
+<div class="codehilite"><pre><span></span><code>Successfully added peer addresses: [&quot;52.166.178.145:12337&quot;, &quot;52.166.178.145:22337&quot;]
 </code></pre></div>
-
 <h3 id="address">address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h3>
 <p>Get the identifier of the node that acts as its address when interacting with the protocol through transactions.</p>
 <p>This is the address used for mining blocks, resolving data requests, and
@@ -1452,13 +1441,12 @@ receiving value transfer transactions.</p>
 </code></pre></div></div>
 </div>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span>
+<div class="codehilite"><pre><span></span><code>twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 </code></pre></div>
-
 <h3 id="balance">balance<a class="headerlink" href="#balance" title="Permanent link">&para;</a></h3>
 <p>Get total balance of a given Witnet address. Balances are shown in wits.</p>
 <ul>
-<li><code class="codehilite"><span class="err">--address=address</span></code>: address for which to get balance. If omitted, defaults to the node's own address.</li>
+<li><code class="codehilite">--address=address</code>: address for which to get balance. If omitted, defaults to the node's own address.</li>
 </ul>
 <div class="superfences-tabs">
 <input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
@@ -1478,9 +1466,8 @@ receiving value transfer transactions.</p>
 </code></pre></div></div>
 </div>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">34099.999950005 wits</span>
+<div class="codehilite"><pre><span></span><code><span class="mf">34099.999950005</span> <span class="n">wits</span>
 </code></pre></div>
-
 <h3 id="block">block<a class="headerlink" href="#block" title="Permanent link">&para;</a></h3>
 <p>Print out detailed information about a block being queried by its hash.</p>
 <div class="superfences-tabs">
@@ -1501,7 +1488,6 @@ receiving value transfer transactions.</p>
 <p>Example output:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;block_header&quot;</span><span class="p">:{</span><span class="nt">&quot;beacon&quot;</span><span class="p">:{</span><span class="nt">&quot;checkpoint&quot;</span><span class="p">:</span><span class="mi">74005</span><span class="p">,</span><span class="nt">&quot;hashPrevBlock&quot;</span><span class="p">:</span><span class="s2">&quot;ac6ec0020e726577fa3df3fd04de2a30b020c4a864602375a129e090707a90dc&quot;</span><span class="p">},</span><span class="nt">&quot;merkle_roots&quot;</span><span class="p">:{</span><span class="nt">&quot;commit_hash_merkle_root&quot;</span><span class="p">:</span><span class="s2">&quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;</span><span class="p">,</span><span class="nt">&quot;dr_hash_merkle_root&quot;</span><span class="p">:</span><span class="s2">&quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;</span><span class="p">,</span><span class="nt">&quot;mint_hash&quot;</span><span class="p">:</span><span class="s2">&quot;a02e6038ec2a472d6daa8f374bdeca84a62cd5731d33dd865f497f34360874ef&quot;</span><span class="p">,</span><span class="nt">&quot;reveal_hash_merkle_root&quot;</span><span class="p">:</span><span class="s2">&quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;</span><span class="p">,</span><span class="nt">&quot;tally_hash_merkle_root&quot;</span><span class="p">:</span><span class="s2">&quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;</span><span class="p">,</span><span class="nt">&quot;vt_hash_merkle_root&quot;</span><span class="p">:</span><span class="s2">&quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;</span><span class="p">},</span><span class="nt">&quot;proof&quot;</span><span class="p">:{</span><span class="nt">&quot;proof&quot;</span><span class="p">:{</span><span class="nt">&quot;proof&quot;</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">176</span><span class="p">,</span><span class="mi">129</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">178</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">246</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">119</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="mi">163</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">233</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">103</span><span class="p">],</span><span class="nt">&quot;public_key&quot;</span><span class="p">:{</span><span class="nt">&quot;bytes&quot;</span><span class="p">:[</span><span class="mi">163</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">169</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">216</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">194</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span><span class="nt">&quot;compressed&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}}},</span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span><span class="nt">&quot;block_sig&quot;</span><span class="p">:{</span><span class="nt">&quot;public_key&quot;</span><span class="p">:{</span><span class="nt">&quot;bytes&quot;</span><span class="p">:[</span><span class="mi">163</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">169</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">216</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">253</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">194</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span><span class="nt">&quot;compressed&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="nt">&quot;signature&quot;</span><span class="p">:{</span><span class="nt">&quot;Secp256k1&quot;</span><span class="p">:{</span><span class="nt">&quot;der&quot;</span><span class="p">:[</span><span class="mi">48</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">248</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">170</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">219</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">207</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">146</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">217</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="mi">249</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">254</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">12</span><span class="p">]}}},</span><span class="nt">&quot;txns&quot;</span><span class="p">:{</span><span class="nt">&quot;commit_txns&quot;</span><span class="p">:[],</span><span class="nt">&quot;data_request_txns&quot;</span><span class="p">:[],</span><span class="nt">&quot;mint&quot;</span><span class="p">:{</span><span class="nt">&quot;epoch&quot;</span><span class="p">:</span><span class="mi">74005</span><span class="p">,</span><span class="nt">&quot;output&quot;</span><span class="p">:{</span><span class="nt">&quot;pkh&quot;</span><span class="p">:</span><span class="s2">&quot;twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr&quot;</span><span class="p">,</span><span class="nt">&quot;time_lock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="mi">50000000000</span><span class="p">}},</span><span class="nt">&quot;reveal_txns&quot;</span><span class="p">:[],</span><span class="nt">&quot;tally_txns&quot;</span><span class="p">:[],</span><span class="nt">&quot;value_transfer_txns&quot;</span><span class="p">:[]}},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
 </code></pre></div>
-
 <h3 id="blockchain">blockchain<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h3>
 <p>List block hashes in the local block chain, matched with their epochs.</p>
 <div class="superfences-tabs">
@@ -1520,66 +1506,65 @@ receiving value transfer transactions.</p>
 </div>
 <p>This method accepts two optional arguments:</p>
 <ul>
-<li><code class="codehilite"><span class="err">--epoch=n</span></code>: the first epoch for which to show block hashes. A negative epoch means "n epochs ago".</li>
-<li><code class="codehilite"><span class="err">--limit=n</span></code>: the number of epochs. If zero, unlimited.</li>
+<li><code class="codehilite">--epoch=n</code>: the first epoch for which to show block hashes. A negative epoch means "n epochs ago".</li>
+<li><code class="codehilite">--limit=n</code>: the number of epochs. If zero, unlimited.</li>
 </ul>
 <div class="superfences-tabs">
 <input name="__tabs_12" type="radio" id="__tab_12_0" checked="checked" />
 <label for="__tab_12_0">Docker</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">#</span> Get all the block hashes from the genesis block
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp"># </span>Get all the block hashes from the genesis block
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=0 --limit=0</span>
 
-<span class="gp">#</span> Get the block hashes from epochs <span class="o">[</span><span class="m">0</span>, <span class="m">19</span><span class="o">]</span>
+<span class="gp"># </span>Get the block hashes from epochs <span class="o">[</span><span class="m">0</span>, <span class="m">19</span><span class="o">]</span>
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=0 --limit=20</span>
 
-<span class="gp">#</span> Get the block hashes from the last <span class="m">10</span> epochs
+<span class="gp"># </span>Get the block hashes from the last <span class="m">10</span> epochs
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=-10 --limit=0</span>
 
-<span class="gp">#</span> Get the block <span class="nb">hash</span> from <span class="m">10</span> epochs ago
+<span class="gp"># </span>Get the block <span class="nb">hash</span> from <span class="m">10</span> epochs ago
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=-10 --limit=1</span>
 
-<span class="gp">#</span> Get the block <span class="nb">hash</span> from the last block
+<span class="gp"># </span>Get the block <span class="nb">hash</span> from the last block
 <span class="go">docker exec witnet_node witnet node blockchain --epoch=-1 --limit=1</span>
 </code></pre></div></div>
 <input name="__tabs_12" type="radio" id="__tab_12_1" />
 <label for="__tab_12_1">Binary</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">#</span> Get all the block hashes from the genesis block
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp"># </span>Get all the block hashes from the genesis block
 <span class="go">witnet node blockchain --epoch=0 --limit=0</span>
 
-<span class="gp">#</span> Get the block hashes from epochs <span class="o">[</span><span class="m">0</span>, <span class="m">19</span><span class="o">]</span>
+<span class="gp"># </span>Get the block hashes from epochs <span class="o">[</span><span class="m">0</span>, <span class="m">19</span><span class="o">]</span>
 <span class="go">witnet node blockchain --epoch=0 --limit=20</span>
 
-<span class="gp">#</span> Get the block hashes from the last <span class="m">10</span> epochs
+<span class="gp"># </span>Get the block hashes from the last <span class="m">10</span> epochs
 <span class="go">witnet node blockchain --epoch=-10 --limit=0</span>
 
-<span class="gp">#</span> Get the block <span class="nb">hash</span> from <span class="m">10</span> epochs ago
+<span class="gp"># </span>Get the block <span class="nb">hash</span> from <span class="m">10</span> epochs ago
 <span class="go">witnet node blockchain --epoch=-10 --limit=1</span>
 
-<span class="gp">#</span> Get the block <span class="nb">hash</span> from the last block
+<span class="gp"># </span>Get the block <span class="nb">hash</span> from the last block
 <span class="go">witnet node blockchain --epoch=-1 --limit=1</span>
 </code></pre></div></div>
 <input name="__tabs_12" type="radio" id="__tab_12_2" />
 <label for="__tab_12_2">Cargo</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">#</span> Get all the block hashes from the genesis block
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp"># </span>Get all the block hashes from the genesis block
 <span class="go">cargo run -- node blockchain --epoch=0 --limit=0</span>
 
-<span class="gp">#</span> Get the block hashes from epochs <span class="o">[</span><span class="m">0</span>, <span class="m">19</span><span class="o">]</span>
+<span class="gp"># </span>Get the block hashes from epochs <span class="o">[</span><span class="m">0</span>, <span class="m">19</span><span class="o">]</span>
 <span class="go">cargo run -- node blockchain --epoch=0 --limit=20</span>
 
-<span class="gp">#</span> Get the block hashes from the last <span class="m">10</span> epochs
+<span class="gp"># </span>Get the block hashes from the last <span class="m">10</span> epochs
 <span class="go">cargo run -- node blockchain --epoch=-10 --limit=0</span>
 
-<span class="gp">#</span> Get the block <span class="nb">hash</span> from <span class="m">10</span> epochs ago
+<span class="gp"># </span>Get the block <span class="nb">hash</span> from <span class="m">10</span> epochs ago
 <span class="go">cargo run -- node blockchain --epoch=-10 --limit=1</span>
 
-<span class="gp">#</span> Get the block <span class="nb">hash</span> from the last block
+<span class="gp"># </span>Get the block <span class="nb">hash</span> from the last block
 <span class="go">cargo run -- node blockchain --epoch=-1 --limit=1</span>
 </code></pre></div></div>
 </div>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">block for epoch #76229 had digest 8dd75bb0d5475a93c27c4166677fbb3bc154e6731c7e07ecad549a58851c84a4</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">block</span> <span class="k">for</span> <span class="nv">epoch</span> <span class="sc">#76229</span> <span class="nv">had</span> <span class="nv">digest</span> <span class="mi">8</span><span class="nv">dd75bb0d5475a93c27c4166677fbb3bc154e6731c7e07ecad549a58851c84a4</span>
 </code></pre></div>
-
 <h3 id="datarequestreport">dataRequestReport<a class="headerlink" href="#datarequestreport" title="Permanent link">&para;</a></h3>
 <p>Show information about a data request.</p>
 <div class="superfences-tabs">
@@ -1597,18 +1582,17 @@ receiving value transfer transactions.</p>
 </code></pre></div></div>
 </div>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Report for data request 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d:</span>
-<span class="err">Deployed in block 159045c67d97e284588be4da89a43319735919144b2aaf1468e7eae6682f42b6 by twit10smy4dez7dpuc8yk3ck2qzgtuaa4vx3nqh5ysl</span>
-<span class="err">FINISHED with 2 commits and 2 reveals</span>
-<span class="err">Commit rounds: 1/2</span>
-<span class="err">Reveal rounds: 1/2</span>
-<span class="c">Reveals:</span>
-<span class="c">    [Rewarded ] twit1xpc5d7dz6rsnnjrlp98vtn496qzrawu7y5cyx4: RadonTypes::RadonFloat(10172.642950000001)</span>
-<span class="c">    [Rewarded ] twit1xcnfm3q57h7uh7y2m23y6hd7jsqufyrlmxgfnq: RadonTypes::RadonFloat(10172.642950000001)</span>
-<span class="c">Tally: RadonTypes::RadonFloat(10172.642950000001)</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">Report</span> <span class="k">for</span> <span class="nv">data</span> <span class="nv">request</span> <span class="mi">33</span><span class="nv">c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d</span>:
+<span class="nv">Deployed</span> <span class="nv">in</span> <span class="nv">block</span> <span class="mi">159045</span><span class="nv">c67d97e284588be4da89a43319735919144b2aaf1468e7eae6682f42b6</span> <span class="nv">by</span> <span class="nv">twit10smy4dez7dpuc8yk3ck2qzgtuaa4vx3nqh5ysl</span>
+<span class="nv">FINISHED</span> <span class="nv">with</span> <span class="mi">2</span> <span class="nv">commits</span> <span class="nv">and</span> <span class="mi">2</span> <span class="nv">reveals</span>
+<span class="nv">Commit</span> <span class="nv">rounds</span>: <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nv">Reveal</span> <span class="nv">rounds</span>: <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nv">Reveals</span>:
+    [<span class="nv">Rewarded</span> ] <span class="nv">twit1xpc5d7dz6rsnnjrlp98vtn496qzrawu7y5cyx4</span>: <span class="nv">RadonTypes</span>::<span class="nv">RadonFloat</span><span class="ss">(</span><span class="mi">10172</span>.<span class="mi">642950000001</span><span class="ss">)</span>
+    [<span class="nv">Rewarded</span> ] <span class="nv">twit1xcnfm3q57h7uh7y2m23y6hd7jsqufyrlmxgfnq</span>: <span class="nv">RadonTypes</span>::<span class="nv">RadonFloat</span><span class="ss">(</span><span class="mi">10172</span>.<span class="mi">642950000001</span><span class="ss">)</span>
+<span class="nv">Tally</span>: <span class="nv">RadonTypes</span>::<span class="nv">RadonFloat</span><span class="ss">(</span><span class="mi">10172</span>.<span class="mi">642950000001</span><span class="ss">)</span>
 </code></pre></div>
-
-<p>If you want to see the request move forwards through its different stages in real time you can use the <code class="codehilite"><span class="err">watch</span></code> command while it is being resolved:</p>
+<p>If you want to see the request move forwards through its different stages in real time you can use the <code class="codehilite">watch</code> command while it is being resolved:</p>
 <div class="superfences-tabs">
 <input name="__tabs_14" type="radio" id="__tab_14_0" checked="checked" />
 <label for="__tab_14_0">Docker</label>
@@ -1627,8 +1611,8 @@ receiving value transfer transactions.</p>
 <p>Create a value transfer transaction that joins UTXOs.</p>
 <p>The following arguments must be provided.</p>
 <ul>
-<li><code class="codehilite"><span class="err">--value=amount</span></code>: amount in nanoWits.</li>
-<li><code class="codehilite"><span class="err">--fee=fee</span></code>: miner fee in nanoWits.</li>
+<li><code class="codehilite">--value=amount</code>: amount in nanoWits.</li>
+<li><code class="codehilite">--fee=fee</code>: miner fee in nanoWits.</li>
 </ul>
 <div class="superfences-tabs">
 <input name="__tabs_15" type="radio" id="__tab_15_0" checked="checked" />
@@ -1722,22 +1706,21 @@ receiving value transfer transactions.</p>
 <li>Slashed commits</li>
 </ul>
 <p>Example output:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Block</span> <span class="err">mining</span> <span class="err">stats:</span>
-<span class="err">-</span> <span class="err">Proposed</span> <span class="err">blocks:</span> <span class="mi">81</span>
-<span class="err">-</span> <span class="err">Blocks</span> <span class="err">included</span> <span class="err">in</span> <span class="err">the</span> <span class="err">block</span> <span class="err">chain:</span> <span class="mi">1</span>
-<span class="err">Data</span> <span class="err">Request</span> <span class="err">mining</span> <span class="err">stats:</span>
-<span class="err">-</span> <span class="err">Times</span> <span class="err">with</span> <span class="err">eligibility</span> <span class="err">to</span> <span class="err">mine</span> <span class="err">a</span> <span class="err">data</span> <span class="err">request:</span> <span class="mi">2</span>
-<span class="err">-</span> <span class="err">Proposed</span> <span class="err">commits:</span> <span class="mi">0</span>
-<span class="err">-</span> <span class="err">Accepted</span> <span class="err">commits:</span> <span class="mi">0</span>
-<span class="err">-</span> <span class="err">Slashed</span> <span class="err">commits:</span> <span class="mi">0</span>
+<div class="codehilite"><pre><span></span><code><span class="err">Block</span> <span class="err">mi</span><span class="kc">n</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span> <span class="err">s</span><span class="kc">tats</span><span class="p">:</span>
+<span class="mi">-</span> <span class="err">Proposed</span> <span class="err">blocks</span><span class="p">:</span> <span class="mi">81</span>
+<span class="mi">-</span> <span class="err">Blocks</span> <span class="err">i</span><span class="kc">n</span><span class="err">cluded</span> <span class="err">i</span><span class="kc">n</span> <span class="kc">t</span><span class="err">he</span> <span class="err">block</span> <span class="err">chai</span><span class="kc">n</span><span class="p">:</span> <span class="mi">1</span>
+<span class="err">Da</span><span class="kc">ta</span> <span class="err">Reques</span><span class="kc">t</span> <span class="err">mi</span><span class="kc">n</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span> <span class="err">s</span><span class="kc">tats</span><span class="p">:</span>
+<span class="mi">-</span> <span class="err">Times</span> <span class="err">wi</span><span class="kc">t</span><span class="err">h</span> <span class="err">eligibili</span><span class="kc">t</span><span class="err">y</span> <span class="kc">t</span><span class="err">o</span> <span class="err">mi</span><span class="kc">ne</span> <span class="err">a</span> <span class="err">da</span><span class="kc">ta</span> <span class="err">reques</span><span class="kc">t</span><span class="p">:</span> <span class="mi">2</span>
+<span class="mi">-</span> <span class="err">Proposed</span> <span class="err">commi</span><span class="kc">ts</span><span class="p">:</span> <span class="mi">0</span>
+<span class="mi">-</span> <span class="err">Accep</span><span class="kc">te</span><span class="err">d</span> <span class="err">commi</span><span class="kc">ts</span><span class="p">:</span> <span class="mi">0</span>
+<span class="mi">-</span> <span class="err">Slashed</span> <span class="err">commi</span><span class="kc">ts</span><span class="p">:</span> <span class="mi">0</span>
 </code></pre></div>
-
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Note that it is perfectly normal for a node to show 0 "blocks included" or "accepted commits" for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.</p>
 </div>
 <h3 id="output">output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
-<p>Display a transaction output, as referred by it's "output pointer", that is, <code class="codehilite"><span class="err">&lt;transaction_id&gt;:&lt;output_index&gt;</span></code>.</p>
+<p>Display a transaction output, as referred by it's "output pointer", that is, <code class="codehilite">&lt;transaction_id&gt;:&lt;output_index&gt;</code>.</p>
 <div class="superfences-tabs">
 <input name="__tabs_20" type="radio" id="__tab_20_0" checked="checked" />
 <label for="__tab_20_0">Docker</label>
@@ -1771,58 +1754,58 @@ A node that does not announce a public address (IP and port) will normally have 
 </code></pre></div></div>
 </div>
 <h3 id="raw">raw<a class="headerlink" href="#raw" title="Permanent link">&para;</a></h3>
-<p>The <code class="codehilite"><span class="err">raw</span></code> command allows sending raw JSON-RPC requests from the command line.
-It can be used in an interactive way (don't forget the <code class="codehilite"><span class="err">-i</span></code> flag when using Docker): each line of user input will be sent to the JSON-RPC server without any modifications:</p>
+<p>The <code class="codehilite">raw</code> command allows sending raw JSON-RPC requests from the command line.
+It can be used in an interactive way (don't forget the <code class="codehilite">-i</code> flag when using Docker): each line of user input will be sent to the JSON-RPC server without any modifications:</p>
 <div class="superfences-tabs">
 <input name="__tabs_22" type="radio" id="__tab_22_0" checked="checked" />
 <label for="__tab_22_0">Docker</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$</span> docker <span class="nb">exec</span> -i witnet_node witnet node raw
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$ </span>docker <span class="nb">exec</span> -i witnet_node witnet node raw
 </code></pre></div></div>
 <input name="__tabs_22" type="radio" id="__tab_22_1" />
 <label for="__tab_22_1">Binary</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$</span> witnet -c witnet.toml node raw
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$ </span>witnet -c witnet.toml node raw
 </code></pre></div></div>
 <input name="__tabs_22" type="radio" id="__tab_22_2" />
 <label for="__tab_22_2">Cargo</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$</span> cargo run -- -c witnet.toml node raw
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="gp">$ </span>cargo run -- -c witnet.toml node raw
 </code></pre></div></div>
 </div>
 <p>Each block represents a method call:
 the first line is a request, the second line is a response.</p>
 <p><div class="codehilite"><pre><span></span><code><span class="nx">hi</span>
-<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:-</span><span class="mi">32700</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="s2">&quot;Parse error&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:-</span><span class="mf">32700</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="s2">&quot;Parse error&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">}</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;blockChain&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">:</span><span class="p">[[</span><span class="mi">242037</span><span class="p">,</span><span class="s2">&quot;3f8c9ed0fa721e39de9483f61f290f76a541757a828e54a8d951101b1940c59a&quot;</span><span class="p">]],</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;blockChain&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">:</span><span class="p">[[</span><span class="mf">242037</span><span class="p">,</span><span class="s2">&quot;3f8c9ed0fa721e39de9483f61f290f76a541757a828e54a8d951101b1940c59a&quot;</span><span class="p">]],</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">}</span>
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;someInvalidMethod&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:-</span><span class="mi">32601</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="s2">&quot;Method not found&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;someInvalidMethod&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mf">2</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:-</span><span class="mf">32601</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="s2">&quot;Method not found&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mf">2</span><span class="p">}</span>
 </code></pre></div>
 <div class="codehilite"><pre><span></span><code><span class="nx">bye</span>
-<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:-</span><span class="mi">32700</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="s2">&quot;Parse error&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;jsonrpc&quot;</span><span class="o">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="o">:-</span><span class="mf">32700</span><span class="p">,</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="s2">&quot;Parse error&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">}</span>
 </code></pre></div></p>
-<p>Alternatively, the input can be read from a file using pipes, as is usual in Unix-like environments. For instance, the  <code class="codehilite"><span class="err">bitcoin_price.json</span></code> data request example from the <a href="https://github.com/witnet/witnet-rust/tree/master/examples">witnet-rust reposity</a> can be easily deployed into the network using the <code class="codehilite"><span class="err">raw</span></code> command like this:</p>
+<p>Alternatively, the input can be read from a file using pipes, as is usual in Unix-like environments. For instance, the  <code class="codehilite">bitcoin_price.json</code> data request example from the <a href="https://github.com/witnet/witnet-rust/tree/master/examples">witnet-rust reposity</a> can be easily deployed into the network using the <code class="codehilite">raw</code> command like this:</p>
 <div class="superfences-tabs">
 <input name="__tabs_23" type="radio" id="__tab_23_0" checked="checked" />
 <label for="__tab_23_0">Docker</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cat examples/bitcoin_price.json | docker exec -i witnet_node witnet node raw</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">cat</span> <span class="nv">examples</span><span class="o">/</span><span class="nv">bitcoin_price</span>.<span class="nv">json</span> <span class="o">|</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="o">-</span><span class="nv">i</span> <span class="nv">witnet_node</span> <span class="nv">witnet</span> <span class="nv">node</span> <span class="nv">raw</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 <input name="__tabs_23" type="radio" id="__tab_23_1" />
 <label for="__tab_23_1">Binary</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cat examples/bitcoin_price.json | witnet node raw</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code>cat examples/bitcoin_price.json | witnet node raw
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}
 </code></pre></div></div>
 <input name="__tabs_23" type="radio" id="__tab_23_2" />
 <label for="__tab_23_2">Cargo</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cat examples/bitcoin_price.json | cargo run -- node raw</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code>cat examples/bitcoin_price.json | cargo run -- node raw
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d&quot;,&quot;id&quot;:&quot;1&quot;}
 </code></pre></div></div>
 </div>
 <h3 id="reputation">reputation<a class="headerlink" href="#reputation" title="Permanent link">&para;</a></h3>
 <p>Displays the reputation score associated with a given Witnet address and its elegibility to mine a block.</p>
 <ul>
-<li><code class="codehilite"><span class="err">--address=address</span></code>: address for which to get reputation score. If omitted, defaults to the node's own address.</li>
+<li><code class="codehilite">--address=address</code>: address for which to get reputation score. If omitted, defaults to the node's own address.</li>
 </ul>
 <div class="superfences-tabs">
 <input name="__tabs_24" type="radio" id="__tab_24_0" checked="checked" />
@@ -1844,9 +1827,8 @@ the first line is a request, the second line is a response.</p>
 <p>Example output:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"> </span><span class="n">twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Reputation</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">Eligibility</span><span class="p">:</span><span class="w"> </span><span class="mf">28.571429</span><span class="o">%</span><span class="w"></span>
 </code></pre></div>
-
 <p>The parameter <code class="codehilite"><span class="o">[</span><span class="n">A</span><span class="o">]</span><span class="w"></span></code> notifies that the node is active.</p>
-<p>Adding the flag <code class="codehilite"><span class="err">--all</span></code> lists all the nodes active and their elegibility. It also lists the nodes with reputation grater than 0 but not active, if any.</p>
+<p>Adding the flag <code class="codehilite">--all</code> lists all the nodes active and their elegibility. It also lists the nodes with reputation grater than 0 but not active, if any.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Note that it is perfectly normal for a node to show 0 reputation for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.</p>
@@ -1873,32 +1855,31 @@ the first line is a request, the second line is a response.</p>
 
 <span class="err">}</span><span class="w"></span>
 </code></pre></div>
-
 <h3 id="send">send<a class="headerlink" href="#send" title="Permanent link">&para;</a></h3>
 <p>Create and broadcast a value transfer transaction. That is, send some amount of wit tokens from the node's own balance into a different Witnet address.</p>
 <ul>
-<li><code class="codehilite"><span class="err">--address=address</span></code>: recipient address.</li>
-<li><code class="codehilite"><span class="err">--value=amount</span></code>: amount in nanoWits.</li>
-<li><code class="codehilite"><span class="err">--fee=fee</span></code>: miner fee in nanoWits.</li>
-<li><code class="codehilite"><span class="err">--time-lock=timestamp</span></code>: optional time lock for the created output: the receiver will not be able to spend
+<li><code class="codehilite">--address=address</code>: recipient address.</li>
+<li><code class="codehilite">--value=amount</code>: amount in nanoWits.</li>
+<li><code class="codehilite">--fee=fee</code>: miner fee in nanoWits.</li>
+<li><code class="codehilite">--time-lock=timestamp</code>: optional time lock for the created output: the receiver will not be able to spend
 the output until the timestamp is reached. 0 means no time-lock.</li>
 </ul>
 <p>On success, returns the transaction hash:</p>
 <div class="superfences-tabs">
 <input name="__tabs_26" type="radio" id="__tab_26_0" checked="checked" />
 <label for="__tab_26_0">Docker</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">docker</span> <span class="k">exec</span> <span class="nv">witnet_node</span> <span class="nv">witnet</span> <span class="nv">node</span> <span class="k">send</span> <span class="o">--</span><span class="nv">address</span><span class="o">=</span><span class="nv">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="o">--</span><span class="nv">value</span><span class="o">=</span><span class="mi">1234</span> <span class="o">--</span><span class="nv">fee</span><span class="o">=</span><span class="mi">1</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 <input name="__tabs_26" type="radio" id="__tab_26_1" />
 <label for="__tab_26_1">Binary</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">witnet</span> <span class="nv">node</span> <span class="k">send</span> <span class="o">--</span><span class="nv">address</span><span class="o">=</span><span class="nv">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="o">--</span><span class="nv">value</span><span class="o">=</span><span class="mi">1234</span> <span class="o">--</span><span class="nv">fee</span><span class="o">=</span><span class="mi">1</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 <input name="__tabs_26" type="radio" id="__tab_26_2" />
 <label for="__tab_26_2">Cargo</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">cargo</span> <span class="nv">run</span> <span class="o">--</span> <span class="nv">node</span> <span class="k">send</span> <span class="o">--</span><span class="nv">address</span><span class="o">=</span><span class="nv">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="o">--</span><span class="nv">value</span><span class="o">=</span><span class="mi">1234</span> <span class="o">--</span><span class="nv">fee</span><span class="o">=</span><span class="mi">1</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 </div>
 <p>On error, returns the error message:</p>
@@ -1923,18 +1904,18 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 <div class="superfences-tabs">
 <input name="__tabs_28" type="radio" id="__tab_28_0" checked="checked" />
 <label for="__tab_28_0">Docker</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">docker</span> <span class="k">exec</span> <span class="nv">witnet_node</span> <span class="nv">witnet</span> <span class="nv">node</span> <span class="k">send</span> <span class="o">--</span><span class="nv">address</span><span class="o">=</span><span class="nv">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="o">--</span><span class="nv">value</span><span class="o">=</span><span class="mi">1234</span> <span class="o">--</span><span class="nv">fee</span><span class="o">=</span><span class="mi">1</span> <span class="o">--</span><span class="nv">time</span><span class="o">-</span><span class="nv">lock</span><span class="o">=</span><span class="mi">1569888000</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 <input name="__tabs_28" type="radio" id="__tab_28_1" />
 <label for="__tab_28_1">Binary</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">witnet</span> <span class="nv">node</span> <span class="k">send</span> <span class="o">--</span><span class="nv">address</span><span class="o">=</span><span class="nv">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="o">--</span><span class="nv">value</span><span class="o">=</span><span class="mi">1234</span> <span class="o">--</span><span class="nv">fee</span><span class="o">=</span><span class="mi">1</span> <span class="o">--</span><span class="nv">time</span><span class="o">-</span><span class="nv">lock</span><span class="o">=</span><span class="mi">1569888000</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 <input name="__tabs_28" type="radio" id="__tab_28_2" />
 <label for="__tab_28_2">Cargo</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="err">cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000</span>
-<span class="err">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17&quot;,&quot;id&quot;:&quot;1&quot;}</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="nv">cargo</span> <span class="nv">run</span> <span class="o">--</span> <span class="nv">node</span> <span class="k">send</span> <span class="o">--</span><span class="nv">address</span><span class="o">=</span><span class="nv">twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr</span> <span class="o">--</span><span class="nv">value</span><span class="o">=</span><span class="mi">1234</span> <span class="o">--</span><span class="nv">fee</span><span class="o">=</span><span class="mi">1</span> <span class="o">--</span><span class="nv">time</span><span class="o">-</span><span class="nv">lock</span><span class="o">=</span><span class="mi">1569888000</span>
+{<span class="s2">&quot;</span><span class="s">jsonrpc</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">2.0</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">result</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">id</span><span class="s2">&quot;</span>:<span class="s2">&quot;</span><span class="s">1</span><span class="s2">&quot;</span>}
 </code></pre></div></div>
 </div>
 <h3 id="sendrequest">sendRequest<a class="headerlink" href="#sendrequest" title="Permanent link">&para;</a></h3>
@@ -1973,9 +1954,9 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 <p>Create a value transfer transaction that splits UTXOs.</p>
 <p>The following arguments must be provided:</p>
 <ul>
-<li><code class="codehilite"><span class="err">--value=amount</span></code>: amount in nanoWits.</li>
-<li><code class="codehilite"><span class="err">--size=size</span></code>:amount in nanoWits of each UTXO.</li>
-<li><code class="codehilite"><span class="err">--fee=fee</span></code>: miner fee in nanoWits.</li>
+<li><code class="codehilite">--value=amount</code>: amount in nanoWits.</li>
+<li><code class="codehilite">--size=size</code>:amount in nanoWits of each UTXO.</li>
+<li><code class="codehilite">--fee=fee</code>: miner fee in nanoWits.</li>
 </ul>
 <div class="superfences-tabs">
 <input name="__tabs_31" type="radio" id="__tab_31_0" checked="checked" />
@@ -2011,7 +1992,6 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 <p>Example output:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="nt">&quot;result&quot;</span><span class="p">:{</span><span class="nt">&quot;blockHash&quot;</span><span class="p">:</span><span class="s2">&quot;0c29023ec3c8c9e1a51871a67e235168315160d9f757737c2c390f0a35ad1b24&quot;</span><span class="p">,</span><span class="nt">&quot;transaction&quot;</span><span class="p">:{</span><span class="nt">&quot;ValueTransfer&quot;</span><span class="p">:{</span><span class="nt">&quot;body&quot;</span><span class="p">:{</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;output_pointer&quot;</span><span class="p">:</span><span class="s2">&quot;126549b3ea96f40bb211660d7991109d72b43e68e846ea76d4d2f6cd5a3cc7ff:1&quot;</span><span class="p">}],</span><span class="nt">&quot;outputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;pkh&quot;</span><span class="p">:</span><span class="s2">&quot;twit12nqlkyp0zfhthfz898tplh3ns7nedcvlezx4r4&quot;</span><span class="p">,</span><span class="nt">&quot;time_lock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">},{</span><span class="nt">&quot;pkh&quot;</span><span class="p">:</span><span class="s2">&quot;twit10smy4dez7dpuc8yk3ck2qzgtuaa4vx3nqh5ysl&quot;</span><span class="p">,</span><span class="nt">&quot;time_lock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="mi">499999999987</span><span class="p">}]},</span><span class="nt">&quot;signatures&quot;</span><span class="p">:[{</span><span class="nt">&quot;public_key&quot;</span><span class="p">:{</span><span class="nt">&quot;bytes&quot;</span><span class="p">:[</span><span class="mi">109</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">247</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">183</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">244</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">147</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">219</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">155</span><span class="p">],</span><span class="nt">&quot;compressed&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span><span class="nt">&quot;signature&quot;</span><span class="p">:{</span><span class="nt">&quot;Secp256k1&quot;</span><span class="p">:{</span><span class="nt">&quot;der&quot;</span><span class="p">:[</span><span class="mi">48</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">163</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">178</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">131</span><span class="p">,</span><span class="mi">236</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">157</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">133</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">142</span><span class="p">]}}}]}}},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
 </code></pre></div>
-
 <h3 id="utxos">utxos<a class="headerlink" href="#utxos" title="Permanent link">&para;</a></h3>
 <p>Get the unspent transaction outputs of the node. This shows how many UTXOs are available for your node to spend or collateralize.</p>
 <div class="superfences-tabs">
@@ -2030,11 +2010,11 @@ the output until the timestamp is reached. 0 means no time-lock.</li>
 </div>
 <p>The output includes information about:</p>
 <ul>
-<li><code class="codehilite"><span class="err">Total number of utxos</span></code></li>
-<li><code class="codehilite"><span class="err">Total number of utxos bigger than collateral minimum</span></code></li>
-<li><code class="codehilite"><span class="err">Total number of utxos older than collateral coinage</span></code></li>
+<li><code class="codehilite">Total number of utxos</code></li>
+<li><code class="codehilite">Total number of utxos bigger than collateral minimum</code></li>
+<li><code class="codehilite">Total number of utxos older than collateral coinage</code></li>
 </ul>
-<p>The flag <code class="codehilite"><span class="err">--long</span></code> can be added to the command to get a detailed list of the UTXOs and whether each of them is spendable or collateralizable at this time.</p>
+<p>The flag <code class="codehilite">--long</code> can be added to the command to get a detailed list of the UTXOs and whether each of them is spendable or collateralizable at this time.</p>
                 
                   
                 

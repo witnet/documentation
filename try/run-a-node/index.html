@@ -453,11 +453,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1024,11 +1019,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1054,7 +1044,7 @@ what you probably want is to
 <p>Hardware requirements are <a href="/node-operators/hardware-requirements">listed in the node operators docs</a>.</p>
 <h2 id="up-and-running-in-1-minute-using-docker">Up and running in 1 minute, using Docker<a class="headerlink" href="#up-and-running-in-1-minute-using-docker" title="Permanent link">&para;</a></h2>
 <p>The most convenient method for running a Witnet node is through the
-<code class="codehilite"><span class="err">witnet/witnet-rust</span></code> Docker image. For alternate installation methods or
+<code class="codehilite">witnet/witnet-rust</code> Docker image. For alternate installation methods or
 more complex setups, take a look at the <a href="/node-operators/docker-compose-service">docker-compose</a> and <a href="/node-operators/systemd-service">systemd</a> integrations.</p>
 <p>Firstly, you need to <a href="https://docs.docker.com/get-docker/">install Docker</a> on the device you will
 be running the node from. Note: some GNU/Linux distributions require some
@@ -1079,7 +1069,7 @@ To start a node, use:</p>
 <div class="admonition warning">
 <p class="admonition-title">Raspberry Pi users</p>
 <p>For some reason, Docker on Raspbian for all Raspberry models requires your containers to operate
-in privileged mode. When running the command above, simply add the <code class="codehilite"><span class="err">--privileged</span></code> flag:
+in privileged mode. When running the command above, simply add the <code class="codehilite">--privileged</code> flag:
 <div class="codehilite"><pre><span></span><code><span class="go">docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust</span>
 </code></pre></div></p>
 </div>
@@ -1102,7 +1092,7 @@ network, you can request your ISP to assign you a static IP address or at
 least disable <a href="https://en.wikipedia.org/wiki/Carrier-grade_NAT">CGN</a> on it.</p>
 <p>Depending on your setup, this will normally imply changing the settings
 on your router or firewall so as to <strong>forward all incoming connections
-to port <code class="codehilite"><span class="err">21337</span></code> from your external IP</strong> into the IP of the device or
+to port <code class="codehilite"><span class="mf">21337</span></code> from your external IP</strong> into the IP of the device or
 interface where the node is running. </p>
 <p>You can find out how to verify that your ports are open in the <a href="/try/next-steps/">Next Steps</a>
 guide.</p>

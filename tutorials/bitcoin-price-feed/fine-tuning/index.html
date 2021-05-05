@@ -587,11 +587,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1076,11 +1071,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1101,22 +1091,21 @@ decentralized Bitcoin price feed</a> on Ethereum with Solidity and
 Witnet.</em></p>
 </div>
 <h2 id="put-everything-together">Put everything together<a class="headerlink" href="#put-everything-together" title="Permanent link">&para;</a></h2>
-<p>Time to put everything together and create the <code class="codehilite"><span class="err">Witnet.Request</span></code> object
+<p>Time to put everything together and create the <code class="codehilite">Witnet.Request</code> object
 that you will need to export:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// This is the Witnet.Request object that needs to be exported</span>
-<span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Request</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Request</span><span class="p">()</span>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">bitstamp</span><span class="p">)</span>       <span class="c1">// Use source 1</span>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregation script</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally script</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
-  <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
-  <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="mf">55</span><span class="p">)</span>           <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
+  <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
 <span class="c1">// Do not forget to export the request object</span>
-<span class="kr">export</span> <span class="p">{</span> <span class="nx">request</span> <span class="nx">as</span> <span class="k">default</span> <span class="p">}</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">request</span> <span class="k">as</span> <span class="k">default</span> <span class="p">}</span>
 </code></pre></div>
-
 <p>The <code class="codehilite"><span class="na">.setQuorum</span></code>, <code class="codehilite"><span class="na">.setFees</span></code> and <code class="codehilite"><span class="na">.schedule</span></code> methods are explained
 below.</p>
 <h2 id="fine-tune-fees-quorum-and-schedule">Fine-tune fees, quorum and schedule<a class="headerlink" href="#fine-tune-fees-quorum-and-schedule" title="Permanent link">&para;</a></h2>
@@ -1133,8 +1122,7 @@ every single aspect of their life cycle:</p>
 <h3 id="set-the-quorum">Set the quorum<a class="headerlink" href="#set-the-quorum" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="nx">witnesses</span><span class="p">,</span> <span class="nx">backup_witnesses</span><span class="p">)</span>
 </code></pre></div>
-
-<p>The <code class="codehilite"><span class="err">witnesses</span></code> is the minimum number of Witnet nodes that will be
+<p>The <code class="codehilite">witnesses</code> is the minimum number of Witnet nodes that will be
 resolving each specific request.</p>
 <p>In general, the higher the number of witnesses, the safer the request.
 However, a higher number of witnesses generally means higher fees.</p>
@@ -1143,12 +1131,12 @@ to be equal to the specified number. If for some reason the
 network fails to assign the request to enough nodes, it will be
 reassigned in every subsequent epoch to a different randomly-selected
 set of nodes until the required number is reached.</p>
-<p>The <code class="codehilite"><span class="err">backup_witnesses</span></code> is the number of Witnet nodes that will be used
+<p>The <code class="codehilite">backup_witnesses</code> is the number of Witnet nodes that will be used
 as a backup in case some of the originally assigned nodes fail to
 fulfill their commitments.</p>
-<p>A higher <code class="codehilite"><span class="err">backup_witnesses</span></code> value corresponds with higher fees but also guarantees
+<p>A higher <code class="codehilite">backup_witnesses</code> value corresponds with higher fees but also guarantees
 that the request will be resolved in a timely fashion. On the other hand,
-a small <code class="codehilite"><span class="err">backup_witnesses</span></code> value comes with the risk that your request will need
+a small <code class="codehilite">backup_witnesses</code> value comes with the risk that your request will need
 to be retried many times and therefore the result may be potentially
 inaccurate (especially if the queried data point changes rapidly).</p>
 <h4 id="optional-arguments-for-setquorum">Optional arguments for <code class="codehilite"><span class="na">.setQuorum</span></code><a class="headerlink" href="#optional-arguments-for-setquorum" title="Permanent link">&para;</a></h4>
@@ -1161,90 +1149,86 @@ inaccurate (especially if the queried data point changes rapidly).</p>
   <span class="nx">minimum_consensus</span>
 <span class="p">)</span>
 </code></pre></div>
-
-<p>The <code class="codehilite"><span class="err">extra_commit_rounds</span></code> number specifies how many extra epochs Witnet
+<p>The <code class="codehilite">extra_commit_rounds</code> number specifies how many extra epochs Witnet
 nodes will be given for committing their partial results. A number
-greater than <code class="codehilite"><span class="err">0</span></code> strengthens the chances of a Witnet request being
+greater than <code class="codehilite"><span class="mf">0</span></code> strengthens the chances of a Witnet request being
 resolved to a value instead of timing out. This parameter is actually an
 upper threshold, i.e. the request will progress into a reveal stage as
 soon as the number of commitments equals the number of required witnesses.
-If not set, this parameter defaults to <code class="codehilite"><span class="err">1</span></code>. This parameter has no impact
+If not set, this parameter defaults to <code class="codehilite"><span class="mf">1</span></code>. This parameter has no impact
 on the price of the request.</p>
-<p>The <code class="codehilite"><span class="err">extra_reveal_rounds</span></code> number specifies how many extra epochs Witnet
+<p>The <code class="codehilite">extra_reveal_rounds</code> number specifies how many extra epochs Witnet
 nodes will be given to reveal their partial results. A number
-greater than <code class="codehilite"><span class="err">0</span></code> strengthens the security of a Witnet request by
+greater than <code class="codehilite"><span class="mf">0</span></code> strengthens the security of a Witnet request by
 preventing miners from withholding reveal transactions—as the subsequent
 miners can include any reveal transactions withheld by a former miner.
 This parameter is actually an upper threshold, i.e. the request will be
 tallied and finalized as soon as the number of reveals equals the number
-of commitments. If not set, this parameter defaults to <code class="codehilite"><span class="err">1</span></code>. This
+of commitments. If not set, this parameter defaults to <code class="codehilite"><span class="mf">1</span></code>. This
 parameter has no impact on the price of the request.</p>
-<p>The <code class="codehilite"><span class="err">minimum_consensus</span></code> percentage allows users to define a threshold for
+<p>The <code class="codehilite">minimum_consensus</code> percentage allows users to define a threshold for
 aborting resolution of a request if the witnessing nodes did not arrive
 at broad consensus. That is, aggregator and tally functions will not be
 applied if the ratio of valid values vs. errors is below this threshold.
-<em>E.g. a <code class="codehilite"><span class="err">minimum_consensus</span></code> threshold of <code class="codehilite"><span class="err">70</span></code> requires <code class="codehilite"><span class="err">70%</span></code> of the
+<em>E.g. a <code class="codehilite">minimum_consensus</code> threshold of <code class="codehilite"><span class="mf">70</span></code> requires <code class="codehilite"><span class="mf">70</span><span class="err">%</span></code> of the
 witnesses to report a valid value, otherwise the request
 will result in an error, stating "insufficient consensus"</em>. If not set, this
-parameter defaults to <code class="codehilite"><span class="err">51</span></code>.</p>
+parameter defaults to <code class="codehilite"><span class="mf">51</span></code>.</p>
 <h3 id="set-the-fees">Set the fees<a class="headerlink" href="#set-the-fees" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="nx">reward</span><span class="p">,</span> <span class="nx">commit_fee</span><span class="p">,</span> <span class="nx">reveal_fee</span><span class="p">,</span> <span class="nx">tally_fee</span><span class="p">)</span>
 </code></pre></div>
-
 <p>Witnet allows parametrization of many of the economic incentives that
 affect the life cycle of your requests. These incentives include:</p>
 <ul>
-<li><code class="codehilite"><span class="err">request_fee</span></code>: the amount of wit tokens that will be earned by the
+<li><code class="codehilite">request_fee</code>: the amount of wit tokens that will be earned by the
   Witnet miner that publishes your request in a block.</li>
-<li><code class="codehilite"><span class="err">reward</span></code>: the amount of wit tokens that each of the Witnet nodes
+<li><code class="codehilite">reward</code>: the amount of wit tokens that each of the Witnet nodes
   assigned to your request will earn if they honestly fulfill their
   commitments and reveals.</li>
-<li><code class="codehilite"><span class="err">commit_fee</span></code>: the amount of wit tokens that will be earned by Witnet
+<li><code class="codehilite">commit_fee</code>: the amount of wit tokens that will be earned by Witnet
   miners for each each valid commitment transaction they include in a
   block.</li>
-<li><code class="codehilite"><span class="err">reveal_fee</span></code>: the amount of wit tokens that will be earned by Witnet
+<li><code class="codehilite">reveal_fee</code>: the amount of wit tokens that will be earned by Witnet
   miners for each valid reveal transaction they include in a block.</li>
-<li><code class="codehilite"><span class="err">tally_fee</span></code>: the amount of wit tokens that will be earned by the
+<li><code class="codehilite">tally_fee</code>: the amount of wit tokens that will be earned by the
   Witnet miner that publishes the tally of all the reveal
   transactions related to your request in a block.</li>
 </ul>
 <div class="admonition question">
 <p class="admonition-title">How can I compute the total cost of a request?</p>
 <p>The total cost of a Witnet request equals:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">request_fee + witnesses * (reward + commit_fee + reveal_fee) + tally_fee</span>
+<div class="codehilite"><pre><span></span><code>request_fee + witnesses * (reward + commit_fee + reveal_fee) + tally_fee
 </code></pre></div>
-
 <p>There are two special cases in which some fees are automatically 
 refunded to the requester upon an eventual tally:</p>
 <ul>
 <li>For every valid reveal that later does not pass the filters in the
-  tally stage (aka <em>outliers</em>), you get <code class="codehilite"><span class="err">reward</span></code> back.</li>
-<li>For every missing reveal after the <code class="codehilite"><span class="err">extra_reveal_rounds</span></code> threshold
-  is reached, you get <code class="codehilite"><span class="err">reward + reveal_fee</span></code> back.</li>
+  tally stage (aka <em>outliers</em>), you get <code class="codehilite">reward</code> back.</li>
+<li>For every missing reveal after the <code class="codehilite">extra_reveal_rounds</code> threshold
+  is reached, you get <code class="codehilite">reward + reveal_fee</code> back.</li>
 </ul>
 </div>
 <h3 id="set-the-schedule">Set the schedule<a class="headerlink" href="#set-the-schedule" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">)</span>
 </code></pre></div>
-
 <p>Witnet requests can be scheduled for resolution on a particular date and
 time in the future.</p>
 <p>Timestamps need to be provided as <a href="https://en.wikipedia.org/wiki/Unix_time">POSIX timestamps</a>, i.e.
 seconds elapsed from 00:00:00 UTC on 1 January 1970 until the desired
 date.</p>
 <h3 id="double-check">Double check<a class="headerlink" href="#double-check" title="Permanent link">&para;</a></h3>
-<p>Time to double check everything is fine. Your <code class="codehilite"><span class="err">BitcoinPrice.js</span></code> file should
+<p>Time to double check everything is fine. Your <code class="codehilite">BitcoinPrice.js</code> file should
 look more or less like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Witnet</span> <span class="nx">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Witnet</span> <span class="k">from</span> <span class="s2">&quot;witnet-requests&quot;</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from the BitStamp API</span>
-<span class="kr">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">bitstamp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://www.bitstamp.net/api/ticker/&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>   <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getFloat</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span> <span class="c1">// Get the `Float` value associated to the `last` key</span>
 
 <span class="c1">// Retrieves USD price of a bitcoin from CoinDesk&#39;s &quot;bitcoin price index&quot; API</span>
 <span class="c1">// The JSON here is a bit more complex, thus more operators are needed</span>
-<span class="kr">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">coindesk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Source</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">parseMapJSON</span><span class="p">()</span>         <span class="c1">// Parse a `Map` from the retrieved `String`</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;bpi&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `bpi` key</span>
   <span class="p">.</span><span class="nx">getMap</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">)</span>          <span class="c1">// Get the `Map` value associated to the `USD` key</span>
@@ -1253,7 +1237,7 @@ look more or less like this:</p>
 <span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviationaway from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
-<span class="kr">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">aggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Aggregator</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
    <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
   <span class="p">],</span>
@@ -1263,7 +1247,7 @@ look more or less like this:</p>
 <span class="c1">// Filters out any value that is more than 1.5 times the standard</span>
 <span class="c1">// deviationaway from the average, then computes the average mean of the</span>
 <span class="c1">// values that pass the filter.</span>
-<span class="kr">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">tally</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Tally</span><span class="p">({</span>
   <span class="nx">filters</span><span class="o">:</span> <span class="p">[</span>
    <span class="p">[</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">FILTERS</span><span class="p">.</span><span class="nx">deviationStandard</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
   <span class="p">],</span>
@@ -1271,19 +1255,18 @@ look more or less like this:</p>
 <span class="p">})</span>
 
 <span class="c1">// This is the Witnet.Request object that needs to be exported</span>
-<span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Request</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Request</span><span class="p">()</span>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">bitstamp</span><span class="p">)</span>       <span class="c1">// Use source 1</span>
   <span class="p">.</span><span class="nx">addSource</span><span class="p">(</span><span class="nx">coindesk</span><span class="p">)</span>       <span class="c1">// Use source 2</span>
   <span class="p">.</span><span class="nx">setAggregator</span><span class="p">(</span><span class="nx">aggregator</span><span class="p">)</span> <span class="c1">// Set the aggregator function</span>
   <span class="p">.</span><span class="nx">setTally</span><span class="p">(</span><span class="nx">tally</span><span class="p">)</span>           <span class="c1">// Set the tally function</span>
-  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,)</span>          <span class="c1">// Set witness count</span>
-  <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
-  <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
+  <span class="p">.</span><span class="nx">setQuorum</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="mf">2</span><span class="p">,)</span>          <span class="c1">// Set witness count</span>
+  <span class="p">.</span><span class="nx">setFees</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span>      <span class="c1">// Set economic incentives</span>
+  <span class="p">.</span><span class="nx">schedule</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>               <span class="c1">// Make this request immediately solvable</span>
 
 <span class="c1">// Do not forget to export the request object</span>
-<span class="kr">export</span> <span class="p">{</span> <span class="nx">request</span> <span class="nx">as</span> <span class="k">default</span> <span class="p">}</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">request</span> <span class="k">as</span> <span class="k">default</span> <span class="p">}</span>
 </code></pre></div>
-
 <p>Time to go ahead and <a href="/tutorials/bitcoin-price-feed/compiling">compile the request</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>

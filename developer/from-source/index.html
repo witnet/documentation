@@ -701,11 +701,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
     
   </li>
@@ -1064,11 +1059,6 @@
         
     </ul>
     
-    <aside class="disclaimer">
-        <p>The Witnet protocol and related software are work in progress.</p>
-        <p>The current version is a beta stage and it may not be fully secure, as the incentives outlined in the protocol are not present in the testnet.</p>
-        <p>Check <a href="https://github.com/witnet/witnet-rust/issues" target="_blank">this list of issues</a> for more details. Make sure to understand all risks before installing the software.</p>
-    </aside>
 </nav>
                   </div>
                 </div>
@@ -1082,10 +1072,10 @@
                   <a href="https://github.com/witnet/documentation/blob/master/docs/developer/from-source.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="running-witnet-rust-from-source-code">Running <code class="codehilite"><span class="err">witnet-rust</span></code> from source code<a class="headerlink" href="#running-witnet-rust-from-source-code" title="Permanent link">&para;</a></h1>
+                <h1 id="running-witnet-rust-from-source-code">Running <code class="codehilite">witnet-rust</code> from source code<a class="headerlink" href="#running-witnet-rust-from-source-code" title="Permanent link">&para;</a></h1>
 <h2 id="install-compilation-dependencies">Install compilation dependencies<a class="headerlink" href="#install-compilation-dependencies" title="Permanent link">&para;</a></h2>
 <h3 id="rust">Rust<a class="headerlink" href="#rust" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="err">witnet-rust</span></code> is being developed using the Rust programming language.
+<p><code class="codehilite">witnet-rust</code> is being developed using the Rust programming language.
 You need to install Rust on your system to be able to compile the source code.
 Follow installation instructions for your operating system provided on <a href="https://rustup.rs/">rustup.rs</a></p>
 <h3 id="compilation-dependencies">Compilation dependencies<a class="headerlink" href="#compilation-dependencies" title="Permanent link">&para;</a></h3>
@@ -1112,19 +1102,16 @@ Follow installation instructions for your operating system provided on <a href="
 <h2 id="get-the-latest-genesis_blockjson">Get the latest genesis_block.json<a class="headerlink" href="#get-the-latest-genesis_blockjson" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="go">curl https://raw.githubusercontent.com/witnet/genesis_block/master/latest/genesis_block.json -o genesis_block.json</span>
 </code></pre></div>
-
-<h2 id="compile-and-run-with-cargo">Compile and run with <code class="codehilite"><span class="err">cargo</span></code><a class="headerlink" href="#compile-and-run-with-cargo" title="Permanent link">&para;</a></h2>
+<h2 id="compile-and-run-with-cargo">Compile and run with <code class="codehilite">cargo</code><a class="headerlink" href="#compile-and-run-with-cargo" title="Permanent link">&para;</a></h2>
 <p>By default, this line will run a Witnet node and connect to the Testnet using the default configuration:</p>
 <div class="codehilite"><pre><span></span><code><span class="go">cargo run node server</span>
 </code></pre></div>
-
-<p>For more <code class="codehilite"><span class="err">witnet-rust</span></code> commands you can read the <a href="/node-operators/cli">witnet-rust CLI documentation</a>.</p>
+<p>For more <code class="codehilite">witnet-rust</code> commands you can read the <a href="/node-operators/cli">witnet-rust CLI documentation</a>.</p>
 <h2 id="building-a-release">Building a release<a class="headerlink" href="#building-a-release" title="Permanent link">&para;</a></h2>
 <p>This one-liner will build a releasable standalone binary compatible with the architecture of your computer's processor:</p>
 <div class="codehilite"><pre><span></span><code><span class="go">cargo build --release</span>
 </code></pre></div>
-
-<p>The resulting binary will be located at <code class="codehilite"><span class="err">./target/release/witnet</span></code>.</p>
+<p>The resulting binary will be located at <code class="codehilite">./target/release/witnet</code>.</p>
                 
                   
                 
