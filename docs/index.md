@@ -1,6 +1,6 @@
 # Welcome to the Witnet ecosystem!
 
-![alt medium |>][apis-illustration]
+![alt medium |>][apis-illustration]{ align=right }
 
 The Witnet protocol enables a network of computers to act as a
 **decentralized oracle** that retrieves, attests and delivers

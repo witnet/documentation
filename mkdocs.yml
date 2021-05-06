@@ -1,6 +1,6 @@
 site_name: 'Witnet Protocol Documentation'
 site_url: https://docs.witnet.io
-copyright: © 2018-2019 The Witnet Community. Available under <a href="https://www.gnu.org/licenses/fdl-1.3.en.html" rel="license">GNU Free Documentation License v1.3</a>
+copyright: © 2018-2021 The Witnet Community. Available under <a href="https://www.gnu.org/licenses/fdl-1.3.en.html" rel="license">GNU Free Documentation License v1.3</a>
 
 nav:
   - Overview:
@@ -56,9 +56,20 @@ theme:
   custom_dir: 'theme'
   favicon: 'assets/images/favicon.ico'
   logo: 'assets/images/logo.svg" alt="Witnet Logo'
+  font: 'Almarai'
   palette:
-    primary: 'white'
-    accent: 'deep-purple'
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: 'teal'
+      accent: 'teal'
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 
 repo_name: 'witnet/documentation'
 repo_url: 'https://github.com/witnet/documentation'
@@ -68,21 +79,26 @@ remote_name: 'upstream'
 extra:
   og_image: 'assets/images/logo-docs.png'
   social:
-    - type: 'github'
+    - icon: 'fontawesome/brands/github'
       link: 'https://github.com/witnet'
-    - type: 'reddit'
-      link: 'https://reddit.com/r/witnet'
-    - type: 'twitter'
+    - icon: 'fontawesome/brands/telegram'
+      link: 'https://t.me/witnetio'
+    - icon: 'fontawesome/brands/twitter'
       link: 'https://twitter.com/witnet_io'
+    - icon: 'fontawesome/brands/youtube'
+      link: 'https://youtube.com/witnetfoundation'
+    - icon: 'fontawesome/brands/reddit'
+      link: 'https://reddit.com/r/witnet'
 
 extra_css:
-  - 'extra.css'
+  - 'stylesheets/extra.css'
 
 extra_javascript:
-  - 'extra.js'
+  - 'javascript/extra.js'
 
 markdown_extensions:
   - admonition
+  - attr_list
   - codehilite
   - footnotes
   - toc:
