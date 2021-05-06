@@ -111,6 +111,10 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark

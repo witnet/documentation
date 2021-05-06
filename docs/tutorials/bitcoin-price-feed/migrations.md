@@ -10,13 +10,15 @@
 First off, run the `compile` command, which compiles your Solidity
 contracts and then recompiles the Witnet requests:
 
-```console tab="npm"
-npm run compile
-```
+=== "npm"
+	```console
+    npm run compile
+    ```
 
-```console tab="yarn"
-yarn compile
-```
+=== "yarn"
+	```console
+    yarn compile
+    ```
 
 ## You have migration scripts by default!
 

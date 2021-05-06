@@ -44,22 +44,23 @@ transform them both to Celcius so they can be averaged.
 In this tutorial, you will be defining two data sources — one querying
 [Bitstamp] and the other for [CoinDesk]:
 
-```javascript tab="Source 1: Bitstamp"
-// Retrieves USD price of a bitcoin from the BitStamp API
-const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-  .parseMapJSON()   // Parse a `Map` from the retrieved `String`
-  .getFloat("last") // Get the `Float` value associated to the `last` key
-```
-
-```javascript tab="Source 2: CoinDesk"
-// Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
-// The JSON here is a bit more complex, so more operators are needed
-const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
-  .parseMapJSON()         // Parse a `Map` from the retrieved `String`
-  .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
-  .getMap("USD")          // Get the `Map` value associated to the `USD` key
-  .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
-```
+=== "Source 1: Bitstamp"
+	```javascript
+    // Retrieves USD price of a bitcoin from the BitStamp API
+    const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
+      .parseMapJSON()   // Parse a `Map` from the retrieved `String`
+      .getFloat("last") // Get the `Float` value associated to the `last` key
+    ```
+=== "Source 2: CoinDesk"
+	```javascript
+    // Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
+    // The JSON here is a bit more complex, so more operators are needed
+    const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
+      .parseMapJSON()         // Parse a `Map` from the retrieved `String`
+      .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
+      .getMap("USD")          // Get the `Map` value associated to the `USD` key
+      .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
+    ```
 
 A few things worth noticing:
 

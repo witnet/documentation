@@ -10,28 +10,45 @@ Follow installation instructions for your operating system provided on [rustup.r
 
 ### Compilation dependencies
 
-```console tab="GNU/Linux (apt)"
-apt install -y clang git libssl-dev protobuf-compiler librocksdb-dev pkg-config
-```
-
-```console tab="macOS"
-xcode-select --install
-
-brew install git openssl protobuf rocksdb
-```
+=== "GNU/Linux (apt)"
+	```console
+    apt install -y clang git libssl-dev protobuf-compiler librocksdb-dev pkg-config
+    ```
+=== "macOS"
+	```console
+    xcode-select --install
+    
+    brew install git openssl protobuf rocksdb
+    ```
 
 ## Clone source code from Witnet GitHub repository
 
-```console tab="HTTPS"
-git clone https://github.com/witnet/witnet-rust.git
-cd witnet-rust
-```
+=== "HTTPS"
+	```console
+    git clone https://github.com/witnet/witnet-rust.git
+    cd witnet-rust
+    ```
+=== "SSH"
+    ```console
+    git clone git@github.com:witnet/witnet-rust.git
+    cd witnet-rust
+    ```
+=== "GitHub CLI"
+    ```console
+    gh repo clone witnet/witnet-rust
+    cd witnet-rust
+    ```
 
 ## Get the latest genesis_block.json
 
-```console
-curl https://raw.githubusercontent.com/witnet/genesis_block/master/latest/genesis_block.json -o genesis_block.json
-```
+=== "cURL"
+    ```console
+    curl https://raw.githubusercontent.com/witnet/genesis_block/master/latest/genesis_block.json -o genesis_block.json
+    ```
+=== "wget"
+    ```console
+    wget https://raw.githubusercontent.com/witnet/genesis_block/master/latest/genesis_block.json
+    ```
 
 ## Compile and run with `cargo`
 

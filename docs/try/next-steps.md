@@ -26,50 +26,53 @@ A complete documentation of all the CLI methods is available in the [node operat
 
 Among other information, this shows the synchronization state of your node, as well as counters for proposed and accepted blocks and participations in resolving data requests ("commitments").
 
-```console tab="Docker"
-docker exec  witnet_node witnet node nodeStats
-```
-
-```console tab="Cargo"
-cargo run --release -- node nodeStats
-```
-
-```console tab="Binary"
-witnet node nodeStats
-```
+=== "Docker"
+	```console
+    docker exec  witnet_node witnet node nodeStats
+    ```
+=== "Cargo"
+	```console
+    cargo run --release -- node nodeStats
+    ```
+=== "Binary"
+	```console
+    witnet node nodeStats
+    ```
 
 ### balance
 
 The `balance` command will print your node's current balance.
 
-```console tab="Docker"
-docker exec witnet_node witnet node balance
-```
-
-```console tab="Cargo"
-cargo run --release -- node balance
-```
-
-```console tab="Binary"
-witnet node balance
-```
+=== "Docker"
+	```console
+    docker exec witnet_node witnet node balance
+    ```
+=== "Cargo"
+	```console
+    cargo run --release -- node balance
+    ```
+=== "Binary"
+	```console
+    witnet node balance
+    ```
 
 
 ### reputation
 
 The `reputation` command will print your node's current reputation score.
 
-```console tab="Docker"
-docker exec witnet_node witnet node reputation
-```
-
-```console tab="Cargo"
-cargo run --release -- node reputation
-```
-
-```console tab="Binary"
-witnet node reputation
-```
+=== "Docker"
+	```console
+    docker exec witnet_node witnet node reputation
+    ```
+=== "Cargo"
+	```console
+    cargo run --release -- node reputation
+    ```
+=== "Binary"
+	```console
+    witnet node reputation
+    ```
 
 
 !!! tip "Reputation is tricky"
@@ -85,31 +88,33 @@ To check if the listening port is correctly opened to the Internet, you can use
 a [port forwarding testing][port-test] tool or try to open a connection to
 your public IP from a device that is not in the same network as your node:
 
-```sh tab="Telnet"
-# If you get stuck when running this command, it is indeed a good sign that
-# the connection was stablished. To exist a Telnet session, press "Ctrl + ]",
-# then write "quit" and press Enter.
-telnet your_public_ip 21337
-```
-
-```console tab="GNU Netcat"
-nc -vz your_public_ip:21337
-```
+=== "Telnet"
+	```sh
+    # If you get stuck when running this command, it is indeed a good sign that
+    # the connection was stablished. To exist a Telnet session, press "Ctrl + ]",
+    # then write "quit" and press Enter.
+    telnet your_public_ip 21337
+    ```
+=== "GNU Netcat"
+    ```console
+    nc -vz your_public_ip:21337
+    ```
 
 The final check to verify that your port is correctly forwarded is using the
 `peers` method to look if any of the peer connections is tagged as "inbound":
 
-```console tab="Docker"
-docker exec witnet_node witnet node peers
-```
-
-```console tab="Cargo"
-cargo run --release -- node peers
-```
-
-```console tab="Binary"
-witnet node peers
-```
+=== "Docker"
+	```console
+    docker exec witnet_node witnet node peers
+    ```
+=== "Cargo"
+	```console
+    cargo run --release -- node peers
+    ```
+=== "Binary"
+	```console
+    witnet node peers
+    ```
 
 !!! tip "Multiple nodes in the same device or network"
     Multiple Witnet nodes can run in the same device or network and still get
@@ -128,32 +133,34 @@ your wit tokens safe.
 
 This command will print your master key into your console terminal:
 
-```console tab="Docker"
-docker exec witnet_node witnet node masterKeyExport
-```
-
-```console tab="Cargo"
-cargo run --release -- node masterKeyExport
-```
-
-```console tab="Binary"
-witnet node masterKeyExport
-```
+=== "Docker"
+	```console
+    docker exec witnet_node witnet node masterKeyExport
+    ```
+=== "Cargo"
+	```console
+    cargo run --release -- node masterKeyExport
+    ```
+=== "Binary"
+	```console
+    witnet node masterKeyExport
+    ```
 
 You can add the `--write` flag to write a backup of your master key into a file
 in the configuration directory of your node (`~/.witnet/config` by default):
 
-```console tab="Docker"
-docker exec witnet_node witnet node masterKeyExport --write
-```
-
-```console tab="Cargo"
-cargo run --release -- node masterKeyExport --write
-```
-
-```console tab="Binary"
-witnet node masterKeyExport --write
-```
+=== "Docker"
+	```console
+    docker exec witnet_node witnet node masterKeyExport --write
+    ```
+=== "Cargo"
+	```console
+    cargo run --release -- node masterKeyExport --write
+    ```
+=== "Binary"
+	```console
+    witnet node masterKeyExport --write
+    ```
 
 It is recommended to **move or copy the resulting file into a safe place**. Writing
 it into a piece of paper and keeping it somewhere safe from light, water, fire 
@@ -165,41 +172,42 @@ all your wit tokens.
 **Importing master keys is only allowed when creating a new node**, as overwriting a
 existing key could be dangerous. The process is quite simple:
 
-```console tab="Docker + nano"
-mkdir -p ~/.witnet/config
-
-nano ~/.witnet/config/master.key 
-
-# Now enter your master key into the file editor, save with Ctrl+O and exit with Ctrl+X
-
-docker run -d \
-    --name witnet_node \
-    --volume ~/.witnet:/.witnet \
-    --publish 21337:21337 \
-    --restart always \
-    witnet/witnet-rust \
-    node server --master-key-import /.witnet/config/master.key
-```
-
-```console tab="Docker + vim"
-mkdir -p ~/.witnet/config
-
-vim ~/.witnet/config/master.key 
-
-# Now enter your master key into the file editor, save and exit by typing Escape, then ":wq" and Enter 
-
-docker run -d \
-    --name witnet_node \
-    --volume ~/.witnet:/.witnet \
-    --publish 21337:21337 \
-    --restart always \
-    witnet/witnet-rust \
-    node server --master-key-import /.witnet/config/master.key
-```
-
-```console tab="Binary"
-witnet node server --master-key-import ~/.witnet/config/master.key
-```
+=== "Docker + nano"
+	```console
+    mkdir -p ~/.witnet/config
+    
+    nano ~/.witnet/config/master.key 
+    
+    # Now enter your master key into the file editor, save with Ctrl+O and exit with Ctrl+X
+    
+    docker run -d \
+        --name witnet_node \
+        --volume ~/.witnet:/.witnet \
+        --publish 21337:21337 \
+        --restart always \
+        witnet/witnet-rust \
+        node server --master-key-import /.witnet/config/master.key
+    ```
+=== "Docker + vim"
+	```console
+    mkdir -p ~/.witnet/config
+    
+    vim ~/.witnet/config/master.key 
+    
+    # Now enter your master key into the file editor, save and exit by typing Escape, then ":wq" and Enter 
+    
+    docker run -d \
+        --name witnet_node \
+        --volume ~/.witnet:/.witnet \
+        --publish 21337:21337 \
+        --restart always \
+        witnet/witnet-rust \
+        node server --master-key-import /.witnet/config/master.key
+    ```
+=== "Binary"
+	```console
+    witnet node server --master-key-import ~/.witnet/config/master.key
+    ```
 
 !!! danger "Never use the same master key on multiple nodes at once"
     Operating multiple nodes with the same master key is a terrible idea.
@@ -216,18 +224,18 @@ be found in the `~/.witnet/config` folder, right in your user's directory.
 
 You can easily edit the configuration file like this:
 
-```console tab="Vim (Mac OS)"
-vim ~/.witnet/config/witnet.toml
-```
-
-```console tab="Vim (GNU/Linux)"
-vim ~/.witnet/config/witnet.toml
-```
-
-```console tab="Nano (GNU/Linux)"
-nano ~/.witnet/config/witnet.toml
-```
-
+=== "Vim (Mac OS)"
+	```console
+    vim ~/.witnet/config/witnet.toml
+    ```
+=== "Vim (GNU/Linux)"
+	```console
+    vim ~/.witnet/config/witnet.toml
+    ```
+=== "Nano (GNU/Linux)"
+	```console
+    nano ~/.witnet/config/witnet.toml
+    ```
 
 ## Long term maintenance of your node
 

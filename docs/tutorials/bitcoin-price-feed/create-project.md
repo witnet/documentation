@@ -11,11 +11,12 @@ If you are creating a new project from scratch, the quickest way to get
 things working is using [Truffle][truffle] to download a Witnet-enabled
 project template:
 
-```console tab="GNU/Linux, Mac OS or Linux Subsystem for Windows"
-mkdir bitcoin-price-feed
-cd bitcoin-price-feed
-truffle unbox witnet/truffle-box
-```
+=== "GNU/Linux, Mac OS or Linux Subsystem for Windows"
+	```console
+    mkdir bitcoin-price-feed
+    cd bitcoin-price-feed
+    truffle unbox witnet/truffle-box
+    ```
 
 You can keep reading this page to learn more about the Truffle box
 boilerplate, but if you are feeling impatient you can [jump straight to defining data sources][next].
