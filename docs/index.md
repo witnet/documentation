@@ -39,16 +39,35 @@ Developers can:
 
 - Build Witnet clients.
 - Build applications to interact with a Witnet client.
-- Write [Ethereum smart contracts that use Witnet][ethereum].
+- Write [Ethereum smart contracts that use Witnet][ethereum], e.g.
+  integrate Witnet into DeFi protocols.
+- Build bridges between Witnet and other blockchains, so that contracts
+  in those networks can query the Witnet decentralized oracle.
 - Contribute to [Witnet-Rust] or [Sheikah].
 
 ## Witnet Foundation
 
-The Witnet Foundation is the independent entity currently in
-charge of funding the development of Witnet-Rust and Sheikah, as well as nurturing
-an engaged and diverse ecosystem around the Witnet protocol.
+[Witnet Foundation] is a non-profit dedicated to stewarding the
+advancement of the Witnet oracle protocol and ecosystem, as well as
+the broader Web3 space, with a focus on fostering research and development
+of technologies that enhance the decentralization of communications and
+financial infrastructure in search of more freedom for the individual.
 
-## Other stakeholders
+Witnet Foundation is directly in charge of the development of Witnet-Rust,
+as well as nurturing and funding an engaged and diverse ecosystem around
+the Witnet protocol.
+
+## Other significant actors in the development community
+
+Beyond Witnet Foundation, there are other corporations and individuals
+who contribute significantly to key parts of the ecosystem:
+
+- [OtherPlane Labs], the software development startup now in charge of
+  the development of the [Sheikah witnet wallet][sheikah].
+
+- Dr. CPU, the anonymous devloper (or developers) who built and
+  operates the [Witnet Block Explorer].
+
 The Witnet community is open to everyone. Even if you are not a
 developer or node operator, there are
 [many ways to get involved][contributing]!
@@ -59,4 +78,7 @@ developer or node operator, there are
 [run-a-node]: /try/run-a-node
 [contributing]: /developer/contributing
 [Witnet-Rust]: https://github.com/witnet/witnet-rust
-[Sheikah]: https://github.com/witnet/sheikah
+[Sheikah]: https://sheikah.app
+[Witnet Foundation]: https://witnet.foundation
+[OtherPlane Labs]: https://otherplane.com
+[Witnet Block Explorer]: https://witnet.network

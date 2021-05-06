@@ -9,18 +9,22 @@
 Witnet-Rust is experimental software running on experimental network
 protocols:
 
-- All the main components are in place—but they need yet to be
-battle tested before Mainnet. 
-- `Testnet-8` is live. [Here's the roadmap][roadmap] and this is
-  [how to run a node][run-a-node].
-- The Witnet community is doing its best to make `witnet-rust` rock
-solid as soon as possible.
+- Mainnet is live. This is [how to run a node][run-a-node].
+- The Witnet community continues improveing `witnet-rust`, which is
+  considered the "reference implementation" of the Witnet protocol.
 - [Contributions][contributing] are more than welcome.
 
 ## Sheikah
 
-[Sheikah][sheikah] is a Witnet-compatible desktop wallet, data requests
-and smart contracts development environment.
+[Sheikah][sheikah] is a Witnet-compatible desktop wallet, as well as
+an integrated development environment for creating and deploying  data
+requests.
+
+## Block Explorer
+
+The block explorer at [witnet.network] allows you to explore all the blocks
+and transactions that exist in the chain, as well as monitoring superblock
+consensus, address balances, and more.
 
 ## Ethereum Bridge
 
@@ -57,7 +61,7 @@ The bridge is composed of three different pieces of software:
 [roadmap]: /community/roadmap
 [run-a-node]: /try/run-a-node
 [rust]: https://rust-lang.org
-[sheikah]: https://github.com/witnet/sheikah
+[sheikah]: https://sheikah.app
 [use-from-ethereum]: /try/use-from-ethereum
 [Witnet-Rust]: https://github.com/witnet/sheikah 
 [contributing]: /developer/contributing
@@ -66,3 +70,4 @@ The bridge is composed of three different pieces of software:
 [elliptic-curve-solidity]: https://github.com/witnet/elliptic-curve-solidity
 [bls-solidity]: https://github.com/witnet/bls-solidity
 [bls-signatures-rs]: https://github.com/witnet/bls-signatures-rs
+[witnet.network]: https://witnet.network
