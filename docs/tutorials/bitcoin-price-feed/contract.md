@@ -23,7 +23,7 @@ Let's start by creating a bare-bones contract and saving it as
 `contracts/PriceFeed.sol`:
 
 ```js
-pragma solidity ^0.5.0;
+pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
 // Import the UsingWitnet library that enables interacting with Witnet
@@ -33,17 +33,20 @@ import "./requests/BitcoinPrice.sol";
 
 // Your contract needs to inherit from UsingWitnet
 contract PriceFeed is UsingWitnet {
-  int128 public bitcoinPrice; // The public Bitcoin price point
-  uint256 lastRequestId;      // Stores the ID of the last Witnet request
-  bool pending;               // Tells if an update has been requested but not yet completed
-  Request request;            // The Witnet request object, is set in the constructor
+  uint64 public bitcoinPrice; // The public Bitcoin price point
+  uint256 public lastRequestId;      // Stores the ID of the last Witnet request
+  bool public pending;               // Tells if an update has been requested but not yet completed
+  Request public request;            // The Witnet request object, is set in the constructor
 
-  // Allows logging errors
-  event Error(uint64, string);
+  // emits when the price is updated
+  event PriceUpdated(uint64);
+
+  // emits when found an error decoding request result
+  event ResultError(string);
 
   // This constructor does a nifty trick to tell the `UsingWitnet` library where
   // to find the Witnet contracts on whatever Ethereum network you use.
-  constructor (address _wbi) UsingWitnet(_wbi) public {
+  constructor (address _wrb) public UsingWitnet(_wrb) {
     // Instantiate the Witnet request
     request = new BitcoinPriceRequest();
   }
@@ -56,34 +59,32 @@ The above will:
 - Import `BitcoinPrice.sol` so that you can instantiate the Witnet
   request when necessary.
 - Make your contract inherit `UsingWitnet`.
-- Make the constructor receive the address of the Witnet Bridge
-  Interface (`_wbi`) and pass it down to the `UsingWitnet` constructor
-  through `UsingWitnet(_wbi)`
+- Define events for price updates (`PriceUpdated`) and errors (`ResultError`).
+- Make the constructor receive the address of the Witnet Request
+  Board (`_rb`) and pass it down to the `UsingWitnet` constructor
+  through `UsingWitnet(_wrb)`
+- Construct an instance of the `BitcoinPriceRequest` contract, which is the
+  Solidity representation of the data request at `/requests/BitcoinPrice.js`
 
 ## Write the `requestUpdate` method that launches the Witnet request
 
 ```js
 function requestUpdate() public payable {
-  require(!pending, "An update is already pending. Complete it first before requesting another update.");
-
-  // Amount to pay to the bridge node relaying this request from Ethereum to Witnet
-  uint256 _witnetRequestReward = 100 szabo;
-  // Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum
-  uint256 _witnetResultReward = 100 szabo;
+  require(!pending, "An update is already pending. Complete it first before requesting another update");
 
   // Send the request to Witnet and store the ID for later retrieval of the result
   // The `witnetPostRequest` method comes with `UsingWitnet`
-  lastRequestId = witnetPostRequest(request, _witnetRequestReward, _witnetResultReward);
+  lastRequestId = witnetPostRequest(request);
+
+  // Signal that there is already a pending request
+  pending = true;
 }
 ```
 
-## Write the `resolveUpdate` method that reads the result of the Witnet request
+## Write the `completeUpdate` method that reads the result of the Witnet request
 
 ```js
-// The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows you to
-// protect your methods from being called before the request has been successfully
-// relayed into Witnet.
-function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
+function completeUpdate() public {
   require(pending, "There is no pending update.");
 
   // Read the result of the Witnet request
@@ -91,15 +92,16 @@ function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
   Witnet.Result memory result = witnetReadResult(lastRequestId);
 
   // If the Witnet request succeeded, decode the result and update the price point
-  // If it failed, log the error message
+  // If it failed, revert the transaction with a pretty-printed error message
   if (result.isOk()) {
-      bitcoinPrice = result.asInt128();
+    bitcoinPrice = result.asUint64();
+    emit PriceUpdated(bitcoinPrice);
   } else {
-    (Witnet.ErrorCodes errorCode, string memory errorMessage) = result.asErrorMessage();
-    emit Error(uint64(errorCode), errorMessage);
+    (, string memory errorMessage) = result.asErrorMessage();
+    emit ResultError(errorMessage);
   }
 
-  // In either case, set `pending` to false so a new update can be requested
+  // In any case, set `pending` to false so a new update can be requested
   pending = false;
 }
 ```
@@ -109,7 +111,7 @@ function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
 This is what the complete contract looks like:
  
 ```js
-pragma solidity ^0.5.0;
+pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
 // Import the UsingWitnet library that enables interacting with Witnet
@@ -119,17 +121,20 @@ import "./requests/BitcoinPrice.sol";
 
 // Your contract needs to inherit from UsingWitnet
 contract PriceFeed is UsingWitnet {
-  int128 public bitcoinPrice; // The public Bitcoin price point
-  uint256 lastRequestId;      // Stores the ID of the last Witnet request
-  bool pending;               // Tells if an update has been requested but not yet completed
-  Request request;            // The Witnet request object, is set in the constructor
+  uint64 public bitcoinPrice; // The public Bitcoin price point
+  uint256 public lastRequestId;      // Stores the ID of the last Witnet request
+  bool public pending;               // Tells if an update has been requested but not yet completed
+  Request public request;            // The Witnet request object, is set in the constructor
 
-  // Allow logging errors
-  event Error(uint64, string);
+  // emits when the price is updated
+  event PriceUpdated(uint64);
 
-  // This constructor carries out a clever trick to tell the `UsingWitnet` library where
+  // emits when found an error decoding request result
+  event ResultError(string);
+
+  // This constructor does a nifty trick to tell the `UsingWitnet` library where
   // to find the Witnet contracts on whatever Ethereum network you use.
-  constructor (address _wbi) UsingWitnet(_wbi) public {
+  constructor (address _wrb) public UsingWitnet(_wrb) {
     // Instantiate the Witnet request
     request = new BitcoinPriceRequest();
   }
@@ -137,20 +142,15 @@ contract PriceFeed is UsingWitnet {
   function requestUpdate() public payable {
     require(!pending, "An update is already pending. Complete it first before requesting another update.");
 
-    // Amount to pay to the bridge node relaying this request from Ethereum to Witnet
-    uint256 _witnetRequestReward = 100 szabo;
-    // Amount of wei to pay to the bridge node relaying the result from Witnet to Ethereum
-    uint256 _witnetResultReward = 100 szabo;
-
     // Send the request to Witnet and store the ID for later retrieval of the result
     // The `witnetPostRequest` method comes with `UsingWitnet`
-    lastRequestId = witnetPostRequest(request, _witnetRequestReward, _witnetResultReward);
-  }
+    lastRequestId = witnetPostRequest(request);
 
-  // The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows you to
-  // protect your methods from being called before the request has been successfully
-  // relayed into Witnet.
-  function completeUpdate() public payable witnetRequestAccepted(lastRequestId) {
+    // Signal that there is already a pending request
+    pending = true;
+  }
+    
+  function completeUpdate() public {
     require(pending, "There is no pending update.");
 
     // Read the result of the Witnet request
@@ -158,19 +158,19 @@ contract PriceFeed is UsingWitnet {
     Witnet.Result memory result = witnetReadResult(lastRequestId);
 
     // If the Witnet request succeeded, decode the result and update the price point
-    // If it failed, log the error message
+    // If it failed, revert the transaction with a pretty-printed error message
     if (result.isOk()) {
-        bitcoinPrice = result.asInt128();
+      bitcoinPrice = result.asUint64();
+      emit PriceUpdated(bitcoinPrice);
     } else {
-      (Witnet.ErrorCodes errorCode, string memory errorMessage) = result.asErrorMessage();
-      emit Error(uint64(errorCode), errorMessage);
+      (, string memory errorMessage) = result.asErrorMessage();
+      emit ResultError(errorMessage);
     }
 
     // In any case, set `pending` to false so a new update can be requested
     pending = false;
   }
 }
-
 ```
 
 We can now [prepare to deploy][next]!

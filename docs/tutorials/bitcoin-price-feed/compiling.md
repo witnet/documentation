@@ -7,13 +7,14 @@
 
 Compiling the request could not be easier:
 
-```console tab="npm"
-npm run compile-requests
-```
-
-```console tab="yarn"
-yarn compile-requests
-```
+=== "npm"
+	```console
+    npm run compile-requests
+    ```
+=== "yarn"
+	```console
+    yarn compile-requests
+    ```
 
 The `compile-requests` npm task will:
 
@@ -29,7 +30,7 @@ If you now take a look in the `contracts/requests` folder, you will notice a
 new file called `BitcoinPrice.sol`. It will contain something like this:
 
 ```solidity
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.0;
 
 import "witnet-ethereum-bridge/contracts/Request.sol";
 

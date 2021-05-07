@@ -4,7 +4,7 @@
 
 In this tutorial you will:
 
-- Query **two different APIs** for the USD price of 1 bitcoin using **4
+- Query **two different APIs** for the USD price of 1 bitcoin using **50
   witnessing nodes** from Witnet.
 - Tell those nodes to **aggregate** the values from both APIs and report
   the result.
