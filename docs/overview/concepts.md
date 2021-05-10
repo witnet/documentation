@@ -100,7 +100,7 @@ nodes, incentivized to remain honest and to compete for rewards.
 In addition, integrity of this data is guaranteed by a consensus
 algorithm that detects fraudsters, who are immediately punished.
 
-The progressive [reputation protocol] plays a central role in
+The algorithmic reputation protocol plays a central role in
 maintaining every participant active and honest by creating short,
 middle and long term incentives for them to abide by the protocol and
 not to tamper with the data they broker.
@@ -117,4 +117,3 @@ therefore causing inconsistencies that would lead to breaking the
 network consensus.
 
 [whitepaper]: https://witnet.io/witnet-whitepaper.pdf
-[reputation protocol]: protocol/reputation

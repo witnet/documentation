@@ -34,10 +34,6 @@ precedent stages, so they always receive an `Array`, i.e. if the
 **retrieval** stage returned an `Integer`, the **aggregation** stage
 will start with an `Array<Integer>`, that is, an array of `Integer`s.
 
-For more information on data types, you can read the
-[RADON documentation][radon], which provides a detailed description of
-all the types and the operators they provide.
-
 ## The RAD Engine
 
 The RAD Engine is the component in charge of processing Witnet requests.

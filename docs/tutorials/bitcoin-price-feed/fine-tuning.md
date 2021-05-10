@@ -25,7 +25,8 @@ const request = new Witnet.Request()
 export { request as default }
 ```
 
-The `.setQuorum`, `.setFees` and `.schedule` methods are explained
+
+The `.setQuorum` and `.setFees` methods are explained
 below.
 
 ## Fine-tune fees, quorum and schedule
