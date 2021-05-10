@@ -23,6 +23,7 @@ Let's start by creating a bare-bones contract and saving it as
 `contracts/PriceFeed.sol`:
 
 ```js
+// SPDX-License-Identifier: MIT
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
@@ -111,6 +112,7 @@ function completeUpdate() public {
 This is what the complete contract looks like:
  
 ```js
+// SPDX-License-Identifier: MIT
 pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
