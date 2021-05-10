@@ -1,0 +1,20 @@
+.md-logo img {
+    width: 3.5em !important;
+}
+
+.md-header__title {
+    margin-left: 0;
+}
+
+.md-content {
+    padding-bottom: 60px;
+}
+
+.md-content__inner p a:not([href^="/"]):after {
+    content: "";
+    display: inline-block;
+    margin-left: 1px;
+    width: 13px;
+    height: 13px;
+    background-image: url("https://wiki.archlinux.org/resources/src/mediawiki.skinning/images/external-ltr.png");
+}
