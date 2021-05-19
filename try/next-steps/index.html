@@ -400,6 +400,13 @@
 </li>
         
         <li class="md-nav__item">
+  <a href="#stake-some-wit-tokens-to-increase-your-nodes-probability-of-mining" class="md-nav__link">
+    Stake some WIT tokens to increase your node's probability of mining
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
   <a href="#monitoring-your-nodes-progress" class="md-nav__link">
     Monitoring your node's progress
   </a>
@@ -1037,6 +1044,13 @@
 </li>
         
         <li class="md-nav__item">
+  <a href="#stake-some-wit-tokens-to-increase-your-nodes-probability-of-mining" class="md-nav__link">
+    Stake some WIT tokens to increase your node's probability of mining
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
   <a href="#monitoring-your-nodes-progress" class="md-nav__link">
     Monitoring your node's progress
   </a>
@@ -1135,13 +1149,30 @@
 </ol>
 <h2 id="what-to-expect-from-your-nodes-balance-and-reputation">What to expect from your node's balance and reputation<a class="headerlink" href="#what-to-expect-from-your-nodes-balance-and-reputation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Getting your first block proposal accepted by the network and minting your first wit tokens is not easy, and can take from a few minutes up to 48 hours (or more!) due to the probabilistic nature of the <a href="https://medium.com/witnet/cryptographic-sortition-in-blockchains-the-importance-of-vrfs-ad5c20a4e018">cryptographic sortition</a> algorithm that rules the system.</li>
-<li>As with minting blocks, being assigned a request for the first time can take some time: from several minutes up to 48 hours (or more!). Once you have resolved at least one request, your node will earn reputation and it will start getting assignments more often.</li>
+<li>Getting your first block proposal accepted by the network and minting your first wit tokens is not easy, and can
+take from a few hours up to several days (or more!) due to the probabilistic nature of the <a href="https://medium.com/witnet/cryptographic-sortition-in-blockchains-the-importance-of-vrfs-ad5c20a4e018">cryptographic sortition</a>
+algorithm that rules the system.</li>
+<li>As with minting blocks, being assigned a request for the first time can take some time. Once you have mined one block
+or resolved at least one request, your node will earn reputation and it will start getting assignments more often.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Don't panic</p>
 <p>Note that it is <strong>perfectly normal</strong> for a node to show 0 "balance", "reputation", "blocks included" or "accepted commits" for the first days of it being up.
-Please be patient, new identities in the system are subject to a slow start for critical security reasons.</p>
+Please be patient, new identities in the system are subject to a slow start for critical security reasons.
+Read below for tips on how to increase your node's probability of mining.</p>
+</div>
+<h2 id="stake-some-wit-tokens-to-increase-your-nodes-probability-of-mining">Stake some WIT tokens to increase your node's probability of mining<a class="headerlink" href="#stake-some-wit-tokens-to-increase-your-nodes-probability-of-mining" title="Permanent link">&para;</a></h2>
+<p>The most efficient way to increase your node's probability of mining is to deposit some WIT tokens into its address.</p>
+<p>In doing so, your node will be able to start participating in resolving data requests, which allows it to earn
+reputation points and join the <em>Active Reputation Set (ARS)</em> — a list of nodes that have recently proved their
+reliability.</p>
+<p>This is crucial to increasing the mining probability because the network prioritizes blocks from identities with
+reputation or belonging to the ARS.</p>
+<p>Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 25 hours.</p>
+<div class="admonition info">
+<p class="admonition-title">Getting WIT tokens</p>
+<p>Join the <a href="https://t.me/witnetio">Witnet community</a> and the <a href="https://t.me/witnet_market">Witnet OTC community</a> on Telegram to find out how to get an
+initial amount of WIT tokens that you can put into your node.</p>
 </div>
 <h2 id="monitoring-your-nodes-progress">Monitoring your node's progress<a class="headerlink" href="#monitoring-your-nodes-progress" title="Permanent link">&para;</a></h2>
 <p>Here are some useful commands that you can use to keep track of how your node is performing in the network.
