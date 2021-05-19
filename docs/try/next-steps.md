@@ -10,12 +10,33 @@ As soon as the `witnet_node` container is up, it will do the following things in
 
 ## What to expect from your node's balance and reputation
 
-- Getting your first block proposal accepted by the network and minting your first wit tokens is not easy, and can take from a few minutes up to 48 hours (or more!) due to the probabilistic nature of the [cryptographic sortition] algorithm that rules the system.
-- As with minting blocks, being assigned a request for the first time can take some time: from several minutes up to 48 hours (or more!). Once you have resolved at least one request, your node will earn reputation and it will start getting assignments more often.
+- Getting your first block proposal accepted by the network and minting your first wit tokens is not easy, and can
+take from a few hours up to several days (or more!) due to the probabilistic nature of the [cryptographic sortition]
+algorithm that rules the system.
+- As with minting blocks, being assigned a request for the first time can take some time. Once you have mined one block
+or resolved at least one request, your node will earn reputation and it will start getting assignments more often.
 
 !!! warning "Don't panic"
     Note that it is **perfectly normal** for a node to show 0 "balance", "reputation", "blocks included" or "accepted commits" for the first days of it being up.
     Please be patient, new identities in the system are subject to a slow start for critical security reasons.
+    Read below for tips on how to increase your node's probability of mining.
+
+## Stake some WIT tokens to increase your node's probability of mining
+
+The most efficient way to increase your node's probability of mining is to deposit some WIT tokens into its address.
+
+In doing so, your node will be able to start participating in resolving data requests, which allows it to earn
+reputation points and join the _Active Reputation Set (ARS)_ — a list of nodes that have recently proved their
+reliability.
+
+This is crucial to increasing the mining probability because the network prioritizes blocks from identities with
+reputation or belonging to the ARS.
+
+Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 25 hours.
+
+!!! info "Getting WIT tokens"
+    Join the [Witnet community][Telegram] and the [Witnet OTC community][OTC] on Telegram to find out how to get an
+    initial amount of WIT tokens that you can put into your node.
 
 ## Monitoring your node's progress
 
@@ -251,3 +272,4 @@ There are some operations that are recommended from time to time to make sure yo
 [Discord]: https://discord.gg/X4uurfP
 [Telegram]: https://t.me/witnetio
 [port-test]: https://www.yougetsignal.com/tools/open-ports/
+[OTC]: https://t.me/witnet_market
