@@ -15,7 +15,7 @@ node_url = "127.0.0.1:21338"
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------| ---------------------------------------------------- |
 | [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                    | `bytes`, `transaction`, `transaction_id`             |
 | [create_mnemonics](#create_mnemonics)       | `length`                                                                                     | `mnemonics`                                          |
-| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `address`, `value`, `fee`, (`time_lock`), (`fee_type`)            | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `fee`, (`fee_type`), [`address`, `value`, (`time_lock`)]          | `bytes`, `metadata`, `transaction`, `transaction_id` |
 | [create_wallet](#create_wallet)             | `name`, `caption`, `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`)| `wallet_id`                                          |
 | [export_master_key](#export_master_key)     | `session_id`, `wallet_id`, `password`                                                        | `private_key`                                          |
 | [close_session](#close_session)             | `session_id`                                                                                 | `success`                                            |
@@ -249,14 +249,16 @@ The method `create_vtt` is used to generate a Value Transfer Transaction (VTT) o
 
 Request with parameters:
 
-- `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
 - `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
 - `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `address`: *String*, the recipient address.
-- `amount`: *number*, value to transfer in nanoWits.
 - `fee`: *number*, miner fee in nanoWits.
 - `fee_type` (optional): *String*, fee type chosen between *`weighted`* or *`absolute`*. Defaults to *`weighted`* if not inserted.
 - `label` (optional): *String*, label to refer the vtt.
+- `outputs`: *Array*, list of transaction outputs.
+  - `address`: *String*, the recipient address.
+  - `amount`: *number*, value to transfer in nanoWits.
+  - `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
+
 
 Example:
 
@@ -265,15 +267,19 @@ Example:
   "jsonrpc": "2.0",
   "method": "create_vtt",
   "params": {
-    "time_lock": 0,
     "session_id": "7bbb8d1bec5419451fa57ae686de93d26e8d265b9328f5dc2f1e6e28acac4201",
     "wallet_id": "8f5b85981addad621a86f01a1ddb646ccd90620c95247948ce8d99feefd0496c",
-    "address": "wit1nfkythqds4r2hz3le2zaauxtl7yum76jr6409f",
-    "amount": 1,
     "fee": 1,
-    "label": ""
+    "label": "",
+    "outputs": [
+      {
+        "address": "twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c",
+        "amount": 1,
+        "time_lock": 0
+      }
+    ]
   },
-  "id": 18
+  "id": 1
 }
 ```
 
