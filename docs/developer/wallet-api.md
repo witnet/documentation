@@ -26,6 +26,7 @@ node_url = "127.0.0.1:21338"
 | [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                     | `transactions[]`, `total`                            | 
 | [get_wallet_infos](#get_wallet_infos)       | (none)                                                                                               | `wallet_info[]`                                      |
 | [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                                                            | `success`                                            |
+| [refresh_session](#refresh_session)         | `session_id`                                                                                         | `success`                                            |
 | [resync_wallet](#resync_wallet)             | `session_id`, `wallet_id`                                                                            | `success`                                            | 
 | [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                                                                | (none)                                               | 
 | [rpc.on](#rpc.on)                           | `session_id`                                                                                         | (`subscription_id`)                                  | 
@@ -823,6 +824,39 @@ Response:
 ```
 
 
+### refresh_session
+
+The JsonRPC method `refresh_session` is used to refresh an active session of a currently unlocked wallet. This call will reset the session expiration time for the given session.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "refresh_session",
+  "params": {
+    "session_id": "b6166f88e5105740c34fc20f56dc6fcc2eaeb73de2a4884c4e4f4aa6957eb398"
+  },
+  "id": 1
+}
+```
+
+Response:
+
+- `success`: *Boolean*, reporting if the wallet was successfully refreshed.
+
+```json
+{
+	"jsonrpc": "2.0",
+  	"result": {
+      "success": true
+    },
+  	"id": "1"
+}
+```
+
 
 ### resync_wallet
 
@@ -1356,7 +1390,7 @@ The response includes the parameters:
 
 ### unlock_wallet
 
-The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
+The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. By default, sessions will expired after 1 hour. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
 
 Request with parameters:
 
