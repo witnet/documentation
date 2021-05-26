@@ -353,7 +353,7 @@ The JsonRPC method `create_wallet` is used to generate a new Master Key for an e
 Request with parameters:
 
 - `name` (optional): *String*, human-friendly name for the wallet.
-- `caption` (optional): *String*, human-friendly caption for the wallet.
+- `description` (optional): *String*, human-friendly caption for the wallet.
 - `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv* and determine how the HD wallet master key will be generated from the data sent in the `seedData` parameter.
 - `seed_data`: *String*, data used for generating the new HD wallet master key.
 - `password`: *String*, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.
@@ -366,7 +366,7 @@ Request with parameters:
   "method": "create_wallet",
   "params": {
     "name": "Wallet #1",
-    "caption": "Personal use",
+    "description": "Personal use",
     "seed_source": "mnemonics",
     "seed_data": "exotic demand way fatigue skull poverty happy divide scrub seed jeans novel",
     "password": "12345678",
