@@ -56,9 +56,7 @@ Request with parameters:
   - `data_request`: *RADRequest*, data request with CBOR codification.
   - `witness_reward`: *number*, reward in nanoWits to the witnesses of the data request.
   - `witnesses`: *number*, minimum number of witnet nodes that must perform the request.
-  - `commit_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid commitment transaction.
-  - `reveal_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid reveal transaction.
-  - `tally_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid tally transaction.
+  - `commit_and_reveal_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid commitment and reveal transaction.
   - `min_consensus_percentage`: *number*, , minimum of consensus required to consider the request as valid.
   - `collateral`: *number*, collateral amount in nanoWits.
 
@@ -107,9 +105,7 @@ As an example, this data request created a data request that retrives the last B
       },
       "witness_reward": 1000,
       "witnesses": 3,
-      "commit_fee": 10,
-      "reveal_fee": 10,
-      "tally_fee": 30,
+      "commit_and_reveal_fee": 10,
       "min_consensus_percentage": 51,
       "collateral": 1000000000
     },
@@ -138,7 +134,7 @@ Example of a `create_data_request` response:
         "body": {
           "dr_output": {
             "collateral": 1000000000,
-            "commit_fee": 10,
+            "commit_and_reveal_fee": 10,
             "data_request": {
               "aggregate": {
                 "filters": [],
@@ -170,8 +166,6 @@ Example of a `create_data_request` response:
               "time_lock": 0
             },
             "min_consensus_percentage": 51,
-            "reveal_fee": 10,
-            "tally_fee": 30,
             "witness_reward": 1000,
             "witnesses": 3
           },
