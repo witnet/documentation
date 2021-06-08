@@ -4,7 +4,7 @@
 
 As soon as the `witnet_node` container is up, it will do the following things in order:
 
-1. Try to **open connections to other nodes** in the network. It needs 12 "outbound" connections. This should take from several seconds to a few minutes.
+1. Try to **open connections to other nodes** in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.
 2. Discover what is the **tip of the block chain**, and **download all the blocks** from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.
 3. Go into **_Synced_ status**. In Synced status, your node will **validate transactions and blocks** in real time, and it will try itself to **propose block candidates** and participate in **resolving _data requests_**.
 
