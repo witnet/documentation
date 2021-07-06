@@ -17,7 +17,7 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregation script
   .setTally(tally)           // Set the tally script
-  .setQuorum(4, 55)           // Set witness count
+  .setQuorum(100,70)           // Set witness count
   .setFees(1, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 
@@ -206,8 +206,8 @@ const request = new Witnet.Request()
   .addSource(coindesk)       // Use source 2
   .setAggregator(aggregator) // Set the aggregator function
   .setTally(tally)           // Set the tally function
-  .setQuorum(4, 2,)          // Set witness count
-  .setFees(10, 1, 1, 1)      // Set economic incentives
+  .setQuorum(100, 70)          // Set witness count
+  .setFees(10, 1)      // Set economic incentives
   .schedule(0)               // Make this request immediately solvable
 
 // Do not forget to export the request object

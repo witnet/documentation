@@ -4,7 +4,7 @@
 
 In this tutorial you will:
 
-- Query **two different APIs** for the USD price of 1 bitcoin using **4
+- Query **two different APIs** for the USD price of 1 bitcoin using **100
   witnessing nodes** from Witnet.
 - Tell those nodes to **aggregate** the values from both APIs and report
   the result.
@@ -33,7 +33,7 @@ the data points it provides:
   through a Witnet request.
 - The price is averaged from two different public APIs, thus mitigating
   their influence in the final price.
-- The data is relayed by 4 different Witnet nodes, whose reported data
+- The data is relayed by 100 different Witnet nodes, whose reported data
   points are aggregated and averaged, filtering out any outliers so as
   to cancel any malicious reporter who may try to leverage a slight
   drift of the data point.
