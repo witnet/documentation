@@ -47,7 +47,7 @@ Truffle:
 ```console
 mkdir PriceFeed
 cd PriceFeed
-truffle unbox stampery-labs/witnet-pricefeed-example
+truffle unbox witnet/witnet-pricefeed-tutorial
 ```
 
 ## Ready to start? 
