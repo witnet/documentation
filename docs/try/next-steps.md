@@ -32,7 +32,7 @@ reliability.
 This is crucial to increasing the mining probability because the network prioritizes blocks from identities with
 reputation or belonging to the ARS.
 
-Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 25 hours.
+Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 12.5 hours.
 
 !!! info "Getting WIT tokens"
     Join the [Witnet community][Telegram] and the [Witnet OTC community][OTC] on Telegram to find out how to get an
