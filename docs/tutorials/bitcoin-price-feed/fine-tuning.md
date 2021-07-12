@@ -195,7 +195,7 @@ const aggregator = new Witnet.Aggregator({
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
-   [Witnet.Types.FILTERS.deviationStandard, 1.0]
+   [Witnet.Types.FILTERS.deviationStandard, 1.5]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })

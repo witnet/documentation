@@ -66,16 +66,11 @@ similar to the aggregation function:
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
-   [Witnet.Types.FILTERS.deviationStandard, 1.0]
+   [Witnet.Types.FILTERS.deviationStandard, 1.5]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })
 ```
-
-Note, however, that in this case the deviation filter is using a narrower
-threshold (`1.0` instead of `1.5`). This is to ensure that malicious
-data points will not affect the final result, and that the witnesses
-that produced such outliers will be punished for their misbehavior.
 
 ## Quick recap
 
@@ -112,7 +107,7 @@ const aggregator = new Witnet.Aggregator({
 // values that pass the filter.
 const tally = new Witnet.Tally({
   filters: [
-   [Witnet.Types.FILTERS.deviationStandard, 1.0]
+   [Witnet.Types.FILTERS.deviationStandard, 1.5]
   ],
   reducer: Witnet.Types.REDUCERS.averageMean
 })
