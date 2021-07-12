@@ -719,7 +719,7 @@ Create a value transfer transaction that splits UTXOs.
 The following arguments must be provided:
 
 * `--value=amount`: amount in nanoWits.
-* `--size=size`:amount in nanoWits of each UTXO.
+* `--size=size`: amount in nanoWits of each UTXO.
 * `--fee=fee`: miner fee in nanoWits.
 
 === "Docker"

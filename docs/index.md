@@ -65,7 +65,7 @@ who contribute significantly to key parts of the ecosystem:
 - [OtherPlane Labs], the software development startup now in charge of
   the development of the [Sheikah witnet wallet][sheikah].
 
-- Dr. CPU, the anonymous devloper (or developers) who built and
+- Dr. CPU, the anonymous developer (or developers) who built and
   operates the [Witnet Block Explorer].
 
 The Witnet community is open to everyone. Even if you are not a
