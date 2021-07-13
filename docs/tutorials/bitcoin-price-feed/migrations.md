@@ -106,9 +106,6 @@ can deploy them into a public network using the `--network` flag:
 - `truffle migrate --network=goerli` deploys on the Ethereum Görli
   testnet.
 
-Deploying on Mainnet is not supported yet. Take a look at the [community
-roadmap][roadmap] for more information on Mainnet support.
-
 ## Interact with your contract
 
 The Truffle documentation has a comprehensive guide on [interacting with
@@ -123,5 +120,4 @@ your contracts][interacting].
 [Discord]: https://discord.gg/X4uurfP
 [Telegram]: https://t.me/witnetio
 [intro]: /tutorials/bitcoin-price-feed/introduction
-[roadmap]: /community/roadmap
 [interacting]: https://www.trufflesuite.com/docs/truffle/getting-started/interacting-with-your-contracts

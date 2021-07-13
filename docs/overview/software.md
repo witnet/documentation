@@ -58,7 +58,6 @@ The bridge is composed of three different pieces of software:
 - [bls-signatures-rs]: implementation of BLS signatures written in Rust
 
 
-[roadmap]: /community/roadmap
 [run-a-node]: /try/run-a-node
 [rust]: https://rust-lang.org
 [sheikah]: https://sheikah.app

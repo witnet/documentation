@@ -86,7 +86,6 @@ enable to compose data requests and RADON scripts visually. In the meantime,
 you can play around with [this community-built request editor][witnet.tools].
 
 [ethereum]: /try/use-from-ethereum
-[roadmap]: /community/roadmap
 [CLI]: /node-operators/cli
 [tutorial]: /tutorials/bitcoin-price-feed/introduction
 [Sheikah]: https://github.com/witnet/sheikah
