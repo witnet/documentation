@@ -63,7 +63,7 @@ Request with parameters:
 
 More information about the parameters can be found in the tutorial of [data request parameters fine-tuning](https://docs.witnet.io/tutorials/bitcoin-price-feed/fine-tuning/).
 
-As an example, this data request created a data request that retrives the last Bitcoin blockhash from three different sources:
+As an example, this data request created a data request that retrives the last Bitcoin blockhash from two different sources using three witnesses:
 
 ```json
 {
