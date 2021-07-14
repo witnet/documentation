@@ -52,7 +52,7 @@ returns the current weather conditions in Berlin.
     new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.FLOAT])
       .filter(Witnet.Types.FILTERS.greaterThan, -30)
       .filter(Witnet.Types.FILTERS.lessThan, 50)
-      .filter(Witnet.Types.FILTERS.deviationStandard)
+      .filter(Witnet.Types.FILTERS.deviationStandard, 2)
       .reduce(Witnet.Types.REDUCERS.averageMean)
     ```
 === "RADON-AST"
@@ -289,7 +289,6 @@ actually fell, and maps that onto a `String` with value `heads` or
 6. Emit the value as `Float`.
 
 ### Tally stage
-
 === "Javascript"
 	```ts
     new Witnet.Script([Witnet.TYPES.ARRAY, Witnet.TYPES.INTEGER])
