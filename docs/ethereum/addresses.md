@@ -36,7 +36,6 @@ rather talk to the Witnet Request Board and other contracts directly using the i
 ### Public price feeds
 * BtcUsdPriceFeed: [0x58995FaD03158fB9cd64397347bA97714EF8fC12](https://rinkeby.etherscan.io/address/0x58995FaD03158fB9cd64397347bA97714EF8fC12)
 * EthUsdPriceFeed: [0xAe9821fbA4Bd76fd6D39859bd7c3d4A90b2ceE40](https://rinkeby.etherscan.io/address/0xAe9821fbA4Bd76fd6D39859bd7c3d4A90b2ceE40)
-* GoldEurPriceFeed: [0xaC29F75750EFbdEA7CF91682D48232Aa761Ab402](https://rinkeby.etherscan.io/address/0xaC29F75750EFbdEA7CF91682D48232Aa761Ab402)
 
 ## Goerli
 
@@ -49,7 +48,6 @@ rather talk to the Witnet Request Board and other contracts directly using the i
 ### Public price feeds
 * BtcUsdPriceFeed: [0x4958806608D2E3Aa22BD8818B555A0a24fe6c38E](https://goerli.etherscan.io/address/0x4958806608D2E3Aa22BD8818B555A0a24fe6c38E#contracts)
 * EthUsdPriceFeed: [0xAa0AA725aEb1d382F909a8dE3041e9eaD6507501](https://goerli.etherscan.io/address/0xAa0AA725aEb1d382F909a8dE3041e9eaD6507501#contracts)
-* GoldEurPriceFeed: [0x2F225cF6aD306574181A6C991898022bEd25805A](https://goerli.etherscan.io/address/0x2F225cF6aD306574181A6C991898022bEd25805A#contracts)
 
 ## Kovan
 
@@ -62,7 +60,6 @@ rather talk to the Witnet Request Board and other contracts directly using the i
 ### Public price feeds
 * BtcUsdPriceFeed: [0x9b3C5A6cB55E027d9ae6f265f6FB6fFA86e7b35E](https://kovan.etherscan.io/address/0x9b3C5A6cB55E027d9ae6f265f6FB6fFA86e7b35E#contracts)
 * EthUsdPriceFeed: [0xA996939e6a07a0D1D6376c59BE515d8441f5E9b8](https://kovan.etherscan.io/address/0xA996939e6a07a0D1D6376c59BE515d8441f5E9b8#contracts)
-* GoldEurPriceFeed: [0xD17E11238870723B0936aaB6877D2d8ca6B1EbBc](https://kovan.etherscan.io/address/0xD17E11238870723B0936aaB6877D2d8ca6B1EbBc#contracts)
 
 [witnet-ethereum-bridge]: https://github.com/witnet/witnet-ethereum-bridge
 [Witnet Truffle Box]: /try/use-from-ethereum

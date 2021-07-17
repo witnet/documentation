@@ -16,6 +16,7 @@ nav:
       - Command Line Interface: node-operators/cli.md
       #- Use the Sheikah wallet / IDE: try/sheikah.md
   - Ethereum:
+    - Price Feeds: ethereum/price-feeds.md
     - Addresses: ethereum/addresses.md
     - Connect your Ethereum contracts to any APIs: try/use-from-ethereum.md
     - Truffle Box Tutorial:
