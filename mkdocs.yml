@@ -16,7 +16,8 @@ nav:
       - Command Line Interface: node-operators/cli.md
       #- Use the Sheikah wallet / IDE: try/sheikah.md
   - Ethereum:
-    - Connect your Ethereum contracts to external APIs: try/use-from-ethereum.md
+    - Addresses: ethereum/addresses.md
+    - Connect your Ethereum contracts to any APIs: try/use-from-ethereum.md
     - Truffle Box Tutorial:
         - Introduction: tutorials/bitcoin-price-feed/introduction.md
         - 1. Create a new project: tutorials/bitcoin-price-feed/create-project.md
