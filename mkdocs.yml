@@ -7,22 +7,27 @@ nav:
       - Ecosystem: index.md
       - What is Witnet?: overview/concepts.md
       - Software: overview/software.md
-  - Quickstart:
-      - Run a Node: try/run-a-node.md
+  - Running a Witnet node:
+      - Quick Start Guide: try/run-a-node.md
       - Next Steps: try/next-steps.md
+      - Hardware requirements: node-operators/hardware-requirements.md
+      - Run as systemd service: node-operators/systemd-service.md
+      - Run as docker-compose service: node-operators/docker-compose-service.md
+      - Command Line Interface: node-operators/cli.md
       #- Use the Sheikah wallet / IDE: try/sheikah.md
-      - Connect your Ethereum contracts to external APIs: try/use-from-ethereum.md
-  - Tutorial:
-      - Introduction: tutorials/bitcoin-price-feed/introduction.md
-      - 1. Create a new project: tutorials/bitcoin-price-feed/create-project.md
-      - 2. Adding data sources: tutorials/bitcoin-price-feed/sources.md
-      - 3. Define aggregator / tally: tutorials/bitcoin-price-feed/aggregations.md
-      - 4. Fine-tune the request: tutorials/bitcoin-price-feed/fine-tuning.md
-      - 5. Compile the request: tutorials/bitcoin-price-feed/compiling.md
-      - 6. Write the Solidity contract: tutorials/bitcoin-price-feed/contract.md
-      - 7. Deploy: tutorials/bitcoin-price-feed/migrations.md
-      - Recap: tutorials/bitcoin-price-feed/recap.md
-  - Developer Docs:
+  - Ethereum:
+    - Connect your Ethereum contracts to external APIs: try/use-from-ethereum.md
+    - Truffle Box Tutorial:
+        - Introduction: tutorials/bitcoin-price-feed/introduction.md
+        - 1. Create a new project: tutorials/bitcoin-price-feed/create-project.md
+        - 2. Adding data sources: tutorials/bitcoin-price-feed/sources.md
+        - 3. Define aggregator / tally: tutorials/bitcoin-price-feed/aggregations.md
+        - 4. Fine-tune the request: tutorials/bitcoin-price-feed/fine-tuning.md
+        - 5. Compile the request: tutorials/bitcoin-price-feed/compiling.md
+        - 6. Write the Solidity contract: tutorials/bitcoin-price-feed/contract.md
+        - 7. Deploy: tutorials/bitcoin-price-feed/migrations.md
+        - Recap: tutorials/bitcoin-price-feed/recap.md
+  - Witnet-Rust Docs:
       - Compile from source code: developer/from-source.md
       - Contributing: developer/contributing.md
       - Wallet API: developer/wallet-api.md
@@ -35,14 +40,10 @@ nav:
           - Overview: protocol/data-requests/overview.md
           - Encoding: protocol/data-requests/radon-encoding.md
       #- protocol/serialization.md
-  - Operator Docs:
+  #- Operator Docs:
       #- Run an Ethereum bridge: node-operators/ethereum-bridge.md
       #- Compilation: witnet-rust/compiling.md
       #- Configuration: witnet-rust/configuration.md
-      - Hardware requirements: node-operators/hardware-requirements.md
-      - Run as systemd service: node-operators/systemd-service.md
-      - Run as docker-compose service: node-operators/docker-compose-service.md
-      - Command Line Interface: node-operators/cli.md
       #- Witnet-Rust JSON-RPC: node-operators/json-rpc.md
       #- Wallet API: node-operators/wallet-api.md
   - More:
