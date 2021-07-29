@@ -11,33 +11,35 @@ node_url = "127.0.0.1:21338"
 
 ## Summary
 
-| Method Name                                 | Request Params                                                                                                        | Response                                             |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------- |
-| [close_session](#close_session)             | `session_id`                                                                                                          | `success`                                            |
-| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                             | `bytes`, `transaction`, `transaction_id`             |
-| [create_mnemonics](#create_mnemonics)       | `length`                                                                                                              | `mnemonics`                                          |
-| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `fee`, (`fee_type`), [`address`, `value`, (`time_lock`)]                                   | `bytes`, `metadata`, `transaction`, `transaction_id` |
-| [create_wallet](#create_wallet)             | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`) | `wallet_id`                                          |
-| [export_master_key](#export_master_key)     | `session_id`, `wallet_id`, `password`                                                                                 | `private_key`                                        |
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                                                                               | `address`, `path`                                    |
-| [get](#get)                                 | `session_id`, `wallet_id`, `key`                                                                                      | `value`                                              |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                        | `address[]`, `total`                                 |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                                                                             | `confirmed`, `local`, `unconfirmed`                  |
-| [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                      | `transactions[]`, `total`                            | 
-| [get_wallet_infos](#get_wallet_infos)       | (none)                                                                                                                | `wallet_info[]`                                      |
-| [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                                                                             | `success`                                            |
-| [refresh_session](#refresh_session)         | `session_id`                                                                                                          | `success`                                            |
-| [resync_wallet](#resync_wallet)             | `session_id`, `wallet_id`                                                                                             | `success`                                            | 
-| [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                                                                                 | (none)                                               | 
-| [rpc.on](#rpc.on)                           | `session_id`                                                                                                          | (`subscription_id`)                                  | 
-| [run_rad_request](#run_rad_request)         | `request`                                                                                                             | `result`                                             | 
-| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                                                                              | `balance_movement`, `jsonrpc_result`                 |
-| [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                                                                             | (none)                                               |
-| [shutdown](#shutdown)                       | `session_id`                                                                                                          | (none)                                               |
-| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                      | `chaincode`, `public_key`, `signature`               | 
-| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                                                                               | `session_id`, `session_expiration_secs`, ...         |
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, (`name`), (`description`)                                                                  | `success`                                            |
-| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`, (`backup_password`)                                                                       | `exist`, `wallet_id`                                 |
+| Method Name                                 | Request Params                                                                                                             | Response                                             |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------- |
+| [close_session](#close_session)             | `session_id`                                                                                                               | `success`                                            |
+| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                                  | `bytes`, `transaction`, `transaction_id`             |
+| [create_mnemonics](#create_mnemonics)       | `length`                                                                                                                   | `mnemonics`                                          |
+| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `fee`, (`fee_type`), [`address`, `value`, (`time_lock`)], (`utxo_strategy`), (`selected_utxos`) | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create_wallet](#create_wallet)             | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`)      | `wallet_id`                                          |
+| [delete_wallet](#delete_wallet)             | `session_id`, `wallet_id`                                                                                                  | `success`                                            |
+| [export_master_key](#export_master_key)     | `session_id`, `wallet_id`, `password`                                                                                      | `private_key`                                        |
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                                                                                    | `address`, `path`                                    |
+| [get](#get)                                 | `session_id`, `wallet_id`, `key`                                                                                           | `value`                                              |
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                             | `address[]`, `total`                                 |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                                                                                  | `confirmed`, `local`, `unconfirmed`                  |
+| [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                           | `transactions[]`, `total`                            | 
+| [get_utxo_info](#get_utxo_info)             | `session_id`, `wallet_id`                                                                                                  | `output_info[]`                                      |
+| [get_wallet_infos](#get_wallet_infos)       | (none)                                                                                                                     | `wallet_info[]`                                      |
+| [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                                                                                  | `success`                                            |
+| [refresh_session](#refresh_session)         | `session_id`                                                                                                               | `success`                                            |
+| [resync_wallet](#resync_wallet)             | `session_id`, `wallet_id`                                                                                                  | `success`                                            | 
+| [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                                                                                      | (none)                                               | 
+| [rpc.on](#rpc.on)                           | `session_id`                                                                                                               | (`subscription_id`)                                  | 
+| [run_rad_request](#run_rad_request)         | `request`                                                                                                                  | `result`                                             | 
+| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                                                                                   | `balance_movement`, `jsonrpc_result`                 |
+| [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                                                                                  | (none)                                               |
+| [shutdown](#shutdown)                       | `session_id`                                                                                                               | (none)                                               |
+| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                           | `chaincode`, `public_key`, `signature`               | 
+| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                                                                                    | `session_id`, `session_expiration_secs`, ...         |
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, (`name`), (`description`)                                                                       | `success`                                            |
+| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`, (`backup_password`)                                                                            | `exist`, `wallet_id`                                 |
 
 
 ## Wallet API Endpoints
@@ -253,7 +255,8 @@ Request with parameters:
   - `address`: *String*, the recipient address.
   - `amount`: *number*, value to transfer in nanoWits.
   - `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
-
+- `utxo_strategy` (optional): *`random` | `big_first` | `small_first`*, enum that allows to choose 3 different strategies for selecting which unspent transaction outputs are used as input of the VTT transaction.
+- `selected_utxos` (optional): *Array*, array of selected output pointers to be spent.
 
 Example:
 
@@ -269,9 +272,14 @@ Example:
     "outputs": [
       {
         "address": "twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c",
-        "amount": 1,
+        "amount": 1000,
         "time_lock": 0
       }
+    ],
+    "utxo_strategy": "random",
+    "selected_utxos": [
+      "3a1ff5de49142d21280dc62dbdc02810a9665e9c23bb27b9094d6dbd6f4e527f:0",
+      "3cebaae8cc942056c475d7f9866a5de1be41aea0a1bcdb63edd533b9caef4043:0"
     ]
   },
   "id": 1
@@ -425,6 +433,43 @@ Response:
       "success": true
     },
   	"id": "1"
+}
+```
+
+
+
+### delete_wallet
+
+The JsonRPC method `delete_wallet` is used to delete the wallet with the specified ID. It also removes the current active session.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+	"jsonrpc": "2.0",
+	"method": "delete_wallet",
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  },
+  "id": "1"
+}
+```
+
+Response:
+
+- `success`: *Boolean*, reporting if the wallet was successfully deleted.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "success": true
+  },
+  "id": "1"
 }
 ```
 
@@ -747,6 +792,51 @@ Response with an array of transactions and additional related information:
         "type": "POSITIVE"
       }
     ]
+  },
+  "id": "1"
+}
+```
+
+
+### get_utxo_info
+
+The JsonRPC method `get_utxo_info` is used to query the current unspent transaction outputs for a given wallet.
+
+Request with parameters:
+
+- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
+- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "get_utxo_info",
+  "params": {
+    "session_id": "9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02",
+    "wallet_id": "6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667"
+  },
+  "id": "1"
+}
+```
+
+Response with a HashMap with all the information about the unspent transaction outputs of a specified wallet:
+
+- `output_info[]`: *HashMap<String, OutputInfo>*, information related of all the unspent transaction outputs (`amount`, `pkh` and `time_lock`)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "3a1ff5de49142d21280dc62dbdc02810a9665e9c23bb27b9094d6dbd6f4e527f:0": {
+      "amount": "10000000000",
+      "pkh": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk",
+      "time_lock": "0"
+    },
+    "3cebaae8cc942056c475d7f9866a5de1be41aea0a1bcdb63edd533b9caef4043:0": {
+      "amount": "10000000000",
+      "pkh": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk",
+      "time_lock": "0"
+    }
   },
   "id": "1"
 }
