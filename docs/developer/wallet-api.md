@@ -11,33 +11,33 @@ node_url = "127.0.0.1:21338"
 
 ## Summary
 
-| Method Name                                 | Request Params                                                                                       | Response                                             |
-| ------------------------------------------- | -----------------------------------------------------------------------------------------------------| ---------------------------------------------------- |
-| [close_session](#close_session)             | `session_id`                                                                                         | `success`                                            |
-| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                            | `bytes`, `transaction`, `transaction_id`             |
-| [create_mnemonics](#create_mnemonics)       | `length`                                                                                             | `mnemonics`                                          |
-| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `fee`, (`fee_type`), [`address`, `value`, (`time_lock`)]                  | `bytes`, `metadata`, `transaction`, `transaction_id` |
-| [create_wallet](#create_wallet)             | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`)| `wallet_id`                                          |
-| [export_master_key](#export_master_key)     | `session_id`, `wallet_id`, `password`                                                                | `private_key`                                        |
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                                                              | `address`, `path`                                    |
-| [get](#get)                                 | `session_id`, `wallet_id`, `key`                                                                     | `value`                                              |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                       | `address[]`, `total`                                 |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                                                            | `confirmed`, `local`, `unconfirmed`                  |
-| [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                     | `transactions[]`, `total`                            | 
-| [get_wallet_infos](#get_wallet_infos)       | (none)                                                                                               | `wallet_info[]`                                      |
-| [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                                                            | `success`                                            |
-| [refresh_session](#refresh_session)         | `session_id`                                                                                         | `success`                                            |
-| [resync_wallet](#resync_wallet)             | `session_id`, `wallet_id`                                                                            | `success`                                            | 
-| [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                                                                | (none)                                               | 
-| [rpc.on](#rpc.on)                           | `session_id`                                                                                         | (`subscription_id`)                                  | 
-| [run_rad_request](#run_rad_request)         | `request`                                                                                            | `result`                                             | 
-| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                                                             | `balance_movement`, `jsonrpc_result`                 |
-| [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                                                            | (none)                                               |
-| [shutdown](#shutdown)                       | `session_id`                                                                                         | (none)                                               |
-| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                                                     | `chaincode`, `public_key`, `signature`               | 
-| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                                                              | `session_id`, `session_expiration_secs`, ...         |
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, (`name`), (`description`)                                                 | `success`                                            |
-| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`, (`backup_password`)                                                      | `exist`, `wallet_id`                                 |
+| Method Name                                 | Request Params                                                                                                        | Response                                             |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------- |
+| [close_session](#close_session)             | `session_id`                                                                                                          | `success`                                            |
+| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                             | `bytes`, `transaction`, `transaction_id`             |
+| [create_mnemonics](#create_mnemonics)       | `length`                                                                                                              | `mnemonics`                                          |
+| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `fee`, (`fee_type`), [`address`, `value`, (`time_lock`)]                                   | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create_wallet](#create_wallet)             | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`) | `wallet_id`                                          |
+| [export_master_key](#export_master_key)     | `session_id`, `wallet_id`, `password`                                                                                 | `private_key`                                        |
+| [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                                                                               | `address`, `path`                                    |
+| [get](#get)                                 | `session_id`, `wallet_id`, `key`                                                                                      | `value`                                              |
+| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                        | `address[]`, `total`                                 |
+| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                                                                             | `confirmed`, `local`, `unconfirmed`                  |
+| [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                      | `transactions[]`, `total`                            | 
+| [get_wallet_infos](#get_wallet_infos)       | (none)                                                                                                                | `wallet_info[]`                                      |
+| [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                                                                             | `success`                                            |
+| [refresh_session](#refresh_session)         | `session_id`                                                                                                          | `success`                                            |
+| [resync_wallet](#resync_wallet)             | `session_id`, `wallet_id`                                                                                             | `success`                                            | 
+| [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                                                                                 | (none)                                               | 
+| [rpc.on](#rpc.on)                           | `session_id`                                                                                                          | (`subscription_id`)                                  | 
+| [run_rad_request](#run_rad_request)         | `request`                                                                                                             | `result`                                             | 
+| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                                                                              | `balance_movement`, `jsonrpc_result`                 |
+| [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                                                                             | (none)                                               |
+| [shutdown](#shutdown)                       | `session_id`                                                                                                          | (none)                                               |
+| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                      | `chaincode`, `public_key`, `signature`               | 
+| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                                                                               | `session_id`, `session_expiration_secs`, ...         |
+| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, (`name`), (`description`)                                                                  | `success`                                            |
+| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`, (`backup_password`)                                                                       | `exist`, `wallet_id`                                 |
 
 
 ## Wallet API Endpoints
@@ -359,7 +359,8 @@ Request with parameters:
 - `seed_data`: *String*, data used for generating the new HD wallet master key.
 - `password`: *String*, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.
 - `overwrite` (optional): *Boolean*, in case that seed data was previously used for creating another wallet, this flag will overwrite the previous wallet with the new one.
-- `backup_password` (optional): *String*, in case that seed source is `"xprv"`, `seed_data` must be decrypted with this parameter. 
+- `backup_password` (optional): *String*, in case that seed source is `"xprv"`, `seed_data` must be decrypted with this parameter.
+- `birth_date` (optional): *`current` | `imported` (number)*, data used to specify from which block number the wallet should start synchronizing (for importing wallets from a previously used seed phrase).
 
 ```json
 {
@@ -373,6 +374,7 @@ Request with parameters:
     "password": "12345678",
     "overwrite": false,
     "backup_password": null,
+    "birth_date": {"imported": 10000}
   },
   "id": 1
 }
