@@ -755,11 +755,92 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       <label class="md-nav__link" for="__nav_4">
+        Other chains
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Other chains" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Other chains
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        Conflux Network
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Conflux Network" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Conflux Network
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chains/conflux/price-feeds/" class="md-nav__link">
+        Price Feeds
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chains/conflux/addresses/" class="md-nav__link">
+        Addresses
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
         Witnet-Rust Docs
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Witnet-Rust Docs" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Witnet-Rust Docs
         </label>
@@ -818,14 +899,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_5">
+      <label class="md-nav__link" for="__nav_6">
         Protocol Docs
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Protocol Docs" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Protocol Docs
         </label>
@@ -851,14 +932,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
       
-      <label class="md-nav__link" for="__nav_5_2">
+      <label class="md-nav__link" for="__nav_6_2">
         Witnet Requests
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Witnet Requests" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
+        <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
           Witnet Requests
         </label>
@@ -911,14 +992,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
-      <label class="md-nav__link" for="__nav_6">
+      <label class="md-nav__link" for="__nav_7">
         More
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="More" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           More
         </label>
@@ -1110,7 +1191,7 @@
 <h2 id="the-first-minutes-and-hours-in-your-nodes-life">The first minutes and hours in your node's life<a class="headerlink" href="#the-first-minutes-and-hours-in-your-nodes-life" title="Permanent link">&para;</a></h2>
 <p>As soon as the <code>witnet_node</code> container is up, it will do the following things in order:</p>
 <ol>
-<li>Try to <strong>open connections to other nodes</strong> in the network. It needs 12 "outbound" connections. This should take from several seconds to a few minutes.</li>
+<li>Try to <strong>open connections to other nodes</strong> in the network. It needs 8 "outbound" connections. This should take from several seconds to a few minutes.</li>
 <li>Discover what is the <strong>tip of the block chain</strong>, and <strong>download all the blocks</strong> from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.</li>
 <li>Go into <strong><em>Synced</em> status</strong>. In Synced status, your node will <strong>validate transactions and blocks</strong> in real time, and it will try itself to <strong>propose block candidates</strong> and participate in <strong>resolving <em>data requests</em></strong>.</li>
 </ol>
