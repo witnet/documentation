@@ -36,7 +36,9 @@ be found in [ADOIP-0010].
 
 ## BTC/USD
 
-* Source code: [Check out on Etherscan](https://etherscan.io/address/0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9#code)
+* Source code:
+    * [Solidity contract](https://github.com/witnet/witnet-price-feed-examples/blob/master/contracts/BtcUsdPriceFeed.sol)
+    * [Witnet data request](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BitcoinPrice.js)
 * Asset ID: `637b7efb6b620736c247aaa282f3898914c0bef6c12faff0d3fe9d4bea783020`
 * Decimal digits: 3
 
@@ -58,7 +60,9 @@ be found in [ADOIP-0010].
 
 ## ETH/USD
 
-* Source code: [Check out on Etherscan](https://etherscan.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C#code)
+* Source code:
+    * [Solidity contract](https://github.com/witnet/witnet-price-feed-examples/blob/master/contracts/EthUsdPriceFeed.sol)
+    * [Witnet data request](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthPrice.js)
 * Asset ID: `dfaa6f747f0f012e8f2069d6ecacff25f5cdf0258702051747439949737fc0b5`
 * Decimal digits: 3
 
