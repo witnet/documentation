@@ -29,6 +29,10 @@ nav:
         - 6. Write the Solidity contract: tutorials/bitcoin-price-feed/contract.md
         - 7. Deploy: tutorials/bitcoin-price-feed/migrations.md
         - Recap: tutorials/bitcoin-price-feed/recap.md
+  - Other chains:
+      - Conflux Network:
+          - Price Feeds: chains/conflux/price-feeds.md
+          - Addresses: chains/conflux/addresses.md
   - Witnet-Rust Docs:
       - Integration guide: developer/integrations.md
       - Compile from source code: developer/from-source.md
