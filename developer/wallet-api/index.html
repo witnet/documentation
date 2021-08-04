@@ -751,6 +751,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#delete_wallet" class="md-nav__link">
+    delete_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#export_master_key" class="md-nav__link">
     export_master_key
   </a>
@@ -788,6 +795,13 @@
           <li class="md-nav__item">
   <a href="#get_transactions" class="md-nav__link">
     get_transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_utxo_info" class="md-nav__link">
+    get_utxo_info
   </a>
   
 </li>
@@ -1159,6 +1173,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#delete_wallet" class="md-nav__link">
+    delete_wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#export_master_key" class="md-nav__link">
     export_master_key
   </a>
@@ -1196,6 +1217,13 @@
           <li class="md-nav__item">
   <a href="#get_transactions" class="md-nav__link">
     get_transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_utxo_info" class="md-nav__link">
+    get_utxo_info
   </a>
   
 </li>
@@ -1364,13 +1392,18 @@ It can be set in the Witnet configuration file as follows:</p>
 </tr>
 <tr>
 <td><a href="#create_vtt">create_vtt</a></td>
-<td><code>session_id</code>, <code>wallet_id</code>, <code>fee</code>, (<code>fee_type</code>), [<code>address</code>, <code>value</code>, (<code>time_lock</code>)]</td>
+<td><code>session_id</code>, <code>wallet_id</code>, <code>fee</code>, (<code>fee_type</code>), [<code>address</code>, <code>value</code>, (<code>time_lock</code>)], (<code>utxo_strategy</code>), (<code>selected_utxos</code>)</td>
 <td><code>bytes</code>, <code>metadata</code>, <code>transaction</code>, <code>transaction_id</code></td>
 </tr>
 <tr>
 <td><a href="#create_wallet">create_wallet</a></td>
-<td>(<code>name</code>), (<code>description</code>), <code>seed_source</code>, <code>seed_data</code>, <code>password</code>, (<code>overwrite</code>), (<code>backup_password</code>)</td>
+<td>(<code>name</code>), (<code>description</code>), <code>seed_source</code>, <code>seed_data</code>, <code>password</code>, (<code>overwrite</code>), (<code>backup_password</code>), (<code>birth_date</code>)</td>
 <td><code>wallet_id</code></td>
+</tr>
+<tr>
+<td><a href="#delete_wallet">delete_wallet</a></td>
+<td><code>session_id</code>, <code>wallet_id</code></td>
+<td><code>success</code></td>
 </tr>
 <tr>
 <td><a href="#export_master_key">export_master_key</a></td>
@@ -1401,6 +1434,11 @@ It can be set in the Witnet configuration file as follows:</p>
 <td><a href="#get_transactions">get_transactions</a></td>
 <td><code>session_id</code>, <code>wallet_id</code>, (<code>offset</code>), (<code>limit</code>)</td>
 <td><code>transactions[]</code>, <code>total</code></td>
+</tr>
+<tr>
+<td><a href="#get_utxo_info">get_utxo_info</a></td>
+<td><code>session_id</code>, <code>wallet_id</code></td>
+<td><code>output_info[]</code></td>
 </tr>
 <tr>
 <td><a href="#get_wallet_infos">get_wallet_infos</a></td>
@@ -1671,6 +1709,8 @@ It can be set in the Witnet configuration file as follows:</p>
 <li><code>address</code>: <em>String</em>, the recipient address.</li>
 <li><code>amount</code>: <em>number</em>, value to transfer in nanoWits.</li>
 <li><code>time_lock</code>: <em>number</em>, indicates the epoch from which the data request could run before, before this epoch the request is ignored.</li>
+<li><code>utxo_strategy</code> (optional): <em><code>random</code> | <code>big_first</code> | <code>small_first</code></em>, enum that allows to choose 3 different strategies for selecting which unspent transaction outputs are used as input of the VTT transaction.</li>
+<li><code>selected_utxos</code> (optional): <em>Array</em>, array of selected output pointers to be spent.</li>
 </ul>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1684,9 +1724,14 @@ It can be set in the Witnet configuration file as follows:</p>
     <span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1nfkythqds4r2hz3le2zaauxtl7yum76jd0ut9c&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
         <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="mi">0</span>
       <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;utxo_strategy&quot;</span><span class="p">:</span> <span class="s2">&quot;random&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;selected_utxos&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;3a1ff5de49142d21280dc62dbdc02810a9665e9c23bb27b9094d6dbd6f4e527f:0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;3cebaae8cc942056c475d7f9866a5de1be41aea0a1bcdb63edd533b9caef4043:0&quot;</span>
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
@@ -1771,7 +1816,8 @@ It can be set in the Witnet configuration file as follows:</p>
 <li><code>seed_data</code>: <em>String</em>, data used for generating the new HD wallet master key.</li>
 <li><code>password</code>: <em>String</em>, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.</li>
 <li><code>overwrite</code> (optional): <em>Boolean</em>, in case that seed data was previously used for creating another wallet, this flag will overwrite the previous wallet with the new one.</li>
-<li><code>backup_password</code> (optional): <em>String</em>, in case that seed source is <code>"xprv"</code>, <code>seed_data</code> must be decrypted with this parameter. </li>
+<li><code>backup_password</code> (optional): <em>String</em>, in case that seed source is <code>"xprv"</code>, <code>seed_data</code> must be decrypted with this parameter.</li>
+<li><code>birth_date</code> (optional): <em><code>current</code> | <code>imported</code> (number)</em>, data used to specify from which block number the wallet should start synchronizing (for importing wallets from a previously used seed phrase).</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
@@ -1784,6 +1830,7 @@ It can be set in the Witnet configuration file as follows:</p>
     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span><span class="p">,</span>
     <span class="nt">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nt">&quot;backup_password&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;birth_date&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;imported&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">}</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
@@ -1828,6 +1875,37 @@ It can be set in the Witnet configuration file as follows:</p>
       <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
     <span class="p">},</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="delete_wallet">delete_wallet<a class="headerlink" href="#delete_wallet" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code>delete_wallet</code> is used to delete the wallet with the specified ID. It also removes the current active session.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code>session_id</code>: <em>String</em>, session ID assigned to you when you unlocked the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code>wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;delete_wallet&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response:</p>
+<ul>
+<li><code>success</code>: <em>Boolean</em>, reporting if the wallet was successfully deleted.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -2123,6 +2201,46 @@ It can be set in the Witnet configuration file as follows:</p>
         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;POSITIVE&quot;</span>
       <span class="p">}</span>
     <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="get_utxo_info">get_utxo_info<a class="headerlink" href="#get_utxo_info" title="Permanent link">&para;</a></h3>
+<p>The JsonRPC method <code>get_utxo_info</code> is used to query the current unspent transaction outputs for a given wallet.</p>
+<p>Request with parameters:</p>
+<ul>
+<li><code>session_id</code>: <em>String</em>, session ID assigned to you when you unlocked the wallet. See <a href="#unlock_wallet">unlock_wallet</a>.</li>
+<li><code>wallet_id</code>: <em>String</em>, ID associated to the wallet. See <a href="#get-wallet-infos">get_wallet_infos</a>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;get_utxo_info&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa1d779afea88a29768dd05647e37b2f64fc103c1081b0ee9e62fb283f5cd02&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wallet_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6c344625884c2f910065ab170dc18ad3cbbc03c7234507c7c22dbd78e3b26667&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Response with a HashMap with all the information about the unspent transaction outputs of a specified wallet:</p>
+<ul>
+<li><code>output_info[]</code>: <em>HashMap<String, OutputInfo></em>, information related of all the unspent transaction outputs (<code>amount</code>, <code>pkh</code> and <code>time_lock</code>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;3a1ff5de49142d21280dc62dbdc02810a9665e9c23bb27b9094d6dbd6f4e527f:0&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;10000000000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;3cebaae8cc942056c475d7f9866a5de1be41aea0a1bcdb63edd533b9caef4043:0&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;10000000000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;pkh&quot;</span><span class="p">:</span> <span class="s2">&quot;twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;time_lock&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+    <span class="p">}</span>
   <span class="p">},</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
 <span class="p">}</span>
