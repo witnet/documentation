@@ -6,13 +6,9 @@
 > achieve utmost speed, memory safety and fearless concurrency without
 > compromising on performance.
 
-Witnet-Rust is experimental software running on experimental network
-protocols:
 
-- Mainnet is live. This is [how to run a node][run-a-node].
-- The Witnet community continues improveing `witnet-rust`, which is
-  considered the "reference implementation" of the Witnet protocol.
-- [Contributions][contributing] are more than welcome.
+Witnet-Rust contains two main components: `node` and `wallet`. [Here is more info][witnet-rust-integration] on how to
+use them and integrate them into your own software.
 
 ## Sheikah
 
@@ -70,3 +66,4 @@ The bridge is composed of three different pieces of software:
 [bls-solidity]: https://github.com/witnet/bls-solidity
 [bls-signatures-rs]: https://github.com/witnet/bls-signatures-rs
 [witnet.network]: https://witnet.network
+[witnet-rust-integration]: /developer/integrations
