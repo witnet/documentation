@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://docs.witnet.io/chains/conflux/addresses/">
+        <link rel="canonical" href="https://docs.witnet.io/developer/integrations/">
       
-      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-7.1.3">
     
     
       
-        <title>Addresses - Witnet Protocol Documentation</title>
+        <title>Integration guide - Witnet Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -38,7 +38,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -57,7 +57,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#witnet-addresses-on-conflux-network" class="md-skip">
+        <a href="#witnet-rust-integration-quick-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -78,9 +78,9 @@
     
       <header class="md-header" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="Header">
-        <a href="../../.."  class="md-header__button md-logo" aria-label="Witnet Protocol Documentation" data-md-component="logo">
+        <a href="../.."  class="md-header__button md-logo" aria-label="Witnet Protocol Documentation" data-md-component="logo">
             
-  <img src="../../../assets/images/logo.svg" alt="Witnet Logo" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="Witnet Logo" alt="logo">
 
         </a>
         <label class="md-header__button md-icon" for="__drawer">
@@ -90,13 +90,13 @@
             <div class="md-header__ellipsis">
                 <div class="md-header__topic">
           <span class="md-ellipsis">
-                    <a href="../../.." title="Witnet Protocol Documentation" aria-label="Witnet Protocol Documentation" data-md-component="logo" class="md-header-nav__topic">the <img src="/assets/images/witnet.svg" alt="witnet" /> documentation</a>
+                    <a href="../.." title="Witnet Protocol Documentation" aria-label="Witnet Protocol Documentation" data-md-component="logo" class="md-header-nav__topic">the <img src="/assets/images/witnet.svg" alt="witnet" /> documentation</a>
           </span>
                 </div>
                 <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Addresses
+              Integration guide
             
           </span>
                 </div>
@@ -192,9 +192,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Witnet Protocol Documentation" class="md-nav__button md-logo" aria-label="Witnet Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="Witnet Protocol Documentation" class="md-nav__button md-logo" aria-label="Witnet Protocol Documentation" data-md-component="logo">
       
-  <img src="../../../assets/images/logo.svg" alt="Witnet Logo" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="Witnet Logo" alt="logo">
 
     </a>
     Witnet Protocol Documentation
@@ -244,7 +244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Ecosystem
       </a>
     </li>
@@ -256,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/concepts/" class="md-nav__link">
+      <a href="../../overview/concepts/" class="md-nav__link">
         What is Witnet?
       </a>
     </li>
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/software/" class="md-nav__link">
+      <a href="../../overview/software/" class="md-nav__link">
         Software
       </a>
     </li>
@@ -310,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try/run-a-node/" class="md-nav__link">
+      <a href="../../try/run-a-node/" class="md-nav__link">
         Quick Start Guide
       </a>
     </li>
@@ -322,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try/next-steps/" class="md-nav__link">
+      <a href="../../try/next-steps/" class="md-nav__link">
         Next Steps
       </a>
     </li>
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../node-operators/hardware-requirements/" class="md-nav__link">
+      <a href="../../node-operators/hardware-requirements/" class="md-nav__link">
         Hardware requirements
       </a>
     </li>
@@ -346,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../node-operators/systemd-service/" class="md-nav__link">
+      <a href="../../node-operators/systemd-service/" class="md-nav__link">
         Run as systemd service
       </a>
     </li>
@@ -358,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../node-operators/docker-compose-service/" class="md-nav__link">
+      <a href="../../node-operators/docker-compose-service/" class="md-nav__link">
         Run as docker-compose service
       </a>
     </li>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../node-operators/cli/" class="md-nav__link">
+      <a href="../../node-operators/cli/" class="md-nav__link">
         Command Line Interface
       </a>
     </li>
@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ethereum/price-feeds/" class="md-nav__link">
+      <a href="../../ethereum/price-feeds/" class="md-nav__link">
         Price Feeds
       </a>
     </li>
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ethereum/addresses/" class="md-nav__link">
+      <a href="../../ethereum/addresses/" class="md-nav__link">
         Addresses
       </a>
     </li>
@@ -436,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try/use-from-ethereum/" class="md-nav__link">
+      <a href="../../try/use-from-ethereum/" class="md-nav__link">
         Connect your Ethereum contracts to any APIs
       </a>
     </li>
@@ -469,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/introduction/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -481,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/create-project/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/create-project/" class="md-nav__link">
         1. Create a new project
       </a>
     </li>
@@ -493,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/sources/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/sources/" class="md-nav__link">
         2. Adding data sources
       </a>
     </li>
@@ -505,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/aggregations/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/aggregations/" class="md-nav__link">
         3. Define aggregator / tally
       </a>
     </li>
@@ -517,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/fine-tuning/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/fine-tuning/" class="md-nav__link">
         4. Fine-tune the request
       </a>
     </li>
@@ -529,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/compiling/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/compiling/" class="md-nav__link">
         5. Compile the request
       </a>
     </li>
@@ -541,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/contract/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/contract/" class="md-nav__link">
         6. Write the Solidity contract
       </a>
     </li>
@@ -553,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/migrations/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/migrations/" class="md-nav__link">
         7. Deploy
       </a>
     </li>
@@ -565,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/bitcoin-price-feed/recap/" class="md-nav__link">
+      <a href="../../tutorials/bitcoin-price-feed/recap/" class="md-nav__link">
         Recap
       </a>
     </li>
@@ -600,50 +600,15 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
-        Other chains
+        Witnet-Rust Docs
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Other chains" data-md-level="1">
+      <nav class="md-nav" aria-label="Witnet-Rust Docs" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Other chains
+          Witnet-Rust Docs
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
-      
-      <label class="md-nav__link" for="__nav_4_1">
-        Conflux Network
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Conflux Network" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
-          <span class="md-nav__icon md-icon"></span>
-          Conflux Network
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../price-feeds/" class="md-nav__link">
-        Price Feeds
-      </a>
-    </li>
-  
-
           
             
   
@@ -660,12 +625,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Addresses
+          Integration guide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Addresses
+        Integration guide
       </a>
       
         <!--
@@ -712,36 +677,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#conflux-mainnet-tethys" class="md-nav__link">
-    Conflux Mainnet - Tethys
+  <a href="#running-witnet-rust" class="md-nav__link">
+    Running Witnet-Rust
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#conflux-testnet" class="md-nav__link">
-    Conflux Testnet
-  </a>
-  
-    <nav class="md-nav" aria-label="Conflux Testnet">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#main-contracts" class="md-nav__link">
-    Main contracts
+  <a href="#witnet-rust-components" class="md-nav__link">
+    Witnet-Rust components
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-price-feeds" class="md-nav__link">
-    Public price feeds
+        <li class="md-nav__item">
+  <a href="#witnet-rust-node-component" class="md-nav__link">
+    Witnet-Rust node component
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+        <li class="md-nav__item">
+  <a href="#witnet-rust-wallet-component" class="md-nav__link">
+    Witnet-Rust wallet component
+  </a>
   
 </li>
         
@@ -763,8 +722,38 @@
   
 
           
-        </ul>
-      </nav>
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../from-source/" class="md-nav__link">
+        Compile from source code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet-api/" class="md-nav__link">
+        Wallet API
+      </a>
     </li>
   
 
@@ -789,77 +778,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
-        Witnet-Rust Docs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Witnet-Rust Docs" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Witnet-Rust Docs
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../developer/from-source/" class="md-nav__link">
-        Compile from source code
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../developer/contributing/" class="md-nav__link">
-        Contributing
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../developer/wallet-api/" class="md-nav__link">
-        Wallet API
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      <label class="md-nav__link" for="__nav_6">
         Protocol Docs
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Protocol Docs" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Protocol Docs
         </label>
@@ -870,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../protocol/sortition/" class="md-nav__link">
+      <a href="../../protocol/sortition/" class="md-nav__link">
         Sortition
       </a>
     </li>
@@ -885,14 +808,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
-      <label class="md-nav__link" for="__nav_6_2">
+      <label class="md-nav__link" for="__nav_5_2">
         Witnet Requests
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Witnet Requests" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_2">
+        <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           Witnet Requests
         </label>
@@ -903,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../protocol/data-requests/overview/" class="md-nav__link">
+      <a href="../../protocol/data-requests/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -915,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../protocol/data-requests/radon-encoding/" class="md-nav__link">
+      <a href="../../protocol/data-requests/radon-encoding/" class="md-nav__link">
         Encoding
       </a>
     </li>
@@ -945,14 +868,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_7">
+      <label class="md-nav__link" for="__nav_6">
         More
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="More" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           More
         </label>
@@ -963,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/glossary/" class="md-nav__link">
+      <a href="../../overview/glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -1031,36 +954,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
         
         <li class="md-nav__item">
-  <a href="#conflux-mainnet-tethys" class="md-nav__link">
-    Conflux Mainnet - Tethys
+  <a href="#running-witnet-rust" class="md-nav__link">
+    Running Witnet-Rust
   </a>
   
 </li>
         
         <li class="md-nav__item">
-  <a href="#conflux-testnet" class="md-nav__link">
-    Conflux Testnet
-  </a>
-  
-    <nav class="md-nav" aria-label="Conflux Testnet">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#main-contracts" class="md-nav__link">
-    Main contracts
+  <a href="#witnet-rust-components" class="md-nav__link">
+    Witnet-Rust components
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#public-price-feeds" class="md-nav__link">
-    Public price feeds
+        <li class="md-nav__item">
+  <a href="#witnet-rust-node-component" class="md-nav__link">
+    Witnet-Rust node component
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+        <li class="md-nav__item">
+  <a href="#witnet-rust-wallet-component" class="md-nav__link">
+    Witnet-Rust wallet component
+  </a>
   
 </li>
         
@@ -1086,35 +1003,66 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/witnet/documentation/blob/master/docs/chains/conflux/addresses.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/witnet/documentation/blob/master/docs/developer/integrations.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="witnet-addresses-on-conflux-network">Witnet Addresses on Conflux Network<a class="headerlink" href="#witnet-addresses-on-conflux-network" title="Permanent link">&para;</a></h1>
-<p>Conflux smart contracts can send oracle queries (aka <em>data requests</em>) to the Witnet decentralized oracle using the
-<a href="https://github.com/witnet/witnet-ethereum-bridge">witnet-ethereum-bridge</a> Solidity library.</p>
-<p>The most convenient way to use the <a href="https://github.com/witnet/witnet-ethereum-bridge">witnet-ethereum-bridge</a> library is through the <a href="/try/use-from-ethereum">Witnet Truffle Box</a>, because it
-allows writing Witnet data requests using Javascript, which is automatically compiled to Witnet byte code and then
-wrapped in a Solidity contract that you can easily import from your own contracts.</p>
-<p>The <a href="/try/use-from-ethereum">Witnet Truffle Box</a> also abstracts away the complexity of having to instantiate or link the Witnet contracts
-listed here. </p>
-<p>These addresses are provided for reference, just in case someone prefers not to use the <a href="/try/use-from-ethereum">Witnet Truffle Box</a> and
-rather talk to the Witnet Request Board and other contracts directly using the interfaces in <a href="https://github.com/witnet/witnet-ethereum-bridge">witnet-ethereum-bridge</a>.</p>
-<h2 id="conflux-mainnet-tethys">Conflux Mainnet - Tethys<a class="headerlink" href="#conflux-mainnet-tethys" title="Permanent link">&para;</a></h2>
-<p>Witnet is not live yet on Conflux mainnet, but will be deployed soon. Stay tuned!</p>
-<h2 id="conflux-testnet">Conflux Testnet<a class="headerlink" href="#conflux-testnet" title="Permanent link">&para;</a></h2>
-<h3 id="main-contracts">Main contracts<a class="headerlink" href="#main-contracts" title="Permanent link">&para;</a></h3>
+                <h1 id="witnet-rust-integration-quick-guide">Witnet-rust integration quick guide<a class="headerlink" href="#witnet-rust-integration-quick-guide" title="Permanent link">&para;</a></h1>
+<p>This is intended for developers looking forward to integrate their software with Witnet and the WIT token in such a way
+that they can manage addresses, balances, and create and verify transactions. Foreseeably, this is the case for
+wallets, exchanges, atomic swaps, mixers, etc.</p>
+<h2 id="running-witnet-rust">Running Witnet-Rust<a class="headerlink" href="#running-witnet-rust" title="Permanent link">&para;</a></h2>
+<p>The Witnet Foundation-supported reference implementation of the Witnet protocol is <a href="https://github.com/witnet/witnet-rust">Witnet-Rust</a>.</p>
+<p>Witnet-Rust can be easily run:</p>
 <ul>
-<li>Witnet: <a href="https://testnet.confluxscan.io/address/cfxtest:ace03e0bd2cnkna0e16c769rb6mpb18b46nnfg8mck">cfxtest:ace03e0bd2cnkna0e16c769rb6mpb18b46nnfg8mck</a></li>
-<li>WitnetRequestBoard: <a href="https://testnet.confluxscan.io/address/cfxtest:acee21t6kvabde2rzrgmt4wf43nxuxp00anv17p79h">cfxtest:acee21t6kvabde2rzrgmt4wf43nxuxp00anv17p79h</a></li>
-<li>WitnetRequestBoardProxy: <a href="https://testnet.confluxscan.io/address/cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0">cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0</a></li>
+<li><a href="/try/run-a-node/">as a Docker container</a></li>
+<li><a href="/node-operators/docker-compose-service/">as a Docker-compose service</a></li>
+<li><a href="/node-operators/systemd-service/">as a SystemD service</a></li>
+<li><a href="/developer/from-source/">compiling from source code</a></li>
 </ul>
-<h3 id="public-price-feeds">Public price feeds<a class="headerlink" href="#public-price-feeds" title="Permanent link">&para;</a></h3>
+<h2 id="witnet-rust-components">Witnet-Rust components<a class="headerlink" href="#witnet-rust-components" title="Permanent link">&para;</a></h2>
+<p>Witnet-Rust contains two different components that provide different degrees of wallet functionality:</p>
 <ul>
-<li>BtcUsdPriceFeed: <a href="https://testnet.confluxscan.io/address/cfxtest:acdd4fbjvpy1tb8ytn7rez20s325s620y64b8sxw51">cfxtest:acdd4fbjvpy1tb8ytn7rez20s325s620y64b8sxw51</a></li>
-<li>EthUsdPriceFeed: <a href="https://testnet.confluxscan.io/address/cfxtest:ace06aw9pzv4y18x22cxm45n4dacra1c66ga141tg7">cfxtest:ace06aw9pzv4y18x22cxm45n4dacra1c66ga141tg7</a></li>
+<li><code>node</code>, which implements a Witnet full node with an internal single-account, single-address wallet and a JSON-RPC API over a TCP.</li>
+<li><code>wallet</code>, which implements a <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP-32</a> compliant, multi-account, multi-address <a href="https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp">Hierarchical Deterministic</a> wallet, and a JSON-RPC API over WebSockets.</li>
 </ul>
+<h2 id="witnet-rust-node-component">Witnet-Rust <code>node</code> component<a class="headerlink" href="#witnet-rust-node-component" title="Permanent link">&para;</a></h2>
+<p>The Witnet-Rust <code>node</code> component is standalone — you can run it on its own and it will provide full-node functionality: syncing up the Witnet block chain, validate transactions and blocks in real time, and (optionally) propose blocks.</p>
+<div class="highlight"><pre><span></span><code>Integration architecture:
+[YOUR APP] → [WITNET-RUST NODE] → [WITNET NETWORK]
+</code></pre></div>
+
+<p>Once a <code>node</code> instance is fully synced, its JSON-RPC over TCP API offers a minimal single-account, single-address wallet.</p>
+<p>Running a Witnet-Rust node with the JSON-RPC API exposed on local port <code>21338</code> can easily be achieved with this Docker
+one-liner:</p>
+<div class="highlight"><pre><span></span><code><span class="go">docker run -d \</span>
+<span class="go">    --name witnet_node \</span>
+<span class="go">    --volume ~/.witnet:/.witnet \</span>
+<span class="go">    --publish 21337:21337 \</span>
+<span class="go">    --publish 21338:21338 \</span>
+<span class="go">    --restart always \</span>
+<span class="go">    witnet/witnet-rust</span>
+</code></pre></div>
+
+<p>Here is a <a href="https://medium.com/witnet/interacting-with-witnet-node-without-cli-7028e8f6cff7">quick guide on how to interact with a node using the JSON-RPC interface</a> using any TCP client.</p>
+<p>There is also a <a href="/node-operators/cli/">command line client (CLI)</a> that exposes all the node functionality and uses the JSON-RPC API under the hood.</p>
+<h2 id="witnet-rust-wallet-component">Witnet-Rust <code>wallet</code> component<a class="headerlink" href="#witnet-rust-wallet-component" title="Permanent link">&para;</a></h2>
+<p>The Witnet-Rust <code>wallet</code> component is NOT standalone. It requires a connection to an instance of the <code>node</code> component that will act as its "backend":</p>
+<div class="highlight"><pre><span></span><code>Integration architecture:
+[YOUR APP] → [WITNET-RUST WALLET] → [WITNET-RUST NODE] → [WITNET NETWORK]
+</code></pre></div>
+
+<p>Witnet Foundation operates a publicly available <code>node</code> instance that acts as the backend for the <code>wallet</code> component contained within the <a href="https://sheikah.app">Sheikah Witnet wallet desktop app</a>, which follows exactly the same architecture:</p>
+<div class="highlight"><pre><span></span><code>Sheikah Wallet app architecture:
+[SHEIKAH UI*] → [WITNET-RUST WALLET*] → [WITNET-RUST NODE] → [WITNET NETWORK]
+
+* The Sheikah UI and the Witnet-Rust wallet are run in the user&#39;s computer.
+</code></pre></div>
+
+<p>For users looking for the maximum degree of privacy, it is recommended that they run their own instance of the <code>node</code> component, because otherwise they may be disclosing their addresses and balances to 3<sup>rd</sup> parties, as the queries between the <code>wallet</code> and <code>node</code> components need to be sent over the Internet.</p>
+<p>The JSON-RPC API of the <code>wallet</code> component is different than the one from the <code>node</code> not because it has much more advanced wallet functionality, and uses a WebSockets transport instead of plain TCP (this is to enable web wallets and similar apps). </p>
+<p>A full reference of the <a href="/developer/wallet-api/">Wallet API can be found here</a>.</p>
                 
               
               
@@ -1133,7 +1081,7 @@ rather talk to the Witnet Request Board and other contracts directly using the i
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../price-feeds/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../tutorials/bitcoin-price-feed/recap/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1142,13 +1090,13 @@ rather talk to the Witnet Request Board and other contracts directly using the i
               <span class="md-footer__direction">
                 Previous
               </span>
-              Price Feeds
+              Recap
             </div>
           </div>
         </a>
       
       
-        <a href="../../../developer/from-source/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../from-source/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -1236,12 +1184,12 @@ rather talk to the Witnet Request Board and other contracts directly using the i
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
       
-        <script src="../../../javascript/extra.js"></script>
+        <script src="../../javascript/extra.js"></script>
       
     
   </body>
