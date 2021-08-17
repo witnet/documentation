@@ -22,7 +22,7 @@ Witnet is not live yet on Conflux mainnet, but will be deployed soon. Stay tuned
 ### Main contracts
 * Witnet: [cfxtest:ace03e0bd2cnkna0e16c769rb6mpb18b46nnfg8mck](https://testnet.confluxscan.io/address/cfxtest:ace03e0bd2cnkna0e16c769rb6mpb18b46nnfg8mck)
 * WitnetRequestBoard: [cfxtest:acee21t6kvabde2rzrgmt4wf43nxuxp00anv17p79h](https://testnet.confluxscan.io/address/cfxtest:acee21t6kvabde2rzrgmt4wf43nxuxp00anv17p79h)
-* [cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0](https://testnet.confluxscan.io/address/cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0)
+* WitnetRequestBoardProxy: [cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0](https://testnet.confluxscan.io/address/cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0)
 
 ### Public price feeds
 * BtcUsdPriceFeed: [cfxtest:acexkt9t0dm7tzhv9t1znbnc83ehtb703u9pyvd0cd](https://testnet.confluxscan.io/address/cfxtest:acexkt9t0dm7tzhv9t1znbnc83ehtb703u9pyvd0cd)

@@ -15,8 +15,8 @@ import "ado-contracts/contracts/interfaces/IERC2362.sol";
 
 contract MyContract {
 
-	function readFromPriceFeed() external view returns(int256) {
-	    IERC2362 priceFeed = IERC2362("<address of the price feed>");
+    function readFromPriceFeed() external view returns(int256) {
+        IERC2362 priceFeed = IERC2362("<address of the price feed>");
         bytes32 assetID = bytes32(hex("<asset ID>"));
         int256 value = priceFeed.valueFor(assetID);
 
