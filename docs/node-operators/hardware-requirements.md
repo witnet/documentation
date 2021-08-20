@@ -12,18 +12,16 @@ machine, the better it will perform and the less likely you are to face problems
 
 This is a quick checklist on what to look for:
 
-- **At least 2GB of RAM** to ensure your node does not crash during heavy network activity.
+- **At least 4GB of RAM** to ensure your node does not crash during heavy network activity.
 - **A good amount of disk space** (somewhere in the 100s of GBs) is
-  better for long term storage of the blockchain. The node is expected not to grow any more than 75GB per year.
+  better for long term storage of the blockchain. The chain is expected not to grow more than 75GB per year.
 - **Any modern laptop or desktop** will run it flawlessly.
 - Virtual private servers (VPS) should work too. [Here is a tutorial to set up a Witnet node on the popular VPS service, Digital Ocean][vpstutorial]. Take into account
   however that **some cloud providers may restrict the use of blockchain
   protocols**. Also, your node may get [poor connectivity with the rest
   of the network because of bucketing][bucketing], especially if you are running the node from a popular IP range (for example, from a well-known VPS service such as Digital Ocean).
-- **Raspberry Pis**, especially the *Pi 3 Model B* and *Pi 4 Model B*,
-  are also supported and, in our experience, are a great, inexpensive
-  way of running a Witnet node. [Here is a tutorial on how to set up a Witnet node on a Raspberry Pi][pitutorial] and [here is a $15 Raspberry Pi
-  Zero mining blocks on the Witnet Testnet in 2019][pizero].
+- **Raspberry Pis**, especially the *Pi 4 Model B*,  are also supported and, in our experience, are a great, inexpensive
+  way of running a Witnet node. [Here is a tutorial on how to set up a Witnet node on a Raspberry Pi][pitutorial].
 
 [consensus]: https://witnet.io/about#consensus
 [vpstutorial]: https://www.youtube.com/watch?v=qlo0D_2F7qw
