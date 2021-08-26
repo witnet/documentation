@@ -4,7 +4,7 @@
 
 In this tutorial you will:
 
-- Query **two different APIs** for the USD price of 1 bitcoin using **4
+- Query **two different APIs** for the USD price of 1 bitcoin using **25
   witnessing nodes** from Witnet.
 - Tell those nodes to **aggregate** the values from both APIs and report
   the result.
@@ -16,10 +16,11 @@ In this tutorial you will:
 - Compile and deploy the entire flow into a local Ethereum network.
 
 !!! tip ""
-    Remember: using Witnet from Ethereum is particularly convenient because
-    you do not need to own or pay any wit tokens: you pay the bridge
-    nodes using ETH and then they spend their own wit tokens when  
-    posting your requests into Witnet in your behalf. 
+    Remember: using Witnet from Ethereum and other EVM-compatible chains
+    is particularly convenient because you do not need to own or pay any
+    wit tokens: you pay the bridge nodes using ETH or the chain's native
+    token and then they spend their own wit tokens when posting your
+    requests into Witnet on your behalf. 
 
 ## How decentralized will this price feed be?
 
@@ -33,7 +34,7 @@ the data points it provides:
   through a Witnet request.
 - The price is averaged from two different public APIs, thus mitigating
   their influence in the final price.
-- The data is relayed by 4 different Witnet nodes, whose reported data
+- The data is relayed by 25 different Witnet nodes, whose reported data
   points are aggregated and averaged, filtering out any outliers so as
   to cancel any malicious reporter who may try to leverage a slight
   drift of the data point.

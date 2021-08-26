@@ -17,8 +17,8 @@ const request = new Witnet.Request()
   .addSource(coindesk)          // Use source 2
   .setAggregator(aggregator)    // Set the aggregation script
   .setTally(tally)              // Set the tally script
-  .setQuorum(100)               // Set witness count
-  .setFees(1000000, 1000)       // Set economic incentives (e.g. reward: 1 mWit, fee: 1 uWit)
+  .setQuorum(25)                // Set how many witnesses to use
+  .setFees(1000000, 1000000)    // Set economic incentives (e.g. witness reward: 1 mWit, commit/reveal fee: 1 mWit)
   .setCollateral(10000000000)   // Set collateral (e.g. 10 Wit)
 
 // Do not forget to export the request object
@@ -29,7 +29,7 @@ export { request as default }
 The `.setQuorum` and `.setFees` methods are explained
 below.
 
-## Fine-tune fees, quorum and schedule
+## Fine-tune fees, quorum and collateral
 
 Witnet requests are highly parameterizable. You can fine-tune almost 
 every single aspect of their life cycle:
@@ -38,8 +38,8 @@ every single aspect of their life cycle:
   resolving the request.
 - `.setFees()` specifies how much you want to pay for rewarding each of
   the Witnet nodes implicated in resolving the request.
-- `.schedule()` schedules the request to be resolved in a particular
-  date and time in the future.
+- `.setCollateral()` establishes how much collateral do witnessing nodes
+  need to stake in order to participate in resolving this request.
   
 ### Set the quorum
 
@@ -87,14 +87,15 @@ parameter defaults to `51`.
 Witnet allows parametrization of many of the economic incentives that
 affect the life cycle of your requests. These incentives include:
 
-- `request_fee`: the amount of wit tokens that will be earned by the
-  Witnet miner that publishes your request in a block.
+
 - `reward`: the amount of wit tokens that each of the Witnet nodes
   assigned to your request will earn if they honestly fulfill their
   commitments and reveals.
 - `commit_and_reveal_fee`: the amount of wit tokens that will be earned by Witnet
   miners for each each valid commitment/reveal transaction they include in a
   block.
+
+All fees are expressed in nanoWits (10^-9 wits).
 
 !!! question "How can I compute the total cost of a request?"
     The total cost of a Witnet request equals:
@@ -110,6 +111,23 @@ affect the life cycle of your requests. These incentives include:
       tally stage (aka *outliers*), you get `reward` back.
     - For every missing reveal after the `extra_reveal_rounds` threshold
       is reached, you get `reward + reveal_fee` back.
+
+### Establish the collateral
+
+When participating in resolving data requests (committing and revealing),
+witnessing nodes need to stake a certain amount of Wit tokens.
+
+It is up to you as a requester to decide what is the right amount for your
+use case. The more value in your contracts, the higher the collateral should
+be. However, take into account that if you require a high collateral amount
+(>250 wits), there is a chance for the request to be delayed or cancelled if
+there are not enough witnessing nodes willing to stake that amount.
+
+Collateral is specified on a "per witness" basis, that is, if your request
+uses 25 witnesses and requires each of them to collateralize 10 wits, your
+request will be secured by 25 * 10 = 250 wits.
+
+The minimum collateral is 1 wit (1000000000 nanoWits).
 
 ### Double check
 Time to double check everything is fine. Your `BitcoinPrice.js` file should
@@ -152,13 +170,13 @@ const tally = new Witnet.Tally({
 })
 
 const request = new Witnet.Request()
-    .addSource(bitstamp)          // Use source 1
-    .addSource(coindesk)          // Use source 2
-    .setAggregator(aggregator)    // Set the aggregation script
-    .setTally(tally)              // Set the tally script
-    .setQuorum(100)               // Set witness count
-    .setFees(1000000, 1000)       // Set economic incentives (e.g. reward: 1 mWit, fee: 1 uWit)
-    .setCollateral(10000000000)   // Set collateral (e.g. 10 Wit)
+  .addSource(bitstamp)          // Use source 1
+  .addSource(coindesk)          // Use source 2
+  .setAggregator(aggregator)    // Set the aggregation script
+  .setTally(tally)              // Set the tally script
+  .setQuorum(25)                // Set witnesses count
+  .setFees(1000000, 1000000)    // Set economic incentives (e.g. witness reward: 1 mWit, commit/reveal fee: 1 mWit)
+  .setCollateral(10000000000)   // Set collateral (e.g. 10 Wit)
 
 // Do not forget to export the request object
 export { request as default }

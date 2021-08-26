@@ -39,7 +39,7 @@ addition to selecting specific pieces of data, you can also transform
 them so they are uniform and can be compared or aggregated together.
 For example, imagine a request that queries weather data. One source may use
 Celsius and the other may use Fahrenheit. You can tell Witnet to
-transform them both to Celcius so they can be averaged.
+transform them both to Celsius so they can be averaged.
 
 In this tutorial, you will be defining two data sources — one querying
 [Bitstamp] and the other for [CoinDesk]:

@@ -22,7 +22,7 @@ point can be requested on demand by any interested party:
 Let's start by creating a bare-bones contract and saving it as
 `contracts/PriceFeed.sol`:
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
 pragma experimental ABIEncoderV2;
@@ -35,8 +35,6 @@ import "./requests/BitcoinPrice.sol";
 
 // Your contract needs to inherit from UsingWitnet
 contract PriceFeed is UsingWitnet {
-
-    using Witnet for Witnet.Result;
 
     // The public Bitcoin price point
     uint64 public lastPrice;
@@ -61,7 +59,7 @@ contract PriceFeed is UsingWitnet {
 
     // This constructor does a nifty trick to tell the `UsingWitnet` library where
     // to find the Witnet contracts on whatever Ethereum network you use.
-    constructor (address _wrb) UsingWitnet(_wrb) {
+    constructor (WitnetRequestBoard _wrb) UsingWitnet(_wrb) {
         // Instantiate the Witnet request
         request = new BitcoinPriceRequest();
     }
@@ -83,7 +81,7 @@ The above will:
 
 ## Write the `requestUpdate` method that launches the Witnet request
 
-```js
+```solidity
 /**
  * @notice Sends `request` to the WitnetRequestBoard.
  * @dev This method will only succeed if `pending` is 0.
@@ -92,8 +90,8 @@ function requestUpdate() public payable {
     require(!pending, "Complete pending request before requesting a new one");
 
     // Send the request to Witnet and store the ID for later retrieval of the result
-    // The `witnetPostRequest` method comes with `UsingWitnet`
-    lastRequestId = witnetPostRequest(request);
+    // The `_witnetPostRequest` method comes with `UsingWitnet`
+    lastRequestId = _witnetPostRequest(request);
 
     // Signal that there is already a pending request
     pending = true;
@@ -102,7 +100,7 @@ function requestUpdate() public payable {
 
 ## Write the `completeUpdate` method that reads the result of the Witnet request
 
-```js
+```solidity
 /**
  * @notice Reads the result, if ready, from the WitnetRequestBoard.
  * @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
@@ -113,23 +111,24 @@ function completeUpdate() public witnetRequestResolved(lastRequestId) {
     require(pending, "There is no pending update.");
 
     // Read the result of the Witnet request
-    // The `witnetReadResult` method comes with `UsingWitnet`
-    Witnet.Result memory result = witnetReadResult(lastRequestId);
+    // The `_witnetReadResult` method comes with `UsingWitnet`
+    Witnet.Result memory result = _witnetReadResult(lastRequestId);
 
     // If the Witnet request succeeded, decode the result and update the price point
     // If it failed, revert the transaction with a pretty-printed error message
-    if (result.isOk()) {
-        lastPrice = result.asUint64();
+    // `witnet.isOk()`, `witnet.asUint64()` and `witnet.asErrorMessage()` come with `UsingWitnet`
+    if (witnet.isOk(result)) {
+        lastPrice = witnet.asUint64(result);
         timestamp = block.timestamp;
         emit PriceUpdated(lastPrice);
     } else {
         string memory errorMessage;
 
         // Try to read the value as an error message, catch error bytes if read fails
-        try result.asErrorMessage() returns (Witnet.ErrorCodes, string memory e) {
+        try witnet.asErrorMessage(result) returns (Witnet.ErrorCodes, string memory e) {
             errorMessage = e;
         }
-    catch (bytes memory errorBytes){
+        catch (bytes memory errorBytes){
             errorMessage = string(errorBytes);
         }
         emit ResultError(errorMessage);
@@ -158,8 +157,6 @@ import "./requests/BitcoinPrice.sol";
 // Your contract needs to inherit from UsingWitnet
 contract PriceFeed is UsingWitnet {
 
-    using Witnet for Witnet.Result;
-
     // The public Bitcoin price point
     uint64 public lastPrice;
 
@@ -183,7 +180,7 @@ contract PriceFeed is UsingWitnet {
 
     // This constructor does a nifty trick to tell the `UsingWitnet` library where
     // to find the Witnet contracts on whatever Ethereum network you use.
-    constructor (address _wrb) UsingWitnet(_wrb) {
+    constructor (WitnetRequestBoard _wrb) UsingWitnet(_wrb) {
         // Instantiate the Witnet request
         request = new BitcoinPriceRequest();
     }
@@ -196,8 +193,8 @@ contract PriceFeed is UsingWitnet {
         require(!pending, "Complete pending request before requesting a new one");
 
         // Send the request to Witnet and store the ID for later retrieval of the result
-        // The `witnetPostRequest` method comes with `UsingWitnet`
-        lastRequestId = witnetPostRequest(request);
+        // The `_witnetPostRequest` method comes with `UsingWitnet`
+        lastRequestId = _witnetPostRequest(request);
 
         // Signal that there is already a pending request
         pending = true;
@@ -213,23 +210,24 @@ contract PriceFeed is UsingWitnet {
         require(pending, "There is no pending update.");
 
         // Read the result of the Witnet request
-        // The `witnetReadResult` method comes with `UsingWitnet`
-        Witnet.Result memory result = witnetReadResult(lastRequestId);
+        // The `_witnetReadResult` method comes with `UsingWitnet`
+        Witnet.Result memory result = _witnetReadResult(lastRequestId);
 
         // If the Witnet request succeeded, decode the result and update the price point
         // If it failed, revert the transaction with a pretty-printed error message
-        if (result.isOk()) {
-            lastPrice = result.asUint64();
+        // `witnet.isOk()`, `witnet.asUint64()` and `witnet.asErrorMessage()` come with `UsingWitnet`
+        if (witnet.isOk(result)) {
+            lastPrice = witnet.asUint64(result);
             timestamp = block.timestamp;
             emit PriceUpdated(lastPrice);
         } else {
             string memory errorMessage;
 
             // Try to read the value as an error message, catch error bytes if read fails
-            try result.asErrorMessage() returns (Witnet.ErrorCodes, string memory e) {
+            try witnet.asErrorMessage(result) returns (Witnet.ErrorCodes, string memory e) {
                 errorMessage = e;
             }
-        catch (bytes memory errorBytes){
+            catch (bytes memory errorBytes){
                 errorMessage = string(errorBytes);
             }
             emit ResultError(errorMessage);
