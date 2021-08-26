@@ -634,7 +634,7 @@
   
     <li class="md-nav__item">
       <a href="../compiling/" class="md-nav__link">
-        5. Compile the request
+        5. Compile and try the request
       </a>
     </li>
   
@@ -1095,7 +1095,7 @@
 <h2 id="what-and-why">What and why?<a class="headerlink" href="#what-and-why" title="Permanent link">&para;</a></h2>
 <p>In this tutorial you will:</p>
 <ul>
-<li>Query <strong>two different APIs</strong> for the USD price of 1 bitcoin using <strong>4
+<li>Query <strong>two different APIs</strong> for the USD price of 1 bitcoin using <strong>25
   witnessing nodes</strong> from Witnet.</li>
 <li>Tell those nodes to <strong>aggregate</strong> the values from both APIs and report
   the result.</li>
@@ -1107,10 +1107,11 @@
 <li>Compile and deploy the entire flow into a local Ethereum network.</li>
 </ul>
 <div class="admonition tip">
-<p>Remember: using Witnet from Ethereum is particularly convenient because
-you do not need to own or pay any wit tokens: you pay the bridge
-nodes using ETH and then they spend their own wit tokens when<br />
-posting your requests into Witnet in your behalf. </p>
+<p>Remember: using Witnet from Ethereum and other EVM-compatible chains
+is particularly convenient because you do not need to own or pay any
+wit tokens: you pay the bridge nodes using ETH or the chain's native
+token and then they spend their own wit tokens when posting your
+requests into Witnet on your behalf. </p>
 </div>
 <h2 id="how-decentralized-will-this-price-feed-be">How decentralized will this price feed be?<a class="headerlink" href="#how-decentralized-will-this-price-feed-be" title="Permanent link">&para;</a></h2>
 <p>None of the parties involved in the process of deploying, updating and
@@ -1123,7 +1124,7 @@ the data points it provides:</p>
   through a Witnet request.</li>
 <li>The price is averaged from two different public APIs, thus mitigating
   their influence in the final price.</li>
-<li>The data is relayed by 4 different Witnet nodes, whose reported data
+<li>The data is relayed by 25 different Witnet nodes, whose reported data
   points are aggregated and averaged, filtering out any outliers so as
   to cancel any malicious reporter who may try to leverage a slight
   drift of the data point.</li>

@@ -16,7 +16,7 @@
     
     
       
-        <title>5. Compile the request - Witnet Protocol Documentation</title>
+        <title>5. Compile and try the request - Witnet Protocol Documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#5-compile-the-request" class="md-skip">
+        <a href="#5-compile-and-try-the-request" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
                 <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. Compile the request
+              5. Compile and try the request
             
           </span>
                 </div>
@@ -542,9 +542,85 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5. Compile and try the request
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        5. Compile the request
+        5. Compile and try the request
       </a>
+      
+        <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary">
+    
+
+    <!--
+      Hack: check whether the content contains a h1 headline. If it does, the
+      top-level anchor must be skipped, since it would be redundant to the link
+      to the current page that is located just above the anchor. Therefore we
+      directly continue with the children of the anchor.
+    -->
+    
+    
+    
+
+    <!-- Render item list -->
+    
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+        <li class="md-nav__item">
+  <a href="#compile-you-data-request" class="md-nav__link">
+    Compile you data request
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#try-your-data-request" class="md-nav__link">
+    Try your data request
+  </a>
+  
+</li>
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
+    </ul>
+    
+</nav>
       
     </li>
   
@@ -943,6 +1019,35 @@
 
     <!-- Render item list -->
     
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+        <li class="md-nav__item">
+  <a href="#compile-you-data-request" class="md-nav__link">
+    Compile you data request
+  </a>
+  
+</li>
+        
+        <li class="md-nav__item">
+  <a href="#try-your-data-request" class="md-nav__link">
+    Try your data request
+  </a>
+  
+</li>
+        
+
+        <!-- Source files -->
+        
+
+        <!-- Set from config but allow override -->
+        
+        
+
+        <!-- Disqus integration -->
+        
+    </ul>
+    
 </nav>
                   </div>
                 </div>
@@ -958,25 +1063,26 @@
                   </a>
                 
                 
-                <h1 id="5-compile-the-request">5. Compile the request<a class="headerlink" href="#5-compile-the-request" title="Permanent link">&para;</a></h1>
+                <h1 id="5-compile-and-try-the-request">5. Compile  and try the request<a class="headerlink" href="#5-compile-and-try-the-request" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p><em>This article is part of the <a href="/tutorials/bitcoin-price-feed/introduction">beginner tutorial on creating a totally
 decentralized Bitcoin price feed</a> on Ethereum with Solidity and
 Witnet.</em></p>
 </div>
+<h2 id="compile-you-data-request">Compile you data request<a class="headerlink" href="#compile-you-data-request" title="Permanent link">&para;</a></h2>
 <p>Compiling the request could not be easier:</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">npm</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="go">npm run compile-requests</span>
+<div class="highlight"><pre><span></span><code><span class="go">npm run compile:requests</span>
 </code></pre></div>
 
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">yarn</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="go">yarn compile-requests</span>
+<div class="highlight"><pre><span></span><code><span class="go">yarn compile:requests</span>
 </code></pre></div>
 
 </div>
 </div>
-<p>The <code>compile-requests</code> npm task will:</p>
+<p>The <code>compile:requests</code> npm task will:</p>
 <ol>
 <li>Analyze your requests for syntactic and semantic errors.</li>
 <li>Warn you of any security issues and broken incentives.</li>
@@ -988,20 +1094,55 @@ Witnet.</em></p>
 </ol>
 <p>If you now take a look in the <code>contracts/requests</code> folder, you will notice a
 new file called <code>BitcoinPrice.sol</code>. It will contain something like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">pragma solidity</span><span class=" -WhiteSpace"> </span><span class="o">^</span><span class="k">0.6.0</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<div class="highlight"><pre><span></span><code><span class="k">pragma solidity</span><span class=" -WhiteSpace"> </span><span class="o">&gt;=</span><span class="k">0.7.0</span><span class=" -WhiteSpace"> </span><span class="o">&lt;</span><span class="k">0.9.0</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
-<span class="kt">import</span><span class=" -WhiteSpace"> </span><span class="s2">&quot;witnet-ethereum-bridge/contracts/Request.sol&quot;</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class="kt">import</span><span class=" -WhiteSpace"> </span><span class="s2">&quot;witnet-ethereum-bridge/contracts/requests/WitnetRequest.sol&quot;</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
 <span class="c1">// The bytecode of the BitcoinPrice request that will be sent to Witnet</span>
-<span class="k">contract</span><span class=" -WhiteSpace"> </span><span class="ni">BitcoinPriceRequest</span><span class=" -WhiteSpace"> </span><span class="kt">is</span><span class=" -WhiteSpace"> </span>Request<span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
-<span class=" -WhiteSpace">  </span><span class="kt">constructor</span><span class=" -WhiteSpace"> </span><span class="p">()</span><span class=" -WhiteSpace"> </span>Request<span class="p">(</span>hex<span class="s2">&quot;0aaf0108b6cfb3ec051237122468747470733a2f2f7777772e6269747374616d702e6e65742f6170692f7469636b65722f1a0f8418451874821861646c6173741872125c123168747470733a2f2f6170692e636f696e6465736b2e636f6d2f76312f6270692f63757272656e7470726963652e6a736f6e1a2788184518748218616362706918748218616355534418748218616a726174655f666c6f617418721a070a05818218570322070a058182185703100a18042002280130013801&quot;</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"> </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+<span class="k">contract</span><span class=" -WhiteSpace"> </span><span class="ni">BitcoinPriceRequest</span><span class=" -WhiteSpace"> </span><span class="kt">is</span><span class=" -WhiteSpace"> </span>WitnetRequest<span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">  </span><span class="kt">constructor</span><span class=" -WhiteSpace"> </span><span class="p">()</span><span class=" -WhiteSpace"> </span>WitnetRequest<span class="p">(</span>hex<span class="s2">&quot;0abf0108f3b5988906123b122468747470733a2f2f7777772e6269747374616d702e6e65742f6170692f7469636b65722f1a13841877821864646c6173748218571903e8185b125c123168747470733a2f2f6170692e636f696e6465736b2e636f6d2f76312f6270692f63757272656e7470726963652e6a736f6e1a2786187782186663627069821866635553448218646a726174655f666c6f61748218571903e8185b1a0d0a0908051205fa3fc000001003220d0a0908051205fa3fc000001003100a186420012846308094ebdc03&quot;</span><span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"> </span><span class="p">}</span><span class=" -WhiteSpace"></span>
 <span class="p">}</span><span class=" -WhiteSpace"></span>
 </code></pre></div>
 
 <p>As you can see, the contract contains the byte code for the request you
 just wrote, exported as a Solidity contract that you can then import
 and instantiate from your own contracts.</p>
-<p>The next step is to <a href="/tutorials/bitcoin-price-feed/contract">write your main consumer contract</a>.</p>
+<h2 id="try-your-data-request">Try your data request<a class="headerlink" href="#try-your-data-request" title="Permanent link">&para;</a></h2>
+<p>Data requests can be easily tried and debugged locally using the
+<code>try</code> npm task:</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">npm</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="go">npm run try</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">yarn</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="go">yarn try</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>The first time you invoke the <code>try</code> npm task, it will tell you that it
+needs to download a native <code>witnet_toolkit</code> binary. Just press Enter and
+it will do it for you.</p>
+<p>A few seconds later, you should be presented with a <em>"Witnet data request
+local execution report"</em>. If you go to the latest part — the "Tally stage" 
+— you can see what the result of your data request would be if executed
+right now:</p>
+<div class="highlight"><pre><span></span><code>╔════════════════════════════════════════════╗
+║ Witnet data request local execution report ║
+║ BitcoinPrice.sol                           ║
+╚╤═══════════════════════════════════════════╝
+&lt;multiple lines ommitted&gt;
+ │  ┌────────────────────────────────────────────────┐
+ └──┤ Tally stage                                    │
+    ├────────────────────────────────────────────────┤
+    │ Execution time: 0.00123 ms                     │
+    │ Result is Integer: 47742275                    │
+    └────────────────────────────────────────────────┘
+</code></pre></div>
+
+<p>Now that you have compiled and tried your data request, the next step
+is to <a href="/tutorials/bitcoin-price-feed/contract">write your main consumer contract</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Remember: You are not alone!</p>
 <p>Join the Witnet Community <a href="https://discord.gg/X4uurfP">Discord</a> or <a href="https://t.me/witnetio">Telegram</a>.

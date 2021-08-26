@@ -534,7 +534,7 @@
   
     <li class="md-nav__item">
       <a href="../compiling/" class="md-nav__link">
-        5. Compile the request
+        5. Compile and try the request
       </a>
     </li>
   
@@ -1126,48 +1126,46 @@ point can be requested on demand by any interested party:</p>
 <p>Let's start by creating a bare-bones contract and saving it as
 <code>contracts/PriceFeed.sol</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// SPDX-License-Identifier: MIT</span>
-<span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">&gt;=</span><span class="mf">0.7.0</span> <span class="o">&lt;</span><span class="mf">0.9.0</span><span class="p">;</span>
-<span class="nx">pragma</span> <span class="nx">experimental</span> <span class="nx">ABIEncoderV2</span><span class="p">;</span>
+<span class="k">pragma solidity</span><span class=" -WhiteSpace"> </span><span class="o">&gt;=</span><span class="k">0.7.0</span><span class=" -WhiteSpace"> </span><span class="o">&lt;</span><span class="k">0.9.0</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+pragma<span class=" -WhiteSpace"> </span>experimental<span class=" -WhiteSpace"> </span>ABIEncoderV2<span class="p">;</span><span class=" -WhiteSpace"></span>
 
 
 <span class="c1">// Import the UsingWitnet library that enables interacting with Witnet</span>
-<span class="kr">import</span> <span class="s2">&quot;witnet-ethereum-bridge/contracts/UsingWitnet.sol&quot;</span><span class="p">;</span>
+<span class="kt">import</span><span class=" -WhiteSpace"> </span><span class="s2">&quot;witnet-ethereum-bridge/contracts/UsingWitnet.sol&quot;</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 <span class="c1">// Import the BitcoinPrice request that you created before</span>
-<span class="kr">import</span> <span class="s2">&quot;./requests/BitcoinPrice.sol&quot;</span><span class="p">;</span>
+<span class="kt">import</span><span class=" -WhiteSpace"> </span><span class="s2">&quot;./requests/BitcoinPrice.sol&quot;</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
 <span class="c1">// Your contract needs to inherit from UsingWitnet</span>
-<span class="nx">contract</span> <span class="nx">PriceFeed</span> <span class="nx">is</span> <span class="nx">UsingWitnet</span> <span class="p">{</span>
+<span class="k">contract</span><span class=" -WhiteSpace"> </span><span class="ni">PriceFeed</span><span class=" -WhiteSpace"> </span><span class="kt">is</span><span class=" -WhiteSpace"> </span>UsingWitnet<span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
 
-    <span class="nx">using</span> <span class="nx">Witnet</span> <span class="k">for</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// The public Bitcoin price point</span>
+<span class=" -WhiteSpace">    </span><span class="kt">uint64</span><span class=" -WhiteSpace"> </span><span class="k">public </span><span class="nv">lastPrice</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// The public Bitcoin price point</span>
-    <span class="nx">uint64</span> <span class="kr">public</span> <span class="nx">lastPrice</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Stores the ID of the last Witnet request</span>
+<span class=" -WhiteSpace">    </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="k">public </span><span class="nv">lastRequestId</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Stores the ID of the last Witnet request</span>
-    <span class="nx">uint256</span> <span class="kr">public</span> <span class="nx">lastRequestId</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Stores the timestamp of the last time the public price point was updated</span>
+<span class=" -WhiteSpace">    </span><span class="kt">uint256</span><span class=" -WhiteSpace"> </span><span class="k">public </span><span class="nv">timestamp</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Stores the timestamp of the last time the public price point was updated</span>
-    <span class="nx">uint256</span> <span class="kr">public</span> <span class="nx">timestamp</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Tells if an update has been requested but not yet completed</span>
+<span class=" -WhiteSpace">    </span><span class="kt">bool</span><span class=" -WhiteSpace"> </span><span class="k">public </span><span class="nv">pending</span><span class="p">;</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Tells if an update has been requested but not yet completed</span>
-    <span class="nx">bool</span> <span class="kr">public</span> <span class="nx">pending</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// The Witnet request object, is set in the constructor</span>
+<span class=" -WhiteSpace">    </span>Request<span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>request<span class="p">;</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// The Witnet request object, is set in the constructor</span>
-    <span class="nx">Request</span> <span class="kr">public</span> <span class="nx">request</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Emits when the price is updated</span>
+<span class=" -WhiteSpace">    </span><span class="kt">event</span><span class=" -WhiteSpace"> </span><span class="nv">PriceUpdated</span><span class="p">(</span><span class="kt">uint64</span><span class="p">);</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Emits when the price is updated</span>
-    <span class="nx">event</span> <span class="nx">PriceUpdated</span><span class="p">(</span><span class="nx">uint64</span><span class="p">);</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Emits when found an error decoding request result</span>
+<span class=" -WhiteSpace">    </span><span class="kt">event</span><span class=" -WhiteSpace"> </span><span class="nv">ResultError</span><span class="p">(</span><span class="kt">string</span><span class="p">);</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Emits when found an error decoding request result</span>
-    <span class="nx">event</span> <span class="nx">ResultError</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
-
-    <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
-    <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
-    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wrb</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wrb</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Instantiate the Witnet request</span>
-        <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BitcoinPriceRequest</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
+<span class=" -WhiteSpace">    </span><span class="kt">constructor</span><span class=" -WhiteSpace"> </span><span class="p">(</span>WitnetRequestBoard<span class=" -WhiteSpace"> </span>_wrb<span class="p">)</span><span class=" -WhiteSpace"> </span>UsingWitnet<span class="p">(</span>_wrb<span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="c1">// Instantiate the Witnet request</span>
+<span class=" -WhiteSpace">        </span>request<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span><span class="kt">new</span><span class=" -WhiteSpace"> </span>BitcoinPriceRequest<span class="p">();</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+<span class="p">}</span><span class=" -WhiteSpace"></span>
 </code></pre></div>
 
 <p>The above will:</p>
@@ -1187,17 +1185,17 @@ point can be requested on demand by any interested party:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * @notice Sends `request` to the WitnetRequestBoard.</span>
 <span class="cm"> * @dev This method will only succeed if `pending` is 0.</span>
-<span class="cm"> **/</span>
-<span class="kd">function</span> <span class="nx">requestUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="p">{</span>
-    <span class="nx">require</span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;Complete pending request before requesting a new one&quot;</span><span class="p">);</span>
+<span class="cm"> **/</span><span class=" -WhiteSpace"></span>
+<span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">requestUpdate</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span><span class="kt">payable</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">require</span><span class="p">(</span><span class="o">!</span>pending<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="s2">&quot;Complete pending request before requesting a new one&quot;</span><span class="p">);</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result</span>
-    <span class="c1">// The `witnetPostRequest` method comes with `UsingWitnet`</span>
-    <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// The `_witnetPostRequest` method comes with `UsingWitnet`</span>
+<span class=" -WhiteSpace">    </span>lastRequestId<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_witnetPostRequest<span class="p">(</span>request<span class="p">);</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Signal that there is already a pending request</span>
-    <span class="nx">pending</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Signal that there is already a pending request</span>
+<span class=" -WhiteSpace">    </span>pending<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span><span class="kt">true</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class="p">}</span><span class=" -WhiteSpace"></span>
 </code></pre></div>
 
 <h2 id="write-the-completeupdate-method-that-reads-the-result-of-the-witnet-request">Write the <code>completeUpdate</code> method that reads the result of the Witnet request<a class="headerlink" href="#write-the-completeupdate-method-that-reads-the-result-of-the-witnet-request" title="Permanent link">&para;</a></h2>
@@ -1206,36 +1204,37 @@ point can be requested on demand by any interested party:</p>
 <span class="cm"> * @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to</span>
 <span class="cm"> * protect your methods from being called before the request has been successfully</span>
 <span class="cm"> * relayed into Witnet.</span>
-<span class="cm"> **/</span>
-<span class="kd">function</span> <span class="nx">completeUpdate</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">witnetRequestResolved</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">require</span><span class="p">(</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;There is no pending update.&quot;</span><span class="p">);</span>
+<span class="cm"> **/</span><span class=" -WhiteSpace"></span>
+<span class="kt">function</span><span class=" -WhiteSpace"> </span><span class="nv">completeUpdate</span><span class="p">()</span><span class=" -WhiteSpace"> </span><span class="kt">public</span><span class=" -WhiteSpace"> </span>witnetRequestResolved<span class="p">(</span>lastRequestId<span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="kt">require</span><span class="p">(</span>pending<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="s2">&quot;There is no pending update.&quot;</span><span class="p">);</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// Read the result of the Witnet request</span>
-    <span class="c1">// The `witnetReadResult` method comes with `UsingWitnet`</span>
-    <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span> <span class="nx">memory</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">witnetReadResult</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">);</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// Read the result of the Witnet request</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// The `_witnetReadResult` method comes with `UsingWitnet`</span>
+<span class=" -WhiteSpace">    </span>Witnet<span class="p">.</span>Result<span class=" -WhiteSpace"> </span><span class="kt">memory</span><span class=" -WhiteSpace"> </span>result<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>_witnetReadResult<span class="p">(</span>lastRequestId<span class="p">);</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
-    <span class="c1">// If it failed, revert the transaction with a pretty-printed error message</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> <span class="p">{</span>
-        <span class="nx">lastPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asUint64</span><span class="p">();</span>
-        <span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">block</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">;</span>
-        <span class="nx">emit</span> <span class="nx">PriceUpdated</span><span class="p">(</span><span class="nx">lastPrice</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">;</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// If it failed, revert the transaction with a pretty-printed error message</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// `witnet.isOk()`, `witnet.asUint64()` and `witnet.asErrorMessage()` come with `UsingWitnet`</span>
+<span class=" -WhiteSpace">    </span><span class="kt">if</span><span class=" -WhiteSpace"> </span><span class="p">(</span>witnet<span class="p">.</span>isOk<span class="p">(</span>result<span class="p">))</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>lastPrice<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>witnet<span class="p">.</span>asUint64<span class="p">(</span>result<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>timestamp<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span><span class="k">block.timestamp</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>PriceUpdated<span class="p">(</span>lastPrice<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"> </span><span class="kt">else</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class=" -WhiteSpace"> </span>errorMessage<span class="p">;</span><span class=" -WhiteSpace"></span>
 
-        <span class="c1">// Try to read the value as an error message, catch error bytes if read fails</span>
-        <span class="k">try</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">()</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">e</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="k">catch</span> <span class="p">(</span><span class="nx">bytes</span> <span class="nx">memory</span> <span class="nx">errorBytes</span><span class="p">){</span>
-            <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">string</span><span class="p">(</span><span class="nx">errorBytes</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="nx">emit</span> <span class="nx">ResultError</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class=" -WhiteSpace">        </span><span class="c1">// Try to read the value as an error message, catch error bytes if read fails</span>
+<span class=" -WhiteSpace">        </span>try<span class=" -WhiteSpace"> </span>witnet<span class="p">.</span>asErrorMessage<span class="p">(</span>result<span class="p">)</span><span class=" -WhiteSpace"> </span><span class="kt">returns</span><span class=" -WhiteSpace"> </span><span class="p">(</span>Witnet<span class="p">.</span>ErrorCodes<span class="p">,</span><span class=" -WhiteSpace"> </span><span class="kt">string</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class=" -WhiteSpace"> </span>e<span class="p">)</span><span class=" -WhiteSpace"> </span><span class="p">{</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">            </span>errorMessage<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span>e<span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>catch<span class=" -WhiteSpace"> </span><span class="p">(</span><span class="kt">bytes</span><span class=" -WhiteSpace"> </span><span class="nv">memory</span><span class=" -WhiteSpace"> </span>errorBytes<span class="p">){</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">            </span>errorMessage<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span><span class="kt">string</span><span class="p">(</span>errorBytes<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span><span class="p">}</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">        </span>emit<span class=" -WhiteSpace"> </span>ResultError<span class="p">(</span>errorMessage<span class="p">);</span><span class=" -WhiteSpace"></span>
+<span class=" -WhiteSpace">    </span><span class="p">}</span><span class=" -WhiteSpace"></span>
 
-    <span class="c1">// In any case, set `pending` to false so a new update can be requested</span>
-    <span class="nx">pending</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
+<span class=" -WhiteSpace">    </span><span class="c1">// In any case, set `pending` to false so a new update can be requested</span>
+<span class=" -WhiteSpace">    </span>pending<span class=" -WhiteSpace"> </span><span class="o">=</span><span class=" -WhiteSpace"> </span><span class="kt">false</span><span class="p">;</span><span class=" -WhiteSpace"></span>
+<span class="p">}</span><span class=" -WhiteSpace"></span>
 </code></pre></div>
 
 <h2 id="quick-recap">Quick recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h2>
@@ -1252,8 +1251,6 @@ point can be requested on demand by any interested party:</p>
 
 <span class="c1">// Your contract needs to inherit from UsingWitnet</span>
 <span class="nx">contract</span> <span class="nx">PriceFeed</span> <span class="nx">is</span> <span class="nx">UsingWitnet</span> <span class="p">{</span>
-
-    <span class="nx">using</span> <span class="nx">Witnet</span> <span class="k">for</span> <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span><span class="p">;</span>
 
     <span class="c1">// The public Bitcoin price point</span>
     <span class="nx">uint64</span> <span class="kr">public</span> <span class="nx">lastPrice</span><span class="p">;</span>
@@ -1278,7 +1275,7 @@ point can be requested on demand by any interested party:</p>
 
     <span class="c1">// This constructor does a nifty trick to tell the `UsingWitnet` library where</span>
     <span class="c1">// to find the Witnet contracts on whatever Ethereum network you use.</span>
-    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">_wrb</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wrb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">WitnetRequestBoard</span> <span class="nx">_wrb</span><span class="p">)</span> <span class="nx">UsingWitnet</span><span class="p">(</span><span class="nx">_wrb</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Instantiate the Witnet request</span>
         <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BitcoinPriceRequest</span><span class="p">();</span>
     <span class="p">}</span>
@@ -1291,8 +1288,8 @@ point can be requested on demand by any interested party:</p>
         <span class="nx">require</span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;Complete pending request before requesting a new one&quot;</span><span class="p">);</span>
 
         <span class="c1">// Send the request to Witnet and store the ID for later retrieval of the result</span>
-        <span class="c1">// The `witnetPostRequest` method comes with `UsingWitnet`</span>
-        <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+        <span class="c1">// The `_witnetPostRequest` method comes with `UsingWitnet`</span>
+        <span class="nx">lastRequestId</span> <span class="o">=</span> <span class="nx">_witnetPostRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
 
         <span class="c1">// Signal that there is already a pending request</span>
         <span class="nx">pending</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -1308,23 +1305,24 @@ point can be requested on demand by any interested party:</p>
         <span class="nx">require</span><span class="p">(</span><span class="nx">pending</span><span class="p">,</span> <span class="s2">&quot;There is no pending update.&quot;</span><span class="p">);</span>
 
         <span class="c1">// Read the result of the Witnet request</span>
-        <span class="c1">// The `witnetReadResult` method comes with `UsingWitnet`</span>
-        <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span> <span class="nx">memory</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">witnetReadResult</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">);</span>
+        <span class="c1">// The `_witnetReadResult` method comes with `UsingWitnet`</span>
+        <span class="nx">Witnet</span><span class="p">.</span><span class="nx">Result</span> <span class="nx">memory</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">_witnetReadResult</span><span class="p">(</span><span class="nx">lastRequestId</span><span class="p">);</span>
 
         <span class="c1">// If the Witnet request succeeded, decode the result and update the price point</span>
         <span class="c1">// If it failed, revert the transaction with a pretty-printed error message</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">isOk</span><span class="p">())</span> <span class="p">{</span>
-            <span class="nx">lastPrice</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asUint64</span><span class="p">();</span>
+        <span class="c1">// `witnet.isOk()`, `witnet.asUint64()` and `witnet.asErrorMessage()` come with `UsingWitnet`</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">witnet</span><span class="p">.</span><span class="nx">isOk</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">lastPrice</span> <span class="o">=</span> <span class="nx">witnet</span><span class="p">.</span><span class="nx">asUint64</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
             <span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">block</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">;</span>
             <span class="nx">emit</span> <span class="nx">PriceUpdated</span><span class="p">(</span><span class="nx">lastPrice</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">errorMessage</span><span class="p">;</span>
 
             <span class="c1">// Try to read the value as an error message, catch error bytes if read fails</span>
-            <span class="k">try</span> <span class="nx">result</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">()</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="nx">witnet</span><span class="p">.</span><span class="nx">asErrorMessage</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">Witnet</span><span class="p">.</span><span class="nx">ErrorCodes</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">e</span><span class="p">;</span>
             <span class="p">}</span>
-        <span class="k">catch</span> <span class="p">(</span><span class="nx">bytes</span> <span class="nx">memory</span> <span class="nx">errorBytes</span><span class="p">){</span>
+            <span class="k">catch</span> <span class="p">(</span><span class="nx">bytes</span> <span class="nx">memory</span> <span class="nx">errorBytes</span><span class="p">){</span>
                 <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">string</span><span class="p">(</span><span class="nx">errorBytes</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="nx">emit</span> <span class="nx">ResultError</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
@@ -1371,7 +1369,7 @@ tutorial.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              5. Compile the request
+              5. Compile and try the request
             </div>
           </div>
         </a>
