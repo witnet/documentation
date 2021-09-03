@@ -34,30 +34,6 @@ be found in [ADOIP-0010].
     of decimal digits. For example, if the BTC/USD price is `31371.21`, the BTC/USD contract below will give`31371210`
     because it is using 3 decimal digits.
 
-## BTC/USD
-
-* Source code:
-    * [Solidity contract](https://github.com/witnet/witnet-price-feed-examples/blob/master/contracts/BtcUsdPriceFeed.sol)
-    * [Witnet data request](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BitcoinPrice.js)
-* Asset ID: `637b7efb6b620736c247aaa282f3898914c0bef6c12faff0d3fe9d4bea783020`
-* Decimal digits: 3
-
-##### Mainnet
-* Data explorer: [feeds.witnet.io/feeds/60f2ad37f592ee12557eb70e](https://feeds.witnet.io/feeds/60f2ad37f592ee12557eb70e)
-* Contract address: [0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9](https://etherscan.io/address/0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9)
-
-##### Rinkeby
-* Data explorer: [feeds.witnet.io/feeds/60f2ad37f592eeca197eb710](https://feeds.witnet.io/feeds/60f2ad37f592eeca197eb710)
-* Contract address: [0x58995FaD03158fB9cd64397347bA97714EF8fC12](https://rinkeby.etherscan.io/address/0x58995FaD03158fB9cd64397347bA97714EF8fC12)
-
-##### Goerli
-* Data explorer: [feeds.witnet.io/feeds/60f2ad37f592eea6487eb712](https://feeds.witnet.io/feeds/60f2ad37f592eea6487eb712)
-* Contract address: [0x4958806608D2E3Aa22BD8818B555A0a24fe6c38E](https://goerli.etherscan.io/address/0x4958806608D2E3Aa22BD8818B555A0a24fe6c38E)
-
-##### Kovan
-* Contract address: [0x9b3C5A6cB55E027d9ae6f265f6FB6fFA86e7b35E](https://kovan.etherscan.io/address/0x9b3C5A6cB55E027d9ae6f265f6FB6fFA86e7b35E)
-
-
 ## ETH/USD
 
 * Source code:
@@ -67,20 +43,42 @@ be found in [ADOIP-0010].
 * Decimal digits: 3
 
 ##### Mainnet
-* Data explorer: [feeds.witnet.io/feeds/60f2ad37f592ee6a487eb70f](https://feeds.witnet.io/feeds/60f2ad37f592ee6a487eb70f)
+* Data explorer: [feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_3](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_3)
 * Contract address: [0x1ebD93231a7fE551E1d6405404Df34909eff4c2C](https://etherscan.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
 ##### Rinkeby
-* Data explorer: [feeds.witnet.io/feeds/60f2ad37f592ee49817eb711](https://feeds.witnet.io/feeds/60f2ad37f592ee49817eb711)
-* Contract address: [0xAe9821fbA4Bd76fd6D39859bd7c3d4A90b2ceE40](https://rinkeby.etherscan.io/address/0xAe9821fbA4Bd76fd6D39859bd7c3d4A90b2ceE40)
+* Data explorer: [feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_3](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_3)
+* Contract address: [0x1320C130Fc5361ced969Ca737d692a30e1142a13](https://rinkeby.etherscan.io/address/0x1320C130Fc5361ced969Ca737d692a30e1142a13)
 
 ##### Goerli
-* Data explorer: [feeds.witnet.io/feeds/60f2ad37f592ee573a7eb713](https://feeds.witnet.io/feeds/60f2ad37f592ee573a7eb713)
-* Contract address: [0xAa0AA725aEb1d382F909a8dE3041e9eaD6507501](https://goerli.etherscan.io/address/0xAa0AA725aEb1d382F909a8dE3041e9eaD6507501)
+* Data explorer: [feeds.witnet.io/feeds/ethereum-goerli_eth-usd_3](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_3)
+* Contract address: [0x031699240f710B47e92Df7766C06ee6C22A75df1](https://goerli.etherscan.io/address/0x031699240f710B47e92Df7766C06ee6C22A75df1)
 
 ##### Kovan
 * Contract address: [0xA996939e6a07a0D1D6376c59BE515d8441f5E9b8](https://kovan.etherscan.io/address/0xA996939e6a07a0D1D6376c59BE515d8441f5E9b8)
 
+## BTC/USD
+
+* Source code:
+    * [Solidity contract](https://github.com/witnet/witnet-price-feed-examples/blob/master/contracts/BtcUsdPriceFeed.sol)
+    * [Witnet data request](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BitcoinPrice.js)
+* Asset ID: `637b7efb6b620736c247aaa282f3898914c0bef6c12faff0d3fe9d4bea783020`
+* Decimal digits: 3
+
+##### Mainnet
+* Data explorer: [feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_3](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_3)
+* Contract address: [0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9](https://etherscan.io/address/0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9)
+
+##### Rinkeby
+* Data explorer: [feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_3](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_3)
+* Contract address: [0xa7C971149AdfdFB237A0F78D7d317B916FFCE093](https://rinkeby.etherscan.io/address/0xa7C971149AdfdFB237A0F78D7d317B916FFCE093)
+
+##### Goerli
+* Data explorer: [feeds.witnet.io/feeds/ethereum-goerli_btc-usd_3](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_3)
+* Contract address: [0x43Fe8778389f4EB98e82B750DCCAfF0D7d57778c](https://goerli.etherscan.io/address/0x43Fe8778389f4EB98e82B750DCCAfF0D7d57778c)
+
+##### Kovan
+* Contract address: [0x9b3C5A6cB55E027d9ae6f265f6FB6fFA86e7b35E](https://kovan.etherscan.io/address/0x9b3C5A6cB55E027d9ae6f265f6FB6fFA86e7b35E)
 
 [ERC-2362]: https://github.com/adoracles/ado-contracts/blob/master/contracts/interfaces/IERC2362.sol
 [ADOIP-0010]: https://github.com/adoracles/ADOIPs/blob/main/adoip-0010.md#registered-ids
