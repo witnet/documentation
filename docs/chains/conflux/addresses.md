@@ -20,13 +20,15 @@ Witnet is not live yet on Conflux mainnet, but will be deployed soon. Stay tuned
 ## Conflux Testnet
 
 ### Main contracts
-* Witnet: [cfxtest:ace03e0bd2cnkna0e16c769rb6mpb18b46nnfg8mck](https://testnet.confluxscan.io/address/cfxtest:ace03e0bd2cnkna0e16c769rb6mpb18b46nnfg8mck)
-* WitnetRequestBoard: [cfxtest:acee21t6kvabde2rzrgmt4wf43nxuxp00anv17p79h](https://testnet.confluxscan.io/address/cfxtest:acee21t6kvabde2rzrgmt4wf43nxuxp00anv17p79h)
-* WitnetRequestBoardProxy: [cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0](https://testnet.confluxscan.io/address/cfxtest:acctgrbsj2bgnyrcsh8b1zx2yru4wjessjjrmhmpe0)
+* WitnetProxy: [`cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt`](https://testnet.confluxscan.io/address/cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt)
+* WitnetRequestBoard: [`cfxtest:acemtza4zjn1fcutzwn6p8ekdbf2x8dczy4teesnh8`](https://testnet.confluxscan.io/address/cfxtest:acemtza4zjn1fcutzwn6p8ekdbf2x8dczy4teesnh8)
+* WitnetDecoderLib: [`cfxtest:acav8atw8uttetu0ty1aemvy52rjp705wyddb2fyty`](https://testnet.confluxscan.io/address/cfxtest:acav8atw8uttetu0ty1aemvy52rjp705wyddb2fyty)
+* WitnetParserLib: [`cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7`](https://testnet.confluxscan.io/address/cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7)
 
 ### Public price feeds
-* BtcUsdPriceFeed: [cfxtest:acexkt9t0dm7tzhv9t1znbnc83ehtb703u9pyvd0cd](https://testnet.confluxscan.io/address/cfxtest:acexkt9t0dm7tzhv9t1znbnc83ehtb703u9pyvd0cd)
-* EthUsdPriceFeed: [cfxtest:achf22mnyxrkt4bd4xb9b1fufwdw3bhg2pe445me8s](https://testnet.confluxscan.io/address/cfxtest:achf22mnyxrkt4bd4xb9b1fufwdw3bhg2pe445me8s)
+* CFX/USDT: [`cfxtest:ace8bsds7wn52khyk29nebzwfpvz5rppd28kcxetj8`](https://testnet.confluxscan.io/address/cfxtest:ace8bsds7wn52khyk29nebzwfpvz5rppd28kcxetj8)
+* BTC/USD: [`cfxtest:acg28k0yppzj5gc0dc1gazy6wt34m6ak5j5t12htkn`](https://testnet.confluxscan.io/address/cfxtest:acexkt9t0dm7tzhv9t1znbnc83ehtb703u9pyvd0cd)
+* ETH/USD: [`cfxtest:ach8fz1axbh6p000u6xmsxpcfcawumvuyau4ac8tu5`](https://testnet.confluxscan.io/address/cfxtest:achf22mnyxrkt4bd4xb9b1fufwdw3bhg2pe445me8s)
 
 [witnet-ethereum-bridge]: https://github.com/witnet/witnet-ethereum-bridge
 [Witnet Truffle Box]: /try/use-from-ethereum
