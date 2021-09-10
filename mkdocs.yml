@@ -30,7 +30,10 @@ nav:
         - 7. Deploy: tutorials/bitcoin-price-feed/migrations.md
         - Recap: tutorials/bitcoin-price-feed/recap.md
   - Other chains:
-      - Conflux Network:
+      - Boba Networks:
+          - Price Feeds: chains/boba/price-feeds.md
+          - Addresses: chains/boba/addresses.md
+      - Conflux Networks:
           - Price Feeds: chains/conflux/price-feeds.md
           - Addresses: chains/conflux/addresses.md
   - Witnet-Rust Docs:
