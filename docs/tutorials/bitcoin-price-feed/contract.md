@@ -36,32 +36,39 @@ import "./requests/BitcoinPrice.sol";
 // Your contract needs to inherit from UsingWitnet
 contract PriceFeed is UsingWitnet {
 
-    // The public Bitcoin price point
+    /// The public Bitcoin price point
     uint64 public lastPrice;
 
-    // Stores the ID of the last Witnet request
+    /// Stores the ID of the last Witnet request
     uint256 public lastRequestId;
 
-    // Stores the timestamp of the last time the public price point was updated
+    /// Stores the timestamp of the last time the public price point was updated
     uint256 public timestamp;
 
-    // Tells if an update has been requested but not yet completed
+    /// Tells if an update has been requested but not yet completed
     bool public pending;
 
-    // The Witnet request object, is set in the constructor
-    Request public request;
+    /// The Witnet request object, is set in the constructor, and initialized after deployment
+    BitcoinPriceRequest public request;
 
-    // Emits when the price is updated
+    /// Emits when the price is updated
     event PriceUpdated(uint64);
 
-    // Emits when found an error decoding request result
+    /// Emits when found an error decoding request result
     event ResultError(string);
 
-    // This constructor does a nifty trick to tell the `UsingWitnet` library where
-    // to find the Witnet contracts on whatever Ethereum network you use.
+    /// This constructor does a nifty trick to tell the `UsingWitnet` library where
+    /// to find the Witnet contracts on whatever network you use.
     constructor (WitnetRequestBoard _wrb) UsingWitnet(_wrb) {
         // Instantiate the Witnet request
         request = new BitcoinPriceRequest();
+        // Note: the request cannot be initialized here, as some EVM/OVM implementations 
+        // may struggle with constructors containining arbitrary byte arrays or strings. 
+    }
+
+    // This method initializes the actual Witnet request bytecode
+    function initialize() external {
+        request.initialize();
     }
 }
 ```
@@ -82,10 +89,8 @@ The above will:
 ## Write the `requestUpdate` method that launches the Witnet request
 
 ```solidity
-/**
- * @notice Sends `request` to the WitnetRequestBoard.
- * @dev This method will only succeed if `pending` is 0.
- **/
+/// @notice Sends `request` to the WitnetRequestBoard.
+/// @dev This method will only succeed if `pending` is 0.
 function requestUpdate() public payable {
     require(!pending, "Complete pending request before requesting a new one");
 
@@ -101,12 +106,10 @@ function requestUpdate() public payable {
 ## Write the `completeUpdate` method that reads the result of the Witnet request
 
 ```solidity
-/**
- * @notice Reads the result, if ready, from the WitnetRequestBoard.
- * @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
- * protect your methods from being called before the request has been successfully
- * relayed into Witnet.
- **/
+/// @notice Reads the result, if ready, from the WitnetRequestBoard.
+/// @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
+/// @dev protect your methods from being called before the request has been successfully
+/// @dev relayed into Witnet.
 function completeUpdate() public witnetRequestResolved(lastRequestId) {
     require(pending, "There is no pending update.");
 
@@ -148,7 +151,6 @@ This is what the complete contract looks like:
 pragma solidity >=0.7.0 <0.9.0;
 pragma experimental ABIEncoderV2;
 
-
 // Import the UsingWitnet library that enables interacting with Witnet
 import "witnet-ethereum-bridge/contracts/UsingWitnet.sol";
 // Import the BitcoinPrice request that you created before
@@ -157,38 +159,43 @@ import "./requests/BitcoinPrice.sol";
 // Your contract needs to inherit from UsingWitnet
 contract PriceFeed is UsingWitnet {
 
-    // The public Bitcoin price point
+    /// The public Bitcoin price point
     uint64 public lastPrice;
 
-    // Stores the ID of the last Witnet request
+    /// Stores the ID of the last Witnet request
     uint256 public lastRequestId;
 
-    // Stores the timestamp of the last time the public price point was updated
+    /// Stores the timestamp of the last time the public price point was updated
     uint256 public timestamp;
 
-    // Tells if an update has been requested but not yet completed
+    /// Tells if an update has been requested but not yet completed
     bool public pending;
 
-    // The Witnet request object, is set in the constructor
-    Request public request;
+    /// The Witnet request object, is set in the constructor, and initialized after deployment
+    BitcoinPriceRequest public request;
 
-    // Emits when the price is updated
+    /// Emits when the price is updated
     event PriceUpdated(uint64);
 
-    // Emits when found an error decoding request result
+    /// Emits when found an error decoding request result
     event ResultError(string);
 
-    // This constructor does a nifty trick to tell the `UsingWitnet` library where
-    // to find the Witnet contracts on whatever Ethereum network you use.
+    /// This constructor does a nifty trick to tell the `UsingWitnet` library where
+    /// to find the Witnet contracts on whatever network you use.
     constructor (WitnetRequestBoard _wrb) UsingWitnet(_wrb) {
         // Instantiate the Witnet request
         request = new BitcoinPriceRequest();
+        // Note: the request cannot be initialized here, as some EVM/OVM implementations 
+        // may struggle with constructors containining arbitrary byte arrays or strings. 
     }
 
-    /**
-     * @notice Sends `request` to the WitnetRequestBoard.
-     * @dev This method will only succeed if `pending` is 0.
-     **/
+    /// This method initializes the actual Witnet request bytecode
+    function initialize() external {
+        request.initialize();
+    }
+
+    /// @notice Sends `request` to the WitnetRequestBoard.
+    /// @dev This method will only succeed if `pending` is 0.
     function requestUpdate() public payable {
         require(!pending, "Complete pending request before requesting a new one");
 
@@ -200,12 +207,10 @@ contract PriceFeed is UsingWitnet {
         pending = true;
     }
 
-    /**
-     * @notice Reads the result, if ready, from the WitnetRequestBoard.
-     * @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
-     * protect your methods from being called before the request has been successfully
-     * relayed into Witnet.
-     **/
+    /// @notice Reads the result, if ready, from the WitnetRequestBoard.
+    /// @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
+    /// @dev protect your methods from being called before the request has been successfully
+    /// @dev relayed into Witnet.
     function completeUpdate() public witnetRequestResolved(lastRequestId) {
         require(pending, "There is no pending update.");
 

@@ -48,6 +48,8 @@ const PriceFeed = artifacts.require("PriceFeed")
 module.exports = async function (deployer) {
   await deployer.link(Witnet, [PriceFeed])
   await deployer.deploy(PriceFeed, WitnetProxy.address)
+  const priceFeed = await PriceFeed.deployed()
+  await priceFeed.initialize()
 }
 ```
 
@@ -101,8 +103,7 @@ can deploy them into a public network using the `--network` flag:
 - `truffle migrate --network=ethereum.goerli` deploys on the Ethereum Görli
   testnet.
   
-You can find a complete list of supported networks in the `addresses` object
-in the `migrations/2_user_migrations.js` file, and also [here][addresses].
+You can find a complete list of supported networks in [here][addresses].
 
 ## Interact with your contract
 
@@ -119,4 +120,4 @@ your contracts][interacting].
 [Telegram]: https://t.me/witnetio
 [intro]: /tutorials/bitcoin-price-feed/introduction
 [interacting]: https://www.trufflesuite.com/docs/truffle/getting-started/interacting-with-your-contracts
-[addresses]: https://github.com/witnet/witnet-ethereum-bridge/blob/master/migrations/witnet.addresses.json
+[addresses]: https://github.com/witnet/witnet-solidity-bridge/blob/master/migrations/witnet.addresses.json

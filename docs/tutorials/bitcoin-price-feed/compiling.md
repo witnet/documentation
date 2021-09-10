@@ -1,4 +1,4 @@
-# 5. Compile  and try the request
+# 5. Compile and try the request
 
 !!! note ""
     *This article is part of the [beginner tutorial on creating a totally
@@ -34,13 +34,15 @@ new file called `BitcoinPrice.sol`. It will contain something like this:
 ```solidity
 pragma solidity >=0.7.0 <0.9.0;
 
-import "witnet-ethereum-bridge/contracts/requests/WitnetRequest.sol";
+import "witnet-solidity-bridge/contracts/requests/WitnetRequestInitializableBase.sol";
 
 // The bytecode of the BitcoinPrice request that will be sent to Witnet
-contract BitcoinPriceRequest is WitnetRequest {
-  constructor () WitnetRequest(hex"0abf0108f3b5988906123b122468747470733a2f2f7777772e6269747374616d702e6e65742f6170692f7469636b65722f1a13841877821864646c6173748218571903e8185b125c123168747470733a2f2f6170692e636f696e6465736b2e636f6d2f76312f6270692f63757272656e7470726963652e6a736f6e1a2786187782186663627069821866635553448218646a726174655f666c6f61748218571903e8185b1a0d0a0908051205fa3fc000001003220d0a0908051205fa3fc000001003100a186420012846308094ebdc03") { }
+contract BitcoinPriceRequest is WitnetRequestInitializableBase {
+    constructor () {}  
+    function initialize() public {
+        WitnetRequestInitializableBase.initialize(hex"0abf0108f3b5988906123b122468747470733a2f2f7777772e6269747374616d702e6e65742f6170692f7469636b65722f1a13841877821864646c6173748218571903e8185b125c123168747470733a2f2f6170692e636f696e6465736b2e636f6d2f76312f6270692f63757272656e7470726963652e6a736f6e1a2786187782186663627069821866635553448218646a726174655f666c6f61748218571903e8185b1a0d0a0908051205fa3fc000001003220d0a0908051205fa3fc000001003100a186420012846308094ebdc03");
+    }
 }
-
 ```
 
 As you can see, the contract contains the byte code for the request you
