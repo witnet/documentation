@@ -1,4 +1,4 @@
-# Witnet Public Price Feeds
+# Witnet Public Price Feeds on Ethereum
 
 Witnet Foundation operates a series of public price feeds both for showcasing the capabilities of the Witnet oracle,
 and as a public service for the broader Ethereum community.
@@ -40,8 +40,8 @@ be found in [ADOIP-0010].
 
 |              | Decimals | Asset ID | Mainnet | Goerli  | Rinkeby
 | ------------ | :------: | :------- | :------ | :------ | :------
-| **BTC/USD**  | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | [Stay tuned!](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | [`0x43Fe8778389f4EB98e82B750DCCAfF0D7d57778c`](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | [`0xa7C971149AdfdFB237A0F78D7d317B916FFCE093`](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6)
-| **ETH/USD**  | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | [Stay tuned!](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | [`0x031699240f710B47e92Df7766C06ee6C22A75df1`](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | [`0x1320C130Fc5361ced969Ca737d692a30e1142a13`](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6)
+| **BTC/USD**  | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | Stay tuned! | [`0x43Fe8778389f4EB98e82B750DCCAfF0D7d57778c`](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | [`0xa7C971149AdfdFB237A0F78D7d317B916FFCE093`](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6)
+| **ETH/USD**  | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | Stay tuned! | [`0x031699240f710B47e92Df7766C06ee6C22A75df1`](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | [`0x1320C130Fc5361ced969Ca737d692a30e1142a13`](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6)
 
 [ERC-2362]: https://github.com/adoracles/ado-contracts/blob/master/contracts/interfaces/IERC2362.sol
 [ADOIP-0010]: https://github.com/adoracles/ADOIPs/blob/main/adoip-0010.md#registered-ids

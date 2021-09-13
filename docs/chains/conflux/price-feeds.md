@@ -1,4 +1,4 @@
-# Witnet Price Feeds on Conflux Networks
+# Witnet Price Feeds on Conflux networks
 
 Witnet Foundation operates a series of public price feeds in cooperation with Conflux Network both for showcasing the
 capabilities of the Witnet oracle, and as a public service for the broader Conflux community.
@@ -36,7 +36,7 @@ be found in [ADOIP-0010].
     As Solidity does not currently support `float` types, all prices are provided as `int256`, with a specific number
     of decimal digits. For example, if the BTC/USD price is `31371.21456`, the BTC/USD contract below will give`31371214560` because it is using 6 decimal digits.
 
-## Data Explorer links
+## Data Explorer links (and raw addresses)
 
 |              | Decimals | Asset ID | Conflux.Testnet | Conflux.Mainnet |
 | ------------ | :------: | :------- | :-------------- | :-------------- |

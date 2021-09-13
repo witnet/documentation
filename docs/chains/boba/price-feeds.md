@@ -1,4 +1,4 @@
-# Witnet Price Feeds on BOBA Networks
+# Witnet Price Feeds on BOBA Layer 2 networks
 
 Witnet Foundation operates a series of public price feeds in cooperation with BOBA Network both for showcasing the
 capabilities of the Witnet oracle, and as a public service for the broader BOBA community.
@@ -38,11 +38,9 @@ be found in [ADOIP-0010].
 
 |             | Decimals | Asset ID | BOBA.Rinkeby | BOBA.Mainnet |
 | ----------- | :------: | :------- | :----------- | :----------- |
-| **OMG/BTC** | 9 | `c4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a8d747feaca2fb` | [``](https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9) | Stay tuned!
-| **OMG/ETH** | 9 | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75` | [``](https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9) | Stay tuned!
-| **OMG/USDT** | 6 | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef` | [``](https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6) | Stay tuned!
-| **BTC/USD** | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | [``](https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6) | Stay tuned!
-| **ETH/USD** | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | [``](https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6) | Stay tuned!
+| **OMG/BTC** | 9 | `c4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a8d747feaca2fb` | [`0x78C2dEb1A416508fB4B20A000cfD9d9673371e00`](https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9) | Stay tuned!
+| **OMG/ETH** | 9 | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75` | [`0x6be8bb17C07453d217cd1BADBa3E55A627DcdD2A`](https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9) | Stay tuned!
+| **OMG/USDT** | 6 | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef` | [`0x758C5adBFC25E260C07535933874e98583A14d41`](https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6) | Stay tuned!
 
 [ERC-2362]: https://github.com/adoracles/ado-contracts/blob/master/contracts/interfaces/IERC2362.sol
 [ADOIP-0010]: https://github.com/adoracles/ADOIPs/blob/main/adoip-0010.md#registered-ids
