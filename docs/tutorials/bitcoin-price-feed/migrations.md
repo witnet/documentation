@@ -41,12 +41,12 @@ folder, you should find these two files:
 Let's take a look at `migrations/2_user_contracts.js`:
 
 ```js
-const Witnet = artifacts.require("Witnet")
+const WitnetParserLib = artifacts.require("WitnetParserLib")
 const WitnetProxy = artifacts.require("WitnetProxy")
 const PriceFeed = artifacts.require("PriceFeed")
 
 module.exports = async function (deployer) {
-  await deployer.link(Witnet, [PriceFeed])
+  await deployer.link(WitnetParserLib, [PriceFeed])
   await deployer.deploy(PriceFeed, WitnetProxy.address)
   const priceFeed = await PriceFeed.deployed()
   await priceFeed.initialize()
