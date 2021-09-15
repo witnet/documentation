@@ -16,5 +16,6 @@
     margin-left: 1px;
     width: 13px;
     height: 13px;
-    background-image: url("https://wiki.archlinux.org/resources/src/mediawiki.skinning/images/external-ltr.png");
+    background-image: url("/assets/images/external-ltr.svg");
+    background-size: contain;
 }
