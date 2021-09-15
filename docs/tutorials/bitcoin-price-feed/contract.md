@@ -14,7 +14,7 @@ point can be requested on demand by any interested party:
 - Anyone will be able to call a `requestUpdate` method in the contract
   that creates a new instance of the `BitcoinPrice.sol` contract and
   send it to Witnet.
-- Once the request is resolved, anyone will be able to call the
+- Once the request is solved, anyone will be able to call the
 `completeUpdate` and write the result into the contract state.
 
 ## Initialize a basic contract
@@ -110,7 +110,7 @@ function requestUpdate() public payable {
 /// @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
 /// @dev protect your methods from being called before the request has been successfully
 /// @dev relayed into Witnet.
-function completeUpdate() public witnetRequestResolved(lastRequestId) {
+function completeUpdate() public witnetRequestSolved(lastRequestId) {
     require(pending, "There is no pending update.");
 
     // Read the result of the Witnet request
@@ -211,7 +211,7 @@ contract PriceFeed is UsingWitnet {
     /// @dev The `witnetRequestAccepted` modifier comes with `UsingWitnet` and allows to
     /// @dev protect your methods from being called before the request has been successfully
     /// @dev relayed into Witnet.
-    function completeUpdate() public witnetRequestResolved(lastRequestId) {
+    function completeUpdate() public witnetRequestSolved(lastRequestId) {
         require(pending, "There is no pending update.");
 
         // Read the result of the Witnet request
