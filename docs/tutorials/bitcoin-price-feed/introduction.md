@@ -64,5 +64,5 @@ project][create-project].
 
 [Discord]: https://discord.gg/X4uurfP
 [Telegram]: https://t.me/witnetio
-[pricefeed]: https://github.com/stampery-labs/witnet-pricefeed-example
+[pricefeed]: https://github.com/witnet/witnet-pricefeed-tutorial
 [create-project]: /tutorials/bitcoin-price-feed/create-project
