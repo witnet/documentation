@@ -42,24 +42,25 @@ Celsius and the other may use Fahrenheit. You can tell Witnet to
 transform them both to Celsius so they can be averaged.
 
 In this tutorial, you will be defining two data sources — one querying
-[Bitstamp] and the other for [CoinDesk]:
+[Binance] and the other for [Kraken]:
 
-=== "Source 1: Bitstamp"
+=== "Source 1: Binance"
 	```javascript
-    // Retrieves USD price of a bitcoin from the BitStamp API
-    const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-      .parseJSONMap()   // Parse a `Map` from the retrieved `String`
-      .getFloat("last") // Get the `Float` value associated to the `last` key
-    ```
-=== "Source 2: CoinDesk"
-	```javascript
-    // Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
-    // The JSON here is a bit more complex, so more operators are needed
-    const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
+    // Retrieves USD price of a bitcoin from the Binance API
+    const binance = new Witnet.Source("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
       .parseJSONMap()         // Parse a `Map` from the retrieved `String`
-      .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
-      .getMap("USD")          // Get the `Map` value associated to the `USD` key
-      .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
+      .getFloat("price")      // Get the `Float` value associated to the `last` key
+    ```
+=== "Source 2: Kraken"
+	```javascript
+    // Retrieves USD price of a bitcoin from the Kraken API
+    // The JSON here is a bit more complex, thus more operators are needed
+    const kraken = new Witnet.Source("https://api.kraken.com/0/public/Ticker?pair=BTCUSD")
+      .parseJSONMap()         // Parse a `Map` from the retrieved `String`
+      .getMap("result")       // Get the `Map` value associated to the `result` key
+      .getMap("XXBTZUSD")     // Get the `Map` value associated to the `XXBTZUSD` key
+      .getArray("a")          // Get the `Array` value associated to the `a` key
+      .getFloat(0)            // Get the `Float` value at index `0`
     ```
 
 A few things worth noticing:
@@ -90,18 +91,19 @@ sources above into it:
 ```javascript
 import * as Witnet from "witnet-requests"
 
-// Retrieves USD price of a bitcoin from the BitStamp API
-const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-  .parseJSONMap()   // Parse a `Map` from the retrieved `String`
-  .getFloat("last") // Get the `Float` value associated to the `last` key
-  
-// Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
-// The JSON here is a bit more complex, thus more operators are needed
-const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
+// Retrieves USD price of a bitcoin from the Binance API
+const binance = new Witnet.Source("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
   .parseJSONMap()         // Parse a `Map` from the retrieved `String`
-  .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
-  .getMap("USD")          // Get the `Map` value associated to the `USD` key
-  .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
+  .getFloat("price")      // Get the `Float` value associated to the `last` key
+
+// Retrieves USD price of a bitcoin from the Kraken API
+// The JSON here is a bit more complex, thus more operators are needed
+const kraken = new Witnet.Source("https://api.kraken.com/0/public/Ticker?pair=BTCUSD")
+  .parseJSONMap()         // Parse a `Map` from the retrieved `String`
+  .getMap("result")       // Get the `Map` value associated to the `result` key
+  .getMap("XXBTZUSD")     // Get the `Map` value associated to the `XXBTZUSD` key
+  .getArray("a")          // Get the `Array` value associated to the `a` key
+  .getFloat(0)            // Get the `Float` value at index `0`
 ```
 
 Notice the `import` instruction at the top, which makes it possible to use all
@@ -131,8 +133,8 @@ You are done with the sources for now. Let's move forward into
 [radon]: /protocol/data-requests/overview/#rad-object-notation-radon
 [builder]: https://en.wikipedia.org/wiki/Builder_pattern
 [GIGO]: https://en.wikipedia.org/wiki/Garbage_in,_garbage_out
-[Bitstamp]: https://www.bitstamp.net/api/ticker/
-[CoinDesk]: https://www.bitstamp.net/api/ticker/
+[Binance]:"https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT
+[Kraken]: https://api.kraken.com/0/public/Ticker?pair=BTCUSD
 
 [^1]: In future versions, the Witnet protocol will make no assumptions
 on what the data type of the server response will be for different data

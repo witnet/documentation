@@ -79,18 +79,19 @@ At this point, `requests/BitcoinPrice.js`  should look like this:
 ```javascript
 import * as Witnet from "witnet-requests"
 
-// Retrieves USD price of a bitcoin from the BitStamp API
-const bitstamp = new Witnet.Source("https://www.bitstamp.net/api/ticker/")
-  .parseJSONMap()   // Parse a `Map` from the retrieved `String`
-  .getFloat("last") // Get the `Float` value associated to the `last` key
-  
-// Retrieves USD price of a bitcoin from CoinDesk's "bitcoin price index" API
-// The JSON here is a bit more complex, thus more operators are needed
-const coindesk = new Witnet.Source("https://api.coindesk.com/v1/bpi/currentprice.json")
+// Retrieves USD price of a bitcoin from the Binance API
+const binance = new Witnet.Source("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
   .parseJSONMap()         // Parse a `Map` from the retrieved `String`
-  .getMap("bpi")          // Get the `Map` value associated to the `bpi` key
-  .getMap("USD")          // Get the `Map` value associated to the `USD` key
-  .getFloat("rate_float") // Get the `Float` value associated to the `rate_float` key
+  .getFloat("price")      // Get the `Float` value associated to the `last` key
+
+// Retrieves USD price of a bitcoin from the Kraken API
+// The JSON here is a bit more complex, thus more operators are needed
+const kraken = new Witnet.Source("https://api.kraken.com/0/public/Ticker?pair=BTCUSD")
+  .parseJSONMap()         // Parse a `Map` from the retrieved `String`
+  .getMap("result")       // Get the `Map` value associated to the `result` key
+  .getMap("XXBTZUSD")     // Get the `Map` value associated to the `XXBTZUSD` key
+  .getArray("a")          // Get the `Array` value associated to the `a` key
+  .getFloat(0)            // Get the `Float` value at index `0`
 
 // Filters out any value that is more than 1.5 times the standard
 // deviation away from the average, then computes the average mean of the
