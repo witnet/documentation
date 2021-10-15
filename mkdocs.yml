@@ -33,6 +33,9 @@ nav:
       - Boba (Layer 2):
           - Price Feeds: chains/boba/price-feeds.md
           - Addresses: chains/boba/addresses.md
+      - Celo Network:
+          - Price Feeds: chains/celo/price-feeds.md
+          - Addresses: chains/celo/addresses.md
       - Conflux Network:
           - Price Feeds: chains/conflux/price-feeds.md
           - Addresses: chains/conflux/addresses.md
