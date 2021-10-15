@@ -40,8 +40,8 @@ be found in [ADOIP-0010].
 
 |              | Decimals | Asset ID | Mainnet | Goerli  | Rinkeby
 | ------------ | :------: | :------- | :------ | :------ | :------
-| **BTC/USD**  | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | Stay tuned! | [`0x43Fe8778389f4EB98e82B750DCCAfF0D7d57778c`](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | [`0xa7C971149AdfdFB237A0F78D7d317B916FFCE093`](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6)
-| **ETH/USD**  | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | Stay tuned! | [`0x031699240f710B47e92Df7766C06ee6C22A75df1`](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | [`0x1320C130Fc5361ced969Ca737d692a30e1142a13`](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6)
+| **BTC/USD**  | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | [`0x4250a9d579E42588A8fFEd02e1a078A3BF767e8d`](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | [`0xcd445329A50EB30e82F349A89D583B2Cb516F18f`](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | [`0xccAe308C9b91a3e3De8E0Dd4136Ce0Bb608e6ea4`](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6)
+| **ETH/USD**  | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | [`0x11C073F17f018Bc1B372c7283fDe0608003823D5`](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | [`0x7D72Bd8F6c9D06Ae6D3Fd4B1aE0CAdab732959a7`](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | [`0x4566CaD4e76575f85fA423EF46080Afe353f7A05`](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6)
 
 [ERC-2362]: https://github.com/adoracles/ado-contracts/blob/master/contracts/interfaces/IERC2362.sol
 [ADOIP-0010]: https://github.com/adoracles/ADOIPs/blob/main/adoip-0010.md#registered-ids

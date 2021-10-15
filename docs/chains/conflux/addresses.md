@@ -19,9 +19,9 @@ rather talk to the Witnet Request Board and other contracts directly using the i
 | :------- | :-------------- | :-------------- |
 | **WitnetRequestBoard** | [`cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt`](https://testnet.confluxscan.io/address/cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt) | Stay tuned!
 | **WitnetParserLib**  | [`cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7`](https://testnet.confluxscan.io/address/cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7) | Stay tuned!
-| **CfxUsdtPriceFeed**  | [`cfxtest:ace8bsds7wn52khyk29nebzwfpvz5rppd28kcxetj8`](https://testnet.confluxscan.io/address/cfxtest:ace8bsds7wn52khyk29nebzwfpvz5rppd28kcxetj8) | Stay tuned!
-| **BtcUsdPriceFeed**  | [`cfxtest:acg28k0yppzj5gc0dc1gazy6wt34m6ak5j5t12htkn`](https://testnet.confluxscan.io/address/cfxtest:acexkt9t0dm7tzhv9t1znbnc83ehtb703u9pyvd0cd) | Stay tuned!
-| **EthUsdPriceFeed** | [`cfxtest:ach8fz1axbh6p000u6xmsxpcfcawumvuyau4ac8tu5`](https://testnet.confluxscan.io/address/cfxtest:achf22mnyxrkt4bd4xb9b1fufwdw3bhg2pe445me8s) | Stay tuned!
+| **BtcUsdPriceFeed**  | [`cfxtest:acc3kr4gjzwe04w952mzw9k45um6s6yeyehfrumbjg`](https://testnet.confluxscan.io/address/cfxtest:acc3kr4gjzwe04w952mzw9k45um6s6yeyehfrumbjg) | Stay tuned!
+| **CfxUsdtPriceFeed**  | [`cfxtest:aca6264crfcp2fr8emv7twawfa1gr60gvenht8s02u`](https://testnet.confluxscan.io/address/cfxtest:aca6264crfcp2fr8emv7twawfa1gr60gvenht8s02u) | Stay tuned!
+| **EthUsdPriceFeed** | [`cfxtest:acar99f7x8wjmy953gfmtuu7mc1es7k6ve2u7sfbjz`](https://testnet.confluxscan.io/address/cfxtest:acar99f7x8wjmy953gfmtuu7mc1es7k6ve2u7sfbjz) | Stay tuned!
 
 [Witnet Solidity Bridge]: https://github.com/witnet/witnet-solidity-bridge
 [Witnet Truffle Box]: /try/use-from-ethereum

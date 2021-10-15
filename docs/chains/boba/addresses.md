@@ -16,11 +16,11 @@ rather talk to the Witnet Request Board and other contracts directly using the i
 
 | Contract | BOBA.Rinkeby | BOBA.Mainnet |
 | :------- | :----------- | :----------- |
-| **WitnetRequestBoard** | [`0xA2F4f5290F9cfD3a17Cfa82f2a2fD3E5c05d1442`](https://blockexplorer.rinkeby.boba.network/address/0xA2F4f5290F9cfD3a17Cfa82f2a2fD3E5c05d1442/contracts) | Stay tuned!
-| **WitnetParserLib**  | [`0xdF4Df677F645Fe603a883Ad3f2Db03EDFDd75F5C`](https://blockexplorer.rinkeby.boba.network/address/0xdF4Df677F645Fe603a883Ad3f2Db03EDFDd75F5C/contracts) | Stay tuned!
-| **OmgBtcPriceFeed**  | [`0x78C2dEb1A416508fB4B20A000cfD9d9673371e00`](https://blockexplorer.rinkeby.boba.network/address/0x78C2dEb1A416508fB4B20A000cfD9d9673371e00/contracts) | Stay tuned!
-| **OmgEthPriceFeed**  | [`0x6be8bb17C07453d217cd1BADBa3E55A627DcdD2A`](https://blockexplorer.rinkeby.boba.network/address/0x6be8bb17C07453d217cd1BADBa3E55A627DcdD2A/contracts) | Stay tuned!
-| **OmgUsdtPriceFeed** | [`0x758C5adBFC25E260C07535933874e98583A14d41`](https://blockexplorer.rinkeby.boba.network/address/0x758C5adBFC25E260C07535933874e98583A14d41/contracts) | Stay tuned!
+| **WitnetRequestBoard** | Stay tuned! | Stay tuned!
+| **WitnetParserLib**  | Stay tuned!| Stay tuned!
+| **OmgBtcPriceFeed**  | Stay tuned! | Stay tuned!
+| **OmgEthPriceFeed**  | Stay tuned! | Stay tuned!
+| **OmgUsdtPriceFeed** | Stay tuned! | Stay tuned!
 
 [Witnet Solidity Bridge]: https://github.com/witnet/witnet-solidity-bridge
 [Witnet Truffle Box]: /try/use-from-ethereum
