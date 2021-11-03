@@ -49,6 +49,7 @@ nav:
       - Witnet Requests:
           - Overview: protocol/data-requests/overview.md
           - Encoding: protocol/data-requests/radon-encoding.md
+          - RNG:  protocol/data-requests/rng.md
       #- protocol/serialization.md
   #- Operator Docs:
       #- Run an Ethereum bridge: node-operators/ethereum-bridge.md
