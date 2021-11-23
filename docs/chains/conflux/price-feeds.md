@@ -40,9 +40,9 @@ be found in [ADOIP-0010].
 
 |              | Decimals | Asset ID | Conflux.Testnet | Conflux.Mainnet |
 | ------------ | :------: | :------- | :-------------- | :-------------- |
-| **BTC/USD**  | 6 | `637b7efb6b620736c247aaa282f3898914c0bef6c12faff0d3fe9d4bea783020` | [`0x8594B74645644b6a5fdE15597D3ADc15C77284A1`](https://feeds.witnet.io/feeds/conflux-testnet_btc-usd_6) | Stay tuned!
-| **CFX/USDT** | 6 | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29` | [`0x81cc73426944cC15BE22a3d7c812282E66F2c689`](https://feeds.witnet.io/feeds/conflux-testnet_cfx-usdt_6) | Stay tuned!
-| **ETH/USD**  | 6 | `dfaa6f747f0f012e8f2069d6ecacff25f5cdf0258702051747439949737fc0b5` | [`0x80DfFcbD9Fa48553fbC98aa7c21D50Ae47753C89`](https://feeds.witnet.io/feeds/conflux-testnet_eth-usd_6) | Stay tuned!
+| **BTC/USD**  | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | [`0x8594B74645644b6a5fdE15597D3ADc15C77284A1`](https://feeds.witnet.io/feeds/conflux-testnet_btc-usd_6) | [`0x84E250b43337512B04aa5449e3A15FB715b78E88`](https://feeds.witnet.io/feeds/conflux-mainnet_btc-usd_6)
+| **CFX/USDT** | 6 | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29` | [`0x81cc73426944cC15BE22a3d7c812282E66F2c689`](https://feeds.witnet.io/feeds/conflux-testnet_cfx-usdt_6) | [`0x86e9A67C92455afa725CC01b2036e47cd4dd9929`](https://feeds.witnet.io/feeds/conflux-mainnet_cfx-usdt_6
+| **ETH/USD**  | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | [`0x80DfFcbD9Fa48553fbC98aa7c21D50Ae47753C89`](https://feeds.witnet.io/feeds/conflux-testnet_eth-usd_6) | [`0x8Fd10Ad4913DC1F0049B46BfeD9F061e100B7ED9`](https://feeds.witnet.io/feeds/conflux-mainnet_eth-usd_6) 
 
 [ERC-2362]: https://github.com/adoracles/ado-contracts/blob/master/contracts/interfaces/IERC2362.sol
 [ADOIP-0010]: https://github.com/adoracles/ADOIPs/blob/main/adoip-0010.md#registered-ids

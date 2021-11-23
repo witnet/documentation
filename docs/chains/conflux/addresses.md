@@ -15,13 +15,13 @@ rather talk to the Witnet Request Board and other contracts directly using the i
 
 ## Witnet-provided addresses
 
-| Contract | Conflux.Testnet | Conflux.Mainnet |
+| Contract | Conflux.Testnet | Conflux.Tethys |
 | :------- | :-------------- | :-------------- |
-| **WitnetRequestBoard** | [`cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt`](https://testnet.confluxscan.io/address/cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt) | Stay tuned!
-| **WitnetParserLib**  | [`cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7`](https://testnet.confluxscan.io/address/cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7) | Stay tuned!
-| **BtcUsdPriceFeed**  | [`cfxtest:acc3kr4gjzwe04w952mzw9k45um6s6yeyehfrumbjg`](https://testnet.confluxscan.io/address/cfxtest:acc3kr4gjzwe04w952mzw9k45um6s6yeyehfrumbjg) | Stay tuned!
-| **CfxUsdtPriceFeed**  | [`cfxtest:aca6264crfcp2fr8emv7twawfa1gr60gvenht8s02u`](https://testnet.confluxscan.io/address/cfxtest:aca6264crfcp2fr8emv7twawfa1gr60gvenht8s02u) | Stay tuned!
-| **EthUsdPriceFeed** | [`cfxtest:acar99f7x8wjmy953gfmtuu7mc1es7k6ve2u7sfbjz`](https://testnet.confluxscan.io/address/cfxtest:acar99f7x8wjmy953gfmtuu7mc1es7k6ve2u7sfbjz) | Stay tuned!
+| **WitnetRequestBoard** | [`cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt`](https://testnet.confluxscan.io/address/cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt) | [`cfx:accpscf948r53a7ru7k7zppff59k432w3uxv8ahfsh`](https://confluxscan.io/address/cfx:accpscf948r53a7ru7k7zppff59k432w3uxv8ahfsh)
+| **WitnetParserLib**  | [`cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7`](https://testnet.confluxscan.io/address/cfxtest:acbez2ctj9dmvuep19uyb88wstzw6k41wyzct8ezh7) | [`cfx:acce01z1j9zs5vv9hxwf717hcanxb239degecah33c`](https://confluxscan.io/address/cfx:acce01z1j9zs5vv9hxwf717hcanxb239degecah33c)
+| **BtcUsdPriceFeed**  | [`cfxtest:acc3kr4gjzwe04w952mzw9k45um6s6yeyehfrumbjg`](https://testnet.confluxscan.io/address/cfxtest:acc3kr4gjzwe04w952mzw9k45um6s6yeyehfrumbjg) | [`cfx:accseyfygp5zcm2ezkmex27bn85vnr6svakcrh5szz`](https://confluxscan.io/address/cfx:accseyfygp5zcm2ezkmex27bn85vnr6svakcrh5szz)
+| **CfxUsdtPriceFeed**  | [`cfxtest:aca6264crfcp2fr8emv7twawfa1gr60gvenht8s02u`](https://testnet.confluxscan.io/address/cfxtest:aca6264crfcp2fr8emv7twawfa1gr60gvenht8s02u) | [`cfx:acdsxkx6wkczz8xwnxab0jb06v8rk1p3fe62ga6gzd`](https://confluxscan.io/address/cfx:acdsxkx6wkczz8xwnxab0jb06v8rk1p3fe62ga6gzd)
+| **EthUsdPriceFeed** | [`cfxtest:acar99f7x8wjmy953gfmtuu7mc1es7k6ve2u7sfbjz`](https://testnet.confluxscan.io/address/cfxtest:acar99f7x8wjmy953gfmtuu7mc1es7k6ve2u7sfbjz) | [`cfx:ach7cc0ywe86d6aexrdn95p9a2tbac585e9nt8m5c9`](https://confluxscan.io/address/cfx:ach7cc0ywe86d6aexrdn95p9a2tbac585e9nt8m5c9)
 
 [Witnet Solidity Bridge]: https://github.com/witnet/witnet-solidity-bridge
 [Witnet Truffle Box]: /try/use-from-ethereum

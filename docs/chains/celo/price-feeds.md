@@ -38,10 +38,12 @@ be found in [ADOIP-0010].
 
 ## Data Explorer links (and raw addresses)
 
-|              | Decimals | Asset ID | Conflux.Testnet | Conflux.Mainnet |
-| ------------ | :------: | :------- | :-------------- | :-------------- |
-| **BTC/USD**  | 6 | `637b7efb6b620736c247aaa282f3898914c0bef6c12faff0d3fe9d4bea783020` | [`0x4F8Ac2D45475A1894Cb85E3A21173d5e83041083`](https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6) | Stay tuned!
-| **ETH/USD**  | 6 | `dfaa6f747f0f012e8f2069d6ecacff25f5cdf0258702051747439949737fc0b5` | [`0xD182e334e3c7140F8a520d326E333CA5f1FB7dDa`](https://feeds.witnet.io/feeds/celo-alfajores_eth-usd_6) | Stay tuned!
+|              | Decimals | Asset ID | Celo.Alfajores  | Celo.Mainnet |
+| ------------ | :------: | :------- | :-------------- | :----------- |
+| **BTC/USD**  | 6 | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | [`0x4F8Ac2D45475A1894Cb85E3A21173d5e83041083`](https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6) | [`0xa1A950054d1F778B0758EBe89914410d01A37248`](https://feeds.witnet.io/feeds/celo-mainnet_btc-usd_6)
+| **ETH/USD**  | 6 | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | [`0xD182e334e3c7140F8a520d326E333CA5f1FB7dDa`](https://feeds.witnet.io/feeds/celo-alfajores_eth-usd_6) | [`0x3ebE9D7BF6cc4A4132c7fC75225f0D1c476d6ACb`](https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6)
+| **CELO/EUR**  | 6 | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2` | [`0x9627CB0314368BC70587912119a4F03Ba0b179B5`](https://feeds.witnet.io/feeds/celo-alfajores_celo-eur_6) | [`0xdDBf8eBC2C5435bf2251611466b45bf625a6E1DB`](https://feeds.witnet.io/feeds/celo-mainnet_celo-eur_6)
+| **CELO/USD**  | 6 | `9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073` | [`0xA4dBe748BA8E3220eAC07cB4c951909fc089c3dD`](https://feeds.witnet.io/feeds/celo-alfajores_celo-usd_6) | [`0x45EE6664E3be238C3ebC0462e0750e103ff6F24E`](https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6)
 
 [ERC-2362]: https://github.com/adoracles/ado-contracts/blob/master/contracts/interfaces/IERC2362.sol
 [ADOIP-0010]: https://github.com/adoracles/ADOIPs/blob/main/adoip-0010.md#registered-ids
