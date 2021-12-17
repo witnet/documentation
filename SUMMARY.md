@@ -46,7 +46,7 @@
 * [Requirements](node-operators/requirements.md)
 * [What to Expect](node-operators/what-to-expect.md)
 * [Docker Quick Start Guide](node-operators/docker-quick-start-guide.md)
-* [Next steps](node-operators/next-steps.md)
+* [Next steps](node-operators/nest-steps.md)
 * [CLI Reference](node-operators/cli-reference.md)
 * [Advanced Setups](node-operators/advanced-setups/README.md)
   * [Run Witnet as a systemd service](node-operators/advanced-setups/run-witnet-as-a-systemd-service.md)
