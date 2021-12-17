@@ -1,6 +1,6 @@
 # What is Witnet?
 
-### Witnet Is the Solution to the Oracle Problem <a href="#the-solution-a-decentralized-oracle-network" id="the-solution-a-decentralized-oracle-network"></a>
+### The Solution to the Oracle Problem <a href="#the-solution-a-decentralized-oracle-network" id="the-solution-a-decentralized-oracle-network"></a>
 
 The Witnet protocol creates an overlay network that connects smart contracts to any online data source. Sport results, stock prices, weather forecasts, randomness sources or even other blockchains can be easily queried (preferably through APIs).
 
@@ -8,7 +8,11 @@ The protocol describes a distributed network of peer nodes— colloquially named
 
 The bottom line is that a considerable number of randomly selected, anonymous peers retrieving information from one or more sources can converge into a single truth about the data they retrieved if they are incentivized to report the retrieved data honestly, they are punished or _slashed_ for any wrongdoing, and they apply a common consensus algorithm that resolves inconsistencies.
 
+### Its Own Blockchain
+
 This Decentralized Oracle Network (DON) maintains and distributes a block chain data structure that serves as a common ledger both for the operation of the protocol, and for the wit token (which incentives the network players to abide by the protocol and ensures they are liable for any misbehavior). Witnesses are also in charge of validating transactions in the network and bundling them into blocks that get appended to the blockchain periodically.
+
+### The Witnessing Network
 
 The process by which witnesses retrieve, attest and deliver data on behalf of the smart contracts is in some way similar to mining in other blockchains. However, fulfilling these tasks and collecting the rewards is not computationally expensive.
 
