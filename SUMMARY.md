@@ -5,12 +5,12 @@
 ## Introduction
 
 * [What's an oracle?](introduction/whats-an-oracle.md)
+* [Architecture](introduction/architecture.md)
 * [Quick Tutorials](introduction/quick-tutorials/README.md)
   * [Data Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [Randomness](introduction/quick-tutorials/randomness.md)
   * [APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [Mining Wit](introduction/quick-tutorials/mining-wit.md)
-* [Architecture](introduction/architecture.md)
 * [The Wit Token](introduction/the-wit-token.md)
 * [Sheikah Wallet](introduction/sheikah-wallet.md)
 * [Awesome Witnet](introduction/awesome-witnet.md)
