@@ -1,2 +1,0 @@
-# Sheikah Wallet
-

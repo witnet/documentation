@@ -12,7 +12,7 @@
   * [APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [Mining Wit](introduction/quick-tutorials/mining-wit.md)
 * [The Wit Token](introduction/the-wit-token.md)
-* [Sheikah Wallet](introduction/sheikah-wallet.md)
+* [Sheikah Witnet Wallet](introduction/sheikah-witnet-wallet.md)
 * [Awesome Witnet](introduction/awesome-witnet.md)
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
