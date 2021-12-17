@@ -4,7 +4,7 @@
 
 ## Introduction
 
-* [What's an oracle?](introduction/whats-an-oracle.md)
+* [What is Witnet?](introduction/what-is-witnet.md)
 * [Architecture](introduction/architecture.md)
 * [Quick Tutorials](introduction/quick-tutorials/README.md)
   * [Data Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)

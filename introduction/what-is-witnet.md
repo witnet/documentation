@@ -1,18 +1,6 @@
-# What's an oracle?
+# What is Witnet?
 
-### Blockchain Oracles, And Their Problem <a href="#blockchain-oracles-and-their-problem" id="blockchain-oracles-and-their-problem"></a>
-
-Given that smart contracts must be completely deterministic, they do not support input of data from non-deterministic sources such as APIs or websites.
-
-As a result, smart contracts are mostly isolated from the rest of the Internet, which dramatically reduces their transformative potential. At the end of the day, the output of a program does not depend solely on its source code, but also on the input data it operates upon.
-
-Of course, as the creator of a smart contract, you can create a method that allows you and only you to act as an "oracle" by introducing information from the outside at will. But you would be completely breaking the trustless nature of a smart contract. If trust is put in a single entity, then you have a single point of failure that can easily be hacked or corrupted.
-
-Smart contracts connected to the real world will not be completely trustless and will not release their full potential until we have ways to feed them information trustlessly.
-
-This is often called _"the oracle problem"_.
-
-### The Solution: A Decentralized Oracle Network <a href="#the-solution-a-decentralized-oracle-network" id="the-solution-a-decentralized-oracle-network"></a>
+### Witnet Is the Solution to the Oracle Problem <a href="#the-solution-a-decentralized-oracle-network" id="the-solution-a-decentralized-oracle-network"></a>
 
 The Witnet protocol creates an overlay network that connects smart contracts to any online data source. Sport results, stock prices, weather forecasts, randomness sources or even other blockchains can be easily queried (preferably through APIs).
 
