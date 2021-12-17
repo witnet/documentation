@@ -1,4 +1,4 @@
-# Data Feeds Tutorial
+# Data Feeds
 
 The easiest way to use an oracle to source external data into a smart contract is through a [Data Feed](../../smart-contracts/witnet-data-feeds/). More and more projects building on multiple blockchains are relying every day on the WItnet data feeds to get price references and other valuable data into their smart contracts.
 
@@ -18,7 +18,11 @@ A complete list of publicly available Witnet data feeds on Witnet's many support
 
 {% embed url="https://feeds.witnet.io" %}
 
-The [Data Feeds Contract Addresses](../../smart-contracts/witnet-data-feeds/contract-addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains.
+The [Data Feeds Contract Addresses](../../smart-contracts/witnet-data-feeds/contract-addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains:
+
+{% content-ref url="../../smart-contracts/witnet-data-feeds/contract-addresses/" %}
+[contract-addresses](../../smart-contracts/witnet-data-feeds/contract-addresses/)
+{% endcontent-ref %}
 
 ### Learn More About Witnet Data Feeds
 

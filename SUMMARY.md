@@ -6,7 +6,7 @@
 
 * [What's an oracle?](introduction/whats-an-oracle.md)
 * [Quick Tutorials](introduction/quick-tutorials/README.md)
-  * [Data Feeds Tutorial](introduction/quick-tutorials/data-feeds-tutorial.md)
+  * [Data Feeds](introduction/quick-tutorials/data-feeds.md)
   * [Randomness](introduction/quick-tutorials/randomness.md)
   * [APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [Mining Wit](introduction/quick-tutorials/mining-wit.md)
@@ -39,7 +39,7 @@
   * [Make a POST Request](smart-contracts/apis-and-http-get-post-oracle/make-a-post-request.md)
   * [Witnet Request Board](smart-contracts/apis-and-http-get-post-oracle/witnet-request-board.md)
   * [API Reference](smart-contracts/apis-and-http-get-post-oracle/api-reference.md)
-  * [Contracts Addresses](smart-contracts/apis-and-http-get-post-oracle/contracts-addresses.md)
+  * [Contract Addresses](smart-contracts/apis-and-http-get-post-oracle/contract-addresses.md)
 
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
 
