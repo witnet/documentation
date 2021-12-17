@@ -4,10 +4,10 @@ Here you can find straight-to-the-point tutorials on how to start using the Witn
 
 ### Data Feeds Tutorial
 
-The [Data Feeds tutorial](data-feeds.md) gives a quick overlook on what are data feeds, how the Witnet data feeds work, and how to start using them with only a few lines of Solidity:
+The [Data Feeds tutorial](data-feeds-tutorial.md) gives a quick overlook on what are data feeds, how the Witnet data feeds work, and how to start using them with only a few lines of Solidity:
 
-{% content-ref url="data-feeds.md" %}
-[data-feeds.md](data-feeds.md)
+{% content-ref url="data-feeds-tutorial.md" %}
+[data-feeds-tutorial.md](data-feeds-tutorial.md)
 {% endcontent-ref %}
 
 ### Randomness Tutorial
