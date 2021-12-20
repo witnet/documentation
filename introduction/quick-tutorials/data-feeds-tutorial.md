@@ -10,7 +10,7 @@ Using Witnet data feeds to source prices and other data is extremely simple. Thi
 
 {% embed url="https://gist.github.com/aesedepece/d5c27c0ae2312937472274738bcd96f1" %}
 
-The `IWitnetPriceFeed` interface can be found in the `witnet-solidity-bridge` [npm package](https://www.npmjs.com/package/witnet-solidity-bridge), among many other Witnet related interfaces, contracts and utilities.
+The `IWitnetPriceFeed` interface can be found in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge), among many other Witnet related interfaces, contracts and utilities.
 
 ### What Data Feeds Are Currently Available?
 
