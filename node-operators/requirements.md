@@ -1,5 +1,11 @@
 # Requirements
 
+{% hint style="success" %}
+**The Witnet mainnet is a totally permissionless and open network.**
+
+Everyone is free to join and run their own validator node on equal terms. There exist no requirements other than these technical requirements!
+{% endhint %}
+
 Witnet mining uses a probabilistic BFT-alike consensus algorithm, so no Proof-of-Work is necessary. In addition, `witnet-rust` is written in Rust, one of the most performance-focussed and secure programming languages available. When compiled, the resulting binary is tailored to each specific platform, which guarantees near-zero overhead.
 
 The hardware requirements for running a full node are therefore incredibly low. Obviously, the more resources you spare when provisioning your machine, the better it will perform and the less likely it will be to run into issues.

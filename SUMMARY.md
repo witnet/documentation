@@ -5,7 +5,7 @@
 ## Introduction
 
 * [What is Witnet?](introduction/what-is-witnet.md)
-* [Architecture](introduction/architecture.md)
+* [Frequently Asked Questions](introduction/frequently-asked-questions.md)
 * [Quick Tutorials](introduction/quick-tutorials/README.md)
   * [Data Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [Randomness](introduction/quick-tutorials/randomness.md)
@@ -13,6 +13,7 @@
   * [Mining Wit](introduction/quick-tutorials/mining-wit.md)
 * [The Wit Token](introduction/the-wit-token.md)
 * [Sheikah Witnet Wallet](introduction/sheikah-witnet-wallet.md)
+* [Architecture](introduction/architecture.md)
 * [Awesome Witnet](introduction/awesome-witnet.md)
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
@@ -47,7 +48,6 @@
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
 
 * [Requirements](node-operators/requirements.md)
-* [What to Expect](node-operators/what-to-expect.md)
 * [Docker Quick Start Guide](node-operators/docker-quick-start-guide.md)
 * [Next steps](node-operators/nest-steps.md)
 * [CLI Reference](node-operators/cli-reference.md)
