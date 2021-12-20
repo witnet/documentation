@@ -11,7 +11,7 @@
   * [Randomness](introduction/quick-tutorials/randomness.md)
   * [APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [Mining Wit](introduction/quick-tutorials/mining-wit.md)
-* [The Wit Token](introduction/the-wit-token.md)
+* [The Witnet Token (Wit)](introduction/the-witnet-token-wit.md)
 * [Sheikah Witnet Wallet](introduction/sheikah-witnet-wallet.md)
 * [Architecture](introduction/architecture.md)
 * [Awesome Witnet](introduction/awesome-witnet.md)
