@@ -31,7 +31,7 @@
     * [Metis Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/metis-data-feeds.md)
     * [Request a new price feed or network](https://witnet.io)
 * [Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
-  * [Sourcing Randomness](smart-contracts/witnet-randomness-oracle/sourcing-randomness.md)
+  * [Generating Randomness in your Smart Contracts](smart-contracts/witnet-randomness-oracle/generating-randomness-in-your-smart-contracts.md)
   * [Advanced Examples](smart-contracts/witnet-randomness-oracle/advanced-examples.md)
   * [Security Considerations and Best Practices](smart-contracts/witnet-randomness-oracle/security-considerations.md)
   * [Low-level Randomness Queries](smart-contracts/witnet-randomness-oracle/low-level-randomness-queries.md)

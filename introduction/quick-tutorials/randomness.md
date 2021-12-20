@@ -14,7 +14,7 @@ This example shows how easy is to source random `uint32` values into your own co
 
 {% embed url="https://gist.github.com/aesedepece/5bfd2096c78d8f86f130fc8afcbb2fe5" %}
 
-{% hint style="info" %}
+{% hint style="success" %}
 This example follows a very common workflow for many randomness use cases: first you need to take note of the current block number and ask the `WitnetRNG` to reseed itself, then, at a later time, you will be retrieving a random number that is derived from the random seed that was generated as a response to your former request.
 
 This 2-step process preserves unpredictability of the random numbers that you get because it guarantees that the number is derived from a seed that was generated only after the request was sent.

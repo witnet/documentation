@@ -22,8 +22,8 @@ At a later time, the random sequences are revealed and deterministically aggrega
 
 The next section contains a number of useful resources, examples and walkthroughs on how to use the Witnet randomness oracle to generate random numbers and byte arrays in your own smart contracts:
 
-{% content-ref url="sourcing-randomness.md" %}
-[sourcing-randomness.md](sourcing-randomness.md)
+{% content-ref url="generating-randomness-in-your-smart-contracts.md" %}
+[generating-randomness-in-your-smart-contracts.md](generating-randomness-in-your-smart-contracts.md)
 {% endcontent-ref %}
 
 {% content-ref url="advanced-examples.md" %}
