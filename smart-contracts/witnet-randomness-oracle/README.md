@@ -30,8 +30,8 @@ The next section contains a number of useful resources, examples and walkthrough
 [advanced-examples.md](advanced-examples.md)
 {% endcontent-ref %}
 
-{% content-ref url="security-considerations-and-best-practices.md" %}
-[security-considerations-and-best-practices.md](security-considerations-and-best-practices.md)
+{% content-ref url="security-considerations.md" %}
+[security-considerations.md](security-considerations.md)
 {% endcontent-ref %}
 
 {% content-ref url="../apis-and-http-get-post-oracle/api-reference.md" %}

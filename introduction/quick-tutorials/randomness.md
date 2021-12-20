@@ -6,7 +6,7 @@ This is specially useful for lotteries, gaming, and assigning randomized sets of
 
 ### Using the Witnet Randomness Oracle, in a nutshell
 
-On each EVM compatible chains supported by Witnet there is an instance of the `WitnetRNG` contract that exposes the main randomness oracle functionality through a very simple interface.
+On each of the [EVM compatible chains supported by Witnet](../../smart-contracts/apis-and-http-get-post-oracle/contracts-addresses.md) there is an instance of the `WitnetRNG` contract that exposes the main randomness oracle functionality through a very simple interface.
 
 The best way to interact with the `WitnetRNG` contract is through the `IWitnetRNG` interface, which is readily available in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge).
 
