@@ -22,7 +22,7 @@ In this multi-chain scenario we are entering, everyone should be free to chose f
 
 Having its own blockchain also guarantees that the fate of the Witnet oracle is not tied to that of any other blockchain, making Witnet much more independent and totally agnostic from specific smart contract platforms.
 
-{% hint style="info" %}
+{% hint style="success" %}
 Even though Witnet runs on its own blockchain, it is connected to the most popular smart contract enabled blockchains, and from the perspective of the average smart contract developer, using Witnet feels totally like using a native contract on each of those chains.
 
 In addition, many oracle use cases (like [price feeds](quick-tutorials/data-feeds-tutorial.md) or [random number generation](quick-tutorials/randomness.md)) are also served through simpler interfaces that do not require the user to create and deploy any data requests.
@@ -46,7 +46,7 @@ The Witnet protocol was designed to be agnostic over the nature of the sourced d
 * [HTTP POST](quick-tutorials/apis-and-http-get-post.md), which provides a convenient way to query more sophisticated [REST and GraphQL APIs](quick-tutorials/apis-and-http-get-post.md).
 * [RNG](quick-tutorials/randomness.md), which allows to generate [random numbers and byte arrays](quick-tutorials/randomness.md).
 
-{% hint style="info" %}
+{% hint style="success" %}
 Witnet uses an RFC-8949 based binary format named RADON to encode and decode data requests.
 
 However, when used from Solidity and other smart contract languages, Witnet provides a Javascript-like DSL that makes the experience of composing a data request specially convenient and intuitive.
@@ -63,7 +63,7 @@ Once a data request is published into a Witnet block, it will undergo the follow
 
 _Commit_, _Reveal_, and _Tally_ are performed on-chain through special types of transactions in the Witnet protocol that are allocated each a reserved amount of block space, ensuring that data requests are resolved timely even when there is a big number of value transfer transactions (VTTs) happening in the network.
 
-{% hint style="info" %}
+{% hint style="success" %}
 When publishing a data request from Ethereum or any other smart contracts platform, the data request and its eventual result will be relayed to the Witnet blockchain by a set of _bridge nodes_ that is different from the witnessing nodes of the Witnet network.&#x20;
 {% endhint %}
 
