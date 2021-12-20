@@ -33,7 +33,7 @@
 * [Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
   * [Sourcing Randomness](smart-contracts/witnet-randomness-oracle/sourcing-randomness.md)
   * [Advanced Examples](smart-contracts/witnet-randomness-oracle/advanced-examples.md)
-  * [Security Considerations](smart-contracts/witnet-randomness-oracle/security-considerations.md)
+  * [Security Considerations and Best Practices](smart-contracts/witnet-randomness-oracle/security-considerations-and-best-practices.md)
   * [API Reference](smart-contracts/witnet-randomness-oracle/api-reference.md)
   * [Low-level Randomness Queries](smart-contracts/witnet-randomness-oracle/low-level-randomness-queries.md)
 * [APIs and HTTP GET/POST Oracle](smart-contracts/apis-and-http-get-post-oracle/README.md)
