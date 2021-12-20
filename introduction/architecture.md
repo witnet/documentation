@@ -89,6 +89,6 @@ When the 2/3rds committee consensus requirement is not met, the latest 10 blocks
 
 Although not a best practice, some users may consider however that transactions are final as soon as they are included into a block, which normally takes less than 1 minute. This is based on the fact that superblock consensus failures are very rare nowadays (the last episode took place on October 12th, 2021).
 
-Here is a more extensive read on Witnet transaction finality, superblocks, and more:
+Here is a more extensive read on Witnet transaction finality, superblock voting, and other related topics:
 
 {% embed url="https://medium.com/witnet/witnet-tech-pill-1-transaction-and-block-finality-34472558ddb5" %}
