@@ -65,7 +65,7 @@ description: >-
 #### Exchanges
 
 * [Gate.io (WIT/USDT)](https://www.gate.io/trade/WIT\_USDT)
-* G[ate.io (WIT/ETH)](https://www.gate.io/trade/WIT\_ETH)
+* [Gate.io (WIT/ETH)](https://www.gate.io/trade/WIT\_ETH)
 * [Gate.io (WIT/BTC)](https://www.gate.io/trade/WIT\_BTC)
 
 ### General
