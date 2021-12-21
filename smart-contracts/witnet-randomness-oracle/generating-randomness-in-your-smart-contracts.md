@@ -18,22 +18,22 @@ This 2-step process preserves unpredictability of the random numbers that you ge
 
 #### Range of the Random Numbers
 
-This example is generating random numbers in the range `[0, 4,294,967,295]`, but you can reduce that range down at will through the first argument of the `witnet.random` function:
+This example is generating random numbers in the range `[0, 4294967296)`, but you can narrow that range down at will through the first argument of the `witnet.random` function:
 
 ```solidity
-fromZeroToNine = witnet.random(9, 0, latestRandomizingBlock);
+fromZeroToNine = witnet.random(10, 0, latestRandomizingBlock);
 ```
 
-As `witnet.random` always assumes that the range always starts with `0`, you can use an addition to offset the range. For example, to make it `[1, 12]`:
+As `witnet.random` always assumes that the range starts with `0`, you can use an addition to offset the range. For example, to make it `[1, 12]`:
 
 ```solidity
-month = 1 + witnet.random(11, 0, latestRandomizingBlock);
+month = 1 + witnet.random(12, 0, latestRandomizingBlock);
 ```
 
 And for `[-100, 100]`:
 
 ```solidity
-temperature = -100 + witnet.random(200, 0, latestRandomizingBlock);
+temperature = -100 + witnet.random(201, 0, latestRandomizingBlock);
 ```
 
 {% hint style="info" %}

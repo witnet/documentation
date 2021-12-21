@@ -28,3 +28,6 @@ You can find here the complete documentation and API reference for the Witnet ra
 [witnet-randomness-oracle](../../smart-contracts/witnet-randomness-oracle/)
 {% endcontent-ref %}
 
+{% content-ref url="../../smart-contracts/witnet-randomness-oracle/generating-randomness-in-your-smart-contracts.md" %}
+[generating-randomness-in-your-smart-contracts.md](../../smart-contracts/witnet-randomness-oracle/generating-randomness-in-your-smart-contracts.md)
+{% endcontent-ref %}
