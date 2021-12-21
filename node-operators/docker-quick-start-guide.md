@@ -45,7 +45,7 @@ docker run -d --name witnet-node --volume %USERPROFILE%\.witnet\:/.witnet --publ
 {% endtab %}
 
 {% tab title="Raspberry Pi" %}
-For some reason, Docker on Raspbian for all Raspberry models requires your containers to operate in privileged mode. When running the command above, simply add the `--privileged` flag:
+Docker on Raspbian for all Raspberry models requires your containers to operate in privileged mode to have access to the system clock. When running the command above, simply add the `--privileged` flag:
 
 ```
 docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
