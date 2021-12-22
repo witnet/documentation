@@ -10,7 +10,7 @@ Witnet can power most DeFi primitives like price feeds, stablecoins, synthetics,
 
 The Witnet oracle is currently available on [Ethereum](smart-contracts/witnet-data-feeds/contract-addresses/ethereum-data-feeds.md), [Conflux](smart-contracts/witnet-data-feeds/contract-addresses/conflux-data-feeds.md), [Boba](smart-contracts/witnet-data-feeds/contract-addresses/boba-data-feeds.md), [Celo](smart-contracts/witnet-data-feeds/contract-addresses/celo-data-feeds.md), [KCC](smart-contracts/witnet-data-feeds/contract-addresses/kcc-data-feeds.md), [Metis](smart-contracts/witnet-data-feeds/contract-addresses/metis-data-feeds.md) and other blockchains.
 
-### Featured links
+### Featured sections
 
 {% content-ref url="introduction/the-witnet-token-wit.md" %}
 [the-witnet-token-wit.md](introduction/the-witnet-token-wit.md)
