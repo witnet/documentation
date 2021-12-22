@@ -41,11 +41,11 @@
   * [API Reference](smart-contracts/witnet-randomness-oracle/api-reference.md)
   * [Contract Addresses](smart-contracts/witnet-randomness-oracle/contract-addresses.md)
 * [APIs and HTTP GET/POST Oracle](smart-contracts/apis-and-http-get-post-oracle/README.md)
-  * [Make an HTTP GET Request](smart-contracts/apis-and-http-get-post-oracle/make-an-http-get-request.md)
-  * [Make an HTTP POST Request](smart-contracts/apis-and-http-get-post-oracle/make-an-http-post-request.md)
+  * [Make an HTTP GET Request](smart-contracts/apis-and-http-get-post-oracle/make-a-get-request.md)
+  * [Make an HTTP POST Request](smart-contracts/apis-and-http-get-post-oracle/make-a-post-request.md)
   * [UsingWitnet Inheritance](smart-contracts/apis-and-http-get-post-oracle/usingwitnet-inheritance.md)
   * [Witnet Request Board](smart-contracts/apis-and-http-get-post-oracle/witnet-request-board.md)
-  * [RADON API Reference](smart-contracts/apis-and-http-get-post-oracle/radon-api-reference.md)
+  * [RADON API Reference](smart-contracts/apis-and-http-get-post-oracle/api-reference.md)
   * [Contract Addresses](smart-contracts/apis-and-http-get-post-oracle/contracts-addresses.md)
 
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>

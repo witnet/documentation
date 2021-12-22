@@ -62,7 +62,7 @@ export { request as default }
 ```
 
 {% hint style="info" %}
-Want to make sense of all the Javascript above? Please make sure to check out the full [HTTP GET tutorial](../../smart-contracts/apis-and-http-get-post-oracle/make-an-http-get-request.md), where every step is explained in detail
+Want to make sense of all the Javascript above? Please make sure to check out the full [HTTP GET tutorial](../../smart-contracts/apis-and-http-get-post-oracle/make-a-get-request.md), where every step is explained in detail
 {% endhint %}
 
 ### Learn More About The Witnet HTTP GET/POST Oracle
