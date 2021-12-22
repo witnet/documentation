@@ -23,6 +23,20 @@ The cost really depends on what level does your smart contract integrate with Wi
 
 You can find all the information relative to the Wit token in its own section of the docs:
 
+### Ecosystem
+
+#### What blockchains does Witnet support?
+
+The currently supported networks are:
+
+* Ethereum (mainnet, rinkeby, goerli)
+* Conflux (tethys, testnet)
+* Boba (mainnet, testnet)
+* Celo (mainnet, alfajores)
+* KuCoin Community Chain (testnet)
+* Metis (testnet)
+* Polygon (testnet)
+
 {% content-ref url="the-witnet-token-wit.md" %}
 [the-witnet-token-wit.md](the-witnet-token-wit.md)
 {% endcontent-ref %}
