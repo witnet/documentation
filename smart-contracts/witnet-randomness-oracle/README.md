@@ -34,8 +34,8 @@ The next section contains a number of useful resources, examples and walkthrough
 [security-considerations.md](security-considerations.md)
 {% endcontent-ref %}
 
-{% content-ref url="../apis-and-http-get-post-oracle/api-reference.md" %}
-[api-reference.md](../apis-and-http-get-post-oracle/api-reference.md)
+{% content-ref url="../apis-and-http-get-post-oracle/radon-api-reference.md" %}
+[radon-api-reference.md](../apis-and-http-get-post-oracle/radon-api-reference.md)
 {% endcontent-ref %}
 
 {% content-ref url="low-level-randomness-queries.md" %}

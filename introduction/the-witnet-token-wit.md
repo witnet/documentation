@@ -1,4 +1,4 @@
-# The Witnet Token (Wit)
+# 🪙 The Witnet Token (Wit)
 
 ### Utility of the Wit Token
 

@@ -1,4 +1,4 @@
-# Quick Tutorials
+# 🚀 Quick Tutorials
 
 Here you can find straight-to-the-point tutorials on how to start using the Witnet oracle and other relevant topics like operating Witnet nodes and mining Wit tokens.
 

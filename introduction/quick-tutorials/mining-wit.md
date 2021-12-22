@@ -1,4 +1,4 @@
-# Mining Wit
+# ⛏ Mining Wit
 
 {% hint style="info" %}
 You do not need to run a Witnet node to use Witnet from your Ethereum smart contracts.&#x20;

@@ -1,10 +1,10 @@
-# Randomness
+# 🔀 Randomness
 
 In October 2021, a new Random Number Generator (RNG) capability was added to the Witnet protocol, allowing for secure sourcing of random numbers and byte arrays into smart contracts.
 
 This is specially useful for lotteries, gaming, and assigning randomized sets of traits to NFT collection items to make them unique.
 
-### Using the Witnet Randomness Oracle, in a nutshell
+### Using the Witnet Randomness Oracle in your Solidity smart contracts
 
 On each of the [EVM compatible chains supported by Witnet](../../smart-contracts/apis-and-http-get-post-oracle/contracts-addresses.md) there is an instance of the `WitnetRNG` contract that exposes the main randomness oracle functionality through a very simple interface.
 

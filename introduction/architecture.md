@@ -1,4 +1,4 @@
-# Architecture
+# ⚙ Architecture
 
 {% hint style="info" %}
 This article explores the characteristics and intricacies of Witnet from a purely internal perspective. This can be useful to understand the processes supporting the security and data integrity properties of the protocol.&#x20;

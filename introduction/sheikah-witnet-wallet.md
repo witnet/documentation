@@ -1,4 +1,4 @@
-# Sheikah Witnet Wallet
+# 👛 Sheikah Witnet Wallet
 
 [Sheikah](https://sheikah.app) is an open source desktop wallet compatible with Witnet, as well as an integrated development environment for creating and deploying Witnet data requests:
 
