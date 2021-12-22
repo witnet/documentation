@@ -4,17 +4,18 @@
 
 ## Introduction
 
-* [What is Witnet?](introduction/what-is-witnet.md)
-* [Frequently Asked Questions](introduction/frequently-asked-questions.md)
-* [Quick Tutorials](introduction/quick-tutorials/README.md)
+* [❓ What is Witnet?](introduction/what-is-witnet.md)
+* [🤔 Frequently Asked Questions](introduction/frequently-asked-questions.md)
+* [🚀 Quick Tutorials](introduction/quick-tutorials/README.md)
   * [Data Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [Randomness](introduction/quick-tutorials/randomness.md)
   * [APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [Mining Wit](introduction/quick-tutorials/mining-wit.md)
-* [The Witnet Token (Wit)](introduction/the-witnet-token-wit.md)
-* [Sheikah Witnet Wallet](introduction/sheikah-witnet-wallet.md)
-* [Architecture](introduction/architecture.md)
-* [Awesome Witnet](introduction/awesome-witnet.md)
+* [🪙 The Witnet Token (Wit)](introduction/the-witnet-token-wit.md)
+* [👛 Sheikah Witnet Wallet](introduction/sheikah-witnet-wallet.md)
+* [⚙ Architecture](introduction/architecture.md)
+* [⛓ Supported chains](introduction/supported-chains.md)
+* [💥 Awesome Witnet](introduction/awesome-witnet.md)
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
 
@@ -25,6 +26,7 @@
   * [API Reference](smart-contracts/witnet-data-feeds/api-reference.md)
   * [Contract Addresses](smart-contracts/witnet-data-feeds/contract-addresses/README.md)
     * [Ethereum Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/ethereum-data-feeds.md)
+    * [Polygon Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/polygon-data-feeds.md)
     * [Conflux Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/conflux-data-feeds.md)
     * [Boba Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/boba-data-feeds.md)
     * [Celo Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/celo-data-feeds.md)

@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# 🤔 Frequently Asked Questions
 
 ### Witnet Protocol
 
@@ -27,16 +27,8 @@ You can find all the information relative to the Wit token in its own section of
 
 #### What blockchains does Witnet support?
 
-The currently supported networks are:
+The currently supported networks are listed here:
 
-* Ethereum (mainnet, rinkeby, goerli)
-* Conflux (tethys, testnet)
-* Boba (mainnet, testnet)
-* Celo (mainnet, alfajores)
-* KuCoin Community Chain (testnet)
-* Metis (testnet)
-* Polygon (testnet)
-
-{% content-ref url="the-witnet-token-wit.md" %}
-[the-witnet-token-wit.md](the-witnet-token-wit.md)
+{% content-ref url="supported-chains.md" %}
+[supported-chains.md](supported-chains.md)
 {% endcontent-ref %}
