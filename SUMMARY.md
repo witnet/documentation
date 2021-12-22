@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Witnet Oracle Docs](README.md)
+* [🏠 Witnet Oracle Docs](README.md)
 
 ## Introduction
 
