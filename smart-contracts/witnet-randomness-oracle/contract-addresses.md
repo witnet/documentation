@@ -10,6 +10,8 @@
 
 ### Celo
 
+### Harmony
+
 ### KuCoin Community Chain
 
 ### Metis

@@ -30,6 +30,7 @@
     * [Conflux Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/conflux-data-feeds.md)
     * [Boba Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/boba-data-feeds.md)
     * [Celo Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/celo-data-feeds.md)
+    * [Harmony Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/harmony-data-feeds.md)
     * [KCC Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/kcc-data-feeds.md)
     * [Metis Data Feeds](smart-contracts/witnet-data-feeds/contract-addresses/metis-data-feeds.md)
     * [Request a new price feed or network](https://witnet.io)
