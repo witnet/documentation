@@ -21,16 +21,16 @@ description: >-
 
 ### Chains with upcoming support
 
-| Platform                         | Networks                                     | Progress     |
-| -------------------------------- | -------------------------------------------- | ------------ |
-| **Polygon**                      | <ul><li>mainnet</li></ul>                    | In progress  |
-| **KuCoin Community Chain (KCC)** | <ul><li>mainnet</li></ul>                    | In progress  |
-| **Metis**                        | <ul><li>stardust</li></ul>                   | In progress  |
-| **Harmony**                      | <ul><li>mainnet</li></ul>                    | ETA: 2022 Q1 |
-| **Avalanche**                    | <ul><li>testnet</li><li>mainnet</li></ul>    | ETA: 2022 Q1 |
-| **Arbitrum**                     | <ul><li>testnet</li><li>mainnet</li></ul>    | ETA: 2022 Q1 |
-| **Aurora**                       | <ul><li>testnet</li><li>mainnet</li></ul>    | ETA: 2022 Q2 |
-| **Moonbeam**                     | <ul><li>moonriver</li><li>moonbeam</li></ul> | ETA: 2022 Q2 |
-| **Optimism**                     | <ul><li>kovan</li><li>mainnet</li></ul>      | ETA: 2022 Q2 |
+| Platform                         | Networks                                     | Progress           |
+| -------------------------------- | -------------------------------------------- | ------------------ |
+| **Polygon**                      | <ul><li>mainnet</li></ul>                    | ETA: January 2022  |
+| **KuCoin Community Chain (KCC)** | <ul><li>mainnet</li></ul>                    | ETA: January 2022  |
+| **Metis**                        | <ul><li>stardust</li></ul>                   | ETA: January 2022  |
+| **Harmony**                      | <ul><li>mainnet</li></ul>                    | ETA: February 2022 |
+| **Avalanche**                    | <ul><li>testnet</li><li>mainnet</li></ul>    | ETA: 2022 Q1       |
+| **Arbitrum**                     | <ul><li>testnet</li><li>mainnet</li></ul>    | ETA: 2022 Q1       |
+| **Aurora**                       | <ul><li>testnet</li><li>mainnet</li></ul>    | ETA: 2022 Q2       |
+| **Moonbeam**                     | <ul><li>moonriver</li><li>moonbeam</li></ul> | ETA: 2022 Q2       |
+| **Optimism**                     | <ul><li>kovan</li><li>mainnet</li></ul>      | ETA: 2022 Q2       |
 
 ### Request support for a new chain
