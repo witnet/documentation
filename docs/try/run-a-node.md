@@ -42,7 +42,7 @@ To start a node, use:
 !!! warning "Windows users"
     The home directory path is defined differently on Windows:
     ```console
-    docker run -d --name witnet-node --volume %USERPROFILE%\.witnet\:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
+    docker run -d --name witnet_node --volume %USERPROFILE%\.witnet\:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
     ```
 
 !!! warning "Raspberry Pi users"
