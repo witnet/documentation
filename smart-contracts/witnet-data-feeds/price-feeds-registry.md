@@ -1,2 +1,2 @@
-# Price Feeds Registry
+# Price Feeds Router
 
