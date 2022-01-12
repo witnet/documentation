@@ -46,15 +46,10 @@ contract MyContractBoba {
     
     /**
      * Network: Boba Rinkeby
-     * WitnetPriceRouter: 0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a
+     * WitnetPriceRouter: 0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25
      */
     constructor()
-        router = IWitnetPriceRouter(0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a);
-    }
-    
-    /// Returns the BOBA / USDT price (6 decimals), ultimately provided by the Witnet oracle.
-    function getBobaUsdtPrice() public view returns (int128 _price) {
-        (_price,,) = router.valueFor(bytes32(0xf723bde1));
+        router = IWitnetPriceRouter(0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25);
     }
     
     /// Returns the BTC / USD price (6 decimals), ultimately provided by the Witnet oracle.
@@ -75,6 +70,40 @@ contract MyContractBoba {
 }
 ```
 > Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses. 
+
+#### **Forcing an update on a Witnet-maintained price feed**
+First, get from the Price Router contract the Price Feed address of the contract that is currently serving price updates. Then, just call on the `requestUpdate() payable` method.
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.11;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
+
+contract MyContractConflux {
+    IWitnetPriceRouter public router;
+    
+    /**
+     * Network: Conflux Testnet
+     * WitnetPriceRouter: 0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a
+     */
+    constructor()
+        router = IWitnetPriceRouter(0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a);
+    }
+    
+    /// Force udpate on the CFX / USDT currency pair
+    function forceCfxUsdtUpdate() external payable returns (uint256 _usedFunds) {
+        IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes32(0x65784185));
+        uint _updateFee = _priceFeed.estimateFee(tx.gasprice);
+        _priceFeed.requestUpdate{value: _updateFee}();
+        if (msg.value > _updateFee) {
+            payable(msg.sender).transfer(msg.value - _updateFee);
+        }
+    }
+    
+    // ...
+}
+```
 
 ### Javascript example
 
@@ -108,7 +137,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 
 ### Addresses
 (tab: Mainnets)
-| EVM chain | `WitnetPriceRouter` | Supported currency pairs
+| EVM chain | `WitnetPriceRouter` address | Supported currency pairs
 |-| :- | :-
 | ***Boba** (L2)* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract) | <a href="https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>
 | ***Celo*** | [`0x931673904eB6E69D775e35F522c0EA35575297Cb`](https://explorer.celo.org/address/0x931673904eB6E69D775e35F522c0EA35575297Cb/read-contract) | <a href="https://feeds.witnet.io/feeds/celo-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
@@ -118,7 +147,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 | ***Metis** (L2)* | [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://andromeda-explorer.metis.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 
 (tab: Testnets)
-| EVM chain | `WitnetPriceRouter` | Supported currency pairs
+| EVM chain | `WitnetPriceRouter` address | Supported currency pairs
 |-| :- | :-
 | ***Boba** Rinkeby* | [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract) | <a href="https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9" target="_blank" rel="noopener noreferrer">OMG/BTC-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9" target="_blank" rel="noopener noreferrer">OMG/ETH-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6" target="_blank" rel="noopener noreferrer">OMG/USDT-6</a>
 | ***Celo** Alfajores* | [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract) | <a href="https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
@@ -150,7 +179,7 @@ Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witn
 | `supportsInterface(bytes4)` | Tells whether this contract implements the interface defined by its `interfaceId`. See [EIP-165](https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]). Should return `true` when querying at least for either the **IERC165** (i.e. `0x01ffc9a7`) or the **IWitnetPriceFeed** (i.e. ``) interface ids. 
 
 ### Javascript DSL
-Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. The bytecodes have been compiled off-chain from their equivalent Javascript DSL scripts:
+Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. These bytecodes have been compiled off-chain from their equivalent Javascript DSL scripts:
 
 (tab: BOBA/USDT-6)
     [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js]
