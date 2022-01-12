@@ -119,7 +119,7 @@ print("> latestUpdateStatus:", valueFor[2])
 Open functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
 | Function | Description
 | :- | :-
-| `currencyPairId(string)` | Pure helper function returning the `keccak256` hash of the provided currency pair caption (aka ID).
+| `currencyPairId(string)` | Pure helper function returning the `keccak256` hash (aka ID) of the provided string caption.
 
 
 
