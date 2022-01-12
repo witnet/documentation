@@ -27,7 +27,7 @@ This table contains the currency pairs that are updated by the Witnet Foundation
 > For the sake of simplicity, Witnet-supported currency pairs can also be identified by just using the first 4 bytes of the `keccak256` hash.
 
 ## Code snippets
-### Solidity
+### Solidity example
 To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official contract address, depending on the EVM chain in which you plan to deploy your contract. 
 
 For instance, this example show a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
@@ -73,7 +73,7 @@ contract MyContractBoba {
 ```
 > Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses. 
 
-### Javascript
+### Javascript example
 
 You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
 
@@ -115,8 +115,12 @@ print("> latestUpdateStatus:", valueFor[2])
 | ***Metis** Stardust* | [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 | ***Polygon** Mumbai* | [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract) | <a href="https://feeds.witnet.io/feeds/polygon-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/polygon-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 
-### Interface
-### Source code
+### API reference
+API reference for the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
+| Function | Description
+| :- | :-
+| `currencyPairId(string)` | Helper function: returns hash of the provided currency pair caption (aka ID).
+
 
 
 
