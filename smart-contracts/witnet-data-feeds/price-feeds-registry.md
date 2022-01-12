@@ -13,7 +13,7 @@ You may also retrieve the Price Feed contract currently serving a given currency
 This table contains the currency pairs that are updated by the Witnet Foundation on a regular basis:
 
 | **Caption** | **Full identifier** | **ID4**
-|:- | :- | -:
+|:- | :- | :-
 | Price-**BOBA/USDT-6** | `f723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af` | **`0xf723bde1`**
 | Price-**BTC/USD-6** | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | **`0x24beead4`**
 | Price-**CELO/EUR-6** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2` | **`0x21a79821`**
@@ -29,8 +29,9 @@ This table contains the currency pairs that are updated by the Witnet Foundation
 > For the sake of simplicity, Witnet-supported currency pairs can also be identified by just using the first 4 bytes of the `keccak256` hash.
 
 ## Code snippets
-### Solidity example
-To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official contract address, depending on the EVM chain in which you plan to deploy your contract. 
+### Solidity examples
+#### **Reading multiples currency pairs from the router**
+To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official Price Router address, depending on the EVM chain in which you plan to deploy your contract. 
 
 For instance, this example show a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
 
@@ -107,7 +108,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 
 ### Addresses
 (tab: Mainnets)
-| | `WitnetPriceRouter` | Supported currency pairs
+| EVM chain | `WitnetPriceRouter` | Supported currency pairs
 |-| :- | :-
 | ***Boba** (L2)* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract) | <a href="https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>
 | ***Celo*** | [`0x931673904eB6E69D775e35F522c0EA35575297Cb`](https://explorer.celo.org/address/0x931673904eB6E69D775e35F522c0EA35575297Cb/read-contract) | <a href="https://feeds.witnet.io/feeds/celo-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
@@ -117,7 +118,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 | ***Metis** (L2)* | [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://andromeda-explorer.metis.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 
 (tab: Testnets)
-| | `WitnetPriceRouter` | Supported currency pairs
+| EVM chain | `WitnetPriceRouter` | Supported currency pairs
 |-| :- | :-
 | ***Boba** Rinkeby* | [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract) | <a href="https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9" target="_blank" rel="noopener noreferrer">OMG/BTC-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9" target="_blank" rel="noopener noreferrer">OMG/ETH-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6" target="_blank" rel="noopener noreferrer">OMG/USDT-6</a>
 | ***Celo** Alfajores* | [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract) | <a href="https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
@@ -132,11 +133,58 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 ## Price Feed contracts
 
 ### API Reference
-Functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:    
+Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceFeed.sol) interface:
+    
+| Function | Description
+| :- | :-
+| `estimateUpdateFee(uint256)` | Estimates minimum fee amount in native currency to be paid when requesting a new price update. Actual fee depends on the gas price when calling `requestUpdate()`.
+| `lastPrice()` | Returns result of the last valid price update request successfully solved by the Witnet oracle.
+| `lastTimestamp()` | Returns the EVM-timestamp when last valid price was reported back from the Witnet oracle.
+| `lastValue()` | Returns a tuple containing last valid price and timestamp, the Witnet transaction hash that triggered the last valid update, as well as the status code of the latest update request that got posted to the Witnet oracle.
+| `latestQueryId()` | Returns identifier of the latest update request posted to the Witnet oracle.
+| `latestUpdateDrTxHash()` | Returns hash of the Witnet transaction that triggered the latest update request, or `0x0` while it remains unsolved.
+| `latestUpdateErrorMessage()` | Returns an explanatory error message, if any, of the latest update request posted to the Witnet oracle, or an empty string if it was not yet solved, or was solved with no errors.
+| `latestUpdateStatus()` | Returns the status code of the latest update request posted to the Witnet oracle: `200`, if the latest update request was succesfully solved with no errors; `400`, if the latest update request was solved with errors; or `404`, if the latest update request was not solved yet.
+| `pendingUpdate()` | Returns `true` if the latest update request posted to the Witnet oracle has not been solved yet.
+| `requestUpdate()` | Posts a new price udpate request to the Witnet oracle. Requires payment of a fee that depends on the value of `tx.gasprice`. If the previous update request was not solved yet, calling this method again allows you to upgrade the update fee, if called with a higher `tx.gasprice`value.
+| `supportsInterface(bytes4)` | Tells whether this contract implements the interface defined by its `interfaceId`. See [EIP-165](https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]). Should return `true` when querying at least for either the **IERC165** (i.e. `0x01ffc9a7`) or the **IWitnetPriceFeed** (i.e. ``) interface ids. 
 
 ### Javascript DSL
-Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. 
-    
-> As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
+Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. The bytecodes have been compiled off-chain from their equivalent Javascript DSL scripts:
 
-> You can easily compile your own Data Feeds off-chain, not only price feeds, but actually data feeds of any kind (i.e. weather, social-networks, sports, etc.), by writing Javascript like the ones shown above, and using the `witnet-request-js` library. You can also learn on how to instantiate your own `WitnetPriceFeed` contracts, with your own Witnet Data Request bytecodes, by following the examples in this [Github repository](https://github.com/witnet/witnet-price-feed-examples).
+(tab: BOBA/USDT-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js]
+
+(tab: BTC/USD-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js]
+
+(tab: CELO/EUR-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js]
+
+(tab: CELO/USD-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js]
+
+(tab: CFX/USDT-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js]
+
+(tab: ETH/USD-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdPrice.js]
+
+(tab: KCS/USDT-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js]
+
+(tab: METIS/USDT-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js]
+
+(tab: OMG/BTC-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js]
+
+(tab: OMG/ETH-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js]
+
+(tab: OMG/USDT-6)
+    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js]
+    
+> As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from a set of given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
+
+> You can easily compile your own Data Feeds off-chain, not only price feeds, but actually data feeds of any kind (i.e. weather, social-networks, sports, etc.), by writing Javascript like the ones shown above, and using the `witnet-request-js` [library](https://github.com/witnet/witnet-requests-js). You can also learn on how to instantiate your own `WitnetPriceFeed` contracts, with your own Witnet Data Request bytecodes, by following the examples in the `witnet-price-feeds` [Github repository](https://github.com/witnet/witnet-price-feed-examples).
