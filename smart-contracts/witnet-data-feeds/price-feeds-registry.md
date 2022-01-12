@@ -6,6 +6,8 @@ Currency pairs are identified by a `bytes32` value, calculated as the `keccak256
 
 > As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits. For instance, if the BTC/USD price is $41,847.762289, the `WitnetPriceRouter` contract will give `41847762289` for this currency pair, as identified below. 
 
+You may also retrieve the Price Feed contract actually serving a given currency pair, if any. While the Witnet Foundation will make its best to keep updated all committed currency pairs in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
+
 ## Currency pairs
 
 This table contains the currency pairs that are updated by the Witnet Foundation on a regular basis:
@@ -91,6 +93,18 @@ print("> latestUpdateStatus:", valueFor[2])
 
 ## Price Router contract
 
+### API reference
+Open functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
+| Function | Description
+| :- | :-
+| `currencyPairId(string)` | Pure helper function returning the `keccak256` hash (aka ID) of the provided string caption.
+| `getPriceFeed(bytes32)` | Returns the ERC165-compliant price feed contract currently serving updates on the given currency pair.
+| `getPriceFeedCaption(address)` | Returns human-readable caption of the currency pair being served by the given price feed contract address.
+| `lookupERC2362ID(bytes32)` | Returns a human-readable caption of the given currency pair identifier, if known.
+| `supportedCurrencyPairs()` | Returns a list of known currency pairs IDs.
+| `supportsCurrencyPair(bytes32)` | Returns `true` if the given pair is currently being served by a compliant price feed contract.
+| `supportsPriceFeed(address)` | Returns `true`if the given price feed contract is currently serving updates to any known currency pair.
+
 ### Addresses
 (tab: Mainnets)
 | | `WitnetPriceRouter` | Supported currency pairs
@@ -115,16 +129,13 @@ print("> latestUpdateStatus:", valueFor[2])
 | ***Metis** Stardust* | [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 | ***Polygon** Mumbai* | [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract) | <a href="https://feeds.witnet.io/feeds/polygon-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/polygon-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 
-### API reference
-Open functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
-| Function | Description
-| :- | :-
-| `currencyPairId(string)` | Pure helper function returning the `keccak256` hash (aka ID) of the provided string caption.
-| `getPriceFeed(bytes32)` | Returns the ERC165-compliant price feed contract currently serving updates on the given currency pair.
-| `getPriceFeedCaption(address)` | Returns human-readable caption of the currency pair being served by the given price feed contract address.
-| `lookupERC2362ID(bytes32)` | Returns a human-readable caption of the given currency pair identifier, if known.
-| `supportedCurrencyPairs()` | Returns a list of known currency pairs IDs.
-| `supportsCurrencyPair(bytes32)` | Returns `true` if the given pair is currently being served by a compliant price feed contract.
-| `supportsPriceFeed(address)` | Returns `true`if the given price feed contract is currently serving updates to any known currency pair.
+## Price Feed contracts
 
+### API Reference
+Functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:    
 
+### Javascript DSL
+Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. 
+    
+> As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
+> You can easily compile your own Data Feeds off-chain, not only price feeds, but actually data feeds of any kind (i.e. weather, social-networks, sports, etc.), by writing Javascript like the ones shown above, and using the `witnet-request-js` library. You can also learn on how to instantiate your own `WitnetPriceFeed` contracts, with your own Radon bytecodes, by following the examples in [this Github repository](https://github.com/witnet/witnet-price-feed-examples).
