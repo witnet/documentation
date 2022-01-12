@@ -134,7 +134,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 | `lookupERC2362ID(bytes32)` | Returns a human-readable caption of the given currency pair identifier, if known.
 | `supportedCurrencyPairs()` | Returns a list of known currency pairs IDs.
 | `supportsCurrencyPair(bytes32)` | Returns `true` if the given pair is currently being served by a compliant price feed contract.
-| `supportsPriceFeed(address)` | Returns `true`if the given price feed contract is currently serving updates to any known currency pair.
+| `supportsPriceFeed(address)` | Returns `true` if the given price feed contract is currently serving updates to any known currency pair.
 
 ### Addresses
 (tab: Mainnets)
