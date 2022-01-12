@@ -28,7 +28,10 @@ This table contains the currency pairs that are updated by the Witnet Foundation
 
 ## Code snippets
 ### Solidity
-To read price values from the Price Router contract, use the official contract address, depending on the EVM chain in which you plan to deploy your contract. 
+To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official contract address, depending on the EVM chain in which you plan to deploy your contract. 
+
+For instance, this example show a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
@@ -48,32 +51,31 @@ contract MyContractBoba {
     
     /// Returns the BOBA / USDT price (6 decimals), ultimately provided by the Witnet oracle.
     function getBobaUsdtPrice() public view returns (int128 _price) {
-        (_price,,,) = router.valueFor(bytes32(0xf723bde1));
+        (_price,,) = router.valueFor(bytes32(0xf723bde1));
     }
     
     /// Returns the BTC / USD price (6 decimals), ultimately provided by the Witnet oracle.
     function getBtcUsdPrice() public view returns (int128 _price) {
-        (_price,,,) = router.valueFor(bytes32(0x24beead4));
+        (_price,,) = router.valueFor(bytes32(0x24beead4));
     }
     
     /// Returns the ETH / USD price (6 decimals), ultimately provided by the Witnet oracle.
     function getEthUsdPrice() public view returns (int128 _price) {
-        (_price,,,) = router.valueFor(bytes32(0x3d15f701));
+        (_price,,) = router.valueFor(bytes32(0x3d15f701));
     }
     
     /// Returns the BTC / ETH price (6 decimals), derived from the ETH/USD and 
-    /// the BTC/USD pairs, ultimately provided by the Witnet oracle.
+    /// the BTC/USD pairs that were ultimately provided by the Witnet oracle.
     function getBtcEthPrice() public view returns (int128 _price) {
         return (1000000 * getBtcUsdPrice()) / getEthUsdPrice();
     }
 }
 ```
-
 > Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses. 
 
 ### Javascript
 
-You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Feeds Router:
+You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
 
 ```javascript
 web3 = Web3(Web3.HTTPProvider('https://mainnet.boba.network'))
@@ -82,37 +84,36 @@ addr = '0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a'
 contract = web3.eth.contract(address=addr, abi=abi)
 // get last value for "Price-BOBA/USDT-6"
 valueFor = contract.functions.valueFor().call("0xf723bde1")
-print("lastPrice:", valueFor[0])
-print("lastTimestamp:", valueFor[1])
-print("latestUpdateStatus:", valueFor[2])
+print("Price-BOBA/USDT-6:", valueFor[0])
+print("> lastTimestamp:", valueFor[1])
+print("> latestUpdateStatus:", valueFor[2])
 ```
 
 ## Price Router contract
 
 ### Addresses
 (tab: Mainnets)
-| | WitnetPriceRouter | Currency pairs
-|-| :-: | :-
-| Boba | `` | BOBA/USDT-6
-| Celo | `` | BTC/USD-6, CELO/EUR-6, CELO/USD-6, ETH/USD-6
-| Conflux | `` | BTC/USD-6, CFX/USDT-6, ETH/USD-6
-| Ethereum | `` | BTC/USD-6, ETH/USD-6
-| Harmony | `` | BTC/USD-6, ETH/USD-6
-| KuCoinChain | `` | BTC/USD-6, ETH/USD-6, KCS-USDT-6
-| Metis | `` | BTC/USD-6, ETH/USD-6, METIS/USDT-6
-| Polygon | `` | BTC/USD-6, ETH/USD-6
+| | `WitnetPriceRouter` | Supported currency pairs
+|-| :- | :-
+| ***Boba** (L2)* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract) | <a href="https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>
+| ***Celo*** | [`0x931673904eB6E69D775e35F522c0EA35575297Cb`](https://explorer.celo.org/address/0x931673904eB6E69D775e35F522c0EA35575297Cb/read-contract) | <a href="https://feeds.witnet.io/feeds/celo-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***Conflux*** | [`0x806c8dFd322EE2d52b188CC472e0814F64304C32`](https://confluxscan.io/address/cfx:acag3dt7gj1sfzkndcgpj61aufh0jpcpgjcmvbnnrx?tab=contract-viewer) | <a href="https://feeds.witnet.io/feeds/conflux-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-mainnet_cfx-usdt_6" target="_blank" rel="noopener noreferrer">CFX/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***Ethereum*** | [`0x83A757eAe821Ad7B520D9A74952337138A80b2AF`](https://etherscan.io/address/0x83a757eae821ad7b520d9a74952337138a80b2af#readContract) | <a href="https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***KuCoinChain*** | [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://scan.kcc.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53/read-contract) | <a href="https://feeds.witnet.io/feeds/kcc-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-mainnet_kcs-usdt_6" target="_blank" rel="noopener noreferrer">KCS-USDT-6</a>
+| ***Metis** (L2)* | [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://andromeda-explorer.metis.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 
 (tab: Testnets)
-| | WitnetPriceRouter | Currency pairs
-|-| :-: | :-
-| Boba | `` | BOBA/USDT-6
-| Celo | `` | BTC/USD-6, CELO/EUR-6, CELO/USD-6, ETH/USD-6
-| Conflux | `` | BTC/USD-6, CFX/USDT-6, ETH/USD-6
-| Ethereum | `` | BTC/USD-6, ETH/USD-6
-| Harmony | `` | BTC/USD-6, ETH/USD-6
-| KuCoinChain | `` | BTC/USD-6, ETH/USD-6, KCS-USDT-6
-| Metis | `` | BTC/USD-6, ETH/USD-6, METIS/USDT-6
-| Polygon | `` | BTC/USD-6, ETH/USD-6
+| | `WitnetPriceRouter` | Supported currency pairs
+|-| :- | :-
+| ***Boba** Rinkeby* | [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract) | <a href="https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9" target="_blank" rel="noopener noreferrer">OMG/BTC-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9" target="_blank" rel="noopener noreferrer">OMG/ETH-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6" target="_blank" rel="noopener noreferrer">OMG/USDT-6</a>
+| ***Celo** Alfajores* | [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract) | <a href="https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***Conflux** Testnet* | [`0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25`](https://testnet.confluxscan.io/address/cfxtest:ach0dv7vv7y51b80cyr2y1nxh2pyn4xpeyst6h7jph?tab=contract-viewer) | <a href="https://feeds.witnet.io/feeds/conflux-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-testnet_cfx-usdt_6" target="_blank" rel="noopener noreferrer">CFX/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***Ethereum** Goerli* | [`0x1cF3Aa9DBF4880d797945726B94B9d29164211BE`](https://goerli.etherscan.io/address/0x1cF3Aa9DBF4880d797945726B94B9d29164211BE#readContract) | <a href="https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***Ethereum** Rinkeby* | [`0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9`](https://rinkeby.etherscan.io/address/0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9#readContract) | <a href="https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***Harmony** Testnet* | [`0x08d479a544b05B297454e5CAc133abA3a584AB8E`](https://explorer.pops.one/address/0x08d479a544b05B297454e5CAc133abA3a584AB8E?activeTab=7) | <a href="https://feeds.witnet.io/feeds/harmony-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/harmony-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
+| ***KCC** Testnet* | [`0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a`](https://scan-testnet.kcc.network/address/0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a/read-contract) | <a href="https://feeds.witnet.io/feeds/kcc-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-testnet_kcs-usdt_6" target="_blank" rel="noopener noreferrer">KCS-USDT-6</a>
+| ***Metis** Stardust* | [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
+| ***Polygon** Mumbai* | [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract) | <a href="https://feeds.witnet.io/feeds/polygon-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/polygon-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 
 ### Interface
 ### Source code
