@@ -6,7 +6,7 @@ Currency pairs are identified by a `bytes32` value, calculated as the `keccak256
 
 > As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits. For instance, if the BTC/USD price is $41,847.762289, the `WitnetPriceRouter` contract will give `41847762289` for this currency pair, as identified below. 
 
-You may also retrieve the Price Feed contract actually serving a given currency pair, if any. While the Witnet Foundation will make its best to keep updated all committed currency pairs in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
+You may also retrieve the Price Feed contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep updated all committed currency pairs in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
 ## Currency pairs
 
@@ -94,7 +94,7 @@ print("> latestUpdateStatus:", valueFor[2])
 ## Price Router contract
 
 ### API reference
-Open functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
+Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
 | Function | Description
 | :- | :-
 | `currencyPairId(string)` | Pure helper function returning the `keccak256` hash (aka ID) of the provided string caption.
@@ -138,4 +138,5 @@ Functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/wi
 Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. 
     
 > As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
-> You can easily compile your own Data Feeds off-chain, not only price feeds, but actually data feeds of any kind (i.e. weather, social-networks, sports, etc.), by writing Javascript like the ones shown above, and using the `witnet-request-js` library. You can also learn on how to instantiate your own `WitnetPriceFeed` contracts, with your own Radon bytecodes, by following the examples in [this Github repository](https://github.com/witnet/witnet-price-feed-examples).
+
+> You can easily compile your own Data Feeds off-chain, not only price feeds, but actually data feeds of any kind (i.e. weather, social-networks, sports, etc.), by writing Javascript like the ones shown above, and using the `witnet-request-js` library. You can also learn on how to instantiate your own `WitnetPriceFeed` contracts, with your own Witnet Data Request bytecodes, by following the examples in this [Github repository](https://github.com/witnet/witnet-price-feed-examples).
