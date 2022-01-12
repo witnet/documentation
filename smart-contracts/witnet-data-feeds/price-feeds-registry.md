@@ -116,10 +116,10 @@ print("> latestUpdateStatus:", valueFor[2])
 | ***Polygon** Mumbai* | [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract) | <a href="https://feeds.witnet.io/feeds/polygon-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/polygon-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 
 ### API reference
-API reference for the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
+Open functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
 | Function | Description
 | :- | :-
-| `currencyPairId(string)` | Helper function: returns hash of the provided currency pair caption (aka ID).
+| `currencyPairId(string)` | Pure helper function returning the `keccak256` hash of the provided currency pair caption (aka ID).
 
 
 
