@@ -93,7 +93,7 @@ contract MyContractConflux {
     }
     
     /// Force udpate on the CFX / USDT currency pair
-    function forceCfxUsdtUpdate() external payable returns (uint256 _usedFunds) {
+    function forceCfxUsdtUpdate() external payable {
         IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes32(0x65784185));
         uint _updateFee = _priceFeed.estimateFee(tx.gasprice);
         _priceFeed.requestUpdate{value: _updateFee}();
