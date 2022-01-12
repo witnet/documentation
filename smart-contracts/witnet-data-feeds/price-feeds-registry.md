@@ -6,7 +6,7 @@ Currency pairs are identified by a `bytes32` value, calculated as the `keccak256
 
 > As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits. For instance, if the BTC/USD price is $41,847.762289, the `WitnetPriceRouter` contract will give `41847762289` for this currency pair, as identified below. 
 
-You may also retrieve the Price Feed contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep updated all committed currency pairs in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
+You may also retrieve the Price Feed contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
 ## Currency pairs
 
