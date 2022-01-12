@@ -120,8 +120,11 @@ Open functions defined within the [`IWitnetPriceRouter`](https://github.com/witn
 | Function | Description
 | :- | :-
 | `currencyPairId(string)` | Pure helper function returning the `keccak256` hash (aka ID) of the provided string caption.
-
-
-
+| `getPriceFeed(bytes32)` | Returns the ERC165-compliant price feed contract currently serving updates on the given currency pair.
+| `getPriceFeedCaption(address)` | Returns human-readable caption of the currency pair being served by the given price feed contract address.
+| `lookupERC2362ID(bytes32)` | Returns a human-readable caption of the given currency pair identifier, if known.
+| `supportedCurrencyPairs()` | Returns a list of known currency pairs IDs.
+| `supportsCurrencyPair(bytes32)` | Returns `true` if the given pair is currently being served by a compliant price feed contract.
+| `supportsPriceFeed(address)` | Returns `true`if the given price feed contract is currently serving updates to any known currency pair.
 
 
