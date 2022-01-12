@@ -180,7 +180,7 @@ Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witn
 | `supportsInterface(bytes4)` | Tells whether this contract implements the interface defined by its `interfaceId`. See [EIP-165](https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]). Should return `true` when querying at least for either the **IERC165** (i.e. `0x01ffc9a7`) or the **IWitnetPriceFeed** (i.e. ``) interface ids. 
 
 ### Javascript DSL
-Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. These bytecodes have been compiled off-chain from their equivalent Javascript DSL scripts:
+Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. These bytecodes have been compiled off-chain from their Javascript-equivalent scripts:
 
 (tab: BOBA/USDT-6)
     [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js]
