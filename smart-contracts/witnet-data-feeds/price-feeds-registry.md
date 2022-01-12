@@ -33,7 +33,7 @@ This table contains the currency pairs that are updated by the Witnet Foundation
 #### **Reading multiples currency pairs from the router**
 To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official Price Router address, depending on the EVM chain in which you plan to deploy your contract. 
 
-For instance, this example show a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
+For instance, this example shows a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
 
 ```solidity
 // SPDX-License-Identifier: MIT
