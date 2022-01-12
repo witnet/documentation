@@ -72,7 +72,8 @@ contract MyContractBoba {
 > Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses. 
 
 #### **Forcing an update on a Witnet-maintained price feed**
-First, get from the Price Router contract the Price Feed address of the contract that is currently serving price updates. Then, just call on the `requestUpdate() payable` method.
+First, get from the WitnetPriceRouter contract the WitnetPriceFeed address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
