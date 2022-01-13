@@ -1,4 +1,4 @@
-# Using Witnet Data Feeds
+# Using Witnet Price Feeds
 
 ## Code examples
 ### Solidity
