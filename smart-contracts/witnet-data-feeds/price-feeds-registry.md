@@ -8,13 +8,13 @@ The Witnet's **Price Feeds Router** allows your smart contract, or Web3 applicat
 For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4 below) of the full `bytes32` identifier (ID32).
 {% endhint %}
 
-You may also retrieve the Witnet's **Price Feed** contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
-
-...refer to Triggering Conditions...
+From the Price Router you may also retrieve the Witnet's **Price Feed** contract that is currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
 ## Currency pairs
 
 This table contains the currency pairs that are currently updated by the Witnet Foundation on a regular basis:
+
+{% content-ref url="triggering-conditions.md" %}triggering-conditionsmd{% endcontent-ref %}
 
 | **Caption** | **ID4** | **ID32**
 | :- | - | - 
