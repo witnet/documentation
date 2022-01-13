@@ -115,9 +115,9 @@ contract MyContractConflux {
 ```
 
 {% hint style="success" %}
-When interacting with a WitnetPriceFeed contract, you can get not only the last valid price value and timestamp, but also the hash of the Witnet transaction that triggered that last valid update, as a means to verify and track the whole resolution that took in place within the Witnet oracle's sidechain.
+When interacting with a **IWitnetPriceFeed** contract, you can get not only the last valid price value (and timestamp) solved by the Witnet oracle, but also the hash of the transaction within the Witnet's sidechain that triggered that last valid update request. This Witnet transaction hash can be uased a means to verify and track the whole resolution process that took in place within the Witnet oracle's sidechain.
 
-Moreover, you can also detect whether there is a price update pending to be solved, or if the latest update attempt could not get solved by the Witnet oracle for whatever reason.
+Moreover, you can also detect whether there is a recent price update pending to be solved, or if the latest update attempt could not get solved for whatever reason.
 {% endhint %}
 
 {% content-ref url="api-reference.md" %}api-reference.md{% endcontent-ref %}
