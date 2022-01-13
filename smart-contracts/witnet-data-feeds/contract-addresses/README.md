@@ -3,9 +3,9 @@
 ## Price Routers
 {% tabs %}
 {% tab title="Mainnets" %}
-| **EVM chains** | **`WitnetPriceRouter` address** | ``
-| :- | :- | :-
-| <img width=100/> ***Boba** Mainnet* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract)
+| **EVM chains** | **`WitnetPriceRouter` address** | 
+| :- | :- | :- |
+| ***Boba** Mainnet* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract)
 | ***Celo** Mainnet* | [`0x931673904eB6E69D775e35F522c0EA35575297Cb`](https://explorer.celo.org/address/0x931673904eB6E69D775e35F522c0EA35575297Cb/read-contract) 
 | ***Conflux** Tethys* | [`0x806c8dFd322EE2d52b188CC472e0814F64304C32`](https://confluxscan.io/address/cfx:acag3dt7gj1sfzkndcgpj61aufh0jpcpgjcmvbnnrx?tab=contract-viewer)
 | ***Ethereum** Mainnet* | [`0x83A757eAe821Ad7B520D9A74952337138A80b2AF`](https://etherscan.io/address/0x83a757eae821ad7b520d9a74952337138a80b2af#readContract)
