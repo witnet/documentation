@@ -3,8 +3,8 @@
 ## Price Routers
 {% tabs %}
 {% tab title="Mainnets" %}
-| **EVM chains** | **`WitnetPriceRouter` address** | 
-| :- | :- | :- |
+| | **`WitnetPriceRouter` address** 
+| | :- 
 | ***Boba** Mainnet* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract)
 | ***Celo** Mainnet* | [`0x931673904eB6E69D775e35F522c0EA35575297Cb`](https://explorer.celo.org/address/0x931673904eB6E69D775e35F522c0EA35575297Cb/read-contract) 
 | ***Conflux** Tethys* | [`0x806c8dFd322EE2d52b188CC472e0814F64304C32`](https://confluxscan.io/address/cfx:acag3dt7gj1sfzkndcgpj61aufh0jpcpgjcmvbnnrx?tab=contract-viewer)
@@ -37,7 +37,7 @@
 | ***Celo** Mainnet* | <a href="https://feeds.witnet.io/feeds/celo-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 | ***Conflux** Tethys* | <a href="https://feeds.witnet.io/feeds/conflux-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-mainnet_cfx-usdt_6" target="_blank" rel="noopener noreferrer">CFX/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 | ***Ethereum** Mainnet* | <a href="https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
-| ***KuCoinChain** Mainnet* | <a href="https://feeds.witnet.io/feeds/kcc-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-mainnet_kcs-usdt_6" target="_blank" rel="noopener noreferrer">KCS-USDT-6</a>
+| ***KCC** Mainnet* | <a href="https://feeds.witnet.io/feeds/kcc-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/kcc-mainnet_kcs-usdt_6" target="_blank" rel="noopener noreferrer">KCS-USDT-6</a>
 | ***Metis** Andromeda* | <a href="https://feeds.witnet.io/feeds/metis-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 {% endtab %}
 
