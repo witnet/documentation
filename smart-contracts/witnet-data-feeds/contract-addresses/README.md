@@ -3,8 +3,8 @@
 ## Price Routers
 {% tabs %}
 {% tab title="Mainnets" %}
-| **EVM chains** | **`WitnetPriceRouter` addresses**
-|-| :-
+| **EVM chains** | **`WitnetPriceRouter` address**
+|:- | :-
 | ***Boba** Mainnet* | [`0x93f61D0D5F623144e7C390415B70102A9Cc90bA5`](https://blockexplorer.boba.network/address/0x93f61D0D5F623144e7C390415B70102A9Cc90bA5/read-contract)
 | ***Celo** Mainnet* | [`0x931673904eB6E69D775e35F522c0EA35575297Cb`](https://explorer.celo.org/address/0x931673904eB6E69D775e35F522c0EA35575297Cb/read-contract) 
 | ***Conflux** Tethys* | [`0x806c8dFd322EE2d52b188CC472e0814F64304C32`](https://confluxscan.io/address/cfx:acag3dt7gj1sfzkndcgpj61aufh0jpcpgjcmvbnnrx?tab=contract-viewer)
@@ -14,8 +14,8 @@
 {% endtab %}
 
 {% tab title="Testnets" %}
-| **EVM chain** | **`WitnetPriceRouter` contract**
-|-| :-
+| **EVM chains** | **`WitnetPriceRouter` address**
+| :- | :-
 | ***Boba** Rinkeby* | [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract) 
 | ***Celo** Alfajores* | [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract) 
 | ***Conflux** Testnet* | [`0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25`](https://testnet.confluxscan.io/address/cfxtest:ach0dv7vv7y51b80cyr2y1nxh2pyn4xpeyst6h7jph?tab=contract-viewer) 
@@ -31,8 +31,8 @@
 ## Price Feeds
 {% tabs %}
 {% tab title="Mainnets" %}
-| **EVM chain** | **Supported currency pairs**
-|-| :- 
+| **EVM chains** | **Supported currency pairs**
+| :- | :- 
 | ***Boba** Mainnet* | <a href="https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>
 | ***Celo** Mainnet* | <a href="https://feeds.witnet.io/feeds/celo-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 | ***Conflux** Tethys* | <a href="https://feeds.witnet.io/feeds/conflux-mainnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-mainnet_cfx-usdt_6" target="_blank" rel="noopener noreferrer">CFX/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-mainnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
@@ -42,8 +42,8 @@
 {% endtab %}
 
 {% tab title="Testnets" %}
-| **EVM chain** | **Supported currency pairs**
-|-| :- 
+| **EVM chains** | **Supported currency pairs**
+| :- | :- 
 | ***Boba** Rinkeby* | <a href="https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6" target="_blank" rel="noopener noreferrer">BOBA/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9" target="_blank" rel="noopener noreferrer">OMG/BTC-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9" target="_blank" rel="noopener noreferrer">OMG/ETH-9</a>, <a href="https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6" target="_blank" rel="noopener noreferrer">OMG/USDT-6</a>
 | ***Celo** Alfajores* | <a href="https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-eur_6" target="_blank" rel="noopener noreferrer">CELO/EUR-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_celo-usd_6" target="_blank" rel="noopener noreferrer">CELO/USD-6</a>, <a href="https://feeds.witnet.io/feeds/celo-alfajores_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 | ***Conflux** Testnet* | <a href="https://feeds.witnet.io/feeds/conflux-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-testnet_cfx-usdt_6" target="_blank" rel="noopener noreferrer">CFX/USDT-6</a>, <a href="https://feeds.witnet.io/feeds/conflux-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
