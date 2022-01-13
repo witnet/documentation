@@ -2,7 +2,7 @@
 
 ## Reading multiple currency pairs from the router
 
-### Solidity
+### Solidity example
 
 To read price values from the Price Router contract use the official **`WitnetPriceRouter`** address, depending on the EVM chain in which you plan to deploy your contract. 
 
@@ -51,7 +51,7 @@ As Solidity does not support `float` types, all prices are provided as `int256` 
 For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
 {% endhint %}
 
-### Javascript
+### Javascript example
 
 You may also read from your **Web3** application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
 
@@ -76,7 +76,7 @@ The **`WitnetPriceRouter`** contract offers a series of methods that can be used
 
 ## Forcing an update on a Witnet-maintained price feed
 
-### Solidity
+### Solidity example
 
 First, get from the **`WitnetPriceRouter`** contract the **`IWitnetPriceFeed`** address that is currently serving price updates on any given currency pair.
 
