@@ -39,6 +39,11 @@
 {% endtab %}
 {% endtabs %}
 
+| **Currency pair** | **ID4** | **Networks**
+| :---------------- | :-----: | :-
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | [Ethereum Mainnet](), [Goerli](), [Rinkeby]()
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | [Ethereum Mainnet](), [Goerli](), [Rinkeby]()
+
 {% content-ref url="../triggering-conditions.md" %}triggering-conditions.md{% endcontent-ref %}
 
 {% hint style="success" %}
