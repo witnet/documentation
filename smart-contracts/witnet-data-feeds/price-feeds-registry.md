@@ -17,7 +17,7 @@ You may also retrieve the Witnet's **Price Feed** contract currently serving a g
 This table contains the currency pairs that are currently updated by the Witnet Foundation on a regular basis:
 
 | **Caption** | **ID4** | **ID32**
-| :- | :- | :- 
+| :- | - | - 
 | [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`f723bde1`** | `f723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af`
 | [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) | **`24beead4`** | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946`
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`21a79821`** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
@@ -85,14 +85,14 @@ contract MyContractBoba {
 }
 ```
 
-{% hint style="danger" %}
-As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
+    {% hint style="danger" %}
+    As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
 
-For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
-{% endhint %}
+    For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
+    {% endhint %}
 
 #### **Forcing an update on a Witnet-maintained price feed**
-First, get from the WitnetPriceRouter contract the WitnetPriceFeed address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
+First, get from the **`WitnetPriceRouter`** contract the **`IWitnetPriceFeed`** address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -125,8 +125,6 @@ contract MyContractConflux {
     // ...
 }
 ```
-
-
 
 ### Javascript
 #### Reading last valid update of a currency pair
