@@ -21,8 +21,8 @@
 
 * [Witnet Price Feeds](smart-contracts/witnet-data-feeds/README.md)
   * [Price Feeds Router](smart-contracts/witnet-data-feeds/price-feeds-registry.md)
-  * [Triggering Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
   * [Using Price Feeds](smart-contracts/witnet-data-feeds/using-witnet-data-feeds.md)
+  * [Triggering Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
   * [API Reference](smart-contracts/witnet-data-feeds/api-reference.md)
   * [Contract Addresses](smart-contracts/witnet-data-feeds/contract-addresses/README.md)
     * [Ethereum Price Feeds](smart-contracts/witnet-data-feeds/contract-addresses/ethereum-data-feeds.md)
