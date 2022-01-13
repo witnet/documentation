@@ -42,4 +42,4 @@ Functions defined within the [`IWitnetRequest`](https://github.com/witnet/witnet
 Public function inherited from the [`UsingWitnet`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/UsingWitnet.sol) abstract contract:
 | **Function** | **Description**
 | :- | :-
-| `witnet()` | The immutable address of the [**Witnet Request Board**](../apis-and-http-get-post-oracle/witnet-request-board.md) that interacts with the Witnet oracle's sidechain, for both posting new data requests and receiving results from it.
+| `witnet()` | Returns the immutable address of the [**Witnet Request Board**](../apis-and-http-get-post-oracle/witnet-request-board.md) that interacts with the Witnet oracle's sidechain, for both posting new data requests and receiving results from it.
