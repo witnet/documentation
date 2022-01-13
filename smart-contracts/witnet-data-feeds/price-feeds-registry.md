@@ -4,11 +4,11 @@ The Witnet's **Price Feeds Router** allows your smart contract, or Web3 applicat
 
 **Currency pairs** are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
 
-{% hint style="tip" %}
-For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (ID4 below) of the `bytes32` identifier (ID32).
+{% hint style="success" %}
+For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4 below) of the full `bytes32` identifier (ID32).
 {% endhint %}
 
-You may also retrieve the Price Feed contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
+You may also retrieve the Witnet's **Price Feed contract** currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
 {% hint style="danger" %}
 As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
@@ -16,29 +16,35 @@ As Solidity does not support `float` types, all prices are provided as `int256` 
 For instance, if the BTC/USD price is $41,847.762289, the `WitnetPriceRouter`contract, will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
 {% endhint %}
 
+...refer to Triggering Conditions...
 
 ## Currency pairs
 
-This table contains the currency pairs that are updated by the Witnet Foundation on a regular basis:
+This table contains the currency pairs that are currently updated by the Witnet Foundation on a regular basis:
 
-| **Caption** | **Full identifier** | **ID4**
-|:- | :- | :-
-| Price-**BOBA/USDT-6** | `f723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af` | **`0xf723bde1`**
-| Price-**BTC/USD-6** | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` | **`0x24beead4`**
-| Price-**CELO/EUR-6** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2` | **`0x21a79821`**
-| Price-**CELO/USD-6** | `9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073` | **`0x9ed884be`**
-| Price-**CFX/USDT-6** | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29` | **`0x65784185`**
-| Price-**KCS/USDT-6** | `31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977` | **`0x31debffc`**
-| Price-**ETH/USD-6** | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` | **`0x3d15f701`**
-| Price-**METIS/USDT-6** | `4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e` | **`0x4ba45817`**
-| Price-**OMG/BTC-9** | `c4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb` | **`0xc4ec7fbc`**
-| Price-**OMG/ETH-9** | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75` | **`0xe2960cc0`**
-| Price-**OMG/USDT-6** | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef` | **`0xfb2c7795`**
+| **Caption** | **ID4**
+|:- | :- 
+| [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`0xf723bde1`**
+| [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js)| **`0x24beead4`**
+| [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`0x21a79821`**
+| [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`0x9ed884be`**
+| [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`0x65784185`**
+| [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`0x31debffc`**
+| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`0x3d15f701`**
+| [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`**
+| [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) | **`0xc4ec7fbc`**
+| [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`0xe2960cc0`**
+| [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) |**`0xfb2c7795`**
 
-> For the sake of simplicity, Witnet-supported currency pairs can also be identified by just using the first 4 bytes of the `keccak256` hash.
+Clicking on any caption above will take you to the Javascript equivalent of the **RADON script** that will be processed by the Witnet oracle on every single price update of the corresponding currency pair.
 
-## Code snippets
-### Solidity examples
+{% hint style="tip" %}
+As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from a set of given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
+{% endhint %}
+
+
+## Code examples
+### Solidity
 #### **Reading multiples currency pairs from the router**
 To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official Price Router address, depending on the EVM chain in which you plan to deploy your contract. 
 
@@ -115,7 +121,8 @@ contract MyContractConflux {
 }
 ```
 
-### Javascript example
+### Javascript
+#### Reading last valid update of a currency pair from `Web3`
 
 You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
 
@@ -131,21 +138,8 @@ print("> lastTimestamp:", valueFor[1])
 print("> latestUpdateStatus:", valueFor[2])
 ```
 
-## Price Router contract
 
-### API reference
-Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceRouter.sol) interface:
-| Function | Description
-| :- | :-
-| `currencyPairId(string)` | Pure helper function returning the `keccak256` hash (aka ID) of the provided string caption.
-| `getPriceFeed(bytes32)` | Returns the ERC165-compliant price feed contract currently serving updates on the given currency pair.
-| `getPriceFeedCaption(address)` | Returns human-readable caption of the currency pair being served by the given price feed contract address.
-| `lookupERC2362ID(bytes32)` | Returns a human-readable caption of the given currency pair identifier, if known.
-| `supportedCurrencyPairs()` | Returns a list of known currency pairs IDs.
-| `supportsCurrencyPair(bytes32)` | Returns `true` if the given pair is currently being served by a compliant price feed contract.
-| `supportsPriceFeed(address)` | Returns `true` if the given price feed contract is currently serving updates to any known currency pair.
-
-### Addresses
+## Addresses
 {% tabs %}
 
 {% tab title="Mainnets" %}
@@ -174,26 +168,9 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 {% endtab %}
 {% endtabs %}
 
-## Price Feed contracts
 
-### API reference
-Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceFeed.sol) interface:
     
-| Function | Description
-| :- | :-
-| `estimateUpdateFee(uint256)` | Estimates minimum fee amount in native currency to be paid when requesting a new price update. Actual fee depends on the gas price when calling `requestUpdate()`.
-| `lastPrice()` | Returns result of the last valid price update request successfully solved by the Witnet oracle.
-| `lastTimestamp()` | Returns the EVM-timestamp when last valid price was reported back from the Witnet oracle.
-| `lastValue()` | Returns a tuple containing last valid price and timestamp, the Witnet transaction hash that triggered the last valid update, as well as the status code of the latest update request that got posted to the Witnet oracle.
-| `latestQueryId()` | Returns identifier of the latest update request posted to the Witnet oracle.
-| `latestUpdateDrTxHash()` | Returns hash of the Witnet transaction that triggered the latest update request, or `0x0` while it remains unsolved.
-| `latestUpdateErrorMessage()` | Returns an explanatory error message, if any, of the latest update request posted to the Witnet oracle, or an empty string if it was not yet solved, or was solved with no errors.
-| `latestUpdateStatus()` | Returns the status code of the latest update request posted to the Witnet oracle: `200`, if the latest update request was succesfully solved with no errors; `400`, if the latest update request was solved with errors; or `404`, if the latest update request was not solved yet.
-| `pendingUpdate()` | Returns `true` if the latest update request posted to the Witnet oracle has not been solved yet.
-| `requestUpdate()` | Posts a new price udpate request to the Witnet oracle. Requires payment of a fee that depends on the value of `tx.gasprice`. If the previous update request was not solved yet, calling this method again allows you to upgrade the update fee, if called with a higher `tx.gasprice`value.
-| `supportsInterface(bytes4)` | Tells whether this contract implements the interface defined by its `interfaceId`. See [EIP-165](https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]). Price Feed contracts must at least implement the **IERC165** and the **IWitnetPriceFeed** interfaces. 
-
-### RADON scripts
+    ### RADON scripts
 Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. These bytecodes have been compiled off-chain from their Javascript-equivalent scripts:
 
 === "BOBA/USDT-6"
