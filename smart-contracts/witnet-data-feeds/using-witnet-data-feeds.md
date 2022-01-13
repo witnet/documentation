@@ -1,9 +1,9 @@
-# Using Witnet Price Feeds
+# Using Price Feeds
 
 ## Code examples
 ### Solidity
 #### **Reading multiples currency pairs from the router**
-To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official Price Router address, depending on the EVM chain in which you plan to deploy your contract. 
+To read price values from the Price Router contract use the official **`WitnetPriceRouter`** address, depending on the EVM chain in which you plan to deploy your contract. 
 
 {% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
 
