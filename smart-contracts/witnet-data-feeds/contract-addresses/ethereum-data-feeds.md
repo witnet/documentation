@@ -20,10 +20,12 @@
 ## Supported Price Feeds 
 {% tabs %}
 {% tab title="Ethereum Mainnet" %}
+<div width="300px">
 | **Currency pair** | **ID4** | 
 | :---------------- | :-----: 
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4`  
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701`  
+</div>
 {% endtab %}
 {% tab title="Ethereum Goerli" %}
 | **Currency pair** | **ID4** |
