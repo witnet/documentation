@@ -20,8 +20,8 @@
 ## Supported Price Feeds 
 {% tabs %}
 {% tab title="Ethereum Mainnet" %}
-| **Currency pair** | **ID4** |
-| :---------------- | :-----: | -
+| **Currency pair** | **ID4** | |
+| :---------------- | :-----: | :- |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | [datapoints]()
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | [datapoints]()
 {% endtab %}
