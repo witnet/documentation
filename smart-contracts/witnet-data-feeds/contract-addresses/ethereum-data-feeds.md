@@ -45,23 +45,5 @@
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the current **Price Feed** contract currently serving the price updates, as well the hashes of the Witnet transactions that solved every single update. Further details on the Witnet transactions can be tracked down with the provided links to the [**Witnet Explorer** website](https://witnet.network/).
 {% endhint %}
 
-{% tabs %}
-{% tab title="Price-BTC/USD-6" %}
-**ID4**:  `24beead4`
-| | **Hearbeat** | **Deviation** | **Links** | 
-| :- | :-: | :-: | :- 
-| **Ethereum Mainnet** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6)
-| **Ethereum Goerli** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6)
-| **Ethereum Rinkeby** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6)
-{% endtab %}
-{% tab title="Price-ETH/USD-6" %}
-| | **Hearbeat** | **Deviation** | **Links** | 
-| :- | :-: | :-: | :- 
-| **Ethereum Mainnet** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6)
-| **Ethereum Goerli** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6)
-| **Ethereum Rinkeby** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6)
-{% endtab %}
-{% endtabs %}
-
 {% embed url="https://feeds.witnet.io" %}
 {% embed url="https://witnet.network" %}
