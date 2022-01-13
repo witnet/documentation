@@ -182,38 +182,28 @@ Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witn
 ### RADON scripts
 Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. These bytecodes have been compiled off-chain from their Javascript-equivalent scripts:
 
-(tab: BOBA/USDT-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js]
-
-(tab: BTC/USD-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js]
-
-(tab: CELO/EUR-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js]
-
-(tab: CELO/USD-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js]
-
-(tab: CFX/USDT-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js]
-
-(tab: ETH/USD-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdPrice.js]
-
-(tab: KCS/USDT-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js]
-
-(tab: METIS/USDT-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js]
-
-(tab: OMG/BTC-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js]
-
-(tab: OMG/ETH-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js]
-
-(tab: OMG/USDT-6)
-    [contains of https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js]
+=== "BOBA/USDT-6"
+    {% embed url="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js" %}  
+=== "BTC/USD-6"
+    {% embed url="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js" %}
+=== "CELO/EUR-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js" %}
+=== "CELO/USD-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js" %}
+=== "CFX/USDT-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js" %}
+=== "ETH/USD-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdPrice.js" %}
+=== "KCS/USDT-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js" %}
+=== "METIS/USDT-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js" %}
+=== "OMG/BTC-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js" %}
+=== "OMG/ETH-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js" %}
+=== "OMG/USDT-6"
+    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js" %}
     
 > As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from a set of given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
 
