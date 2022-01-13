@@ -21,7 +21,7 @@
 {% tabs %}
 {% tab title="Ethereum Mainnet" %}
 | **Currency pair** | **ID4** | **Heartbeat - Deviation** | **Witnesses** - **Quorum**
-| :---------------- | :-----: | :-: 
+| :---------------- | :-----: | :- | :- 
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24h - 3.5% | 10 - 70%
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24h - 3.5% | 10 - 70%
 {% endtab %}
