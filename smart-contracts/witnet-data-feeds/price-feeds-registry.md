@@ -5,7 +5,7 @@ The Witnet's **Price Feeds Router** allows your smart contract, or Web3 applicat
 **Currency pairs** are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
 
 {% hint style="success" %}
-For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4) of the full `bytes32` identifier (ID32).
+For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4 below) of the full `bytes32` identifier (ID32).
 {% endhint %}
 
 You may also retrieve the Witnet's **Price Feed** contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
@@ -93,8 +93,10 @@ For instance, if the BTC/USD price is $41,847.762289, the Price Router contract 
 
 {% hint style="info" %}
 Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses:
-{% content-ref url="contract-addresses" %} contract-addresses {% endcontent-ref %}
+{% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
 {% endhint %}
+
+
 
 #### **Forcing an update on a Witnet-maintained price feed**
 First, get from the WitnetPriceRouter contract the WitnetPriceFeed address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
