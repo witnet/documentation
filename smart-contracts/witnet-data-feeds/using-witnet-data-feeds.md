@@ -71,7 +71,9 @@ print("> latestUpdateStatus:", valueFor[2])
 
 ### Solidity
 
-First, get from the **`WitnetPriceRouter`** contract the **`IWitnetPriceFeed`** address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
+First, get from the **`WitnetPriceRouter`** contract the **`IWitnetPriceFeed`** address that is currently serving price updates on any given currency pair.
+
+Then, just call on the `requestUpdate() payable` method.
 
 ```solidity
 // SPDX-License-Identifier: MIT
