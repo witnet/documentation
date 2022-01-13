@@ -1,6 +1,6 @@
 # Price Feeds Router
 
-The Witnet's **Price Feeds Router** allows your smart contract, or Web3 application, to get the latest updated price value of any of the [currency pairs](#currency-pairs) subsidized by the Witnet Foundation, without needing to know the actual contract addresses in charge of requesting and receiving price updates from the Witnet oracle's sidechain.
+The Witnet's **Price Feeds Router** allows your smart contract, or Web3 application, to get the latest updated price value of any of the [*currency pairs*](#currency-pairs) subsidized by the Witnet Foundation, without needing to know the actual contract addresses in charge of requesting and receiving price updates from the Witnet oracle's sidechain.
 
 **Currency pairs** are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
 
