@@ -10,12 +10,6 @@ For the sake of simplicity, currency pairs served by the Witnet's Price Router c
 
 You may also retrieve the Witnet's **Price Feed** contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
-{% hint style="danger" %}
-As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
-
-For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
-{% endhint %}
-
 ...refer to Triggering Conditions...
 
 ## Currency pairs
@@ -36,10 +30,12 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) || **`e2960cc0`**
 | [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) || **`fb2c7795`**
 
-Clicking on any caption above will take you to the Javascript equivalent of the **RADON script** that will be processed by the Witnet oracle on every single price update of the corresponding currency pair.
+{% hint style="success" %}
+Clicking on any of the captions above will take you to the Javascript equivalent of the **RADON script** that will be processed by the Witnet oracle on every single price update of the corresponding currency pair.
+{% endhint %}
 
 {% hint style="tip" %}
-As introduced by the [2017 Witnet whitepaper](https://witnet.io/witnet-whitepaper.pdf), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*.
+As introduced by the [2017 Witnet whitepaper](https://witnet.io/witnet-whitepaper.pdf), **RADON** is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*.
 
 Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from a set of given sources, as well as the witnessing thresholds and quality levels to be met by the Witnet oracle when solving the price update.
 {% endhint %}
@@ -88,7 +84,17 @@ contract MyContractBoba {
     }
 }
 ```
-> Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses. 
+
+{% hint style="danger" %}
+As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
+
+For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
+{% endhint %}
+
+{% hint style="info" %}
+Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses:
+{% content-ref url="contract-addresses" %} contract-addresses {% endcontent-ref %}
+{% endhint %}
 
 #### **Forcing an update on a Witnet-maintained price feed**
 First, get from the WitnetPriceRouter contract the WitnetPriceFeed address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
