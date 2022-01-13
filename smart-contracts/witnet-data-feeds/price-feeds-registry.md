@@ -91,11 +91,9 @@ As Solidity does not support `float` types, all prices are provided as `int256` 
 For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
 {% endhint %}
 
-{% hint style="info" %}
 Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses:
 {% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
-{% endhint %}
-
+{% content-ref url="ethereum-data-feeds.md" %} ethereum-data-feeds.md {% endcontent-ref %}
 
 
 #### **Forcing an update on a Witnet-maintained price feed**
@@ -133,8 +131,10 @@ contract MyContractConflux {
 }
 ```
 
+
+
 ### Javascript
-#### Reading last valid update of a currency pair from `Web3`
+#### Reading last valid update of a currency pair
 
 You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
 
