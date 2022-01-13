@@ -20,22 +20,22 @@
 ## Supported Price Feeds 
 {% tabs %}
 {% tab title="Ethereum Mainnet" %}
-| **Currency pair** | **ID4** | **Heartbeat** | **Deviation** |
-| :---------------- | :-----: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24h | 3.5%
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24h | 3.5%
+| **Currency pair** | **ID4** | **Heartbeat - Deviation** | 
+| :---------------- | :-----: | :-: 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24h - 3.5%
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24h - 3.5%
 {% endtab %}
 {% tab title="Ethereum Goerli" %}
-| **Currency pair** | **ID4** | **Hearbeat** | **Deviation** |
-| :---------------- | :-----: | :----------: | :-:
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` | 1h | 1.0%
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` | 1h | 1.0%
+| **Currency pair** | **ID4** | **Hearbeat** - **Deviation** |
+| :---------------- | :-----: | :----------: 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` | 1h - 1.0%
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` | 1h - 1.0%
 {% endtab %}
 {% tab title="Ethereum Rinkeby" %}
-| **Currency pair** | **ID4** | **Heartbeat** | **Deviation** |
-| :---------------- | :-----: | :-: | :-:
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 1h | 1.0%
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 1h | 1.0%
+| **Currency pair** | **ID4** | **Heartbeat** - **Deviation** |
+| :---------------- | :-----: | :-: 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 1h - 1.0%
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 1h - 1.0%
 {% endtab %}
 {% endtabs %}
 
