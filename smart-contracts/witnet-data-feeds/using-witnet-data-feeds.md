@@ -67,9 +67,12 @@ print("> lastTimestamp:", valueFor[1])
 print("> latestUpdateStatus:", valueFor[2])
 ```
 
-The **`WitnetPriceRouter`** contract offers a series of methods that can be used to list the currency pairs that are currently maintained by the Witnet Foundation, as well as their human-readable captions, and the Price Feed contracts currently serving updates for each one of them. 
+{% hint style="info" %}
+The **`WitnetPriceRouter`** contract offers a series of methods that can be used to list the currency pairs that are currently maintained by the Witnet Foundation, as well as their human-readable captions, and the Price Feed contracts currently serving updates for each one of them:
+{% content-ref url="api-reference.md#IWitnetPriceRouter" %}api-reference.md{% endcontent-ref %}
+{% endhint %}
 
-{% content-ref url="api-reference.md#IWitnetPriceRouter" %} Pepito el de los palotes {% endcontent-ref %}
+{% content-ref url="api-reference.md#IWitnetPriceRouter" %}api-reference.md{% endcontent-ref %}
 
 
 ## Forcing an update on a Witnet-maintained price feed
@@ -112,3 +115,8 @@ contract MyContractConflux {
 }
 ```
 
+{% hint style="success" %}
+
+{% endhint %}
+
+{% content-ref url="api-reference.md#IWitnetPriceRouter" %}api-reference.md{% endcontent-ref %}
