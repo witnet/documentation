@@ -46,3 +46,4 @@ Clicking on any of the captions above will take you to the corresponding view in
 {% endhint %}
 
 {% embed url="https://feeds.witnet.io" %}
+{% embed url="https://witnet.network" %}
