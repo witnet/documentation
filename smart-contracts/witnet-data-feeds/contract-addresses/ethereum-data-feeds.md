@@ -20,22 +20,22 @@
 ## Supported Price Feeds 
 {% tabs %}
 {% tab title="Ethereum Mainnet" %}
-| **Currency pair** | **ID4** | 
-| :---------------- | :-----: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4`  
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701`  
+| **Currency pair** | **ID4** | **Heartbeat** | **Deviation** | **Witnesses** | **Quorum**
+| :---------------- | :-----: | :-: | :-: | :-: | :-:
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24h | 3.5% | 10 | > 70%
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24h | 3.5% | 10 | > 70% 
 {% endtab %}
 {% tab title="Ethereum Goerli" %}
-| **Currency pair** | **ID4** |
-| :---------------- | :-----: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` 
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` 
+| **Currency pair** | **ID4** | **Heartbeat** | **Deviation** | **Witnesses** | **Quorum**
+| :---------------- | :-----: | :-: | :-: | :-: | :-:
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` | 1h | 1.0% | 10 | > 70%
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` | 1h | 1.0% | 10 | > 70%
 {% endtab %}
 {% tab title="Ethereum Rinkeby" %}
-| **Currency pair** | **ID4** | 
-| :---------------- | :-----: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` 
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` 
+| **Currency pair** | **ID4** | **Heartbeat** | **Deviation** | **Witnesses** | **Quorum**
+| :---------------- | :-----: | :-: | :-: | :-: | :-:
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 1h | 1.0% | 10 | > 70%
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 1h | 1.0% | 10 | > 70%
 {% endtab %}
 {% endtabs %}
 
@@ -54,7 +54,6 @@ Clicking on any of the captions above will take you to the corresponding view in
 | **Ethereum Goerli** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6)
 | **Ethereum Rinkeby** | 24h | 3.5% | [datapoints](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6)
 {% endtab %}
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701`  
 {% tab title="Price-ETH/USD-6" %}
 | | **Hearbeat** | **Deviation** | **Links** | 
 | :- | :-: | :-: | :- 
