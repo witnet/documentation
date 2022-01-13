@@ -1,8 +1,9 @@
 # Using Price Feeds
 
-## Code examples
+## Reading multiple currency pairs from the router
+
 ### Solidity
-#### **Reading multiples currency pairs from the router**
+
 To read price values from the Price Router contract use the official **`WitnetPriceRouter`** address, depending on the EVM chain in which you plan to deploy your contract. 
 
 {% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
@@ -50,7 +51,26 @@ contract MyContractBoba {
     For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
     {% endhint %}
 
-#### **Forcing an update on a Witnet-maintained price feed**
+### Javascript
+
+You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
+
+```javascript
+web3 = Web3(Web3.HTTPProvider('https://mainnet.boba.network'))
+abi = '[{ "inputs": [{ "internalType": "bytes32", "name": "_id", "type": "bytes32" }], "name": "valueFor", "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]'
+addr = '0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a'
+contract = web3.eth.contract(address=addr, abi=abi)
+// get last value for "Price-BOBA/USDT-6"
+valueFor = contract.functions.valueFor().call("0xf723bde1")
+print("Price-BOBA/USDT-6:", valueFor[0])
+print("> lastTimestamp:", valueFor[1])
+print("> latestUpdateStatus:", valueFor[2])
+```
+
+## Forcing an update on a Witnet-maintained price feed
+
+### Solidity
+
 First, get from the **`WitnetPriceRouter`** contract the **`IWitnetPriceFeed`** address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
 
 ```solidity
@@ -85,19 +105,3 @@ contract MyContractConflux {
 }
 ```
 
-### Javascript
-#### Reading last valid update of a currency pair
-
-You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
-
-```javascript
-web3 = Web3(Web3.HTTPProvider('https://mainnet.boba.network'))
-abi = '[{ "inputs": [{ "internalType": "bytes32", "name": "_id", "type": "bytes32" }], "name": "valueFor", "outputs": [{ "internalType": "int256", "name": "", "type": "int256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]'
-addr = '0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a'
-contract = web3.eth.contract(address=addr, abi=abi)
-// get last value for "Price-BOBA/USDT-6"
-valueFor = contract.functions.valueFor().call("0xf723bde1")
-print("Price-BOBA/USDT-6:", valueFor[0])
-print("> lastTimestamp:", valueFor[1])
-print("> latestUpdateStatus:", valueFor[2])
-```
