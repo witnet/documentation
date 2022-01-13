@@ -16,19 +16,19 @@ You may also retrieve the Witnet's **Price Feed** contract currently serving a g
 
 This table contains the currency pairs that are currently updated by the Witnet Foundation on a regular basis:
 
-| **Caption** | **ID32** | **ID4**
-| :- | -: | -: 
-| [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) || **`f723bde1`**
-| [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) || **`24beead4`**
-| [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) || **`21a79821`**
-| [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) || **`9ed884be`**
-| [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) || **`65784185`**
-| [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) || **`31debffc`**
-| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) || **`3d15f701`**
-| [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`4ba45817`**
-| [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) || **`c4ec7fbc`**
-| [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) || **`e2960cc0`**
-| [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) || **`fb2c7795`**
+| **Caption** | **ID4** | **ID32**
+| :- | :- | :- 
+| [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`f723bde1`** | `f723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af`
+| [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) | **`24beead4`** | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946`
+| [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`21a79821`** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
+| [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`9ed884be`** | `9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073`
+| [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`65784185`** | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29`
+| [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`31debffc`** | `31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977`
+| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`3d15f701`** | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
+| [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`4ba45817`** | 4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e
+| [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) | **`c4ec7fbc`** | `c4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb`
+| [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`e2960cc0`** | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75`
+| [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) | **`fb2c7795`** | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef`
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the Javascript equivalent of the **RADON script** that will be processed by the Witnet oracle on every single price update of the corresponding currency pair.
@@ -41,16 +41,12 @@ Basically, it specifies the math, filters, reducers and tally operator to apply 
 {% endhint %}
 
 
-
-
 ## Code examples
 ### Solidity
 #### **Reading multiples currency pairs from the router**
 To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official Price Router address, depending on the EVM chain in which you plan to deploy your contract. 
 
 {% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
-
-{% content-ref url="ethereum-data-feeds.md" %} ethereum-data-feeds.md {% endcontent-ref %}
 
 For instance, this example shows a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
 
@@ -72,18 +68,18 @@ contract MyContractBoba {
     }
     
     /// Returns the BTC / USD price (6 decimals), ultimately provided by the Witnet oracle.
-    function getBtcUsdPrice() public view returns (int128 _price) {
+    function getBtcUsdPrice() public view returns (int256 _price) {
         (_price,,) = router.valueFor(bytes32(0x24beead4));
     }
     
     /// Returns the ETH / USD price (6 decimals), ultimately provided by the Witnet oracle.
-    function getEthUsdPrice() public view returns (int128 _price) {
+    function getEthUsdPrice() public view returns (int256 _price) {
         (_price,,) = router.valueFor(bytes32(0x3d15f701));
     }
     
     /// Returns the BTC / ETH price (6 decimals), derived from the ETH/USD and 
     /// the BTC/USD pairs that were ultimately provided by the Witnet oracle.
-    function getBtcEthPrice() public view returns (int128 _price) {
+    function getBtcEthPrice() public view returns (int256 _price) {
         return (1000000 * getBtcUsdPrice()) / getEthUsdPrice();
     }
 }
