@@ -53,7 +53,7 @@ For instance, if the BTC/USD price is $41,847.762289, the Price Router contract 
 
 ### Javascript
 
-You may also read from your Web3 application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
+You may also read from your **Web3** application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
 
 ```javascript
 web3 = Web3(Web3.HTTPProvider('https://mainnet.boba.network'))
@@ -67,7 +67,7 @@ print("> lastTimestamp:", valueFor[1])
 print("> latestUpdateStatus:", valueFor[2])
 ```
 
-The Price Router contract offers also a series of methods that can be used to list the currency pairs that are currently maintained by the Witnet Foundation, as well as their human-readable captions, and the Price Feed contracts currently serving updates for each one of them. 
+The **`WitnetPriceRouter`** contract offers a series of methods that can be used to list the currency pairs that are currently maintained by the Witnet Foundation, as well as their human-readable captions, and the Price Feed contracts currently serving updates for each one of them. 
 
 {% content-ref url="api-reference.md#IWitnetPriceRouter" %} Pepito el de los palotes {% endcontent-ref %}
 
