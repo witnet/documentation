@@ -5,10 +5,10 @@ The Witnet's **Price Feeds Router** allows your smart contract, or Web3 applicat
 **Currency pairs** are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
 
 {% hint style="success" %}
-For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4 below) of the full `bytes32` identifier (ID32).
+For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4) of the full `bytes32` identifier (ID32).
 {% endhint %}
 
-You may also retrieve the Witnet's **Price Feed contract** currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
+You may also retrieve the Witnet's **Price Feed** contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
 {% hint style="danger" %}
 As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
@@ -23,7 +23,7 @@ For instance, if the BTC/USD price is $41,847.762289, the `WitnetPriceRouter`con
 This table contains the currency pairs that are currently updated by the Witnet Foundation on a regular basis:
 
 | **Caption** | **ID4**
-|:- | :- 
+| | :- 
 | [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`0xf723bde1`**
 | [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js)| **`0x24beead4`**
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`0x21a79821`**
@@ -39,8 +39,12 @@ This table contains the currency pairs that are currently updated by the Witnet 
 Clicking on any caption above will take you to the Javascript equivalent of the **RADON script** that will be processed by the Witnet oracle on every single price update of the corresponding currency pair.
 
 {% hint style="tip" %}
-As introduced by the 2017 Witnet whitepaper (link), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*. Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from a set of given sources, as well as the witnessing thresholds and quality levels (link) to be met by the Witnet oracle when solving the price update.
+As introduced by the [2017 Witnet whitepaper](https://witnet.io/witnet-whitepaper.pdf), RADON is *"a flow-based, tacit, point-free scripting language [...] implemented as a domain specific language (DSL), [... that] includes normalization and aggregation methods in a MapReduce style"*.
+
+Basically, it specifies the math, filters, reducers and tally operator to apply to the values fetched from a set of given sources, as well as the witnessing thresholds and quality levels to be met by the Witnet oracle when solving the price update.
 {% endhint %}
+
+
 
 
 ## Code examples
