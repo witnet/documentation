@@ -163,6 +163,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 | ***Metis** Stardust* | [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract) | <a href="https://feeds.witnet.io/feeds/metis-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>, <a href="https://feeds.witnet.io/feeds/metis-testnet_metis-usdt_6" target="_blank" rel="noopener noreferrer">METIS/USDT-6</a>
 | ***Polygon** Mumbai* | [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract) | <a href="https://feeds.witnet.io/feeds/polygon-testnet_btc-usd_6" target="_blank" rel="noopener noreferrer">BTC/USD-6</a>, <a href="https://feeds.witnet.io/feeds/polygon-testnet_eth-usd_6" target="_blank" rel="noopener noreferrer">ETH/USD-6</a>
 {% endtab %}
+{% endtabs %}
 
 ## Price Feed contracts
 
