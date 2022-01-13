@@ -15,31 +15,31 @@
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="api-reference.md" %}{% endcontent-ref %}
+{% content-ref url="api-reference.md" %}api-reference.md{% endcontent-ref %}
 
 ## Supported Price Feeds 
 {% tabs %}
 {% tab title="Ethereum Mainnet" %}
-| **Currency pair** | **ID4** | **Hearbeat** | **Deviation** 
-| :---------------- | :-----: | :----------: | :-----------: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24h | 3.5% 
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24h | 3.5% 
+| **Currency pair** | **ID4** 
+| :---------------- | :-----: 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` 
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` 
 {% endtab %}
 {% tab title="Ethereum Goerli" %}
-| **Currency pair** | **ID4** | **Hearbeat** | **Deviation** 
-| :---------------- | :-----: | :----------: | :-----------: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` | 1h | 1.0% 
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` | 1h | 1.0% 
+| **Currency pair** | **ID4** | **Hearbeat** 
+| :---------------- | :-----: | :----------: 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` | 1h 
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` | 1h 
 {% endtab %}
 {% tab title="Ethereum Rinkeby" %}
-| **Currency pair** | **ID4** | **Hearbeat** | **Deviation** 
-| :---------------- | :-----: | :----------: | :-----------: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 1h | 1.0% 
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 1h | 1.0% 
+| **Currency pair** | **ID4** | |
+| :---------------- | :-----: |-|
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="triggering-conditions.md" %}{% endcontent-ref %}
+{% content-ref url="triggering-conditions.md" %}triggering-conditions.md{% endcontent-ref %}
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the current **Price Feed** contract currently serving the price updates, as well the hashes of the Witnet transactions that solved every single update. Further details on the Witnet transactions can be tracked down with the provided links to the [**Witnet Explorer** website](https://witnet.network/).
