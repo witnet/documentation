@@ -183,25 +183,33 @@ Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witn
 Witnet's Price Feed contracts contain its own immutable CBOR-encoded `bytecode()` reflecting the actual **RADON script** (link) that will be processed by the Witnet oracle on every single price update. These bytecodes have been compiled off-chain from their Javascript-equivalent scripts:
 
 === "BOBA/USDT-6"
-    {% embed url="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js" %}  
+https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js
+
 === "BTC/USD-6"
-    {% embed url="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js" %}
+https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js
+
 === "CELO/EUR-6"
-    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js" %}
+{% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js" %}
 === "CELO/USD-6"
-    {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js" %}
+{% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js" %}
+
 === "CFX/USDT-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js" %}
 === "ETH/USD-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdPrice.js" %}
+
 === "KCS/USDT-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js" %}
+
 === "METIS/USDT-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js" %}
+
 === "OMG/BTC-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js" %}
+
 === "OMG/ETH-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js" %}
+
 === "OMG/USDT-6"
     {% embed url ="https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js" %}
     
