@@ -67,6 +67,11 @@ print("> lastTimestamp:", valueFor[1])
 print("> latestUpdateStatus:", valueFor[2])
 ```
 
+The Price Router offers a series of methods that can be used to introspect the supported currency pairs, their human-readable captions and the Price Feed contracts currently serving updates for each one of them. 
+
+{% content-ref url="api-reference.md#IWitnetPriceRouter" %} api.reference.md#IWitnetPriceRouter {% endcontent-ref %}
+
+
 ## Forcing an update on a Witnet-maintained price feed
 
 ### Solidity
