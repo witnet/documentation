@@ -45,11 +45,11 @@ contract MyContractBoba {
 }
 ```
 
-    {% hint style="danger" %}
-    As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
+{% hint style="danger" %}
+As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
 
-    For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
-    {% endhint %}
+For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
+{% endhint %}
 
 ### Javascript
 
