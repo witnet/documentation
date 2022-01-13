@@ -48,6 +48,10 @@ Basically, it specifies the math, filters, reducers and tally operator to apply 
 #### **Reading multiples currency pairs from the router**
 To read price values from the Price Router contract (aka `WitnetPriceRouter`), use the official Price Router address, depending on the EVM chain in which you plan to deploy your contract. 
 
+{% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
+
+{% content-ref url="ethereum-data-feeds.md" %} ethereum-data-feeds.md {% endcontent-ref %}
+
 For instance, this example shows a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
 
 ```solidity
@@ -90,11 +94,6 @@ As Solidity does not support `float` types, all prices are provided as `int256` 
 
 For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
 {% endhint %}
-
-Please, find below the list of the EVM chains currently supported by the Witnet oracle, and their corresponding Price Router contract addresses:
-{% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
-{% content-ref url="ethereum-data-feeds.md" %} ethereum-data-feeds.md {% endcontent-ref %}
-
 
 #### **Forcing an update on a Witnet-maintained price feed**
 First, get from the WitnetPriceRouter contract the WitnetPriceFeed address that is currently serving price updates on any given currency pair. Then, just call on the `requestUpdate() payable` method.
