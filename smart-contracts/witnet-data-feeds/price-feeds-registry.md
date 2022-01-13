@@ -1,8 +1,8 @@
 # Price Feeds Router
 
-The Witnet's **Price Feeds Router** allows your smart contract, or Web3 application, to get the latest updated price value of any of the ***currency pairs*** subsidized by the Witnet Foundation, without needing to know the actual contract addresses in charge of requesting and receiving price updates from the Witnet oracle's sidechain.
+The Witnet's **Price Feeds Router** allows your smart contract, or Web3 application, to get the latest updated price value of any of the [currency pairs](#currency-pairs) subsidized by the Witnet Foundation, without needing to know the actual contract addresses in charge of requesting and receiving price updates from the Witnet oracle's sidechain.
 
-Currency pairs are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
+**Currency pairs** are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
 
 {% hint style="tip" %}
 For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (ID4 below) of the `bytes32` identifier (ID32).
@@ -10,7 +10,7 @@ For the sake of simplicity, currency pairs served by the Witnet's Price Router c
 
 You may also retrieve the Price Feed contract currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to trigger a new price update at any time, if willing to pay the required gas for that. 
 
-{% hint style="info" %}
+{% hint style="danger" %}
 As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
 
 For instance, if the BTC/USD price is $41,847.762289, the `WitnetPriceRouter`contract, will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
