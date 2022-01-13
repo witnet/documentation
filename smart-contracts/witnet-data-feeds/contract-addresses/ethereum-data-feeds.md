@@ -1,3 +1,3 @@
 # Ethereum Price Feeds
 
-{% content-ref url="https://etherscan.io/address/0x83a757eae821ad7b520d9a74952337138a80b2af" %} 0x83a757eae821ad7b520d9a74952337138a80b2af {% endcontent-ref %}
+{% github_embed "https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js" %}{% endgithub_embed %}
