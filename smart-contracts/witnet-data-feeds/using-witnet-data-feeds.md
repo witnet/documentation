@@ -114,11 +114,56 @@ contract MyContractConflux {
 }
 ```
 
+## Reading last price and timestamp from a Price Feed contract
+### Solidity example
+```solidity 
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.11;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
+
+contract MyContractCelo {
+
+    IWitnetPriceRouter public immutable witnetPriceRouter;
+    IWitnetPriceFeed public celoEurPrice;
+    
+    /**
+     * Network: Celo Alfajores
+     * WitnetPriceRouter: 0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE
+     */
+    constructor()
+        witnetPriceRouter = IWitnetPriceRouter(0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE);
+        updateCeloEurPriceFeed();
+    }
+    
+    /// Detects if the WitnetPriceRouter is now pointing to a different IWitnetPriceFeed implementation:
+    function updateCeloEurPriceFeed() public {
+        IERC165 _newPriceFeed = witnetPriceRouter.getPriceFeed(bytes32(0x21a79821));
+        if (address(_newPriceFeed) != address(0)) {
+            celoEurPrice = IWitnetPriceFeed(address(_newPriceFeed));
+        }
+    }
+    
+    /// Returns the CELO / EUR price (6 decimals), ultimately provided by the Witnet oracle, and
+    /// the timestamps at which the price was reported back from the Witnet oracle's sidechain 
+    /// to Celo Alfajores.
+    function getCeloEurPrice() external view returns (int256 _lastPrice, uint256 _lastTimestamp) {
+        (_lastPrice, _lastTimestamp,,) = celoEurPrice.lastValue();
+    }
+    
+    // ...
+}
+```
+
 {% hint style="success" %}
 When interacting with a **IWitnetPriceFeed** contract, you can get not only the last valid price value (and timestamp) solved by the Witnet oracle, but also the hash of the transaction within the Witnet's sidechain that triggered that last valid update request. This Witnet transaction hash can be used a means to verify and track the whole resolution process that took in place within the Witnet oracle's sidechain.
 
 Moreover, you can also detect whether there is a recent price update pending to be solved, or if the latest update attempt could not get solved for whatever reason.
 {% endhint %}
+
+
+
 
 {% content-ref url="api-reference.md" %}api-reference.md{% endcontent-ref %}
 
