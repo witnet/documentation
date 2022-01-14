@@ -1,7 +1,5 @@
 # Harmony Data Feeds
 
-### Harmony Mainnet
-
 ### Harmony Testnet
 
 **WinetPriceRouter**: [`0x08d479a544b05B297454e5CAc133abA3a584AB8E`](https://explorer.pops.one/address/0x08d479a544b05B297454e5CAc133abA3a584AB8E?activeTab=7)
