@@ -113,8 +113,8 @@ contract MyContractConflux {
     // ...
 }
 ```
-
-## Reading last price and timestamp from a Price Feed contract
+ 
+## Reading last price and timestamp from a Price Feed contract serving a given currency pair
 ### Solidity example
 ```solidity 
 // SPDX-License-Identifier: MIT
