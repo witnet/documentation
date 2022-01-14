@@ -1,6 +1,6 @@
 # Metis Price Feeds
 
-### Metis Mainnet (Andromeda)
+### **Metis Mainnet** (Andromeda)
 
 **WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://andromeda-explorer.metis.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53/read-contract)
 
@@ -10,7 +10,7 @@
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/metis-mainnet_eth-usd_6) | `3d15f701` | 24H / 1.0% 
 | [Price-METIS/USDT-6](https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6) | `4ba45817` | 24H / 1.0% 
 
-### Metis Testnet (Stardust)
+### **Metis Testnet** (Stardust)
 
 **WinetPriceRouter**: [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract)
 
