@@ -28,7 +28,8 @@ contract MyContract {
     }
 
     /// Returns the BTC / USD price (6 decimals), ultimately provided by the Witnet oracle, and
-    /// the timestamps at which the price was reported back to Ethereum Rinkeby. 
+    /// the timestamps at which the price was reported back from the Witnet oracle's sidechain 
+    /// to Ethereum Rinkeby. 
     function getBtcUsdPrice() external view returns (int256 _lastPrice, uint256 _lastTimestamp) {
         (_lastPrice, _lastTimestamp,) = witnetPriceRouter.valueFor(bytes32(0x24beead4));
     }
