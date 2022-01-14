@@ -39,8 +39,8 @@
 {% endtab %}
 {% endtabs %}
 
-| | **ID4** | **Networks**
-| | :-----: | :-
+| **Caption** | **ID4** | **Networks**
+| :- | :-----: | :-
 | [Price-BTC/USD-6](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) | `24beead4` | [Mainnet](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6), [Goerli](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6), [Rinkeby](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6)
 | [Price-ETH/USD-6](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdPrice.js) | `3d15f701` | [Mainnet](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6), [Goerli](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6), [Rinkeby](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6)
 
