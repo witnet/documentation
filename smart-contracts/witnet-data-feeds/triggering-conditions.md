@@ -1,5 +1,5 @@
 # Triggering Conditions
 
-## Deviation threshold
 ## Heartbeat
+## Deviation threshold
 ## Minimum time between updates
