@@ -15,7 +15,7 @@
 
 **WinetPriceRouter**: [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract) 
 
-| **Caption** | **ID4** | **Hearbeat / Deviation** 
+| **Caption** | **ID4** | **Heartbeat / Deviation** 
 | :- | :- | :-: 
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/celo-alfajores_btc-usd_6) | `24beead4` | 1H / 1.0% 
 | [Price-CELO/EUR-6](https://feeds.witnet.io/feeds/celo-alfajores_celo-eur_6) | `21a79821` | 1H / 1.0% 
