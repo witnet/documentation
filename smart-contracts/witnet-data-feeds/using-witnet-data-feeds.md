@@ -74,7 +74,7 @@ The **`WitnetPriceRouter`** contract offers a series of methods that can be used
 {% content-ref url="api-reference.md" %}api-reference.md{% endcontent-ref %}
 
 
-## Forcing an update on a Witnet-maintained price feed
+## Forcing an update on a Witnet-maintained curreny pair
 
 ### Solidity example
 
