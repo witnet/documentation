@@ -1,6 +1,6 @@
 # Conflux Price Feeds
 
-### Conflux Mainnet
+### Conflux Mainnet (Tethys)
 
 **WitnetPriceRouter**: [`0x806c8dFd322EE2d52b188CC472e0814F64304C32`](https://confluxscan.io/address/cfx:acag3dt7gj1sfzkndcgpj61aufh0jpcpgjcmvbnnrx?tab=contract-viewer)
 
