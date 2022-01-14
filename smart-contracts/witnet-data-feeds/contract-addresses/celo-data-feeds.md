@@ -11,7 +11,7 @@
 | [Price-CELO/USD-6](https://feeds.witnet.io/feeds/celo-mainnet_celo-usd_6) | `9ed884be` | 24H / 1.0% 
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/celo-mainnet_eth-usd_6) | `3d15f701` | 24H / 1.0% 
 
-### Celo Alfajores
+### Celo Testnet (Alfajores)
 
 **WinetPriceRouter**: [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract) 
 
