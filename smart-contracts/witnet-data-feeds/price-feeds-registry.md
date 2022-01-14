@@ -23,6 +23,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`21a79821`** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
 | [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`9ed884be`** | `9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073`
 | [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`65784185`** | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29`
+| [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/pull/65) | **`5a352c58`** | `5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3`
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`31debffc`** | `31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977`
 | [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`3d15f701`** | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`4ba45817`** | `4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e`
