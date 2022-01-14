@@ -33,6 +33,23 @@ Clicking on any of the captions above will take you to the corresponding view in
 
 {% content-ref url="../triggering-conditions.md" %}triggering-conditions.md{% endcontent-ref %}
 
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
 
 ---
 
