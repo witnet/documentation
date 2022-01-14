@@ -2,7 +2,7 @@
 
 ### Ethereum Mainnet
 
-`WitnetPriceRouter: `[`0x83A757eAe821Ad7B520D9A74952337138A80b2AF`](https://etherscan.io/address/0x83a757eae821ad7b520d9a74952337138a80b2af#readContract)
+**WitnetPriceRouter**: [`0x83A757eAe821Ad7B520D9A74952337138A80b2AF`](https://etherscan.io/address/0x83a757eae821ad7b520d9a74952337138a80b2af#readContract)
 
 | **Caption** | **ID4** | **Triggering conditions**
 | :- | :- | :-: 
