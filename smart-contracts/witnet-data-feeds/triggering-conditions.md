@@ -2,4 +2,4 @@
 
 ## Heartbeat
 ## Deviation threshold
-## Minimum time between updates
+## Cooldown period
