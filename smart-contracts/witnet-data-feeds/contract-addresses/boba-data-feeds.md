@@ -12,7 +12,7 @@
 
 **WinetPriceRouter**: [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract) 
 
-| **Caption** | **ID4** | **Hearbeat / Deviation** 
+| **Caption** | **ID4** | **Heartbeat / Deviation** 
 | :- | :- | :-: 
 | [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_boba_usdt_6) | `f723bde1` | 1H / 1.0% 
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6) | `24beead4` | 1H / 1.0% 
