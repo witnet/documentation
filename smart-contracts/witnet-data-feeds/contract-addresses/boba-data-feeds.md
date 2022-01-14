@@ -27,3 +27,4 @@ Clicking on any of the captions above will take you to the corresponding view in
 {% endhint %}
 
 {% content-ref url="../triggering-conditions.md" %}triggering-conditions.md{% endcontent-ref %}
+{% content-ref url="../price-feeds-registry.md" %}price-feeds-registry.md{% endcontent-ref %}
