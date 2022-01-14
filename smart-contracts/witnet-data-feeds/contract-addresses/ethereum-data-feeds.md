@@ -36,19 +36,18 @@ Further details on the Witnet transactions can be tracked down with the provided
 
 <table style="width:80%">
   <tr>
-    <th style="width:40%">Company</th>
-    <th style="width:25%"><b>Contact</b></th>
-    <th><b>Country</b></th>
+    <th style="width:40%"><b>Currency pair</b></th>
+    <th style="width:25%"><b>ID$</b></th>
+    <th><b>Heartbeat</b></th>
+    <th><b>Deviation</b></th>
+    <th><b>mTBU</b></th>
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
+    <td><b>Price-BTC/USD-6</b></td>
+    <td>`24beead4`</td>
+    <td>24H</td>
+    <td>3.5%</td>
+    <td>1H</td>
   </tr>
 </table>
 
