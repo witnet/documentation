@@ -7,7 +7,7 @@
 * [❓ What is Witnet?](introduction/what-is-witnet.md)
 * [🤔 Frequently Asked Questions](introduction/frequently-asked-questions.md)
 * [🚀 Quick Tutorials](introduction/quick-tutorials/README.md)
-  * [📈 Data Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
+  * [📈 Price Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [🔀 Randomness](introduction/quick-tutorials/randomness.md)
   * [📡 APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [⛏ Mining Wit](introduction/quick-tutorials/mining-wit.md)
