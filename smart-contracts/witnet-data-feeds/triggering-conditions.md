@@ -10,7 +10,7 @@ The Witnet Foundation is every few seconds attesting for price changes and compa
 
 To preclude the possibility of not detecting significant price deviations during long periods of time, the **heartbeat** parameter guarantees a currency pair to be updated at least once every certain amount of minutes.
 
-Knowning the heartbeat can be used to double check the liveness of either the corresponding [Price Feed contract](./using-witnet-data-feeds.md#reading-last-price-and-timestamp-from-a-price-feed-contract-serving-a-given-currency-pair), or the [Witnet Data Request](./price-feeds-registry.md#currency-pairs) that is posted to the Witnet oracle on every update request.
+Knowing the heartbeat can be used to double check the liveness of either the corresponding [Price Feed contract](./using-witnet-data-feeds.md#reading-last-price-and-timestamp-from-a-price-feed-contract-serving-a-given-currency-pair), or the [Witnet Data Request](./price-feeds-registry.md#currency-pairs) that is posted to the Witnet oracle on every update request.
 
 ### Cooldown period
 
