@@ -4,7 +4,7 @@ Depending on the currency pair, and the EVM chain in which its corresponding Pri
 
 ### Deviation threshold
 
-The Witnet Foundation is continously attesting for price changes and comparing new off-chain prices with respect the last one stored on-chain. If the price either raises or decreases in a percentage greater than the established **deviation threshold**, a new price update request will be immediately posted to Witnet oracle in order to ultimately update the on-chain price value that is served via the corresponding [Price Router and Price Feed contracts](./price-feeds-registry.md).
+The Witnet Foundation is every few seconds attesting for price changes and comparing new off-chain prices with respect the last one stored on-chain. If the price either raises or decreases in a percentage greater than the established **deviation threshold**, a new price update request will be immediately posted to Witnet oracle in order to ultimately update the on-chain price value that is served via the corresponding [Price Router and Price Feed contracts](./price-feeds-registry.md).
 
 ### Heartbeat threshold
 
