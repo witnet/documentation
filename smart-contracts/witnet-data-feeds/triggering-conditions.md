@@ -1,6 +1,6 @@
 # Triggering Conditions
 
-Depending on the currency pair and the EVM chain in which it is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
+Depending on the currency pair and the EVM chain in which its corresponding Price Feed contract is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
 
 ### Deviation threshold
 
