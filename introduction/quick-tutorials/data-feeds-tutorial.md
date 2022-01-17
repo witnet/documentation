@@ -54,4 +54,4 @@ The [Price Feeds Contract Addresses](../../smart-contracts/witnet-data-feeds/con
 
 ### Learn More About Witnet Price Feeds
 
-For more information on Witnet price feeds, please read the section dedicated to [Witnet Price Feeds](../../smart-contracts/witnet-data-feeds/). This contains a lot more information on alternative ways to consume the data feeds, how they operate, and what are their contract addresses.
+For more information on Witnet price feeds, please read the section dedicated to [Witnet Price Feeds](../../smart-contracts/witnet-data-feeds/). This contains a lot more information on alternative ways to consume the data feeds, how they operate, and what their contract addresses are.
