@@ -36,8 +36,6 @@ contract MyContract {
 }
 ```
 
-{% embed url="https://gist.github.com/aesedepece/d5c27c0ae2312937472274738bcd96f1" %}
-
 The `IWitnetPriceRouter` and `IWitnetPriceFeed` interfaces can be found in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge), among many other Witnet related interfaces, contracts and utilities.
 
 ### What Price Feeds Are Currently Available?
