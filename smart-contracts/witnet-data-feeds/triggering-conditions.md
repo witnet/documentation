@@ -1,6 +1,6 @@
 # Triggering Conditions
 
-Depending on the currency pair and the network in which it is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
+Depending on the currency pair and the EVM chain in which it is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
 
 ### Deviation threshold
 
@@ -14,7 +14,7 @@ Knowning the heartbeat can be used to double check the liveness of either the co
 
 ### Cooldown period
 
-The **cooldown period** establishes the minimum time that must elapse since the last on-chain price update until the next one. This parameter alone contents from having a thrashing number of updates during high volatility situations. 
+The **cooldown period** establishes the minimum time that must elapse since the last on-chain price update until the next one. This parameter alone contents from having a thrashing number of updates during highly volatile situations. 
 
 ---
 
