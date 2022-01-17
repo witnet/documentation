@@ -1,12 +1,18 @@
 # Triggering Conditions
 
-Depending on the currency pair and the network in which is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
-
-### Heartbeat
+Depending on the currency pair and the network in which it is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
 
 ### Deviation threshold
 
+The Witnet Foundation is continously polling for price changes, and comparing new off-chain prices with respect the last one stored on-chain. If the price raises, or decreases, in a percentage greater than the established **deviation threshold**, a new price update request will be immediately posted to Witnet oracle in order to ultimately update the on-chain price value that is served via the corresponding [Price Router](./api-reference.md#WitnetPriceRouter) and [Price Feed](./api-reference.md#WitnetPriceFeed) contracts.
+
+### Heartbeat
+
+To preclude the possibility of not having significant price deviations during long periods of time, the **heartbeat** parameter guarantees a currency pair to be updated at least once every certain amount of minutes. Knowning the heartbeat can be used to double check the liveness of either the corresponding Price Feed contract, or the Witnet Data Request that is posted to the Witnet oracle on every update request.
+
 ### Cooldown period
+
+The **cooldown period** establishes the minimum time that must elapse since the last on-chain price update until the next one. This parameter alone contents from having a thrashing number of updates during high price volatility situations. 
 
 ---
 
