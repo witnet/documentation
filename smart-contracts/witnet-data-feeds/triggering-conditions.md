@@ -19,7 +19,7 @@ The **cooldown period** establishes the minimum time that must elapse since the 
 ---
 
 {% hint style="info" %}
-While it is the Witnet Foundation that pays for every single price update according to these triggering conditions, every single [supported currency pair](./price-feeds-registry#currency-pairs) involves a selection of **well-known and reputed sources** (i.e. exchanges), proven to trade significant volumes in a daily basis, and totally unconnected to the Witnet Foundation itself. 
+While it is the Witnet Foundation that pays for every single price update according to these triggering conditions, every single [supported currency pair](./price-feeds-registry.md#currency-pairs) involves a selection of **well-known and reputed sources** (i.e. exchanges), proven to trade significant volumes in a daily basis, and totally unconnected to the Witnet Foundation itself. 
 {% endhint %}
 
 {% hint style="success" %}
