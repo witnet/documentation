@@ -6,7 +6,7 @@
 
 | **Caption** | **ID4** | **Heartbeat / Deviation**
 | :- | :- | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24H / 3.5% 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | <div><div>24H</div><div>3.5%</div></div>
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24H / 3.5% 
 
 ### Ethereum Goerli
