@@ -4,10 +4,10 @@
 
 **WitnetPriceRouter**: [`0x83A757eAe821Ad7B520D9A74952337138A80b2AF`](https://etherscan.io/address/0x83a757eae821ad7b520d9a74952337138a80b2af#readContract)
 
-| **Caption** | **ID4** | **Heartbeat / Deviation**
+| **Caption** | **ID4** | **Heartbeat \| Deviation \| Cooldown**
 | :- | :- | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | <table><tr><td>24H</td><td>3.5%</td></tr></table>
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24H / 3.5% 
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24H \| 3.5% \| 1H
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24H / 3.5% / 1H
 
 ### Ethereum Goerli
 
