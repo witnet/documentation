@@ -22,7 +22,7 @@
 
 **WinetPriceRouter**: [`0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9`](https://rinkeby.etherscan.io/address/0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9#readContract)
 
-| **Caption** | **ID4** | **Hearbeat | **Deviation** | **Cooldown**
+| **Caption** | **ID4** | **Hearbeat** | **Deviation** | **Cooldown**
 | :- | :- | :-: | :-: | :-: 
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 1 hour | 1.0% | 15'
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 1 hour | 1.0% | 15'
