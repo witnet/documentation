@@ -1,6 +1,6 @@
 # Triggering Conditions
 
-Depending on the currency pair and the EVM chain in which its corresponding Price Feed contract is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
+Depending on the currency pair, and the EVM chain in which its corresponding Price Feed contract is deployed, the Witnet Foundation will commit and pay for a regular price update according to the following parameters:
 
 ### Deviation threshold
 
@@ -10,7 +10,7 @@ The Witnet Foundation is continously polling for price changes and comparing new
 
 To preclude the possibility of not detecting significant price deviations during long periods of time, the **heartbeat** parameter guarantees a currency pair to be updated at least once every certain amount of minutes.
 
-Knowning the heartbeat can be used to double check the liveness of either the corresponding [Price Feed contract](./using-witnet-data-feeds.md#reading-last-price-and-timestamp-from-a-price-feed-contract-serving-a-given-currency-pair), or the [Witnet Data Request](https://new-docs.witnet.io/DMN1zqRk2UYuGzmQGcMt/smart-contracts/witnet-data-feeds/price-feeds-registry#currency-pairs) that is posted to the Witnet oracle on every update request.
+Knowning the heartbeat can be used to double check the liveness of either the corresponding [Price Feed contract](./using-witnet-data-feeds.md#reading-last-price-and-timestamp-from-a-price-feed-contract-serving-a-given-currency-pair), or the [Witnet Data Request](./price-feeds-registry.md#currency-pairs) that is posted to the Witnet oracle on every update request.
 
 ### Cooldown period
 
