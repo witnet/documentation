@@ -6,9 +6,9 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown**
 | :- | :- | :-: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-mainnet_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 1 hour
-| [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-mainnet_cfx-usdt_6) | `65784185` | 24 hours | 1.0% | 1 hour
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-mainnet_eth-usd_6) | `3d15f701` | 24H | 1.0% | 1 hour
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-tethys_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 1 hour
+| [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-tethys_cfx-usdt_6) | `65784185` | 24 hours | 1.0% | 1 hour
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-tethys_eth-usd_6) | `3d15f701` | 24H | 1.0% | 1 hour
 
 ### Conflux Testnet
 
@@ -16,7 +16,7 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown**
 | :- | :- | :-: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-testnett_btc-usd_6) | `24beead4` | 1 hour | 1.0% | 15'
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-testnet_btc-usd_6) | `24beead4` | 1 hour | 1.0% | 15'
 | [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-testnet_cfx-usdt_6) | `65784185` | 1 hour | 1.0% | 15'
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-testnet__eth-usd_6) | `3d15f701` | 1 hour | 1.0% | 15'
 
