@@ -6,9 +6,7 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown**
 | :- | :- | :-: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/metis-mainnet_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 1 hour
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/metis-mainnet_eth-usd_6) | `3d15f701` | 24 hours | 1.0% | 1 hour
-| [Price-METIS/USDT-6](https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6) | `4ba45817` | 24 hours | 1.0% | 1 hour
+| [Price-METIS/USDT-6](https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6) | `4ba45817` | 24 hours | 2.0% | 1 hour
 
 ### **Metis Testnet** (Stardust)
 
