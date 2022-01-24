@@ -6,7 +6,7 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown**
 | :- | :- | :-: | :-: | :-: 
-| [Price-METIS/USDT-6](https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6) | `4ba45817` | 24 hours | 2.0% | 1 hour
+| [Price-METIS/USDT-6](https://feeds.witnet.io/feeds/metis-mainnet_metis-usdt_6) | `4ba45817` | 24 hours | 2.0% | 15'
 
 ### **Metis Testnet** (Stardust)
 
