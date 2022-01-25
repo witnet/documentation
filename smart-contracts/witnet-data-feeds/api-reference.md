@@ -14,6 +14,12 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 | `supportsCurrencyPair(bytes32)` | Returns `true` if the given pair is currently being served by a compliant price feed contract.
 | `supportsPriceFeed(address)` | Returns `true` if the given price feed contract is currently serving updates to any known currency pair.
 
+### IERC2362 interface
+
+| **Function** | **Description**
+| :- | :-
+| `valueFor(bytes4)` | Returns the ERC2362-compliant tuple containing last valid price and timestamp for the given currency pair, as well as the status of the latest update request that got posted to the Witnet oracle: `200`, if the latest update request was succesfully solved with no errors; `400`, if the latest update request was solved with errors; or `404`, if the latest update request was not solved yet.
+
 ## WitnetPriceFeed contract
 ### IWitnetPriceFeed interface
 Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetPriceFeed.sol) interface:    
