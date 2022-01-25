@@ -18,7 +18,7 @@ Unrestricted functions defined within the [`IWitnetPriceRouter`](https://github.
 
 | **Function** | **Description**
 | :- | :-
-| `valueFor(bytes4)` | Returns the ERC2362-compliant tuple containing last valid price and timestamp for the given currency pair, as well as the status of the latest update request that got posted to the Witnet oracle: `200`, if the latest update request was succesfully solved with no errors; `400`, if the latest update request was solved with errors; or `404`, if the latest update request was not solved yet.
+| `valueFor(bytes32)` | Returns the ERC2362-compliant tuple containing last valid price and timestamp for the given currency pair, as well as the status of the latest update request that got posted to the Witnet oracle: `200`, if the latest update request was succesfully solved with no errors; `400`, if the latest update request was solved with errors; or `404`, if the latest update request was not solved yet.
 
 ## WitnetPriceFeed contract
 ### IWitnetPriceFeed interface
