@@ -34,7 +34,7 @@ Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witn
 | `latestUpdateErrorMessage()` | Returns an explanatory error message, if any, of the latest update request posted to the Witnet oracle, or an empty string if it was not yet solved, or was solved with no errors.
 | `latestUpdateStatus()` | Returns the status code of the latest update request posted to the Witnet oracle: `200`, if the latest update request was succesfully solved with no errors; `400`, if the latest update request was solved with errors; or `404`, if the latest update request was not solved yet.
 | `pendingUpdate()` | Returns `true` if the latest update request posted to the Witnet oracle has not been solved yet.
-| `requestUpdate()` | Posts a new price udpate request to the Witnet oracle. Requires payment of a fee that depends on the value of `tx.gasprice`. If the previous update request was not solved yet, calling this method again allows you to upgrade the update fee, if called with a higher `tx.gasprice`value.
+| `requestUpdate() payable` | Posts a new price udpate request to the Witnet oracle. Requires payment of a fee that depends on the value of `tx.gasprice`. If the previous update request was not solved yet, calling this method again allows you to upgrade the update fee, if called with a higher `tx.gasprice`value.
 | `supportsInterface(bytes4)` | Tells whether this contract implements the interface defined by its `interfaceId`. See [EIP-165](https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified).
 
 ### IWitnetRequest interface
