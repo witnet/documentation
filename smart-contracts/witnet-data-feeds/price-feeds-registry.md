@@ -30,6 +30,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) | **`c4ec7fbc`** | `c4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb`
 | [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`e2960cc0`** | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75`
 | [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) | **`fb2c7795`** | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef`
+| [Price-**USDC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdcUsdPrice.js) | **`4c80cf2e`** | `0x4c80cf2e5b3d17b98f6f24fc78f661982b8ef656c3b75a038f7bfc6f93c1b20e`
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the Javascript equivalent of the **RADON script** that is processed by the Witnet oracle on every single price update of the corresponding currency pair.
