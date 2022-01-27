@@ -19,7 +19,7 @@
 | [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6) | `f723bde1` | 1 hour | 1.0% | 5'
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6) | `24beead4` | 1 hour | 1.0% | 5'
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6) | `3d15f701` | 1 hour | 1.0% | 5'
-| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_frax-usdt_6) | `1a3ea43e` | 1 hour | 0.025% | 15'
+| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_frax-usdt_6) | `1a3ea43e` | 24 hours | 0.025% | 15'
 | [Price-FXS/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_fxs-usdt_6) | `5a352c58` | 1 hour | 1.0% | 5'
 | [Price-OMG/BTC-9](https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9) | `c4ec7fbc` | 1 hour | 1.0% | 5'
 | [Price-OMG/ETH-9](https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9) | `e2960cc0` | 1 hour | 1.0% | 5'
