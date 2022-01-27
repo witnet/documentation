@@ -23,7 +23,8 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`21a79821`** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
 | [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`9ed884be`** | `9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073`
 | [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`65784185`** | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29`
-| [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/pull/65) | **`5a352c58`** | `5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3`
+| [Price-**FRAX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FraxUsdtPrice.js) | **`1a3ea43e`** | `1a3ea43ec9fce5649302474844b0d2c0734ad605b3adfaf3baaab3b7ad43b1a4`
+| [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FxsUsdtPrice.js) | **`5a352c58`** | `5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3`
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`31debffc`** | `31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977`
 | [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`3d15f701`** | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`4ba45817`** | `4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e`
@@ -31,6 +32,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`e2960cc0`** | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75`
 | [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) | **`fb2c7795`** | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef`
 | [Price-**USDC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdcUsdPrice.js) | **`4c80cf2e`** | `4c80cf2e5b3d17b98f6f24fc78f661982b8ef656c3b75a038f7bfc6f93c1b20e`
+| [Price-**USDT/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdtUsdPrice.js) | **`538f5a25`** | `538f5a25b39995a23c24037d2d38f979c8fa7b00d001e897212d936e6f6556ef`
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the Javascript equivalent of the **RADON script** that is processed by the Witnet oracle on every single price update of the corresponding currency pair.
