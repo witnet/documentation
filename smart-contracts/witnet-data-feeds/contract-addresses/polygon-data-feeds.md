@@ -1,6 +1,6 @@
 # Polygon Data Feeds
 
-### Polygon MAinnet
+### Polygon Mainnet
 
 **WinetPriceRouter**: [`0x3806311c7138ddF2bAF2C2093ff3633E5A73AbD4`](https://polygonscan.com/address/0x3806311c7138ddF2bAF2C2093ff3633E5A73AbD4#readContract) 
 
