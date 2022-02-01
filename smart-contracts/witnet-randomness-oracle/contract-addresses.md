@@ -44,5 +44,3 @@
 
 ***Polygon Mumbai**:* [`0x96f327C9F15AeFebFc26eAf7b86a579c81336172`](https://mumbai.polygonscan.com/address/0x96f327C9F15AeFebFc26eAf7b86a579c81336172)
 
-
-{% content-ref url="./api-reference.md" %}api-reference.md{% endcontent-ref %}
