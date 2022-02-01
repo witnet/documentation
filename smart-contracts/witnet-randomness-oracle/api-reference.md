@@ -16,7 +16,7 @@ Functions defined within the [`IWitnetRandomness`](https://github.com/witnet/wit
 | `random(uint32,uint256,bytes32)` | Generates a pseudo-random number uniformly distributed within the range `[0 .. _range)`, by using the given `_nonce` value and the given `_seed` as a source of entropy.
 | `randomize() payable` |  Requests the Witnet oracle to generate an EVM-agnostic and trustless source of randomness. Only one randomness request per block will be actually posted to the WRB. Should there already be a posted request within current block, it will try to upgrade Witnet fee of current's block randomness request according to current gas price. In both cases, all unused funds shall be transfered back to the tx sender.
 | `upgradeRandomizeFee(uint256) payable` | Increases Witnet fee related to a pending-to-be-solved randomness request, as much as it may be required in proportion to how much bigger the current `tx.gasprice` is with respect the highest gas price that was paid in either previous fee upgrades, or when the given randomness request was posted. All unused funds shall be transferred back to the `msg.sender`.
-| `witnetRandomnessRequest()` | Returns address to the [`WitnetRequestRandomness`](#witnetrequestrandomness-contract) contract that is being used for requesting new randomness to the Witnet oracle.
+| `witnetRandomnessRequest()` | Returns address to the [`WitnetRequestRandomness`](#iwitnetrequest-interface) contract that is being used for requesting new randomness to the Witnet oracle.
 
 ### Clonable base contract
 Public functions inherited from the [`Clonable`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/patterns/Clonable.sol) abstract pattern:
@@ -47,6 +47,13 @@ Functions defined within the [`IWitnetRequest`](https://github.com/witnet/witnet
 Public and restricted functions inherited from the [`WitnetRequestMalleableBase`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/requests/WitnetRequestMalleableBase.sol) abstract contract:
 | **Function** | **Description**
 | :- | :-
+| `setWitnessingCollateral(uint64)` | Sets amount of nanowits that a witness solving the request will be required to collateralize in the commitment transaction. Only callable by the [`owner()`](#ownable-base-contract), if any.
+| `setWitnessingFees(uint64,uint64)` | Specifies how much you want to pay for rewarding each of the Witnet nodes: (a) amount of nanowits that every request-solving witness will be rewarded with; (b) amount of nanowits that will be earned by Witnet miners for each each valid commit/reveal transaction they include in a block. Only callable by the [`owner()`](#ownable-base-contract), if any.
+| `setWitnessingQuorum(uint8,uint8)` | Sets how many Witnet nodes will be "hired" for resolving the request: (a) number of witnesses required to be involved for solving this Witnet Data Request; (b) threshold percentage for aborting resolution of a request if the witnessing nodes did not arrive to a broad consensus. Only callable by the [`owner()`](#ownable-base-contract), if any.
+| `template()` | Returns bytecode of the immutable RAD (Retrieve-Attest-Delivery) script's bytecode. Encoded using Protocol Buffers. 
+| `totalWitnessingCollateral()` | Returns total amount of nanowits that witnessing nodes will need to collateralize all together.
+| `totalWitnessingFee()` | Returns total amount of nanowits that will have to be paid in total for this request to be solved.
+| `witnessingParams()` | Returns witnessing parameters of current Witnet Data Request.
 
 ### Clonable base contract
 Public functions inherited from the [`Clonable`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/patterns/Clonable.sol) abstract pattern:
