@@ -1,5 +1,9 @@
 # Contract Addresses
 
+## Boba Network
+### *Boba Mainnet: [`0x11C073F17f018Bc1B372c7283fDe0608003823D5`](https://blockexplorer.boba.network/address/0x11C073F17f018Bc1B372c7283fDe0608003823D5)*
+### *Boba Rinkeby: [`0x2F3292216B3ED440E2d4FF9773adb2f7Bddb9DDD`](https://blockexplorer.rinkeby.boba.network/address/0x2F3292216B3ED440E2d4FF9773adb2f7Bddb9DDD)*
+
 ## Mainnets
 
 ***Boba** Mainnet*: [`0x11C073F17f018Bc1B372c7283fDe0608003823D5`](https://blockexplorer.boba.network/address/0x11C073F17f018Bc1B372c7283fDe0608003823D5)
