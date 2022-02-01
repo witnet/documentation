@@ -16,7 +16,7 @@ Functions defined within the [`IWitnetRandomness`](https://github.com/witnet/wit
 | `random(uint32,uint256,bytes32)` | Generates a pseudo-random number uniformly distributed within the range `[0 .. _range)`, by using the given `_nonce` value and the given `_seed` as a source of entropy.
 | `randomize() payable` |  Requests the Witnet oracle to generate an EVM-agnostic and trustless source of randomness. Only one randomness request per block will be actually posted to the WRB. Should there already be a posted request within current block, it will try to upgrade Witnet fee of current's block randomness request according to current gas price. In both cases, all unused funds shall be transfered back to the tx sender.
 | `upgradeRandomizeFee(uint256) payable` | Increases Witnet fee related to a pending-to-be-solved randomness request, as much as it may be required in proportion to how much bigger the current `tx.gasprice` is with respect the highest gas price that was paid in either previous fee upgrades, or when the given randomness request was posted. All unused funds shall be transferred back to the `msg.sender`.
-| `witnetRandmonessRequest()` | Returns address to the [`WitnetRequestRandomness`](#witnetrequestrandomness-contract) contract that is being used for requesting new randomness to the Witnet oracle.
+| `witnetRandomnessRequest()` | Returns address to the [`WitnetRequestRandomness`](#witnetrequestrandomness-contract) contract that is being used for requesting new randomness to the Witnet oracle.
 
 ### Clonable base contract
 Public functions inherited from the [`Clonable`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/patterns/Clonable.sol) abstract pattern:
