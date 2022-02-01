@@ -6,7 +6,7 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown** 
 | :- | :- | :-: | :-: | :-: 
-| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6) | `f723bde1` | 24 hours | 1.0% | 1 hour
+| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6) | `f723bde1` | 24 hours | 1.0% | 15'
 | [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_frax-usdt_6) | `1a3ea43e` | 24 hours | 0.25% | 15'
 | [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_usdc-usd_6) | `4c80cf2e` | 24 hours | 0.25% | 15'
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_usdt-usd_6) | `538f5a25` | 24 hours | 0.25% | 15'
