@@ -21,6 +21,7 @@
 | :- | :- | :-: | :-: | :-: 
 | [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6) | `f723bde1` | 24 hours | 1.0% | 15'
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 15'
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_dai-usd_6) | `9899e356` | 24 hours | 0.1% | 15'
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6) | `3d15f701` | 24 hours | 1.0% | 15'
 | [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_frax-usdt_6) | `1a3ea43e` | 24 hours | 0.1% | 15'
 | [Price-FXS/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_fxs-usdt_6) | `5a352c58` | 24 hours | 1.0% | 15'
