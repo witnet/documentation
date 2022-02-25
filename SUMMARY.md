@@ -25,6 +25,7 @@
   * [Triggering Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
   * [API Reference](smart-contracts/witnet-data-feeds/api-reference.md)
   * [Contract Addresses](smart-contracts/witnet-data-feeds/contract-addresses/README.md)
+    * [Avalanche Price Feeds](smart-contracts/witnet-data-feeds/contract-addresses/avalanche-data-feeds.md)
     * [Boba Price Feeds](smart-contracts/witnet-data-feeds/contract-addresses/boba-data-feeds.md)
     * [Celo Price Feeds](smart-contracts/witnet-data-feeds/contract-addresses/celo-data-feeds.md)
     * [Conflux Price Feeds](smart-contracts/witnet-data-feeds/contract-addresses/conflux-data-feeds.md)
