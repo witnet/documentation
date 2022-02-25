@@ -18,6 +18,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 
 | **Caption** | **ID4** | **ID32**
 | :- | - | - 
+| [Price-**AVAX/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/AvaxUsdPrice.js) | **`356ba62f`** | `356ba62f72df54463d38fa6850079d4ca77a035bd8f193f17b10e40d67638d57`
 | [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`f723bde1`** | `f723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af`
 | [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) | **`24beead4`** | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946`
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`21a79821`** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
