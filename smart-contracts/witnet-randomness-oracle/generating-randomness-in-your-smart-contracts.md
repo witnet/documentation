@@ -1,8 +1,7 @@
 # Generating Randomness in your Smart Contracts
 
 ### Example 1: Bare Minimal
-
-On each of the [EVM compatible chains supported by Witnet](../apis-and-http-get-post-oracle/contracts-addresses.md) there is an instance of the `WitnetRNG` contract that exposes the main randomness oracle functionality through a very simple interface.
+On each of the [EVM compatible chains supported by Witnet](./contract-addresses.md) there is an instance of the `WitnetRNG` contract that exposes the main randomness oracle functionality through a very simple interface.
 
 The best way to interact with the `WitnetRNG` contract is through the `IWitnetRNG` interface, which is readily available in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge).
 
