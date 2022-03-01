@@ -46,8 +46,8 @@ A complete list of publicly available Witnet data feeds on Witnet's many support
 
 The [Price Feeds Contract Addresses](/smart-contracts/witnet-data-feeds/contract-addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains:
 
-{% content-ref url="../../smart-contracts/witnet-data-feeds/contract-addresses/" %}
-[contract-addresses](../../smart-contracts/witnet-data-feeds/contract-addresses/)
+{% content-ref url="/smart-contracts/witnet-data-feeds/contract-addresses/" %}
+[contract-addresses](/smart-contracts/witnet-data-feeds/contract-addresses/)
 {% endcontent-ref %}
 
 ### Learn More About Witnet Price Feeds
