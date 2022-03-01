@@ -1,5 +1,8 @@
 # Contract Addresses
 
+## Avalanche C-Chains
+***Avalanche Fuji**:* [`0xAf89a59876145202a027E73340592F05B28A6D99`](https://testnet.snowtrace.io/address/0xAf89a59876145202a027E73340592F05B28A6D99)
+
 ## Boba Network
 
 ***Boba Mainnet**:* [`0x11C073F17f018Bc1B372c7283fDe0608003823D5`](https://blockexplorer.boba.network/address/0x11C073F17f018Bc1B372c7283fDe0608003823D5)
