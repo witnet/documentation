@@ -1,4 +1,4 @@
-# Contract Addresses
+# Witnet Randomness Oracle Addresses
 
 ## Avalanche C-Chains
 ***Avalanche Fuji**:* [`0xAf89a59876145202a027E73340592F05B28A6D99`](https://testnet.snowtrace.io/address/0xAf89a59876145202a027E73340592F05B28A6D99)
