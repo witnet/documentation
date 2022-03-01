@@ -18,23 +18,23 @@ This table contains the currency pairs that are currently updated by the Witnet 
 
 | **Caption** | **ID4** | **ID32**
 | :- | - | - 
-| [Price-**AVAX/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/AvaxUsdPrice.js) | **`356ba62f`** | `356ba62f72df54463d38fa6850079d4ca77a035bd8f193f17b10e40d67638d57`
-| [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`f723bde1`** | `f723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af`
-| [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) | **`24beead4`** | `24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946`
-| [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`21a79821`** | `21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
-| [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`9ed884be`** | `9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073`
-| [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`65784185`** | `65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29`
-| [Price-**DAI/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/DaiUsdPrice.js) | **`9899e356`** | `9899e35601719f1348e09967349f72c7d04800f17c14992d6dcf2f17fac713ea`
-| [Price-**FRAX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FraxUsdtPrice.js) | **`1a3ea43e`** | `1a3ea43ec9fce5649302474844b0d2c0734ad605b3adfaf3baaab3b7ad43b1a4`
-| [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FxsUsdtPrice.js) | **`5a352c58`** | `5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3`
-| [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`31debffc`** | `31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977`
-| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`3d15f701`** | `3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
-| [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`4ba45817`** | `4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e`
-| [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) | **`c4ec7fbc`** | `c4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb`
-| [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`e2960cc0`** | `e2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75`
-| [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) | **`fb2c7795`** | `fb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef`
-| [Price-**USDC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdcUsdPrice.js) | **`4c80cf2e`** | `4c80cf2e5b3d17b98f6f24fc78f661982b8ef656c3b75a038f7bfc6f93c1b20e`
-| [Price-**USDT/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdtUsdPrice.js) | **`538f5a25`** | `538f5a25b39995a23c24037d2d38f979c8fa7b00d001e897212d936e6f6556ef`
+| [Price-**AVAX/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/AvaxUsdPrice.js) | **`0x356ba62f`** | `0x356ba62f72df54463d38fa6850079d4ca77a035bd8f193f17b10e40d67638d57`
+| [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js) | **`0xf723bde1`** | `0xf723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af`
+| [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js) | **`0x24beead4`** | `0x24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946`
+| [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js) | **`0x21a79821`** | `0x21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2`
+| [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`0x9ed884be`** | `0x9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073`
+| [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`0x65784185`** | `0x65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29`
+| [Price-**DAI/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/DaiUsdPrice.js) | **`0x9899e356`** | `0x9899e35601719f1348e09967349f72c7d04800f17c14992d6dcf2f17fac713ea`
+| [Price-**FRAX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FraxUsdtPrice.js) | **`0x1a3ea43e`** | `0x1a3ea43ec9fce5649302474844b0d2c0734ad605b3adfaf3baaab3b7ad43b1a4`
+| [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FxsUsdtPrice.js) | **`0x5a352c58`** | `0x5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3`
+| [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`0x31debffc`** | `0x31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977`
+| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`0x3d15f701`** | `0x3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
+| [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`** | `0x4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e`
+| [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) | **`0xc4ec7fbc`** | `0xc4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb`
+| [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`0xe2960cc0`** | `0xe2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75`
+| [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js) | **`0xfb2c7795`** | `0xfb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef`
+| [Price-**USDC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdcUsdPrice.js) | **`0x4c80cf2e`** | `0x4c80cf2e5b3d17b98f6f24fc78f661982b8ef656c3b75a038f7bfc6f93c1b20e`
+| [Price-**USDT/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdtUsdPrice.js) | **`0x538f5a25`** | `0x538f5a25b39995a23c24037d2d38f979c8fa7b00d001e897212d936e6f6556ef`
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the Javascript equivalent of the **RADON script** that is processed by the Witnet oracle on every single price update of the corresponding currency pair.
