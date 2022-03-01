@@ -6,12 +6,12 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown** 
 | :- | :- | :-: | :-: | :-: 
-| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6) | `f723bde1` | 24 hours | 1.0% | 15'
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 1 hour
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_eth-usd_6) | `3d15f701` | 24 hours | 1.0% | 1 hour
-| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_frax-usdt_6) | `1a3ea43e` | 24 hours | 0.25% | 15'
-| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_usdc-usd_6) | `4c80cf2e` | 24 hours | 0.25% | 15'
-| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_usdt-usd_6) | `538f5a25` | 24 hours | 0.25% | 15'
+| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_boba-usdt_6) | `0xf723bde1` | 24 hours | 1.0% | 15'
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_btc-usd_6) | `0x24beead4` | 24 hours | 1.0% | 1 hour
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_eth-usd_6) | `0x3d15f701` | 24 hours | 1.0% | 1 hour
+| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet_frax-usdt_6) | `0x1a3ea43e` | 24 hours | 0.25% | 15'
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_usdc-usd_6) | `0x4c80cf2e` | 24 hours | 0.25% | 15'
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-mainnet_usdt-usd_6) | `0x538f5a25` | 24 hours | 0.25% | 15'
 
 ### Boba Rinkeby
 
@@ -19,17 +19,17 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown** 
 | :- | :- | :-: | :-: | :-: 
-| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6) | `f723bde1` | 24 hours | 1.0% | 15'
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 15'
-| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_dai-usd_6) | `9899e356` | 24 hours | 0.1% | 15'
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6) | `3d15f701` | 24 hours | 1.0% | 15'
-| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_frax-usdt_6) | `1a3ea43e` | 24 hours | 0.1% | 15'
-| [Price-FXS/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_fxs-usdt_6) | `5a352c58` | 24 hours | 1.0% | 15'
-| [Price-OMG/BTC-9](https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9) | `c4ec7fbc` | 24 hours | 1.0% | 15'
-| [Price-OMG/ETH-9](https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9) | `e2960cc0` | 24 hours | 1.0% | 15'
-| [Price-OMG/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6) | `fb2c7795` | 24 hours | 1.0% | 15'
-| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_usdc-usd_6) | `4c80cf2e` | 24 hours | 0.1% | 15'
-| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_usdt-usd_6) | `538f5a25` | 24 hours | 0.1% | 15'
+| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_boba-usdt_6) | `0xf723bde1` | 24 hours | 1.0% | 15'
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_btc-usd_6) | `0x24beead4` | 24 hours | 1.0% | 15'
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_dai-usd_6) | `0x9899e356` | 24 hours | 0.1% | 15'
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_eth-usd_6) | `0x3d15f701` | 24 hours | 1.0% | 15'
+| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_frax-usdt_6) | `0x1a3ea43e` | 24 hours | 0.1% | 15'
+| [Price-FXS/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_fxs-usdt_6) | `0x5a352c58` | 24 hours | 1.0% | 15'
+| [Price-OMG/BTC-9](https://feeds.witnet.io/feeds/boba-rinkeby_omg-btc_9) | `0xc4ec7fbc` | 24 hours | 1.0% | 15'
+| [Price-OMG/ETH-9](https://feeds.witnet.io/feeds/boba-rinkeby_omg-eth_9) | `0xe2960cc0` | 24 hours | 1.0% | 15'
+| [Price-OMG/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby_omg-usdt_6) | `0xfb2c7795` | 24 hours | 1.0% | 15'
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_usdc-usd_6) | `0x4c80cf2e` | 24 hours | 0.1% | 15'
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby_usdt-usd_6) | `0x538f5a25` | 24 hours | 0.1% | 15'
 
 
 {% hint style="success" %}
