@@ -6,8 +6,8 @@
 
 | **Caption** | **ID4** | **Heartbeat** | **Deviation** | **Cooldown** 
 | :- | :- | :-: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `24beead4` | 24 hours | 3.5% | 1 hour
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `3d15f701` | 24 hours | 3.5% | 1 hour
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_btc-usd_6) | `0x24beead4` | 24 hours | 3.5% | 1 hour
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet_eth-usd_6) | `0x3d15f701` | 24 hours | 3.5% | 1 hour
 
 ### Ethereum Goerli
 
@@ -15,8 +15,8 @@
 
 | **Caption** | **ID4** | **Hearbeat** | **Deviation** | **Cooldown** 
 | :- | :- | :-: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `24beead4` | 8 hours | 1.0% | 15'
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `3d15f701` | 8 hours | 1.0% | 15'
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_btc-usd_6) | `0x24beead4` | 8 hours | 1.0% | 15'
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-goerli_eth-usd_6) | `0x3d15f701` | 8 hours | 1.0% | 15'
 
 ### Ethereum Rinkeby
 
@@ -24,8 +24,8 @@
 
 | **Caption** | **ID4** | **Hearbeat** | **Deviation** | **Cooldown**
 | :- | :- | :-: | :-: | :-: 
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `24beead4` | 24 hours | 1.0% | 15'
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `3d15f701` | 24 hours | 1.0% | 15'
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) | `0x24beead4` | 24 hours | 1.0% | 15'
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_eth-usd_6) | `0x3d15f701` | 24 hours | 1.0% | 15'
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update. 
