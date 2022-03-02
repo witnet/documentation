@@ -1,7 +1,7 @@
 ---
 description: >-
   This guide is aimed at developers willing to integrate their software with
-  Witnet and the Wit token in such a way that they can manage addresses,
+  Witnet and the Wit coin in such a way that they can manage addresses,
   balances, and create and verify transactions.
 ---
 
