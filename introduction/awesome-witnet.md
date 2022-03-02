@@ -26,6 +26,7 @@ description: >-
 
 #### Videos
 
+* 02/14/2022 [Talk at EthDenver 2022: a multichain oracle for the multichain future](https://www.youtube.com/watch?v=ly3U5KO9hyo)
 * 12/09/2021 [Overview of the Witnet Grant Program](https://www.youtube.com/watch?v=Rpsa5mP2GnY) by [ECOINOMICA](https://www.youtube.com/channel/UCDBLwF1fOfllwKYcD9yG3ww) :flag\_ru:
 * 10/26/2021 [Talk at TheDAOist Lisbon: Making DAOs accessible for everyone](https://www.youtube.com/watch?v=4508pbiKPQc)
 * 10/15/2021 [Witnet: a next-generation network of oracles](https://www.youtube.com/watch?v=3AsbMAx81QY) by [ECOINOMICA](https://www.youtube.com/channel/UCDBLwF1fOfllwKYcD9yG3ww) :flag\_ru:
@@ -90,4 +91,3 @@ description: >-
 * [Rhombus](https://rhombus.network)
 * [Tellor](https://tellor.io)
 * [UMA Project](https://umaproject.org/optimistic-oracle.html)
-
