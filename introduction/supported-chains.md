@@ -33,6 +33,6 @@ description: >-
 | **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
 | **Optimism**            | <ul><li>kovan</li><li>mainnet</li></ul>           | ETA: 2022 Q3 |
 | **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>          | ETA: 2022 Q3 |
-| Algorand                | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
+| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
 
 ### Request support for a new chain
