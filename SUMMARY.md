@@ -4,16 +4,16 @@
 
 ## Introduction
 
-* [❓ What is Witnet?](introduction/what-is-witnet.md)
-* [🤔 Frequently Asked Questions](introduction/frequently-asked-questions.md)
+* [❓ What is Witnet?](introduction/about/README.md)
+  * [⚙ Architecture](introduction/about/architecture.md)
+  * [🤔 Frequently Asked Questions](introduction/about/frequently-asked-questions.md)
+  * [🪙 The Witnet Coin (Wit)](introduction/about/wit-coin.md)
+  * [👛 Sheikah Witnet Wallet](introduction/about/sheikah-witnet-wallet.md)
 * [🚀 Quick Tutorials](introduction/quick-tutorials/README.md)
   * [📈 Price Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [🔀 Randomness](introduction/quick-tutorials/randomness.md)
   * [📡 APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [⛏ Mining Wit](introduction/quick-tutorials/mining-wit.md)
-* [🪙 The Witnet Coin (Wit)](introduction/wit-coin.md)
-* [👛 Sheikah Witnet Wallet](introduction/sheikah-witnet-wallet.md)
-* [⚙ Architecture](introduction/architecture.md)
 * [⛓ Supported chains](introduction/supported-chains.md)
 * [💥 Awesome Witnet](introduction/awesome-witnet.md)
 

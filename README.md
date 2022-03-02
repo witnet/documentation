@@ -12,8 +12,8 @@ The Witnet oracle is currently available on Ethereum, Polygon, Avalanche, Celo, 
 
 ### Featured sections
 
-{% content-ref url="introduction/wit-coin.md" %}
-[wit-coin.md](introduction/wit-coin.md)
+{% content-ref url="introduction/about/wit-coin.md" %}
+[wit-coin.md](introduction/about/wit-coin.md)
 {% endcontent-ref %}
 
 {% content-ref url="introduction/supported-chains.md" %}

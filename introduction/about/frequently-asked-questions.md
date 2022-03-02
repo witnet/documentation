@@ -6,10 +6,10 @@
 
 Unlike other popular oracle designs, Witnet achieves data integrity and bases its security on cryptoeconomic incentives, i.e. rewards and slashing.
 
-For more information about alternative oracle designs and general oracle ecosystem overviews, please check these sections from the [Awesome Witnet](awesome-witnet.md) compilation:
+For more information about alternative oracle designs and general oracle ecosystem overviews, please check these sections from the [Awesome Witnet](../awesome-witnet.md) compilation:
 
-* [On the importance of oracles](awesome-witnet.md#on-the-importance-of-oracles)
-* [Other oracles](awesome-witnet.md#other-oracles)
+* [On the importance of oracles](../awesome-witnet.md#on-the-importance-of-oracles)
+* [Other oracles](../awesome-witnet.md#other-oracles)
 
 #### How much does it cost to use the Witnet oracle?
 
@@ -33,6 +33,6 @@ You can find all the information relative to the Wit coin in its own section of 
 
 The currently supported networks are listed here:
 
-{% content-ref url="supported-chains.md" %}
-[supported-chains.md](supported-chains.md)
+{% content-ref url="../supported-chains.md" %}
+[supported-chains.md](../supported-chains.md)
 {% endcontent-ref %}

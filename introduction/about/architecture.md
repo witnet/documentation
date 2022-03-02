@@ -1,7 +1,7 @@
 # ⚙ Architecture
 
 {% hint style="info" %}
-This article explores the characteristics and intricacies of Witnet from a purely internal perspective. This can be useful to understand the processes supporting the security and data integrity properties of the protocol.&#x20;
+This article explores the characteristics and intricacies of Witnet from a purely internal perspective. This can be useful to understand the processes supporting the security and data integrity properties of the protocol.
 
 However, it is important to note that in practice all this complexity is totally hidden away from the average smart contract developer. Using the Witnet oracle from Ethereum or any other smart contracts platform feels exactly like interacting with a native contract on that network.
 {% endhint %}
@@ -25,7 +25,7 @@ Having its own blockchain also guarantees that the fate of the Witnet oracle is 
 {% hint style="success" %}
 Even though Witnet runs on its own blockchain, it is connected to the most popular smart contract enabled blockchains, and from the perspective of the average smart contract developer, using Witnet feels totally like using a native contract on each of those chains.
 
-In addition, many oracle use cases (like [price feeds](quick-tutorials/data-feeds-tutorial.md) or [random number generation](quick-tutorials/randomness.md)) are also served through simpler interfaces that do not require the user to create and deploy any data requests.
+In addition, many oracle use cases (like [price feeds](../quick-tutorials/data-feeds-tutorial.md) or [random number generation](../quick-tutorials/randomness.md)) are also served through simpler interfaces that do not require the user to create and deploy any data requests.
 {% endhint %}
 
 ### Capabilities of Data Requests
@@ -42,9 +42,9 @@ Namely, data requests allow to:
 
 The Witnet protocol was designed to be agnostic over the nature of the sourced data, and currently supports the following types of data sources:
 
-* [HTTP GET,](quick-tutorials/apis-and-http-get-post.md) which easily allows to read from most [REST APIs](quick-tutorials/apis-and-http-get-post.md) today.
-* [HTTP POST](quick-tutorials/apis-and-http-get-post.md), which provides a convenient way to query more sophisticated [REST and GraphQL APIs](quick-tutorials/apis-and-http-get-post.md).
-* [RNG](quick-tutorials/randomness.md), which allows to generate [random numbers and byte arrays](quick-tutorials/randomness.md).
+* [HTTP GET,](../quick-tutorials/apis-and-http-get-post.md) which easily allows to read from most [REST APIs](../quick-tutorials/apis-and-http-get-post.md) today.
+* [HTTP POST](../quick-tutorials/apis-and-http-get-post.md), which provides a convenient way to query more sophisticated [REST and GraphQL APIs](../quick-tutorials/apis-and-http-get-post.md).
+* [RNG](../quick-tutorials/randomness.md), which allows to generate [random numbers and byte arrays](../quick-tutorials/randomness.md).
 
 {% hint style="success" %}
 Witnet uses an RFC-8949 based binary format named RADON to encode and decode data requests.
@@ -59,12 +59,12 @@ Once a data request is published into a Witnet block, it will undergo the follow
 * Commitment: in this stage, each node in the Witnet network will independently and secretly compute their elegibility to participate in solving the data request. If a node finds itself to be eligible, it will retrieve and aggregate the data sources as specified by the request, and will publish a cryptographic commitment to the resulting value (i.e., alike to a closed envelope that contains a commitment to a specific piece of data). In doing so, the witnessing also need to collateralize (stake) a certain amount of Witnet tokens.
 * Reveal: once the witnesses have published their commitments, they will need to reveal the actual data they committed to.
 * Tally: once all the commitments have been followed up by a reveal, miners apply the multi-witness aggregation as specified in the request, publish the final _tallied_ result and execute all corresponding payments of rewards as well as slashing any misreporters.
-* Completed: once a _Tally_ transaction has been published and confirmed into the Witnet network, the eventually resulting data point is considered final and will be ready for the requester to read and use.&#x20;
+* Completed: once a _Tally_ transaction has been published and confirmed into the Witnet network, the eventually resulting data point is considered final and will be ready for the requester to read and use.
 
 _Commit_, _Reveal_, and _Tally_ are performed on-chain through special types of transactions in the Witnet protocol that are allocated each a reserved amount of block space, ensuring that data requests are resolved timely even when there is a big number of value transfer transactions (VTTs) happening in the network.
 
 {% hint style="success" %}
-When publishing a data request from Ethereum or any other smart contracts platform, the data request and its eventual result will be relayed to the Witnet blockchain by a set of _bridge nodes_ that is different from the witnessing nodes of the Witnet network.&#x20;
+When publishing a data request from Ethereum or any other smart contracts platform, the data request and its eventual result will be relayed to the Witnet blockchain by a set of _bridge nodes_ that is different from the witnessing nodes of the Witnet network.
 {% endhint %}
 
 ### Algorithmic Reputation System
@@ -79,7 +79,7 @@ Reputation points cannot be transferred and cannot be hoarded: they expire a cer
 
 ### Transaction Finality
 
-In the Witnet protocol, finality is guaranteed by superblocks. Every 10 blocks (specifically, those blocks whose epoch number / block height is a multiple of 10), the protocol samples a committee of 100 nodes from the Active Reputation Set, i.e. nodes with a proven record of reliability.&#x20;
+In the Witnet protocol, finality is guaranteed by superblocks. Every 10 blocks (specifically, those blocks whose epoch number / block height is a multiple of 10), the protocol samples a committee of 100 nodes from the Active Reputation Set, i.e. nodes with a proven record of reliability.
 
 A super-majority of 2/3rds of this committee is required to digitally sign a message that gets derived from the hash of the last 10 blocks in the chain. In this way, the network can build strong consensus on the chain state, without having to gather signatures for each individual block.
 

@@ -1,4 +1,4 @@
-# 🪙 The Witnet Token (Wit)
+# 🪙 The Witnet Coin (Wit)
 
 ### Utility of the Wit coins
 
@@ -18,7 +18,7 @@ Node operators need to stake Wit coins in their nodes to increase their chance t
 
 ### Tokenomics of the Wit coin
 
-![(click to enlarge)](../.gitbook/assets/image.png)
+![(click to enlarge)](../../.gitbook/assets/image.png)
 
 #### Maximum supply
 
@@ -45,6 +45,5 @@ Until a first halvening in 2025, there will be 1920 blocks mined every day, with
 The remaining 30% of the total Wit supply (750,000,000 Wits) were pre-mined in the mainnet genesis block (the first block in the blockchain).
 
 * 250,000,000 Wits (10%) went to founders and early contributors. All these tokens were subject to a lockup period: 6 months cliff in April 2021, followed by 18 months of bi-weekly unlocks of 1/24th of each allocation.
-* 250,000,000 (10%) was allocated with no lock-ups to the Witnet Foundation to support ongoing efforts.&#x20;
+* 250,000,000 (10%) was allocated with no lock-ups to the Witnet Foundation to support ongoing efforts.
 * 250,000,000 (10%) were preassigned with no lock-ups to participants in the [Republic.co](https://republic.co/witnet) token pre-sale and SAFT participants.
-
