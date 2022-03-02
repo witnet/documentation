@@ -1,7 +1,7 @@
 # ⛏ Mining Wit
 
 {% hint style="info" %}
-You do not need to run a Witnet node to use Witnet from your Ethereum smart contracts.&#x20;
+You do not need to run a Witnet node to use Witnet from your Ethereum smart contracts.
 
 If you are a smart contracts developer, what you probably want is to use one of the [data feeds](data-feeds-tutorial.md), a [randomness source](randomness.md), or to connect to [APIs with HTTP GET/POST](apis-and-http-get-post.md).
 {% endhint %}
@@ -56,6 +56,6 @@ Please be patient, new identities in the system are subject to a slow start for 
 
 Also, please read below for tips on how to efficiently manage your Witnet node and how to increase your its probability of mining:
 
-{% content-ref url="../../node-operators/nest-steps.md" %}
-[nest-steps.md](../../node-operators/nest-steps.md)
+{% content-ref url="../../node-operators/next-steps.md" %}
+[next-steps.md](../../node-operators/next-steps.md)
 {% endcontent-ref %}

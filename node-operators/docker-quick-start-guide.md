@@ -3,7 +3,7 @@
 **The Witnet Mainnet is open for anyone to join and and run their own full node.**
 
 {% hint style="info" %}
-You do not need to run a Witnet node to use Witnet from your Ethereum smart contracts.&#x20;
+You do not need to run a Witnet node to use Witnet from your Ethereum smart contracts.
 
 If you are a smart contracts developer, what you probably want is to use one of the [data feeds](../introduction/quick-tutorials/data-feeds-tutorial.md), a [randomness source](../introduction/quick-tutorials/randomness.md), or to connect to [APIs with HTTP GET/POST](../introduction/quick-tutorials/apis-and-http-get-post.md).
 {% endhint %}
@@ -58,10 +58,10 @@ docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publ
 There are two **important** things you should do now to make the most of your Witnet node:
 
 1. Open ports as explained below.
-2. Follow the [Next Steps](nest-steps.md) guide to learn how to check the node status, progress and statistics:
+2. Follow the [Next Steps](next-steps.md) guide to learn how to check the node status, progress and statistics:
 
-{% content-ref url="nest-steps.md" %}
-[nest-steps.md](nest-steps.md)
+{% content-ref url="next-steps.md" %}
+[next-steps.md](next-steps.md)
 {% endcontent-ref %}
 
 ### Open your ports! <a href="#open-your-ports" id="open-your-ports"></a>
@@ -72,8 +72,8 @@ For this feature to be effective, you will also need your IP address to be publi
 
 Depending on your setup, this will normally imply changing the settings on your router or firewall so as to forward all incoming connections to port `21337` from your external IP into the IP of the device or interface where the node is running.
 
-You can find out how to verify that your ports are open in the [Next Steps](nest-steps.md) guide:
+You can find out how to verify that your ports are open in the [Next Steps](next-steps.md) guide:
 
-{% content-ref url="nest-steps.md" %}
-[nest-steps.md](nest-steps.md)
+{% content-ref url="next-steps.md" %}
+[next-steps.md](next-steps.md)
 {% endcontent-ref %}
