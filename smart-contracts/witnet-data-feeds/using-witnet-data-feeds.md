@@ -1,12 +1,14 @@
-# Using Price Feeds
+# Code Examples
 
 ## Reading multiple currency pairs from the router
 
 ### Solidity example
 
-To read price values from the Price Router contract use the official **`WitnetPriceRouter`** address, depending on the EVM chain in which you plan to deploy your contract. 
+To read price values from the Price Router contract use the official **`WitnetPriceRouter`** address, depending on the EVM chain in which you plan to deploy your contract.
 
-{% content-ref url="contract-addresses/README.md" %} contract-addresses/README.md {% endcontent-ref %}
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
 
 For instance, this example shows a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
 
@@ -71,10 +73,9 @@ print("> latestUpdateStatus:", valueFor[2])
 The **`WitnetPriceRouter`** contract offers a series of methods that can be used to list the currency pairs that are currently maintained by the Witnet Foundation, as well as their human-readable captions, and the Price Feed contracts currently serving updates for each one of them:
 {% endhint %}
 
-{% content-ref url="api-reference.md" %}api-reference.md{% endcontent-ref %}
-
-
-## Forcing an update on a Witnet-maintained curreny pair
+{% content-ref url="api-reference.md" %}
+[api-reference.md](api-reference.md)
+{% endcontent-ref %}
 
 ### Solidity example
 
@@ -113,10 +114,12 @@ contract MyContractConflux {
     // ...
 }
 ```
- 
+
 ## Reading last price and timestamp from a Price Feed contract serving a given currency pair
+
 ### Solidity example
-```solidity 
+
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
@@ -162,8 +165,8 @@ When interacting with a **IWitnetPriceFeed** contract, you can get not only the 
 Moreover, you can also detect whether there is a recent price update pending to be solved, or if the latest update attempt could not get solved for whatever reason.
 {% endhint %}
 
+## Forcing an update on a Witnet-maintained curreny pair
 
-
-
-{% content-ref url="api-reference.md" %}api-reference.md{% endcontent-ref %}
-
+{% content-ref url="api-reference.md" %}
+[api-reference.md](api-reference.md)
+{% endcontent-ref %}
