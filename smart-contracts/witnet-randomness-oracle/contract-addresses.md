@@ -1,4 +1,10 @@
-# Contract Addresses
+# Randomness Contract Addresses
+
+{% hint style="success" %}
+**Not listed here?**
+
+You can request support for additional chains using [this form](https://tally.so/r/wMZDAn).
+{% endhint %}
 
 ## Avalanche C-Chain
 
