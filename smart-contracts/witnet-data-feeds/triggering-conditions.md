@@ -27,7 +27,3 @@ Would the established triggering conditions for a certain currency pair not meet
 
 Requesting price updates to the Witnet oracle indeed requires the payment of a fee, proportional to the gas price of the request transaction. This fee, however, can be paid with the same _native currency_ (🎉) that is used for paying gas in whatever EVM chain your application is running.
 {% endhint %}
-
-{% content-ref url="broken-reference/" %}
-[broken-reference](broken-reference/)
-{% endcontent-ref %}
