@@ -1,8 +1,8 @@
 # 🪙 The Witnet Token (Wit)
 
-### Utility of the Wit Token
+### Utility of the Wit coins
 
-The Wit token is a utility token, native to the Witnet blockchain, encouraging fair and trustworthy behavior throughout the network. These tokens perform a number of important functions within the ecosystem:
+The Wit coin is a utility token, native to the Witnet blockchain, encouraging fair and trustworthy behavior throughout the network. These coins perform a number of important functions within the ecosystem:
 
 #### Gas / fees
 
@@ -10,13 +10,13 @@ Transactions on the Witnet blockchain require fees for occupying block space. Va
 
 #### Payment for service
 
-Queries to the Witnet oracle need to pay the nodes resolving the requests using the Wit token.
+Queries to the Witnet oracle need to pay the nodes resolving the requests using Wit coins.
 
 #### Securing the network (_staking_)
 
-Node operators need to stake Wit tokens in their nodes to increase their chance to mine blocks and to get data requests assigned for them to resolve and take fees from.
+Node operators need to stake Wit coins in their nodes to increase their chance to mine blocks and to get data requests assigned for them to resolve and take fees from.
 
-### Tokenomics of the Wit Token
+### Tokenomics of the Wit coin
 
 ![(click to enlarge)](../.gitbook/assets/image.png)
 

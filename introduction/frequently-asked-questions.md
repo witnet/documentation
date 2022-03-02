@@ -19,9 +19,13 @@ The cost really depends on what level does your smart contract integrate with Wi
 * **Randomness oracle:** user pays the gas cost of the randomization request and is required to deposit an amount of the native token (e.g. ETH) equal to the gas cost of reporting the randomness. The total cost is roughly equivalent to up to \~320,000 gas units. Reading the randomness and deriving random numbers is free.
 * **APIs and HTTP GET/POST:** user pays the gas cost of the request and is required to deposit an amount of the native token (e.g. ETH) equal to the gas cost of reporting the result. The total cost is roughly equivalent to up to \~320,000 gas units. Reading the result of the request is free.
 
-### Witnet Token (Wit)
+### Witnet Coin (Wit)
 
-You can find all the information relative to the Wit token in its own section of the docs:
+You can find all the information relative to the Wit coin in its own section of the docs:
+
+{% content-ref url="the-witnet-token-wit.md" %}
+[the-witnet-token-wit.md](the-witnet-token-wit.md)
+{% endcontent-ref %}
 
 ### Ecosystem
 
