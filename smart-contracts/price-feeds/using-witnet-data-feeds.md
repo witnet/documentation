@@ -1,16 +1,18 @@
 # Code Examples
 
-## Reading multiple currency pairs from the router
+## Reading multiple price pairs from the router
+
+The Price Router contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](../../introduction/supported-chains.md).
 
 ### Solidity example
 
-To read price values from the Price Router contract use the official **`WitnetPriceRouter`** address, depending on the EVM chain in which you plan to deploy your contract.
+To read price values from the Price Router contract, you need first to identify the **`WitnetPriceRouter`** address specific to the chain in which you plan to deploy your contracts:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="contract-addresses/" %}
+[contract-addresses](contract-addresses/)
 {% endcontent-ref %}
 
-For instance, this example shows a possible implementation for the Boba/Rinkeby testnet, a Layer-2 solution bound to Ethereum Rinkeby:
+The example below shows how to read the price of two different assets from the Witnet Price Router:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -22,8 +24,9 @@ contract MyContractBoba {
     IWitnetPriceRouter public router;
     
     /**
-     * Network: Boba Rinkeby
-     * WitnetPriceRouter: 0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25
+     * IMPORTANT: replace the address below with the WitnetPriceRouter address
+     * of the network you are using! Please find the address here:
+     * https://docs.witnet.io/smart-contracts/price-feeds/contract-addresses
      */
     constructor()
         router = IWitnetPriceRouter(0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25);
@@ -47,7 +50,7 @@ contract MyContractBoba {
 }
 ```
 
-{% hint style="danger" %}
+{% hint style="info" %}
 As Solidity does not support `float` types, all prices are provided as `int256` values, with a fixed number of decimals digits.
 
 For instance, if the BTC/USD price is $41,847.762289, the Price Router contract will give `41847762289` for the currency pair identified as `"Price-BTC/USD-6"`.
@@ -55,7 +58,7 @@ For instance, if the BTC/USD price is $41,847.762289, the Price Router contract 
 
 ### Javascript example
 
-You may also read from your **Web3** application the latest updates on any of the supported currency pairs, by directly interacting with the Price Router contract:
+You may also read the latest price of any of the supported currency pairs from your **Web3** application by interacting directly with the Price Router contract:
 
 ```javascript
 web3 = Web3(Web3.HTTPProvider('https://mainnet.boba.network'))
@@ -76,6 +79,61 @@ The **`WitnetPriceRouter`** contract offers a series of methods that can be used
 {% content-ref url="api-reference.md" %}
 [api-reference.md](api-reference.md)
 {% endcontent-ref %}
+
+## Reading last price and timestamp from a Price Feed contract serving a specific pair
+
+For&#x20;
+
+### Solidity example
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.11;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
+
+contract MyContractCelo {
+
+    IWitnetPriceRouter public immutable witnetPriceRouter;
+    IWitnetPriceFeed public celoEurPrice;
+    
+    /**
+     * IMPORTANT: replace the address below with the WitnetPriceRouter address
+     * of the network you are using! Please find the address here:
+     * https://docs.witnet.io/smart-contracts/price-feeds/contract-addresses
+     */
+    constructor()
+        witnetPriceRouter = IWitnetPriceRouter(0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE);
+        updateCeloEurPriceFeed();
+    }
+    
+    /// Detects if the WitnetPriceRouter is now pointing to a different IWitnetPriceFeed implementation:
+    function updateCeloEurPriceFeed() public {
+        IERC165 _newPriceFeed = witnetPriceRouter.getPriceFeed(bytes32(0x21a79821));
+        if (address(_newPriceFeed) != address(0)) {
+            celoEurPrice = IWitnetPriceFeed(address(_newPriceFeed));
+        }
+    }
+    
+    /// Returns the CELO / EUR price (6 decimals), ultimately provided by the Witnet oracle, and
+    /// the timestamps at which the price was reported back from the Witnet oracle's sidechain 
+    /// to Celo Alfajores.
+    function getCeloEurPrice() external view returns (int256 _lastPrice, uint256 _lastTimestamp) {
+        (_lastPrice, _lastTimestamp,,) = celoEurPrice.lastValue();
+    }
+    
+    // ...
+}
+```
+
+{% hint style="success" %}
+When interacting with a **IWitnetPriceFeed** contract, you can get not only the last valid price value (and timestamp) solved by the Witnet oracle, but also the hash of the transaction within the Witnet's sidechain that triggered that last valid update request. This Witnet transaction hash can be used as a means to verify and track the whole resolution process that took in place within the Witnet oracle's sidechain.
+
+Moreover, you can also detect whether there is a recent price update pending to be solved, or if the latest update attempt could not get solved for whatever reason.
+{% endhint %}
+
+## Forcing an update on a Witnet-maintained curreny pair
 
 ### Solidity example
 
@@ -114,58 +172,6 @@ contract MyContractConflux {
     // ...
 }
 ```
-
-## Reading last price and timestamp from a Price Feed contract serving a given currency pair
-
-### Solidity example
-
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.11;
-
-import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
-import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
-
-contract MyContractCelo {
-
-    IWitnetPriceRouter public immutable witnetPriceRouter;
-    IWitnetPriceFeed public celoEurPrice;
-    
-    /**
-     * Network: Celo Alfajores
-     * WitnetPriceRouter: 0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE
-     */
-    constructor()
-        witnetPriceRouter = IWitnetPriceRouter(0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE);
-        updateCeloEurPriceFeed();
-    }
-    
-    /// Detects if the WitnetPriceRouter is now pointing to a different IWitnetPriceFeed implementation:
-    function updateCeloEurPriceFeed() public {
-        IERC165 _newPriceFeed = witnetPriceRouter.getPriceFeed(bytes32(0x21a79821));
-        if (address(_newPriceFeed) != address(0)) {
-            celoEurPrice = IWitnetPriceFeed(address(_newPriceFeed));
-        }
-    }
-    
-    /// Returns the CELO / EUR price (6 decimals), ultimately provided by the Witnet oracle, and
-    /// the timestamps at which the price was reported back from the Witnet oracle's sidechain 
-    /// to Celo Alfajores.
-    function getCeloEurPrice() external view returns (int256 _lastPrice, uint256 _lastTimestamp) {
-        (_lastPrice, _lastTimestamp,,) = celoEurPrice.lastValue();
-    }
-    
-    // ...
-}
-```
-
-{% hint style="success" %}
-When interacting with a **IWitnetPriceFeed** contract, you can get not only the last valid price value (and timestamp) solved by the Witnet oracle, but also the hash of the transaction within the Witnet's sidechain that triggered that last valid update request. This Witnet transaction hash can be used as a means to verify and track the whole resolution process that took in place within the Witnet oracle's sidechain.
-
-Moreover, you can also detect whether there is a recent price update pending to be solved, or if the latest update attempt could not get solved for whatever reason.
-{% endhint %}
-
-## Forcing an update on a Witnet-maintained curreny pair
 
 {% content-ref url="api-reference.md" %}
 [api-reference.md](api-reference.md)
