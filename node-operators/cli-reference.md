@@ -6,105 +6,135 @@ The cli subcommand provides a human-friendly command-line interface to the node 
 
 See all the available options by running the help command using docker, binary or cargo.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node --help
-  ```
-=== "Binary"
-  ```console
-    witnet node --help
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node --help
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node --help
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node --help
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node --help
+```
+{% endtab %} {% endtabs %}
 
 To get more information about any specific command, simply add `--help` at the end. For instance, this will show the available options for the `blockchain` command:
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node blockchain --help
-  ```
-=== "Binary"
-  ```console
-    witnet node blockchain --help
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node blockchain --help
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node blockchain --help
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node blockchain --help
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node blockchain --help
+```
+{% endtab %} {% endtabs %}
 
 The JSON-RPC server address is obtained from the [configuration file][configuration].
 The path of this file can be set using the `-c` or `--config` flag.
 This flag must appear before `node`.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node -c witnet.toml node blockchain
-  ```
-=== "Binary"
-  ```console
-    witnet -c witnet.toml node blockchain
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- -c witnet.toml node blockchain
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node -c witnet.toml node blockchain
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet -c witnet.toml node blockchain
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- -c witnet.toml node blockchain
+```
+{% endtab %} {% endtabs %}
 
 You can use the `-n` flag to easily overwrite the node address.
 This flag must appear after the command name.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node -c witnet.toml node blockchain -n "127.0.0.1:1234"
-  ```
-=== "Binary"
-  ```console
-    witnet -c witnet.toml node blockchain -n "127.0.0.1:1234"
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- -c witnet.toml node blockchain -n "127.0.0.1:1234"
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node -c witnet.toml node blockchain -n "127.0.0.1:1234"
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet -c witnet.toml node blockchain -n "127.0.0.1:1234"
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- -c witnet.toml node blockchain -n "127.0.0.1:1234"
+```
+{% endtab %} {% endtabs %}
 
 If there is any error, the process will return a non-zero exit code.
 
-=== "Docker"
-  ```text
+{% tabs %} {% tab title="Docker" %}
+```text
     docker exec witnet_node witnet node node blockchain
     Error: Connection refused (os error 111)
-  ```
-=== "Binary"
-  ```text
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```text
     witnet node blockchain
     Error: Connection refused (os error 111)
-  ```
-=== "Cargo"
-  ```text
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```text
     cargo run -- node blockchain
     Error: Connection refused (os error 111)
-  ```
+```
+{% endtab %} {% endtabs %}
 
 The executable implements the usual logging API, which can be enabled using `RUST_LOG=witnet=debug`:
 
-=== "Docker"
-  ```text
+{% tabs %} {% tab title="Docker" %}
+```text
     $ docker exec witnet_node witnet node blockchain
     INFO 2019-01-03T12:04:43Z: witnet::json_rpc_client: Connecting to JSON-RPC server at 127.0.0.1:21338
     ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
-  ```
-=== "Binary"
-  ```text
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```text
     $ RUST_LOG=witnet=debug witnet node blockchain
     INFO 2019-01-03T12:04:43Z: witnet::json_rpc_client: Connecting to JSON-RPC server at 127.0.0.1:21338
     ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
-  ```
-=== "Cargo"
-  ```text
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```text
     $ RUST_LOG=witnet=debug cargo run -- node blockchain
     INFO 2019-01-03T12:04:43Z: witnet::json_rpc_client: Connecting to JSON-RPC server at 127.0.0.1:21338
     ERROR 2019-01-03T12:04:43Z: witnet: Error: Connection refused (os error 111)
-  ```
+```
+{% endtab %} {% endtabs %}
 
 ## Commands
 
@@ -114,18 +144,23 @@ Add addresses to the node's peers and try to connect to them.
 
 The IP addresses are expected in format: list of "address:port" separated by spaces.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node addPeers 52.166.178.145:21337 52.166.178.145:22337
-  ```
-=== "Binary"
-  ```console
-    witnet node addPeers 52.166.178.145:12337 52.166.178.145:22337
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node addPeers 52.166.178.145:12337 52.166.178.145:22337
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node addPeers 52.166.178.145:21337 52.166.178.145:22337
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node addPeers 52.166.178.145:12337 52.166.178.145:22337
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node addPeers 52.166.178.145:12337 52.166.178.145:22337
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -141,18 +176,23 @@ Get the identifier of the node that acts as its address when interacting with th
 This is the address used for mining blocks, resolving data requests, and
 receiving value transfer transactions.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node address
-  ```
-=== "Binary"
-  ```console
-    witnet node address
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node address
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node address
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node address
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node address
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -166,21 +206,26 @@ Get total balance of a given Witnet address. Balances are shown in wits.
 
 * `--address=address`: address for which to get balance. If omitted, defaults to the node's own address.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node balance
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node balance
     docker exec witnet_node witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
-  ```
-=== "Binary"
-  ```console
-    witnet node balance
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node balance
     witnet node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node balance
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node balance
     cargo run -- node balance --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
-  ```
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -192,18 +237,23 @@ Example output:
 
 Print out detailed information about a block being queried by its hash.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
-  ```
-=== "Binary"
-  ```console
-    witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node block 9372e2ed0c637a9733e92d7e0d4f1aa1f297c43a80bc3be57fc7d7738efb0ef4
+```
+{% endtab %} {% endtabs %}
 
 The hash of the block should be provided as a hexadecimal string.
 
@@ -274,27 +324,32 @@ Example output:
 
  List block hashes in the local block chain, matched with their epochs.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node blockchain
-  ```
-=== "Binary"
-  ```console
-    witnet node blockchain
-  ```
-=== "Cargo"
-  ```console
-    cargo --run node blockchain
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node blockchain
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node blockchain
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo --run node blockchain
+```
+{% endtab %} {% endtabs %}
 
 This method accepts two optional arguments:
 
 * `--epoch=n`: the first epoch for which to show block hashes. A negative epoch means "n epochs ago".
 * `--limit=n`: the number of epochs. If zero, unlimited.
 
-=== "Docker"
-  ```console
-    # Get all the block hashes from the genesis block
+{% tabs %} {% tab title="Docker" %}
+```console
+# Get all the block hashes from the genesis block
     docker exec witnet_node witnet node blockchain --epoch=0 --limit=0
 
     # Get the block hashes from epochs [0, 19]
@@ -308,10 +363,12 @@ This method accepts two optional arguments:
 
     # Get the block hash from the last block
     docker exec witnet_node witnet node blockchain --epoch=-1 --limit=1
-  ```
-=== "Binary"
-  ```console
-    # Get all the block hashes from the genesis block
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+# Get all the block hashes from the genesis block
     witnet node blockchain --epoch=0 --limit=0
     
     # Get the block hashes from epochs [0, 19]
@@ -325,10 +382,12 @@ This method accepts two optional arguments:
     
     # Get the block hash from the last block
     witnet node blockchain --epoch=-1 --limit=1
-  ```
-=== "Cargo"
-  ```console
-    # Get all the block hashes from the genesis block
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+# Get all the block hashes from the genesis block
     cargo run -- node blockchain --epoch=0 --limit=0
     
     # Get the block hashes from epochs [0, 19]
@@ -342,7 +401,8 @@ This method accepts two optional arguments:
     
     # Get the block hash from the last block
     cargo run -- node blockchain --epoch=-1 --limit=1
-  ```
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -354,18 +414,23 @@ block for epoch #76229 had digest 8dd75bb0d5475a93c27c4166677fbb3bc154e6731c7e07
 
 Show information about a data request.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
-=== "Binary"
-  ```console
-    witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -383,18 +448,23 @@ Tally: RadonTypes::RadonFloat(10172.642950000001)
 
 If you want to see the request move forwards through its different stages in real time you can use the `watch` command while it is being resolved:
 
-=== "Docker"
-  ```console
-    watch --color docker exec witnet_node witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
-=== "Binary"
-  ```console
-    watch --color witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
-=== "Cargo"
-  ```console
-    watch --color cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+watch --color docker exec witnet_node witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+watch --color witnet node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+watch --color cargo run -- node dataRequestReport 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %} {% endtabs %}
 
 ### joinTransaction
 
@@ -405,87 +475,112 @@ The following arguments must be provided.
 * `--value=amount`: amount in nanoWits.
 * `--fee=fee`: miner fee in nanoWits.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node joinTransaction --value=100 --fee=1
-  ```
-=== "Binary"
-  ```console
-    witnet node joinTransaction --value=100 --fee=1
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node joinTransaction --value=100 --fee=1
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node joinTransaction --value=100 --fee=1
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node joinTransaction --value=100 --fee=1
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node joinTransaction --value=100 --fee=1
+```
+{% endtab %} {% endtabs %}
 
 ### knownPeers
 
 Get the list of peer addresses known to the node. These addresses are tagged as:
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node knownPeers
-  ```
-=== "Binary"
-  ```console
-    witnet node knownPeers
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node knownPeers
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node knownPeers
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node knownPeers
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node knownPeers
+```
+{% endtab %} {% endtabs %}
 
 ### masterKeyExport
 
 Export the node's master private key. Please keep this totally secret. Anyone with knowledge of this key has full access to all your wit tokens.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node masterKeyExport
-  ```
-=== "Binary"
-  ```console
-    witnet node masterkeyExport
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node masterkeyExport
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node masterKeyExport
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node masterkeyExport
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node masterkeyExport
+```
+{% endtab %} {% endtabs %}
 
 ### minerList
 
 
 Display the list of block hashes for each epoch, their miners and the numbers of blocks mined by each address.
 
-=== "Docker"
-  ```console
-    docker exec  witnet_node ./witnet node minerList
-  ```
-=== "Binary"
-  ```console
-    witnet node minerList
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node minerList
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec  witnet_node ./witnet node minerList
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node minerList
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node minerList
+```
+{% endtab %} {% endtabs %}
 
 ### nodeStats
 
 Display local node stats.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node nodeStats
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node nodeStats
-  ```
-=== "Binary"
-  ```console
-    witnet node nodeStats
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node nodeStats
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node nodeStats
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node nodeStats
+```
+{% endtab %} {% endtabs %}
 
 Among other information, this shows counters for proposed and accepted blocks and participations in resolving data requests ("commitments"):
 
@@ -521,18 +616,23 @@ Data Request mining stats:
 
 Display a transaction output, as referred by it's "output pointer", that is, `<transaction_id>:<output_index>`.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d:0
-  ```
-=== "Binary"
-  ```console
-    witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d:0
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node output 33c656101dd1dfa2258415d6487c648152b95983d1151f46a679b5d1902f6a8d
+```
+{% endtab %} {% endtabs %}
 
 ### peers
 
@@ -540,36 +640,46 @@ List inbound and outbound connections currently established by the node.
 Outbound connections are those initiated on our side, and inbound connections are those that were initiated by peer nodes.
 A node that does not announce a public address (IP and port) will normally have no inbound connections, as there is no way for other nodes to discover a valid network route to it.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node peers
-  ```
-=== "Binary"
-  ```console
-    witnet node peers
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node peers
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node peers
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node peers
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node peers
+```
+{% endtab %} {% endtabs %}
 
 ### raw
 
 The `raw` command allows sending raw JSON-RPC requests from the command line.
 It can be used in an interactive way (don't forget the `-i` flag when using Docker): each line of user input will be sent to the JSON-RPC server without any modifications:
 
-=== "Docker"
-  ```console
-    $ docker exec -i witnet_node witnet node raw
-  ```
-=== "Binary"
-  ```console
-    $ witnet -c witnet.toml node raw
-  ```
-=== "Cargo"
-  ```console
-    $ cargo run -- -c witnet.toml node raw
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+$ docker exec -i witnet_node witnet node raw
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+$ witnet -c witnet.toml node raw
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+$ cargo run -- -c witnet.toml node raw
+```
+{% endtab %} {% endtabs %}
 
 Each block represents a method call:
 the first line is a request, the second line is a response.
@@ -593,21 +703,26 @@ bye
 
 Alternatively, the input can be read from a file using pipes, as is usual in Unix-like environments. For instance, the  `bitcoin_price.json` data request example from the [witnet-rust reposity](https://github.com/witnet/witnet-rust/tree/master/examples) can be easily deployed into the network using the `raw` command like this:
 
-=== "Docker"
-  ```console
-    cat examples/bitcoin_price.json | docker exec -i witnet_node witnet node raw
+{% tabs %} {% tab title="Docker" %}
+```console
+cat examples/bitcoin_price.json | docker exec -i witnet_node witnet node raw
     {"jsonrpc": "2.0","result": "06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d","id": "1"}
-  ```
-=== "Binary"
-  ```console
-    cat examples/bitcoin_price.json | witnet node raw
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+cat examples/bitcoin_price.json | witnet node raw
     {"jsonrpc": "2.0","result": "06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d","id": "1"}
-  ```
-=== "Cargo"
-  ```console
-    cat examples/bitcoin_price.json | cargo run -- node raw
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cat examples/bitcoin_price.json | cargo run -- node raw
     {"jsonrpc": "2.0","result": "06e19d996a6776d6cd1ca215f6acd0975d71e64a9dacc06fcfdd7b2538cdbf6d","id": "1"}
-  ```
+```
+{% endtab %} {% endtabs %}
 
 ### reputation
 
@@ -615,21 +730,26 @@ Displays the reputation score associated with a given Witnet address and its ele
 
 * `--address=address`: address for which to get reputation score. If omitted, defaults to the node's own address.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node reputation
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node reputation
     docker exec witnet_node witnet node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4
-  ```
-=== "Binary"
-  ```console
-    witnet node reputation
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node reputation
     witnet node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node reputation
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node reputation
     cargo run -- node reputation --address=twit1p2my760gmg4gwsnhunwnx3epvj9c4whnsnn8j4
-  ```
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -645,18 +765,23 @@ Adding the flag `--all` lists all the nodes active and their elegibility. It als
     Note that it is perfectly normal for a node to show 0 reputation for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons.
 
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node reputation --all
-  ```
-=== "Binary"
-  ```console
-    witnet node reputation --all
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node reputation --all
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node reputation --all
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node reputation --all
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node reputation --all
+```
+{% endtab %} {% endtabs %}
 
 Example output:
 
@@ -681,92 +806,117 @@ the output until the timestamp is reached. 0 means no time-lock.
 
 On success, returns the transaction hash:
 
-=== "Docker"
-  ```
+{% tabs %} {% tab title="Docker" %}
+```
     docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
     {"jsonrpc": "2.0","result": "a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349","id": "1"}
-  ```
-=== "Binary"
-  ```
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
     witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
     {"jsonrpc": "2.0","result": "a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349","id": "1"}
-  ```
+```
 
-=== "Cargo"
-  ```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
     cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1
     {"jsonrpc": "2.0","result": "a6c26804cf76e08ab379ea63e4aa046095dade2ae52fb3ecac90817583e61349","id": "1"}
-  ```
+```
+{% endtab %} {% endtabs %}
 
 On error, returns the error message:
 
-=== "Docker"
-  ```
+{% tabs %} {% tab title="Docker" %}
+```
     docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
     {"jsonrpc": "2.0","error": {"code":-32603,"message": "Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 > 39649999949502"},"id": "1"}
-  ```
-=== "Binary"
-  ```
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
     witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
     {"jsonrpc": "2.0","error": {"code":-32603,"message": "Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 > 39649999949502"},"id": "1"}
-  ```
-=== "Cargo"
-  ```
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
     cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=9999999999999999999 --fee=1
     {"jsonrpc": "2.0","error": {"code":-32603,"message": "Cannot build a transaction transferring more value than the current available balance: 9999999999999999999 + 1 > 39649999949502"},"id": "1"}
-  ```
+```
+{% endtab %} {% endtabs %}
 
 Example with time lock set to 2019-10-01
 
-=== "Docker"
-  ```
+{% tabs %} {% tab title="Docker" %}
+```
     docker exec witnet_node witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
     {"jsonrpc": "2.0","result": "e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id": "1"}
-  ```
-=== "Binary"
-  ```
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
     witnet node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
     {"jsonrpc": "2.0","result": "e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id": "1"}
-  ```
-=== "Cargo"
-  ```
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
     cargo run -- node send --address=twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value=1234 --fee=1 --time-lock=1569888000
     {"jsonrpc": "2.0","result": "e5b55ec4930f32383e63de9316238f369ee26d89d4375521071a885fc46b4c17","id": "1"}
-  ```
+```
+{% endtab %} {% endtabs %}
 
 ### sendRequest
 
 Send a serialized data request. An example of how to create such a request can be found in the [tutorial](https://docs.witnet.io/tutorials/bitcoin-price-feed/introduction/).
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node sendRequest --hex "data request output serialized in hexadecimal format"
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node sendRequest --hex "data request output serialized in hexadecimal format"
-  ```
-=== "Binary"
-  ```console
-    witnet node sendRequest --hex "data request output serialized in hexadecimal format"
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node sendRequest --hex "data request output serialized in hexadecimal format"
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node sendRequest --hex "data request output serialized in hexadecimal format"
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node sendRequest --hex "data request output serialized in hexadecimal format"
+```
+{% endtab %} {% endtabs %}
 
 ### server
 
 Run a Witnet node server.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node server
-  ```
-=== "Binary"
-  ```console
-    witnet node server
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node server
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node server
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node server
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node server
+```
+{% endtab %} {% endtabs %}
 
 ### splitTransaction
 
@@ -778,35 +928,45 @@ The following arguments must be provided:
 * `--size=size`: amount in nanoWits of each UTXO.
 * `--fee=fee`: miner fee in nanoWits.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node joinTransaction --value=100 --size=3 --fee=1
-  ```
-=== "Binary"
-  ```console
-    witnet node joinTransaction --value=100 --size=3 --fee=1
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node joinTransaction --value=100 --size=3 --fee=1
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node joinTransaction --value=100 --size=3 --fee=1
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node joinTransaction --value=100 --size=3 --fee=1
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node joinTransaction --value=100 --size=3 --fee=1
+```
+{% endtab %} {% endtabs %}
 
 ### transaction
 
 Print out detailed information about a transaction being queried by its hash.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
-  ```
-=== "Binary"
-  ```console
-    witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node transaction f6ebdd2e3f52af8404ae3dfbf87fcfc85803a8c14a35966acca6e18585acb8f5
+```
+{% endtab %} {% endtabs %}
 
 The hash of the transaction should be provided as a hexadecimal string.
 
@@ -866,18 +1026,23 @@ Example output:
 
 Get the unspent transaction outputs of the node. This shows how many UTXOs are available for your node to spend or collateralize.
 
-=== "Docker"
-  ```console
-    docker exec witnet_node witnet node utxos
-  ```
-=== "Binary"
-  ```console
-    witnet node utxos
-  ```
-=== "Cargo"
-  ```console
-    cargo run -- node utxos
-  ```
+{% tabs %} {% tab title="Docker" %}
+```console
+docker exec witnet_node witnet node utxos
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```console
+witnet node utxos
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```console
+cargo run -- node utxos
+```
+{% endtab %} {% endtabs %}
 
 The output includes information about:
 
