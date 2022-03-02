@@ -42,11 +42,9 @@ There are multiple ways to run a Witnet validator node. Listed below are the mos
 
 ### **What To Expect When Running a Witnet Node**
 
-{% hint style="warning" %}
 It is important to understand that mining is a totally decentralized activity, and that you are the only one responsible of ensuring uptime and performance of your node.
 
 Nobody can guarantee that running Witnet nodes will be ever profitable to you, as that largely depends on your own operation costs, the reliability of your infrastructure, and ultimately, luck.
-{% endhint %}
 
 ### **I Already Got My Witnet Node Running** — Now what?
 
