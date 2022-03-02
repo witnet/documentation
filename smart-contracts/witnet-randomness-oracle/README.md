@@ -1,8 +1,8 @@
-# Witnet Randomness Oracle
+# 🔄 Witnet Randomness Oracle
 
 ### Why Randomness Oracles?
 
-There are a number of smart contracts use cases that require some degree of randomness,  unpredictability or uniqueness.&#x20;
+There are a number of smart contracts use cases that require some degree of randomness, unpredictability or uniqueness.
 
 For example, a smart contract that automatically generates items inside an NFT collection will need a source of randomness to assign different traits in such a way that each of the items in the collection are unique and cannot be predicted before minting.
 

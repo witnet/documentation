@@ -1,4 +1,4 @@
-# Next steps
+# 🔎 Next steps
 
 ## The first minutes and hours in your node's life
 
@@ -68,8 +68,6 @@ The `balance` command will print your node's current balance.
 ```
 docker exec witnet_node witnet node balance
 ```
-
-
 {% endtab %}
 
 {% tab title="Binary" %}
@@ -110,7 +108,7 @@ cargo run --release -- node reputation
 {% endtabs %}
 
 {% hint style="info" %}
-The reputation score of a node gives a rough idea about its performance, but this metric is heavily influenced by randomness and luck. It is perfectly normal that the reputation score goes up and down over time, sometimes smoothly, sometimes more abruptly. Likewise, there is probably nothing wrong if your node shows 0 reputation points or is marked as _not active_. Do not get too obsessed about it! &#x20;
+The reputation score of a node gives a rough idea about its performance, but this metric is heavily influenced by randomness and luck. It is perfectly normal that the reputation score goes up and down over time, sometimes smoothly, sometimes more abruptly. Likewise, there is probably nothing wrong if your node shows 0 reputation points or is marked as _not active_. Do not get too obsessed about it!
 {% endhint %}
 
 ## Check ports and incoming connections
@@ -131,8 +129,6 @@ telnet your_public_ip 21337
 ```
 nc -vz your_public_ip:21337
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -269,7 +265,7 @@ witnet node server --master-key-import ~/.witnet/config/master.key
 {% endtabs %}
 
 {% hint style="danger" %}
-Never use the same master key on multiple nodes at once.  You may find your nodes exposed to double-spend issues and severe slashing.
+Never use the same master key on multiple nodes at once. You may find your nodes exposed to double-spend issues and severe slashing.
 {% endhint %}
 
 ## Customize the configuration if needed
@@ -295,8 +291,6 @@ nano ~/.witnet/config/witnet.toml
 {% endtabs %}
 
 ## Long term maintenance of your node
-
-
 
 There are some operations that are recommended from time to time to make sure your node is in perfect order:
 

@@ -1,4 +1,4 @@
-# Requirements
+# 🖥 Requirements
 
 {% hint style="success" %}
 **The Witnet mainnet is a totally permissionless and open network.**

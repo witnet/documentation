@@ -62,7 +62,7 @@
 
 ## Developer Reference
 
-* [Integration Guide](developer-reference/integration-guide.md)
+* [Integration Guide](developer-reference/integrations/README.md)
+  * [Node API Reference](developer-reference/integrations/node-api.md)
+  * [Wallet API Reference](developer-reference/integrations/wallet-api.md)
 * [Compile witnet-rust from Source Code](developer-reference/compile-witnet-rust-from-source-code.md)
-* [Node API Reference](developer-reference/node-api-reference.md)
-* [Wallet API Reference](developer-reference/wallet-api-reference.md)

@@ -1,4 +1,4 @@
-# Docker Quick Start Guide
+# 🚀 Docker Quick Start Guide
 
 **The Witnet Mainnet is open for anyone to join and and run their own full node.**
 
