@@ -25,10 +25,10 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js) | **`0x9ed884be`** | `0x9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073`
 | [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js) | **`0x65784185`** | `0x65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29`
 | [Price-**DAI/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/DaiUsdPrice.js) | **`0x9899e356`** | `0x9899e35601719f1348e09967349f72c7d04800f17c14992d6dcf2f17fac713ea`
+| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`0x3d15f701`** | `0x3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
 | [Price-**FRAX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FraxUsdtPrice.js) | **`0x1a3ea43e`** | `0x1a3ea43ec9fce5649302474844b0d2c0734ad605b3adfaf3baaab3b7ad43b1a4`
 | [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FxsUsdtPrice.js) | **`0x5a352c58`** | `0x5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3`
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js) | **`0x31debffc`** | `0x31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977`
-| [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js) | **`0x3d15f701`** | `0x3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8`
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`** | `0x4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e`
 | [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js) | **`0xc4ec7fbc`** | `0xc4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb`
 | [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js) | **`0xe2960cc0`** | `0xe2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75`
