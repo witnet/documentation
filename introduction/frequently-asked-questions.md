@@ -23,8 +23,8 @@ The cost really depends on what level does your smart contract integrate with Wi
 
 You can find all the information relative to the Wit coin in its own section of the docs:
 
-{% content-ref url="the-witnet-token-wit.md" %}
-[the-witnet-token-wit.md](the-witnet-token-wit.md)
+{% content-ref url="wit-coin.md" %}
+[wit-coin.md](wit-coin.md)
 {% endcontent-ref %}
 
 ### Ecosystem
