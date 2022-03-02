@@ -8,8 +8,8 @@ The Price Router contract is the easiest and most convenient way to consume Witn
 
 To read price values from the Price Router contract, you need first to identify the **`WitnetPriceRouter`** address specific to the chain in which you plan to deploy your contracts:
 
-{% content-ref url="contract-addresses/" %}
-[contract-addresses](contract-addresses/)
+{% content-ref url="../price-feeds/addresses/" %}
+[addresses](../price-feeds/addresses/)
 {% endcontent-ref %}
 
 The example below shows how to read the price of two different assets from the Witnet Price Router:

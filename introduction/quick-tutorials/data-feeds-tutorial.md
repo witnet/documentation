@@ -1,6 +1,6 @@
 # 📈 Price Feeds
 
-The easiest way to use an oracle to source external data into a smart contract is through a [Price Feed](../../smart-contracts/price-feeds/). More and more projects building on multiple blockchains are relying every day on the WItnet data feeds to get price references and other valuable data into their smart contracts.
+The easiest way to use an oracle to source external data into a smart contract is through a [Price Feed](../../smart-contracts/witnet-data-feeds/). More and more projects building on multiple blockchains are relying every day on the WItnet data feeds to get price references and other valuable data into their smart contracts.
 
 Witnet price feeds are timely updated with fresh data as aggregated from multiple reliable data sources and attested by the Witnet decentralized oracle network, which offers high data integrity guarantees thanks to its unique cryptoeconomic design.
 
@@ -43,12 +43,12 @@ A complete list of publicly available Witnet data feeds on Witnet's many support
 
 {% embed url="https://feeds.witnet.io" %}
 
-The [Price Feeds Contract Addresses](../../smart-contracts/price-feeds/contract-addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains:
+The [Price Feeds Contract Addresses](../../smart-contracts/price-feeds/addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains:
 
-{% content-ref url="../../smart-contracts/price-feeds/contract-addresses/" %}
-[contract-addresses](../../smart-contracts/price-feeds/contract-addresses/)
+{% content-ref url="../../smart-contracts/price-feeds/addresses/" %}
+[addresses](../../smart-contracts/price-feeds/addresses/)
 {% endcontent-ref %}
 
 ### Learn More About Witnet Price Feeds
 
-For more information on Witnet price feeds, please read the section dedicated to [Witnet Price Feeds](../../smart-contracts/price-feeds/). This contains a lot more information on alternative ways to consume the data feeds, how they operate, and what their contract addresses are.
+For more information on Witnet price feeds, please read the section dedicated to [Witnet Price Feeds](../../smart-contracts/witnet-data-feeds/). This contains a lot more information on alternative ways to consume the data feeds, how they operate, and what their contract addresses are.

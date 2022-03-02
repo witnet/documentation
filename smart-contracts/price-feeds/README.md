@@ -1,2 +1,0 @@
-# Witnet Data Feeds
-
