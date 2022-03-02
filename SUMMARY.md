@@ -9,7 +9,7 @@
   * [🤔 Frequently Asked Questions](introduction/about/frequently-asked-questions.md)
   * [🪙 The Witnet Coin (Wit)](introduction/about/wit-coin.md)
   * [👛 Sheikah Witnet Wallet](introduction/about/sheikah-witnet-wallet.md)
-  * [💥 Awesome Witnet](introduction/about/awesome-witnet.md)
+  * [😎 Awesome Witnet](introduction/about/awesome-witnet.md)
 * [🚀 Quick Tutorials](introduction/quick-tutorials/README.md)
   * [📈 Price Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [🔀 Randomness](introduction/quick-tutorials/randomness.md)
