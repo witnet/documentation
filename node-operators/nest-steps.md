@@ -72,15 +72,15 @@ docker exec witnet_node witnet node balance
 
 {% endtab %}
 
-{% tab title="Cargo" %}
-```
-cargo run --release -- node balance
-```
-{% endtab %}
-
 {% tab title="Binary" %}
 ```
 witnet node balance
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run --release -- node balance
 ```
 {% endtab %}
 {% endtabs %}
@@ -96,15 +96,15 @@ docker exec witnet_node witnet node reputation
 ```
 {% endtab %}
 
-{% tab title="Cargo" %}
-```
-cargo run --release -- node reputation
-```
-{% endtab %}
-
 {% tab title="Binary" %}
 ```
 witnet node reputation
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run --release -- node reputation
 ```
 {% endtab %}
 {% endtabs %}
@@ -145,15 +145,15 @@ docker exec witnet_node witnet node peers
 ```
 {% endtab %}
 
-{% tab title="Cargo" %}
-```
-cargo run --release -- node peers
-```
-{% endtab %}
-
 {% tab title="Binary" %}
 ```
 witnet node peers
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run --release -- node peers
 ```
 {% endtab %}
 {% endtabs %}
@@ -179,15 +179,15 @@ docker exec witnet_node witnet node masterKeyExport
 ```
 {% endtab %}
 
-{% tab title="Cargo" %}
-```
-cargo run --release -- node masterKeyExport
-```
-{% endtab %}
-
 {% tab title="Binary" %}
 ```
 witnet node masterKeyExport
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run --release -- node masterKeyExport
 ```
 {% endtab %}
 {% endtabs %}
@@ -201,15 +201,15 @@ docker exec witnet_node witnet node masterKeyExport --write
 ```
 {% endtab %}
 
-{% tab title="Cargo" %}
-```
-cargo run --release -- node masterKeyExport --write
-```
-{% endtab %}
-
 {% tab title="Binary" %}
 ```
 witnet node masterKeyExport --write
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run --release -- node masterKeyExport --write
 ```
 {% endtab %}
 {% endtabs %}

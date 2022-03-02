@@ -58,10 +58,10 @@ docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publ
 There are two **important** things you should do now to make the most of your Witnet node:
 
 1. Open ports as explained below.
-2. Follow the [Next Steps](next-steps.md) guide to learn how to check the node status, progress and statistics:
+2. Follow the [Next Steps](nest-steps.md) guide to learn how to check the node status, progress and statistics:
 
-{% content-ref url="next-steps.md" %}
-[next-steps.md](next-steps.md)
+{% content-ref url="nest-steps.md" %}
+[nest-steps.md](nest-steps.md)
 {% endcontent-ref %}
 
 ### Open your ports! <a href="#open-your-ports" id="open-your-ports"></a>
@@ -72,8 +72,8 @@ For this feature to be effective, you will also need your IP address to be publi
 
 Depending on your setup, this will normally imply changing the settings on your router or firewall so as to forward all incoming connections to port `21337` from your external IP into the IP of the device or interface where the node is running.
 
-You can find out how to verify that your ports are open in the [Next Steps](next-steps.md) guide:
+You can find out how to verify that your ports are open in the [Next Steps](nest-steps.md) guide:
 
-{% content-ref url="next-steps.md" %}
-[next-steps.md](next-steps.md)
+{% content-ref url="nest-steps.md" %}
+[nest-steps.md](nest-steps.md)
 {% endcontent-ref %}

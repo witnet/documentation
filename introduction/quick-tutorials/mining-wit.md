@@ -56,6 +56,6 @@ Please be patient, new identities in the system are subject to a slow start for 
 
 Also, please read below for tips on how to efficiently manage your Witnet node and how to increase your its probability of mining:
 
-{% content-ref url="../../node-operators/next-steps.md" %}
-[next-steps.md](../../node-operators/next-steps.md)
+{% content-ref url="../../node-operators/nest-steps.md" %}
+[nest-steps.md](../../node-operators/nest-steps.md)
 {% endcontent-ref %}
