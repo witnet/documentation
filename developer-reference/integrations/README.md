@@ -5,7 +5,7 @@ description: >-
   balances, and create and verify transactions.
 ---
 
-# Integration Guide
+# 🏗 Integration Guide
 
 ### Running Witnet-Rust
 
@@ -14,9 +14,9 @@ The Witnet Foundation-supported reference implementation of the Witnet protocol 
 Witnet-Rust can be easily run:
 
 * [as a Docker container](../../node-operators/docker-quick-start-guide.md)
-* [as a docker-compose service](../../node-operators/advanced-setups/run-witnet-as-a-docker-compose-service.md)
-* [as a systemd service](../../node-operators/advanced-setups/run-witnet-as-a-systemd-service.md)
-* [compiling from source code](../compile-witnet-rust-from-source-code.md)
+* [as a docker-compose service](../../node-operators/advanced-setups/docker-compose.md)
+* [as a systemd service](../../node-operators/advanced-setups/systemd.md)
+* [compiling from source code](../compile-from-source-code.md)
 
 ### Witnet-Rust Components
 
@@ -58,10 +58,10 @@ The full list of supported JSON-RPC methods is available in the [Node API Refere
 [node-api.md](node-api.md)
 {% endcontent-ref %}
 
-There is also a [command line client (CLI)](../../node-operators/cli-reference.md) that exposes all the node functionality and uses the JSON-RPC API under the hood:
+There is also a [command line client (CLI)](../../node-operators/cli.md) that exposes all the node functionality and uses the JSON-RPC API under the hood:
 
-{% content-ref url="../../node-operators/cli-reference.md" %}
-[cli-reference.md](../../node-operators/cli-reference.md)
+{% content-ref url="../../node-operators/cli.md" %}
+[cli.md](../../node-operators/cli.md)
 {% endcontent-ref %}
 
 ### Witnet-Rust `wallet` component

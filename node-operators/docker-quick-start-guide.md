@@ -5,7 +5,7 @@
 {% hint style="info" %}
 You do not need to run a Witnet node to use Witnet from your Ethereum smart contracts.
 
-If you are a smart contracts developer, what you probably want is to use one of the [data feeds](../introduction/quick-tutorials/data-feeds-tutorial.md), a [randomness source](../introduction/quick-tutorials/randomness.md), or to connect to [APIs with HTTP GET/POST](../introduction/quick-tutorials/apis-and-http-get-post.md).
+If you are a smart contracts developer, what you probably want is to use one of the [data feeds](../intro/tutorials/data-feeds-tutorial.md), a [randomness source](../intro/tutorials/randomness.md), or to connect to [APIs with HTTP GET/POST](../intro/tutorials/apis-and-http-get-post.md).
 {% endhint %}
 
 ### Hardware requirements <a href="#hardware-requirements" id="hardware-requirements"></a>
@@ -18,7 +18,7 @@ Hardware requirements are listed in the node operators docs:
 
 ### Up and running in 1 minute, using Docker <a href="#up-and-running-in-1-minute-using-docker" id="up-and-running-in-1-minute-using-docker"></a>
 
-The most convenient method for running a Witnet node is through the `witnet/witnet-rust` Docker image. For alternate installation methods or more complex setups, take a look at the [docker-compose](advanced-setups/run-witnet-as-a-docker-compose-service.md) and [systemd](advanced-setups/run-witnet-as-a-systemd-service.md) integrations.
+The most convenient method for running a Witnet node is through the `witnet/witnet-rust` Docker image. For alternate installation methods or more complex setups, take a look at the [docker-compose](advanced-setups/docker-compose.md) and [systemd](advanced-setups/systemd.md) integrations.
 
 Firstly, you need to [install Docker](https://docs.docker.com/get-docker/) on the device you will be running the node from. Note: some GNU/Linux distributions require some [extra steps](https://docs.docker.com/install/linux/linux-postinstall/) to get Docker up and running.
 

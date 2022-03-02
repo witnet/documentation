@@ -1,4 +1,4 @@
-# ⚙ Architecture
+# ⚙ Oracle Architecture
 
 {% hint style="info" %}
 This article explores the characteristics and intricacies of Witnet from a purely internal perspective. This can be useful to understand the processes supporting the security and data integrity properties of the protocol.
@@ -25,7 +25,7 @@ Having its own blockchain also guarantees that the fate of the Witnet oracle is 
 {% hint style="success" %}
 Even though Witnet runs on its own blockchain, it is connected to the most popular smart contract enabled blockchains, and from the perspective of the average smart contract developer, using Witnet feels totally like using a native contract on each of those chains.
 
-In addition, many oracle use cases (like [price feeds](../quick-tutorials/data-feeds-tutorial.md) or [random number generation](../quick-tutorials/randomness.md)) are also served through simpler interfaces that do not require the user to create and deploy any data requests.
+In addition, many oracle use cases (like [price feeds](../tutorials/data-feeds-tutorial.md) or [random number generation](../tutorials/randomness.md)) are also served through simpler interfaces that do not require the user to create and deploy any data requests.
 {% endhint %}
 
 ### Capabilities of Data Requests
@@ -42,9 +42,9 @@ Namely, data requests allow to:
 
 The Witnet protocol was designed to be agnostic over the nature of the sourced data, and currently supports the following types of data sources:
 
-* [HTTP GET,](../quick-tutorials/apis-and-http-get-post.md) which easily allows to read from most [REST APIs](../quick-tutorials/apis-and-http-get-post.md) today.
-* [HTTP POST](../quick-tutorials/apis-and-http-get-post.md), which provides a convenient way to query more sophisticated [REST and GraphQL APIs](../quick-tutorials/apis-and-http-get-post.md).
-* [RNG](../quick-tutorials/randomness.md), which allows to generate [random numbers and byte arrays](../quick-tutorials/randomness.md).
+* [HTTP GET,](../tutorials/apis-and-http-get-post.md) which easily allows to read from most [REST APIs](../tutorials/apis-and-http-get-post.md) today.
+* [HTTP POST](../tutorials/apis-and-http-get-post.md), which provides a convenient way to query more sophisticated [REST and GraphQL APIs](../tutorials/apis-and-http-get-post.md).
+* [RNG](../tutorials/randomness.md), which allows to generate [random numbers and byte arrays](../tutorials/randomness.md).
 
 {% hint style="success" %}
 Witnet uses an RFC-8949 based binary format named RADON to encode and decode data requests.

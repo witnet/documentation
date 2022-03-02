@@ -4,7 +4,7 @@ description: >-
   other relevant information to learn everything Witnet.
 ---
 
-# 💥 Awesome Witnet
+# 😎 Awesome Witnet
 
 ### Official materials
 

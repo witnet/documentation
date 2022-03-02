@@ -2,19 +2,19 @@
 
 * [🏠 Witnet Oracle Docs](README.md)
 
-## Introduction
+## Introduction <a href="#intro" id="intro"></a>
 
-* [❓ What is Witnet?](introduction/about/README.md)
-  * [⚙ Architecture](introduction/about/architecture.md)
-  * [🤔 Frequently Asked Questions](introduction/about/frequently-asked-questions.md)
-  * [🪙 The Witnet Coin (Wit)](introduction/about/wit-coin.md)
-  * [👛 Sheikah Witnet Wallet](introduction/about/sheikah-witnet-wallet.md)
-  * [😎 Awesome Witnet](introduction/about/awesome-witnet.md)
-* [🚀 Quick Tutorials](introduction/quick-tutorials/README.md)
-  * [📈 Price Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
-  * [🔀 Randomness](introduction/quick-tutorials/randomness.md)
-  * [📡 APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
-  * [⛏ Mining Wit](introduction/quick-tutorials/mining-wit.md)
+* [❓ What is Witnet?](intro/about/README.md)
+  * [⚙ Oracle Architecture](intro/about/architecture.md)
+  * [🪙 The Witnet Coin (Wit)](intro/about/wit-coin.md)
+  * [👛 Sheikah Witnet Wallet](intro/about/sheikah-witnet-wallet.md)
+  * [🤔 Frequently Asked Questions](intro/about/frequently-asked-questions.md)
+  * [😎 Awesome Witnet](intro/about/awesome-witnet.md)
+* [🚀 Quick Tutorials](intro/tutorials/README.md)
+  * [📈 Price Feeds](intro/tutorials/data-feeds-tutorial.md)
+  * [🔀 Randomness](intro/tutorials/randomness.md)
+  * [📡 APIs and HTTP GET/POST](intro/tutorials/apis-and-http-get-post.md)
+  * [⛏ Mining Wit](intro/tutorials/mining-wit.md)
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
 
@@ -55,14 +55,14 @@
 * [🖥 Requirements](node-operators/requirements.md)
 * [🚀 Docker Quick Start Guide](node-operators/docker-quick-start-guide.md)
 * [🔎 Next steps](node-operators/next-steps.md)
-* [📄 CLI Reference](node-operators/cli-reference.md)
+* [📄 CLI Reference](node-operators/cli.md)
 * [🤓 Advanced Setups](node-operators/advanced-setups/README.md)
-  * [Run Witnet as a systemd service](node-operators/advanced-setups/run-witnet-as-a-systemd-service.md)
-  * [Run Witnet as a docker-compose service](node-operators/advanced-setups/run-witnet-as-a-docker-compose-service.md)
+  * [Run Witnet as a systemd service](node-operators/advanced-setups/systemd.md)
+  * [Run Witnet as a docker-compose service](node-operators/advanced-setups/docker-compose.md)
 
 ## Developer Reference
 
-* [Integration Guide](developer-reference/integrations/README.md)
+* [🏗 Integration Guide](developer-reference/integrations/README.md)
   * [Node API Reference](developer-reference/integrations/node-api.md)
   * [Wallet API Reference](developer-reference/integrations/wallet-api.md)
-* [Compile witnet-rust from Source Code](developer-reference/compile-witnet-rust-from-source-code.md)
+* [🗜 Compile witnet-rust from Source Code](developer-reference/compile-from-source-code.md)

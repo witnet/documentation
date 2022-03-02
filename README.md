@@ -12,30 +12,30 @@ The Witnet oracle is currently available on Ethereum, Polygon, Avalanche, Celo, 
 
 ### Featured sections
 
-{% content-ref url="introduction/about/wit-coin.md" %}
-[wit-coin.md](introduction/about/wit-coin.md)
+{% content-ref url="intro/about/wit-coin.md" %}
+[wit-coin.md](intro/about/wit-coin.md)
 {% endcontent-ref %}
 
 {% content-ref url="smart-contracts/supported-chains.md" %}
 [supported-chains.md](smart-contracts/supported-chains.md)
 {% endcontent-ref %}
 
-{% content-ref url="introduction/quick-tutorials/data-feeds-tutorial.md" %}
-[data-feeds-tutorial.md](introduction/quick-tutorials/data-feeds-tutorial.md)
+{% content-ref url="intro/tutorials/data-feeds-tutorial.md" %}
+[data-feeds-tutorial.md](intro/tutorials/data-feeds-tutorial.md)
 {% endcontent-ref %}
 
-{% content-ref url="introduction/quick-tutorials/randomness.md" %}
-[randomness.md](introduction/quick-tutorials/randomness.md)
+{% content-ref url="intro/tutorials/randomness.md" %}
+[randomness.md](intro/tutorials/randomness.md)
 {% endcontent-ref %}
 
-{% content-ref url="introduction/quick-tutorials/apis-and-http-get-post.md" %}
-[apis-and-http-get-post.md](introduction/quick-tutorials/apis-and-http-get-post.md)
+{% content-ref url="intro/tutorials/apis-and-http-get-post.md" %}
+[apis-and-http-get-post.md](intro/tutorials/apis-and-http-get-post.md)
 {% endcontent-ref %}
 
-{% content-ref url="introduction/quick-tutorials/mining-wit.md" %}
-[mining-wit.md](introduction/quick-tutorials/mining-wit.md)
+{% content-ref url="intro/tutorials/mining-wit.md" %}
+[mining-wit.md](intro/tutorials/mining-wit.md)
 {% endcontent-ref %}
 
-{% content-ref url="introduction/about/awesome-witnet.md" %}
-[awesome-witnet.md](introduction/about/awesome-witnet.md)
+{% content-ref url="intro/about/awesome-witnet.md" %}
+[awesome-witnet.md](intro/about/awesome-witnet.md)
 {% endcontent-ref %}
