@@ -9,16 +9,16 @@
   * [🤔 Frequently Asked Questions](introduction/about/frequently-asked-questions.md)
   * [🪙 The Witnet Coin (Wit)](introduction/about/wit-coin.md)
   * [👛 Sheikah Witnet Wallet](introduction/about/sheikah-witnet-wallet.md)
+  * [💥 Awesome Witnet](introduction/about/awesome-witnet.md)
 * [🚀 Quick Tutorials](introduction/quick-tutorials/README.md)
   * [📈 Price Feeds](introduction/quick-tutorials/data-feeds-tutorial.md)
   * [🔀 Randomness](introduction/quick-tutorials/randomness.md)
   * [📡 APIs and HTTP GET/POST](introduction/quick-tutorials/apis-and-http-get-post.md)
   * [⛏ Mining Wit](introduction/quick-tutorials/mining-wit.md)
-* [⛓ Supported chains](introduction/supported-chains.md)
-* [💥 Awesome Witnet](introduction/awesome-witnet.md)
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
 
+* [⛓ Supported chains](smart-contracts/supported-chains.md)
 * [📈 Witnet Price Feeds](smart-contracts/witnet-data-feeds/README.md)
   * [Using Price Feeds](smart-contracts/witnet-data-feeds/price-feeds-registry.md)
   * [Code Examples](smart-contracts/witnet-data-feeds/using-witnet-data-feeds.md)

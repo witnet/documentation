@@ -2,7 +2,7 @@
 
 ## Reading multiple price pairs from the router
 
-The Price Router contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](../../introduction/supported-chains.md).
+The Price Router contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](../supported-chains.md).
 
 ### Solidity example
 
