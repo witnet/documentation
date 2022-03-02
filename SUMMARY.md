@@ -19,7 +19,7 @@
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
 
-* [Witnet Price Feeds](smart-contracts/witnet-data-feeds/README.md)
+* [📈 Witnet Price Feeds](smart-contracts/witnet-data-feeds/README.md)
   * [Using Price Feeds](smart-contracts/witnet-data-feeds/price-feeds-registry.md)
   * [Code Examples](smart-contracts/witnet-data-feeds/using-witnet-data-feeds.md)
   * [Triggering Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
@@ -35,14 +35,14 @@
     * [Metis Price Feeds](smart-contracts/price-feeds/addresses/metis.md)
     * [Polygon Price Feeds](smart-contracts/price-feeds/addresses/polygon.md)
     * [Request new price feed or chain support](https://tally.so/r/wMZDAn)
-* [Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
+* [🔄 Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
   * [Generating Randomness in your Smart Contracts](smart-contracts/witnet-randomness-oracle/generating-randomness-in-your-smart-contracts.md)
   * [Advanced Examples](smart-contracts/witnet-randomness-oracle/advanced-examples.md)
   * [Security Considerations and Best Practices](smart-contracts/witnet-randomness-oracle/security-considerations.md)
   * [Low-level Randomness Queries](smart-contracts/witnet-randomness-oracle/low-level-randomness-queries.md)
   * [API Reference](smart-contracts/witnet-randomness-oracle/api-reference.md)
   * [Randomness Contract Addresses](smart-contracts/witnet-randomness-oracle/contract-addresses.md)
-* [APIs and HTTP GET/POST Oracle](smart-contracts/apis-and-http-get-post-oracle/README.md)
+* [📰 APIs and HTTP GET/POST Oracle](smart-contracts/apis-and-http-get-post-oracle/README.md)
   * [Make an HTTP GET Request](smart-contracts/apis-and-http-get-post-oracle/make-a-get-request.md)
   * [Make an HTTP POST Request](smart-contracts/apis-and-http-get-post-oracle/make-a-post-request.md)
   * [UsingWitnet Inheritance](smart-contracts/apis-and-http-get-post-oracle/usingwitnet-inheritance.md)
@@ -52,11 +52,11 @@
 
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
 
-* [Requirements](node-operators/requirements.md)
-* [Docker Quick Start Guide](node-operators/docker-quick-start-guide.md)
-* [Next steps](node-operators/next-steps.md)
-* [CLI Reference](node-operators/cli-reference.md)
-* [Advanced Setups](node-operators/advanced-setups/README.md)
+* [🖥 Requirements](node-operators/requirements.md)
+* [🚀 Docker Quick Start Guide](node-operators/docker-quick-start-guide.md)
+* [🔎 Next steps](node-operators/next-steps.md)
+* [📄 CLI Reference](node-operators/cli-reference.md)
+* [🤓 Advanced Setups](node-operators/advanced-setups/README.md)
   * [Run Witnet as a systemd service](node-operators/advanced-setups/run-witnet-as-a-systemd-service.md)
   * [Run Witnet as a docker-compose service](node-operators/advanced-setups/run-witnet-as-a-docker-compose-service.md)
 
