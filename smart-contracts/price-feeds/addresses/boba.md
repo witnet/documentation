@@ -25,6 +25,7 @@
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby\_eth-usd\_6)     | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
 | [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby\_frax-usdt\_6) | `0x1a3ea43e` |    24 hours   |      0.1%     |      15'     |
 | [Price-FXS/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby\_fxs-usdt\_6)   | `0x5a352c58` |    24 hours   |      1.0%     |      15'     |
+| [Price-OLO/USDC-6](https://feeds.witnet.io/feeds/boba-rinkeby\_olo-usdc\_6)   | `0xf75039c1` |    24 hours   |      0.1%     |      15'     |
 | [Price-OMG/BTC-9](https://feeds.witnet.io/feeds/boba-rinkeby\_omg-btc\_9)     | `0xc4ec7fbc` |    24 hours   |      1.0%     |      15'     |
 | [Price-OMG/ETH-9](https://feeds.witnet.io/feeds/boba-rinkeby\_omg-eth\_9)     | `0xe2960cc0` |    24 hours   |      1.0%     |      15'     |
 | [Price-OMG/USDT-6](https://feeds.witnet.io/feeds/boba-rinkeby\_omg-usdt\_6)   | `0xfb2c7795` |    24 hours   |      1.0%     |      15'     |
