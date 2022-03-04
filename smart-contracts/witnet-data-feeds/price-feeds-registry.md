@@ -32,6 +32,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FxsUsdtPrice.js)     | **`0x5a352c58`** | `0x5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3` |
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js)     | **`0x31debffc`** | `0x31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977` |
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`** | `0x4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e` |
+| [Price-**OLO/USDC-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OloUsdcPrice.js)     | **`0xf75039c1`** | `0xf75039c1cc3d4c1cec5cb42ecf19a812a123ba893e673ac920f0f8d3fcebbe34` |
 | [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js)       | **`0xc4ec7fbc`** | `0xc4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb` |
 | [Price-**OMG/ETH-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgEthPrice.js)       | **`0xe2960cc0`** | `0xe2960cc030131ae6ce0d14aea9ecfa937461aa22d2d55a36b44b27737a11bd75` |
 | [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js)     | **`0xfb2c7795`** | `0xfb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef` |
