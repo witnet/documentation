@@ -108,7 +108,9 @@ contract DieContract {
 
     constructor (uint32 _sides) {
         sides = _sides;
-        witnet = IWitnetRandomness(address("<address of the WitnetRandomness contract>"));
+        witnet = IWitnetRandomness(
+            address("<address of the WitnetRandomness contract>")
+        );
     }
     
     receive () external payable {}
@@ -130,7 +132,11 @@ contract DieContract {
     function roll() external {
         assert(guesses[msg.sender].guessedNumber != 0);
         
-        uint32 luckyNumber = 1 + witnet.random(sides, 0, guesses[msg.sender].blockNumber);
+        uint32 luckyNumber = 1 + witnet.random(
+            sides,
+            0,
+            guesses[msg.sender].blockNumber
+        );
         
         if (luckyNumber == guesses[msg.sender].guessedNumber) {
             emit Right("Congratulations! You guessed the right number!");
@@ -146,7 +152,7 @@ contract DieContract {
 As you can see, this example is very similar to the [Example 1](generating-randomness-in-your-smart-contracts.md#example-1-bare-minimal) above. The `getRandomNumber()` function works the same, but `fulfillRandomness()` however uses the lower-level `witnet.randomnessAfter()` function to read the underlying random bytes instead of trying to derive a random integer from those:
 
 ```solidity
-randomness = witnet.randomnessAfter(latestRandomizingBlock);
+randomness = witnet.getRandomnessAfter(latestRandomizingBlock);
 ```
 
 Generating random bytes is specially interesting for many NFT use cases in which you need to assign attributes and traits at random to each of the item in a colllection. By sourcing 32 random bytes at once, you can use each of the bytes to affect the different traits that you want to assign.
