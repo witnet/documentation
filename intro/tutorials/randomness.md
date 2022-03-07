@@ -25,7 +25,9 @@ contract MyContract {
     IWitnetRandomness witnet;
     
     constructor () {
-        witnet = IWitnetRandomness(address("<address of the WitnetRandomness contract>"));
+        witnet = IWitnetRandomness(
+            address("<address of the WitnetRandomness contract>")
+        );
     }
     
     receive() external payable {}
