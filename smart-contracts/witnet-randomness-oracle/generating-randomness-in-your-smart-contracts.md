@@ -75,18 +75,6 @@ Take into account that this example implements an asynchronous workflow — call
 
 This example is doing something slightly more interesting: it simulates a dice game in which you need to pick a certain number, and then, after rolling the die, you will see if you guessed correctly what the lucky number would be:
 
-{% embed url="https://gist.github.com/aesedepece/5daa8730faff65ef55b91f1ecfca616b" %}
-
-As this example allows multiple users to play the dice game at the same time, a `mapping (address => Guess)` is used to separately track everyone's choice of numbers and the block in which they placed their guess. In this way, you can make sure that every roll of the die is only affecting guesses that were placed at least 1 block in advance, and that further rolls of the die will not affect the outcome of past guesses.
-
-{% hint style="info" %}
-Take into account that this example implements an asynchronous workflow — calling `fulfillRandomness()` right after `getRandomNumber()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
-{% endhint %}
-
-### Example 3: Random Bytes
-
-In addition to random numbers, the Witnet randomness oracle can also generate random sequences of bytes. Namely, these have the `bytes32` type in Solidity:
-
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
@@ -149,7 +137,53 @@ contract DieContract {
 }
 ```
 
-As you can see, this example is very similar to the [Example 1](generating-randomness-in-your-smart-contracts.md#example-1-bare-minimal) above. The `getRandomNumber()` function works the same, but `fulfillRandomness()` however uses the lower-level `witnet.randomnessAfter()` function to read the underlying random bytes instead of trying to derive a random integer from those:
+As this example allows multiple users to play the dice game at the same time, a `mapping (address => Guess)` is used to separately track everyone's choice of numbers and the block in which they placed their guess. In this way, you can make sure that every roll of the die is only affecting guesses that were placed at least 1 block in advance, and that further rolls of the die will not affect the outcome of past guesses.
+
+{% hint style="info" %}
+Take into account that this example implements an asynchronous workflow — calling `fulfillRandomness()` right after `getRandomNumber()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
+{% endhint %}
+
+### Example 3: Random Bytes
+
+In addition to random numbers, the Witnet randomness oracle can also generate random sequences of bytes. Namely, these have the `bytes32` type in Solidity:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <0.9.0;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetRandomness.sol";
+
+contract MyContract {
+
+    bytes32 public randomness;
+    uint256 public latestRandomizingBlock;
+    IWitnetRandomness witnet;
+    
+    constructor () {
+        witnet = IWitnetRandomness(
+            address("<address of the WitnetRandomness contract>")
+        );
+    }
+    
+    receive () external payable {}
+
+    function getRandomNumber() external payable {
+        latestRandomizingBlock = block.number;
+        uint _usedFunds = witnet.randomize{ value: msg.value }();
+        if (_usedFunds < msg.value) {
+            payable(msg.sender).transfer(msg.value - _usedFunds);
+        }
+    }
+    
+    function fulfillRandomness() external {
+        assert(latestRandomizingBlock > 0);
+        randomness = witnet.getRandomnessAfter(latestRandomizingBlock);
+    }
+    
+}
+```
+
+As you can see, this example is very similar to the [Example 1](generating-randomness-in-your-smart-contracts.md#example-1-bare-minimal) above. The `getRandomNumber()` function works the same, but `fulfillRandomness()` however uses the lower-level `witnet.getRandomnessAfter()` function to read the underlying random bytes instead of trying to derive a random integer from those:
 
 ```solidity
 randomness = witnet.getRandomnessAfter(latestRandomizingBlock);
