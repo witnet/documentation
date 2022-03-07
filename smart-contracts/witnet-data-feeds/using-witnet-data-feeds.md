@@ -157,6 +157,8 @@ contract MyContractConflux {
         router = IWitnetPriceRouter(0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a);
     }
     
+    receive () external payable {}
+    
     /// Force udpate on the CFX / USDT currency pair
     function forceCfxUsdtUpdate() external payable {
         IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes32(0x65784185));
