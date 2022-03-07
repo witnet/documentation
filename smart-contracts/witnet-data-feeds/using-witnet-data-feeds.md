@@ -82,8 +82,6 @@ The **`WitnetPriceRouter`** contract offers a series of methods that can be used
 
 ## Reading last price and timestamp from a Price Feed contract serving a specific pair
 
-For&#x20;
-
 ### Solidity example
 
 ```solidity
