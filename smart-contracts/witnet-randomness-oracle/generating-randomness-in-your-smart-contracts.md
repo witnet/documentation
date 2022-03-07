@@ -110,6 +110,8 @@ contract DieContract {
         sides = _sides;
         witnet = IWitnetRandomness(address("<address of the WitnetRandomness contract>"));
     }
+    
+    receive () external payable {}
 
     function guessNumber(uint32 _number) external payable {
         assert(_number > 0);
