@@ -1,17 +1,49 @@
 # Generating Randomness in your Smart Contracts
 
 ### Example 1: Bare Minimal
-On each of the [EVM compatible chains supported by Witnet](./contract-addresses.md) there is an instance of the `WitnetRNG` contract that exposes the main randomness oracle functionality through a very simple interface.
+On each of the [EVM compatible chains supported by Witnet](./contract-addresses.md) there is an instance of the `WitnetRandomness` contract that exposes the main randomness oracle functionality through a very simple interface.
 
-The best way to interact with the `WitnetRNG` contract is through the `IWitnetRNG` interface, which is readily available in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge).
+The best way to interact with the `WitnetRandomness` contract is through the `IWitnetRandomness` interface, which is readily available in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge).
 
 This very basic example shows how easy is to source random `uint32` values into your own contracts:
 
-{% embed url="https://gist.github.com/aesedepece/5bfd2096c78d8f86f130fc8afcbb2fe5" %}
+```solidity
+
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <0.9.0;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetRandomness.sol";
+
+contract MyContract {
+
+    uint32 public randomness;
+    uint256 public latestRandomizingBlock;
+    IWitnetRandomness witnet;
+    
+    constructor () {
+        witnet = IWitnetRandomness(address("<address of the WitnetRandomness contract>"));
+    }
+    
+    receive () external payable {}
+
+    function getRandomNumber() external payable {
+        latestRandomizingBlock = block.number;
+        uint _usedFunds = witnet.randomize{ value: msg.value }();
+        if (_usedFunds < msg.value) {
+            payable(msg.sender).transfer(msg.value - _usedFunds);
+        }
+    }
+    
+    function fulfillRandomness() external {
+        assert(latestRandomizingBlock > 0);
+        randomness = witnet.random(type(uint32).max + 1, 0, latestRandomizingBlock);
+    }    
+}
+```
 
 #### Two-step Generation of Randomness
 
-This example follows a very common workflow for many randomness use cases: first you need to take note of the current block number and ask the `WitnetRNG` to reseed itself, then, at a later time, you will be retrieving a random number that is derived from the random seed that was generated as a response to your former request.
+This example follows a very common workflow for many randomness use cases: first you need to take note of the current block number and ask the `WitnetRandomness` to reseed itself, then, at a later time, you will be retrieving a random number that is derived from the random seed that was generated as a response to your former request.
 
 This 2-step process preserves unpredictability of the random numbers that you get because it guarantees that the number is derived from a seed that was generated only after the request was sent.
 
@@ -55,7 +87,59 @@ Take into account that this example implements an asynchronous workflow — call
 
 In addition to random numbers, the Witnet randomness oracle can also generate random sequences of bytes. Namely, these have the `bytes32` type in Solidity:
 
-{% embed url="https://gist.github.com/aesedepece/a60449aaf6e7c6d65b7e717966061a17" %}
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <0.9.0;
+
+import "witnet-solidity-bridge/contracts/interfaces/IWitnetRandomness.sol";
+
+contract DieContract {
+
+    uint32 sides;
+    struct Guess {
+        uint32 guessedNumber;
+        uint256 blockHeight;
+    }
+    mapping (address => Guess) public guesses;
+    IWitnetRandomness witnet;
+    
+    event Right(string message);
+    event Wrong(string message);
+
+    constructor (uint32 _sides) {
+        sides = _sides;
+        witnet = IWitnetRandomness(address("<address of the WitnetRandomness contract>"));
+    }
+
+    function guessNumber(uint32 _number) external payable {
+        assert(_number > 0);
+        assert(_number <= sides);
+        assert(guesses[msg.sender].guessedNumber == 0);
+
+        guesses[msg.sender].guessedNumber = _number;
+        guesses[msg.sender].blockNumber = block.number;
+        
+        uint _usedFunds = witnet.randomize{ value: msg.value }();
+        if (_usedFunds < msg.value) {
+            payable(msg.sender).transfer(msg.value - _usedFunds);
+        }
+    }
+
+    function roll() external {
+        assert(guesses[msg.sender].guessedNumber != 0);
+        
+        uint32 luckyNumber = 1 + witnet.random(sides, 0, guesses[msg.sender].blockNumber);
+        
+        if (luckyNumber == guesses[msg.sender].guessedNumber) {
+            emit Right("Congratulations! You guessed the right number!");
+        } else {
+            emit Wrong("Sorry! You didn't guess the right number!");
+        }
+        
+        guesses[msg.sender].guessedNumber = 0;
+    }    
+}
+```
 
 As you can see, this example is very similar to the [Example 1](generating-randomness-in-your-smart-contracts.md#example-1-bare-minimal) above. The `getRandomNumber()` function works the same, but `fulfillRandomness()` however uses the lower-level `witnet.randomnessAfter()` function to read the underlying random bytes instead of trying to derive a random integer from those:
 
