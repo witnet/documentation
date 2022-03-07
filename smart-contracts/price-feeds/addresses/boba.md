@@ -8,10 +8,10 @@
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet\_boba-usdt\_6) | `0xf723bde1` |    24 hours   |      1.0%     |      15'     |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet\_btc-usd\_6)     | `0x24beead4` |    24 hours   |      1.0%     |    1 hour    |
-| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby\_dai-usd\_6)     | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/boba-mainnet\_dai-usd\_6)     | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/boba-mainnet\_eth-usd\_6)     | `0x3d15f701` |    24 hours   |      1.0%     |    1 hour    |
 | [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-mainnet\_frax-usdt\_6) | `0x1a3ea43e` |    24 hours   |     0.25%     |      15'     |
-| [Price-OLO/USDC-6](https://feeds.witnet.io/feeds/boba-rinkeby\_olo-usdc\_6)   | `0xf75039c1` |    24 hours   |      1.0%     |      15'     |
+| [Price-OLO/USDC-6](https://feeds.witnet.io/feeds/boba-mainnet\_olo-usdc\_6)   | `0xf75039c1` |    24 hours   |      1.0%     |      15'     |
 | [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-mainnet\_usdc-usd\_6)   | `0x4c80cf2e` |    24 hours   |     0.25%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-mainnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |     0.25%     |      15'     |
 
