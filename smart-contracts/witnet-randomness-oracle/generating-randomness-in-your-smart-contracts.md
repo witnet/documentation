@@ -68,7 +68,7 @@ temperature = -100 + witnet.random(201, 0, latestRandomizingBlock);
 ```
 
 {% hint style="info" %}
-Take into account that this example implements an asynchronous workflow — calling `fulfillRandomness()` right after `getRandomNumber()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
+Take into account that this example implements an asynchronous workflow — calling `fetchRandomNumber()` right after `requestRandomNumber()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
 {% endhint %}
 
 ### Example 2: Roll a die!
@@ -192,5 +192,5 @@ randomness = witnet.getRandomnessAfter(latestRandomizingBlock);
 Generating random bytes is specially interesting for many NFT use cases in which you need to assign attributes and traits at random to each of the item in a colllection. By sourcing 32 random bytes at once, you can use each of the bytes to affect the different traits that you want to assign.
 
 {% hint style="info" %}
-Take into account that this example implements an asynchronous workflow — calling `fulfillRandomness()` right after `getRandomNumber()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
+Take into account that this example implements an asynchronous workflow — calling `fetchRandomness()` right after `requestRandomness()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
 {% endhint %}
