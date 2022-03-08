@@ -26,7 +26,7 @@ contract MyContract {
     
     receive () external payable {}
 
-    function getRandomNumber() external payable {
+    function requestRandomNumber() external payable {
         latestRandomizingBlock = block.number;
         uint _usedFunds = witnet.randomize{ value: msg.value }();
         if (_usedFunds < msg.value) {
@@ -34,7 +34,7 @@ contract MyContract {
         }
     }
     
-    function fulfillRandomness() external {
+    function fetchRandomNumber() external {
         assert(latestRandomizingBlock > 0);
         randomness = witnet.random(type(uint32).max + 1, 0, latestRandomizingBlock);
     }    
@@ -167,7 +167,7 @@ contract MyContract {
     
     receive () external payable {}
 
-    function getRandomNumber() external payable {
+    function requestRandomness() external payable {
         latestRandomizingBlock = block.number;
         uint _usedFunds = witnet.randomize{ value: msg.value }();
         if (_usedFunds < msg.value) {
@@ -175,7 +175,7 @@ contract MyContract {
         }
     }
     
-    function fulfillRandomness() external {
+    function fetchRandomness() external {
         assert(latestRandomizingBlock > 0);
         randomness = witnet.getRandomnessAfter(latestRandomizingBlock);
     }
@@ -183,7 +183,7 @@ contract MyContract {
 }
 ```
 
-As you can see, this example is very similar to the [Example 1](generating-randomness-in-your-smart-contracts.md#example-1-bare-minimal) above. The `getRandomNumber()` function works the same, but `fulfillRandomness()` however uses the lower-level `witnet.getRandomnessAfter()` function to read the underlying random bytes instead of trying to derive a random integer from those:
+As you can see, this example is very similar to the [Example 1](generating-randomness-in-your-smart-contracts.md#example-1-bare-minimal) above. The `requestRandomness()` function works the same as `requestRandomNumber()` above, but `fetchRandomness()` however uses the lower-level `witnet.getRandomnessAfter()` function to read the underlying random bytes instead of trying to derive a random integer from those:
 
 ```solidity
 randomness = witnet.getRandomnessAfter(latestRandomizingBlock);
