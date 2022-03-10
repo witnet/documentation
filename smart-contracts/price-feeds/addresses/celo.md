@@ -7,10 +7,10 @@
 | **Caption**                                                                 | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | --------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/celo-mainnet\_btc-usd\_6)   | `0x24beead4` |    24 hours   |      3.5%     |    1 hour    |
-| [Price-CELO/EUR-6](https://feeds.witnet.io/feeds/celo-mainnet\_celo-eur\_6) | `0x21a79821` |    24 hours   |      1.0%     |      15'     |
-| [Price-CELO/USD-6](https://feeds.witnet.io/feeds/celo-mainnet\_celo-usd\_6) | `0x9ed884be` |    24 hours   |      1.0%     |      15'     |
+| [Price-CELO/EUR-6](https://feeds.witnet.io/feeds/celo-mainnet\_celo-eur\_6) | `0x21a79821` |    24 hours   |      1.0%     |    1 hour    |
+| [Price-CELO/USD-6](https://feeds.witnet.io/feeds/celo-mainnet\_celo-usd\_6) | `0x9ed884be` |    24 hours   |      1.0%     |    1 hour    |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/celo-mainnet\_eth-usd\_6)   | `0x3d15f701` |    24 hours   |      3.5%     |    1 hour    |
-| [Price-IMMO/MCUSD-6](https://feeds.witnet.io/feeds/celo-mainnet\_immo-mcusd\_6)  | `0x1aa645a8` | 24 hours |      1.0%     |      15'      |
+| [Price-IMMO/MCUSD-6](https://feeds.witnet.io/feeds/celo-mainnet\_immo-mcusd\_6)  | `0x1aa645a8` | 24 hours |      1.0%     |    1 hour    |
 
 ### Celo Testnet (Alfajores)
 
