@@ -38,6 +38,10 @@ You can request support for additional chains using [this form](https://tally.so
 [metis.md](metis.md)
 {% endcontent-ref %}
 
+{% content-ref url="moonbeam.md" %}
+[moonbeam.md](moonbeam.md)
+{% endcontent-ref %}
+
 {% content-ref url="polygon.md" %}
 [polygon.md](polygon.md)
 {% endcontent-ref %}
