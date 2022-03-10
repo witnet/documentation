@@ -30,6 +30,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js)      | **`0x3d15f701`** | `0x3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` |
 | [Price-**FRAX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FraxUsdtPrice.js)   | **`0x1a3ea43e`** | `0x1a3ea43ec9fce5649302474844b0d2c0734ad605b3adfaf3baaab3b7ad43b1a4` |
 | [Price-**FXS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FxsUsdtPrice.js)     | **`0x5a352c58`** | `0x5a352c582f56d09a9d4372befee579d09061510e65d795c20901d53fa95fb9f3` |
+| [Price-**IMMO/MCUSD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/ImmoMcusdPrice.js) | **`0x1aa645a8`** | `0x1aa645a8e8124b720e3f7dc5162efd386f327ea59f855b1afeb8ae4c54f6f8ab` |
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js)     | **`0x31debffc`** | `0x31debffc453c5d04a78431e7bc28098c606d2bbeea22f10a35809924a201a977` |
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`** | `0x4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e` |
 | [Price-**OLO/USDC-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OloUsdcPrice.js)     | **`0xf75039c1`** | `0xf75039c1cc3d4c1cec5cb42ecf19a812a123ba893e673ac920f0f8d3fcebbe34` |
