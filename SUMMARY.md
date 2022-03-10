@@ -33,6 +33,7 @@
     * [Harmony Price Feeds](smart-contracts/price-feeds/addresses/harmony.md)
     * [KCC Price Feeds](smart-contracts/price-feeds/addresses/kcc.md)
     * [Metis Price Feeds](smart-contracts/price-feeds/addresses/metis.md)
+    * [Moonbeam Price Feeds](smart-contracts/price-feeds/addresses/moonbeam.md)
     * [Polygon Price Feeds](smart-contracts/price-feeds/addresses/polygon.md)
     * [Request new price feed or chain support](https://tally.so/r/wMZDAn)
 * [🔄 Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
