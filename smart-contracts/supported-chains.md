@@ -26,15 +26,15 @@ description: >-
 
 | Platform                | Networks                                          | Progress     |
 | ----------------------- | ------------------------------------------------- | ------------ |
-| **Harmony**             | <ul><li>Mainnet</li></ul>                         | ETA: 2022 Q1 |
 | **Avalanche**           | <ul><li>C-Chain mainnet</li><li>Subnets</li></ul> | ETA: 2022 Q1 |
+| **Harmony**             | <ul><li>Mainnet</li></ul>                         | ETA: 2022 Q1 |
 | **Arbitrum**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
-| **Reef**                | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Moonbeam**            | <ul><li>mainnet</li></ul>                         | ETA: 2022 Q2 |
+| **Reef**                | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
+| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
 | **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
 | **Optimism**            | <ul><li>kovan</li><li>mainnet</li></ul>           | ETA: 2022 Q3 |
 | **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>          | ETA: 2022 Q3 |
-| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
 
 ### Request support for a new chain
