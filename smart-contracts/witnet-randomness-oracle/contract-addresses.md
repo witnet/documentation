@@ -48,6 +48,10 @@ _**Metis Andromeda**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://an
 
 _**Metis Stardust**:_ [`0x2A9c52Ff092F3C3D8E92A584E9c1520670fB9362`](https://stardust-explorer.metis.io/address/0x2A9c52Ff092F3C3D8E92A584E9c1520670fB9362)
 
+## Moonbeam
+
+_**Moonbase Alpha**:_ [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://moonbase.moonscan.io/address/0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604)
+
 ## Polygon
 
 _**Polygon Mainnet**:_ [`0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87`](https://polygonscan.com/address/0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87)
