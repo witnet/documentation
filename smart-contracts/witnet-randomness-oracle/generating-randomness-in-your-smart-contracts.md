@@ -137,6 +137,9 @@ contract DieContract {
 }
 ```
 
+[Try this code online with Remix](https://remix.ethereum.org/?#activate=solidity,debugger&gist=5daa8730faff65ef55b91f1ecfca616b&call=fileManager//open//browser/gist-5daa8730faff65ef55b91f1ecfca616b/witnet-rng-die-example.sol)
+
+
 As this example allows multiple users to play the dice game at the same time, a `mapping (address => Guess)` is used to separately track everyone's choice of numbers and the block in which they placed their guess. In this way, you can make sure that every roll of the die is only affecting guesses that were placed at least 1 block in advance, and that further rolls of the die will not affect the outcome of past guesses.
 
 {% hint style="info" %}
