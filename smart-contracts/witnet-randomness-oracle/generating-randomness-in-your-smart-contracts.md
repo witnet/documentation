@@ -18,10 +18,12 @@ contract MyContract {
 
     uint32 public randomness;
     uint256 public latestRandomizingBlock;
-    IWitnetRandomness witnet;
+    IWitnetRandomness immutable public witnet;
     
-    constructor () {
-        witnet = IWitnetRandomness(address("<address of the WitnetRandomness contract>"));
+    /// @param _witnetRandomness Address of the WitnetRandomness contract.
+    constructor (IWitnetRandomness _witnetRandomness) {
+        assert(address(_witnetRandomness) != address(0));
+        witnet = _witnetRandomness;
     }
     
     receive () external payable {}
@@ -36,8 +38,8 @@ contract MyContract {
     
     function fetchRandomNumber() external {
         assert(latestRandomizingBlock > 0);
-        randomness = witnet.random(type(uint32).max + 1, 0, latestRandomizingBlock);
-    }    
+        randomness = witnet.random(type(uint32).max, 0, latestRandomizingBlock);
+    }
 }
 ```
 
@@ -89,16 +91,16 @@ contract DieContract {
         uint256 blockHeight;
     }
     mapping (address => Guess) public guesses;
-    IWitnetRandomness witnet;
+    IWitnetRandomness immutable pubic witnet;
     
     event Right(string message);
     event Wrong(string message);
 
-    constructor (uint32 _sides) {
+    /// @param _witnetRandomness Address of the WitnetRandomness contract.
+    constructor (IWitnetRandomness _witnetRandomness, uint32 _sides) {
+        assert(address(_witnetRandomness) != address(0));
+        witnet = _witnetRandomness;
         sides = _sides;
-        witnet = IWitnetRandomness(
-            address("<address of the WitnetRandomness contract>")
-        );
     }
     
     receive () external payable {}
@@ -157,12 +159,12 @@ contract MyContract {
 
     bytes32 public randomness;
     uint256 public latestRandomizingBlock;
-    IWitnetRandomness witnet;
+    IWitnetRandomness immutable public witnet;
     
-    constructor () {
-        witnet = IWitnetRandomness(
-            address("<address of the WitnetRandomness contract>")
-        );
+    /// @param _witnetRandomness Address of the WitnetRandomness contract.
+    constructor (IWitnetRandomness _witnetRandomness) {
+        assert(address(_witnetRandomness) != address(0));
+        witnet = _witnetRandomness;
     }
     
     receive () external payable {}
