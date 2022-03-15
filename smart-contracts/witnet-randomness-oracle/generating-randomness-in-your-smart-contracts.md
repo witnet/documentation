@@ -91,7 +91,7 @@ contract DieContract {
         uint256 blockHeight;
     }
     mapping (address => Guess) public guesses;
-    IWitnetRandomness immutable pubic witnet;
+    IWitnetRandomness immutable public witnet;
     
     event Right(string message);
     event Wrong(string message);
