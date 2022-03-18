@@ -1,6 +1,16 @@
 # Avalanche Price Feeds
 
-### **Avalanche Fuji** (testnet)
+### **Avalanche C-Chain Mainnet**
+
+**WinetPriceRouter**: [`0xBaaF31F4AAc5ab5334b6E239a83bf4E855C55ea7`](https://snowtrace.io/address/0xBaaF31F4AAc5ab5334b6E239a83bf4E855C55ea7#readContract)
+
+| **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-AVAX/USD-6](https://feeds.witnet.io/feeds/avalanche-mainnet\_avax-usd\_6) | `0x356ba62f` |    24 hours   |      1.0%     |    1 hour    |
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/avalanche-mainnet\_btc-usd\_6)   | `0x24beead4` |    24 hours   |      1.0%     |    1 hour    |
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/avalanche-mainnet\_eth-usd\_6)   | `0x3d15f701` |    24 hours   |      1.0%     |    1 hour    |
+
+### **Avalanche C-Chain Fuji** (testnet)
 
 **WinetPriceRouter**: [`0x99Af0CF37d1C6b9Bdfe33cc0A89C00D97D3c42F4`](https://testnet.snowtrace.io/address/0x99Af0CF37d1C6b9Bdfe33cc0A89C00D97D3c42F4#readContract)
 
