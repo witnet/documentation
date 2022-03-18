@@ -10,7 +10,7 @@ description: >-
 
 | Platform                         | Networks                                                 | Services                                                                                                                                                                                                                                                                                        |
 | -------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Avalanche**                    | <ul><li>C-Chain Fuji testnet</li></ul>                   | <ul><li><a href="price-feeds/addresses/avalanche.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#avalanche-c-chains">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#avalanche-c-chain">HTTP GET/POST</a></li></ul>    |
+| **Avalanche**                    | <ul><li>C-Chain mainnet</li><li>C-Chain Fuji testnet</li></ul> | <ul><li><a href="price-feeds/addresses/avalanche.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#avalanche-c-chains">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#avalanche-c-chain">HTTP GET/POST</a></li></ul>    |
 | **Boba Network**                 | <ul><li>mainnet</li><li>testnet</li></ul>                | <ul><li><a href="price-feeds/addresses/boba.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#boba-network">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#boba-network">HTTP GET/POST</a></li></ul>                    |
 | **Celo**                         | <ul><li>mainnet</li><li>alfajores</li></ul>              | <ul><li><a href="price-feeds/addresses/celo.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#celo">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#celo">HTTP GET/POST</a></li></ul>                                    |
 | **Conflux Network**              | <ul><li>mainnet</li><li>testnet</li></ul>                | <ul><li><a href="price-feeds/addresses/conflux.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#conflux-network">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#conflux-network">HTTP GET/POST</a></li></ul>           |
@@ -26,10 +26,11 @@ description: >-
 
 | Platform                | Networks                                          | Progress     |
 | ----------------------- | ------------------------------------------------- | ------------ |
-| **Avalanche**           | <ul><li>C-Chain mainnet</li><li>Subnets</li></ul> | ETA: 2022 Q1 |
-| **Harmony**             | <ul><li>Mainnet</li></ul>                         | ETA: 2022 Q1 |
 | **Arbitrum**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
+| **Avalanche**           | <ul><li>Subnets</li></ul>                         | ETA: 2022 Q2 |
+| **Cronos Chain**        | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
+| **Harmony**             | <ul><li>Mainnet</li></ul>                         | ETA: 2022 Q2 |
 | **Moonbeam**            | <ul><li>mainnet</li></ul>                         | ETA: 2022 Q2 |
 | **Reef**                | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
