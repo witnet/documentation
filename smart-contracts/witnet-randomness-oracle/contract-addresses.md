@@ -8,7 +8,8 @@ You can request support for additional chains using [this form](https://tally.so
 
 ## Avalanche C-Chain
 
-_**Avalanche Fuji**:_ [`0xAf89a59876145202a027E73340592F05B28A6D99`](https://testnet.snowtrace.io/address/0xAf89a59876145202a027E73340592F05B28A6D99)
+_**Avalanche Mainnet**:_ [`0xe9Bf601869A8c391CecbF5C979D06b0b4640499c`](https://snowtrace.io/address/0xe9Bf601869A8c391CecbF5C979D06b0b4640499c#readContract)
+_**Avalanche Fuji**:_ [`0xAf89a59876145202a027E73340592F05B28A6D99`](https://testnet.snowtrace.io/address/0xAf89a59876145202a027E73340592F05B28A6D99#readContract)
 
 ## Boba Network
 
