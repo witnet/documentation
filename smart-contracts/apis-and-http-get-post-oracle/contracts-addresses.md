@@ -2,7 +2,8 @@
 
 ## Avalanche C-Chain
 
-_**Avalanche Fuji**:_ [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://testnet.snowtrace.io/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530)
+_**Avalanche Mainnet**:_ [`0x1D9c4a8f8B7b5F9B8e2641D81927f8F8Cc7fF079`](https://snowtrace.io/address/0x1D9c4a8f8B7b5F9B8e2641D81927f8F8Cc7fF079#readProxyContract)
+_**Avalanche Fuji**:_ [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://testnet.snowtrace.io/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530#readProxyContract)
 
 ## Boba Network
 
