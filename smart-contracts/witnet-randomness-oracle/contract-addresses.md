@@ -30,6 +30,10 @@ _**Conflux Tethys**:_ [`cfx:accjkt488xy6tj2rjf4atpue7hj0kda9c6fy5g71b3`](https:/
 
 _**Conflux Testnet**:_ [`cfxtest:acb2c9u30r7bp8x6328cbhngjrkd2whrfp6mnehs92`](https://testnet.confluxscan.io/address/cfxtest:acb2c9u30r7bp8x6328cbhngjrkd2whrfp6mnehs92)
 
+## Cronos Chain
+
+_**Cronos Testnet**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://cronos.org/explorer/testnet3/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
+
 ## Ethereum
 
 _**Ethereum Mainnet**:_ [`0x2be5d85f97c490e7ed7396d79fe194ab922d16ee`](https://etherscan.io/address/0x2be5d85f97c490e7ed7396d79fe194ab922d16ee)
