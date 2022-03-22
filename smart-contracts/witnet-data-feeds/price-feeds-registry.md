@@ -26,6 +26,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js)     | **`0x21a79821`** | `0x21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2` |
 | [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js)     | **`0x9ed884be`** | `0x9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073` |
 | [Price-**CFX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CfxUsdtPrice.js)     | **`0x65784185`** | `0x65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29` |
+| [Price-**CRO/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CroUsdtPrice.js)     | **`0x6b8258ca`** | `0x6b8258ca2eb12b227a7f6a0962ad90723fb176285659b4dd6f755c1fc728a2ff` |
 | [Price-**DAI/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/DaiUsdPrice.js)       | **`0x9899e356`** | `0x9899e35601719f1348e09967349f72c7d04800f17c14992d6dcf2f17fac713ea` |
 | [Price-**ETH/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/EthUsdtPrice.js)      | **`0x3d15f701`** | `0x3d15f7018db5cc80838b684361aaa100bfadf8a11e02d5c1c92e9c6af47626c8` |
 | [Price-**FRAX/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/FraxUsdtPrice.js)   | **`0x1a3ea43e`** | `0x1a3ea43ec9fce5649302474844b0d2c0734ad605b3adfaf3baaab3b7ad43b1a4` |
