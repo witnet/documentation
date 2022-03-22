@@ -22,6 +22,10 @@ You can request support for additional chains using [this form](https://tally.so
 [conflux.md](conflux.md)
 {% endcontent-ref %}
 
+{% content-ref url="cronos.md" %}
+[cronos.md](cronos.md)
+{% endcontent-ref %}
+
 {% content-ref url="ethereum.md" %}
 [ethereum.md](ethereum.md)
 {% endcontent-ref %}
