@@ -29,6 +29,7 @@
     * [Boba Price Feeds](smart-contracts/price-feeds/addresses/boba.md)
     * [Celo Price Feeds](smart-contracts/price-feeds/addresses/celo.md)
     * [Conflux Price Feeds](smart-contracts/price-feeds/addresses/conflux.md)
+    * [Cronos Price Feeds](smart-contracts/price-feeds/addresses/cronos.md)
     * [Ethereum Price Feeds](smart-contracts/price-feeds/addresses/ethereum.md)
     * [Harmony Price Feeds](smart-contracts/price-feeds/addresses/harmony.md)
     * [KCC Price Feeds](smart-contracts/price-feeds/addresses/kcc.md)
