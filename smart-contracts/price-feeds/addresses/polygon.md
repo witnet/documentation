@@ -7,6 +7,7 @@
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/polygon-mainnet\_btc-usd\_6) | `0x24beead4` |    24 hours   |      1.0%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/polygon-mainnet\_dai-usd\_6) | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/polygon-mainnet\_eth-usd\_6) | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
 
 ### Polygon Testnet
@@ -16,6 +17,7 @@
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/polygon-testnet\_btc-usd\_6) | `0x24beead4` |     1 hour    |      1.0%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/polygon-testnet\_dai-usd\_6) | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/polygon-testnet\_eth-usd\_6) | `0x3d15f701` |     1 hour    |      1.0%     |      15'     |
 
 {% hint style="success" %}
