@@ -7,8 +7,11 @@
 | **Caption**                                                                | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/kcc-mainnet\_btc-usd\_6)   | `0x24beead4` |      10'      |      0.5%     |      5'      |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/kcc-mainnet\_dai-usd\_6)   | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/kcc-mainnet\_eth-usd\_6)   | `0x3d15f701` |      10'      |      0.5%     |      5'      |
 | [Price-KCS/USDT-6](https://feeds.witnet.io/feeds/kcc-mainnet\_kcs-usdt\_6) | `0x31debffc` |      10'      |      0.5%     |      5'      |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/kcc-mainnet\_usdc-usd\_6) | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/kcc-mainnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 ### KCC Testnet
 
@@ -17,8 +20,11 @@
 | **Caption**                                                                | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_btc-usd\_6)   | `0x24beead4` |      10'      |      0.5%     |      5'      |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_dai-usd\_6)   | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_eth-usd\_6)   | `0x3d15f701` |      10'      |      0.5%     |      5'      |
 | [Price-KCS/USDT-6](https://feeds.witnet.io/feeds/kcc-testnet\_kcs-usdt\_6) | `0x31debffc` |      10'      |      0.5%     |      5'      |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_usdc-usd\_6) | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update.
