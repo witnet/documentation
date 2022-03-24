@@ -7,8 +7,6 @@
 | **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-AVAX/USD-6](https://feeds.witnet.io/feeds/avalanche-mainnet\_avax-usd\_6) | `0x356ba62f` |    24 hours   |      1.0%     |    1 hour    |
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/avalanche-mainnet\_btc-usd\_6)   | `0x24beead4` |    24 hours   |      1.0%     |    1 hour    |
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/avalanche-mainnet\_eth-usd\_6)   | `0x3d15f701` |    24 hours   |      1.0%     |    1 hour    |
 
 ### **Avalanche C-Chain Fuji** (testnet)
 
