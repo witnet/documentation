@@ -20,24 +20,28 @@ At a later time, the random sequences are revealed and deterministically aggrega
 
 ### Generate Random Numbers and Byte Arrays in your Smart Contracts
 
-The next section contains a number of useful resources, examples and walkthroughs on how to use the Witnet randomness oracle to generate random numbers and byte arrays in your own smart contracts:
+The following sections contain a number of useful resources, examples and walkthroughs on how to use the Witnet randomness oracle to generate random numbers and byte arrays in your own smart contracts:
 
-{% content-ref url="generating-randomness-in-your-smart-contracts.md" %}
-[generating-randomness-in-your-smart-contracts.md](generating-randomness-in-your-smart-contracts.md)
+{% content-ref url="generating-randomness.md" %}
+[generating-randomness.md](generating-randomness.md)
 {% endcontent-ref %}
 
-{% content-ref url="advanced-examples.md" %}
-[advanced-examples.md](advanced-examples.md)
+{% content-ref url="randomness-request.md" %}
+[randomness-requests.md](randomness-requests.md)
 {% endcontent-ref %}
 
-{% content-ref url="security-considerations.md" %}
-[security-considerations.md](security-considerations.md)
+{% content-ref url="randomness-contract.md" %}
+[randomness-contract.md](randomness-contract.md)
 {% endcontent-ref %}
 
-{% content-ref url="../apis-and-http-get-post-oracle/api-reference.md" %}
-[api-reference.md](../apis-and-http-get-post-oracle/api-reference.md)
+{% content-ref url="code-examples.md" %}
+[code-examples.md](code-examples.md)
 {% endcontent-ref %}
 
-{% content-ref url="low-level-randomness-queries.md" %}
-[low-level-randomness-queries.md](low-level-randomness-queries.md)
+{% content-ref url="api-reference.md" %}
+[api-reference.md](api-reference.md)
+{% endcontent-ref %}
+
+{% content-ref url="contract-addresses.md" %}
+[contract-addresses.md](contract-addresses.md)
 {% endcontent-ref %}

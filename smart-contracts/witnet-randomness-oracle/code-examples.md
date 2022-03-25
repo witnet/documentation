@@ -1,4 +1,4 @@
-# Generating Randomness in your Smart Contracts
+# Code Examples
 
 ### Example 1: Bare Minimal
 On each of the [EVM compatible chains supported by Witnet](./contract-addresses.md) there is an instance of the `WitnetRandomness` contract that exposes the main randomness oracle functionality through a very simple interface.
