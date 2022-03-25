@@ -1,5 +1,5 @@
 ---
-description: Multi-chain secure data input, made easy.
+description: Multi-chain, secure and reliable data retrievals right from the outside world, made easy.
 ---
 
 # 🏠 Witnet Oracle Docs
