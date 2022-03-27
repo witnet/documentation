@@ -196,3 +196,21 @@ Generating random bytes is specially interesting for many NFT use cases in which
 {% hint style="info" %}
 Take into account that this example implements an asynchronous workflow — calling `fetchRandomness()` right after `requestRandomness()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
 {% endhint %}
+
+
+### Example 4: Post a low-level hardcoded randomness request
+```
+```
+
+### Example 5: Clone a pre-deployed WitnetRequestRandomness contract 
+  ```
+  contract MyContract {
+    WitnetRequestRandomness public witnetRequest;
+    contructor(IWitnetRandomness _witnet) {
+      witnetRequest = _witnet.witnetRandomnessRequest();
+      // transfer request ownership to deployer:
+      witnetRequest.transferOwnership(msg.sender);
+    }
+    // ...
+  }
+  ```
