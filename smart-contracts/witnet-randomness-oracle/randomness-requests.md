@@ -22,15 +22,18 @@ Now, depending on the lifespan of your smart contract, you can actually compose 
   {% endhint %}
 
   {% hint style="error" %}  
-  Please, be aware that if _witnessing parameters_ are not set properly, your request could either take a little longer to be solved, or worse, get reverted by the Witnet side-chain. For instance, if *witnessing fees* were set too low, there would be a high chance to get an `"InsufficientCommits"` error message as a result to your data request.
+  Please, be aware that if _witnessing parameters_ are not properly set, your request could either take a little longer to be solved, or worse, get reverted by the Witnet side-chain. For instance, if *witnessing fees* were set too low, there would be a high chance to get an `"InsufficientCommits"` error message as a result to your data request.
   {% endhint %}
 
 **2.** As a second approach, if you expect to repeatedly request for randomness during an undetermined period of time, you may opt for using a pre-deployed copy of the [`WitnetRequestRandomness` contract](./api-reference.md#WitnetRequestRandomness) that will enable you, or your smart contract, to eventually change the _witnessing parameters_ of your request, on-chain. 
 
   {% hint style="success" %}
-  Deploying a `WitnetRandomnessRequest` contract from scratch requires more than 2.000.000 gas units (in a regular layer-1 EVM). You or your contract can reduce this cost to a tenth (🎉) by "cloning" an already existing `WitnetRandomnessRequest` instance. Ownership of the cloned contract will be immediately granted to the entity that initiated the clone transaction. Learn how this can be done by following [this example](./code-examples.md#clone-a-pre-deployed-randomness-request-contract.md). 
+  Deploying a Witnet Randomness Request contract (i.e. ``WitnetRequestRandomness`) from scratch requires more than 2.000.000 gas units (in a regular layer-1 EVM). You or your contract can reduce this cost to a tenth (🎉) by "cloning" an already existing `WitnetRequestRandomness` instance. Ownership of the cloned contract will be immediately granted to the entity that called the `clone()` transaction. Learn how this can be done by following [this example](./code-examples.md#clone-a-pre-deployed-randomness-request-contract.md). 
   {% endhint %}
 
+  {% content-ref url="api-reference.md" %}
+  [api-reference.md](api-reference.md)
+  {% endcontent-ref %}  
 
 ## Security concerns
 
