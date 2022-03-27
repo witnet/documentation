@@ -45,12 +45,15 @@
   * [Code Examples](smart-contracts/witnet-randomness-oracle/code-examples.md)
   * [API Reference](smart-contracts/witnet-randomness-oracle/api-reference.md)
   * [Multi-chain Addresses](smart-contracts/witnet-randomness-oracle/contract-addresses.md)
-  * [Make an HTTP GET Request](smart-contracts/apis-and-http-get-post-oracle/make-a-get-request.md)
-  * [Make an HTTP POST Request](smart-contracts/apis-and-http-get-post-oracle/make-a-post-request.md)
-  * [UsingWitnet Inheritance](smart-contracts/apis-and-http-get-post-oracle/usingwitnet-inheritance.md)
-  * [Witnet Request Board](smart-contracts/apis-and-http-get-post-oracle/witnet-request-board.md)
-  * [RADON API Reference](smart-contracts/apis-and-http-get-post-oracle/api-reference.md)
-  * [Contract Addresses](smart-contracts/apis-and-http-get-post-oracle/contracts-addresses.md)
+* [🌐 Witnet Web Oracle](smart-contracts/witnet-web-oracle/README.md)
+  * [Make an HTTP GET Request](smart-contracts/witnet-web-oracle/make-a-get-request.md)
+  * [Make an HTTP POST Request](smart-contracts/witnet-web-oracle/make-a-post-request.md)
+  * [UsingWitnet Inheritance](smart-contracts/witnet-web-oracle/usingwitnet-inheritance.md)
+  * [WitnetRequestBoard Contract](smart-contracts/witnet-web-oracle/witnet-request-board.md)
+  * [API Reference](smart-contracts/witnet-web-oracle/api-reference/README.md)
+    * [Solidity API](smart-contracts/witnet-web-oracle/api-reference/api-solidity.md)
+    * [Javascript API](smart-contracts/witnet-web-oracle/api-reference/api-javascript.md)
+  * [Multi-chain Addresses](smart-contracts/witnet-web-oracle/contracts-addresses.md)
 
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
 

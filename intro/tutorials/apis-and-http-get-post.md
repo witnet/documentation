@@ -69,6 +69,6 @@ Want to make sense of all the Javascript above? Please make sure to check out th
 
 You can find here the complete documentation and API reference for the Witnet HTTP GET/POST oracle, along many more examples and walkthroughs:
 
-{% content-ref url="../../smart-contracts/apis-and-http-get-post-oracle/" %}
-[apis-and-http-get-post-oracle](../../smart-contracts/apis-and-http-get-post-oracle/)
+{% content-ref url="../../smart-contracts/witnet-web-oracle/" %}
+[witnet-web-oracle](../../smart-contracts/witnet-web-oracle/)
 {% endcontent-ref %}
