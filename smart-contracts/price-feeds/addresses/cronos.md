@@ -6,9 +6,9 @@
 
 | **Caption**                                                                    | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ------------------------------------------------------------------------------ | ------------ | :-----------: | :-----------: | :----------: |
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/cronos-testnet\_btc-usd\_6)    | `0x24beead4` |     1 hour    |      1.0%     |     15'      |
-| [Price-CRO/USDT-6](https://feeds.witnet.io/feeds/cronos-testnet\_cro-usdt\_6)  | `0x6b8258ca` |     1 hour    |      1.0%     |     15'      |
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/cronos-testnet\_eth-usd\_6)    | `0x3d15f701` |     1 hour    |      1.0%     |     15'      |
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/cronos-testnet\_btc-usd\_6)    | `0x24beead4` |    24 hours   |      1.0%     |     15'      |
+| [Price-CRO/USDT-6](https://feeds.witnet.io/feeds/cronos-testnet\_cro-usdt\_6)  | `0x6b8258ca` |    24 hours   |      1.0%     |     15'      |
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/cronos-testnet\_eth-usd\_6)    | `0x3d15f701` |    24 hours   |      1.0%     |     15'      |
 | [Price-USDT/USDT-6](https://feeds.witnet.io/feeds/cronos-testnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |     15'      |
 
 {% hint style="success" %}
