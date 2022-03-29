@@ -290,6 +290,64 @@ nano ~/.witnet/config/witnet.toml
 {% endtab %}
 {% endtabs %}
 
+## Upgrade your Witnet node
+
+Upgrading is as easy as it gets:
+
+**1. Remove the old container**
+
+```
+docker stop witnet_node
+docker rm witnet_node
+```
+
+**2. Pull the latest version of the Docker image**
+
+```
+docker pull witnet/witnet-rust
+```
+
+**3. Recreate the container using the latest Docker image**
+
+{% tabs %}
+{% tab title="MacOS and Linux" %}
+```
+docker run -d \    
+    --name witnet_node \    
+    --volume ~/.witnet:/.witnet \    
+    --publish 21337:21337 \    
+    --restart always \    
+    witnet/witnet-rust
+```
+
+
+{% endtab %}
+
+{% tab title="Windows" %}
+```
+docker run -d --name witnet_node --volume %USERPROFILE%\.witnet\:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
+```
+{% endtab %}
+
+{% tab title="Raspberry Pi" %}
+Docker on Raspbian for all Raspberry models requires your containers to operate in privileged mode to have access to the system clock. When running the command above, simply add the `--privileged` flag:
+
+```
+docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+If you changed the persistent storage path in the past, change `~/.witnet` for whatever path you were using.
+{% endhint %}
+
+Voilà! Your Witnet node is now upgraded. Your master key is safe and your addresses will be the same. Remember that you can always double-check the Witnet version that you are running with this command:
+
+```
+docker exec witnet_node witnet --version
+```
+
 ## Long term maintenance of your node
 
 There are some operations that are recommended from time to time to make sure your node is in perfect order:
