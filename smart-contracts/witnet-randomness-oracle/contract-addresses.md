@@ -28,7 +28,7 @@ _**Celo Alfajores**:_ [`0xEF6e3B26c5307E6dE38b1e8e11Ee051186BEe11b`](https://alf
 
 _**Conflux Tethys**:_ [`cfx:accjkt488xy6tj2rjf4atpue7hj0kda9c6fy5g71b3`](https://confluxscan.io/address/cfx:accjkt488xy6tj2rjf4atpue7hj0kda9c6fy5g71b3)
 
-_**Conflux Testnet**:_ [`cfxtest:acb2c9u30r7bp8x6328cbhngjrkd2whrfp6mnehs92`](https://testnet.confluxscan.io/address/cfxtest:acb2c9u30r7bp8x6328cbhngjrkd2whrfp6mnehs92)
+_**Conflux Testnet**:_ [`cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3`](https://testnet.confluxscan.io/address/cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3)
 
 ## Cronos Chain
 
