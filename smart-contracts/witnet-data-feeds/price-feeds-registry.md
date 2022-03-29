@@ -41,6 +41,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**OMG/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgUsdtPrice.js)     | **`0xfb2c7795`** | `0xfb2c779532e89f660244ccdd71749e8d75b3e53a8fc0d5531ef814f8b8300eef` |
 | [Price-**USDC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdcUsdPrice.js)     | **`0x4c80cf2e`** | `0x4c80cf2e5b3d17b98f6f24fc78f661982b8ef656c3b75a038f7bfc6f93c1b20e` |
 | [Price-**USDT/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/UsdtUsdPrice.js)     | **`0x538f5a25`** | `0x538f5a25b39995a23c24037d2d38f979c8fa7b00d001e897212d936e6f6556ef` |
+| [Price-**VSQ/DAI-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/VsqDaiPrice.js)       | **`0x98d36ccb`** | `0x98d36ccbb4bde86f4533dbd6577ccfd8be1ec4175d9fe3aae52079d0950ba36d` |
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the Javascript equivalent of the **RADON script** that is processed by the Witnet oracle on every single price update of the corresponding currency pair.
