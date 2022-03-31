@@ -14,7 +14,7 @@
 
 ### Celo Testnet (Alfajores)
 
-**WinetPriceRouter**: [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract)
+**WitnetPriceRouter**: [`0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE`](https://alfajores-blockscout.celo-testnet.org/address/0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE/read-contract)
 
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
