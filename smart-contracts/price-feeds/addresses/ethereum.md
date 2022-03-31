@@ -11,7 +11,7 @@
 
 ### Ethereum Goerli
 
-**WinetPriceRouter**: [`0x1cF3Aa9DBF4880d797945726B94B9d29164211BE`](https://goerli.etherscan.io/address/0x1cF3Aa9DBF4880d797945726B94B9d29164211BE#readContract)
+**WitnetPriceRouter**: [`0x1cF3Aa9DBF4880d797945726B94B9d29164211BE`](https://goerli.etherscan.io/address/0x1cF3Aa9DBF4880d797945726B94B9d29164211BE#readContract)
 
 | **Caption**                                                                  | **ID4**      | **Hearbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :----------: | :-----------: | :----------: |
@@ -20,7 +20,7 @@
 
 ### Ethereum Rinkeby
 
-**WinetPriceRouter**: [`0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9`](https://rinkeby.etherscan.io/address/0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9#readContract)
+**WitnetPriceRouter**: [`0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9`](https://rinkeby.etherscan.io/address/0xa50b17C2fc373c247C3b603f83df6A7800cB0DC9#readContract)
 
 | **Caption**                                                                   | **ID4**      | **Hearbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :----------: | :-----------: | :----------: |
