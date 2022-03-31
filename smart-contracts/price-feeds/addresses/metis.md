@@ -10,7 +10,7 @@
 
 ### **Metis Testnet** (Stardust)
 
-**WinetPriceRouter**: [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract)
+**WitnetPriceRouter**: [`0x5134EAF08bcf8cE1922991150AAad1774e93751f`](https://stardust-explorer.metis.io/address/0x5134EAF08bcf8cE1922991150AAad1774e93751f/read-contract)
 
 | **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
