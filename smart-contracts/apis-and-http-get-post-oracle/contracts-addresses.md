@@ -26,6 +26,8 @@ _**Conflux Testnet**:_ [`cfxtest:acfnpy71hjhamy075xyps56124zje5154ux9nte7vt`](ht
 
 ## Cronos Chain
 
+_**Cronos Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://cronos.org/explorer/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
+
 _**Cronos Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://cronos.org/explorer/testnet3/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
 ## Ethereum
