@@ -2,7 +2,7 @@
 
 ### Moonbase Alpha (testnet)
 
-**WinetPriceRouter**: [`0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D`](https://moonbase.moonscan.io/address/0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D#readContract)
+**WitnetPriceRouter**: [`0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D`](https://moonbase.moonscan.io/address/0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D#readContract)
 
 | **Caption**                                                                       | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | --------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
