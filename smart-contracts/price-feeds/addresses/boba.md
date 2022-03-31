@@ -17,7 +17,7 @@
 
 ### Boba Rinkeby
 
-**WinetPriceRouter**: [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract)
+**WitnetPriceRouter**: [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract)
 
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
