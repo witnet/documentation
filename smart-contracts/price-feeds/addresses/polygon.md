@@ -2,7 +2,7 @@
 
 ### Polygon Mainnet
 
-**WinetPriceRouter**: [`0x3806311c7138ddF2bAF2C2093ff3633E5A73AbD4`](https://polygonscan.com/address/0x3806311c7138ddF2bAF2C2093ff3633E5A73AbD4#readContract)
+**WitnetPriceRouter**: [`0x3806311c7138ddF2bAF2C2093ff3633E5A73AbD4`](https://polygonscan.com/address/0x3806311c7138ddF2bAF2C2093ff3633E5A73AbD4#readContract)
 
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
@@ -13,7 +13,7 @@
 
 ### Polygon Testnet
 
-**WinetPriceRouter**: [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract)
+**WitnetPriceRouter**: [`0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb`](https://mumbai.polygonscan.com/address/0x6d5544ca5b35bf2e7a78ace4E7B8d191fe5C9FAb#readContract)
 
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
