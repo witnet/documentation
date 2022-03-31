@@ -10,19 +10,19 @@ You can request support for additional chains using [this form](https://tally.so
 
 _**Avalanche Mainnet**:_ [`0xe9Bf601869A8c391CecbF5C979D06b0b4640499c`](https://snowtrace.io/address/0xe9Bf601869A8c391CecbF5C979D06b0b4640499c#readContract)
 
-_**Avalanche Fuji**:_ [`0xAf89a59876145202a027E73340592F05B28A6D99`](https://testnet.snowtrace.io/address/0xAf89a59876145202a027E73340592F05B28A6D99#readContract)
+_**Avalanche Fuji**:_ [`0xD47fc24C99fD94f33bD2f33FE373b1447bB10724`](https://testnet.snowtrace.io/address/0xD47fc24C99fD94f33bD2f33FE373b1447bB10724#readContract)
 
 ## Boba Network
 
 _**Boba Mainnet**:_ [`0x11C073F17f018Bc1B372c7283fDe0608003823D5`](https://blockexplorer.boba.network/address/0x11C073F17f018Bc1B372c7283fDe0608003823D5)
 
-_**Boba Rinkeby**:_ [`0x2F3292216B3ED440E2d4FF9773adb2f7Bddb9DDD`](https://blockexplorer.rinkeby.boba.network/address/0x2F3292216B3ED440E2d4FF9773adb2f7Bddb9DDD)
+_**Boba Rinkeby**:_ [`0xeAcAcC48eDD5221EC7182E1789d8bFa9dF801dFF`](https://blockexplorer.rinkeby.boba.network/address/0xeAcAcC48eDD5221EC7182E1789d8bFa9dF801dFF)
 
 ## Celo
 
 _**Celo Mainnet**:_ [`0xeA943c149b05a7897a0bf7c7cB4541D50b18f3f6`](https://explorer.celo.org/address/0xeA943c149b05a7897a0bf7c7cB4541D50b18f3f6)
 
-_**Celo Alfajores**:_ [`0xEF6e3B26c5307E6dE38b1e8e11Ee051186BEe11b`](https://alfajores-blockscout.celo-testnet.org/address/0xEF6e3B26c5307E6dE38b1e8e11Ee051186BEe11b)
+_**Celo Alfajores**:_ [`0xbD804467270bCD832b4948242453CA66972860F5`](https://alfajores-blockscout.celo-testnet.org/address/0xbD804467270bCD832b4948242453CA66972860F5)
 
 ## Conflux Network
 
@@ -32,34 +32,36 @@ _**Conflux Core Testnet**:_ [`cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3
 
 ## Cronos Chain
 
+_**Cronos Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://cronos.org/explorer/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+
 _**Cronos Testnet**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://cronos.org/explorer/testnet3/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
 
 ## Ethereum
 
 _**Ethereum Mainnet**:_ [`0x2be5d85f97c490e7ed7396d79fe194ab922d16ee`](https://etherscan.io/address/0x2be5d85f97c490e7ed7396d79fe194ab922d16ee)
 
-_**Ethereum Goerli**:_ [`0xD533438959DB06edc11dc4c51c123860d5873A4c`](https://goerli.etherscan.io/address/0xD533438959DB06edc11dc4c51c123860d5873A4c)
+_**Ethereum Goerli**:_ [`0x6Eb87EcCe6218Cd0e97299331D2aa5d2e53da5cD`](https://goerli.etherscan.io/address/0x6Eb87EcCe6218Cd0e97299331D2aa5d2e53da5cD)
 
-_**Ethereum Rinkeby**:_ [`0xd72b1a10f8261A174b8861a13159A468A166B708`](https://rinkeby.etherscan.io/address/0xd72b1a10f8261A174b8861a13159A468A166B708)
+_**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://rinkeby.etherscan.io/address/0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921)
 
 ## KuCoin Community Chain
 
 _**KCC Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scan.kcc.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**KCC Testnet**:_ [`0x31178DA4C4A14010eD66dF88f2d5d8337845ffFa`](https://scan-testnet.kcc.network/address/0x31178DA4C4A14010eD66dF88f2d5d8337845ffFa)
+_**KCC Testnet**:_ [`0x76c72518060952FAec3f90666F047e39E3333f7E`](https://scan-testnet.kcc.network/address/0x76c72518060952FAec3f90666F047e39E3333f7E)
 
 ## Metis
 
 _**Metis Andromeda**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://andromeda-explorer.metis.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Metis Stardust**:_ [`0x2A9c52Ff092F3C3D8E92A584E9c1520670fB9362`](https://stardust-explorer.metis.io/address/0x2A9c52Ff092F3C3D8E92A584E9c1520670fB9362)
+_**Metis Stardust**:_ [`0x7b0D67739b5B9480080817E5b921EbbA714236ca`](https://stardust-explorer.metis.io/address/0x7b0D67739b5B9480080817E5b921EbbA714236ca)
 
 ## Moonbeam
 
-_**Moonbase Alpha**:_ [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://moonbase.moonscan.io/address/0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604)
+_**Moonbase Alpha**:_ [`0x45111778a7db1356DaAB576cBe73681F0745182c`](https://moonbase.moonscan.io/address/0x45111778a7db1356DaAB576cBe73681F0745182c)
 
 ## Polygon
 
 _**Polygon Mainnet**:_ [`0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87`](https://polygonscan.com/address/0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87)
 
-_**Polygon Mumbai**:_ [`0x96f327C9F15AeFebFc26eAf7b86a579c81336172`](https://mumbai.polygonscan.com/address/0x96f327C9F15AeFebFc26eAf7b86a579c81336172)
+_**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mumbai.polygonscan.com/address/0x0178287DfECA2F13F342512282bc8B59e774aE43)
