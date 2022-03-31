@@ -1,6 +1,6 @@
 # Conflux Price Feeds
 
-### Conflux Mainnet (Tethys)
+### Conflux Core Mainnet (Tethys)
 
 **WitnetPriceRouter**: [`0x806c8dFd322EE2d52b188CC472e0814F64304C32`](https://confluxscan.io/address/cfx:acag3dt7gj1sfzkndcgpj61aufh0jpcpgjcmvbnnrx?tab=contract-viewer)
 
@@ -10,9 +10,9 @@
 | [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-tethys\_cfx-usdt\_6) | `0x65784185` |     1 hour    |      1.0%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-tethys\_eth-usd\_6)   | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
 
-### Conflux Testnet
+### Conflux Core Testnet
 
-**WinetPriceRouter**: [`0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25`](https://testnet.confluxscan.io/address/cfxtest:ach0dv7vv7y51b80cyr2y1nxh2pyn4xpeyst6h7jph?tab=contract-viewer)
+**WitnetPriceRouter**: [`0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25`](https://testnet.confluxscan.io/address/cfxtest:ach0dv7vv7y51b80cyr2y1nxh2pyn4xpeyst6h7jph?tab=contract-viewer)
 
 | **Caption**                                                                    | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ------------------------------------------------------------------------------ | ------------ | :-----------: | :-----------: | :----------: |
