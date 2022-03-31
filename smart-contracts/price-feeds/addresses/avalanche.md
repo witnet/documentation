@@ -10,7 +10,7 @@
 
 ### **Avalanche C-Chain Fuji** (testnet)
 
-**WinetPriceRouter**: [`0x99Af0CF37d1C6b9Bdfe33cc0A89C00D97D3c42F4`](https://testnet.snowtrace.io/address/0x99Af0CF37d1C6b9Bdfe33cc0A89C00D97D3c42F4#readContract)
+**WitnetPriceRouter**: [`0x99Af0CF37d1C6b9Bdfe33cc0A89C00D97D3c42F4`](https://testnet.snowtrace.io/address/0x99Af0CF37d1C6b9Bdfe33cc0A89C00D97D3c42F4#readContract)
 
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
