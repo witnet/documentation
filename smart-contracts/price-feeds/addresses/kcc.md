@@ -15,7 +15,7 @@
 
 ### KCC Testnet
 
-**WinetPriceRouter**: [`0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a`](https://scan-testnet.kcc.network/address/0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a/read-contract)
+**WitnetPriceRouter**: [`0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a`](https://scan-testnet.kcc.network/address/0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a/read-contract)
 
 | **Caption**                                                                | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
