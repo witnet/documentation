@@ -18,11 +18,11 @@ Node operators need to stake Wit coins in their nodes to increase their chance t
 
 ### Tokenomics of the Wit coin
 
-![(click to enlarge)](../../.gitbook/assets/image.png)
+![(click to enlarge)](<../../.gitbook/assets/image (1).png>)
 
 #### Maximum supply
 
-The maximum supply is 2,500,000,000 Wits once the mining has went on for many decades.
+The maximum supply of 2,500,000,000 Wits is reached after many decades of mining.
 
 In practice, this maximum amount will never be reached because in the early days of the network, there was a high rate of epochs without blocks, leading to the implicit burning of 13,000,000 Wits.
 

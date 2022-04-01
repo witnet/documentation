@@ -1,67 +1,63 @@
 # Wallet API Reference
 
-The wallet exposes a JSON-RPC API over Websocket by default at the URL `127.0.0.1:21338`.
-It can be set in the Witnet configuration file as follows:
+The wallet exposes a JSON-RPC API over Websocket by default at the URL `127.0.0.1:11212`. It can be set in the Witnet configuration file as follows:
 
 ```toml
   [wallet]
-  node_url = "127.0.0.1:21338"
+  server_addr = "127.0.0.1:11212"
 ```
-
 
 ## Summary
 
-| Method Name                                 | Request Params                                                                                                             | Response                                             |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------- |
-| [close_session](#close_session)             | `session_id`                                                                                                               | `success`                                            |
-| [create_data_request](#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                                  | `bytes`, `transaction`, `transaction_id`             |
-| [create_mnemonics](#create_mnemonics)       | `length`                                                                                                                   | `mnemonics`                                          |
-| [create_vtt](#create_vtt)                   | `session_id`, `wallet_id`, `fee`, (`fee_type`), [`address`, `value`, (`time_lock`)], (`utxo_strategy`), (`selected_utxos`) | `bytes`, `metadata`, `transaction`, `transaction_id` |
-| [create_wallet](#create_wallet)             | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`)      | `wallet_id`                                          |
-| [delete_wallet](#delete_wallet)             | `session_id`, `wallet_id`                                                                                                  | `success`                                            |
-| [export_master_key](#export_master_key)     | `session_id`, `wallet_id`, `password`                                                                                      | `private_key`                                        |
-| [generate_address](#generate_address)       | `session_id`, `wallet_id`, (`external`)                                                                                    | `address`, `path`                                    |
-| [get](#get)                                 | `session_id`, `wallet_id`, `key`                                                                                           | `value`                                              |
-| [get_addresses](#get_addresses)             | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                             | `address[]`, `total`                                 |
-| [get_balance](#get_balance)                 | `session_id`, `wallet_id`                                                                                                  | `confirmed`, `local`, `unconfirmed`                  |
-| [get_transactions](#get_transactions)       | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                           | `transactions[]`, `total`                            |
-| [get_utxo_info](#get_utxo_info)             | `session_id`, `wallet_id`                                                                                                  | `output_info[]`                                      |
-| [get_wallet_infos](#get_wallet_infos)       | (none)                                                                                                                     | `wallet_info[]`                                      |
-| [lock_wallet](#lock_wallet)                 | `session_id`, `wallet_id`                                                                                                  | `success`                                            |
-| [refresh_session](#refresh_session)         | `session_id`                                                                                                               | `success`                                            |
-| [resync_wallet](#resync_wallet)             | `session_id`, `wallet_id`                                                                                                  | `success`                                            |
-| [rpc.off](#rpc.off)                         | (`subscription_id[]`)                                                                                                      | (none)                                               |
-| [rpc.on](#rpc.on)                           | `session_id`                                                                                                               | (`subscription_id`)                                  |
-| [run_rad_request](#run_rad_request)         | `request`                                                                                                                  | `result`                                             |
-| [send_transaction](#send_transaction)       | `session_id`, `wallet_id`, `transaction`                                                                                   | `balance_movement`, `jsonrpc_result`                 |
-| [set](#set)                                 | `session_id`, `wallet_id`, `key`, `value`                                                                                  | (none)                                               |
-| [shutdown](#shutdown)                       | `session_id`                                                                                                               | (none)                                               |
-| [sign_data](#sign_data)                     | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                           | `chaincode`, `public_key`, `signature`               |
-| [unlock_wallet](#unlock_wallet)             | `wallet_id`, `password`                                                                                                    | `session_id`, `session_expiration_secs`, ...         |
-| [update_wallet](#update_wallet)             | `session_id`, `wallet_id`, (`name`), (`description`)                                                                       | `success`                                            |
-| [validate_mnemonics](#validate_mnemonics)   | `seed_source`, `seed_data`, (`backup_password`)                                                                            | `exist`, `wallet_id`                                 |
-
+| Method Name                                                  | Request Params                                                                                                              | Response                                             |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| [close\_session](wallet-api.md#close\_session)               | `session_id`                                                                                                                | `success`                                            |
+| [create\_data\_request](wallet-api.md#create\_data\_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                                   | `bytes`, `transaction`, `transaction_id`             |
+| [create\_mnemonics](wallet-api.md#create\_mnemonics)         | `length`                                                                                                                    | `mnemonics`                                          |
+| [create\_vtt](wallet-api.md#create\_vtt)                     | `session_id`, `wallet_id`, `fee`, (`fee_type`), \[`address`, `value`, (`time_lock`)], (`utxo_strategy`), (`selected_utxos`) | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create\_wallet](wallet-api.md#create\_wallet)               | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`)       | `wallet_id`                                          |
+| [delete\_wallet](wallet-api.md#delete\_wallet)               | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
+| [export\_master\_key](wallet-api.md#export\_master\_key)     | `session_id`, `wallet_id`, `password`                                                                                       | `private_key`                                        |
+| [generate\_address](wallet-api.md#generate\_address)         | `session_id`, `wallet_id`, (`external`)                                                                                     | `address`, `path`                                    |
+| [get](wallet-api.md#get)                                     | `session_id`, `wallet_id`, `key`                                                                                            | `value`                                              |
+| [get\_addresses](wallet-api.md#get\_addresses)               | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                              | `address[]`, `total`                                 |
+| [get\_balance](wallet-api.md#get\_balance)                   | `session_id`, `wallet_id`                                                                                                   | `confirmed`, `local`, `unconfirmed`                  |
+| [get\_transactions](wallet-api.md#get\_transactions)         | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                            | `transactions[]`, `total`                            |
+| [get\_utxo\_info](wallet-api.md#get\_utxo\_info)             | `session_id`, `wallet_id`                                                                                                   | `output_info[]`                                      |
+| [get\_wallet\_infos](wallet-api.md#get\_wallet\_infos)       | (none)                                                                                                                      | `wallet_info[]`                                      |
+| [lock\_wallet](wallet-api.md#lock\_wallet)                   | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
+| [refresh\_session](wallet-api.md#refresh\_session)           | `session_id`                                                                                                                | `success`                                            |
+| [resync\_wallet](wallet-api.md#resync\_wallet)               | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
+| [rpc.off](wallet-api.md#rpc.off)                             | (`subscription_id[]`)                                                                                                       | (none)                                               |
+| [rpc.on](wallet-api.md#rpc.on)                               | `session_id`                                                                                                                | (`subscription_id`)                                  |
+| [run\_rad\_request](wallet-api.md#run\_rad\_request)         | `request`                                                                                                                   | `result`                                             |
+| [send\_transaction](wallet-api.md#send\_transaction)         | `session_id`, `wallet_id`, `transaction`                                                                                    | `balance_movement`, `jsonrpc_result`                 |
+| [set](wallet-api.md#set)                                     | `session_id`, `wallet_id`, `key`, `value`                                                                                   | (none)                                               |
+| [shutdown](wallet-api.md#shutdown)                           | `session_id`                                                                                                                | (none)                                               |
+| [sign\_data](wallet-api.md#sign\_data)                       | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                            | `chaincode`, `public_key`, `signature`               |
+| [unlock\_wallet](wallet-api.md#unlock\_wallet)               | `wallet_id`, `password`                                                                                                     | `session_id`, `session_expiration_secs`, ...         |
+| [update\_wallet](wallet-api.md#update\_wallet)               | `session_id`, `wallet_id`, (`name`), (`description`)                                                                        | `success`                                            |
+| [validate\_mnemonics](wallet-api.md#validate\_mnemonics)     | `seed_source`, `seed_data`, (`backup_password`)                                                                             | `exist`, `wallet_id`                                 |
 
 ## Wallet API Endpoints
 
+### create\_data\_request
 
-### create_data_request
-
-The method `create_data_request` creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method [send_transaction](#send_transaction)).
+The method `create_data_request` creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method [send\_transaction](wallet-api.md#send\_transaction)).
 
 Request with parameters:
 
-- `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `fee`: *number*, amount in nanoWitswill be earned by the miner that publishes the request.
-- `fee_type`: (optional) *String*, fee type chosen between *`weighted`* or *`absolute`*. Defaults to *`weighted`* if not inserted.
-- `request`: *DataRequestOutput*, a struct with required data request fields.
-  - `data_request`: *RADRequest*, data request with CBOR codification.
-  - `witness_reward`: *number*, reward in nanoWits to the witnesses of the data request.
-  - `witnesses`: *number*, minimum number of witnet nodes that must perform the request.
-  - `commit_and_reveal_fee`: *number*, amount in nanoWits that will be earned by the miner for each each valid commitment and reveal transaction.
-  - `min_consensus_percentage`: *number*, , minimum of consensus required to consider the request as valid.
-  - `collateral`: *number*, collateral amount in nanoWits.
+* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `fee`: _number_, amount in nanoWitswill be earned by the miner that publishes the request.
+* `fee_type`: (optional) _String_, fee type chosen between _`weighted`_ or _`absolute`_. Defaults to _`weighted`_ if not inserted.
+* `request`: _DataRequestOutput_, a struct with required data request fields.
+  * `data_request`: _RADRequest_, data request with CBOR codification.
+  * `witness_reward`: _number_, reward in nanoWits to the witnesses of the data request.
+  * `witnesses`: _number_, minimum number of witnet nodes that must perform the request.
+  * `commit_and_reveal_fee`: _number_, amount in nanoWits that will be earned by the miner for each each valid commitment and reveal transaction.
+  * `min_consensus_percentage`: _number_, , minimum of consensus required to consider the request as valid.
+  * `collateral`: _number_, collateral amount in nanoWits.
 
 More information about the parameters can be found in the tutorial of [data request parameters fine-tuning](https://docs.witnet.io/tutorials/bitcoin-price-feed/fine-tuning/).
 
@@ -119,11 +115,11 @@ As an example, this data request created a data request that retrives the last B
 
 The `create_data_request` response will include the following data:
 
-- `bytes`: *String*, data request bytes represented in hexadecimal format.
-- `transaction`: *DataRequest*, all transactional information regarding the created data request.
-  - `body`: Includes the data request output, inputs and outputs of the transaction.
-  - `signatures`: The signature of the transaction and the public key
-- `transaction_id`: *String*, unique transaction identifier.
+* `bytes`: _String_, data request bytes represented in hexadecimal format.
+* `transaction`: _DataRequest_, all transactional information regarding the created data request.
+  * `body`: Includes the data request output, inputs and outputs of the transaction.
+  * `signatures`: The signature of the transaction and the public key
+* `transaction_id`: _String_, unique transaction identifier.
 
 Example of a `create_data_request` response:
 
@@ -206,14 +202,13 @@ Example of a `create_data_request` response:
 }
 ```
 
+### create\_mnemonics
 
-### create_mnemonics
-
-The JsonRPC method `create_mnemonics` is used to generate a [BIP39 mnemonic sentence](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) that can be used to generate a new [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic_wallet).
+The JsonRPC method `create_mnemonics` is used to generate a [BIP39 mnemonic sentence](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) that can be used to generate a new [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic\_wallet).
 
 Request with parameters:
 
-- `length`: *number*, indicating how many words the mnemonic sentence should have. Must be one of these: `12`, `15`, `18`, `21` or `24`.
+* `length`: _number_, indicating how many words the mnemonic sentence should have. Must be one of these: `12`, `15`, `18`, `21` or `24`.
 
 ```json
 {
@@ -228,7 +223,7 @@ Request with parameters:
 
 Response:
 
- - `mnemonics`: *String*, list of words of the mnemonic sentences.
+* `mnemonics`: _String_, list of words of the mnemonic sentences.
 
 ```json
 {
@@ -240,23 +235,23 @@ Response:
 }
 ```
 
-### create_vtt
+### create\_vtt
 
-The method `create_vtt` is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method [send_transaction](#send_transaction)).
+The method `create_vtt` is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method [send\_transaction](wallet-api.md#send\_transaction)).
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `fee`: *number*, miner fee in nanoWits.
-- `fee_type` (optional): *String*, fee type chosen between *`weighted`* or *`absolute`*. Defaults to *`weighted`* if not inserted.
-- `label` (optional): *String*, label to refer the vtt.
-- `outputs`: *Array*, list of transaction outputs.
-  - `address`: *String*, the recipient address.
-  - `amount`: *number*, value to transfer in nanoWits.
-  - `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
-- `utxo_strategy` (optional): *`random` | `big_first` | `small_first`*, enum that allows to choose 3 different strategies for selecting which unspent transaction outputs are used as input of the VTT transaction.
-- `selected_utxos` (optional): *Array*, array of selected output pointers to be spent.
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `fee`: _number_, miner fee in nanoWits.
+* `fee_type` (optional): _String_, fee type chosen between _`weighted`_ or _`absolute`_. Defaults to _`weighted`_ if not inserted.
+* `label` (optional): _String_, label to refer the vtt.
+* `outputs`: _Array_, list of transaction outputs.
+  * `address`: _String_, the recipient address.
+  * `amount`: _number_, value to transfer in nanoWits.
+  * `time_lock`: _number_, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
+* `utxo_strategy` (optional): _`random` | `big_first` | `small_first`_, enum that allows to choose 3 different strategies for selecting which unspent transaction outputs are used as input of the VTT transaction.
+* `selected_utxos` (optional): _Array_, array of selected output pointers to be spent.
 
 Example:
 
@@ -288,18 +283,18 @@ Example:
 
 The `create_vtt` response will include all the information about the transaction:
 
-- `bytes`: *String*, data request bytes represented in hexadecimal format.
-- `metadata`: description of the outcome of the transaction, includes
-    - `fee`: *number*, miner fee in nanoWits.
-    - `time_lock`: *number*, indicates the epoch from which the funds will be available, before this epoch the funds are blocked.
-    - `to`: *String*, the address of the reciever.
-    - `value`: *number*, value that has been transferd in nanoWits.
-- `transaction`: *ValueTransfer*, all transactional information regarding the created value transfer.
-  - `body`: Includes the inputs and outputs of the transaction.
-  - `signatures`: The signature of the transaction and the public key
-- `transaction_id`: *String*, unique transaction identifier.
+* `bytes`: _String_, data request bytes represented in hexadecimal format.
+* `metadata`: description of the outcome of the transaction, includes
+  * `fee`: _number_, miner fee in nanoWits.
+  * `time_lock`: _number_, indicates the epoch from which the funds will be available, before this epoch the funds are blocked.
+  * `to`: _String_, the address of the reciever.
+  * `value`: _number_, value that has been transferd in nanoWits.
+* `transaction`: _ValueTransfer_, all transactional information regarding the created value transfer.
+  * `body`: Includes the inputs and outputs of the transaction.
+  * `signatures`: The signature of the transaction and the public key
+* `transaction_id`: _String_, unique transaction identifier.
 
- Example of a `create_vtt` response:
+Example of a `create_vtt` response:
 
 ```json
 {
@@ -354,21 +349,20 @@ The `create_vtt` response will include all the information about the transaction
 }
 ```
 
+### create\_wallet
 
-### create_wallet
-
-The JsonRPC method `create_wallet` is used to generate a new Master Key for an empty [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic_wallet) that is stored encrypted in the file system.
+The JsonRPC method `create_wallet` is used to generate a new Master Key for an empty [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic\_wallet) that is stored encrypted in the file system.
 
 Request with parameters:
 
-- `name` (optional): *String*, human-friendly name for the wallet.
-- `description` (optional): *String*, human-friendly caption for the wallet.
-- `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv* and determine how the HD wallet master key will be generated from the data sent in the `seedData` parameter.
-- `seed_data`: *String*, data used for generating the new HD wallet master key.
-- `password`: *String*, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.
-- `overwrite` (optional): *Boolean*, in case that seed data was previously used for creating another wallet, this flag will overwrite the previous wallet with the new one.
-- `backup_password` (optional): *String*, in case that seed source is `"xprv"`, `seed_data` must be decrypted with this parameter.
-- `birth_date` (optional): *`current` | `imported` (number)*, data used to specify from which block number the wallet should start synchronizing (for importing wallets from a previously used seed phrase).
+* `name` (optional): _String_, human-friendly name for the wallet.
+* `description` (optional): _String_, human-friendly caption for the wallet.
+* `seed_source`: _`"mnemonics"|"xprv"`_, literal to identify if the seed source is of the type _mnemonics_ or _xprv_ and determine how the HD wallet master key will be generated from the data sent in the `seedData` parameter.
+* `seed_data`: _String_, data used for generating the new HD wallet master key.
+* `password`: _String_, password that will seed the key used to encrypt the wallet in the file system. The password must have at least eight characters.
+* `overwrite` (optional): _Boolean_, in case that seed data was previously used for creating another wallet, this flag will overwrite the previous wallet with the new one.
+* `backup_password` (optional): _String_, in case that seed source is `"xprv"`, `seed_data` must be decrypted with this parameter.
+* `birth_date` (optional): _`current` | `imported` (number)_, data used to specify from which block number the wallet should start synchronizing (for importing wallets from a previously used seed phrase).
 
 ```json
 {
@@ -390,7 +384,7 @@ Request with parameters:
 
 Response:
 
-- `wallet_id`: *String*, ID associated with the given wallet.
+* `wallet_id`: _String_, ID associated with the given wallet.
 
 ```json
 {
@@ -402,14 +396,13 @@ Response:
 }
 ```
 
-
-### close_session
+### close\_session
 
 The JsonRPC method `close_session` is used to close an active session without locking the currently unlocked wallet.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
 
 ```json
 {
@@ -424,7 +417,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet was successfully closed.
+* `success`: _Boolean_, reporting if the wallet was successfully closed.
 
 ```json
 {
@@ -436,16 +429,14 @@ Response:
 }
 ```
 
-
-
-### delete_wallet
+### delete\_wallet
 
 The JsonRPC method `delete_wallet` is used to delete the wallet with the specified ID. It also removes the current active session.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
 {
@@ -461,7 +452,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet was successfully deleted.
+* `success`: _Boolean_, reporting if the wallet was successfully deleted.
 
 ```json
 {
@@ -473,16 +464,15 @@ Response:
 }
 ```
 
-
-### export_master_key
+### export\_master\_key
 
 The JsonRPC method `export_master_key` is used to export the master key of an existing wallet. This key is encrypted with a user-defined password using AES-CBC.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `password`: *String*, user-defined password used to encrypt the key.
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `password`: _String_, user-defined password used to encrypt the key.
 
 ```json
 {
@@ -500,7 +490,7 @@ Request with parameters:
 
 Response:
 
-- `wallet_id`: *String*, ID associated with the given wallet.
+* `wallet_id`: _String_, ID associated with the given wallet.
 
 ```json
 {
@@ -512,16 +502,15 @@ Response:
 }
 ```
 
-
-### generate_address
+### generate\_address
 
 The JsonRPC method `generate_address` is used to derive deterministically a new external address for the given wallet and session ID.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `external` (optional): *Boolean*, if set to false it will generate an internal address.
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `external` (optional): _Boolean_, if set to false it will generate an internal address.
 
 ```json
 {
@@ -537,8 +526,8 @@ Request with parameters:
 
 Response:
 
-- `address`: *String*, address derived deterministically.
-- `path`: *String*, derivation path used to generate the address.
+* `address`: _String_, address derived deterministically.
+* `path`: _String_, derivation path used to generate the address.
 
 ```json
 {
@@ -551,16 +540,15 @@ Response:
 }
 ```
 
-
 ### get
 
 The method `get` allows to retrieve a previous stored key-value data in the wallet database.
 
 Request with parameters:
 
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `key`: *String*, key under which the value will be stored.
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `key`: _String_, key under which the value will be stored.
 
 ```json
 {
@@ -589,18 +577,17 @@ Response:
 }
 ```
 
-
-### get_addresses
+### get\_addresses
 
 The JsonRPC method `get_addresses` is used to query for a list of previously derived addresses given a wallet and session ID.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `offset` (optional): *number*, initial position of the address list to be queried (by default is set to `0`).
-- `limit` (optional): *number*, size of the address list to be returned (by default is set to `25`).
-- `external` (optional): *Boolean*, if set to false it will get internal addresses.
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `offset` (optional): _number_, initial position of the address list to be queried (by default is set to `0`).
+* `limit` (optional): _number_, size of the address list to be returned (by default is set to `25`).
+* `external` (optional): _Boolean_, if set to false it will get internal addresses.
 
 ```json
 {
@@ -618,18 +605,18 @@ Request with parameters:
 
 Response with an array of addresses and additional related information:
 
-- `addresses`: *Array<Address>*, list of queried addresses with additional information.
-  - `account`: *number*, identifies the current account in the session (the current version only supports the default account `0`).
-  - `address`: *String*, address serialized in Bech32 format.
-  - `index`: *number*, sequential index used to derive address.
-  - `info`: *String*, additional information with balance movements and dates.
-    - `first_payment_date`: *number*, date of first received movement in UTC format (Coordinated Universal Time).
-    - `label`: *String*, user-defined label for this address.
-    - `last_payment_date`: *number*, date of last received movement in UTC format (Coordinated Universal Time).
-    - `received_amount`: *number*, total amount (in nanoWits) received by this address.
-    - `received_payments`: *Array<String>*, list of Unspent Transaction Outputs (UTXOs) proving funds to this address.
-  - `keychain`: *number*, `change` value of the derivation path (See [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)).
-  - `path`: *String*, derivation path used to generate the address.
+* `addresses`: _Array_, list of queried addresses with additional information.
+  * `account`: _number_, identifies the current account in the session (the current version only supports the default account `0`).
+  * `address`: _String_, address serialized in Bech32 format.
+  * `index`: _number_, sequential index used to derive address.
+  * `info`: _String_, additional information with balance movements and dates.
+    * `first_payment_date`: _number_, date of first received movement in UTC format (Coordinated Universal Time).
+    * `label`: _String_, user-defined label for this address.
+    * `last_payment_date`: _number_, date of last received movement in UTC format (Coordinated Universal Time).
+    * `received_amount`: _number_, total amount (in nanoWits) received by this address.
+    * `received_payments`: _Array_, list of Unspent Transaction Outputs (UTXOs) proving funds to this address.
+  * `keychain`: _number_, `change` value of the derivation path (See [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)).
+  * `path`: _String_, derivation path used to generate the address.
 
 ```json
 {
@@ -659,15 +646,14 @@ Response with an array of addresses and additional related information:
 }
 ```
 
-
-### get_balance
+### get\_balance
 
 The JsonRPC method `get_balance` is used to query the current balance for a given wallet.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
 {
@@ -683,13 +669,13 @@ Request with parameters:
 
 Response with different types of balances:
 
-- `local`: *number*, amount of local pending movements not yet indexed in a block.
-- `unconfirmed`: *BalanceInfo*, total amount of wallet's funds after last block, but not yet confirmed by a superblock.
-  - `available`: *number*, unconfirmed expendable funds.
-  - `locked`: *number*, unconfirmed time-locked funds.
-- `confirmed`: *BalanceInfo*, total amount of wallet's funds after last confirmed superblock.
-  - `available`: *number*, confirmed expendable funds.
-  - `locked`: *number*, confirmed time-locked funds.
+* `local`: _number_, amount of local pending movements not yet indexed in a block.
+* `unconfirmed`: _BalanceInfo_, total amount of wallet's funds after last block, but not yet confirmed by a superblock.
+  * `available`: _number_, unconfirmed expendable funds.
+  * `locked`: _number_, unconfirmed time-locked funds.
+* `confirmed`: _BalanceInfo_, total amount of wallet's funds after last confirmed superblock.
+  * `available`: _number_, confirmed expendable funds.
+  * `locked`: _number_, confirmed time-locked funds.
 
 ```json
 {
@@ -709,17 +695,16 @@ Response with different types of balances:
 }
 ```
 
-
-### get_transactions
+### get\_transactions
 
 The JsonRPC method `get_transactions` is used to query for a list of transactions given a wallet and session ID.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `offset` (optional): *number*, initial position of the transaction list to be queried (by default is set to `0`).
-- `limit` (optional): *number*, size of the transaction list to be returned (by default is set to `25`).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `offset` (optional): _number_, initial position of the transaction list to be queried (by default is set to `0`).
+* `limit` (optional): _number_, size of the transaction list to be returned (by default is set to `25`).
 
 ```json
 {
@@ -737,18 +722,18 @@ Request with parameters:
 
 Response with an array of transactions and additional related information:
 
-- `total`: *number*, total amount of wallet transactions.
-- `transactions`: *Array<BalanceMovement>*, list of queried transactions with additional information.
-  - `amount`: *number*, transaction value.
-  - `type`: *`"POSITIVE"|"NEGATIVE"`*, type of balance movement in relation to the wallet. 
-  - `transaction`: *Transaction*, additional transaction information.
-    - `block`: *Block*, information of block in which the transaction was included.
-      - `block_hash`: *String*, block hash in hexadecimal format.
-      - `epoch`: *number* block epoch.
-    - `data`: *TransactionData*, additional type-specific transaction data. The supported transaction types are `value_transfer`, `data_request`, `tally`, `mint` and `commit`.
-    - `hash`: *String*, transaction hash in hexadecimal format used as identifier.
-    - `miner_fee`: *number*, amount of nanoWits for the block miner.
-    - `timestamp`: *number*, transaction date in UTC format (Coordinated Universal Time).
+* `total`: _number_, total amount of wallet transactions.
+* `transactions`: _Array_, list of queried transactions with additional information.
+  * `amount`: _number_, transaction value.
+  * `type`: _`"POSITIVE"|"NEGATIVE"`_, type of balance movement in relation to the wallet.
+  * `transaction`: _Transaction_, additional transaction information.
+    * `block`: _Block_, information of block in which the transaction was included.
+      * `block_hash`: _String_, block hash in hexadecimal format.
+      * `epoch`: _number_ block epoch.
+    * `data`: _TransactionData_, additional type-specific transaction data. The supported transaction types are `value_transfer`, `data_request`, `tally`, `mint` and `commit`.
+    * `hash`: _String_, transaction hash in hexadecimal format used as identifier.
+    * `miner_fee`: _number_, amount of nanoWits for the block miner.
+    * `timestamp`: _number_, transaction date in UTC format (Coordinated Universal Time).
 
 ```json
 {
@@ -797,15 +782,14 @@ Response with an array of transactions and additional related information:
 }
 ```
 
-
-### get_utxo_info
+### get\_utxo\_info
 
 The JsonRPC method `get_utxo_info` is used to query the current unspent transaction outputs for a given wallet.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned to you when you unlocked the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
 {
@@ -821,7 +805,7 @@ Request with parameters:
 
 Response with a HashMap with all the information about the unspent transaction outputs of a specified wallet:
 
-- `output_info[]`: *HashMap<String, OutputInfo>*, information related of all the unspent transaction outputs (`amount`, `pkh` and `time_lock`)
+* `output_info[]`: _HashMap\<String, OutputInfo>_, information related of all the unspent transaction outputs (`amount`, `pkh` and `time_lock`)
 
 ```json
 {
@@ -842,8 +826,7 @@ Response with a HashMap with all the information about the unspent transaction o
 }
 ```
 
-
-### get_wallet_infos
+### get\_wallet\_infos
 
 The JsonRPC method `get_wallet_infos` displays the information about the wallet.
 
@@ -859,9 +842,9 @@ This method has no parameters, as an example:
 
 Response:
 
-- `caption`: *String*, human-friendly caption for the wallet.
-- `id`: *String*, wallet ID.
-- `name`:*String*, human-friendly name for the wallet.
+* `caption`: _String_, human-friendly caption for the wallet.
+* `id`: _String_, wallet ID.
+* `name`:_String_, human-friendly name for the wallet.
 
 ```json
 {
@@ -879,15 +862,14 @@ Response:
 }
 ```
 
+### lock\_wallet
 
-### lock_wallet
-
-The JsonRPC method `lock_wallet` is used to *lock* the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
+The JsonRPC method `lock_wallet` is used to _lock_ the wallet with the specified ID and close the active session. The decryption key for that wallet (hold in memory) is forgotten and the wallet server will be unable to update that wallet information until it is unlocked again.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
 {
@@ -903,7 +885,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet was successfully locked.
+* `success`: _Boolean_, reporting if the wallet was successfully locked.
 
 ```json
 {
@@ -915,14 +897,13 @@ Response:
 }
 ```
 
-
-### refresh_session
+### refresh\_session
 
 The JsonRPC method `refresh_session` is used to refresh an active session of a currently unlocked wallet. This call will reset the session expiration time for the given session.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
 
 ```json
 {
@@ -937,7 +918,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet was successfully refreshed.
+* `success`: _Boolean_, reporting if the wallet was successfully refreshed.
 
 ```json
 {
@@ -949,16 +930,14 @@ Response:
 }
 ```
 
+### resync\_wallet
 
-### resync_wallet
-
-The JsonRPC method `resync_wallet` is used to trigger a re-synchronization of the wallet with the specified ID. 
-The wallet will reset all previously synchronized wallet data and it will index again all previous blockchain transactions.
+The JsonRPC method `resync_wallet` is used to trigger a re-synchronization of the wallet with the specified ID. The wallet will reset all previously synchronized wallet data and it will index again all previous blockchain transactions.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `wallet_id`: *String*, ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
 {
@@ -974,7 +953,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet has successfully re-synchronized.
+* `success`: _Boolean_, reporting if the wallet has successfully re-synchronized.
 
 ```json
 {
@@ -986,14 +965,13 @@ Response:
 }
 ```
 
-
 ### rpc.off
 
 Use this method `rpc.off` to unsubscribe from previous subscriptions.
 
 Request with parameters:
 
-- `<data>`: *Array<String>*, subscription identifiers assigned when subscribing to wallet sessions. See [rpc.on](#rpc.on).
+* `<data>`: _Array_, subscription identifiers assigned when subscribing to wallet sessions. See [rpc.on](wallet-api.md#rpc.on).
 
 ```json
 {
@@ -1014,14 +992,13 @@ The response for a successful unsubscribe:
 }
 ```
 
-
 ### rpc.on
 
 Use this method `rpc.on` to subscribe to update events related to your session wallets.
 
 Request with parameters:
 
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
 
 ```json
 {
@@ -1036,8 +1013,7 @@ Request with parameters:
 
 The response is:
 
-- `result`: *String*, subscription identifier that can be used to unsubscribe from notifications. See [rpc.off](#rpc.off).
-
+* `result`: _String_, subscription identifier that can be used to unsubscribe from notifications. See [rpc.off](wallet-api.md#rpc.off).
 
 ```json
 {
@@ -1090,17 +1066,16 @@ Here is an example of a block event sent out by a node:
 }
 ```
 
-
-### run_rad_request
+### run\_rad\_request
 
 The JsonRPC method `run_rad_request` is used to execute a RAD request in order to test it functionally before deploying it on the network.
 
 The request has as parameter a `rad_request`, which has itself as parameters:
 
-- `time_lock`: *number*, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
-- `retrieve`: *Array<Retrieve>*, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.
-- `aggregate`: *Aggregate*, includes the operators needed to perform the aggregation from the retrieves.
-- `tally`: *Tally*, includes the operators needed to perform the tally after the aggregation.
+* `time_lock`: _number_, indicates the epoch from which the data request could run before, before this epoch the request is ignored.
+* `retrieve`: _Array_, is composed of a supported retrieve method, the url of the API from which get the data of the request, and the the bytes-serialized RADON script.
+* `aggregate`: _Aggregate_, includes the operators needed to perform the aggregation from the retrieves.
+* `tally`: _Tally_, includes the operators needed to perform the tally after the aggregation.
 
 Example:
 
@@ -1267,16 +1242,15 @@ The response includes all the partial results of the request for the three diffe
 }
 ```
 
+### send\_transaction
 
-### send_transaction
-
-The method `send_transaction` is used to broadcast a given transaction to the Witnet network. Apart from the `wallet_id` and `session_id`, it requires an already created transaction (e.g. by using the methods [create_vtt](#create_vtt)) or [create_data_request](#create_data_request)).
+The method `send_transaction` is used to broadcast a given transaction to the Witnet network. Apart from the `wallet_id` and `session_id`, it requires an already created transaction (e.g. by using the methods [create\_vtt](wallet-api.md#create\_vtt)) or [create\_data\_request](wallet-api.md#create\_data\_request)).
 
 The request requires the following parameters:
 
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `transaction`: *Transaction*, serialized transaction object. It can be created by using the methods [create_vtt](#create_vtt)) or [create_data_request](#create_data_request).
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `transaction`: _Transaction_, serialized transaction object. It can be created by using the methods [create\_vtt](wallet-api.md#create\_vtt)) or [create\_data\_request](wallet-api.md#create\_data\_request).
 
 Example of a `send_transaction` for sending 500 nanoWits to an address.
 
@@ -1330,8 +1304,8 @@ Example of a `send_transaction` for sending 500 nanoWits to an address.
 
 The response includes the JsonRPC response after sending the transaction to the node API and the balance movement that affects the wallet:
 
-- `balance_movement`: *BalanceMovement*, the wallet balance movement, which is pending and has not yet been indexed into a block.
-- `jsonrpc_result`: *Bool*, the result of sending the transaction to the node using the `intentory` JsonRPC API method.
+* `balance_movement`: _BalanceMovement_, the wallet balance movement, which is pending and has not yet been indexed into a block.
+* `jsonrpc_result`: _Bool_, the result of sending the transaction to the node using the `intentory` JsonRPC API method.
 
 ```
 {
@@ -1374,17 +1348,16 @@ The response includes the JsonRPC response after sending the transaction to the 
 }
 ```
 
-
 ### set
 
 The method `set` allows to store key-value data in the wallet database.
 
 Request with parameters:
 
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `session_id`: *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
-- `key`: *String*, key under which the value will be stored.
-- `value`: *Object*, JSON object to be stored.
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `key`: _String_, key under which the value will be stored.
+* `value`: _Object_, JSON object to be stored.
 
 ```json
 {
@@ -1412,15 +1385,13 @@ Response:
 }
 ```
 
-
 ### shutdown
 
-To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters.
-If no `session_id` is provided, wallet will be shutdown only if there are no open sessions.
+To shutdown the wallet. It has no response, directly stops the wallet specified in the parameters. If no `session_id` is provided, wallet will be shutdown only if there are no open sessions.
 
 Request with parameters:
 
-- `session_id` (optional): *String*, session ID assigned when unlocking the wallet. See [unlock_wallet](#unlock_wallet).
+* `session_id` (optional): _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
 
 ```json
 {
@@ -1433,17 +1404,16 @@ Request with parameters:
 }
 ```
 
-
-### sign_data
+### sign\_data
 
 This method uses the wallet's master key to sign message data.
 
 The parameters are:
 
-- `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `data`: *String*, the data to be signed.
-- `extended_pk`: *Bool*, if this flag is set to true, extended public key will be include (`chaincode`). If leaked, wallet public addresses might be derived.
+* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock\_wallet).
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `data`: _String_, the data to be signed.
+* `extended_pk`: _Bool_, if this flag is set to true, extended public key will be include (`chaincode`). If leaked, wallet public addresses might be derived.
 
 Example:
 
@@ -1463,9 +1433,9 @@ Example:
 
 The response includes the parameters:
 
-- `chaincode`: *String*, cryptographic material used to derive keys.
-- `public_key`:*String*, the wallet's public key.
-- `signture`:*String*, the signature.
+* `chaincode`: _String_, cryptographic material used to derive keys.
+* `public_key`:_String_, the wallet's public key.
+* `signture`:_String_, the signature.
 
 ```json
 {
@@ -1479,15 +1449,14 @@ The response includes the parameters:
 }
 ```
 
+### unlock\_wallet
 
-### unlock_wallet
-
-The JsonRPC method `unlock_wallet` is used to *unlock* the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. By default, sessions will expired after 1 hour. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
+The JsonRPC method `unlock_wallet` is used to _unlock_ the wallet with the specified identifier by providing a decryption key. This key will be hold in memory until the wallet is locked again. By default, sessions will expired after 1 hour. As long as a wallet is unlocked, you can operate it without having to supply the password again by just using the session ID, until it expires.
 
 Request with parameters:
 
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `password`: *String*, the password that unlocks the wallet.
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `password`: _String_, the password that unlocks the wallet.
 
 ```json
 {
@@ -1503,13 +1472,13 @@ Request with parameters:
 
 Response:
 
-- `session_id`: *number*, generated identifier for the current wallet session.
-- `session_expiration_secs`: *number*, amount of seconds after which the session will expire.
-- `account_balance`: *number*, wallet's account balance in nano Wits.
-- `name`: *String*, human-friendly name for the wallet.
-- `caption`: *String*, human-friendly caption for the wallet.
-- `current_account`: *number*, identifies the current active account in the session (the current version only supports the default account `0`).
-- `available_accounts`: *Array<number>*, list of available accounts in the wallet.
+* `session_id`: _number_, generated identifier for the current wallet session.
+* `session_expiration_secs`: _number_, amount of seconds after which the session will expire.
+* `account_balance`: _number_, wallet's account balance in nano Wits.
+* `name`: _String_, human-friendly name for the wallet.
+* `caption`: _String_, human-friendly caption for the wallet.
+* `current_account`: _number_, identifies the current active account in the session (the current version only supports the default account `0`).
+* `available_accounts`: _Array_, list of available accounts in the wallet.
 
 ```json
 {
@@ -1529,17 +1498,16 @@ Response:
 }
 ```
 
-
-### update_wallet
+### update\_wallet
 
 The JsonRPC method `update_wallet` is used to update the name and/or caption of an existing wallet.
 
 Request with parameters:
 
-- `wallet_id`: *String*, the ID associated to the wallet. See [get_wallet_infos](#get-wallet-infos).
-- `session_id`: *number*, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](#unlock_wallet).
-- `name`: *String*, wallet name shown in [get_wallet_infos](#get_wallet_infos).
-- `description`: *String*, wallet private description (only available for authenticated clients after [unlock_wallet](#unlock_wallet)).
+* `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
+* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock\_wallet).
+* `name`: _String_, wallet name shown in [get\_wallet\_infos](wallet-api.md#get\_wallet\_infos).
+* `description`: _String_, wallet private description (only available for authenticated clients after [unlock\_wallet](wallet-api.md#unlock\_wallet)).
 
 ```json
 {
@@ -1557,7 +1525,7 @@ Request with parameters:
 
 Response:
 
-- `success`: *Boolean*, reporting if the wallet's update was successfull.
+* `success`: _Boolean_, reporting if the wallet's update was successfull.
 
 ```json
 {
@@ -1569,16 +1537,15 @@ Response:
 }
 ```
 
-
-### validate_mnemonics
+### validate\_mnemonics
 
 The JsonRPC method `validate_mnemonics` is used to verify that validity of the seed source that might be used to generate a new wallet.
 
 Request with parameters:
 
-- `seed_source`: *`"mnemonics"|"xprv"`*, literal to identify if the seed source is of the type *mnemonics* or *xprv*.
-- `seed_data`: *String*, containing the used seed data, either a list of mnemonic words or a `xprv`.
-- `backup_password` (optional): *String*, in case that seed source is `"xprv"`, `seed_data` must be decrypted with this parameter. 
+* `seed_source`: _`"mnemonics"|"xprv"`_, literal to identify if the seed source is of the type _mnemonics_ or _xprv_.
+* `seed_data`: _String_, containing the used seed data, either a list of mnemonic words or a `xprv`.
+* `backup_password` (optional): _String_, in case that seed source is `"xprv"`, `seed_data` must be decrypted with this parameter.
 
 ```json
 {
@@ -1594,7 +1561,7 @@ Request with parameters:
 
 Response:
 
-- `valid`: *Boolean*, true if valid seed in form of *mnemonics* or `xprv`.
+* `valid`: _Boolean_, true if valid seed in form of _mnemonics_ or `xprv`.
 
 ```json
 {
