@@ -18,7 +18,7 @@ Node operators need to stake Wit coins in their nodes to increase their chance t
 
 ### Tokenomics of the Wit coin
 
-![(click to enlarge)](../../.gitbook/assets/image.png)
+![(click to enlarge)](<../../.gitbook/assets/image (1).png>)
 
 #### Maximum supply
 

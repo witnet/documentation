@@ -4,4 +4,4 @@
 
 {% embed url="https://sheikah.app" %}
 
-The Sheikah Witnet Wallet is developed and maintained by a global community of contributors, lead by [OtherPlane Labs](https://otherplane.com) and sponsored by [Witnet Foundation](https://witnet.foundation).
+The Sheikah Witnet Wallet is developed and maintained by a global community of contributors, led by [OtherPlane Labs](https://otherplane.com) and sponsored by [Witnet Foundation](https://witnet.foundation).
