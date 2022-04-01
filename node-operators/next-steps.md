@@ -213,7 +213,7 @@ cargo run --release -- node masterKeyExport --write
 It is recommended to move or copy the resulting file into a safe place. Writing it into a piece of paper and keeping it somewhere safe from light, water, fire (and eyes 👀) is the best option.
 
 {% hint style="warning" %}
-Please keep th exported key totally secret. Anyone with knowledge of this key has full access to all your Wit coins.
+Please keep the exported key totally secret. Anyone with knowledge of this key has full access to all your Wit coins.
 {% endhint %}
 
 #### **Import**
