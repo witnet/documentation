@@ -227,6 +227,8 @@ mkdir -p ~/.witnet/config
 
 nano ~/.witnet/config/master.key 
 
+chmod 777 ~/.witnet/config
+
 # Now enter your master key into the file editor, 
 # save with Ctrl+O and exit with Ctrl+X
 docker run -d \
