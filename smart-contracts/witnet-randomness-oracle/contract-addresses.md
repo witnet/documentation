@@ -36,7 +36,7 @@ _**Conflux eSpace (Testnet)**:_ [`0xa784093826e2894ab3db315f4e05f0f26407bbff`](h
 
 _**Cronos Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://cronos.org/explorer/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Cronos Testnet**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://cronos.org/explorer/testnet3/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
+_**Cronos Testnet**:_ [`0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643`](https://cronos.org/explorer/testnet3/address/0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643)
 
 ## Ethereum
 
