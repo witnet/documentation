@@ -199,8 +199,118 @@ Take into account that this example implements an asynchronous workflow — call
 
 
 ### Example 4: Post a low-level hardcoded randomness request
-```
-```
+  ```
+  pragma solidity ^0.8.0;
+
+  import "witnet-solidity-bridge/contracts/UsingWitnet.sol";
+  import "witnet-solidity-bridge/contracts/requests/WitnetRequest.sol";
+
+  import "@openzeppelin/contracts/access/Ownable.sol";  
+
+  contract MyContract
+    is
+      Ownable,
+      UsingWitnet
+  {
+    
+    enum Status {
+      Playing,
+      Randomizing,
+      Awarding
+    }
+
+    IWitnetRequest public witnetRequest;
+    
+    bytes32 public witnetRandomness;
+    uint256 public witnetQueryId;    
+
+    modifier inStatus(Status _status) {
+      require(status() == _status, "bad mood");
+    }
+
+    constructor(WitnetRequestBoard _witnet)
+      UsingWitnet(_witnet)
+    {
+      witnetRequest = new WitnetRequest(
+        hex"0a0f120508021a01801a0210022202100b10e807180a200a2833308094ebdc03"
+      );
+      /// @dev Witnet Data Request decoded as:
+      ///
+      /// {
+      ///    "retrieve": [
+      ///      {
+      ///        "kind": "RNG",
+      ///        "url": "",
+      ///        "script": []
+      ///      }
+      ///    ],
+      ///    "aggregate": {
+      ///      "filters": [],
+      ///      "reducer": 2
+      ///    },
+      ///    "tally": {
+      ///      "filters": [],
+      ///      "reducer": 11
+      ///    }
+      /// }
+      ///
+    }
+
+    /// @dev Calculate current status.
+    function status() public view returns (Status) {
+      if (witnetRandomness != bytes32(0)) {
+        return Status.Awarding;
+      } else if (witnetQueryId > 0) {
+        return Status.Randomizing;
+      } else {
+        return Status.Playing;
+      }
+    }
+
+    /// @dev Pass from 'Playing' to 'Randomizing' status-
+    function stopPlaying()
+        external payable
+        onlyOwner
+        inStatus(Status.Playing)
+    {
+      // Use internal method inherited from UsingWitnet, as to send the low-level randomness 
+      // request to the WitnetRequestBoard instance. `msg.value` needs to be high enough as
+      // to cover for `_witnetReward`
+      uint256 _witnetReward;
+      (witnetQueryId, _witnetReward) = _witnetPostRequest(witnetRandomnessRequest);
+
+      // Transfer back unused funds:
+      if (msg.value > _witnetReward) {
+        payable(msg.sender).transfer(msg.value - _witnetReward);
+      }
+    }
+
+    /// @dev Pass from 'Randomizing' to either 'Awarding' or 'Playing' status, depending
+    /// @dev on whether the randomness request was solved, or reverted, respectively.
+    function startAwarding()
+      external
+      inStatus(Status.Randomizing)
+    {
+      uint _queryId = witnetQueryId;
+
+      // Use internal method inherited from UsingWitnet, as to check whether the randomness
+      // request has already been reported:
+      require(_witnetCheckResultAvailability(_queryId), "not yet reported");
+
+      // Low-level interactino with the WitnetRequestBoard as to deserialize the result,
+      // and check whether the randomness request failed or succeeded:
+      Witnet.Result memory _result = witnet.readResponseResult(_queryId);
+      if (_result.success) {
+        witnetRandomness = witnet.asBytes32(_result);
+      } else {
+        // step back to 'Playing' status:
+        witnetQueryId = 0;
+      }
+    }
+
+    /// ...
+  }
+  ```
 
 ### Example 5: Clone a pre-deployed WitnetRequestRandomness contract 
   ```
