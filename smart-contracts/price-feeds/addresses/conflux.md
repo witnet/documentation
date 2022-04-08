@@ -10,6 +10,18 @@
 | [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-tethys\_cfx-usdt\_6) | `0x65784185` |     1 hour    |      1.0%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-tethys\_eth-usd\_6)   | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
 
+### Conflux eSpace (Hydra)
+
+**WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://evm.confluxscan.net/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
+
+| **Caption**                                                                           | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ------------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_btc-usd\_6)   | `0x24beead4` |     1 hour    |      1.0%     |      5'      |
+| [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_cfx-usdt\_6) | `0x65784185` |     1 hour    |      1.0%     |      5'      |
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_eth-usd\_6)   | `0x3d15f701` |     1 hour    |      1.0%     |      5'      |
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |     15'      |
+
+
 ### Conflux Core (Testnet)
 
 **WitnetPriceRouter**: [`0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25`](https://testnet.confluxscan.io/address/cfxtest:ach0dv7vv7y51b80cyr2y1nxh2pyn4xpeyst6h7jph?tab=contract-viewer)
