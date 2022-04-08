@@ -28,6 +28,8 @@ _**Celo Alfajores**:_ [`0xbD804467270bCD832b4948242453CA66972860F5`](https://alf
 
 _**Conflux Core (Hydra)**:_ [`cfx:accjkt488xy6tj2rjf4atpue7hj0kda9c6fy5g71b3`](https://confluxscan.io/address/cfx:accjkt488xy6tj2rjf4atpue7hj0kda9c6fy5g71b3)
 
+_**Conflux eSpace (Hydra)**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://evm.confluxscan.net/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+
 _**Conflux Core (Testnet)**:_ [`cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3`](https://testnet.confluxscan.io/address/cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3)
 
 _**Conflux eSpace (Testnet)**:_ [`0xa784093826e2894ab3db315f4e05f0f26407bbff`](https://evmtestnet.confluxscan.net/address/0xa784093826e2894ab3db315f4e05f0f26407bbff)
