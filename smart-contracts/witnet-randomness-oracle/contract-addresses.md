@@ -36,7 +36,7 @@ _**Conflux eSpace (Testnet)**:_ [`0xa784093826e2894ab3db315f4e05f0f26407bbff`](h
 
 ## Cronos Chain
 
-_**Cronos Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://cronos.org/explorer/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+_**Cronos Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://cronoscan.com/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
 _**Cronos Testnet**:_ [`0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643`](https://cronos.org/explorer/testnet3/address/0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643)
 
