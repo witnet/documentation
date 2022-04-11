@@ -46,6 +46,10 @@ You can request support for additional chains using [this form](https://tally.so
 [moonbeam.md](moonbeam.md)
 {% endcontent-ref %}
 
+{% content-ref url="okxchain.md" %}
+[polygon.md](okxchain.md)
+{% endcontent-ref %}
+
 {% content-ref url="polygon.md" %}
 [polygon.md](polygon.md)
 {% endcontent-ref %}
