@@ -20,6 +20,7 @@ description: >-
 | **KuCoin Community Chain (KCC)** | <ul><li>mainnet</li><li>testnet</li></ul>                | <ul><li><a href="price-feeds/addresses/kcc.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#kucoin-community-chain">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#kucoin-community-chain">HTTP GET/POST</a></li></ul> |
 | **Metis**                        | <ul><li>stardust</li><li>andromeda</li></ul>             | <ul><li><a href="price-feeds/addresses/metis.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#metis">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#metis">HTTP GET/POST</a></li></ul>                                 |
 | **Moonbeam**                        | <ul><li>moonbase</li></ul>             | <ul><li><a href="price-feeds/addresses/moonbeam.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#moonbeam">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#moonbeam">HTTP GET/POST</a></li></ul>                                 |
+| **OKX Chain**                      | <ul><li>mainnet</li><li>testnet</li></ul> | <ul><li><a href="price-feeds/addresses/okxchain.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#okx-chain">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#okx-chain">HTTP GET/POST</a></li></ul>                           |
 | **Polygon**                      | <ul><li>mainnet</li><li>mumbai</li></ul>                 | <ul><li><a href="price-feeds/addresses/polygon.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#polygon">Randomness</a></li><li><a href="apis-and-http-get-post-oracle/contracts-addresses.md#polygon">HTTP GET/POST</a></li></ul>                           |
 
 
@@ -32,7 +33,6 @@ description: >-
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Harmony**             | <ul><li>Mainnet</li></ul>                         | ETA: 2022 Q2 |
 | **Moonbeam**            | <ul><li>mainnet</li></ul>                         | ETA: 2022 Q2 |
-| **OKC Chain**           | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Reef**                | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q2 |
 | **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
 | **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul>         | ETA: 2022 Q3 |
