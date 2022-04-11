@@ -2,7 +2,7 @@
 
 ### Cronos Mainnet
 
-**WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://cronos.org/explorer/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
+**WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://cronoscan.com/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
 
 | **Caption**                                                                    | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ------------------------------------------------------------------------------ | ------------ | :-----------: | :-----------: | :----------: |
