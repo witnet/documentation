@@ -64,6 +64,13 @@ _**Metis Stardust**:_ [`0x7b0D67739b5B9480080817E5b921EbbA714236ca`](https://sta
 
 _**Moonbase Alpha**:_ [`0x45111778a7db1356DaAB576cBe73681F0745182c`](https://moonbase.moonscan.io/address/0x45111778a7db1356DaAB576cBe73681F0745182c)
 
+## OKX Chain
+
+_**OKX Chain Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.oklink.com/en/okc/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+
+_**OKX Chain Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.oklink.com/en/okc-test/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+
+
 ## Polygon
 
 _**Polygon Mainnet**:_ [`0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87`](https://polygonscan.com/address/0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87)
