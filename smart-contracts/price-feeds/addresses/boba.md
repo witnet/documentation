@@ -1,3 +1,8 @@
+---
+cover: ../../../.gitbook/assets/boba.png
+coverY: 0
+---
+
 # Boba Price Feeds
 
 ### Boba Mainnet

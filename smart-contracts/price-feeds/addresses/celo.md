@@ -1,3 +1,8 @@
+---
+cover: ../../../.gitbook/assets/Celo.png
+coverY: 0
+---
+
 # Celo Price Feeds
 
 ### Celo Mainnet

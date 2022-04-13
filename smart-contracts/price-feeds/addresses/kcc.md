@@ -1,3 +1,8 @@
+---
+cover: ../../../.gitbook/assets/KCC.png
+coverY: 0
+---
+
 # KCC Price Feeds
 
 ### KCC Mainnet

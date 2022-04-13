@@ -1,3 +1,8 @@
+---
+cover: ../../../.gitbook/assets/Cronos-3.png
+coverY: 0
+---
+
 # Cronos Price Feeds
 
 ### Cronos Mainnet

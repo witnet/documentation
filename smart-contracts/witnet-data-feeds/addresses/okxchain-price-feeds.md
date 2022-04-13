@@ -1,3 +1,8 @@
+---
+cover: ../../../.gitbook/assets/OKC.png
+coverY: 0
+---
+
 # OKXChain Price Feeds
 
 ### OKXChain (Mainnet)

@@ -1,3 +1,8 @@
+---
+cover: ../../../.gitbook/assets/polygon.png
+coverY: 0
+---
+
 # Polygon Price Feeds
 
 ### Polygon Mainnet
