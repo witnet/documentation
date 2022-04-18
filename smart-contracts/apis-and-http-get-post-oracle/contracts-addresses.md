@@ -60,6 +60,8 @@ _**Metis Stardust**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://sta
 
 ## Moonbeam
 
+_**Moonbeam Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://blockscout.moonbeam.network/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
+
 _**Moonbase Alpha**:_ [`0x02Cd4089679EAA9431a88170fd784e7dE78A2425`](https://moonbase.moonscan.io/address/0x02Cd4089679EAA9431a88170fd784e7dE78A2425)
 
 ## OKXChain (OKC)
