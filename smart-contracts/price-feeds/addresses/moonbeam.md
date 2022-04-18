@@ -1,6 +1,6 @@
 # Moonbeam Price Feeds
 
-### Moonbeam (mainnet)
+### Moonbeam Mainnet
 
 **WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://blockscout.moonbeam.network/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53/read-contract)
 
@@ -19,7 +19,9 @@
 | ---------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_btc-usd\_6)     | `0x24beead4` |    24 hours   |      1.0%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_eth-usd\_6)     | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
+| [Price-GLINT/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glint-usdt\_6) |`0x6d85fc1a`|    24 hours   |      1.0%     |      15'     |
 | [Price-GLMR/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glmr-usdt\_6) | `0xe4cc70ab` |    24 hours   |      1.0%     |      15'     |
+| [Price-STELLA/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_stella-usdt\_6)|`0x84aea78e`|   24 hours   |      1.0%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 {% hint style="success" %}
