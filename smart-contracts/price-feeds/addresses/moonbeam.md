@@ -19,9 +19,11 @@
 | ---------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_btc-usd\_6)     | `0x24beead4` |    24 hours   |      1.0%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_eth-usd\_6)     | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
+| [Price-GLINT/USDC-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glint-usdc\_6) |`0x38b57cfe`|    24 hours   |      1.0%     |      15'     |
 | [Price-GLINT/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glint-usdt\_6) |`0x6d85fc1a`|    24 hours   |      1.0%     |      15'     |
 | [Price-GLMR/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glmr-usdt\_6) | `0xe4cc70ab` |    24 hours   |      1.0%     |      15'     |
 | [Price-STELLA/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_stella-usdt\_6)|`0x84aea78e`|   24 hours   |      1.0%     |      15'     |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_usdc-usd\_6)   | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 {% hint style="success" %}
