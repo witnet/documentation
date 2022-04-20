@@ -28,6 +28,8 @@ coverY: 0
 | [Price-DAI/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_dai-usd\_6)   | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_eth-usd\_6)   | `0x3d15f701` |      10'      |      0.5%     |      5'      |
 | [Price-KCS/USDT-6](https://feeds.witnet.io/feeds/kcc-testnet\_kcs-usdt\_6) | `0x31debffc` |      10'      |      0.5%     |      5'      |
+| [Price-MJT/KCS-9](https://feeds.witnet.io/feeds/kcc-testnet\_mjt-kcs\_9)   | `0x2dcfd554` |    24 hours   |      0.5%     |      15'     |
+| [Price-SAX/USDT-6](https://feeds.witnet.io/feeds/kcc-testnet\_sax-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      15'     |
 | [Price-USDC/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_usdc-usd\_6) | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/kcc-testnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
