@@ -22,7 +22,7 @@ Now, depending on the lifespan of your smart contract, you can actually compose 
   {% endhint %}
 
   {% hint style="error" %}  
-  Please, be aware that if _witnessing parameters_ are not properly set, your request could either take a little longer to be solved, or worse, get reverted by the Witnet side-chain. For instance, if *witnessing fees* were set too low, there would be a high chance to get an `"InsufficientCommits"` error message as a result to your data request.
+  Be aware that if _witnessing parameters_ are not properly set, your request could either take a little longer to resolve or get reverted by the Witnet side-chain. For instance, if *witnessing fees* were set too low, there would be a high chance of getting an `"InsufficientCommits"` error message as a result to your data request.
   {% endhint %}
 
 **2.** As a second approach, if you expect to repeatedly request for randomness during an undetermined period of time, you may opt for using a pre-deployed copy of the [`WitnetRequestRandomness` contract](./api-reference.md#WitnetRequestRandomness) that will enable you, or your smart contract, to eventually change the _witnessing parameters_ of your request, on-chain. 
@@ -42,5 +42,5 @@ Now, depending on the lifespan of your smart contract, you can actually compose 
 - In you needed to request additional randomness before a previous one gets solved, your contract will have to implement the logic and data model to solve this functionality, while avoiding potential front-running attacks at the EVM level. 
 
   {% hint style="" %}
-  This multi-pending requests feature is solved by the `WitnetRandomness` contract. Know more about it in [next section](./randomness-contract.md).
+  This multi-pending requests feature is solved by the `WitnetRandomness` contract. Learn more about it in [next section](./randomness-contract.md).
   {% endhint %}

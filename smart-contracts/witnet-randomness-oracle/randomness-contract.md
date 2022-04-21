@@ -2,7 +2,7 @@
 
 The [`WitnetRandomness` contract](./api-reference.md#WitnetRandomness), also known as the "**Witnet Randomness Oracle**", is the easiest and most convenient way to generate EVM-agnostic and realiable randomness for your smart contracts. 
 
-The Witnet Foundation sustains a pre-deployed instance of the `WitnetRandomness` contract in practically all the EVM-compatible chains that are already integrated with the Witnet side-chain: 
+The Witnet Foundation sponsors a pre-deployed instance of the `WitnetRandomness` contract in practically all the EVM-compatible chains that are already integrated with the Witnet side-chain: 
 
   {% content-ref url="contract-addresses.md" %}
   [contract-addresses.md](contract-addresses.md)
@@ -17,7 +17,7 @@ Moreover, the same instance can be safely and concurrently used by any number of
   {% endhint %}
 
   {% hint style="success" %}
-  And therefore, depending on the time-response constraints of your own app, the Witnet Randomness Oracle becomes the cheapest side-chain mechanism to generate reliable randomness in the whole crypto arena (💣).
+  And therefore, depending on the time-response constraints of your own app, the Witnet Randomness Oracle becomes the cheapest EVM-agnostic mechanism to generate reliable randomness in the whole crypto arena (💣).
   {% endhint %}
 
 In a nutshell, by using a `WitnetRandomness` instance, you just need to care for requesting and paying for new randomness at any given time (i.e. `randomize() payable`), and eventually fetching the Witnet-provided randomness value (i.e. `isRandomized(uint256)`, `getRandomnessAfter(uint256)`). As simple as that ;)
@@ -33,11 +33,11 @@ In a nutshell, by using a `WitnetRandomness` instance, you just need to care for
 
 - Besides, you or your contract will be able to request for new randomness (i.e. `randomize() payable`), even if other previous randomness requests (either coming from you, or other apps) were still pending to be solved.
 
-- The `WitnetRandomness`contract is "clonable", which means that you, or your contract, may cheaply create your own cloned copy as a means to gain ownership of the self-contained `WitnetRequestRandomness` contract, and therefore be allowed to change the _witnessing parameters_ of the low-level Randomness Request that gets posted to the Witnet side-chain. 
+- The `WitnetRandomness`contract is "clonable", which means that you, or your contract, may cheaply create your own cloned copy as a means to gain ownership of the self-contained `WitnetRequestRandomness` contract. Only the owner of a cloned copy will be allowed to change the _witnessing parameters_ of the low-level Randomness Request. 
 
 - The `WitnetRandomness`contract provides the `random(uint32 _range, uint256 _nonce, uint256 _block)` and `random(uint32 _range, uint256 _nonce, bytes32 _seed)` helper functions. These functions guarantee that different contracts/apps reading from same randomness request will actually get _completely different random sequences of **uniformly distributed numbers**_, within a given range, and doing so while _keeping complexity under **O(1)**_ (🎉).
 
-- Most of all: the `WitnetRandomness`contract guarantees the returned randomness to be the one requested at the given block number, or the _very next_ randomness request posted after the given block if there was none posted back then, or if the ones posted after that got reverted for whatever reason at the Witnet side-chain level.
+- Most of all, the `WitnetRandomness` contract guarantees that the received randomness is the one requested for a given block number, or the _subsequent_ randomness request posted after the given block if there was none posted back then, or if the ones posted after that got reverted for whatever reason at the Witnet side-chain level.
 
   {% hint style="success" %}
   This logic alone protects the **Witnet Randomness Oracle** against front-running attacks from mallicious miners at the EVM-chain level (💣). 

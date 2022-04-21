@@ -212,17 +212,20 @@ Take into account that this example implements an asynchronous workflow — call
       Ownable,
       UsingWitnet
   {
+    /// @dev Low-level Witnet Data Request composed on construction.
+    IWitnetRequest public witnetRequest;
     
+    /// @dev Randomness value eventually fetched from the Witnet oracle.
+    bytes32 public witnetRandomness;
+
+    /// @dev Unique identifier for the latest request posted to the Witnet Request Board.
+    uint256 public witnetQueryId;    
+
     enum Status {
       Playing,
       Randomizing,
       Awarding
     }
-
-    IWitnetRequest public witnetRequest;
-    
-    bytes32 public witnetRandomness;
-    uint256 public witnetQueryId;    
 
     modifier inStatus(Status _status) {
       require(status() == _status, "bad mood");
@@ -231,6 +234,9 @@ Take into account that this example implements an asynchronous workflow — call
     constructor(WitnetRequestBoard _witnet)
       UsingWitnet(_witnet)
     {
+      // Compose low-level Witnet data request bytecode,
+      // that will be eventually posted to the Witnet side-chain
+      // when calling to _witnetPostRequest(witnetRequest)
       witnetRequest = new WitnetRequest(
         hex"0a0f120508021a01801a0210022202100b10e807180a200a2833308094ebdc03"
       );
@@ -267,7 +273,7 @@ Take into account that this example implements an asynchronous workflow — call
       }
     }
 
-    /// @dev Pass from 'Playing' to 'Randomizing' status-
+    /// @dev Pass from 'Playing' to 'Randomizing' status
     function stopPlaying()
         external payable
         onlyOwner
@@ -277,7 +283,7 @@ Take into account that this example implements an asynchronous workflow — call
       // request to the WitnetRequestBoard instance. `msg.value` needs to be high enough as
       // to cover for `_witnetReward`
       uint256 _witnetReward;
-      (witnetQueryId, _witnetReward) = _witnetPostRequest(witnetRandomnessRequest);
+      (witnetQueryId, _witnetReward) = _witnetPostRequest(witnetRequest);
 
       // Transfer back unused funds:
       if (msg.value > _witnetReward) {
@@ -297,7 +303,7 @@ Take into account that this example implements an asynchronous workflow — call
       // request has already been reported:
       require(_witnetCheckResultAvailability(_queryId), "not yet reported");
 
-      // Low-level interactino with the WitnetRequestBoard as to deserialize the result,
+      // Low-level interaction with the WitnetRequestBoard as to deserialize the result,
       // and check whether the randomness request failed or succeeded:
       Witnet.Result memory _result = witnet.readResponseResult(_queryId);
       if (_result.success) {
