@@ -1,3 +1,4 @@
+
 # Moonbeam Price Feeds
 
 ### Moonbeam Mainnet
@@ -8,8 +9,21 @@
 | ---------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_btc-usd\_6)      | `0x24beead4` |    24 hours   |      1.0%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_eth-usd\_6)      | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
+| [Price-GLINT/USDC-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_glint-usdc\_6)|`0x38b57cfe`  |    24 hours   |      1.0%     |      15'     |
 | [Price-GLMR/USDT-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_glmr-usdt\_6)  | `0xe4cc70ab` |    24 hours   |      1.0%     |      15'     |
+| [Price-STELLA/USDT-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_stella-usdt\_6)|`0x84aea78e`|    24 hours   |      1.0%     |      15'     |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_usdc-usd\_6)    | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/moonbeam-mainnet\_usdt-usd\_6)    | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
+
+### Moonriver 
+
+**WitnetPriceRouter**: [`0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87`](https://moonriver.moonscan.io/address/0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87#readContract)
+
+| **Caption**                                                                         | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ----------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-MOVR/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonriver\_movr-usdt\_6) | `0xe4cc70ab` |    24 hours   |      1.0%     |      15'     |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonriver\_usdc-usd\_6)   | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonriver\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 ### Moonbase Alpha (testnet)
 
