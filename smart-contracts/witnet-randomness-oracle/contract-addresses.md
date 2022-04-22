@@ -64,6 +64,8 @@ _**Metis Stardust**:_ [`0x7b0D67739b5B9480080817E5b921EbbA714236ca`](https://sta
 
 _**Moonbeam Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://blockscout.moonbeam.network/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C/read-contract)
 
+_**Moonriver**:_ [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://moonriver.moonscan.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53#readContract)
+
 _**Moonbase Alpha**:_ [`0x45111778a7db1356DaAB576cBe73681F0745182c`](https://moonbase.moonscan.io/address/0x45111778a7db1356DaAB576cBe73681F0745182c#readContract)
 
 ## OKXChain (OKC)
