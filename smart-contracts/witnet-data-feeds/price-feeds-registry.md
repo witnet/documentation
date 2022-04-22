@@ -38,6 +38,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js)     | **`0x31debffc`** | `0x492d115cec10a14a55ad4494b59ffba99eda5e5907632c9e51116c87ff1aa8db` |
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`** | `0x4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e` |
 | [Price-**MJT/KCS-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MjtKcsPrice.js) | **`0x2dcfd554`** | `0x2dcfd5546926b857978957b40dcd5164cc788079b46ce9c1abbaedac07f96837` |
+| [Price-**MOVR/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MjtKcsPrice.js) | **`0x92b17f49`** | `0x92b17f49728c2c6aa29264310b084129ff8d9930618302509d63bd57e127374b` |
 | [Price-**OKT/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OktUsdtPrice.js)     | **`0xf75039c1`** | `0xf75039c1cc3d4c1cec5cb42ecf19a812a123ba893e673ac920f0f8d3fcebbe34` |
 | [Price-**OLO/USDC-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OloUsdcPrice.js)     | **`0xf75039c1`** | `0xf75039c1cc3d4c1cec5cb42ecf19a812a123ba893e673ac920f0f8d3fcebbe34` |
 | [Price-**OMG/BTC-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/OmgBtcPrice.js)       | **`0xc4ec7fbc`** | `0xc4ec7fbc6384f83dad668488519c7195acafd67645ebcc7f76a84d77feaca2fb` |
