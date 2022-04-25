@@ -2,7 +2,7 @@
 
 There are two major approaches to generate unpredictable and malleable randomness from the Witnet oracle:
 
-* Using the **Witnet Randomness Contract**, also known as the "Witnet Randomness Oracle", that can be used by practically all kind of applications, and that it has been already pre-deployed by the Witnet Foundation on all chains eventually supported by the Witnet oracle:
+1. Using the **Witnet Randomness Contract**, also known as the "Witnet Randomness Oracle", that can be used by practically all kind of applications, and that it has been already pre-deployed by the Witnet Foundation on all chains eventually supported by the Witnet oracle:
 
   * This contract implements the whole request/resolution asynchronous flow in a general, secure and complete way, so you, or your smart contracts, just need to care for requesting new randomness (i.e. `randomize() payable`), and eventually fetching the Witnet-provided randomness (i.e. `isRandomized(uint256)`, `getRandomnessAfter(uint256)`).
 
@@ -16,7 +16,7 @@ There are two major approaches to generate unpredictable and malleable randomnes
   [contract-addresses.md](contract-addresses.md)
   {% endcontent-ref %}
 
-* Posting a low-level **Witnet Randomness Request** to the [Witnet Request Board](../apis-and-http-get-post-oracle/witnet-request-board.md) entrypoint:
+2. Posting a low-level **Witnet Randomness Request** to the [Witnet Request Board](../apis-and-http-get-post-oracle/witnet-request-board.md) entrypoint:
 
   * You will have full low-level control of the whole request/resolution asynchronous flow that runs between the EVM and the Witnet side-chain.
 
