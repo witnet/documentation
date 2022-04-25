@@ -1,4 +1,4 @@
-# 🔄 Witnet Randomness Oracle
+# 🎲 Witnet Randomness Oracle
 
 ### Why Randomness Oracles?
 
