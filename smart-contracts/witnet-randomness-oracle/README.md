@@ -6,7 +6,7 @@ There are a number of smart contracts use cases that require some degree of rand
 
 For example, a smart contract that automatically generates items inside an NFT collection will need a source of randomness to assign different traits in such a way that each of the items in the collection are unique and cannot be predicted before minting.
 
-Another use case are be lotteries, gaming and any other case in which the outcome of the contract shall depend on an unpredictable element of luck.
+Another use case can be lotteries, gaming and any other case in which the outcome of the contract shall depend on an unpredictable element of luck.
 
 However, because of their deterministic nature, smart contracts are not capable of generating randomness on their own. Any mechanism trying to build randomness purely onchain is prone to manipulation, abuse and front-running by miners.
 
@@ -26,7 +26,7 @@ The following sections contain a number of useful resources, examples and walkth
 [generating-randomness.md](generating-randomness.md)
 {% endcontent-ref %}
 
-{% content-ref url="randomness-request.md" %}
+{% content-ref url="randomness-requests.md" %}
 [randomness-requests.md](randomness-requests.md)
 {% endcontent-ref %}
 

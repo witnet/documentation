@@ -1,3 +1,7 @@
+---
+description: Price feeds currently supported by the Witnet Foundation on Avalanche networks
+---
+
 # Avalanche Price Feeds
 
 ### **Avalanche C-Chain Mainnet**

@@ -1,3 +1,7 @@
+---
+description: Price feeds currently supported by the Witnet Foundation on Metis networks
+---
+
 # Metis Price Feeds
 
 ### **Metis Mainnet** (Andromeda)

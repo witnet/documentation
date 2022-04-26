@@ -1,4 +1,4 @@
-# 📡 APIs and HTTP GET/POST
+# 🌐 APIs and HTTP GET/POST
 
 One of the core capabilities of the Witnet protocol is to enable smart contracts to securely retrieve data from conventional APIs through HTTP(S) GET and POST calls.
 

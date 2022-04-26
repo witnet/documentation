@@ -1,4 +1,8 @@
-# Price Feeds Contract Addresses
+---
+description: Multi-chain deployed addresses of the WitnetPriceRouter contract.
+---
+
+# Multi-chain Addresses
 
 {% hint style="success" %}
 **Not listed here?**
@@ -46,11 +50,10 @@ You can request support for additional chains using [this form](https://tally.so
 [moonbeam.md](moonbeam.md)
 {% endcontent-ref %}
 
-{% content-ref url="okxchain.md" %}
-[polygon.md](okxchain.md)
+{% content-ref url="../../witnet-data-feeds/addresses/okxchain-price-feeds.md" %}
+[okxchain-price-feeds.md](../../witnet-data-feeds/addresses/okxchain-price-feeds.md)
 {% endcontent-ref %}
 
 {% content-ref url="polygon.md" %}
 [polygon.md](polygon.md)
 {% endcontent-ref %}
-

@@ -1,4 +1,8 @@
-# Contract Addresses
+---
+description: Multi-chain deployed addressess of the WitnetRequestBoard entry-point.
+---
+
+# Multi-chain Addresses
 
 ## Avalanche C-Chain
 
@@ -45,6 +49,12 @@ _**Ethereum Rinkeby**:_ [`0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4`](https://r
 ## Harmony
 
 _**Harmony Testnet**:_ [`0x58d8ece142c60f5707594a7c1d90e46eae5af431`](https://explorer.pops.one/address/0x58d8ece142c60f5707594a7c1d90e46eae5af431)
+
+## Klaytn
+
+_**Klaytn Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://scope.klaytn.com/account/0xd653fbd7c736838289262F0F41A458f35393C88a)``
+
+_**Klaytn Baobab**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://baobab.scope.klaytn.com/account/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)``
 
 ## KuCoin Community Chain
 

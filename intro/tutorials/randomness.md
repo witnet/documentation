@@ -1,4 +1,4 @@
-# 🔀 Randomness
+# 🎲 Randomness
 
 In October 2021, a new Random Number Generator (RNG) capability was added to the Witnet protocol, allowing for secure sourcing of random numbers and byte arrays into smart contracts.
 
@@ -63,6 +63,6 @@ You can find here the complete documentation and API reference for the Witnet ra
 [witnet-randomness-oracle](../../smart-contracts/witnet-randomness-oracle/)
 {% endcontent-ref %}
 
-{% content-ref url="../../smart-contracts/witnet-randomness-oracle/generating-randomness" %}
-[generating-randomness](../../smart-contracts/witnet-randomness-oracle/generating-randomness.md)
+{% content-ref url="../../smart-contracts/witnet-randomness-oracle/generating-randomness/" %}
+[generating-randomness](../../smart-contracts/witnet-randomness-oracle/generating-randomness/)
 {% endcontent-ref %}

@@ -1,4 +1,8 @@
-# Randomness Contract Addresses
+---
+description: Multi-chain deployed addresses of the WitnetRandomness contract.
+---
+
+# Multi-chain Addresses
 
 {% hint style="success" %}
 **Not listed here?**
@@ -47,6 +51,12 @@ _**Ethereum Mainnet**:_ [`0x2be5d85f97c490e7ed7396d79fe194ab922d16ee`](https://e
 _**Ethereum Goerli**:_ [`0x6Eb87EcCe6218Cd0e97299331D2aa5d2e53da5cD`](https://goerli.etherscan.io/address/0x6Eb87EcCe6218Cd0e97299331D2aa5d2e53da5cD)
 
 _**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://rinkeby.etherscan.io/address/0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921)
+
+## Klaytn
+
+_**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)``
+
+_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](contract-addresses.md#avalanche-c-chain)``
 
 ## KuCoin Community Chain
 

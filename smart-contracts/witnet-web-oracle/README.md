@@ -1,2 +1,2 @@
-# 📰 APIs and HTTP GET/POST Oracle
+# 🌐 Witnet Web Oracle
 

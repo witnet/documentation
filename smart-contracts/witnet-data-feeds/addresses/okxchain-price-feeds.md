@@ -1,4 +1,5 @@
 ---
+description: Price feeds currently supported by the Witnet Foundation on OKXChain networks
 cover: ../../../.gitbook/assets/OKC.png
 coverY: 0
 ---

@@ -1,3 +1,7 @@
+---
+description: Price feeds currently supported by the Witnet Foundation on Harmony networks
+---
+
 # Harmony Price Feeds
 
 ### Harmony Testnet

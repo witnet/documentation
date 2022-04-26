@@ -1,3 +1,7 @@
+---
+description: Price feeds currently supported by the Witnet Foundation on Ethereum networks
+---
+
 # Ethereum Price Feeds
 
 ### Ethereum Mainnet

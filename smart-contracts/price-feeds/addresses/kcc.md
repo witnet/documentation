@@ -1,4 +1,5 @@
 ---
+description: Price feeds currently supported by the Witnet Foundation on KCC networks
 cover: ../../../.gitbook/assets/KCC.png
 coverY: 0
 ---

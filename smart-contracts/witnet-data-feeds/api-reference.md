@@ -46,15 +46,15 @@ Functions defined within the [`IWitnetPriceFeed`](https://github.com/witnet/witn
 
 Functions defined within the [`IWitnetRequest`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/interfaces/IWitnetRequest.sol) interface:
 
-| **Function** | **Description**                                                                                                                                                                                                                                      |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bytecode()` | The Witnet Data Request reflecting the [**RADON script**](../apis-and-http-get-post-oracle/api-reference.md) that will be processed by the Witnet oracle on every single price update. The returned `bytes` array is encoded using Protocol Buffers. |
-| `hash()`     | Returns the SHA256 hash of the `bytecode()`.                                                                                                                                                                                                         |
+| **Function** | **Description**                                                                                                                                                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bytecode()` | The Witnet Data Request reflecting the [**RADON script**](broken-reference) that will be processed by the Witnet oracle on every single price update. The returned `bytes` array is encoded using Protocol Buffers. |
+| `hash()`     | Returns the SHA256 hash of the `bytecode()`.                                                                                                                                                                        |
 
 ### UsingWitnet base contract
 
 Public function inherited from the [`UsingWitnet`](https://github.com/witnet/witnet-solidity-bridge/blob/master/contracts/UsingWitnet.sol) abstract contract:
 
-| **Function** | **Description**                                                                                                                                                                                                                                |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `witnet()`   | Returns the immutable address of the [**Witnet Request Board**](../apis-and-http-get-post-oracle/witnet-request-board.md) that interacts with the Witnet oracle's sidechain, for both posting new data requests and receiving results from it. |
+| **Function** | **Description**                                                                                                                                                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `witnet()`   | Returns the immutable address of the [**Witnet Request Board**](../witnet-web-oracle/witnet-request-board.md) that interacts with the Witnet oracle's sidechain, for both posting new data requests and receiving results from it. |

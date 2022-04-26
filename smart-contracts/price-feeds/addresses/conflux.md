@@ -1,3 +1,7 @@
+---
+description: Price feeds currently supported by the Witnet Foundation on Conflux networks
+---
+
 # Conflux Price Feeds
 
 ### Conflux Core (Hydra)
