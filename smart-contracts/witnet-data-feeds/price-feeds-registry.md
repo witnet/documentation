@@ -22,6 +22,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | --------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------- |
 | [Price-**AVAX/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/AvaxUsdPrice.js)     | **`0x356ba62f`** | `0x356ba62f72df54463d38fa6850079d4ca77a035bd8f193f17b10e40d67638d57` |
 | [Price-**BOBA/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BobaUsdtPrice.js)   | **`0xf723bde1`** | `0xf723bde14abbffbe1f7e4cc11b10fcffdeb0873cadb864d13ca5fe5fa83255af` |
+| [Price-**BORING/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BoringUsdtPrice.js) | **`0x3a9faa5a`** | `0x3a9faa5a41fb4ac71aee7850eda9baeae8e35cd64977afa3eaad8bcca04658d6` |
 | [Price-**BTC/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/BtcUsdPrice.js)       | **`0x24beead4`** | `0x24beead43216e490aa240ef0d32e18c57beea168f06eabb94f5193868d500946` |
 | [Price-**CELO/EUR-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloEurPrice.js)     | **`0x21a79821`** | `0x21a798210f2f9a59348801ac3dd2d6ba14edec757bd7bc1894181af90a7fd3a2` |
 | [Price-**CELO/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/CeloUsdPrice.js)     | **`0x9ed884be`** | `0x9ed884be27401b98a6c3e9d830d4288c949712e57a58235927b1a00dcd487073` |
@@ -38,6 +39,7 @@ This table contains the currency pairs that are currently updated by the Witnet 
 | [Price-**GLMR/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/GlmrUsdtPrice.js)   | **`0xe4cc70ab`** | `0xe4cc70abfc7ab1836bb8f6dd4888b8c4aa6f3ad1d445d2c9886e5ae2750e7e14` |
 | [Price-**IMMO/MCUSD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/ImmoMcusdPrice.js) | **`0x1aa645a8`** | `0x1aa645a8e8124b720e3f7dc5162efd386f327ea59f855b1afeb8ae4c54f6f8ab` |
 | [Price-**KCS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KcsUsdtPrice.js)     | **`0x31debffc`** | `0x492d115cec10a14a55ad4494b59ffba99eda5e5907632c9e51116c87ff1aa8db` |
+| [Price-**KSW/USD-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/KswUsdPrice.js)     | **`0x547d1731`** | `0x547d1731254f0589416eee8ea5d0d69147c26de8859ea5de0a9d49d2ef75bf23` |
 | [Price-**METIS/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MetisUsdtPrice.js) | **`0x4ba45817`** | `0x4ba4581716a4352feaf028c4efebf2f9a3c6a03dc1030c92b74ea9c319606d7e` |
 | [Price-**MJT/KCS-9**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MjtKcsPrice.js) | **`0x2dcfd554`** | `0x2dcfd5546926b857978957b40dcd5164cc788079b46ce9c1abbaedac07f96837` |
 | [Price-**MOVR/USDT-6**](https://github.com/witnet/witnet-price-feed-examples/blob/master/requests/MjtKcsPrice.js) | **`0x92b17f49`** | `0x92b17f49728c2c6aa29264310b084129ff8d9930618302509d63bd57e127374b` |
