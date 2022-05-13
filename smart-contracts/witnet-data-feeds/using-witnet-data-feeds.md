@@ -34,12 +34,12 @@ contract MyContractBoba {
     
     /// Returns the BTC / USD price (6 decimals), ultimately provided by the Witnet oracle.
     function getBtcUsdPrice() public view returns (int256 _price) {
-        (_price,,) = router.valueFor(bytes32(0x24beead4));
+        (_price,,) = router.valueFor(bytes4(0x24beead4));
     }
     
     /// Returns the ETH / USD price (6 decimals), ultimately provided by the Witnet oracle.
     function getEthUsdPrice() public view returns (int256 _price) {
-        (_price,,) = router.valueFor(bytes32(0x3d15f701));
+        (_price,,) = router.valueFor(bytes4(0x3d15f701));
     }
     
     /// Returns the BTC / ETH price (6 decimals), derived from the ETH/USD and 
@@ -108,7 +108,7 @@ contract MyContractCelo {
     
     /// Detects if the WitnetPriceRouter is now pointing to a different IWitnetPriceFeed implementation:
     function updateCeloEurPriceFeed() public {
-        IERC165 _newPriceFeed = witnetPriceRouter.getPriceFeed(bytes32(0x21a79821));
+        IERC165 _newPriceFeed = witnetPriceRouter.getPriceFeed(bytes4(0x21a79821));
         if (address(_newPriceFeed) != address(0)) {
             celoEurPrice = IWitnetPriceFeed(address(_newPriceFeed));
         }
@@ -161,7 +161,7 @@ contract MyContractConflux {
     
     /// Force udpate on the CFX / USDT currency pair
     function forceCfxUsdtUpdate() external payable {
-        IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes32(0x65784185));
+        IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes4(0x65784185));
         uint _updateFee = _priceFeed.estimateFee(tx.gasprice);
         _priceFeed.requestUpdate{value: _updateFee}();
         if (msg.value > _updateFee) {
