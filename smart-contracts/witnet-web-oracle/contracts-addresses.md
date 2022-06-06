@@ -87,3 +87,7 @@ _**OKXChain Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://w
 _**Polygon Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://polygonscan.com/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
 
 _**Polygon Mumbai**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://mumbai.polygonscan.com/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
+
+## `SmartBCH`
+
+_**SmartBCH Amber**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://www.smartscan.cash/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)

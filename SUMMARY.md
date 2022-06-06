@@ -38,6 +38,7 @@
     * [Moonbeam Price Feeds](smart-contracts/price-feeds/addresses/moonbeam.md)
     * [OKXChain Price Feeds](smart-contracts/witnet-data-feeds/addresses/okxchain-price-feeds.md)
     * [Polygon Price Feeds](smart-contracts/price-feeds/addresses/polygon.md)
+    * [SmartBCH Price Feeds](smart-contracts/witnet-data-feeds/addresses/smartbch-price-feeds.md)
     * [Request new price feed or chain support](https://tally.so/r/wMZDAn)
 * [🎲 Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
   * [Generating Randomness](smart-contracts/witnet-randomness-oracle/generating-randomness.md)

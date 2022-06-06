@@ -54,9 +54,9 @@ _**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://r
 
 ## Klaytn
 
-_**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)``
+_**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)\`\`
 
-_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](contract-addresses.md#avalanche-c-chain)``
+_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](contract-addresses.md#avalanche-c-chain)\`\`
 
 ## KuCoin Community Chain
 
@@ -89,3 +89,7 @@ _**OKXChain Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://w
 _**Polygon Mainnet**:_ [`0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5`](https://polygonscan.com/address/0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5)
 
 _**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mumbai.polygonscan.com/address/0x0178287DfECA2F13F342512282bc8B59e774aE43)
+
+## `SmartBCH`
+
+_**SmartBCH Amber**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.smartscan.cash/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
