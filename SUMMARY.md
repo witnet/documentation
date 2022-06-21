@@ -32,6 +32,7 @@
     * [Cronos Price Feeds](smart-contracts/price-feeds/addresses/cronos.md)
     * [Ethereum Price Feeds](smart-contracts/price-feeds/addresses/ethereum.md)
     * [Harmony Price Feeds](smart-contracts/price-feeds/addresses/harmony.md)
+    * [Kava Price Feeds](smart-contracts/witnet-data-feeds/addresses/kava-price-feeds.md)
     * [KCC Price Feeds](smart-contracts/price-feeds/addresses/kcc.md)
     * [Klaytn Price Feeds](smart-contracts/witnet-data-feeds/addresses/klaytn-price-feeds.md)
     * [Metis Price Feeds](smart-contracts/price-feeds/addresses/metis.md)

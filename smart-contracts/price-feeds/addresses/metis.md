@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Metis networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Metis
+  ecosystem
 ---
 
 # Metis Price Feeds

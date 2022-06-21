@@ -1,14 +1,14 @@
 # Code Examples
 
 ### Example 1: Bare Minimal
-On each of the [EVM compatible chains supported by Witnet](./contract-addresses.md) there is an instance of the `WitnetRandomness` contract that exposes the main randomness oracle functionality through a very simple interface.
+
+On each of the [EVM compatible chains supported by Witnet](contract-addresses.md) there is an instance of the `WitnetRandomness` contract that exposes the main randomness oracle functionality through a very simple interface.
 
 The best way to interact with the `WitnetRandomness` contract is through the `IWitnetRandomness` interface, which is readily available in the [`witnet-solidity-bridge` npm package](https://www.npmjs.com/package/witnet-solidity-bridge).
 
 This very basic example shows how easy is to source random `uint32` values into your own contracts:
 
 ```solidity
-
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -197,136 +197,138 @@ Generating random bytes is specially interesting for many NFT use cases in which
 Take into account that this example implements an asynchronous workflow — calling `fetchRandomness()` right after `requestRandomness()` will most likely cause the transaction to revert. Please allow 5-10 minutes for the randomization request to complete.
 {% endhint %}
 
-
 ### Example 4: Post a low-level hardcoded randomness request
-  ```
-  pragma solidity ^0.8.0;
 
-  import "witnet-solidity-bridge/contracts/UsingWitnet.sol";
-  import "witnet-solidity-bridge/contracts/requests/WitnetRequest.sol";
+```
+pragma solidity ^0.8.0;
 
-  import "@openzeppelin/contracts/access/Ownable.sol";  
+import "witnet-solidity-bridge/contracts/UsingWitnet.sol";
+import "witnet-solidity-bridge/contracts/requests/WitnetRequest.sol";
 
-  contract MyContract
-    is
-      Ownable,
-      UsingWitnet
+import "@openzeppelin/contracts/access/Ownable.sol";  
+
+contract MyContract
+  is
+    Ownable,
+    UsingWitnet
+{
+  /// @dev Low-level Witnet Data Request composed on construction.
+  IWitnetRequest public witnetRequest;
+  
+  /// @dev Randomness value eventually fetched from the Witnet oracle.
+  bytes32 public witnetRandomness;
+
+  /// @dev Unique identifier for the latest request posted to the Witnet Request Board.
+  uint256 public witnetQueryId;    
+
+  enum Status {
+    Playing,
+    Randomizing,
+    Awarding
+  }
+
+  modifier inStatus(Status _status) {
+    require(status() == _status, "bad mood");
+  }
+
+  constructor(WitnetRequestBoard _witnet)
+    UsingWitnet(_witnet)
   {
-    /// @dev Low-level Witnet Data Request composed on construction.
-    IWitnetRequest public witnetRequest;
-    
-    /// @dev Randomness value eventually fetched from the Witnet oracle.
-    bytes32 public witnetRandomness;
-
-    /// @dev Unique identifier for the latest request posted to the Witnet Request Board.
-    uint256 public witnetQueryId;    
-
-    enum Status {
-      Playing,
-      Randomizing,
-      Awarding
-    }
-
-    modifier inStatus(Status _status) {
-      require(status() == _status, "bad mood");
-    }
-
-    constructor(WitnetRequestBoard _witnet)
-      UsingWitnet(_witnet)
-    {
-      // Compose low-level Witnet data request bytecode,
-      // that will be eventually posted to the Witnet side-chain
-      // when calling to _witnetPostRequest(witnetRequest)
-      witnetRequest = new WitnetRequest(
-        hex"0a0f120508021a01801a0210022202100b10e807180a200a2833308094ebdc03"
-      );
-      /// @dev Witnet Data Request decoded as:
-      ///
-      /// {
-      ///    "retrieve": [
-      ///      {
-      ///        "kind": "RNG",
-      ///        "url": "",
-      ///        "script": []
-      ///      }
-      ///    ],
-      ///    "aggregate": {
-      ///      "filters": [],
-      ///      "reducer": 2
-      ///    },
-      ///    "tally": {
-      ///      "filters": [],
-      ///      "reducer": 11
-      ///    }
-      /// }
-      ///
-    }
-
-    /// @dev Calculate current status.
-    function status() public view returns (Status) {
-      if (witnetRandomness != bytes32(0)) {
-        return Status.Awarding;
-      } else if (witnetQueryId > 0) {
-        return Status.Randomizing;
-      } else {
-        return Status.Playing;
-      }
-    }
-
-    /// @dev Pass from 'Playing' to 'Randomizing' status
-    function stopPlaying()
-        external payable
-        onlyOwner
-        inStatus(Status.Playing)
-    {
-      // Use internal method inherited from UsingWitnet, as to send the low-level randomness 
-      // request to the WitnetRequestBoard instance. `msg.value` needs to be high enough as
-      // to cover for `_witnetReward`
-      uint256 _witnetReward;
-      (witnetQueryId, _witnetReward) = _witnetPostRequest(witnetRequest);
-
-      // Transfer back unused funds:
-      if (msg.value > _witnetReward) {
-        payable(msg.sender).transfer(msg.value - _witnetReward);
-      }
-    }
-
-    /// @dev Pass from 'Randomizing' to either 'Awarding' or 'Playing' status, depending
-    /// @dev on whether the randomness request was solved, or reverted, respectively.
-    function startAwarding()
-      external
-      inStatus(Status.Randomizing)
-    {
-      uint _queryId = witnetQueryId;
-
-      // Use internal method inherited from UsingWitnet, as to check whether the randomness
-      // request has already been reported:
-      require(_witnetCheckResultAvailability(_queryId), "not yet reported");
-
-      // Low-level interaction with the WitnetRequestBoard as to deserialize the result,
-      // and check whether the randomness request failed or succeeded:
-      Witnet.Result memory _result = witnet.readResponseResult(_queryId);
-      if (_result.success) {
-        witnetRandomness = witnet.asBytes32(_result);
-      } else {
-        // step back to 'Playing' status:
-        witnetQueryId = 0;
-      }
-    }
-
-    /// ...
+    // Compose low-level Witnet data request bytecode,
+    // that will be eventually posted to the Witnet side-chain
+    // when calling to _witnetPostRequest(witnetRequest)
+    witnetRequest = new WitnetRequest(
+      hex"0a0f120508021a01801a0210022202100b10e807180a200a2833308094ebdc03"
+    );
+    /// @dev Witnet Data Request decoded as:
+    ///
+    /// {
+    ///    "retrieve": [
+    ///      {
+    ///        "kind": "RNG",
+    ///        "url": "",
+    ///        "script": []
+    ///      }
+    ///    ],
+    ///    "aggregate": {
+    ///      "filters": [],
+    ///      "reducer": 2
+    ///    },
+    ///    "tally": {
+    ///      "filters": [],
+    ///      "reducer": 11
+    ///    }
+    /// }
+    ///
   }
-  ```
 
-### Example 5: Clone a pre-deployed WitnetRequestRandomness contract 
-  ```
-  contract MyContract {
-    WitnetRequestRandomness public witnetRequest;
-    contructor(IWitnetRandomness _witnet) {
-      witnetRequest = _witnet.witnetRandomnessRequest();
-      // transfer request ownership to deployer:
-      witnetRequest.transferOwnership(msg.sender);
+  /// @dev Calculate current status.
+  function status() public view returns (Status) {
+    if (witnetRandomness != bytes32(0)) {
+      return Status.Awarding;
+    } else if (witnetQueryId > 0) {
+      return Status.Randomizing;
+    } else {
+      return Status.Playing;
     }
-    // ...
   }
-  ```
+
+  /// @dev Pass from 'Playing' to 'Randomizing' status
+  function stopPlaying()
+      external payable
+      onlyOwner
+      inStatus(Status.Playing)
+  {
+    // Use internal method inherited from UsingWitnet, as to send the low-level randomness 
+    // request to the WitnetRequestBoard instance. `msg.value` needs to be high enough as
+    // to cover for `_witnetReward`
+    uint256 _witnetReward;
+    (witnetQueryId, _witnetReward) = _witnetPostRequest(witnetRequest);
+
+    // Transfer back unused funds:
+    if (msg.value > _witnetReward) {
+      payable(msg.sender).transfer(msg.value - _witnetReward);
+    }
+  }
+
+  /// @dev Pass from 'Randomizing' to either 'Awarding' or 'Playing' status, depending
+  /// @dev on whether the randomness request was solved, or reverted, respectively.
+  function startAwarding()
+    external
+    inStatus(Status.Randomizing)
+  {
+    uint _queryId = witnetQueryId;
+
+    // Use internal method inherited from UsingWitnet, as to check whether the randomness
+    // request has already been reported:
+    require(_witnetCheckResultAvailability(_queryId), "not yet reported");
+
+    // Low-level interaction with the WitnetRequestBoard as to deserialize the result,
+    // and check whether the randomness request failed or succeeded:
+    Witnet.Result memory _result = witnet.readResponseResult(_queryId);
+    if (_result.success) {
+      witnetRandomness = witnet.asBytes32(_result);
+    } else {
+      // step back to 'Playing' status:
+      witnetQueryId = 0;
+    }
+  }
+
+  /// ...
+}
+```
+
+### Example 5: Clone a pre-deployed WitnetRequestRandomness contract
+
+```
+contract MyContract {
+  WitnetRequestRandomness public witnetRequest;
+  contructor(WitnetRandomness _witnet) {
+    witnetRequest = WitnetRequestRandomness(address(
+      _witnet.witnetRandomnessRequest().clone()
+    ));
+    // witnetRequest is now owned by `msg.sender`
+  }
+  // ...
+}
+```

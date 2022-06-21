@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Ethereum networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Ethereum
+  ecosystem
 ---
 
 # Ethereum Price Feeds

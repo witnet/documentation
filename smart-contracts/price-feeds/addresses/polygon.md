@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Polygon networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Polygon
+  ecosystem
 cover: ../../../.gitbook/assets/polygon.png
 coverY: 0
 ---

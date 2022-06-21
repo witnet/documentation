@@ -1,5 +1,5 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Boba networks
+description: Price feeds currently supported by the Witnet Foundation on the Boba ecosystem
 cover: ../../../.gitbook/assets/boba.png
 coverY: 0
 ---

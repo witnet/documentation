@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Moonbeam networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Moonbeam
+  ecosystem
 ---
 
 # Moonbeam Price Feeds
@@ -36,6 +38,7 @@ description: Price feeds currently supported by the Witnet Foundation on Moonbea
 | -------------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_btc-usd\_6)         | `0x24beead4` |    24 hours   |      1.0%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_eth-usd\_6)         | `0x3d15f701` |    24 hours   |      1.0%     |      15'     |
+| [Price-GLINT/USD-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glint-usd\_6)     | `0x5825c341` |    24 hours   |      1.0%     |      15'     |
 | [Price-GLINT/USDC-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glint-usdc\_6)   | `0x38b57cfe` |    24 hours   |      1.0%     |      15'     |
 | [Price-GLINT/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glint-usdt\_6)   | `0x6d85fc1a` |    24 hours   |      1.0%     |      15'     |
 | [Price-GLMR/USDT-6](https://feeds.witnet.io/feeds/moonbeam-moonbase\_glmr-usdt\_6)     | `0xe4cc70ab` |    24 hours   |      1.0%     |      15'     |

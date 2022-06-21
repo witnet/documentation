@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Harmony networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Harmony
+  ecosystem
 ---
 
 # Harmony Price Feeds

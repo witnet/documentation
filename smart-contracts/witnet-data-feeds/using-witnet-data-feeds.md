@@ -20,16 +20,16 @@ pragma solidity ^0.8.11;
 
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
 
-contract MyContractBoba {
-    IWitnetPriceRouter public router;
+contract MyContract {
+    IWitnetPriceRouter immutable public router;
     
     /**
-     * IMPORTANT: replace the address below with the WitnetPriceRouter address
-     * of the network you are using! Please find the address here:
+     * IMPORTANT: pass the WitnetPriceRouter address depending on 
+     * the network you are using! Please find available addresses here:
      * https://docs.witnet.io/smart-contracts/price-feeds/contract-addresses
      */
-    constructor()
-        router = IWitnetPriceRouter(0x8F61C7b18F69bB87D6151B8a5D733E1945ea6c25);
+    constructor(IWitnetPriceRouter _router))
+        router = _router;
     }
     
     /// Returns the BTC / USD price (6 decimals), ultimately provided by the Witnet oracle.
@@ -91,18 +91,18 @@ pragma solidity ^0.8.11;
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
 
-contract MyContractCelo {
+contract MyContract {
 
-    IWitnetPriceRouter public immutable witnetPriceRouter;
+    IWitnetPriceRouter immutable public witnetPriceRouter;
     IWitnetPriceFeed public celoEurPrice;
     
     /**
-     * IMPORTANT: replace the address below with the WitnetPriceRouter address
-     * of the network you are using! Please find the address here:
+     * IMPORTANT: pass the WitnetPriceRouter address depending on 
+     * the network you are using! Please find available addresses here:
      * https://docs.witnet.io/smart-contracts/price-feeds/contract-addresses
      */
-    constructor()
-        witnetPriceRouter = IWitnetPriceRouter(0x6f8A7E2bBc1eDb8782145cD1089251f6e2C738AE);
+    constructor(IWitnetPriceRouter _router)
+        witnetPriceRouter = _router;
         updateCeloEurPriceFeed();
     }
     
@@ -146,22 +146,23 @@ pragma solidity ^0.8.11;
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
 
-contract MyContractConflux {
-    IWitnetPriceRouter public router;
+contract MyContract {
+    IWitnetPriceRouter immutable public router;
     
     /**
-     * Network: Conflux Testnet
-     * WitnetPriceRouter: 0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a
+     * IMPORTANT: pass the WitnetPriceRouter address depending on 
+     * the network you are using! Please find available addresses here:
+     * https://docs.witnet.io/smart-contracts/price-feeds/contract-addresses
      */
-    constructor()
-        router = IWitnetPriceRouter(0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a);
+    constructor(IWitnetPriceRouter _router)
+        router = _router;
     }
     
     receive () external payable {}
     
     /// Force udpate on the CFX / USDT currency pair
     function forceCfxUsdtUpdate() external payable {
-        IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes4(0x65784185));
+        IWitnetPriceFeed _priceFeed = router.getPriceFeed(bytes32(0x65784185));
         uint _updateFee = _priceFeed.estimateFee(tx.gasprice);
         _priceFeed.requestUpdate{value: _updateFee}();
         if (msg.value > _updateFee) {

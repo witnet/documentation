@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Conflux networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Conflux
+  ecosystem
 ---
 
 # Conflux Price Feeds

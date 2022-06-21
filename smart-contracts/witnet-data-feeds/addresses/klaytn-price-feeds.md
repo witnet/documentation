@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Klaytn networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Klaytn
+  ecosystem
 ---
 
 # Klaytn Price Feeds

@@ -52,11 +52,17 @@ _**Ethereum Goerli**:_ [`0x6Eb87EcCe6218Cd0e97299331D2aa5d2e53da5cD`](https://go
 
 _**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://rinkeby.etherscan.io/address/0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921)
 
+## Kava
+
+_**Kava Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://explorer.kava.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+
+_**Kava Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.evm-alpha.kava.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0/read-contract)``
+
 ## Klaytn
 
-_**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)\`\`
+_**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](contract-addresses.md#avalanche-c-chain)\`\`
+_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](contract-addresses.md#avalanche-c-chain)
 
 ## KuCoin Community Chain
 

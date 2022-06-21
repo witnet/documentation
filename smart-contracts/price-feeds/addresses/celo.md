@@ -1,5 +1,5 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Celo networks
+description: Price feeds currently supported by the Witnet Foundation on the Celo ecosystem
 cover: ../../../.gitbook/assets/Celo.png
 coverY: 0
 ---

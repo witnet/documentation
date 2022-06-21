@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Avalanche networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Avalanche
+  ecosystem
 ---
 
 # Avalanche Price Feeds

@@ -1,5 +1,7 @@
 ---
-description: Price feeds currently supported by the Witnet Foundation on Cronos networks
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Cronos
+  ecosystem
 cover: ../../../.gitbook/assets/Cronos-3.png
 coverY: 0
 ---
