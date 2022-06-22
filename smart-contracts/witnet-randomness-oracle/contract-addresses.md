@@ -98,4 +98,6 @@ _**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mum
 
 ## `SmartBCH`
 
+_**SmartBCH Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.smartscan.cash/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+
 _**SmartBCH Amber**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.smartscan.cash/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)

@@ -38,8 +38,16 @@ You can request support for additional chains using [this form](https://tally.so
 [harmony.md](harmony.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/kava-price-feeds.md" %}
+[kava-price-feeds.md](../../witnet-data-feeds/addresses/kava-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="kcc.md" %}
 [kcc.md](kcc.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../witnet-data-feeds/addresses/klaytn-price-feeds.md" %}
+[klaytn-price-feeds.md](../../witnet-data-feeds/addresses/klaytn-price-feeds.md)
 {% endcontent-ref %}
 
 {% content-ref url="metis.md" %}
@@ -56,4 +64,8 @@ You can request support for additional chains using [this form](https://tally.so
 
 {% content-ref url="polygon.md" %}
 [polygon.md](polygon.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../witnet-data-feeds/addresses/smartbch-price-feeds.md" %}
+[smartbch-price-feeds.md](../../witnet-data-feeds/addresses/smartbch-price-feeds.md)
 {% endcontent-ref %}

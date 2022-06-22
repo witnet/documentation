@@ -10,9 +10,9 @@ description: Price feeds currently supported by the Witnet Foundation on the Kav
 
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
-| [Price-KAVA/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_kava-usd\_6)   | `0xde77dd55` |    24 hours   |      0.5%     |      5'      |
-| [Price-KAVA/USDT-6](https://feeds.witnet.io/kava/kava-mainnet\_kava-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      5'      |
-| [Price-USDT/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      5'      |
+| [Price-KAVA/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_kava-usd\_6)   | `0xde77dd55` |    24 hours   |      0.5%     |      15'     |
+| [Price-KAVA/USDT-6](https://feeds.witnet.io/kava/kava-mainnet\_kava-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 ### Kava Testnet
 
@@ -20,11 +20,9 @@ description: Price feeds currently supported by the Witnet Foundation on the Kav
 
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
-| [Price-KAVA/USD-6](https://feeds.witnet.io/kava/kava-testnet\_kava-usd\_6)    | `0xde77dd55` |    24 hours   |      0.5%     |      5'      |
-| [Price-KAVA/USDT-6](https://feeds.witnet.io/feeds/kava-testnet\_kava-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      5'      |
-| [Price-USDT/USD-6](https://feeds.witnet.io/kava/kava-testnet\_usdt-usd\_6)    | `0x538f5a25` |    24 hours   |      0.1%     |      5'      |
-
-
+| [Price-KAVA/USD-6](https://feeds.witnet.io/kava/kava-testnet\_kava-usd\_6)    | `0xde77dd55` |    24 hours   |      0.5%     |      15'     |
+| [Price-KAVA/USDT-6](https://feeds.witnet.io/feeds/kava-testnet\_kava-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/kava/kava-testnet\_usdt-usd\_6)    | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update.

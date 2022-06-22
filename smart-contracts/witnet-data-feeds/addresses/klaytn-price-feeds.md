@@ -12,7 +12,9 @@ description: >-
 
 | **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-KLAY/USD-6](https://feeds.witnet.io/klaytn/klaytn-mainnet\_klay-usd\_6)   | `0x6cc828d1` |    24 hours   |      0.5%     |      15'     |
 | [Price-KLAY/USDT-6](https://feeds.witnet.io/klaytn/klaytn-mainnet\_klay-usdt\_6) | `0x5d9add33` |    24 hours   |      0.5%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/klaytn/klaytn-mainnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 ### Klaytn Baobab
 
@@ -20,8 +22,9 @@ description: >-
 
 | **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-KLAY/USD-6](https://feeds.witnet.io/klaytn/klaytn-testnet\_klay-usdt\_6)  | `0x6cc828d1` |    24 hours   |      0.5%     |      15'     |
 | [Price-KLAY/USDT-6](https://feeds.witnet.io/klaytn/klaytn-testnet\_klay-usdt\_6) | `0x5d9add33` |    24 hours   |      0.5%     |      15'     |
-|                                                                                  |              |               |               |              |
+| [Price-USDT/USD-6](https://feeds.witnet.io/klaytn/klaytn-testnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update.
