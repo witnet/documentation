@@ -36,6 +36,7 @@
     * [Kava Price Feeds](smart-contracts/witnet-data-feeds/addresses/kava-price-feeds.md)
     * [KCC Price Feeds](smart-contracts/price-feeds/addresses/kcc.md)
     * [Klaytn Price Feeds](smart-contracts/witnet-data-feeds/addresses/klaytn-price-feeds.md)
+    * [Meter Price Feeds](smart-contracts/witnet-data-feeds/addresses/meter-price-feeds.md)
     * [Metis Price Feeds](smart-contracts/price-feeds/addresses/metis.md)
     * [Moonbeam Price Feeds](smart-contracts/price-feeds/addresses/moonbeam.md)
     * [OKXChain Price Feeds](smart-contracts/witnet-data-feeds/addresses/okxchain-price-feeds.md)

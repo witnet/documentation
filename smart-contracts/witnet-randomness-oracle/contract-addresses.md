@@ -74,6 +74,10 @@ _**KCC Mainnet**:_ [`0xB31F5606EAC9ff8F373837F446aB8d942DcD64a5`](https://scan.k
 
 _**KCC Testnet**:_ [`0x76c72518060952FAec3f90666F047e39E3333f7E`](https://scan-testnet.kcc.network/address/0x76c72518060952FAec3f90666F047e39E3333f7E)
 
+## **Meter**
+
+_**Meter Testnet**:_ [`0x89de43D6295D960Af1F2029a66CE680c7f798fC1`](https://scan-warringstakes.meter.io/address/0x89de43D6295D960Af1F2029a66CE680c7f798fC1)
+
 ## Metis
 
 _**Metis Andromeda**:_ [`0xB280e3B785f615C000A8BeBb55C35eCD2376F2eb`](https://andromeda-explorer.metis.io/address/0xB280e3B785f615C000A8BeBb55C35eCD2376F2eb)

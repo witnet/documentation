@@ -54,6 +54,10 @@ You can request support for additional chains using [this form](https://tally.so
 [klaytn-price-feeds.md](../../witnet-data-feeds/addresses/klaytn-price-feeds.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/meter-price-feeds.md" %}
+[meter-price-feeds.md](../../witnet-data-feeds/addresses/meter-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="metis.md" %}
 [metis.md](metis.md)
 {% endcontent-ref %}
