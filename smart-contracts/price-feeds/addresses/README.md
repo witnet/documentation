@@ -38,6 +38,10 @@ You can request support for additional chains using [this form](https://tally.so
 [harmony.md](harmony.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/hsc-price-feeds.md" %}
+[hsc-price-feeds.md](../../witnet-data-feeds/addresses/hsc-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="../../witnet-data-feeds/addresses/kava-price-feeds.md" %}
 [kava-price-feeds.md](../../witnet-data-feeds/addresses/kava-price-feeds.md)
 {% endcontent-ref %}

@@ -52,6 +52,10 @@ _**Ethereum Goerli**:_ [`0x6Eb87EcCe6218Cd0e97299331D2aa5d2e53da5cD`](https://go
 
 _**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://rinkeby.etherscan.io/address/0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921)
 
+## Hoo Smart Chain
+
+_**HSC Testnet**:_ [`0xe1330491bdC37fc4E8801843Bb3015815822F8A8`](https://testnet.hooscan.com/address/0xe1330491bdC37fc4E8801843Bb3015815822F8A8)
+
 ## Kava
 
 _**Kava Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://explorer.kava.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)

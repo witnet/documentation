@@ -50,6 +50,10 @@ _**Ethereum Rinkeby**:_ [`0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4`](https://r
 
 _**Harmony Testnet**:_ [`0x58d8ece142c60f5707594a7c1d90e46eae5af431`](https://explorer.pops.one/address/0x58d8ece142c60f5707594a7c1d90e46eae5af431)
 
+## `Hoo Smart Chain`
+
+_**HSC Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://testnet.hooscan.com/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
+
 ## Kava
 
 _**Kava Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://explorer.kava.io/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
