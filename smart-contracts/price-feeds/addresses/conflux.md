@@ -25,6 +25,7 @@ description: >-
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_btc-usd\_6)   | `0x24beead4` |     1 hour    |      1.0%     |      5'      |
 | [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_cfx-usdt\_6) | `0x65784185` |     1 hour    |      1.0%     |      5'      |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_eth-usd\_6)   | `0x3d15f701` |     1 hour    |      1.0%     |      5'      |
+| Price-USDC/USD-6                                                                      | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/conflux-espace-mainnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 ### Conflux Core (Testnet)
@@ -46,6 +47,7 @@ description: >-
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/conflux-espace-testnet\_btc-usd\_6)   | `0x24beead4` |     1 hour    |      1.0%     |      5'      |
 | [Price-CFX/USDT-6](https://feeds.witnet.io/feeds/conflux-espace-testnet\_cfx-usdt\_6) | `0x65784185` |     1 hour    |      1.0%     |      5'      |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/conflux-espace-testnet\_eth-usd\_6)   | `0x3d15f701` |     1 hour    |      1.0%     |      5'      |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/conflux-espace-testnet\_usdc-usd\_6) | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/conflux-espace-testnet\_usdt-usd\_6) | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 {% hint style="success" %}

@@ -44,6 +44,10 @@ _**Cronos Mainnet**:_ [`0x3737be6FcFf5B3B0f9DCc9a9ae1Da56561D0d0d3`](https://cro
 
 _**Cronos Testnet**:_ [`0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643`](https://cronos.org/explorer/testnet3/address/0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643)
 
+## **Cube Network**
+
+_**Cube EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://testnet.cubescan.network/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+
 ## Ethereum
 
 _**Ethereum Mainnet**:_ [`0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8`](https://etherscan.io/address/0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8)
@@ -58,9 +62,9 @@ _**HSC Testnet**:_ [`0xe1330491bdC37fc4E8801843Bb3015815822F8A8`](https://testne
 
 ## Kava
 
-_**Kava Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://explorer.kava.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+_**Kava EVM Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://explorer.kava.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Kava Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.evm-alpha.kava.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0/read-contract)``
+_**Kava EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.evm-alpha.kava.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0/read-contract)``
 
 ## Klaytn
 

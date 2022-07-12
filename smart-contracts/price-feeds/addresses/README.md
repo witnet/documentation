@@ -30,6 +30,10 @@ You can request support for additional chains using [this form](https://tally.so
 [cronos.md](cronos.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/cube-price-feeds.md" %}
+[cube-price-feeds.md](../../witnet-data-feeds/addresses/cube-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="ethereum.md" %}
 [ethereum.md](ethereum.md)
 {% endcontent-ref %}

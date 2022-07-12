@@ -38,6 +38,10 @@ _**Cronos Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://cro
 
 _**Cronos Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://cronos.org/explorer/testnet3/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
+## Cube Network
+
+_**Cube EVM Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://testnet.cubescan.network/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
+
 ## Ethereum
 
 _**Ethereum Mainnet**:_ [`0x9E4fae1c7ac543a81E4E2a5486a0dDaad8194bdA`](https://etherscan.io/address/0x9E4fae1c7ac543a81E4E2a5486a0dDaad8194bdA)
@@ -50,15 +54,15 @@ _**Ethereum Rinkeby**:_ [`0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4`](https://r
 
 _**Harmony Testnet**:_ [`0x58d8ece142c60f5707594a7c1d90e46eae5af431`](https://explorer.pops.one/address/0x58d8ece142c60f5707594a7c1d90e46eae5af431)
 
-## `Hoo Smart Chain`
+## Hoo Smart Chain
 
 _**HSC Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://testnet.hooscan.com/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
 ## Kava
 
-_**Kava Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://explorer.kava.io/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
+_**Kava EVM Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://explorer.kava.io/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
 
-_**Kava Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://explorer.evm-alpha.kava.io/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431/read-proxy)``
+_**Kava EVM Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://explorer.evm-alpha.kava.io/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431/read-proxy)``
 
 ## Klaytn
 
