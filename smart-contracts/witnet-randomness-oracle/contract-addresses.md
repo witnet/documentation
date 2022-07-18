@@ -70,7 +70,7 @@ _**Kava EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://e
 
 _**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](contract-addresses.md#avalanche-c-chain)
+_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://baobab.scope.klaytn.com/account/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f?tabId=txList)``
 
 ## KuCoin Community Chain
 
