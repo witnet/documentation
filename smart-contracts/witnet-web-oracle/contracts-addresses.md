@@ -78,6 +78,8 @@ _**KCC Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://scan-t
 
 ## Meter
 
+_**Meter Mainnet**:_ [`0x4e645446799776B9670D18E1ecBCad059987eaCa`](https://scan.meter.io/address/0x4e645446799776B9670D18E1ecBCad059987eaCa)
+
 _**Meter Testnet**:_ [`0xF99883aa51Fb76E37De6aC37854230d2337D2752`](https://scan-warringstakes.meter.io/address/0xF99883aa51Fb76E37De6aC37854230d2337D2752)
 
 ## Metis
