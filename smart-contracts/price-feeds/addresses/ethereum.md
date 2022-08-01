@@ -12,8 +12,7 @@ description: >-
 
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
-| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet\_btc-usd\_6) | `0x24beead4` |    24 hours   |      3.5%     |    1 hour    |
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet\_eth-usd\_6) | `0x3d15f701` |    24 hours   |      3.5%     |    1 hour    |
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/ethereum-mainnet\_eth-usd\_6) | `0x3d15f701` |     7 days    |      3.5%     |    7 days    |
 
 ### Ethereum Goerli
 
