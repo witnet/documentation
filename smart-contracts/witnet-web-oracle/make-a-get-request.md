@@ -11,7 +11,7 @@ One of the core functionalities of the Witnet oracle is to enable smart contract
 
 This is best suited for pieces of data that are available on multiple APIs, because many of them can be queried at once and aggregated together, thus getting an increased level of decentralization and fault tolerance.
 
-### Performing HTTP GET queries from your Solidity smart contracts <a href="#performing-http-get-queries-right-from-your-solidity-smart-contracts" id="performing-http-get-queries-right-from-your-solidity-smart-contracts"></a>
+### Performing HTTP GET requests from your Solidity smart contracts <a href="#performing-http-get-queries-right-from-your-solidity-smart-contracts" id="performing-http-get-queries-right-from-your-solidity-smart-contracts"></a>
 
 Witnet oracle queries are explicit. That means that the queries themselves specify what are the data sources to be used, how to filter outliers, and how to aggregate aggregate the results from multiple APIs into a final point (e.g. computing the average).
 
