@@ -54,7 +54,7 @@
 * [🌐 Witnet Web Oracle](smart-contracts/witnet-web-oracle/README.md)
   * [HTTP GET Requests in Solidity](smart-contracts/witnet-web-oracle/make-a-get-request.md)
   * [HTTP POST Requests in Solidity](smart-contracts/witnet-web-oracle/make-a-post-request.md)
-  * [Querying GraphQL APIs in Solidity](smart-contracts/witnet-web-oracle/querying-graphql-apis-in-solidity.md)
+  * [Query GraphQL APIs in Solidity](smart-contracts/witnet-web-oracle/query-graphql-apis-in-solidity.md)
   * [UsingWitnet Inheritance](smart-contracts/witnet-web-oracle/usingwitnet-inheritance.md)
   * [WitnetRequestBoard Contract](smart-contracts/witnet-web-oracle/witnet-request-board.md)
   * [API Reference](smart-contracts/witnet-web-oracle/api-reference/README.md)
