@@ -1,11 +1,11 @@
 ---
 description: >-
-  The Witnet Web Oracle enables smart contracts to fetch data from web APIs
-  without introducing single point of failures — data integrity is guaranteed
-  through multi-layered decentralization.
+  In addition to HTTP GET, the Witnet Web Oracle also gives your smart contracts
+  the ability to perform POST queries with full data integrity thanks to its
+  multi-layered decentralization model.
 ---
 
-# Make an HTTP POST Request
+# HTTP POST Requests in Solidity
 
 One of the core functionalities of the Witnet oracle is to enable smart contracts to perform HTTP requests to APIs (both [GET](make-a-get-request.md) and POST).
 
@@ -39,7 +39,8 @@ This little example queries an [HTTPBin API](https://httpbin.org/) that echoes b
 These are the arguments of `HttpPostSource`:
 
 1. URL to query, as a String
-2. Request body (aka _data_), as a String
-3. Headers, as a JavaScript object
+2. Request body (aka _data_), as a String (optional)
+3. Headers, as a JavaScript object (optional)
 
 There is nothing special or specific to the compilation, instantiation and deployment of HTTP POST requests. If you need help with that, please check out the guide for [HTTP GET requests](make-a-get-request.md).
+
