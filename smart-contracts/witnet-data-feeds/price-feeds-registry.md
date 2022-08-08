@@ -1,6 +1,32 @@
-# Using Price Feeds
+# How To Use Witnet Price Feeds
 
-The Witnet's **Price Feeds Router** allows your smart contract, or Web3 application, to get the latest updated price value of any of the [**currency pairs**](price-feeds-registry.md#currency-pairs) subsidized by the Witnet Foundation, without needing to know the actual contract addresses in charge of requesting and receiving price updates from the Witnet oracle's sidechain.
+The preferred way to consume the Witnet-powered price feeds is through the **Price Feeds Router**. ****&#x20;
+
+This smart contract is deployed in all the **** [**supported chains**](../price-feeds/addresses/) **** and allows your own smart contracts and Web3 applications to get the latest price of any of the [**supported currency pairs**](price-feeds-registry.md#currency-pairs) **** by providing the identifier of the pair to a single Solidity method. This removes the need to know the actual contract addresses handling the price updates from the Witnet oracle.
+
+![](<../../.gitbook/assets/image (3).png>)
+
+Alternatively, the Price Feeds Router also lets you find out the actual address of the **Price Feed** contract that is currently serving a specific currency pair (if that pair is supported in your chain).
+
+While all the supported currency pairs are automatically updated in a timely manner according to their different [update conditions](triggering-conditions.md), you can always use the Price Feed contracts to [trigger a new price update](using-witnet-data-feeds.md#forcing-an-update-on-a-witnet-maintained-curreny-pair) at any time, if willing to pay the required gas for that.
+
+## Code examples
+
+Check this out for [different examples](using-witnet-data-feeds.md) on how to read prices from the Price Feeds Router and the Price Feeds contracts:
+
+{% content-ref url="using-witnet-data-feeds.md" %}
+[using-witnet-data-feeds.md](using-witnet-data-feeds.md)
+{% endcontent-ref %}
+
+## Update conditions
+
+Different price feeds are updated with different periods or every time that certain conditions are met. You can find all the [conditions for updating](triggering-conditions.md) here:
+
+{% content-ref url="triggering-conditions.md" %}
+[triggering-conditions.md](triggering-conditions.md)
+{% endcontent-ref %}
+
+## Currency pairs
 
 **Currency pairs** are identified by a `bytes32` value, calculated as the `keccak256` hash of the currency pair caption. The caption is composed as the string concatenation of: **`Price-`**, first asset denomination (e.g. **`BTC`**), **`/`**, second asset denomination (e.g. **`USD`**), **`-`**, and the number of decimals.
 
@@ -8,15 +34,7 @@ The Witnet's **Price Feeds Router** allows your smart contract, or Web3 applicat
 For the sake of simplicity, currency pairs served by the Witnet's Price Router can also be identified by just using the first 4 bytes (see ID4 below) of the full `bytes32` identifier (ID32).
 {% endhint %}
 
-From the Price Router you may also retrieve the Witnet's **Price Feed** contract that is currently serving a given currency pair, if any. While the Witnet Foundation will make its best to keep all committed currency pairs updated in a timely manner, you can always use the Price Feed contract to [trigger a new price update](using-witnet-data-feeds.md#forcing-an-update-on-a-witnet-maintained-curreny-pair) at any time, if willing to pay the required gas for that.
-
-## Currency pairs
-
-This table contains the currency pairs that are currently updated by the Witnet Foundation on a regular basis:
-
-{% content-ref url="triggering-conditions.md" %}
-[triggering-conditions.md](triggering-conditions.md)
-{% endcontent-ref %}
+This table contains all the currency pairs that are currently being updated on a regular basis:
 
 | **Caption**                                                                                                                    | **ID4**          | **ID32**                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------ | ---------------- | -------------------------------------------------------------------- |

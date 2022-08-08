@@ -20,8 +20,8 @@
 
 * [⛓ Supported chains](smart-contracts/supported-chains.md)
 * [📈 Witnet Price Feeds](smart-contracts/witnet-data-feeds/README.md)
-  * [Using Price Feeds](smart-contracts/witnet-data-feeds/price-feeds-registry.md)
-  * [Triggering Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
+  * [How To Use Witnet Price Feeds](smart-contracts/witnet-data-feeds/price-feeds-registry.md)
+  * [Update Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
   * [Code Examples](smart-contracts/witnet-data-feeds/using-witnet-data-feeds.md)
   * [API Reference](smart-contracts/witnet-data-feeds/api-reference.md)
   * [Multi-chain Addresses](smart-contracts/price-feeds/addresses/README.md)

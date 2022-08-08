@@ -131,13 +131,13 @@ When interacting with a **IWitnetPriceFeed** contract, you can get not only the 
 Moreover, you can also detect whether there is a recent price update pending to be solved, or if the latest update attempt could not get solved for whatever reason.
 {% endhint %}
 
-## Forcing an update on a Witnet-maintained curreny pair
+## Forcing an update on a Witnet-powered currency pair
 
 ### Solidity example
 
 First, get from the **`WitnetPriceRouter`** contract the **`IWitnetPriceFeed`** address that is currently serving price updates on any given currency pair.
 
-Then, just call on the `requestUpdate() payable` method.
+Then, just call the `requestUpdate() payable` method.
 
 ```solidity
 // SPDX-License-Identifier: MIT
