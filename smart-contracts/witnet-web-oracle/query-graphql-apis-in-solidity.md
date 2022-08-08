@@ -5,7 +5,7 @@ description: >-
   its multi-layered decentralization model.
 ---
 
-# Querying GraphQL APIs in Solidity
+# Query GraphQL APIs in Solidity
 
 GraphQL APIs are just a special type of HTTP POST API. As such, you can query any GraphQL API using the HTTP POST functionality of the Witnet Web Oracle:
 

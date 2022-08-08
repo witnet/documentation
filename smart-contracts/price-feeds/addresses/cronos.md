@@ -13,6 +13,7 @@ coverY: 0
 | **Caption**                                                                     | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/feeds/cronos-mainnet\_btc-usd\_6)     | `0x24beead4` |    24 hours   |      1.0%     |      15'     |
+| [Price-CRO/USD-6](https://feeds.witnet.io/cronos/cronos-mainnet\_cro-usd\_6)    | `0xb17bf1b8` |    24 hours   |      3.5%     |      15'     |
 | [Price-CRO/USDT-6](https://feeds.witnet.io/feeds/cronos-mainnet\_cro-usdt\_6)   | `0x6b8258ca` |    24 hours   |      1.0%     |      15'     |
 | [Price-ELON/USD-9](https://feeds.witnet.io/feeds/cronos-mainnet\_elon-usd\_9)   | `0x2b9a3c85` |    24 hours   |      3.5%     |      15'     |
 | [Price-ELON/USDT-9](https://feeds.witnet.io/feeds/cronos-mainnet\_elon-usdt\_9) | `0xb744b63f` |    24 hours   |      3.5%     |      15'     |
