@@ -5,7 +5,7 @@ description: >-
   through multi-layered decentralization.
 ---
 
-# Make an HTTP GET Request
+# HTTP GET Requests in Solidity
 
 One of the core functionalities of the Witnet oracle is to enable smart contracts to perform HTTP requests to APIs (both GET and [POST](make-a-post-request.md)).
 
@@ -23,17 +23,23 @@ Installing the Witnet dependencies into your existing Truffle or Harhat project 
 
 {% tabs %}
 {% tab title="npm" %}
-`npm install witnet-requests witnet-solidity-bridge --save-prod`
+`npm install witnet-solidity-bridge --save-prod`
+
+`npm install witnet-requests --save-dev`
 {% endtab %}
 
 {% tab title="yarn" %}
-`yarn add witnet-requests witnet-solidity-bridge`
+`yarn add witnet-solidity-bridge`
+
+`yarn add witnet-requests --dev`
 {% endtab %}
 {% endtabs %}
 
+
+
 #### 2. Create a folder to store your oracle queries
 
-Most developers normally put their oracle queries into a directory named `witnet` , `queries` or `requests`.
+Most developers normally put their oracle queries into a directory named `witnet` inside their project.
 
 #### 3. Create your first oracle query
 
@@ -60,7 +66,7 @@ const binance = new Witnet.Source("https://api.binance.US/api/v3/trades?symbol=E
 Once this query gets picked up by the Witnet oracle, this part will be instructing it to visit the Binance API, parse the result as a JSON object, get the `price` field as a floating point number, multiply it by 10,000,00, and round the result to the closest integer number.
 
 {% hint style="info" %}
-The "multiply and round" trick is often used to overcome Solidity's lack of floating point numbers. For example, if you use `10 ** 6` as your multiplier, the result that you will get in Solidity will be implicitely using 6 decimal digits.
+The "multiply and round" trick is often used to overcome Solidity's lack of floating point numbers. For example, if you use `10 ** 6` as your multiplier, the result that you will get in Solidity will be implicitly using 6 decimal digits.
 {% endhint %}
 
 #### 5. Define a second and third API data sources (Coinbase and Kraken)
@@ -106,12 +112,7 @@ When aggregating multiple data source, there are always two steps:&#x20;
 Although aggregators provide a lot of flexibility, most users often default to using this one that tends to work very well for price feed use cases, as it first removes any data point that is too far off the average more than 1.5 times the standard deviation of the set, and then simply compute the average mean of the data points that passed the filter:
 
 ```javascript
-const aggregator = new Witnet.Aggregator({
-  filters: [
-    [Witnet.Types.FILTERS.deviationStandard, 1.5],
-  ],
-  reducer: Witnet.Types.REDUCERS.averageMean,
-})
+const aggregator = Witnet.Aggregator.deviationAndMean(1.5)
 ```
 
 {% hint style="info" %}
@@ -129,12 +130,7 @@ This second layer of aggregation (often called _tally_) mitigates trust in the d
 Tally functions are defined in a very similar way to aggregators. This is the most common tally for price feed oracle queries:
 
 ```javascript
-const tally = new Witnet.Tally({
-  filters: [
-    [Witnet.Types.FILTERS.deviationStandard, 2.5],
-  ],
-  reducer: Witnet.Types.REDUCERS.averageMean,
-})
+const tally = Witnet.Tally.deviationAndMean(2.5)
 ```
 
 #### 8. Put it all together and fine-tune the incentives
@@ -144,7 +140,7 @@ Once you have specified our data sources, the aggregation and the tally, you are
 This how you attach everything we have defined so far into a single Witnet oracle query:
 
 ```javascript
-const query = new Witnet.Request()
+const query = new Witnet.Query()
   .addSource(binance)
   .addSource(coinbase)
   .addSource(kraken)
@@ -175,7 +171,7 @@ Fees and rewards are denominated in nanoWit (the base monetary unit of the proto
 &#x20;You are now ready to compile your first Witnet oracle query. It is as simple as running this command from your project's directory:
 
 ```
-npx rad2sol
+npx rad2sol --write-contracts
 ```
 
 This command will automatically analyze the JavaScript file that you wrote, compile it into Witnet bytecode, wrap it into a small Solidity contract, and put it inside your `./contracts/requests` directory, ready for importing from your own Solidity contracts.
@@ -189,7 +185,7 @@ Before continuing with the Solidity part, it is always a good idea to run the or
 The witnet-requests library itself provides a command to try oracle queries locally by spawning a ephemeral instance of the Witnet runtime on the spot:
 
 ```
-npx witnet-toolkit try-data-request --from-solidity
+npx witnet-toolkit try-query --from-solidity
 ```
 
 This command should output a pretty printed execution report. Simply double check that the result of each data source makes sense, and the final result in the tally stage is also coherent.
@@ -290,7 +286,13 @@ Simply take into account that your contract will need to get the address of `Wit
 [contracts-addresses.md](contracts-addresses.md)
 {% endcontent-ref %}
 
-In case that you are using Truffle, `rad2sol` will automatically generate migrations for the Witnet libraries, as well as for your own contracts. These migrations will already contain the right addresses for all supported networks. If you look at the `migrations` folder, you should find these two files:
+In case that you are using Truffle, `rad2sol` can automatically generate migrations for the Witnet libraries, as well as for your own contracts, if you use it like this:
+
+```
+npx rad2sol --write-contracts --write-witnet-migrations --write-user-migrations
+```
+
+These migrations will already contain the right addresses for all supported networks. If you look at the `migrations` folder, you should find these two files:
 
 * `1_witnet_core.js`: deploys all the Witnet-related contracts if you are deploying on a local or private network; or dynamically links them if you are on a public network.
 * `2_user_contracts.js`: contains autogenerated migration scripts for your consumer contracts.
