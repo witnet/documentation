@@ -68,6 +68,7 @@ description: >-
 * [Gate.io (WIT/USDT)](https://www.gate.io/trade/WIT\_USDT)
 * [Gate.io (WIT/ETH)](https://www.gate.io/trade/WIT\_ETH)
 * [Gate.io (WIT/BTC)](https://www.gate.io/trade/WIT\_BTC)
+* [MEXC (WIT/USDT)](https://www.mexc.com/exchange/WIT\_USDT)
 
 ### General
 
