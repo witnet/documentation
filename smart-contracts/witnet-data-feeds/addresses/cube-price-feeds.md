@@ -1,6 +1,24 @@
+---
+description: >-
+  Price feeds currently supported by the Witnet Foundation on the Cube Network
+  ecosystem
+---
+
 # Cube Price Feeds
 
-Price feeds currently supported by the Witnet Foundation on the Cube Network ecosystem
+### Cube EVM Mainnet
+
+**WitnetPriceRouter**: [`0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87`](https://cubescan.network/address/0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87)
+
+| **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-BTC/USD-6](https://feeds.witnet.io/feeds/cube-mainnet\_btc-usd\_6)     | `0x24beead4` |    24 hours   |      3.5%     |      15'     |
+| [Price-CUBE/USD-6](https://feeds.witnet.io/feeds/cube-mainnet\_cube-usd\_6)   | `0xdccf2aa9` |    24 hours   |      3.5%     |      15'     |
+| [Price-CUBE/USDT-6](https://feeds.witnet.io/feeds/cube-mainnet\_cube-usdt\_6) | `0xd1ebbd70` |    24 hours   |      3.5%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/cube-mainnet\_dai-usd\_6)     | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/cube-mainnet\_eth-usd\_6)     | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |
+| [Price-USDC/USD-6](https://feeds.witnet.io/feeds/cube-mainnet\_usdc-usd\_6)   | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/cube-mainnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
 ### Cube EVM Testnet
 

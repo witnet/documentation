@@ -40,6 +40,8 @@ _**Cronos Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://cro
 
 ## Cube Network
 
+_**Cube EVM Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://cubescan.network/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
+
 _**Cube EVM Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://testnet.cubescan.network/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
 ## Ethereum
