@@ -112,6 +112,10 @@ _**Polygon Mainnet**:_ [`0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5`](https://po
 
 _**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mumbai.polygonscan.com/address/0x0178287DfECA2F13F342512282bc8B59e774aE43)
 
+## Reef
+
+_**Reef Testnet**:_ [`0x3f159F3bD5c27A936E0C897a4584Eb1647a62197`](https://testnet.reefscan.com/contract/0x3f159F3bD5c27A936E0C897a4584Eb1647a62197)
+
 ## `SmartBCH`
 
 _**SmartBCH Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.smartscan.cash/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
