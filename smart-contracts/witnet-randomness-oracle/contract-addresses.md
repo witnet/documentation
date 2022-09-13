@@ -116,8 +116,12 @@ _**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mum
 
 _**Reef Testnet**:_ [`0x3f159F3bD5c27A936E0C897a4584Eb1647a62197`](https://testnet.reefscan.com/contract/0x3f159F3bD5c27A936E0C897a4584Eb1647a62197)
 
-## `SmartBCH`
+## SmartBCH
 
 _**SmartBCH Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.smartscan.cash/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
 _**SmartBCH Amber**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.smartscan.cash/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+
+## Syscoin
+
+_**Syscoin Testnet**:_ [`0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D`](https://tanenbaum.io/address/0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D)

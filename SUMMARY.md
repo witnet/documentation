@@ -44,6 +44,7 @@
     * [Polygon Price Feeds](smart-contracts/price-feeds/addresses/polygon.md)
     * [Reef Price Feeds](smart-contracts/witnet-data-feeds/addresses/reef-price-feeds.md)
     * [SmartBCH Price Feeds](smart-contracts/witnet-data-feeds/addresses/smartbch-price-feeds.md)
+    * [Syscoin Price Feeds](smart-contracts/witnet-data-feeds/addresses/syscoin-price-feeds.md)
     * [Request new price feed or chain support](https://tally.so/r/wMZDAn)
 * [🎲 Witnet Randomness Oracle](smart-contracts/witnet-randomness-oracle/README.md)
   * [Generating Randomness](smart-contracts/witnet-randomness-oracle/generating-randomness.md)
