@@ -25,6 +25,7 @@ description: >-
 | **Metis**                        | <ul><li>stardust</li><li>andromeda</li></ul>                                                      | <ul><li><a href="price-feeds/addresses/metis.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#metis">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#metis">HTTP GET/POST</a></li></ul>                                 |
 | **Moonbeam**                     | <ul><li>mainnet</li><li>moonriver</li><li>moonbase</li></ul>                                      | <ul><li><a href="price-feeds/addresses/moonbeam.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#moonbeam">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#moonbeam">HTTP GET/POST</a></li></ul>                        |
 | **OKXChain (OKC)**               | <ul><li>mainnet</li><li>testnet</li></ul>                                                         | <ul><li><a href="price-feeds/addresses/okxchain.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#okx-chain">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#okx-chain">HTTP GET/POST</a></li></ul>                      |
+| **Optimism**                     | <ul><li>goerli</li></ul>                                                                          | <ul><li><a href="witnet-data-feeds/addresses/optimism-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#optimism">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#optimism">HTTP GET/POST</a></li></ul>      |
 | **Polygon**                      | <ul><li>mainnet</li><li>mumbai</li></ul>                                                          | <ul><li><a href="price-feeds/addresses/polygon.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#polygon">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#polygon">HTTP GET/POST</a></li></ul>                           |
 | **Reef**                         | <ul><li>testnet</li></ul>                                                                         | <ul><li><a href="witnet-data-feeds/addresses/reef-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#reef">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#reef">HTTP GET/POST</a></li></ul>                  |
 | **SmartBCH**                     | <ul><li>mainnet</li><li>testnet</li></ul>                                                         | <ul><li><a href="witnet-data-feeds/addresses/smartbch-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#smartbch">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#smartbch">HTTP GET/POST</a></li></ul>      |
@@ -34,13 +35,12 @@ description: >-
 
 | Platform                | Networks                                  | Progress     |
 | ----------------------- | ----------------------------------------- | ------------ |
+| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
 | **Arbitrum**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
+| **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
 | **Avalanche**           | <ul><li>Subnets</li></ul>                 | ETA: 2022 Q4 |
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Harmony**             | <ul><li>mainnet</li></ul>                 | ETA: 2022 Q3 |
-| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Optimism**            | <ul><li>kovan</li><li>mainnet</li></ul>   | ETA: 2022 Q3 |
+| **Harmony**             | <ul><li>mainnet</li></ul>                 | ETA: 2022 Q4 |
 | **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>  | ETA: 2022 Q4 |
 
 ### Request support for a new chain

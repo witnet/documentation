@@ -106,6 +106,10 @@ _**OKXChain Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://w
 
 _**OKXChain Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.oklink.com/en/okc-test/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
 
+## Optimism
+
+_**Optimism Goerli**:_ [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://blockscout.com/optimism/goerli/address/0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604)
+
 ## Polygon
 
 _**Polygon Mainnet**:_ [`0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5`](https://polygonscan.com/address/0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5)
