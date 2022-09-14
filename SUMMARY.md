@@ -68,7 +68,7 @@
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
 
 * [🖥 Requirements](node-operators/requirements.md)
-* [🚀 Docker Quick Start Guide](node-operators/docker-quick-start-guide.md)
+* [🚀 Witnet Node Quick Start Guide (Docker)](node-operators/docker-quick-start-guide.md)
 * [🔎 Next steps](node-operators/next-steps.md)
 * [📄 CLI Reference](node-operators/cli.md)
 * [🤓 Advanced Setups](node-operators/advanced-setups/README.md)

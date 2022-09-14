@@ -1,4 +1,4 @@
-# 🚀 Docker Quick Start Guide
+# 🚀 Witnet Node Quick Start Guide (Docker)
 
 **The Witnet Mainnet is open for anyone to join and and run their own full node.**
 
@@ -39,17 +39,21 @@ docker run -d \
 {% tab title="Windows" %}
 The home directory path is defined differently on Windows:
 
+{% code overflow="wrap" %}
 ```
 docker run -d --name witnet_node --volume %USERPROFILE%\.witnet\:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Raspberry Pi" %}
 Docker on Raspbian for all Raspberry models requires your containers to operate in privileged mode to have access to the system clock. When running the command above, simply add the `--privileged` flag:
 
+{% code overflow="wrap" %}
 ```
 docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
