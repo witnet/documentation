@@ -84,7 +84,7 @@ If this setting is not found in the configuration file, paranoid mode is disable
 
 ### `paranoid_percentage`
 
-The `paranoid_percentage` setting adjusts how strict or lenient to be with inconsistent data sources. Paranoid level is defined as the percentage of successful retrievals over total number of retrieval transports. That is, if we have 3 proxies in addition to the default unproxied transport (4), and we set the paranoid percentage to 51 (51%), the node will only refrain from commiting to requests in which "half plus one" of the data sources are in consensus (3 out of 4).
+The `paranoid_percentage` setting adjusts how strict or lenient to be with inconsistent data sources. Paranoid level is defined as the percentage of successful retrievals over total number of retrieval transports. That is, if we have 3 proxies in addition to the default unproxied transport (4), and we set the paranoid percentage to 51 (51%), the node will only commit to requests in which "half plus one" of the data sources are in consensus (3 out of 4).
 
 {% code title="~/.witnet/config/witnet.toml" %}
 ```toml
