@@ -74,6 +74,7 @@
 * [🤓 Advanced Setups](node-operators/advanced-setups/README.md)
   * [Run Witnet as a systemd service](node-operators/advanced-setups/systemd.md)
   * [Run Witnet as a docker-compose service](node-operators/advanced-setups/docker-compose.md)
+  * [Paranoid mode (Witnet over proxies and Tor)](node-operators/advanced-setups/paranoid-mode-witnet-over-proxies-and-tor.md)
 
 ## Developer Reference
 
