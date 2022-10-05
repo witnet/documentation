@@ -127,7 +127,7 @@ There are plenty of publicly accessible HTTP, HTTPS, SOCKS4 and SOCKS5 proxy ser
 * [ProxyNova](https://www.proxynova.com/proxy-server-list/)
 * [Geonode](https://geonode.com/free-proxy-list/)
 
-While there are thousands of different proxy addresses you can choose from, finding a good one is a bit hit or missit often takes a lot of trial and error. Public proxies also tend to be very slow and can go down unadvertedly at any time. In general terms, they are not reliable enough for the witnessing activity of a Witnet node. Other options such as premium SOCKS5 proxy services and Tor are much preferable.
+While there are thousands of different proxy addresses you can choose from, finding a good one is a bit hit or miss—it often takes a lot of trial and error. Public proxies also tend to be very slow and can go down unadvertedly at any time. In general terms, they are not reliable enough for the witnessing activity of a Witnet node. Other options such as premium SOCKS5 proxy services and Tor are much preferable.
 
 ### Premium SOCKS5 proxy services (recommended)
 
