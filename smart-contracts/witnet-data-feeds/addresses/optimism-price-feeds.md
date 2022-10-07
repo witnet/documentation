@@ -6,6 +6,14 @@ description: >-
 
 # Optimism Price Feeds
 
+### Optimism Mainnet
+
+**WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://optimistic.etherscan.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
+
+| **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-OP/USDT-6](https://feeds.witnet.io/optimism/optimism-mainnet\_op-usdt\_6) | `0x330f8afd` |    24 hours   |      1.0%     |      15'     |
+
 ### Optimism Goerli (testnet)
 
 **WitnetPriceRouter**: [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://blockscout.com/optimism/goerli/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530)

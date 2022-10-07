@@ -106,6 +106,8 @@ _**OKXChain Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://w
 
 ## Optimism
 
+_**Optimism Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://optimistic.etherscan.io/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
+
 _**Optimism Goerli**:_ [`0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb`](https://blockscout.com/optimism/goerli/address/0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb)
 
 ## Polygon
