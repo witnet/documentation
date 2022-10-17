@@ -35,12 +35,12 @@ description: >-
 
 | Platform                | Networks                                  | Progress     |
 | ----------------------- | ----------------------------------------- | ------------ |
-| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
+| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | TBD          |
 | **Arbitrum**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Avalanche**           | <ul><li>Subnets</li></ul>                 | ETA: 2022 Q4 |
+| **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | TBD          |
+| **Avalanche**           | <ul><li>Subnets</li></ul>                 | TBD          |
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Harmony**             | <ul><li>mainnet</li></ul>                 | ETA: 2022 Q4 |
-| **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>  | ETA: 2022 Q4 |
+| **Harmony**             | <ul><li>mainnet</li></ul>                 | TBD          |
+| **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>  | TBD          |
 
 ### Request support for a new chain
