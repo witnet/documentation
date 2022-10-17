@@ -6,7 +6,15 @@ description: >-
 
 # Syscoin Price Feeds
 
-### Syscoin Tanenbaum Testnet
+### Syscoin NEVM Mainnet
+
+**WitnetPriceRouter**: [`0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87`](https://explorer.syscoin.org/address/0xE22f48DDdcb34BD34489fE224d7fFC1b0a361D87)
+
+| **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-SYS/USDT-6](https://feeds.witnet.io/syscoin/syscoin-mainnet\_sys-usdt\_6) | `0x97eb8366` |    24 hours   |      1.0%     |      15'     |
+
+### Syscoin NEVM Tanenbaum (testnet)
 
 **WitnetPriceRouter**: [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://tanenbaum.io/address/0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604)
 

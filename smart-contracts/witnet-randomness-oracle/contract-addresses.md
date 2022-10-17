@@ -130,4 +130,6 @@ _**SmartBCH Amber**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www
 
 ## Syscoin
 
+_**Syscoin Mainnet:**_ [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://explorer.syscoin.org/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
+
 _**Syscoin Testnet**:_ [`0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D`](https://tanenbaum.io/address/0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D)
