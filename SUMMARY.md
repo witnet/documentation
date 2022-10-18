@@ -31,6 +31,7 @@
     * [Conflux Price Feeds](smart-contracts/price-feeds/addresses/conflux.md)
     * [Cronos Price Feeds](smart-contracts/price-feeds/addresses/cronos.md)
     * [Cube Price Feeds](smart-contracts/witnet-data-feeds/addresses/cube-price-feeds.md)
+    * [Dogechain Price Feeds](smart-contracts/witnet-data-feeds/addresses/dogechain-price-feeds.md)
     * [Ethereum Price Feeds](smart-contracts/price-feeds/addresses/ethereum.md)
     * [Harmony Price Feeds](smart-contracts/price-feeds/addresses/harmony.md)
     * [HSC Price Feeds](smart-contracts/witnet-data-feeds/addresses/hsc-price-feeds.md)

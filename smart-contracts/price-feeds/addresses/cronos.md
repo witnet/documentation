@@ -37,7 +37,7 @@ coverY: 0
 | [Price-ELON/USD-9](https://feeds.witnet.io/feeds/cronos-testnet\_elon-usd\_9)    | `0x2b9a3c85` |    24 hours   |      3.5%     |      15'     |
 | [Price-ELON/USDT-9](https://feeds.witnet.io/feeds/cronos-testnet\_elon-usdt\_9)  | `0xb744b63f` |    24 hours   |      3.5%     |      15'     |
 | [Price-DAI/USD-6](https://feeds.witnet.io/cronos/cronos-testnet\_dai-usd\_6)     | `0x9899e356` |    24 hours   |     0.25%     |      15'     |
-| [Price-DOGE/USD-6](https://feeds.witnet.io/cronos/cronos-testnet\_doge-usd\_6)   | `0xdfc89c9`8 |    24 hours   |      3.5%     |      15'     |
+| [Price-DOGE/USD-6](https://feeds.witnet.io/cronos/cronos-testnet\_doge-usd\_6)   | `0xdfc89c98` |    24 hours   |      3.5%     |      15'     |
 | [Price-DOT/USD-6](https://feeds.witnet.io/cronos/cronos-testnet\_dot-usd\_6)     | `0xd61e1f61` |    24 hours   |      3.5%     |      15'     |
 | [Price-EOS/USD-6](https://feeds.witnet.io/cronos/cronos-testnet\_eos-usd\_6)     | `0x151e7a87` |    24 hours   |      3.5%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/feeds/cronos-testnet\_eth-usd\_6)      | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |

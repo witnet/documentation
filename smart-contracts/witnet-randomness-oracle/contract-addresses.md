@@ -50,6 +50,10 @@ _**Cube EVM Mainnet**:_ [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://c
 
 _**Cube EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://testnet.cubescan.network/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
 
+## Dogechain
+
+_**Dogechain Testnet**:_ [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://explorer-testnet.dogechain.dog/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530)
+
 ## Ethereum
 
 _**Ethereum Mainnet**:_ [`0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8`](https://etherscan.io/address/0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8)
@@ -129,5 +133,7 @@ _**SmartBCH Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://w
 _**SmartBCH Amber**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.smartscan.cash/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
 
 ## Syscoin
+
+_**Syscoin Mainnet:**_ [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://explorer.syscoin.org/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
 
 _**Syscoin Testnet**:_ [`0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D`](https://tanenbaum.io/address/0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D)

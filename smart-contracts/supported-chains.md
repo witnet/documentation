@@ -16,6 +16,7 @@ description: >-
 | **Conflux Network**              | <ul><li>core mainnet</li><li>core testnet</li><li>espace testnet</li><li>espace mainnet</li></ul> | <ul><li><a href="price-feeds/addresses/conflux.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#conflux-network">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#conflux-network">HTTP GET/POST</a></li></ul>           |
 | **Cronos Chain**                 | <ul><li>testnet</li><li>mainnet</li></ul>                                                         | <ul><li><a href="price-feeds/addresses/cronos.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#cronos-chain">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#cronos-chain">HTTP GET/POST</a></li></ul>                  |
 | **Cube Network**                 | <ul><li>mainnet</li><li>testnet</li></ul>                                                         | <ul><li><a href="witnet-data-feeds/addresses/cube-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#cube-network">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#cube-network">HTTP GET/POST</a></li></ul>  |
+| **Dogechain**                    | <ul><li>testnet</li></ul>                                                                         | <ul><li><a href="witnet-data-feeds/addresses/dogechain-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#dogechain">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#dogechain">HTTP GET/POST</a></li></ul>   |
 | **Ethereum**                     | <ul><li>mainnet</li><li>rinkeby</li><li>goerli</li></ul>                                          | <ul><li><a href="price-feeds/addresses/ethereum.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#ethereum">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#ethereum">HTTP GET/POST</a></li></ul>                        |
 | **Harmony**                      | <ul><li>testnet</li></ul>                                                                         | <ul><li><a href="price-feeds/addresses/harmony.md">Price Feeds</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#harmony">HTTP GET/POST</a></li></ul>                                                                                                                   |
 | **Kava**                         | <ul><li>mainnet</li><li>testnet</li></ul>                                                         | <ul><li><a href="witnet-data-feeds/addresses/kava-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#kava">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#kava">HTTP GET/POST</a></li></ul>                  |
@@ -29,18 +30,18 @@ description: >-
 | **Polygon**                      | <ul><li>mainnet</li><li>mumbai</li></ul>                                                          | <ul><li><a href="price-feeds/addresses/polygon.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#polygon">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#polygon">HTTP GET/POST</a></li></ul>                           |
 | **Reef**                         | <ul><li>testnet</li></ul>                                                                         | <ul><li><a href="witnet-data-feeds/addresses/reef-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#reef">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#reef">HTTP GET/POST</a></li></ul>                  |
 | **SmartBCH**                     | <ul><li>mainnet</li><li>testnet</li></ul>                                                         | <ul><li><a href="witnet-data-feeds/addresses/smartbch-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#smartbch">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#smartbch">HTTP GET/POST</a></li></ul>      |
-| **Syscoin**                      | <ul><li>testnet</li></ul>                                                                         | <ul><li><a href="witnet-data-feeds/addresses/syscoin-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#syscoin">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#syscoin">HTTP GET/POST</a></li></ul>         |
+| **Syscoin**                      | <ul><li>mainnet</li><li>testnet</li></ul>                                                         | <ul><li><a href="witnet-data-feeds/addresses/syscoin-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#syscoin">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#syscoin">HTTP GET/POST</a></li></ul>         |
 
 ### Chains with upcoming support
 
 | Platform                | Networks                                  | Progress     |
 | ----------------------- | ----------------------------------------- | ------------ |
-| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
+| **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | TBD          |
 | **Arbitrum**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Avalanche**           | <ul><li>Subnets</li></ul>                 | ETA: 2022 Q4 |
+| **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | TBD          |
+| **Avalanche**           | <ul><li>Subnets</li></ul>                 | TBD          |
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
-| **Harmony**             | <ul><li>mainnet</li></ul>                 | ETA: 2022 Q4 |
-| **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>  | ETA: 2022 Q4 |
+| **Harmony**             | <ul><li>mainnet</li></ul>                 | TBD          |
+| **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>  | TBD          |
 
 ### Request support for a new chain
