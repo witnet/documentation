@@ -6,7 +6,7 @@ description: >-
 
 # Paranoid mode (Witnet over proxies and Tor)
 
-Witnet-Rust now supports an opt-in functionality called _**paranoid mode**_. This mode protects nodes from being targetted by ill-intended data requests that may harm their reputation score and steal part of their collateralized Wit coins.
+Witnet-Rust now supports an opt-in functionality called _**paranoid mode**_. This mode protects nodes from being targeted by ill-intended data requests that may harm their reputation score and steal part of their collateralized Wit coins.
 
 When a node is in paranoid mode, in addition of performing data retrieval through its regular network interface, it will also perform the retrieval over one or more network proxies. Only if the result is consistent across all the proxies, it will proceed to submit a commitment as a response to the request.
 
