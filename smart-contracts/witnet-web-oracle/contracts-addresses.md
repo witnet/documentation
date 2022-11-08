@@ -46,6 +46,8 @@ _**Cube EVM Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://t
 
 ## Dogechain
 
+_**Dogechain Mainnet**:_ [`0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9`](https://explorer.dogechain.dog/address/0xF2712e7114A237625EFC8bBA6a6ed1Bb8b6029c9)
+
 _**Dogechain Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://explorer-testnet.dogechain.dog/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
 ## Ethereum

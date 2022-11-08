@@ -6,6 +6,14 @@ description: >-
 
 # Dogechain Price Feeds
 
+### Dogechain Mainnet
+
+**WitnetPriceRouter**: [`0xD7f7933992c25A504e9Ddf7e76a3c1D6c432b25D`](https://explorer.dogechain.dog/address/0xD7f7933992c25A504e9Ddf7e76a3c1D6c432b25D)
+
+| **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-DOGE/USD-6](https://feeds.witnet.io/feeds/dogechain-mainnet\_doge-usd\_6) | `0xdfc89c98` |    24 hours   |      1.0%     |      15'     |
+
 ### Dogechain Testnet
 
 **WitnetPriceRouter**: [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://explorer-testnet.dogechain.dog/address/0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604)
