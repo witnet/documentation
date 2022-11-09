@@ -40,6 +40,15 @@ coverY: 0
 | [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby\_usdc-usd\_6)   | `0x4c80cf2e` |    24 hours   |     0.25%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-rinkeby\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |     0.25%     |      15'     |
 
+### Boba DEV/L2 Bobabase
+
+**WitnetPriceRouter**: [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://blockexplorer.bobabase.boba.network/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530)
+
+| **Caption**                                                                             | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| --------------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-moonbeam-bobabase\_boba-usdt\_6) | `0xf723bde1` |    24 hours   |      3.5%     |      15'     |
+| [Price-GLMR/USDT-6](https://feeds.witnet.io/feeds/boba-moonbeam-bobabase\_glmr-usdt\_6) | `0xe4cc70ab` |    24 hours   |      3.5%     |      15'     |
+
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update.
 {% endhint %}

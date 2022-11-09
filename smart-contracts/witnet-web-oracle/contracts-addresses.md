@@ -16,6 +16,8 @@ _**Boba Mainnet**:_ [`0xd3AD9a4b26527E3bA5Fc60B75Eb002D47D98e292`](https://block
 
 _**Boba Rinkeby**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://blockexplorer.rinkeby.boba.network/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
+_**Boba DEV/L2 Bobabase**:_ [`0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb`](https://blockexplorer.bobabase.boba.network/address/0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb)
+
 ## Celo
 
 _**Celo Mainnet**:_ [`0x03E709E6422E30C033456FCde38C70A12553E468`](https://explorer.celo.org/address/0x03E709E6422E30C033456FCde38C70A12553E468)
