@@ -10,6 +10,10 @@ description: Multi-chain deployed addresses of the WitnetRandomness contract.
 You can request support for additional chains using [this form](https://tally.so/r/wMZDAn).
 {% endhint %}
 
+## Arbitrum
+
+_**Arbitrum Nitro Goerli**:_ [`0xB0C5d40A7658b2ab28360aFa6eB5bAeb2fFe86c3`](https://goerli.arbiscan.io/address/0xB0C5d40A7658b2ab28360aFa6eB5bAeb2fFe86c3)
+
 ## Avalanche C-Chain
 
 _**Avalanche Mainnet**:_ [`0xa4A73a2A32320282a4d7dDe6a7467AeFA3B7950F`](https://snowtrace.io/address/0xa4A73a2A32320282a4d7dDe6a7467AeFA3B7950F#readContract)

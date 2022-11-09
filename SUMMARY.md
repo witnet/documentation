@@ -25,6 +25,7 @@
   * [Code Examples](smart-contracts/witnet-data-feeds/using-witnet-data-feeds.md)
   * [API Reference](smart-contracts/witnet-data-feeds/api-reference.md)
   * [Multi-chain Addresses](smart-contracts/price-feeds/addresses/README.md)
+    * [Arbitrum Price Feeds](smart-contracts/witnet-data-feeds/addresses/arbitrum-price-feeds.md)
     * [Avalanche Price Feeds](smart-contracts/price-feeds/addresses/avalanche.md)
     * [Boba Price Feeds](smart-contracts/price-feeds/addresses/boba.md)
     * [Celo Price Feeds](smart-contracts/price-feeds/addresses/celo.md)

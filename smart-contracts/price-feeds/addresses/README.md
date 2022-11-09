@@ -10,6 +10,10 @@ description: Multi-chain deployed addresses of the WitnetPriceRouter contract.
 You can request support for additional chains using [this form](https://tally.so/r/wMZDAn).
 {% endhint %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/arbitrum-price-feeds.md" %}
+[arbitrum-price-feeds.md](../../witnet-data-feeds/addresses/arbitrum-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="avalanche.md" %}
 [avalanche.md](avalanche.md)
 {% endcontent-ref %}
@@ -32,6 +36,10 @@ You can request support for additional chains using [this form](https://tally.so
 
 {% content-ref url="../../witnet-data-feeds/addresses/cube-price-feeds.md" %}
 [cube-price-feeds.md](../../witnet-data-feeds/addresses/cube-price-feeds.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../witnet-data-feeds/addresses/dogechain-price-feeds.md" %}
+[dogechain-price-feeds.md](../../witnet-data-feeds/addresses/dogechain-price-feeds.md)
 {% endcontent-ref %}
 
 {% content-ref url="ethereum.md" %}
@@ -74,10 +82,22 @@ You can request support for additional chains using [this form](https://tally.so
 [okxchain-price-feeds.md](../../witnet-data-feeds/addresses/okxchain-price-feeds.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/optimism-price-feeds.md" %}
+[optimism-price-feeds.md](../../witnet-data-feeds/addresses/optimism-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="polygon.md" %}
 [polygon.md](polygon.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/reef-price-feeds.md" %}
+[reef-price-feeds.md](../../witnet-data-feeds/addresses/reef-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="../../witnet-data-feeds/addresses/smartbch-price-feeds.md" %}
 [smartbch-price-feeds.md](../../witnet-data-feeds/addresses/smartbch-price-feeds.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../witnet-data-feeds/addresses/syscoin-price-feeds.md" %}
+[syscoin-price-feeds.md](../../witnet-data-feeds/addresses/syscoin-price-feeds.md)
 {% endcontent-ref %}

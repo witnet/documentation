@@ -4,6 +4,10 @@ description: Multi-chain deployed addressess of the WitnetRequestBoard entry-poi
 
 # Multi-chain Addresses
 
+## Arbitrum
+
+_**Arbitrum Nitro Goerli**:_ [`0xa6a6b2cBE9Ce5B8fF94729F1eC402efc5042AbBF`](https://goerli.arbiscan.io/address/0xa6a6b2cBE9Ce5B8fF94729F1eC402efc5042AbBF)
+
 ## Avalanche C-Chain
 
 _**Avalanche Mainnet**:_ [`0x1D9c4a8f8B7b5F9B8e2641D81927f8F8Cc7fF079`](https://snowtrace.io/address/0x1D9c4a8f8B7b5F9B8e2641D81927f8F8Cc7fF079#readProxyContract)

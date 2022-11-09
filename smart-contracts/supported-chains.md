@@ -10,6 +10,7 @@ description: >-
 
 | Platform                         | Networks                                                                                          | Services                                                                                                                                                                                                                                                                            |
 | -------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Arbitrum**                     | <ul><li>nitro goerli</li></ul>                                                                    | <ul><li><a href="witnet-data-feeds/addresses/arbitrum-price-feeds.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#arbitrum">HTTP GET/POST</a></li></ul>               |
 | **Avalanche**                    | <ul><li>C-Chain mainnet</li><li>C-Chain Fuji testnet</li></ul>                                    | <ul><li><a href="price-feeds/addresses/avalanche.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#avalanche-c-chains">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#avalanche-c-chain">HTTP GET/POST</a></li></ul>    |
 | **Boba Network**                 | <ul><li>ETH/L2 mainnet</li><li>ETH/L2 rinkeby</li><li>DEV/L2 bobabase</li></ul>                   | <ul><li><a href="price-feeds/addresses/boba.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#boba-network">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#boba-network">HTTP GET/POST</a></li></ul>                    |
 | **Celo**                         | <ul><li>mainnet</li><li>alfajores</li></ul>                                                       | <ul><li><a href="price-feeds/addresses/celo.md">Price Feeds</a></li><li><a href="witnet-randomness-oracle/contract-addresses.md#celo">Randomness</a></li><li><a href="witnet-web-oracle/contracts-addresses.md#celo">HTTP GET/POST</a></li></ul>                                    |
@@ -37,11 +38,11 @@ description: >-
 | Platform                | Networks                                  | Progress     |
 | ----------------------- | ----------------------------------------- | ------------ |
 | **Algorand**            | <ul><li>testnet</li><li>mainnet</li></ul> | TBD          |
-| **Arbitrum**            | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
 | **Aurora**              | <ul><li>testnet</li><li>mainnet</li></ul> | TBD          |
 | **Avalanche**           | <ul><li>Subnets</li></ul>                 | TBD          |
 | **Gnosis Chain (xDAI)** | <ul><li>testnet</li><li>mainnet</li></ul> | ETA: 2022 Q4 |
 | **Harmony**             | <ul><li>mainnet</li></ul>                 | TBD          |
+| **Hiro**                |                                           | TBD          |
 | **Solana**              | <ul><li>devnet</li><li>mainnet</li></ul>  | TBD          |
 
 ### Request support for a new chain
