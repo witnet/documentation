@@ -21,6 +21,21 @@ coverY: 0
 | [Price-USDC/USD-6](https://feeds.witnet.io/feeds/boba-ethereum-mainnet\_usdc-usd\_6)   | `0x4c80cf2e` |    24 hours   |      0.1%     |      15'     |
 | [Price-USDT/USD-6](https://feeds.witnet.io/feeds/boba-ethereum-mainnet\_usdt-usd\_6)   | `0x538f5a25` |    24 hours   |      0.1%     |      15'     |
 
+### Boba ETH/L2 Goerli
+
+**WitnetPriceRouter**: [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://testnet.bobascan.com/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
+
+| **Caption**                                                                           | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ------------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-BOBA/USDT-6](https://feeds.witnet.io/feeds/boba-ethereum-goerli\_boba-usdt\_6) | `0xf723bde1` |    24 hours   |      3.5%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/feeds/boba-ethereum-goerli\_dai-usd\_6)     | `0x9899e356` |    24 hours   |     0.25%     |      15'     |
+| [Price-FRAX/USDT-6](https://feeds.witnet.io/feeds/boba-ethereum-goerli\_frax-usdt\_6) | `0x1a3ea43e` |    24 hours   |     0.25%     |      15'     |
+| [Price-OLO/USDC-6](https://feeds.witnet.io/feeds/boba-ethereum-goerli\_olo-usdc\_6)   | `0xf75039c1` |    24 hours   |      3.5%     |      15'     |
+
+{% hint style="success" %}
+Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update.
+{% endhint %}
+
 ### Boba ETH/L2 Rinkeby
 
 **WitnetPriceRouter**: [`0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a`](https://blockexplorer.rinkeby.boba.network/address/0x36928Aeedaaf7D85bcA39aDfB2A39ec529ce221a/read-contract)

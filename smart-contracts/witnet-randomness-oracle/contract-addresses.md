@@ -24,6 +24,8 @@ _**Avalanche Fuji**:_ [`0xD47fc24C99fD94f33bD2f33FE373b1447bB10724`](https://tes
 
 _**Boba ETH/L2 Mainnet**:_ [`0x3D7Ccf6518deBE3d2fd20c4b6AEc3FD904c0Ad29`](https://blockexplorer.boba.network/address/0x3D7Ccf6518deBE3d2fd20c4b6AEc3FD904c0Ad29)
 
+_**Boba ETH/L2 Goerli**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://testnet.bobascan.com/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+
 _**Boba ETH/L2 Rinkeby**:_ [`0xeAcAcC48eDD5221EC7182E1789d8bFa9dF801dFF`](https://blockexplorer.rinkeby.boba.network/address/0xeAcAcC48eDD5221EC7182E1789d8bFa9dF801dFF)
 
 _**Boba DEV/L2 Bobabase**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://blockexplorer.bobabase.boba.network/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
