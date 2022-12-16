@@ -147,3 +147,7 @@ _**SmartBCH Amber**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://www
 _**Syscoin Mainnet:**_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://explorer.syscoin.org/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
 
 _**Syscoin Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://tanenbaum.io/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
+
+## Ultron
+
+_**Ultron Testnet:**_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://explorer.ultron-dev.io/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
