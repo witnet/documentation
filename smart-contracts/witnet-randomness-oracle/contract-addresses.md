@@ -138,6 +138,10 @@ _**Reef Mainnet**:_ [`0x03e82c280ae03af908edb250d3d187db0018e501`](https://reefs
 
 _**Reef Testnet**:_ [`0x3f159F3bD5c27A936E0C897a4584Eb1647a62197`](https://testnet.reefscan.com/contract/0x3f159F3bD5c27A936E0C897a4584Eb1647a62197)
 
+## Scroll
+
+_**Scroll pre-alpha**:_ [`0x225BAd150B9D5202DC805B34A0DF64B1a77459dF`](https://l2scan.scroll.io/address/0x225BAd150B9D5202DC805B34A0DF64B1a77459dF)
+
 ## SmartBCH
 
 _**SmartBCH Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.smartscan.cash/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)

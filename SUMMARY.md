@@ -46,6 +46,7 @@
     * [Optimism Price Feeds](smart-contracts/witnet-data-feeds/addresses/optimism-price-feeds.md)
     * [Polygon Price Feeds](smart-contracts/price-feeds/addresses/polygon.md)
     * [Reef Price Feeds](smart-contracts/witnet-data-feeds/addresses/reef-price-feeds.md)
+    * [Scroll Price Feeds](smart-contracts/witnet-data-feeds/addresses/scroll-price-feeds.md)
     * [SmartBCH Price Feeds](smart-contracts/witnet-data-feeds/addresses/smartbch-price-feeds.md)
     * [Syscoin Price Feeds](smart-contracts/witnet-data-feeds/addresses/syscoin-price-feeds.md)
     * [Ultron Price Feeds](smart-contracts/witnet-data-feeds/addresses/ultron-price-feeds.md)
