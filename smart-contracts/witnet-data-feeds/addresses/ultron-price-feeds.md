@@ -12,6 +12,11 @@ description: >-
 
 | **Caption**                                                                        | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-AVAX/USD-6](https://feeds.witnet.io/ultron/ultron-testnet\_avax-usd\_6)     | `0x356ba62f` |    24 hours   |      3.5%     |      15'     |
+| [Price-BTC/USD-6](https://feeds.witnet.io/ultron/ultron-testnet\_btc-usd\_6)       | `0x24beead4` |    24 hours   |      3.5%     |      15'     |
+| [Price-ETH/USD-6](https://feeds.witnet.io/ultron/ultron-testnet\_eth-usd\_6)       | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |
+| [Price-FTM/USDT-6](https://feeds.witnet.io/ultron/ultron-testnet\_ftm-usdt\_6)     | `0x7a256558` |    24 hours   |      3.5%     |      15'     |
+| [Price-MATIC/USD-6](https://feeds.witnet.io/ultron/ultron-testnet\_matic-usd\_6)   | `0x2063a4c9` |    24 hours   |      3.5%     |      15'     |
 | [Price-ULX/USDT-6](https://feeds.witnet.io/smartbch/ultron-testnet\_ulx-usdt\_6)   | `0x2eccefe0` |    24 hours   |      3.5%     |      15'     |
 | [Price-WBTC/WULX-6](https://feeds.witnet.io/smartbch/ultron-testnet\_wbtc-wulx\_6) | `0x6adcbb8a` |    24 hours   |      3.5%     |      15'     |
 | [Price-WETH/WULX-6](https://feeds.witnet.io/smartbch/ultron-testnet\_weth-wulx\_6) | `0xbb6ddf78` |    24 horus   |      3.5%     |      15'     |
