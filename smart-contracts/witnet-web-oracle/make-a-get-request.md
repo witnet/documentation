@@ -35,8 +35,6 @@ Installing the Witnet dependencies into your existing Truffle or Harhat project 
 {% endtab %}
 {% endtabs %}
 
-
-
 #### 2. Create a folder to store your oracle queries
 
 Most developers normally put their oracle queries into a directory named `witnet` inside their project.
@@ -97,14 +95,14 @@ const kraken = new Witnet.Source("https://api.kraken.com/0/public/Ticker?pair=ET
 ```
 
 {% hint style="info" %}
-The [witnet-price-feeds repository on GitHub](https://github.com/witnet/witnet-price-feeds/tree/master/requests) contains dozens of pre-built oracle queries that can give you a clear idea on how to deal with the APIs of many different exchanges.
+The [witnet-price-feeds repository on GitHub](https://github.com/witnet/witnet-price-feeds/tree/master/witnet/prices) contains dozens of pre-built oracle queries that can give you a clear idea on how to deal with the APIs of many different exchanges.
 {% endhint %}
 
 #### 6. Specify how to aggregate the different data sources
 
 One killer feature of the Witnet protocol is that it enables to build decentralization at the data source level by enabling you as a data requester to decide how the different data sources will be aggregated together.
 
-When aggregating multiple data source, there are always two steps:&#x20;
+When aggregating multiple data source, there are always two steps:
 
 * **Filter**: specify how to validate if a data point is good. E.g. in the event that there is a flash crash in the price reported by any of the exchanges above, we want to remove that outlier so it does not affect the final result.
 * **Reducer**: specify how to aggregate together the results coming from multiple data sources. E.g. once we have got rid of any outliers, we want to calculate the average mean of the remaining data points.
@@ -168,7 +166,7 @@ Fees and rewards are denominated in nanoWit (the base monetary unit of the proto
 
 #### 9. Compile the Witnet query into a Solidity contract
 
-&#x20;You are now ready to compile your first Witnet oracle query. It is as simple as running this command from your project's directory:
+You are now ready to compile your first Witnet oracle query. It is as simple as running this command from your project's directory:
 
 ```
 npx rad2sol --write-contracts
@@ -235,7 +233,7 @@ contract PriceFeed is UsingWitnet {
 }
 ```
 
-As you can read above, you will need a couple more properties:&#x20;
+As you can read above, you will need a couple more properties:
 
 * `requestId` will store the identifier of the latest instance of your query.
 * `latestPrice` will keep the latest successful result of your query.
@@ -274,7 +272,7 @@ function completeUpdate() public witnetRequestResolved(requestId) {
 
 As you can see, reading the result is pretty straightforward. First you read a `Witnet.Result` object, and then you need to decode the right Solidity data type (in this case, using `.asUint64()` to read the result as a `uint64`).
 
-The `witnetRequestResolved(requestId)` modifier prevents from calling your function before your query is resolved on the Witnet side. The `witnet.isOk(result)` function helps to tell if the query was resolved successfully or, on the contrary, there was some error.&#x20;
+The `witnetRequestResolved(requestId)` modifier prevents from calling your function before your query is resolved on the Witnet side. The `witnet.isOk(result)` function helps to tell if the query was resolved successfully or, on the contrary, there was some error.
 
 #### 15. Deploy your contract
 
@@ -303,7 +301,7 @@ Before running any migration, please make sure you double-check the default argu
 
 #### 16. Wrapping up
 
-Congratulations, you are set!&#x20;
+Congratulations, you are set!
 
 If you want to learn more, here is a GitHub repository containing a more advanced version of the example price feed that you just created:
 
