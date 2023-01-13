@@ -80,7 +80,7 @@ _**HSC Testnet**:_ [`0xe1330491bdC37fc4E8801843Bb3015815822F8A8`](https://testne
 
 _**Kava EVM Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://explorer.kava.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Kava EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.evm-alpha.kava.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0/read-contract)``
+_**Kava EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.testnet.kava.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
 
 ## Klaytn
 

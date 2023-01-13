@@ -19,7 +19,7 @@ description: Price feeds currently supported by the Witnet Foundation on the Kav
 
 ### Kava EVM Testnet
 
-**WitnetPriceRouter**: [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://explorer.evm-alpha.kava.io/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f/read-contract)``
+**WitnetPriceRouter**: [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://explorer.testnet.kava.io/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
 
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
