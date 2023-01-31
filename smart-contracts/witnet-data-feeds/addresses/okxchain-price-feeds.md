@@ -8,6 +8,15 @@ coverY: 0
 
 # OKXChain Price Feeds
 
+### OKXChain (Mainnet)
+
+**WitnetPriceRouter**: [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://www.oklink.com/en/okc/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53)
+
+| **Caption**                                                                     | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-OKT/USDT-6](https://feeds.witnet.io/feeds/okxchain-mainnet\_okt-usdt\_6) | `0x4ba45817` |     1 hour    |      0.5%     |      5'      |
+| [Price-USDT/USD-6](https://feeds.witnet.io/feeds/okxchain-mainnet\_usdt-usd\_6) | `0x538f5a25` |     1 hour    |      0.1%     |      5'      |
+
 ### OKXChain (Testnet)
 
 **WitnetPriceRouter**: [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://www.oklink.com/en/okc-test/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)

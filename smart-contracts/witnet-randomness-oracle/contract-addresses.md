@@ -156,4 +156,6 @@ _**Syscoin Testnet**:_ [`0x56834Ff8D4b27db647Da97CA3bd8540f7fA0e89D`](https://ta
 
 ## Ultron
 
+_**Ultron Mainnet:**_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://ulxscan.com/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+
 _**Ultron Testnet:**_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.ultron-dev.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)

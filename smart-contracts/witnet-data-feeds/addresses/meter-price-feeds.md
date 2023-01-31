@@ -6,6 +6,15 @@ description: >-
 
 # Meter Price Feeds
 
+### Meter Mainnet
+
+**WitnetPriceRouter**: [`0xA0Ea8C99159843afdAE9eD092E8eaec0368e8A20`](https://scan.meter.io/address/0xA0Ea8C99159843afdAE9eD092E8eaec0368e8A20)
+
+| **Caption**                                                                    | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ------------------------------------------------------------------------------ | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-MTRG/USDT-6](https://feeds.witnet.io/meter/meter-testnet\_mtrg-usdt\_6) | `0x844939d3` |    24 hours   |      3.5%     |      15'     |
+| [Price-MTR/USD-6](https://feeds.witnet.io/meter/meter-testnet\_mtr-usdt\_6)    | `0x1b055efb` |    24 hours   |      3.5%     |      15'     |
+
 ### Meter Testnet
 
 **WitnetPriceRouter**: [`0xBbDB82a16d7b66bb076879f766042b914F1C7572`](https://scan-warringstakes.meter.io/address/0xBbDB82a16d7b66bb076879f766042b914F1C7572)
