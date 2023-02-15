@@ -11,6 +11,7 @@ description: Price feeds currently supported by the Witnet Foundation on the Kav
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_btc-usd\_6)     | `0x24beead4` |    24 hours   |      3.5%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_dai-usd\_6)     | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_eth-usd\_6)     | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |
 | [Price-KAVA/USD-6](https://feeds.witnet.io/kava/kava-mainnet\_kava-usd\_6)   | `0xde77dd55` |    24 hours   |      0.5%     |      15'     |
 | [Price-KAVA/USDT-6](https://feeds.witnet.io/kava/kava-mainnet\_kava-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      15'     |
@@ -24,6 +25,7 @@ description: Price feeds currently supported by the Witnet Foundation on the Kav
 | **Caption**                                                                   | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ----------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
 | [Price-BTC/USD-6](https://feeds.witnet.io/kava/kava-testnet\_btc-usd\_6)      | `0x24beead4` |    24 hours   |      3.5%     |      15'     |
+| [Price-DAI/USD-6](https://feeds.witnet.io/kava/kava-testnet\_dai-usd\_6)      | `0x9899e356` |    24 hours   |      0.1%     |      15'     |
 | [Price-ETH/USD-6](https://feeds.witnet.io/kava/kava-testnet\_eth-usd\_6)      | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |
 | [Price-KAVA/USD-6](https://feeds.witnet.io/kava/kava-testnet\_kava-usd\_6)    | `0xde77dd55` |    24 hours   |      0.5%     |      15'     |
 | [Price-KAVA/USDT-6](https://feeds.witnet.io/feeds/kava-testnet\_kava-usdt\_6) | `0x465eb519` |    24 hours   |      0.5%     |      15'     |
