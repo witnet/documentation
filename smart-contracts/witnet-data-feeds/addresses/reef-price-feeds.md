@@ -8,7 +8,7 @@ description: >-
 
 ### Reef Mainnet
 
-**WitnetPriceRouter**: [`0xa22AbF47Fd1eDDf7C0967C9d7fF06FB3c42B26E2`](https://reefscan.com/contract/0xa22AbF47Fd1eDDf7C0967C9d7fF06FB3c42B26E2)
+**WitnetPriceRouter**: [`0x828d7517d9cf0d99f952d709371117ef8825e81b`](https://reefscan.com/contract/0x828d7517d9cf0d99f952d709371117ef8825e81b)
 
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
