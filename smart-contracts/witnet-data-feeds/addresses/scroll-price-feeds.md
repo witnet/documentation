@@ -6,9 +6,9 @@ description: >-
 
 # Scroll Price Feeds
 
-### Scroll pre-alpha (Testnet)
+### Scroll Alpha (Testnet)
 
-**WitnetPriceRouter**: [`0xE2Efa3fe66352e63F118bB9165435C5BEDB777d0`](https://l2scan.scroll.io/address/0xE2Efa3fe66352e63F118bB9165435C5BEDB777d0)
+**WitnetPriceRouter**: [`0xfeeeed88838b4fa4EE46D05c2148e645058f3C28`](https://blockscout.scroll.io/address/0xfeeeed88838b4fa4EE46D05c2148e645058f3C28)
 
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |

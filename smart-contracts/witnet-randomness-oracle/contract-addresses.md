@@ -140,7 +140,7 @@ _**Reef Testnet**:_ [`0x3f159F3bD5c27A936E0C897a4584Eb1647a62197`](https://testn
 
 ## Scroll
 
-_**Scroll pre-alpha**:_ [`0x225BAd150B9D5202DC805B34A0DF64B1a77459dF`](https://l2scan.scroll.io/address/0x225BAd150B9D5202DC805B34A0DF64B1a77459dF)
+_**Scroll Alpha**:_ [`0x123456f4De47e1947210CD62e2f8CF9c2FeD9d4d`](https://blockscout.scroll.io/address/0x123456f4De47e1947210CD62e2f8CF9c2FeD9d4d)
 
 ## SmartBCH
 
