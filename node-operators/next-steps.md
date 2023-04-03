@@ -25,7 +25,7 @@ In doing so, your node will be able to start participating in resolving data req
 
 This is crucial to increasing the mining probability because the network prioritizes blocks from identities with reputation or belonging to the ARS.
 
-Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 12.5 hours.
+Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 7 days.
 
 {% hint style="info" %}
 Join the [Witnet community](https://t.me/witnetio) and the [Witnet OTC community](https://t.me/witnet\_market) on Telegram to find out how to get an initial amount of WIT tokens that you can put into your node.
@@ -321,8 +321,6 @@ docker run -d \
     --restart always \    
     witnet/witnet-rust
 ```
-
-
 {% endtab %}
 
 {% tab title="Windows" %}
