@@ -64,6 +64,10 @@ _**Dogechain Mainnet**:_ [`0x7FdB9CDe98967140a5627dA5221DBC03Bd8e8ad5`](https://
 
 _**Dogechain Testnet**:_ [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://explorer-testnet.dogechain.dog/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530)
 
+## Elastos
+
+_**Elastos Testnet**:_ [`0x123456f4De47e1947210CD62e2f8CF9c2FeD9d4d`](https://esc-testnet.elastos.io/address/0x123456f4De47e1947210CD62e2f8CF9c2FeD9d4d)
+
 ## Ethereum
 
 _**Ethereum Mainnet**:_ [`0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8`](https://etherscan.io/address/0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8)
