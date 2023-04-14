@@ -90,7 +90,7 @@ _**Kava EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://e
 
 _**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://baobab.scope.klaytn.com/account/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f?tabId=txList)``
+_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://baobab.scope.klaytn.com/account/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f?tabId=txList)
 
 ## KuCoin Community Chain
 
@@ -102,7 +102,7 @@ _**KCC Testnet**:_ [`0x76c72518060952FAec3f90666F047e39E3333f7E`](https://scan-t
 
 _**Meter Mainnet**:_ [`0xE189B1D26dAAB45cd344452f29Db8E93B5C7FaF1`](https://scan.meter.io/address/0xE189B1D26dAAB45cd344452f29Db8E93B5C7FaF1)
 
-_**Meter Testnet**:_ [`0x89de43D6295D960Af1F2029a66CE680c7f798fC1`](https://scan-warringstakes.meter.io/address/0x89de43D6295D960Af1F2029a66CE680c7f798fC1)
+_**Meter Testnet**:_ [`0xa254632ae454bae18ff0221c2040aa387f044f0e`](https://scan-warringstakes.meter.io/address/0xa254632ae454bae18ff0221c2040aa387f044f0e)
 
 ## Metis
 

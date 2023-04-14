@@ -73,7 +73,7 @@ Integration architecture:
 [YOUR APP] → [WITNET-RUST WALLET] → [WITNET-RUST NODE] → [WITNET NETWORK]
 ```
 
-Witnet Foundation operates a publicly available `node` instance that acts as the backend for the `wallet` component contained within the [Sheikah Witnet wallet desktop app](https://sheikah.app), which follows exactly the same architecture:
+Witnet Foundation operates a cluster of publicly available `node` instances that act as the backend for the `wallet` component contained within the [Sheikah Witnet wallet desktop app](https://sheikah.app), which follows exactly the same architecture:
 
 ```
 Sheikah Wallet app architecture:
