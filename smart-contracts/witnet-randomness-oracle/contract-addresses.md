@@ -136,6 +136,8 @@ _**Polygon Mainnet**:_ [`0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5`](https://po
 
 _**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mumbai.polygonscan.com/address/0x0178287DfECA2F13F342512282bc8B59e774aE43)
 
+_**Polygon zkEVM Testnet**:_ [`0x1234564b565386e7a47c7B8d1238cf91e24BdEB6`](https://testnet-zkevm.polygonscan.com/address/0x1234564b565386e7a47c7B8d1238cf91e24BdEB6)
+
 ## Reef
 
 _**Reef Mainnet**:_ [`0x03e82c280ae03af908edb250d3d187db0018e501`](https://reefscan.com/contract/0x03e82c280ae03af908edb250d3d187db0018e501)

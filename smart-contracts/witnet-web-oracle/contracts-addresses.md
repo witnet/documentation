@@ -86,9 +86,9 @@ _**Kava EVM Testnet**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://e
 
 ## Klaytn
 
-_**Klaytn Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://scope.klaytn.com/account/0xd653fbd7c736838289262F0F41A458f35393C88a)``
+_**Klaytn Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://scope.klaytn.com/account/0xd653fbd7c736838289262F0F41A458f35393C88a)
 
-_**Klaytn Baobab**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://baobab.scope.klaytn.com/account/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)``
+_**Klaytn Baobab**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://baobab.scope.klaytn.com/account/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
 ## KuCoin Community Chain
 
@@ -133,6 +133,8 @@ _**Optimism Goerli**:_ [`0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb`](https://bl
 _**Polygon Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://polygonscan.com/address/0xd653fbd7c736838289262F0F41A458f35393C88a)
 
 _**Polygon Mumbai**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://mumbai.polygonscan.com/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
+
+_**Polygon zkEVM Testnet**:_ [`0x0000007D51dA8BF5cA07Fdd1E0970fa3fD8B92bD`](https://testnet-zkevm.polygonscan.com/address/0x0000007D51dA8BF5cA07Fdd1E0970fa3fD8B92bD)
 
 ## Reef
 
