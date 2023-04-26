@@ -8,7 +8,7 @@ description: >-
 
 ### Elastos Testnet
 
-**WitnetPriceRouter**: [`0xfeeeed88838b4fa4EE46D05c2148e645058f3C28`](https://esc-testnet.elastos.io/address/0xfeeeed88838b4fa4EE46D05c2148e645058f3C28)
+**WitnetPriceRouter**: [`0x9999999d139bdBFbF25923ba39F63bBFc7593400`](https://esc-testnet.elastos.io/address/0x9999999d139bdBFbF25923ba39F63bBFc7593400)
 
 | **Caption**                                                                 | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | --------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
