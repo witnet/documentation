@@ -134,7 +134,7 @@ _**Optimism Goerli**:_ [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://bl
 
 _**Polygon Mainnet**:_ [`0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5`](https://polygonscan.com/address/0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5)
 
-_**Polygon Mumbai**:_ [`0x0178287DfECA2F13F342512282bc8B59e774aE43`](https://mumbai.polygonscan.com/address/0x0178287DfECA2F13F342512282bc8B59e774aE43)
+_**Polygon Mumbai**:_ [`0x24Cc52D0603F161E16c3DB29Da4c2bCc07d17C4b`](https://mumbai.polygonscan.com/address/0x24Cc52D0603F161E16c3DB29Da4c2bCc07d17C4b)
 
 _**Polygon zkEVM Testnet**:_ [`0x1234564b565386e7a47c7B8d1238cf91e24BdEB6`](https://testnet-zkevm.polygonscan.com/address/0x1234564b565386e7a47c7B8d1238cf91e24BdEB6)
 
