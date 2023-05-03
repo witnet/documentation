@@ -8,7 +8,7 @@ description: >-
 
 ### Scroll Alpha (Testnet)
 
-**WitnetPriceRouter**: [`0xfeeeed88838b4fa4EE46D05c2148e645058f3C28`](https://blockscout.scroll.io/address/0xfeeeed88838b4fa4EE46D05c2148e645058f3C28)
+**WitnetPriceRouter**: [`0xBfFA2ec6225390C517A1bEB83b27a171C6734294`](https://blockscout.scroll.io/address/0xBfFA2ec6225390C517A1bEB83b27a171C6734294)
 
 | **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |

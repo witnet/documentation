@@ -118,7 +118,7 @@ _**Moonbeam Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://b
 
 _**Moonriver**:_ [`0xD39D4d972C7E166856c4eb29E54D3548B4597F53`](https://moonriver.moonscan.io/address/0xD39D4d972C7E166856c4eb29E54D3548B4597F53#readContract)
 
-_**Moonbase Alpha**:_ [`0x45111778a7db1356DaAB576cBe73681F0745182c`](https://moonbase.moonscan.io/address/0x45111778a7db1356DaAB576cBe73681F0745182c#readContract)
+_**Moonbase Alpha**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://moonbase.moonscan.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
 ## OKXChain (OKC)
 
@@ -136,9 +136,9 @@ _**Optimism Goerli**:_ [`0x9E943Ab1FD0D35B3BaDe31AA78D60C485EA1a604`](https://bl
 
 _**Polygon Mainnet**:_ [`0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5`](https://polygonscan.com/address/0xc8c0d4dB2D7801D6E2A863934597cFD31689f7D5)
 
-_**Polygon Mumbai**:_ [`0x24Cc52D0603F161E16c3DB29Da4c2bCc07d17C4b`](https://mumbai.polygonscan.com/address/0x24Cc52D0603F161E16c3DB29Da4c2bCc07d17C4b)
+_**Polygon Mumbai**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://mumbai.polygonscan.com/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
-_**Polygon zkEVM Testnet**:_ [`0x1234564b565386e7a47c7B8d1238cf91e24BdEB6`](https://testnet-zkevm.polygonscan.com/address/0x1234564b565386e7a47c7B8d1238cf91e24BdEB6)
+_**Polygon zkEVM Testnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://testnet-zkevm.polygonscan.com/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
 ## Reef
 
@@ -148,7 +148,7 @@ _**Reef Testnet**:_ [`0x3f159F3bD5c27A936E0C897a4584Eb1647a62197`](https://testn
 
 ## Scroll
 
-_**Scroll Alpha**:_ [`0x123456f4De47e1947210CD62e2f8CF9c2FeD9d4d`](https://blockscout.scroll.io/address/0x123456f4De47e1947210CD62e2f8CF9c2FeD9d4d)
+_**Scroll Alpha**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://blockscout.scroll.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
 ## SmartBCH
 
