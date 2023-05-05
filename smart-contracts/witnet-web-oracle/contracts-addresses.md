@@ -72,6 +72,10 @@ _**Ethereum Goerli**:_ [`0xb58D05247d16b3F1BD6B59c52f7f61fFef02BeC8`](https://go
 
 _**Ethereum Rinkeby**:_ [`0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4`](https://rinkeby.etherscan.io/address/0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4)
 
+## Fuse
+
+_**Fuse Testnet**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://explorer.fusespark.io/address/0x777777772C24e6CD34B464D1d71616C444254537)
+
 ## Harmony
 
 _**Harmony Testnet**:_ [`0x58d8ece142c60f5707594a7c1d90e46eae5af431`](https://explorer.pops.one/address/0x58d8ece142c60f5707594a7c1d90e46eae5af431)
