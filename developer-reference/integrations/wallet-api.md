@@ -1271,12 +1271,12 @@ Example of a `send_transaction` for sending 500 nanoWits to an address.
           ],
           "outputs": [
             {
-              "address": "twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7",
+              "pkh": "twit1z8u6ruc4secs48x20qwstl80g8p9nkp3a33ts7",
               "time_lock": 0,
               "value": 500
             },
             {
-              "address": "twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l",
+              "pkh": "twit15aetshda2t435xg965k70w5y5ra8x5kj78m39l",
               "time_lock": 0,
               "value": 49470
             }
@@ -1324,12 +1324,12 @@ The response includes the JsonRPC response after sending the transaction to the 
             "inputs": [],
             "outputs": [
               {
-                "address": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk",
+                "pkh": "twit1eghyyar76nuvdfu0h70f4gmxruj2rw4gfnrhnk",
                 "time_lock": 0,
                 "value": 1
               },
               {
-                "address": "twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq",
+                "pkh": "twit1ue34u54zr2ezate8hhgrdhgsfvjawykr9kxtqq",
                 "time_lock": 0,
                 "value": 998
               }
