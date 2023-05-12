@@ -114,7 +114,7 @@ _**Meter Testnet**:_ [`0xa254632ae454bae18ff0221c2040aa387f044f0e`](https://scan
 
 _**Metis Andromeda**:_ [`0xB280e3B785f615C000A8BeBb55C35eCD2376F2eb`](https://andromeda-explorer.metis.io/address/0xB280e3B785f615C000A8BeBb55C35eCD2376F2eb)
 
-_**Metis Stardust**:_ [`0x7b0D67739b5B9480080817E5b921EbbA714236ca`](https://stardust-explorer.metis.io/address/0x7b0D67739b5B9480080817E5b921EbbA714236ca)
+_**Metis Goerli**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://goerli.explorer.metisdevops.link/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
 ## Moonbeam
 
