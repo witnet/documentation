@@ -12,6 +12,8 @@ You can request support for additional chains using [this form](https://tally.so
 
 ## Arbitrum
 
+_**Arbitrum ONE**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://arbiscan.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
+
 _**Arbitrum Nitro Goerli**:_ [`0xB0C5d40A7658b2ab28360aFa6eB5bAeb2fFe86c3`](https://goerli.arbiscan.io/address/0xB0C5d40A7658b2ab28360aFa6eB5bAeb2fFe86c3)
 
 ## Avalanche C-Chain

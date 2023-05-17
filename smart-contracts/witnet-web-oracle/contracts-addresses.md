@@ -6,6 +6,8 @@ description: Multi-chain deployed addressess of the WitnetRequestBoard entry-poi
 
 ## Arbitrum
 
+_**Arbitrum ONE**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://arbiscan.io/address/0x777777772C24e6CD34B464D1d71616C444254537)
+
 _**Arbitrum Nitro Goerli**:_ [`0xa6a6b2cBE9Ce5B8fF94729F1eC402efc5042AbBF`](https://goerli.arbiscan.io/address/0xa6a6b2cBE9Ce5B8fF94729F1eC402efc5042AbBF)
 
 ## Avalanche C-Chain

@@ -6,6 +6,18 @@ description: >-
 
 # Arbitrum Price Feeds
 
+### **Arbitrum ONE**&#x20;
+
+**WitnetPriceFeeds**: [`0x9999999d139bdBFbF25923ba39F63bBFc7593400`](https://arbiscan.io/address/0x9999999d139bdBFbF25923ba39F63bBFc7593400)
+
+| **Caption**                                                               | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
+| ------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
+| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/arbitrum-one\_eth-usd\_6) | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |
+
+{% hint style="success" %}
+
+{% endhint %}
+
 ### **Arbitrum Nitro Goerli** (testnet)
 
 **WitnetPriceRouter**: [`0xAafb2D27E2E0f83dcE501a2879aaD710ec377403`](https://goerli.arbiscan.io/address/0xAafb2D27E2E0f83dcE501a2879aaD710ec377403)
