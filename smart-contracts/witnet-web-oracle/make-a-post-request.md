@@ -29,7 +29,7 @@ const testPostSource = new Witnet.HttpPostSource(
         "Header-Name": "Header-Value"
     }
 )
-    .parseJsonMap()
+    .parseJSONMap()
     .getMap("headers")
     .getString("Header-Name")
 ```
