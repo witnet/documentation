@@ -22,9 +22,9 @@ _**Boba ETH/L2 Mainnet**:_ [`0xd3AD9a4b26527E3bA5Fc60B75Eb002D47D98e292`](https:
 
 _**Boba ETH/L2 Goerli**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://testnet.bobascan.com/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
-_**Boba ETH/L2 Rinkeby**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://blockexplorer.rinkeby.boba.network/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
-
 _**Boba DEV/L2 Bobabase**:_ [`0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb`](https://blockexplorer.bobabase.boba.network/address/0x0985FDe9f424fe4f5AC516F66bAf5591e18aCBEb)
+
+_**Boba BNB/L2 Testnet**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://blockexplorer.testnet.bnb.boba.network/address/0x777777772C24e6CD34B464D1d71616C444254537)
 
 ## Celo
 
