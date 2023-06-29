@@ -54,6 +54,10 @@ You can request support for additional chains using [this form](https://tally.so
 [fuse-price-feeds.md](../../witnet-data-feeds/addresses/fuse-price-feeds.md)
 {% endcontent-ref %}
 
+{% content-ref url="../../witnet-data-feeds/addresses/gnosis-chain-price-feeds.md" %}
+[gnosis-chain-price-feeds.md](../../witnet-data-feeds/addresses/gnosis-chain-price-feeds.md)
+{% endcontent-ref %}
+
 {% content-ref url="harmony.md" %}
 [harmony.md](harmony.md)
 {% endcontent-ref %}

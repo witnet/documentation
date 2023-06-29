@@ -34,6 +34,7 @@
     * [Cube Price Feeds](smart-contracts/witnet-data-feeds/addresses/cube-price-feeds.md)
     * [Dogechain Price Feeds](smart-contracts/witnet-data-feeds/addresses/dogechain-price-feeds.md)
     * [Elastos Price Feeds](smart-contracts/witnet-data-feeds/addresses/elastos-price-feeds.md)
+    * [Gnosis Chain Price Feeds](smart-contracts/witnet-data-feeds/addresses/gnosis-chain-price-feeds.md)
     * [Ethereum Price Feeds](smart-contracts/price-feeds/addresses/ethereum.md)
     * [Fuse Price Feeds](smart-contracts/witnet-data-feeds/addresses/fuse-price-feeds.md)
     * [Harmony Price Feeds](smart-contracts/price-feeds/addresses/harmony.md)

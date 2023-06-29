@@ -84,6 +84,10 @@ _**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://r
 
 _**Fuse Testnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://explorer.fusespark.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
+## Gnosis Chain
+
+_**Gnosis Chain Testnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://blockscout.com/gnosis/chiado/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
+
 ## Hoo Smart Chain
 
 _**HSC Testnet**:_ [`0xe1330491bdC37fc4E8801843Bb3015815822F8A8`](https://testnet.hooscan.com/address/0xe1330491bdC37fc4E8801843Bb3015815822F8A8)
