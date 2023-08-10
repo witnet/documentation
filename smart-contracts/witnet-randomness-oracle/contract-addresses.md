@@ -14,13 +14,13 @@ You can request support for additional chains using [this form](https://tally.so
 
 _**Arbitrum ONE**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://arbiscan.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
-_**Arbitrum Nitro Goerli**:_ [`0xB0C5d40A7658b2ab28360aFa6eB5bAeb2fFe86c3`](https://goerli.arbiscan.io/address/0xB0C5d40A7658b2ab28360aFa6eB5bAeb2fFe86c3)
+_**Arbitrum Nitro Goerli**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B1a5`](https://goerli.arbiscan.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Avalanche C-Chain
 
 _**Avalanche Mainnet**:_ [`0xa4A73a2A32320282a4d7dDe6a7467AeFA3B7950F`](https://snowtrace.io/address/0xa4A73a2A32320282a4d7dDe6a7467AeFA3B7950F#readContract)
 
-_**Avalanche Fuji**:_ [`0xD47fc24C99fD94f33bD2f33FE373b1447bB10724`](https://testnet.snowtrace.io/address/0xD47fc24C99fD94f33bD2f33FE373b1447bB10724#readContract)
+_**Avalanche Fuji**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://testnet.snowtrace.io/address/0xD47fc24C99fD94f33bD2f33FE373b1447bB10724#readContract)
 
 ## Boba Network
 
@@ -30,7 +30,7 @@ _**Boba ETH/L2 Mainnet**:_ [`0x3D7Ccf6518deBE3d2fd20c4b6AEc3FD904c0Ad29`](https:
 
 _**Boba BNB/L2 Testnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://blockexplorer.testnet.bnb.boba.network/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
-_**Boba ETH/L2 Goerli**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://testnet.bobascan.com/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+_**Boba ETH/L2 Goerli**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://testnet.bobascan.com/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 _**Boba DEV/L2 Bobabase**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://blockexplorer.bobabase.boba.network/address/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f)
 
@@ -38,7 +38,7 @@ _**Boba DEV/L2 Bobabase**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https
 
 _**Celo Mainnet**:_ [`0x6023fF93A3b37791a94B15D6AEaD488933b01Db3`](https://explorer.celo.org/address/0x6023fF93A3b37791a94B15D6AEaD488933b01Db3)
 
-_**Celo Alfajores**:_ [`0xbD804467270bCD832b4948242453CA66972860F5`](https://alfajores-blockscout.celo-testnet.org/address/0xbD804467270bCD832b4948242453CA66972860F5)
+_**Celo Alfajores**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.celo.org/alfajores/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Conflux Network
 
@@ -48,13 +48,13 @@ _**Conflux eSpace (Hydra)**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](htt
 
 _**Conflux Core (Testnet)**:_ [`cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3`](https://testnet.confluxscan.io/address/cfxtest:aceh1wg5t0jyctjzsydvwktsvz596nf6ue18kkzpp3)
 
-_**Conflux eSpace (Testnet)**:_ [`0xa784093826e2894ab3db315f4e05f0f26407bbff`](https://evmtestnet.confluxscan.net/address/0xa784093826e2894ab3db315f4e05f0f26407bbff)
+_**Conflux eSpace (Testnet)**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://evmtestnet.confluxscan.net/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a)
 
 ## Cronos Chain
 
 _**Cronos Mainnet**:_ [`0x3737be6FcFf5B3B0f9DCc9a9ae1Da56561D0d0d3`](https://cronoscan.com/address/0x3737be6FcFf5B3B0f9DCc9a9ae1Da56561D0d0d3)
 
-_**Cronos Testnet**:_ [`0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643`](https://cronos.org/explorer/testnet3/address/0x0017A464A86f48B342Cae3b8Fe29cFCDaA7b0643)
+_**Cronos Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://cronos.org/explorer/testnet3/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## **Cube Network**
 
@@ -66,13 +66,13 @@ _**Cube EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://t
 
 _**Dogechain Mainnet**:_ [`0x7FdB9CDe98967140a5627dA5221DBC03Bd8e8ad5`](https://explorer.dogechain.dog/address/0x7FdB9CDe98967140a5627dA5221DBC03Bd8e8ad5)
 
-_**Dogechain Testnet**:_ [`0xD9465D38f50f364b3263Cb219e58d4dB2D584530`](https://explorer-testnet.dogechain.dog/address/0xD9465D38f50f364b3263Cb219e58d4dB2D584530)
+_**Dogechain Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer-testnet.dogechain.dog/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Elastos
 
 _**Elastos Mainnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://esc.elastos.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
 
-_**Elastos Testnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://esc-testnet.elastos.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
+_**Elastos Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://esc-testnet.elastos.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a/transactions)
 
 ## Ethereum
 
@@ -84,7 +84,7 @@ _**Ethereum Rinkeby**:_ [`0x50F742Fbf9a445AE6B2136F5987414A4c5aeE921`](https://r
 
 ## Fuse
 
-_**Fuse Testnet**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://explorer.fusespark.io/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
+_**Fuse Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.fusespark.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Gnosis Chain
 
@@ -98,13 +98,13 @@ _**HSC Testnet**:_ [`0xe1330491bdC37fc4E8801843Bb3015815822F8A8`](https://testne
 
 _**Kava EVM Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://explorer.kava.io/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Kava EVM Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://explorer.testnet.kava.io/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+_**Kava EVM Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.testnet.kava.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Klaytn
 
 _**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**Klaytn Baobab**:_ [`0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f`](https://baobab.scope.klaytn.com/account/0xB4B2E2e00e9d6E5490d55623E4F403EC84c6D33f?tabId=txList)
+_**Klaytn Baobab**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://baobab.scope.klaytn.com/account/0x0123456fbBC59E181D76B6Fe8771953d1953B51a?tabId=txList)
 
 ## KuCoin Community Chain
 
@@ -122,7 +122,7 @@ _**Meter Testnet**:_ [`0xa254632ae454bae18ff0221c2040aa387f044f0e`](https://scan
 
 _**Metis Andromeda**:_ [`0xB280e3B785f615C000A8BeBb55C35eCD2376F2eb`](https://andromeda-explorer.metis.io/address/0xB280e3B785f615C000A8BeBb55C35eCD2376F2eb)
 
-_**Metis Goerli**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://goerli.explorer.metisdevops.link/address/0x88888885966F8F77cC6E797aE263C4d091e44A55)
+_**Metis Goerli**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://goerli.explorer.metisdevops.link/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Moonbeam
 
@@ -136,7 +136,7 @@ _**Moonbase Alpha**:_ [`0x88888885966F8F77cC6E797aE263C4d091e44A55`](https://moo
 
 _**OKXChain Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.oklink.com/en/okc/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
-_**OKXChain Testnet**:_ [`0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0`](https://www.oklink.com/en/okc-test/address/0xeD074DA2A76FD2Ca90C1508930b4FB4420e413B0)
+_**OKXChain Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://www.oklink.com/oktc-test/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Optimism
 
