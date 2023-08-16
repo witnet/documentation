@@ -25,7 +25,7 @@ coverY: 0
 
 ### KCC Testnet
 
-**WitnetPriceRouter**: [`0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a`](https://scan-testnet.kcc.network/address/0xba7CF62498340fa3734EC51Ca8A69928F0d9E03a/read-contract)
+**WitnetPriceFeeds**: [`0x9999999d139bdBFbF25923ba39F63bBFc7593400`](https://scan-testnet.kcc.network/address/0x9999999d139bdBFbF25923ba39F63bBFc7593400/read-proxy#address-tabs)
 
 | **Caption**                                                                      | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
 | -------------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |

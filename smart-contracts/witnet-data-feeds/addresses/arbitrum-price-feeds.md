@@ -10,9 +10,7 @@ description: >-
 
 **WitnetPriceFeeds**: [`0x9999999d139bdBFbF25923ba39F63bBFc7593400`](https://arbiscan.io/address/0x9999999d139bdBFbF25923ba39F63bBFc7593400)
 
-| **Caption**                                                               | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
-| ------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/arbitrum-one\_eth-usd\_6) | `0x3d15f701` |    24 hours   |      3.5%     |      15'     |
+<table data-header-hidden><thead><tr><th width="189"></th><th></th><th width="126" align="center"></th><th width="128" align="center"></th><th align="center"></th></tr></thead><tbody><tr><td><strong>Caption</strong></td><td><strong>ID4</strong></td><td align="center"><strong>Heartbeat</strong></td><td align="center"><strong>Deviation</strong></td><td align="center"><strong>Cooldown</strong></td></tr><tr><td><a href="https://feeds.witnet.io/feeds/arbitrum-one_eth-usd_6">Price-ETH/USD-6</a></td><td><code>0x3d15f701</code></td><td align="center">24 hours</td><td align="center">3.5%</td><td align="center">15'</td></tr></tbody></table>
 
 {% hint style="success" %}
 
@@ -20,11 +18,9 @@ description: >-
 
 ### **Arbitrum Nitro Goerli** (testnet)
 
-**WitnetPriceRouter**: [`0xAafb2D27E2E0f83dcE501a2879aaD710ec377403`](https://goerli.arbiscan.io/address/0xAafb2D27E2E0f83dcE501a2879aaD710ec377403)
+**WitnetPriceFeeds:** [`0x9999999d139bdBFbF25923ba39F63bBFc7593400`](https://goerli.arbiscan.io/address/0x9999999d139bdBFbF25923ba39F63bBFc7593400)
 
-| **Caption**                                                                  | **ID4**      | **Heartbeat** | **Deviation** | **Cooldown** |
-| ---------------------------------------------------------------------------- | ------------ | :-----------: | :-----------: | :----------: |
-| [Price-ETH/USD-6](https://feeds.witnet.io/feeds/arbitrum-goerli\_eth-usd\_6) | `0x3d15f701` |    24 hours   |      0.5%     |      15'     |
+<table data-header-hidden><thead><tr><th width="189"></th><th width="141"></th><th width="118" align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td><strong>Caption</strong></td><td><strong>ID4</strong></td><td align="center"><strong>Heartbeat</strong></td><td align="center"><strong>Deviation</strong></td><td align="center"><strong>Cooldown</strong></td></tr><tr><td><a href="https://feeds.witnet.io/feeds/arbitrum-goerli_eth-usd_6">Price-ETH/USD-6</a></td><td><code>0x3d15f701</code></td><td align="center">24 hours</td><td align="center">0.5%</td><td align="center">15'</td></tr></tbody></table>
 
 {% hint style="success" %}
 Clicking on any of the captions above will take you to the corresponding view in the [**Data Feeds Explorer** website](https://feeds.witnet.io), where not only the whole price timeline can be checked for the corresponding currency pair, but also the **Price Feed** contract currently serving the price updates, as well as the hashes of the Witnet transactions that solved every single update.
