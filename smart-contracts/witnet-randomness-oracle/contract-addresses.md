@@ -108,6 +108,10 @@ _**KCC Mainnet**:_ [`0xB31F5606EAC9ff8F373837F446aB8d942DcD64a5`](https://scan.k
 
 _**KCC Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://scan-testnet.kcc.network/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a/read-proxy#address-tabs)
 
+## **Mantle**
+
+**Mantle Testnet:** [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.testnet.mantle.xyz/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
+
 ## **Meter**
 
 _**Meter Mainnet**:_ [`0xE189B1D26dAAB45cd344452f29Db8E93B5C7FaF1`](https://scan.meter.io/address/0xE189B1D26dAAB45cd344452f29Db8E93B5C7FaF1)

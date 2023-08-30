@@ -18,15 +18,7 @@ For the extremely privacy-conscious, the paranoid mode allows also to disable th
 
 The currently supported proxy protocols are:
 
-| Protocol          | Supports authentication | URL example                |
-| ----------------- | ----------------------- | -------------------------- |
-| http              | ❌                       | http://example.com:3128    |
-| https             | ❌                       | https://example.com:3128   |
-| socks4            | N/A                     | socks4://127.0.0.1:1080    |
-| socks4a           | N/A                     | socks4a://example.com:1080 |
-| socks5            | ❌                       | socks5://127.0.0.1:1080    |
-| socks5h           | ❌                       | socks5h://example.com:1080 |
-| tor (over socks5) | ❌                       | socks5://127.0.0.1:9050    |
+<table><thead><tr><th width="249">Protocol</th><th width="249">Supports authentication</th><th>URL example</th></tr></thead><tbody><tr><td>http</td><td>❌</td><td>http://example.com:3128</td></tr><tr><td>https</td><td>❌</td><td>https://example.com:3128</td></tr><tr><td>socks4</td><td>N/A</td><td>socks4://127.0.0.1:1080</td></tr><tr><td>socks4a</td><td>N/A</td><td>socks4a://example.com:1080</td></tr><tr><td>socks5</td><td>❌</td><td>socks5://127.0.0.1:1080</td></tr><tr><td>socks5h</td><td>❌</td><td>socks5h://example.com:1080</td></tr><tr><td>tor (over socks5)</td><td>❌</td><td>socks5://127.0.0.1:9050</td></tr></tbody></table>
 
 {% hint style="info" %}
 Authentication support may be added in a future release of `witnet-rust` if there is demand for it.

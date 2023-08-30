@@ -82,8 +82,8 @@ You can request support for additional chains using [this form](https://tally.so
 [meter-price-feeds.md](../../witnet-data-feeds/addresses/meter-price-feeds.md)
 {% endcontent-ref %}
 
-{% content-ref url="metis.md" %}
-[metis.md](metis.md)
+{% content-ref url="../../witnet-data-feeds/addresses/metis-1.md" %}
+[metis-1.md](../../witnet-data-feeds/addresses/metis-1.md)
 {% endcontent-ref %}
 
 {% content-ref url="moonbeam.md" %}

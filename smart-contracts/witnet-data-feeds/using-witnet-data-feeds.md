@@ -28,7 +28,7 @@ contract MyContract {
      * the network you are using! Please find available addresses here:
      * https://docs.witnet.io/smart-contracts/price-feeds/contract-addresses
      */
-    constructor(IWitnetPriceRouter _router))
+    constructor(IWitnetPriceRouter _router) {
         router = _router;
     }
     

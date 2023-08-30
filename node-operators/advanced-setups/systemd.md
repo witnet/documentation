@@ -6,20 +6,20 @@ For Testnet 7.3 and greater, the configuration file needs to be customized with 
 
 * Install latest version of ca-certificates to download safely from GitHub:
 
-```sh
+```
 sudo apt install ca-certificates
 sudo update-ca-certificates
 ```
 
 * Create the `witnet` user dedicated to running the node:
 
-```sh
+```
 sudo adduser witnet
 ```
 
 * Clone the project's GitHub repository into your home directory and enter it:
 
-```sh
+```
 cd
 git clone https://github.com/witnet/witnet-operator-tools.git
 cd witnet-operator-tools
@@ -27,42 +27,42 @@ cd witnet-operator-tools
 
 * Install latest version with the `witnet` user dedicated to running the node:
 
-```sh
+```
 sudo -u witnet ./systemd/runner.sh
 ```
 
 * Copy the `witnet.service` file into `/lib/systemd/system/`:
 
-```sh
+```
 sudo cp systemd/witnet.service /lib/systemd/system/witnet.service
 ```
 
 * Every time you change the `witnet.service` file, you need to reload the `systemd` daemon:
 
-```sh
+```
 sudo systemctl daemon-reload
 ```
 
 * Enable the service:
 
-```sh
+```
 sudo systemctl enable witnet.service
 ```
 
 * Start the service:
 
-```sh
+```
 sudo systemctl start witnet.service
 ```
 
 * See the logs of the service:
 
-```sh
+```
 journalctl -f -u witnet.service
 ```
 
 * When you want to restart the service:
 
-```sh
+```
 sudo systemctl restart witnet.service
 ```

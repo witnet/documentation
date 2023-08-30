@@ -1,8 +1,8 @@
 # How To Use Witnet Price Feeds
 
-The preferred way to consume the Witnet-powered price feeds is through the **Price Feeds Router**. ****&#x20;
+The preferred way to consume the Witnet-powered price feeds is through the **Price Feeds Router**.&#x20;
 
-This smart contract is deployed in all the **** [**supported chains**](../price-feeds/addresses/) **** and allows your own smart contracts and Web3 applications to get the latest price of any of the [**supported currency pairs**](price-feeds-registry.md#currency-pairs) **** by providing the identifier of the pair to a single Solidity method. This removes the need to know the actual contract addresses handling the price updates from the Witnet oracle.
+This smart contract is deployed in all the [**supported chains**](../price-feeds/addresses/) and allows your own smart contracts and Web3 applications to get the latest price of any of the [**supported currency pairs**](price-feeds-registry.md#currency-pairs) by providing the identifier of the pair to a single Solidity method. This removes the need to know the actual contract addresses handling the price updates from the Witnet oracle.
 
 ![](<../../.gitbook/assets/image (3).png>)
 
