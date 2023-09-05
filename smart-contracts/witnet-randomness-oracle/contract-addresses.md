@@ -34,7 +34,7 @@ _**Boba ETH/L2 Goerli**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https:/
 
 ## Celo
 
-_**Celo Mainnet**:_ [`0x6023fF93A3b37791a94B15D6AEaD488933b01Db3`](https://explorer.celo.org/address/0x6023fF93A3b37791a94B15D6AEaD488933b01Db3)
+_**Celo Mainnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.celo.org/mainnet/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 _**Celo Alfajores**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.celo.org/alfajores/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
