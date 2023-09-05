@@ -110,6 +110,8 @@ _**KCC Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://scan-t
 
 ## **Mantle**
 
+**Mantle Mainnet:** [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.mantle.xyz/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
+
 **Mantle Testnet:** [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://explorer.testnet.mantle.xyz/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## **Meter**
