@@ -67,9 +67,10 @@
   * [HTTP POST Requests in Solidity](smart-contracts/witnet-web-oracle/make-a-post-request.md)
   * [Query GraphQL APIs in Solidity](smart-contracts/witnet-web-oracle/query-graphql-apis-in-solidity.md)
   * [UsingWitnet Inheritance](smart-contracts/witnet-web-oracle/usingwitnet-inheritance.md)
-  * [WitnetRequestBoard Contract](smart-contracts/witnet-web-oracle/witnet-request-board.md)
   * [API Reference](smart-contracts/witnet-web-oracle/api-reference/README.md)
-    * [Solidity API](smart-contracts/witnet-web-oracle/api-reference/api-solidity.md)
+    * [Solidity API](smart-contracts/witnet-web-oracle/api-reference/api-solidity/README.md)
+      * [Solidity Contracts](smart-contracts/witnet-web-oracle/api-reference/api-solidity/solidity-contracts/README.md)
+        * [WitnetRequestBoard](smart-contracts/witnet-web-oracle/api-reference/api-solidity/solidity-contracts/witnet-request-board.md)
     * [Javascript API](smart-contracts/witnet-web-oracle/api-reference/api-javascript.md)
   * [Multi-chain Addresses](smart-contracts/witnet-web-oracle/contracts-addresses.md)
 

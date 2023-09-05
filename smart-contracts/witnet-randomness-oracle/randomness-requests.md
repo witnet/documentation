@@ -1,10 +1,10 @@
 # Low-level Requests
 
-The straight way to fetch randomness from the Witnet oracle is by posting a low-level randomness data request to the [**WitnetRequestBoard**](../witnet-web-oracle/witnet-request-board.md).
+The straight way to fetch randomness from the Witnet oracle is by posting a low-level randomness data request to the [**WitnetRequestBoard**](../witnet-web-oracle/api-reference/api-solidity/solidity-contracts/witnet-request-board.md).
 
 However, you will then need to add logic within your smart contract as to await for an answer from the Witnet side-chain and handle corner-case revert situations at the Witnet level, before feeding your favourite _Pseudo Random Number Generator_ (PRNG) algorithm with the 32-byte random seed provided by the Witnet oracle.
 
-Besides, you or your contract will have to pay the required fee every time a randomness request is posted to the [WitnetRequestBoard](../witnet-web-oracle/witnet-request-board.md).
+Besides, you or your contract will have to pay the required fee every time a randomness request is posted to the [WitnetRequestBoard](../witnet-web-oracle/api-reference/api-solidity/solidity-contracts/witnet-request-board.md).
 
 {% hint style="success" %}
 If your contract inherits from the [**UsingWitnet** abstract contract](../witnet-web-oracle/usingwitnet-inheritance.md), the reward will be estimated automatically. However, you should make sure that everytime a data request is posted, enough funds (i.e. EVM native currency) are provided as to cover the posting fee required by the **WitnetRequestBoard**.
