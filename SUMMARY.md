@@ -73,6 +73,9 @@
       * [Solidity Contracts](smart-contracts/witnet-web-oracle/api-reference/api-solidity/solidity-contracts/README.md)
         * [WitnetRequestBoard](smart-contracts/witnet-web-oracle/witnet-request-board.md)
     * [Javascript API](smart-contracts/witnet-web-oracle/api-reference/api-javascript.md)
+    * [RADON API](smart-contracts/witnet-web-oracle/api-reference/radon-api/README.md)
+      * [RADON Type System](smart-contracts/witnet-web-oracle/api-reference/radon-api/radon-type-system.md)
+      * [RADON Errors](smart-contracts/witnet-web-oracle/api-reference/radon-api/radon-errors.md)
   * [Multi-chain Addresses](smart-contracts/witnet-web-oracle/contracts-addresses.md)
 
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
