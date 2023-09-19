@@ -148,11 +148,11 @@ _**Optimism Goerli**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://op
 
 ## Polygon
 
-_**Polygon Mainnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://polygonscan.com/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a#readProxyContract)
-
 _**Polygon Mainnet**:_ [`0x0123456fbbc59e181d76b6fe8771953d1953b51a`](https://polygonscan.com/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a#readProxyContract)
 
 _**Polygon Mumbai**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://mumbai.polygonscan.com/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a#readProxyContract)
+
+_**Polygon zkEVM Mainnet:**_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://zkevm.polygonscan.com/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a)&#x20;
 
 _**Polygon zkEVM Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://testnet-zkevm.polygonscan.com/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a)
 

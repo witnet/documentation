@@ -154,7 +154,9 @@ _**Polygon Mainnet**:_ [`0xd653fbd7c736838289262F0F41A458f35393C88a`](https://po
 
 _**Polygon Mumbai**:_ [`0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431`](https://mumbai.polygonscan.com/address/0x58D8ECe142c60f5707594a7C1D90e46eAE5AF431)
 
-_**Polygon zkEVM Testnet**:_ [`0x0000007D51dA8BF5cA07Fdd1E0970fa3fD8B92bD`](https://testnet-zkevm.polygonscan.com/address/0x0000007D51dA8BF5cA07Fdd1E0970fa3fD8B92bD)
+_**Polygon zkEVM Mainnet**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://zkevm.polygonscan.com/address/0x777777772C24e6CD34B464D1d71616C444254537)
+
+_**Polygon zkEVM Testnet**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://testnet-zkevm.polygonscan.com/address/0x777777772c24e6cd34b464d1d71616c444254537)
 
 ## Reef
 
