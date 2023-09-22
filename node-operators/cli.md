@@ -691,6 +691,58 @@ cargo run -- node peers
 {% endtab %}
 {% endtabs %}
 
+### priority
+
+Display priority and time-to-block estimations for different priority tiers according to the current state of the network. The priority is measured in nanowits per weight unit, so you can calculate a fee by multiplying the priority by the weight of the transaction.
+
+{% tabs %}
+{% tab title="Docker" %}
+```
+docker exec witnet_node witnet node priority
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
+witnet node priority
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run -- node priority
+```
+{% endtab %}
+{% endtabs %}
+
+Example output:
+
+```
+╔══════════════════════════════════════════════════════════╗
+║ TRANSACTION PRIORITY ESTIMATION REPORT                   ║
+╠══════════════════════════════════════════════════════════╣
+║ Data request transactions                                ║
+╟──────────┬───────────────┬───────────────────────────────║
+║     Tier │ Time-to-block │ Priority                      ║
+╟──────────┼───────────────┼───────────────────────────────║
+║   Stinky │            6h │ 0.100                         ║
+║      Low │            1h │ 28070.175                     ║
+║   Medium │           15m │ 28070.175                     ║
+║     High │            5m │ 51821.862                     ║
+║  Opulent │            1m │ 53981.107                     ║
+╠══════════════════════════════════════════════════════════╣
+║ Value transfer transactions                              ║
+╟──────────┬───────────────┬───────────────────────────────║
+║     Tier │ Time-to-block │ Priority                      ║
+╟──────────┼───────────────┼───────────────────────────────║
+║   Stinky │            6h │ 0.100                         ║
+║      Low │            1h │ 0.200                         ║
+║   Medium │           15m │ 0.300                         ║
+║     High │            5m │ 0.400                         ║
+║  Opulent │            1m │ 0.500                         ║
+╚══════════════════════════════════════════════════════════╝
+```
+
 ### raw
 
 The `raw` command allows sending raw JSON-RPC requests from the command line. It can be used in an interactive way (don't forget the `-i` flag when using Docker): each line of user input will be sent to the JSON-RPC server without any modifications:
