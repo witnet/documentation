@@ -166,6 +166,8 @@ _**Reef Testnet**:_ [`0x77d64eC18B0A14FeFe673E3aA194c816C2383232`](https://testn
 
 ## Scroll
 
+_**Scroll Mainnet:**_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://scrollscan.com/address/0x777777772C24e6CD34B464D1d71616C444254537)
+
 _**Scroll Alpha**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://blockscout.scroll.io/address/0x777777772C24e6CD34B464D1d71616C444254537)
 
 ## SmartBCH
