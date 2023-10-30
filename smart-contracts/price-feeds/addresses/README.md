@@ -1,5 +1,5 @@
 ---
-description: Multi-chain deployed addresses of the WitnetPriceRouter contract.
+description: Multi-chain deployed addresses of the WitnetPriceFeeds contract.
 ---
 
 # Multi-chain Addresses
