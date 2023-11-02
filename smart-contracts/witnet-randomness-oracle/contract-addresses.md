@@ -168,7 +168,7 @@ _**Reef Testnet**:_ [`0x3f159F3bD5c27A936E0C897a4584Eb1647a62197`](https://testn
 
 _**Scroll Mainnet**:_ [`0x0123456fbbc59e181d76b6fe8771953d1953b51a`](https://scrollscan.com/address/0x0123456fbbc59e181d76b6fe8771953d1953b51a)
 
-_**Scroll Alpha**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://blockscout.scroll.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
+_**Scroll Sepolia**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://sepolia.scrollscan.com/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## SmartBCH
 
