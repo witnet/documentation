@@ -76,6 +76,8 @@ _**Elastos Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://es
 
 _**Ethereum Mainnet**:_ [`0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8`](https://etherscan.io/address/0x894907c7Ab64C1092620B5c8Ba039BB6E611eba8)
 
+_**Ethereum Sepolia**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://sepolia.etherscan.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
+
 _**Ethereum Goerli**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://goerli.etherscan.io/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a#readProxyContract)
 
 ## Fuse

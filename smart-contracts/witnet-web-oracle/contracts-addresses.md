@@ -72,9 +72,9 @@ _**Elastos Testnet**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://es
 
 _**Ethereum Mainnet**:_ [`0x9E4fae1c7ac543a81E4E2a5486a0dDaad8194bdA`](https://etherscan.io/address/0x9E4fae1c7ac543a81E4E2a5486a0dDaad8194bdA)
 
-_**Ethereum Goerli**:_ [`0xb58D05247d16b3F1BD6B59c52f7f61fFef02BeC8`](https://goerli.etherscan.io/address/0xb58D05247d16b3F1BD6B59c52f7f61fFef02BeC8)
+_**Ethereum Sepolia**:_ [`0x777777772C24e6CD34B464D1d71616C444254537`](https://sepolia.etherscan.io/address/0x777777772C24e6CD34B464D1d71616C444254537)
 
-_**Ethereum Rinkeby**:_ [`0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4`](https://rinkeby.etherscan.io/address/0x6cE42a35C61ccfb42907EEE57eDF14Bb69C7fEF4)
+_**Ethereum Goerli**:_ [`0xb58D05247d16b3F1BD6B59c52f7f61fFef02BeC8`](https://goerli.etherscan.io/address/0xb58D05247d16b3F1BD6B59c52f7f61fFef02BeC8)
 
 ## Fuse
 
