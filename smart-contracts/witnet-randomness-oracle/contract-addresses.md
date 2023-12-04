@@ -140,6 +140,8 @@ _**Moonbase Alpha**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://moo
 
 _**OKXChain Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://www.oklink.com/en/okc/address/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
 
+_**OKXChain X1 Sepolia:**_ [`0x60768ce66aF2f3957e7280c6CfC4ab9c575a7FCF`](https://www.oklink.com/x1-test/address/0x60768ce66af2f3957e7280c6cfc4ab9c575a7fcf)
+
 _**OKXChain Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://www.oklink.com/es-la/oktc-test/address/0x0123456fbBC59E181D76B6Fe8771953d1953B51a)
 
 ## Optimism
