@@ -46,7 +46,7 @@
     * [Meter Price Feeds](smart-contracts/witnet-data-feeds/addresses/meter-price-feeds.md)
     * [Metis Price Feeds](smart-contracts/price-feeds/addresses/metis.md)
     * [Moonbeam Price Feeds](smart-contracts/price-feeds/addresses/moonbeam.md)
-    * [OKXChain Price Feeds](smart-contracts/witnet-data-feeds/addresses/okxchain-price-feeds.md)
+    * [OKX Price Feeds](smart-contracts/witnet-data-feeds/addresses/okxchain-price-feeds.md)
     * [Optimism Price Feeds](smart-contracts/witnet-data-feeds/addresses/optimism-price-feeds.md)
     * [Polygon Price Feeds](smart-contracts/price-feeds/addresses/polygon.md)
     * [Reef Price Feeds](smart-contracts/witnet-data-feeds/addresses/reef-price-feeds.md)
