@@ -16,7 +16,7 @@ Knowing the heartbeat can be used to double check the liveness of either the cor
 
 The **cooldown period** establishes the minimum time that must elapse since the last on-chain price update until the next one. This parameter alone contents from having a thrashing number of updates during highly volatile situations.
 
-
+***
 
 {% hint style="info" %}
 While it is the Witnet Foundation that pays for every single price update according to these triggering conditions, every single [supported currency pair](broken-reference) involves a selection of **well-known and reputed sources** (i.e. exchanges), proven to trade significant volumes in a daily basis, and totally unconnected to the Witnet Foundation itself.
