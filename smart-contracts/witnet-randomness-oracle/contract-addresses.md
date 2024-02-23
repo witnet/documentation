@@ -100,7 +100,7 @@ _**Kava EVM Testnet**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://e
 
 ## Klaytn
 
-_**Klaytn Mainnet**:_ [`0x1ebD93231a7fE551E1d6405404Df34909eff4c2C`](https://scope.klaytn.com/account/0x1ebD93231a7fE551E1d6405404Df34909eff4c2C)
+_**Klaytn Mainnet**:_ [`0xD111C0ef9A8FA71a66E37255d255abd8879D143C`](https://klaytnscope.com/account/0xD111C0ef9A8FA71a66E37255d255abd8879D143C?tabId=internalTx)
 
 _**Klaytn Baobab**:_ [`0x0123456fbBC59E181D76B6Fe8771953d1953B51a`](https://baobab.scope.klaytn.com/account/0x0123456fbBC59E181D76B6Fe8771953d1953B51a?tabId=txList)
 

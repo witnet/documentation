@@ -5,7 +5,7 @@
 ## Introduction <a href="#intro" id="intro"></a>
 
 * [❓ What is Witnet?](intro/about/README.md)
-  * [⚙ Oracle Architecture](intro/about/architecture.md)
+  * [⚙️ Oracle Architecture](intro/about/architecture.md)
   * [🪙 The Witnet Coin (Wit)](intro/about/wit-coin.md)
   * [👛 Wallets](intro/about/sheikah-witnet-wallet.md)
   * [🤔 Frequently Asked Questions](intro/about/frequently-asked-questions.md)
@@ -14,11 +14,11 @@
   * [📈 Price Feeds](intro/tutorials/data-feeds-tutorial.md)
   * [🎲 Randomness](intro/tutorials/randomness.md)
   * [🌐 APIs and HTTP GET/POST](intro/tutorials/apis-and-http-get-post.md)
-  * [⛏ Mining Wit](intro/tutorials/mining-wit.md)
+  * [⛏️ Mining Wit](intro/tutorials/mining-wit.md)
 
 ## Smart contract developers <a href="#smart-contracts" id="smart-contracts"></a>
 
-* [⛓ Supported chains](smart-contracts/supported-chains.md)
+* [⛓️ Supported chains](smart-contracts/supported-chains.md)
 * [📈 Witnet Price Feeds](smart-contracts/witnet-data-feeds/README.md)
   * [How To Use Witnet Price Feeds](smart-contracts/witnet-data-feeds/price-feeds-registry.md)
   * [Update Conditions](smart-contracts/witnet-data-feeds/triggering-conditions.md)
@@ -80,7 +80,7 @@
 
 ## Witnet Node Operators <a href="#node-operators" id="node-operators"></a>
 
-* [🖥 Requirements](node-operators/requirements.md)
+* [🖥️ Requirements](node-operators/requirements.md)
 * [🚀 Witnet Node Quick Start Guide (Docker)](node-operators/docker-quick-start-guide.md)
 * [🔎 Next steps](node-operators/next-steps.md)
 * [📄 CLI Reference](node-operators/cli.md)
@@ -91,7 +91,7 @@
 
 ## Developer Reference
 
-* [🏗 Integration Guide](developer-reference/integrations/README.md)
+* [🏗️ Integration Guide](developer-reference/integrations/README.md)
   * [Node API Reference](developer-reference/integrations/node-api.md)
   * [Wallet API Reference](developer-reference/integrations/wallet-api.md)
-* [🗜 Compile witnet-rust from Source Code](developer-reference/compile-from-source-code.md)
+* [🗜️ Compile witnet-rust from Source Code](developer-reference/compile-from-source-code.md)
