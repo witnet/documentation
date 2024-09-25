@@ -84,11 +84,11 @@ You can request support for additional chains using [this form](https://tally.so
 
 **KCC Testnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://scan-testnet.kcc.network/address/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
 
-## Klaytn
+## Kaia
 
-**Klaytn Cypress (Mainnet):** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://scope.klaytn.com/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
+**Kaia Mainnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://kaiascan.io/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
 
-**Klaytn Baobab (Testnet):** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://baobab.scope.klaytn.com/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
+**Kairos Testnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://kairos.kaiascan.io/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
 
 ## Mantle
 

@@ -38,7 +38,7 @@
     * [Gnosis Chain Price Feeds](smart-contracts/witnet-data-feeds/addresses/gnosis-chain-price-feeds.md)
     * [Kava Price Feeds](smart-contracts/witnet-data-feeds/addresses/kava-price-feeds.md)
     * [KCC Price Feeds](smart-contracts/witnet-data-feeds/addresses/kcc.md)
-    * [Klaytn Price Feeds](smart-contracts/witnet-data-feeds/addresses/klaytn-price-feeds.md)
+    * [Kaia Price Feeds](smart-contracts/witnet-data-feeds/addresses/kaia-price-feeds.md)
     * [Mantle Price Feeds](smart-contracts/witnet-data-feeds/addresses/metis.md)
     * [Meter Price Feeds](smart-contracts/witnet-data-feeds/addresses/meter-price-feeds.md)
     * [Metis Price Feeds](smart-contracts/witnet-data-feeds/addresses/metis.md)

@@ -76,11 +76,11 @@ _**Kava Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://kavas
 
 _**Kava Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://testnet.kavascan.com/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
-## Klaytn
+## Kaia
 
-_**Klaytn Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://klaytnscope.com/account/0x77703aE126B971c9946d562F41Dd47071dA00777)
+_**Kaia Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://kaiascan.io/address/0x77703ae126b971c9946d562f41dd47071da00777)
 
-_**Klaytn Baobab**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://baobab.klaytnscope.com/account/0x77703aE126B971c9946d562F41Dd47071dA00777)
+_**Kairos Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://kairos.kaiascan.io/address/0x77703ae126b971c9946d562f41dd47071da00777)
 
 ## KCC
 

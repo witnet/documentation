@@ -58,8 +58,8 @@ You can request support for additional chains using [this form](https://tally.so
 [kcc.md](kcc.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../witnet-data-feeds/addresses/klaytn-price-feeds.md" %}
-[klaytn-price-feeds.md](klaytn-price-feeds.md)
+{% content-ref url="../../witnet-data-feeds/addresses/kaia-price-feeds.md" %}
+[kaia-price-feeds.md](kaia-price-feeds.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../witnet-data-feeds/addresses/meter-price-feeds.md" %}
