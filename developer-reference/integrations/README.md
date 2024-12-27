@@ -5,7 +5,7 @@ description: >-
   balances, and create and verify transactions.
 ---
 
-# 🏗 Integration Guide
+# 🏗️ Integration Guide
 
 ### Running Witnet-Rust
 

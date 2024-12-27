@@ -141,7 +141,7 @@
 
 ## Witnet Node Developers
 
-* [🏗️ Integration Guide](witnet-node-developers/integrations/README.md)
-  * [Node API Reference](witnet-node-developers/integrations/node-api.md)
-  * [Wallet API Reference](witnet-node-developers/integrations/wallet-api.md)
-* [🗜️ Compile witnet-rust from Source Code](witnet-node-developers/compile-from-source-code.md)
+* [🏗️ Integration Guide](developer-reference/integrations/README.md)
+  * [Node API Reference](developer-reference/integrations/node-api.md)
+  * [Wallet API Reference](developer-reference/integrations/wallet-api.md)
+* [🗜️ Compile witnet-rust from Source Code](developer-reference/compile-from-source-code.md)

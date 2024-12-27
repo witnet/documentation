@@ -1,5 +1,5 @@
 ---
-description: Multi-chain deployed addresses of the WitnetRandomnessV2 contract.
+description: Multi-chain deployed addresses of the WitnetRandomness contract.
 ---
 
 # Multi-chain Addresses

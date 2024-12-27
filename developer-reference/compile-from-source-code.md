@@ -1,4 +1,4 @@
-# 🗜 Compile witnet-rust from Source Code
+# 🗜️ Compile witnet-rust from Source Code
 
 ## Install compilation dependencies
 

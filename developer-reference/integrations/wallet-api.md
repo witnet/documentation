@@ -1,6 +1,6 @@
 # Wallet API Reference
 
-The wallet exposes a JSON-RPC API over Websocket by default at the URL `127.0.0.1:11212`. It can be set in the Witnet configuration file as follows:
+The wallet  server exposes a JSON-RPC API over Websocket by default at the URL `127.0.0.1:11212`. It can be set in the Witnet configuration file as follows:
 
 ```toml
   [wallet]
@@ -9,45 +9,45 @@ The wallet exposes a JSON-RPC API over Websocket by default at the URL `127.0.0.
 
 ## Summary
 
-| Method Name                                                  | Request Params                                                                                                              | Response                                             |
-| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| [close\_session](wallet-api.md#close\_session)               | `session_id`                                                                                                                | `success`                                            |
-| [create\_data\_request](wallet-api.md#create\_data\_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                                   | `bytes`, `transaction`, `transaction_id`             |
-| [create\_mnemonics](wallet-api.md#create\_mnemonics)         | `length`                                                                                                                    | `mnemonics`                                          |
-| [create\_vtt](wallet-api.md#create\_vtt)                     | `session_id`, `wallet_id`, `fee`, (`fee_type`), \[`address`, `value`, (`time_lock`)], (`utxo_strategy`), (`selected_utxos`) | `bytes`, `metadata`, `transaction`, `transaction_id` |
-| [create\_wallet](wallet-api.md#create\_wallet)               | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`)       | `wallet_id`                                          |
-| [delete\_wallet](wallet-api.md#delete\_wallet)               | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
-| [export\_master\_key](wallet-api.md#export\_master\_key)     | `session_id`, `wallet_id`, `password`                                                                                       | `private_key`                                        |
-| [generate\_address](wallet-api.md#generate\_address)         | `session_id`, `wallet_id`, (`external`)                                                                                     | `address`, `path`                                    |
-| [get](wallet-api.md#get)                                     | `session_id`, `wallet_id`, `key`                                                                                            | `value`                                              |
-| [get\_addresses](wallet-api.md#get\_addresses)               | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                              | `address[]`, `total`                                 |
-| [get\_balance](wallet-api.md#get\_balance)                   | `session_id`, `wallet_id`                                                                                                   | `confirmed`, `local`, `unconfirmed`                  |
-| [get\_transactions](wallet-api.md#get\_transactions)         | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                            | `transactions[]`, `total`                            |
-| [get\_utxo\_info](wallet-api.md#get\_utxo\_info)             | `session_id`, `wallet_id`                                                                                                   | `output_info[]`                                      |
-| [get\_wallet\_infos](wallet-api.md#get\_wallet\_infos)       | (none)                                                                                                                      | `wallet_info[]`                                      |
-| [lock\_wallet](wallet-api.md#lock\_wallet)                   | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
-| [refresh\_session](wallet-api.md#refresh\_session)           | `session_id`                                                                                                                | `success`                                            |
-| [resync\_wallet](wallet-api.md#resync\_wallet)               | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
-| [rpc.off](wallet-api.md#rpc.off)                             | (`subscription_id[]`)                                                                                                       | (none)                                               |
-| [rpc.on](wallet-api.md#rpc.on)                               | `session_id`                                                                                                                | (`subscription_id`)                                  |
-| [run\_rad\_request](wallet-api.md#run\_rad\_request)         | `request`                                                                                                                   | `result`                                             |
-| [send\_transaction](wallet-api.md#send\_transaction)         | `session_id`, `wallet_id`, `transaction`                                                                                    | `balance_movement`, `jsonrpc_result`                 |
-| [set](wallet-api.md#set)                                     | `session_id`, `wallet_id`, `key`, `value`                                                                                   | (none)                                               |
-| [shutdown](wallet-api.md#shutdown)                           | `session_id`                                                                                                                | (none)                                               |
-| [sign\_data](wallet-api.md#sign\_data)                       | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                            | `chaincode`, `public_key`, `signature`               |
-| [unlock\_wallet](wallet-api.md#unlock\_wallet)               | `wallet_id`, `password`                                                                                                     | `session_id`, `session_expiration_secs`, ...         |
-| [update\_wallet](wallet-api.md#update\_wallet)               | `session_id`, `wallet_id`, (`name`), (`description`)                                                                        | `success`                                            |
-| [validate\_mnemonics](wallet-api.md#validate\_mnemonics)     | `seed_source`, `seed_data`, (`backup_password`)                                                                             | `exist`, `wallet_id`                                 |
+| Method Name                                                | Request Params                                                                                                              | Response                                             |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| [close\_session](wallet-api.md#close_session)              | `session_id`                                                                                                                | `success`                                            |
+| [create\_data\_request](wallet-api.md#create_data_request) | `session_id`, `wallet_id`, `request`, `fee`, (`fee_type`)                                                                   | `bytes`, `transaction`, `transaction_id`             |
+| [create\_mnemonics](wallet-api.md#create_mnemonics)        | `length`                                                                                                                    | `mnemonics`                                          |
+| [create\_vtt](wallet-api.md#create_vtt)                    | `session_id`, `wallet_id`, `fee`, (`fee_type`), \[`address`, `value`, (`time_lock`)], (`utxo_strategy`), (`selected_utxos`) | `bytes`, `metadata`, `transaction`, `transaction_id` |
+| [create\_wallet](wallet-api.md#create_wallet)              | (`name`), (`description`), `seed_source`, `seed_data`, `password`, (`overwrite`), (`backup_password`), (`birth_date`)       | `wallet_id`                                          |
+| [delete\_wallet](wallet-api.md#delete_wallet)              | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
+| [export\_master\_key](wallet-api.md#export_master_key)     | `session_id`, `wallet_id`, `password`                                                                                       | `private_key`                                        |
+| [generate\_address](wallet-api.md#generate_address)        | `session_id`, `wallet_id`, (`external`)                                                                                     | `address`, `path`                                    |
+| [get](wallet-api.md#get)                                   | `session_id`, `wallet_id`, `key`                                                                                            | `value`                                              |
+| [get\_addresses](wallet-api.md#get_addresses)              | `session_id`, `wallet_id`, (`offset`), (`limit`), (`external`)                                                              | `address[]`, `total`                                 |
+| [get\_balance](wallet-api.md#get_balance)                  | `session_id`, `wallet_id`                                                                                                   | `confirmed`, `local`, `unconfirmed`                  |
+| [get\_transactions](wallet-api.md#get_transactions)        | `session_id`, `wallet_id`, (`offset`), (`limit`)                                                                            | `transactions[]`, `total`                            |
+| [get\_utxo\_info](wallet-api.md#get_utxo_info)             | `session_id`, `wallet_id`                                                                                                   | `output_info[]`                                      |
+| [get\_wallet\_infos](wallet-api.md#get_wallet_infos)       | (none)                                                                                                                      | `wallet_info[]`                                      |
+| [lock\_wallet](wallet-api.md#lock_wallet)                  | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
+| [refresh\_session](wallet-api.md#refresh_session)          | `session_id`                                                                                                                | `success`                                            |
+| [resync\_wallet](wallet-api.md#resync_wallet)              | `session_id`, `wallet_id`                                                                                                   | `success`                                            |
+| [rpc.off](wallet-api.md#rpc.off)                           | (`subscription_id[]`)                                                                                                       | (none)                                               |
+| [rpc.on](wallet-api.md#rpc.on)                             | `session_id`                                                                                                                | (`subscription_id`)                                  |
+| [run\_rad\_request](wallet-api.md#run_rad_request)         | `request`                                                                                                                   | `result`                                             |
+| [send\_transaction](wallet-api.md#send_transaction)        | `session_id`, `wallet_id`, `transaction`                                                                                    | `balance_movement`, `jsonrpc_result`                 |
+| [set](wallet-api.md#set)                                   | `session_id`, `wallet_id`, `key`, `value`                                                                                   | (none)                                               |
+| [shutdown](wallet-api.md#shutdown)                         | `session_id`                                                                                                                | (none)                                               |
+| [sign\_data](wallet-api.md#sign_data)                      | `session_id`, `wallet_id`, `data`, `extended_pk`                                                                            | `chaincode`, `public_key`, `signature`               |
+| [unlock\_wallet](wallet-api.md#unlock_wallet)              | `wallet_id`, `password`                                                                                                     | `session_id`, `session_expiration_secs`, ...         |
+| [update\_wallet](wallet-api.md#update_wallet)              | `session_id`, `wallet_id`, (`name`), (`description`)                                                                        | `success`                                            |
+| [validate\_mnemonics](wallet-api.md#validate_mnemonics)    | `seed_source`, `seed_data`, (`backup_password`)                                                                             | `exist`, `wallet_id`                                 |
 
 ## Wallet API Endpoints
 
 ### create\_data\_request
 
-The method `create_data_request` creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method [send\_transaction](wallet-api.md#send\_transaction)).
+The method `create_data_request` creates a data request transaction object. It contains all required cryptographic information in order to be later sent to a Witnet node (e.g. by using the method [send\_transaction](wallet-api.md#send_transaction)).
 
 Request with parameters:
 
-* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `fee`: _number_, amount in nanoWitswill be earned by the miner that publishes the request.
 * `fee_type`: (optional) _String_, fee type chosen between _`weighted`_ or _`absolute`_. Defaults to _`weighted`_ if not inserted.
@@ -204,7 +204,7 @@ Example of a `create_data_request` response:
 
 ### create\_mnemonics
 
-The JsonRPC method `create_mnemonics` is used to generate a [BIP39 mnemonic sentence](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) that can be used to generate a new [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic\_wallet).
+The JsonRPC method `create_mnemonics` is used to generate a [BIP39 mnemonic sentence](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) that can be used to generate a new [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic_wallet).
 
 Request with parameters:
 
@@ -237,11 +237,11 @@ Response:
 
 ### create\_vtt
 
-The method `create_vtt` is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method [send\_transaction](wallet-api.md#send\_transaction)).
+The method `create_vtt` is used to generate a Value Transfer Transaction (VTT) object. It will contain all required cryptographic information in order to be later broadcasted to a Witnet node (e.g. by using the method [send\_transaction](wallet-api.md#send_transaction)).
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `fee`: _number_, miner fee in nanoWits.
 * `fee_type` (optional): _String_, fee type chosen between _`weighted`_ or _`absolute`_. Defaults to _`weighted`_ if not inserted.
@@ -351,7 +351,7 @@ Example of a `create_vtt` response:
 
 ### create\_wallet
 
-The JsonRPC method `create_wallet` is used to generate a new Master Key for an empty [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic\_wallet) that is stored encrypted in the file system.
+The JsonRPC method `create_wallet` is used to generate a new Master Key for an empty [HD wallet](https://en.bitcoinwiki.org/wiki/Deterministic_wallet) that is stored encrypted in the file system.
 
 Request with parameters:
 
@@ -402,7 +402,7 @@ The JsonRPC method `close_session` is used to close an active session without lo
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 
 ```json
 {
@@ -435,7 +435,7 @@ The JsonRPC method `delete_wallet` is used to delete the wallet with the specifi
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
@@ -470,7 +470,7 @@ The JsonRPC method `export_master_key` is used to export the master key of an ex
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `password`: _String_, user-defined password used to encrypt the key.
 
@@ -508,7 +508,7 @@ The JsonRPC method `generate_address` is used to derive deterministically a new 
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `external` (optional): _Boolean_, if set to false it will generate an internal address.
 
@@ -547,7 +547,7 @@ The method `get` allows to retrieve a previous stored key-value data in the wall
 Request with parameters:
 
 * `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `key`: _String_, key under which the value will be stored.
 
 ```json
@@ -583,7 +583,7 @@ The JsonRPC method `get_addresses` is used to query for a list of previously der
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `offset` (optional): _number_, initial position of the address list to be queried (by default is set to `0`).
 * `limit` (optional): _number_, size of the address list to be returned (by default is set to `25`).
@@ -652,7 +652,7 @@ The JsonRPC method `get_balance` is used to query the current balance for a give
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
@@ -701,7 +701,7 @@ The JsonRPC method `get_transactions` is used to query for a list of transaction
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `offset` (optional): _number_, initial position of the transaction list to be queried (by default is set to `0`).
 * `limit` (optional): _number_, size of the transaction list to be returned (by default is set to `25`).
@@ -788,7 +788,7 @@ The JsonRPC method `get_utxo_info` is used to query the current unspent transact
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned to you when you unlocked the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
@@ -868,7 +868,7 @@ The JsonRPC method `lock_wallet` is used to _lock_ the wallet with the specified
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
@@ -903,7 +903,7 @@ The JsonRPC method `refresh_session` is used to refresh an active session of a c
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 
 ```json
 {
@@ -936,7 +936,7 @@ The JsonRPC method `resync_wallet` is used to trigger a re-synchronization of th
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 
 ```json
@@ -998,7 +998,7 @@ Use this method `rpc.on` to subscribe to update events related to your session w
 
 Request with parameters:
 
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 
 ```json
 {
@@ -1244,13 +1244,13 @@ The response includes all the partial results of the request for the three diffe
 
 ### send\_transaction
 
-The method `send_transaction` is used to broadcast a given transaction to the Witnet network. Apart from the `wallet_id` and `session_id`, it requires an already created transaction (e.g. by using the methods [create\_vtt](wallet-api.md#create\_vtt)) or [create\_data\_request](wallet-api.md#create\_data\_request)).
+The method `send_transaction` is used to broadcast a given transaction to the Witnet network. Apart from the `wallet_id` and `session_id`, it requires an already created transaction (e.g. by using the methods [create\_vtt](wallet-api.md#create_vtt)) or [create\_data\_request](wallet-api.md#create_data_request)).
 
 The request requires the following parameters:
 
 * `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
-* `transaction`: _Transaction_, serialized transaction object. It can be created by using the methods [create\_vtt](wallet-api.md#create\_vtt)) or [create\_data\_request](wallet-api.md#create\_data\_request).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
+* `transaction`: _Transaction_, serialized transaction object. It can be created by using the methods [create\_vtt](wallet-api.md#create_vtt)) or [create\_data\_request](wallet-api.md#create_data_request).
 
 Example of a `send_transaction` for sending 500 nanoWits to an address.
 
@@ -1355,7 +1355,7 @@ The method `set` allows to store key-value data in the wallet database.
 Request with parameters:
 
 * `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
-* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 * `key`: _String_, key under which the value will be stored.
 * `value`: _Object_, JSON object to be stored.
 
@@ -1391,7 +1391,7 @@ To shutdown the wallet. It has no response, directly stops the wallet specified 
 
 Request with parameters:
 
-* `session_id` (optional): _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock\_wallet).
+* `session_id` (optional): _String_, session ID assigned when unlocking the wallet. See [unlock\_wallet](wallet-api.md#unlock_wallet).
 
 ```json
 {
@@ -1410,7 +1410,7 @@ This method uses the wallet's master key to sign message data.
 
 The parameters are:
 
-* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock\_wallet).
+* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock_wallet).
 * `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
 * `data`: _String_, the data to be signed.
 * `extended_pk`: _Bool_, if this flag is set to true, extended public key will be include (`chaincode`). If leaked, wallet public addresses might be derived.
@@ -1505,9 +1505,9 @@ The JsonRPC method `update_wallet` is used to update the name and/or caption of 
 Request with parameters:
 
 * `wallet_id`: _String_, the ID associated to the wallet. See [get\_wallet\_infos](wallet-api.md#get-wallet-infos).
-* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock\_wallet).
-* `name`: _String_, wallet name shown in [get\_wallet\_infos](wallet-api.md#get\_wallet\_infos).
-* `description`: _String_, wallet private description (only available for authenticated clients after [unlock\_wallet](wallet-api.md#unlock\_wallet)).
+* `session_id`: _number_, generated identifier obtained from unlocking the wallet. See [Unlock Wallet](wallet-api.md#unlock_wallet).
+* `name`: _String_, wallet name shown in [get\_wallet\_infos](wallet-api.md#get_wallet_infos).
+* `description`: _String_, wallet private description (only available for authenticated clients after [unlock\_wallet](wallet-api.md#unlock_wallet)).
 
 ```json
 {
