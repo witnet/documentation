@@ -6,7 +6,7 @@ Witnet price feeds are timely updated with fresh data as aggregated from multipl
 
 ### Using Witnet Price Feeds, in a nutshell
 
-Using Witnet data feeds to source prices and other data is extremely simple. This example obtains the latest [BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby\_btc-usd\_6) price using the Ethereum Rinkeby testnet:
+Using Witnet data feeds to source prices and other data is extremely simple. This example obtains the latest [BTC/USD-6](https://feeds.witnet.io/feeds/ethereum-rinkeby_btc-usd_6) price using the Ethereum Rinkeby testnet:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -43,10 +43,10 @@ A complete list of publicly available Witnet data feeds on Witnet's many support
 
 {% embed url="https://feeds.witnet.io" %}
 
-The [Price Feeds Contract Addresses](../../smart-contracts/price-feeds/addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains:
+The [Price Feeds Contract Addresses](../../smart-contracts/witnet-data-feeds/addresses/) section also contains a list of all the data feeds that Witnet provides on the different supported blockchains:
 
-{% content-ref url="../../smart-contracts/price-feeds/addresses/" %}
-[addresses](../../smart-contracts/price-feeds/addresses/)
+{% content-ref url="../../smart-contracts/witnet-data-feeds/addresses/" %}
+[addresses](../../smart-contracts/witnet-data-feeds/addresses/)
 {% endcontent-ref %}
 
 ### Learn More About Witnet Price Feeds

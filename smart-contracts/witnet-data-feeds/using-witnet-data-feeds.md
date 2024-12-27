@@ -2,14 +2,14 @@
 
 ## Reading multiple price pairs from the router
 
-The Price Router contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](../supported-chains.md).
+The Price Router contract is the easiest and most convenient way to consume Witnet price feeds on any of the [supported chains](../supported-chains.md#evm-compatible-testnets).
 
 ### Solidity example
 
 To read price values from the Price Router contract, you need first to identify the **`WitnetPriceRouter`** address specific to the chain in which you plan to deploy your contracts:
 
-{% content-ref url="../price-feeds/addresses/" %}
-[addresses](../price-feeds/addresses/)
+{% content-ref url="addresses/" %}
+[addresses](addresses/)
 {% endcontent-ref %}
 
 The example below shows how to read the price of two different assets from the Witnet Price Router:

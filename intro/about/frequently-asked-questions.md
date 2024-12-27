@@ -33,6 +33,6 @@ You can find all the information relative to the Wit coin in its own section of 
 
 The currently supported networks are listed here:
 
-{% content-ref url="../../smart-contracts/supported-chains.md" %}
-[supported-chains.md](../../smart-contracts/supported-chains.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
