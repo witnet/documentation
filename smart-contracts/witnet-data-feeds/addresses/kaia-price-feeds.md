@@ -1,5 +1,16 @@
 ---
 description: Price feeds currently supported by the Witnet Foundation on the Kaia ecosystem
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Kaia Price Feeds

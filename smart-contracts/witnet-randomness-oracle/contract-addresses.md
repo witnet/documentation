@@ -72,6 +72,12 @@ You can request support for additional chains using [this form](https://tally.so
 
 **Gnosis Testnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://blockscout.com/gnosis/chiado/address/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
 
+## Kaia
+
+**Kaia Mainnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://kaiascope.com/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
+
+**Kairos Testnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://kairos.kaiascope.com/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB?tabId=internalTx)&#x20;
+
 ## Kava
 
 **Kava EVM Mainnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://explorer.kava.io/address/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
@@ -83,12 +89,6 @@ You can request support for additional chains using [this form](https://tally.so
 **KCC Mainnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://scan.kcc.io/address/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
 
 **KCC Testnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://scan-testnet.kcc.network/address/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
-
-## Klaytn
-
-**Kaia Mainnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://scope.klaytn.com/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
-
-**Kairos Testnet:** [`0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB`](https://baobab.scope.klaytn.com/account/0xC0FFEE98AD1434aCbDB894BbB752e138c1006fAB)
 
 ## Mantle
 

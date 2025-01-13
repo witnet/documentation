@@ -70,17 +70,17 @@ _**Ethereum Sepolia**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://s
 
 _**Gnosis Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://gnosis-chiado.blockscout.com/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
+## Kaia
+
+_**Kaia Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://kaiascope.com/account/0x77703aE126B971c9946d562F41Dd47071dA00777)
+
+_**Kairos Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://kairos.kaiascope.com/account/0x77703aE126B971c9946d562F41Dd47071dA00777)
+
 ## Kava
 
 _**Kava Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://kavascan.com/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
 _**Kava Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://testnet.kavascan.com/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
-
-## Klaytn
-
-_**Klaytn Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://klaytnscope.com/account/0x77703aE126B971c9946d562F41Dd47071dA00777)
-
-_**Klaytn Baobab**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://baobab.klaytnscope.com/account/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
 ## KCC
 
@@ -92,7 +92,7 @@ _**KCC Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://scan-t
 
 _**Mantle Mainnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://explorer.mantle.xyz/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
-_**Mantle Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://scan-warringstakes.meter.io/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
+_**Mantle Testnet**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://sepolia.mantlescan.xyz/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
 ## Meter
 
