@@ -28,7 +28,6 @@ When exposing any of the JSON-RPC ports (tcp/21388, http/21339, ws/21340) to a p
 * [sign](node-api.md#sign)
 * [stake](node-api.md#stake)
 * [tryRequest](node-api.md#tryrequest)
-*
 
 ### Public methods
 
@@ -55,8 +54,6 @@ Public methods provide information that do not compromise node's private informa
 * [queryStakes](node-api.md#querystakes)
 * [signalingInfo](node-api.md#signalinginfo)
 * [syncStatus](node-api.md#syncstatus)
-
-
 
 ***
 
