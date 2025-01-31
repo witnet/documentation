@@ -39,7 +39,7 @@ Data requests to the Wit/Oracle get paid in native EVM currency:
 _**The Wit/Oracle solution works just right out of the box !**_
 {% endhint %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Not finding the chain you need for your project?&#x20;
 
 * [_Request support for a new chain_](https://tally.so/r/mOP09R)

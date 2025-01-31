@@ -60,5 +60,8 @@ docker compose down
 docker logs node -f
 ```
 
-#### Every time you edit the docker-compose.yml file to update you need to run `docker compose up -d`
 
+
+{% hint style="warning" %}
+Every time you edit the docker-compose.yml file to update you need to run `docker compose up -d`
+{% endhint %}
