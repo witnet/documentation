@@ -48,7 +48,7 @@ cargo run -- node blockchain --help
 {% endtab %}
 {% endtabs %}
 
-The JSON-RPC server address is obtained from the [configuration file](configuration/). The path of this file can be set using the `-c` or `--config` flag. This flag must appear before `node`.
+The JSON-RPC server address is obtained from the [configuration-file.md](advanced-setups/configuration-file.md "mention"). The path of this file can be set using the `-c` or `--config` flag. This flag must appear before `node`.
 
 {% tabs %}
 {% tab title="Docker" %}
@@ -428,6 +428,32 @@ Example output:
 ```
 block for epoch #76229 had digest 8dd75bb0d5475a93c27c4166677fbb3bc154e6731c7e07ecad549a58851c84a4
 ```
+
+### config
+
+Show the loaded configuration in Toml format to stdout.
+
+{% tabs %}
+{% tab title="Docker" %}
+```
+docker exec witnet_node witnet node config
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
+witnet node config
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run -- node config
+```
+{% endtab %}
+{% endtabs %}
+
+
 
 ### dataRequestReport
 
