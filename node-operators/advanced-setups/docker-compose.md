@@ -1,78 +1,64 @@
-# Run Witnet as a docker-compose service
+# Run Witnet as a docker compose service
 
 ### Prerequisites
 
-* Install the current stable release of Docker Compose:
+* Make sure you have docker installed, newer versions comes bundled with docker compose
+* Verify by running
 
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-```
-
-* Install the current stable release of parallel:
-
-```
-sudo apt install parallel
-parallel --citation
-```
-
-* Test the installation of Docker Compose:
-
-```
+```bash
 docker-compose --version
 ```
 
-* Clone the project's GitHub repository into your home directory:
+### Deploy
 
-```
-cd
-git clone https://github.com/witnet/witnet-operator-tools.git
-```
+#### Make a new directory & Create a docker-compose.yml file there
 
-### Go in the directory you are interested in
+```yaml
+networks:
+  Node:
 
-#### for only one node
-
-```
-cd witnet-operator-tools/docker/compose/bertux-operator-stable/
-```
-
-#### for several nodes (example: 5)
-
-```
-cd witnet-operator-tools/docker/compose/bertux-operator-5/
-```
-
-### Usage of docker-compose
-
-* Start up the service:
-
-```
-docker-compose up -d
-```
-
-* Follow the logs of the service:
-
-```
-docker-compose logs -f
+services:
+  node:
+    image: witnet/witnet-rust:<VERSION-HERE>
+    container_name: node
+    restart: always
+    ports:
+      - "21337:21337" # External Port
+      # - "21338:21338" # JSON-RPC Port # Needs to be exposed in the witnet.toml
+      # - "21339:21339" # HTTP Port # Needs to be exposed in the witnet.toml
+      # - "21340:21340" # Websocket # Needs to be exposed in the witnet.toml
+    environment:
+      - LOG_LEVEL=INFO
+    volumes:
+      - "<REPLACE-ME-WITH-PATH>/node-data:/.witnet"
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
 ```
 
-* When you want to stop the service:
 
-```
-docker-compose stop
+
+* Make sure to replace the volume path with your desired path eg. `/home/ubuntu/witnet`
+* It's also a good idea to limit your log file max size to avoid crashing the node from the overflowing logs
+
+#### Start Service
+
+```bash
+docker compose up -d
 ```
 
-* When you want to remove the service:
+#### Stop Service
 
-```
-docker-compose down
+```bash
+docker compose down
 ```
 
-* Every time you change the `docker-compose.yaml` file, you need to recreate the services by `docker-compose`:
+#### Check the service logs
 
+```bash
+docker logs node -f
 ```
-docker-compose down
-docker-compose up -d
-```
+
+#### Every time you edit the docker-compose.yml file to update you need to run `docker compose up -d`
+

@@ -72,7 +72,26 @@ There are two **important** things you should do now to make the most of your Wi
 
 The best way to contribute to the growth and sustainability of the Witnet network is by opening up the listening port of your node, so that other nodes in the network can download block chain data from you and your transactions can be broadcasted more quickly.
 
-For this feature to be effective, you will also need your IP address to be public (and ideally, static). If you are operating a node in your home network, you can request your ISP to assign you a static IP address or at least disable [CGN](https://en.wikipedia.org/wiki/Carrier-grade\_NAT) on it.
+For this feature to be effective, you will also need your IP address to be public (and ideally, static). If you are operating a node in your home network, you can request your ISP to assign you a static IP address or at least disable [CGN](https://en.wikipedia.org/wiki/Carrier-grade_NAT) on it.
+
+A simple easy way to debug if you're probably behind a double NAT & will need to speak with your ISP is to run this command
+
+```powershell
+tracert -h 5 8.8.8.8
+```
+
+if you notice your first 2 hops are behind private IPs then you're most likely behind a double NAT\
+Private IP ranges:
+
+```bash
+192.168.x.x
+
+10.x.x.x
+
+172.16.x.x through 172.31.x.x
+
+100.64.x.x through 100.127.x.x
+```
 
 Depending on your setup, this will normally imply changing the settings on your router or firewall so as to forward all incoming connections to port `21337` from your external IP into the IP of the device or interface where the node is running.
 
