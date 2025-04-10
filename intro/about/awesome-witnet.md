@@ -16,7 +16,7 @@ description: >-
 ## Official channels
 
 * [GitHub](https://github.com/witnet)
-* [Twitter](https://twitter.com/witnet\_io)
+* [X/Twitter](https://x.com/witnet_io)
 * [Telegram](https://t.me/witnetio)
 * [Discord](https://discord.gg/witnet)
 * [Medium](https://medium.com/witnet)
@@ -42,39 +42,57 @@ description: >-
 
 ### Exchanges
 
-* [Gate.io (WIT/USDT)](https://www.gate.io/trade/WIT\_USDT)
-* [Gate.io (WIT/ETH)](https://www.gate.io/trade/WIT\_ETH)
-* [Gate.io (WIT/BTC)](https://www.gate.io/trade/WIT\_BTC)
-* [MEXC (WIT/USDT)](https://www.mexc.com/exchange/WIT\_USDT)
-* [Bitmart (WIT/USDT)](https://www.bitmart.com/trade/en-US?symbol=WIT\_USDT)
+* [Gate.io (WIT/USDT)](https://www.gate.io/trade/WIT_USDT)
+* [Gate.io (WIT/ETH)](https://www.gate.io/trade/WIT_ETH)
+* [Gate.io (WIT/BTC)](https://www.gate.io/trade/WIT_BTC)
+* [MEXC (WIT/USDT)](https://www.mexc.com/exchange/WIT_USDT)
+* [Bitmart (WIT/USDT)](https://www.bitmart.com/trade/en-US?symbol=WIT_USDT)
 * [Changelly](https://changelly.com/buy/wit)
 * [Simpleswap](https://simpleswap.io/coins?tickers=wit)
+* [LetsExchange](https://letsexchange.io/coin/wit)
 
 ## Educational content
 
 ### Videos
 
+* 03/17/2025 [Wit/Race to Stake: Staking Synergies with PoolTogether's CTO Brendan Asselstine](https://www.youtube.com/watch?v=v7qGyi3XQpA)
+* 02/27/2025 [Wit/2 Special Event: RACE TO STAKE Kickstart Session](https://www.youtube.com/watch?v=bb6uvKnXlSY\&t=434s)
 * 07/25/2023 [Witnet @ BOS 2023 - "Overcoming the Challenges of Developing A Truly Multi Chain Oracle Network"](https://www.youtube.com/watch?v=PdmF7K49ndY)
 * 12/15/2022 [The Oracle Solution in DeFi; A Call To Action - Witnet | BOS22](https://www.youtube.com/watch?v=whVIyGjf7PA)
+* 06/29/2022 [Interview with thefett - Protocol deep dive](https://www.youtube.com/watch?v=mJoGAwPnZls\&t=2769s)
 * 02/14/2022 [Talk at EthDenver 2022: a multichain oracle for the multichain future](https://www.youtube.com/watch?v=ly3U5KO9hyo)
 * 12/09/2021 [Overview of the Witnet Grant Program](https://www.youtube.com/watch?v=Rpsa5mP2GnY) by [ECOINOMICA](https://www.youtube.com/channel/UCDBLwF1fOfllwKYcD9yG3ww) :flag\_ru:
 * 10/26/2021 [Talk at TheDAOist Lisbon: Making DAOs accessible for everyone](https://www.youtube.com/watch?v=4508pbiKPQc)
 * 10/15/2021 [Witnet: a next-generation network of oracles](https://www.youtube.com/watch?v=3AsbMAx81QY) by [ECOINOMICA](https://www.youtube.com/channel/UCDBLwF1fOfllwKYcD9yG3ww) :flag\_ru:
-* 04/20/2021 [Witnet Community Sessions — Adoption of WIP 0009, 0011 and 0012](https://www.youtube.com/watch?v=KR0lV\_V1zw4)
-* 03/30/2021 [Interview at ElevenPaths](https://www.youtube.com/watch?v=\_T-CLrlKmZc) :flag\_es:
+* 04/20/2021 [Witnet Community Sessions — Adoption of WIP 0009, 0011 and 0012](https://www.youtube.com/watch?v=KR0lV_V1zw4)
+* 03/30/2021 [Interview at ElevenPaths](https://www.youtube.com/watch?v=_T-CLrlKmZc) :flag\_es:
 * 11/23/2020 [How to create a Witnet Wallet using the Sheikah desktop app](https://www.youtube.com/watch?v=OO70kpwfHv0)
 * 07/24/2020 [How to setup a Witnet Node on a Raspberry Pi](https://www.youtube.com/watch?v=He2vuLtFyns\&t=224s)
-* 05/07/2020 [Interview with Tom Heavy](https://www.youtube.com/watch?v=43\_dto6TLJw)
+* 05/07/2020 [Interview with Tom Heavy](https://www.youtube.com/watch?v=43_dto6TLJw)
 * 04/17/2019 [Interview at RCast](https://www.youtube.com/watch?v=TpXB71NzXd4)
 * 12/07/2018 [Interview at Bloom Fireside](https://www.youtube.com/watch?v=OQKcEPKcpRI)
 * 11/06/2018 [Talk at D1Conf 2018: The Future of Oracles and Data On The Blockchain](https://www.youtube.com/watch?v=pv9wKodhPZg)
-* 10/24/2018 [Interview at D1Conf](https://www.youtube.com/watch?v=s0\_Bwme-eHA\&t=108s)
+* 10/24/2018 [Interview at D1Conf](https://www.youtube.com/watch?v=s0_Bwme-eHA\&t=108s)
 * 03/13/2018 [Talk at CryptoInvest / The Cube](https://www.youtube.com/watch?v=VWEwpwtmHpA) :flag\_es:
 * 02/15/2018 [1-minute Explainer](https://www.youtube.com/watch?v=wEtOiStvQoU)
 
 ### Articles&#x20;
 
+### 2025
+
+* 03/28/25 [Wit/Call March 2025](https://medium.com/witnet/wit-call-march-2025-af1deb2c8834)
+* 03/24/25 [$WIT on Exchanges: Where to Trade, Staking-As-A-Service Opportunities, and Plans for Delegated Staking](https://medium.com/witnet/wit-on-exchanges-where-to-trade-whats-next-the-staking-opportunity-1b3ee6ad1616)
+* 03/20/25 [The Wit/2.1 Roadmap and Beyond— Delegated Staking, Greater Security, and Faster Upgrades!](https://medium.com/witnet/the-wit-2-1-roadmap-and-beyond-delegated-staking-greater-security-and-faster-upgrades-c22fcdcac1cc)
+* 02/21/25 [Wit/Call February 2025](https://medium.com/witnet/wit-call-february-2025-91ab24f20a56)
+* 02/20/25 [How to stake $WIT from a node](https://medium.com/witnet/how-to-stake-wit-db3f509d01ca)
+* 02/17/25 [Staking on Witnet: How to Start Earning $WIT Rewards As a Validator](https://medium.com/witnet/staking-on-witnet-how-to-start-earning-wit-rewards-as-a-validator-9532585d5c30)
+* 02/11/25 [A New Era for $WIT Begins on February 11: Here’s What’s Coming Next](https://medium.com/witnet/a-new-era-for-wit-begins-on-february-11-heres-what-s-coming-next-bc50f5152a1f)
+
 ### 2024
+
+* 11/10/24 [How to stake in wit/2?](https://medium.com/witnet/how-to-stake-in-wit-2-ccbd68a2b83b)
+* 06/05/24 [Solidity and the Wit/Oracle](https://medium.com/witnet/solidity-and-the-wit-oracle-852bc4b338c1)
+* 02/02/24 [Witnet January 2024 Roundup](https://medium.com/witnet/witnet-january-2024-roundup-fe2c1d2d8242)
 
 ### 2023
 
@@ -314,15 +332,3 @@ description: >-
 * [The Next Step for Stablecoins: Decentralized Oracles](https://medium.com/witnet/the-next-step-for-stablecoins-decentralized-oracles-da12e0792fc) : Article by Jose Garay for Witnet
 * [The State of Decentralized Oracles](https://media.consensys.net/the-state-of-decentralized-oracles-df45bf0dc51d) : Article by John Adler for Consensys Media
 * [SchellingCoin: A Minimal-Trust Universal Data Feed](https://blog.ethereum.org/2014/03/28/schellingcoin-a-minimal-trust-universal-data-feed/) : Blog by Vitalik Buterin
-
-#### Other oracles
-
-* [Band Protocol](https://bandprotocol.com)
-* [Chainlink](https://chain.link)
-* [iExec's dOracles](https://iex.ec/decentralized-oracles/)
-* [Maker DAO's Medianizer](https://developer.makerdao.com/feeds/)
-* [Polaris](https://medium.com/marbleorg/introducing-polaris-ced195dd798e)
-* [Provable (formerly Oraclize)](http://provable.xyz)
-* [Rhombus](https://rhombus.network)
-* [Tellor](https://tellor.io)
-* [UMA Project](https://umaproject.org/optimistic-oracle.html)
