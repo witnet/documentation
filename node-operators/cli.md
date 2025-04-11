@@ -211,6 +211,73 @@ Example output:
 twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
 ```
 
+### authorizeStake
+
+Create an stake authorization.
+
+* `--node=socket`: Socket address of the Witnet node to query.
+* `--withdrawer=address`: Withdrawer address. Uses node's pkh if withdrawer is not specified.
+
+{% tabs %}
+{% tab title="Docker" %}
+```
+docker exec witnet_node witnet node authorizeStake --withdrawer wit1sp8xnclrhm4j5lrzxwnxerdetzsjqw88kwr05f
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
+witnet node authorizeStake --withdrawer twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run -- node authorizeStake --withdrawer twit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr
+```
+{% endtab %}
+{% endtabs %}
+
+Example output:
+
+```
+Authorization code:
+804e69e3e3beeb2a7c6233a66c8db958a12038e7004940c96d4c5574f53c5fcc5e5c34cf502969e23eb6800906f711c6b80e4bd3c843988cd77fd0b645dcc814576b45abcf533f628ad10496665910dafebb71f0e1
+QR code for myWitWallet:
+█████████████████████████████████████████████████████████████
+█████████████████████████████████████████████████████████████
+████ ▄▄▄▄▄ ██▄█  ▄▀  ▀▀▄ ▀▀▀ ▀█▀▄▀▀▄▀▄██ ▄▀▄▄█ ▀██ ▄▄▄▄▄ ████
+████ █   █ █ ▄▄ █▄▀  █▀ █▄█▀ ▀█▀█▀▀▄▄▄█▀▀█▀ ▀▄▀▄▀█ █   █ ████
+████ █▄▄▄█ █ ▄ ▀ ▀██▄█▀▄█  ▀ ▄▄▄ ▀█▄█▀▀▄ ▀▀▄▄▄ ███ █▄▄▄█ ████
+████▄▄▄▄▄▄▄█ ▀ ▀ █▄▀ ▀ █ █ ▀ █▄█ █ █▄▀ █ █▄▀▄▀ █ █▄▄▄▄▄▄▄████
+████▄▀ ▄ ▄▄█▀  █▀▀ ▀█ █▀▀▄██▄ ▄  ▄ ▄ ▀▄█▄▄▄ ▀▄ ▀▀▀▄▄▄▄ █▀████
+████▀█▀▀█▄▄██▄  ▄█▀▀▀▄ ▀▀▄ ▄▄▀█▄▀▄   ▀▄▀▄█▄▄▀▄▀▀▀▀▄ ▄▀█ █████
+█████ ▀█▀█▄ ▀  ▀█▀██▀▄▀▀█▄█▄ █ ▄█▄ ███▄▄   ▄▄█ █  ▄█▄█▀▄ ████
+██████  █▀▄█▄██▀▄▄██ ▄ █ ▄▄██▄▄▄▀  ▀▄▄▄▀  █  ▀▀▀▀▄█▄▄▄▄ █████
+████  ▀█▀▀▄  █▀▄ ▄█▄▀█▀█ ▄ ▄▄▄▀ ▀█▀▀▀ ▄█▀█ ██▀▀ ▄▀ ▄   █▄████
+████▀▀█▀█▄▄▄   ▄█ ▀▄ ██ ▄▀ ▄▀▄▀▀█▄██ ▀▄▀ ▀▄▀▀▀▄  █▀ █▄ ▀▀████
+████▄ ▀▄▀█▄▀▀ ▄█▄▄█▀█▀ █ ▀▄  █▄ ▄▄▀▀▄▄▄▀▄ ████▄▀▄ ▀▀█▄▄▄▄████
+████▀ ▀▄ ▀▄▄█▀▀▀█▀▀█ ▀█▀ ▄█▀▄▄▀▀ ▄ █▀  ▀▄█▄ █▀ ▄▄▄█▄██▀▄▀████
+████ ▄█  ▄▄▄  ██▄██  ▀▄█▄▄█▀ ▄▄▄ ▄▀ ▀ ▄▀▄▀▄▀ █ ▄ ▄▄▄ ▄▄▄▀████
+████  ▄▀ █▄█ ▀▀▀█ █▄▀▄▄▀▀▄▄  █▄█ ▄▄█▄ ▄▄▄█▄▀██ ▀ █▄█ ██▀█████
+██████ ▀▄▄▄▄ ▄▄█ ▀██    █▄▄▄   ▄ █▀▀█▀▀▄ ▄▀▀█ ▀█  ▄▄▄  █▀████
+████▄██▀█▄▄██▄▄▀ ▀▀▀▄▄▄█  ▄  ▄ ▀  ▄███▄▄█▀▄▀▄█▀▀▀█▀▀▄█▀ ▀████
+███████▄ ▄▄▄▀▀▄▄▀ ▀▄█▀█▄█ ▄  ▄▄ █▀██▀█▀▀▄▄██▄█  ▀▄▄▄▀██▄█████
+████ ▄▀▀▄▀▄ ▀ ▄▄█▀ ▄▀  ▀▄▄▀▀▀█▀ ▀▀ ██▀██ ▀▀   ▀▀█▀▀  █▀▄█████
+████▀█▄▄ ▄▄█ ▄▀▄  ▀▄ ▀ ▀█▄█▀ ▀▀▀█▀▀▀▄▄██▀█▀██▀▀▄█▄▀▄ █▀▄▄████
+████▀▄██▀█▄ ▄  ▄▀█▀ █▄▄█▀▄█▀▀▀▄▀▄██▀ ▄ ████▀▀▀▀███▄█▄█▀▀▄████
+█████▄█▄██▄▀▀ █▄█▄  █  █▀▄█ ▀█ ▀ ▄▄▀▀▀▄ ▄▀▄▀██▀   ▀▀▄██ ▀████
+████▄ ▀▄▄▄▄ █▀▀▄█▄▀█ ▄▀▀▀▄ █▀▀▀▀▄█▀██▀▄ ▄█▄▀█▀▄▀▄ ▄▄ █▄▄▄████
+███████▄██▄█ ██████▀ █▄██▄█  ▄▄▄  ▄██ ▀█▄▄█▀█▀ ▀ ▄▄▄ ▀█▄▄████
+████ ▄▄▄▄▄ █▀  █▀██  ▀▀▄█▀ █ █▄█ █▄ ▀ ▀█▄▄▄▀ █▀▀ █▄█ ▀█ █████
+████ █   █ █ ▄    ▀ ▄▀ ██▀▄▀ ▄▄▄ ██▀█▀▀▄ ▄▄ ▄▀▀▀▄▄▄▄ █▄▄█████
+████ █▄▄▄█ █▄ ▀ ██    ▄▀█▄▄▀ ▄█▄█▄▀▄█ █ ▀▄██▄█▀▄▄▄ ▄▀██ █████
+████▄▄▄▄▄▄▄█▄██▄▄▄█▄█▄█▄████▄▄▄▄█▄▄██▄▄▄██▄▄█▄██▄▄▄█▄█▄██████
+█████████████████████████████████████████████████████████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+```
+
 ### balance
 
 Get total balance of a given Witnet address. Balances are shown in wits.
@@ -775,20 +842,19 @@ The `raw` command allows sending raw JSON-RPC requests from the command line. It
 
 {% tabs %}
 {% tab title="Docker" %}
-```
-$ docker exec -i witnet_node witnet node raw
-```
+<pre><code><strong>docker exec -i witnet_node witnet node raw
+</strong></code></pre>
 {% endtab %}
 
 {% tab title="Binary" %}
 ```
-$ witnet -c witnet.toml node raw
+witnet -c witnet.toml node raw
 ```
 {% endtab %}
 
 {% tab title="Cargo" %}
 ```
-$ cargo run -- -c witnet.toml node raw
+cargo run -- -c witnet.toml node raw
 ```
 {% endtab %}
 {% endtabs %}
@@ -1074,6 +1140,38 @@ cargo run -- node joinTransaction --value=100 --size=3 --fee=1
 {% endtab %}
 {% endtabs %}
 
+### stake
+
+Create a stake transaction.
+
+* `--authorization=authorization`: Stake authorization code (the withdrawer address, signed by the validator node)
+* `--fee=fee`: miner fee in nanoWits.
+* `--node=node`: Socket address of the Witnet node to query
+* `--require_confirmation=true`: If unset or set to true, the command is interactive and prompts for user confirmation. If set to false, skip confirmation and complete the command without user confirmation.
+* `--value=value` : Value to stake in nanoWits. Minimum stake amount is 10000 $WIT and maximum is 10000000 $WIT.
+* `--withdrawer=address`: Withdrawer address.
+* `--dry-run=true`: Print the request that would be sent to the node and exit without doing anything.
+
+{% tabs %}
+{% tab title="Docker" %}
+```
+docker exec witnet_node witnet node stake --authorization 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789ab --fee 1000 --withdrawer wit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value 100000000000000
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
+witnet node stake --authorization 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789ab --fee 1000 --withdrawer wit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value 100000000000000
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run -- node stake --authorization 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789ab --fee 1000 --withdrawer wit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value 100000000000000
+```
+{% endtab %}
+{% endtabs %}
+
 ### transaction
 
 Print out detailed information about a transaction being queried by its hash.
@@ -1151,6 +1249,38 @@ Example output:
   "id": "1"
 }
 ```
+
+### unstake
+
+Create an unstake transaction.
+
+* `--node=node`: Socket address of the Witnet node to query.
+* `--operator=address`: Node address operating the staked coins.
+* `--fee=fee`: miner fee in nanoWits.
+* `--value=value` : Value to unstake in nanoWits. Minimum stake amount is 10000 $WIT.&#x20;
+* `--dry-run=true`: Print the request that would be sent to the node and exit without doing anything.
+
+
+
+{% tabs %}
+{% tab title="Docker" %}
+```
+docker exec witnet_node witnet node unstake --fee 1000 --operator wit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value 100000000000000
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```
+witnet node unstake --fee 1000 --operator wit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value 100000000000000
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```
+cargo run -- node unstake --fee 1000 --operator wit1ulyzvnknjnndkfva636erkkp83wxhhwdfhptsr --value 100000000000000
+```
+{% endtab %}
+{% endtabs %}
 
 ### utxos
 
