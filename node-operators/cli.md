@@ -1110,6 +1110,66 @@ cargo run -- node server
 {% endtab %}
 {% endtabs %}
 
+### snapshot-export
+
+Export the current chain state.
+
+* `path`: The path to store the exported chain state.
+* `--force`:  Flag that bypasses checks, and allows to export when not fully synced.
+
+{% tabs %}
+{% tab title="Docker" %}
+```bash
+docker exec witnet node server --snapshot-export path
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```bash
+./witnet node server --snapshot-export path
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```bash
+cargo run node server --snapshot-export path
+```
+{% endtab %}
+{% endtabs %}
+
+### snapshot-import
+
+Start node and sync to a known chain state.
+
+* `path`: The path to .bin file from an exported chain state.
+* `--force`:  Flag that bypasses checks.
+
+{% tabs %}
+{% tab title="Docker" %}
+```bash
+docker run -d \
+  --name witnet_node \
+  --volume ~/.witnet:/.witnet \
+  --publish 21337:21337 \
+  --restart always \
+  witnet/witnet-rust \
+  node server --snapshot-import path
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```bash
+./witnet node server --snapshot-import path
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```bash
+cargo run node server --snapshot-import path
+```
+{% endtab %}
+{% endtabs %}
+
 ### splitTransaction
 
 Create a value transfer transaction that splits UTXOs.

@@ -57,6 +57,46 @@ docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publ
 {% endtab %}
 {% endtabs %}
 
+
+
+### Restore from a Snapshot <a href="#now-what" id="now-what"></a>
+
+The Witnet blockchain has been running since October 2020, so syncing a new node from scratch can take a long time. To speed this up, you can restore the node from a snapshot, reducing sync time from days to just a few hours.
+
+1. Download the latest mainnet snapshot file
+
+```bash
+wget https://witnet.network/snapshots/mainnet-latest.tar.zst
+```
+
+2. Decompress the file
+
+```bash
+tar --zstd -xvf mainnet-latest.tar.zst
+```
+
+Make note of the folder path where the snapshot was extracted. The folder name will include the date it was created, and the `.bin` file inside will include the corresponding epoch number.
+
+3. Start the Node Using the Snapshot
+
+```bash
+ docker run -d \
+  --name witnet_node \
+  --volume ~/.witnet:/.witnet \
+  --publish 21337:21337 \
+  --restart always \
+  witnet/witnet-rust \
+  node server --snapshot-import /path/to/your/witnet_chain_snapshot_mainnet.bin 
+   
+```
+
+🔁 Replace `/path/to/your/snapshot_file.bin` with the actual path to the `.bin` file you extracted.\
+Example:
+
+```
+/20250610-snapshot-mainnet/witnet_chain_snapshot_mainnet_3457949.bin
+```
+
 ### Now what? <a href="#now-what" id="now-what"></a>
 
 There are two **important** things you should do now to make the most of your Witnet node:

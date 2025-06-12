@@ -156,6 +156,64 @@ Create a stake authorization for the given address.
 
 ***
 
+### chainExport
+
+Export the current chain state.
+
+* `path`: The path to store the exported chain state.
+* `--force`:  Flag that bypasses checks, and allows to export when not fully synced.
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+{
+  "jsonrpc":"2.0",
+  "method":"chainExport",
+  "params":{
+    "path":".",
+    "force":true
+  },
+  "id":"1"
+}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+"jsonrpc":"2.0","result":true,"id":1}
+```
+{% endtab %}
+{% endtabs %}
+
+### chainImport
+
+Start node and sync to a known chain state.
+
+* `path`: The path to .bin file from an exported chain state.
+* `--force`:  Flag that bypasses checks.
+
+{% tabs %}
+{% tab title="Request" %}
+```bash
+{
+  "jsonrpc":"2.0",
+  "method":"chainImport",
+  "params":{
+    "path":"/snapshot/witnet_chain_snapshot.bin",
+    "force":true
+  },
+  "id":"1"
+}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```bash
+"jsonrpc":"2.0","result":true,"id":1}
+```
+{% endtab %}
+{% endtabs %}
+
 ### clearPeers
 
 Clear all peers from the list of available ones.
