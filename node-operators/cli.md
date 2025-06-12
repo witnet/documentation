@@ -1,4 +1,4 @@
-# 📄 CLI Reference
+# ⌨️ CLI Reference
 
 The cli subcommand provides a human-friendly command-line interface to the node [JSON-RPC API](json-rpc/).
 

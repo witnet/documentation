@@ -16,7 +16,7 @@ Witnet-Rust can be easily run:
 * [as a Docker container](../../node-operators/docker-quick-start-guide.md)
 * [as a docker-compose service](../../node-operators/advanced-setups/docker-compose.md)
 * [as a systemd service](../../node-operators/advanced-setups/systemd.md)
-* [compiling from source code](../compile-from-source-code.md)
+* [compiling from source code](../../compile-from-source-code.md)
 
 ### Witnet-Rust Components
 
