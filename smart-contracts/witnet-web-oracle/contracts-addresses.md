@@ -6,9 +6,9 @@ description: Multi-chain deployed addresses of the WitnetOracle entry-point.
 
 ## Arbitrum
 
-_**Arbitrum ONE**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://sepolia.arbiscan.io/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
+_**Arbitrum ONE**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://arbiscan.io/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
-_**Arbitrum Sepolia**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://arbiscan.io/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
+_**Arbitrum Sepolia**_: [`0x77703aE126B971c9946d562F41Dd47071dA00777`](https://sepolia.arbiscan.io/address/0x77703aE126B971c9946d562F41Dd47071dA00777)
 
 ## Avalanche
 
