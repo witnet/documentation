@@ -1,4 +1,4 @@
-# 🚀 Witnet Node Quick Start Guide (Docker)
+# 🚀 Getting Started (Docker)
 
 **The Witnet Mainnet is open for anyone to join and and run their own full node.**
 
@@ -59,7 +59,7 @@ docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publ
 
 
 
-### Restore from a Snapshot <a href="#now-what" id="now-what"></a>
+### Restore from a Snapshot <a href="#restore-from-a-snapshot" id="restore-from-a-snapshot"></a>
 
 The Witnet blockchain has been running since October 2020, so syncing a new node from scratch can take a long time. To speed this up, you can restore the node from a snapshot, reducing sync time from days to just a few hours.
 
