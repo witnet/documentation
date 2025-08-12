@@ -93,6 +93,7 @@
     * [Syscoin Price Feeds](smart-contracts/witnet-data-feeds/addresses/syscoin-price-feeds.md)
     * [Ultron Price Feeds](smart-contracts/witnet-data-feeds/addresses/ultron-price-feeds.md)
     * [Request new price feed or chain support](https://tally.so/r/wMZDAn)
+    * [World Chain Feeds](smart-contracts/witnet-data-feeds/addresses/world-chain-feeds.md)
 * [🎲 Wit/Randomness](smart-contracts/witnet-randomness-oracle/README.md)
   * [Generating Randomness](smart-contracts/witnet-randomness-oracle/generating-randomness.md)
   * [WitnetRandomness Contract](smart-contracts/witnet-randomness-oracle/randomness-contract.md)

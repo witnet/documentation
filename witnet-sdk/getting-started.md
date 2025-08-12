@@ -1,26 +1,14 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🚀 Getting Started
 
 The **Witnet SDK** offers a comprehensive range of NPM packages tailored to various Web3 environments and programming languages, ensuring you have the right tools for your specific use case.
 
-| Witnet SDK packages                                                  |                                                                                                                                                                                                                                                                         |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@witnet/sdk](getting-started.md#witnet-sdk-js)                      | **Javascript** and **Typescript** developers willing to interact with the Witnet blockchain.                                                                                                                                                                            |
-| [@witnet/sdk-solidity](getting-started.md#witnet-sdk-solidity)       | Developers willing to report notarized oracle queries from the Witnet blockchain into smart contracts in **EVM-compatible** chains, get smart contracts to build verifiable oracle queries on-chain, or pull them off from the Witnet blockchain. _Embeds @witnet/sdk._ |
-| [@witnet/sdk-price-feeds](getting-started.md#witnet-sdk-price-feeds) | Devops and devs willing to leverage, query or autonomously report **notarized price feed updates**, subsidized or not by the Witnet Foundation. _Embeds: @witnet/sdk and @witnet/sdk-solidity._                                                                         |
+| Witnet SDK packages                                              |                                                                                                                                                                                                                                                                         |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@witnet/sdk](getting-started.md#witnet-sdk-js)                  | **Javascript** and **Typescript** developers willing to interact with the Witnet blockchain.                                                                                                                                                                            |
+| [@witnet/ethers](getting-started.md#witnet-sdk-solidity)         | Developers willing to report notarized oracle queries from the Witnet blockchain into smart contracts in **EVM-compatible** chains, get smart contracts to build verifiable oracle queries on-chain, or pull them off from the Witnet blockchain. _Embeds @witnet/sdk._ |
+| [@witnet/price-feeds](getting-started.md#witnet-sdk-price-feeds) | Devops and devs willing to leverage, query or autonomously report **notarized price feed updates**, subsidized or not by the Witnet Foundation. _Embeds: @witnet/sdk and @witnet/ethers._                                                                               |
+
+
 
 {% hint style="success" %}
 _You don't need to run a Witnet node, stake $WIT coins, or pay subscription fees to use any of these packages, whatsoever. The **Witnet SDK** is totally open sourced and distributed under MIT license._
@@ -42,16 +30,22 @@ _Witnet is a totally_ [_permissionless_](../intro/about/architecture.md#witnet-i
 
 ### Installation
 
+####
+
+#### To use the SDK library
+
+Install the package either as a dev or runtime dependency to your project:
+
 {% tabs %}
-{% tab title="PNPM" %}
+{% tab title="NPM" %}
 ```
-$ pnpm add @witnet/sdk
+$ npm install --save-dev @witnet/sdk
 ```
 {% endtab %}
 
-{% tab title="NPM" %}
+{% tab title="PNPM" %}
 ```
-$ npm install --save @witnet/sdk
+$ pnpm add @witnet/sdk
 ```
 {% endtab %}
 
@@ -62,7 +56,7 @@ $ yarn add @witnet/sdk
 {% endtab %}
 {% endtabs %}
 
-#### Importing the SDK library
+Import Witnet classes, helper methods and/or Radon assets into your scripts:
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -85,19 +79,19 @@ This package embeds an executable that allows you to interact with the Witnet bl
 {% tabs %}
 {% tab title="PNPM" %}
 ```bash
-$ pnpm witnet --version
+$ pnpm witsdk --version
 ```
 {% endtab %}
 
 {% tab title="NPM" %}
 ```
-$ npx witnet --version
+$ npx witsdk --version
 ```
 {% endtab %}
 
 {% tab title="YARN" %}
 ```bash
-$ yarn witnet --version
+$ yarn witsdk --version
 ```
 {% endtab %}
 {% endtabs %}
@@ -141,4 +135,4 @@ _Encrypted master keys requires the password to be specified in Javascript, or t
 
 ### Smoke tests
 
-<table><thead><tr><th width="458.66656494140625">Checklist</th><th>Commands</th></tr></thead><tbody><tr><td>Verify the actual Witnet provider and network you're connecting to.</td><td><code>$ npx witnet network provider</code></td></tr><tr><td>The Wit/RPC provider should be operational and synced.</td><td><code>$ npx witnet network syncStatus</code></td></tr><tr><td>You should be able to operate with the same Witnet address/es as the one/s available on whatever app, or node, where the master key was imported from.</td><td><code>$ npx witnet wallet accounts</code></td></tr></tbody></table>
+<table><thead><tr><th width="458.66656494140625">Checklist</th><th>Commands</th></tr></thead><tbody><tr><td>Verify the actual Witnet provider and network you're connecting to.</td><td><code>$ npx witsdk network provider</code></td></tr><tr><td>The Wit/RPC provider should be operational and synced.</td><td><code>$ npx witsdk network syncStatus</code></td></tr><tr><td>You should be able to operate with the same Witnet address/es as the one/s available on whatever app, or node, where the master key was imported from.</td><td><code>$ npx witsdh wallet accounts</code></td></tr></tbody></table>
