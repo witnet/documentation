@@ -19,7 +19,7 @@ A connection is considered to be initialized once information about the actual W
 main()
 
 async function main() {
-    const provider = await Witnet.Provider.fromEnv() 
+    const provider = await Witnet.JsonRpcProvider.fromEnv() 
     console.log(provider.network)
     console.log(provider.networkId)
     // ...
@@ -34,7 +34,7 @@ import Witnet from '@witnet/sdk'
 main()
 
 async function main() {
-    const provider = await Witnet.Provider.fromEnv() // reads actual URL from environment
+    const provider = await Witnet.JsonRpcProvider.fromEnv() // reads actual URL from environment
     console.log(provider.network)
     console.log(provider.networkId)
     // ...

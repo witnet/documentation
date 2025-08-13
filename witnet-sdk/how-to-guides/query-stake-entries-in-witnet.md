@@ -22,7 +22,7 @@ Active validators in Witnet are considered to be those nodes having either inclu
 {% tab title="Javascript" %}
 ```javascript
 const { Witnet } = require('@witnet/sdk')
-const provider = await Witnet.Provider.fromURL("https://rpc-testnet.witnet.io")
+const provider = await Witnet.JsonRpcProvider.fromURL("https://rpc-testnet.witnet.io")
 
 let since = -4320 // 4320 epochs x 20 secs ~ 24 hours ago
 let stakes = await provider.stakes({ 
@@ -38,7 +38,7 @@ let stakes = await provider.stakes({
 {% tab title="Typescript" %}
 ```typescript
 import Witnet from '@witnet/sdk'
-const provider = await Witnet.Provider.fromURL("https://rpc-testnet.witnet.io")
+const provider = await Witnet.JsonRpcProvider.fromURL("https://rpc-testnet.witnet.io")
 
 let since: number = -4320 // 4320 epochs x 20 secs ~ 24 hours ago
 let stakes: Array<Witnet.StakeEntry> = await provider.stakes({ 
@@ -64,7 +64,7 @@ $ npx witnet network senate --since 4320 --verbose
 {% tab title="Javascript" %}
 ```javascript
 const { Witnet } = require('@witnet/sdk')
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 
 let stakes = await provider.stakes({ 
     filter: {
@@ -83,7 +83,7 @@ let stakes = await provider.stakes({
 {% tab title="Typescript" %}
 ```typescript
 import Witnet from '@witnet/sdk'
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 
 let stakes: Array<Witnet.StakeEntry> = await provider.stakes({ 
     filter: {
@@ -101,7 +101,7 @@ let stakes: Array<Witnet.StakeEntry> = await provider.stakes({
 
 {% tab title="CLI" %}
 ```bash
-$ npx witnet network --withdrawer wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc
+$ npx witnet network stakes --withdrawer wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc
 ```
 {% endtab %}
 {% endtabs %}
@@ -112,7 +112,7 @@ $ npx witnet network --withdrawer wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc
 {% tab title="Javascript" %}
 ```javascript
 const { Witnet } = require('@witnet/sdk')
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 
 let stakes = await provider.stakes({ 
     filter: {
@@ -131,7 +131,7 @@ let stakes = await provider.stakes({
 {% tab title="Typescript" %}
 ```typescript
 import Witnet from '@witnet/sdk'
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProviderer.fromEnv()
 
 let stakes: Array<Witnet.StakeEntry> = await provider.stakes({ 
     filter: {
@@ -146,7 +146,7 @@ let stakes: Array<Witnet.StakeEntry> = await provider.stakes({
 
 {% tab title="CLI" %}
 ```bash
-$ npx witnet network --validator wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc
+$ npx witnet network stakes --validator wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc
 ```
 {% endtab %}
 {% endtabs %}

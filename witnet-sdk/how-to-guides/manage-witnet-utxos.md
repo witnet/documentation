@@ -22,7 +22,7 @@ The balance of any Witnet address is therefore divided in three different fields
 {% tab title="Javascript" %}
 ```javascript
 const { Witnet } = require("@witnet/sdk")
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 const utxos = await provider.getUtxos("wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc")
 ```
 {% endtab %}
@@ -30,7 +30,7 @@ const utxos = await provider.getUtxos("wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vws
 {% tab title="Typescript" %}
 ```typescript
 import { Witnet } from "@witnet/sdk"
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 const utxos = await provider.getUtxos("wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc")
 ```
 {% endtab %}
@@ -50,7 +50,7 @@ $ npx witnet inspect utxos wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc --verbose
 {% tab title="Javascript" %}
 ```javascript
 const { utils, Witnet } = require("@witnet/sdk")
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 const balance = await provider.getBalance("wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc")
 ```
 {% endtab %}
@@ -58,7 +58,7 @@ const balance = await provider.getBalance("wit165ec489lcrt27w5wa7q9je7rgr4dtvyff
 {% tab title="Typescript" %}
 ```typescript
 import { Witnet } from "@witnet/sdk"
-const provider = await Witnet.Provider.fromEnv()
+const provider = await Witnet.JsonRpcProvider.fromEnv()
 const balance = await provider.getBalance("wit165ec489lcrt27w5wa7q9je7rgr4dtvyff9vwsc")
 ```
 {% endtab %}
@@ -100,7 +100,7 @@ $ npx witnet wallet utxos
 
 Different strategies are possible when selecting input UTXOs as for covering some target value:
 
-<table><thead><tr><th width="196.2220458984375">UTXO Selection Strategy</th><th>Description</th></tr></thead><tbody><tr><td><strong><code>"big-first"</code></strong></td><td>Higher value UTXOs are selected first, until target value is covered.</td></tr><tr><td><strong><code>"random"</code></strong></td><td>UTXOs are selected randomly, until target value is covered.</td></tr><tr><td><strong><code>"slim-fit"</code></strong></td><td>The smallest of all UTXOs that individually covers target value is selected. If none fulfills this condition, UTXOs get then selected by following the <code>BigFirst</code> strategy. </td></tr><tr><td><code>"small-first"</code></td><td>Smaller value UTXOs are selected first, until target value is covered.</td></tr></tbody></table>
+<table><thead><tr><th width="196.2220458984375">UTXO Selection Strategy</th><th>Description</th></tr></thead><tbody><tr><td><code>"big-first"</code></td><td>Higher value UTXOs are selected first, until target value is covered.</td></tr><tr><td><code>"random"</code></td><td>UTXOs are selected randomly, until target value is covered.</td></tr><tr><td><code>"slim-fit"</code></td><td>The smallest of all UTXOs that individually covers target value is selected. If none fulfills this condition, UTXOs get then selected by following the <code>BigFirst</code> strategy. </td></tr><tr><td><code>"small-first"</code></td><td>Smaller value UTXOs are selected first, until target value is covered.</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="Javascript" %}

@@ -30,8 +30,6 @@ _Witnet is a totally_ [_permissionless_](../intro/about/architecture.md#witnet-i
 
 ### Installation
 
-####
-
 #### To use the SDK library
 
 Install the package either as a dev or runtime dependency to your project:
@@ -109,7 +107,7 @@ URL of the Wit/RPC endpoint that will provide both information about the Witnet 
 
 This URL can correspond to that of any validator or archive nodes in the Witnet network (as long as the corresponding http/rpc port is reachable), or any of the public-domain endpoints provided by the **Witnet Foundation**:
 
-<table><thead><tr><th width="146.77789306640625">Pubiic Networks</th><th width="262.5556640625">Wit/RPC Providers</th><th width="105.77764892578125">Network id</th><th>Description</th></tr></thead><tbody><tr><td><strong>Witnet Mainnet</strong></td><td><code>https://rpc.witnet.io</code></td><td><code>0x9FED</code></td><td>Where Wit/oracle queries get notarized for real, and results forever stored into the Witnet blockchain. Transactions get paid in real <strong>$WIT coins</strong>.</td></tr><tr><td><strong>Witnet Testnet</strong></td><td><code>https://rpc-testnet.witnet.io</code></td><td><code>0x2845</code></td><td>Only for testing purposes. Transactions get paid in $TWIT coins with no market value.</td></tr></tbody></table>
+<table><thead><tr><th width="146.77789306640625">Pubiic Networks</th><th width="262.5556640625">Wit/RPC Providers</th><th width="105.77764892578125">Network id</th><th>Description</th></tr></thead><tbody><tr><td><strong>Witnet Mainnet</strong></td><td><code>https://rpc.witnet.io</code></td><td><code>0x9FED</code></td><td>Where Wit/oracle queries get notarized for real, and results forever stored into the Witnet blockchain. Transactions get paid in real <strong>$WIT coins</strong>.</td></tr><tr><td><strong>Witnet Testnet</strong></td><td><code>https://rpc-testnet.witnet.io</code></td><td><code>0x749F</code></td><td>Only for testing purposes. Transactions get paid in $TWIT coins with no market value.</td></tr></tbody></table>
 
 {% hint style="warning" %}
 _If no otherwise specified, and no WITNET\_RPC\_PROVIDER is set in the environment, classes from the Javascript library will rely on **https://rpc.witnet.io** as default Wit/RPC provider._
@@ -135,4 +133,8 @@ _Encrypted master keys requires the password to be specified in Javascript, or t
 
 ### Smoke tests
 
-<table><thead><tr><th width="458.66656494140625">Checklist</th><th>Commands</th></tr></thead><tbody><tr><td>Verify the actual Witnet provider and network you're connecting to.</td><td><code>$ npx witsdk network provider</code></td></tr><tr><td>The Wit/RPC provider should be operational and synced.</td><td><code>$ npx witsdk network syncStatus</code></td></tr><tr><td>You should be able to operate with the same Witnet address/es as the one/s available on whatever app, or node, where the master key was imported from.</td><td><code>$ npx witsdh wallet accounts</code></td></tr></tbody></table>
+| Checklist                                                                                                                                              | Commands                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
+| Verify the actual Witnet provider and network you're connecting to.                                                                                    | `$ npx witsdk network provider`   |
+| The Wit/RPC provider should be operational and synced.                                                                                                 | `$ npx witsdk network syncStatus` |
+| You should be able to operate with the same Witnet address/es as the one/s available on whatever app, or node, where the master key was imported from. | `$ npx witsdk wallet accounts`    |
