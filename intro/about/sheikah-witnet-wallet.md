@@ -9,7 +9,7 @@ Witnet supports two distinct forms of WIT:
 
 ## Native WIT Wallets
 
-The Witnet coin ($WIT) is a utility token native to the Witnet Network, a public and permissionless Proof-of-Stake blockchain, promoting fair and trustworthy behavior throughout the network.
+The Witnet coin (WIT) is a utility token native to the Witnet Network, a public and permissionless Proof-of-Stake blockchain, promoting fair and trustworthy behavior throughout the network.
 
 ### Sheikah
 
@@ -19,7 +19,7 @@ The Witnet coin ($WIT) is a utility token native to the Witnet Network, a public
 
 ### myWitWallet
 
-Discover the convenience and security of [myWitWallet](https://mywitwallet.com/), the ultimate non-custodial mobile wallet app for managing and safeguarding your $WIT native coins. Say goodbye to long hours of waiting for your wallet to synchronize—myWitWallet features instant synchronization, ensuring you can access your funds and transact seamlessly.
+Discover the convenience and security of [myWitWallet](https://mywitwallet.com/), the ultimate non-custodial mobile wallet app for managing and safeguarding your WIT native coins. Say goodbye to long hours of waiting for your wallet to synchronize—myWitWallet features instant synchronization, ensuring you can access your funds and transact seamlessly.
 
 {% embed url="https://mywitwallet.com/" %}
 
@@ -35,7 +35,7 @@ Sheikah and myWitWallet are open source projects developed and maintained by a g
 
 ## Wrapped WIT Wallets
 
-Native $WIT coins can be converted into $WIT tokens in **Ethereum** by means of the official ERC-20 token contract at [`0xcafe...CaFE`](https://etherscan.io/address/0xcafe5De18756817D98F4603F6828397406D4CaFE#tokentxns). Once wrapped into Ethereum, users can handle wrapped $WIT tokens using standard EVM wallet, such as MetaMask, Rabby, Wallet3, among many others:
+Native WIT coins can be converted into WIT tokens in **Ethereum** by means of the official ERC-20 token contract at [`0xcafe...CaFE`](https://etherscan.io/address/0xcafe5De18756817D98F4603F6828397406D4CaFE#tokentxns). Once wrapped into Ethereum, users can handle wrapped WIT tokens using standard EVM wallet, such as MetaMask, Rabby, Wallet3, among many others:
 
 {% embed url="https://metamask.io/" %}
 

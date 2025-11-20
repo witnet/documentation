@@ -18,9 +18,9 @@ Only native WIT can be staked. If you bought WIT ERC20 on Uniswap, you need you 
 [http://erc20.witnet.io/unwrap](http://erc20.witnet.io/unwrap)
 {% endhint %}
 
-## How to stake $WIT
+## How to stake WIT
 
-To run validator node in Wit/Oracle network, you must stake $WIT coins. This stake allows you to propose blocks and fulfill data requests. The minimum required stake is 10,000 $WIT, while the maximum is 10,000,000 $WIT for a single validator.
+To run validator node in Wit/Oracle network, you must stake WIT coins. This stake allows you to propose blocks and fulfill data requests. The minimum required stake is 10,000 WIT, while the maximum is 10,000,000 WIT for a single validator.
 
 ### Generate an Authorization Code <a href="#c499" id="c499"></a>
 
@@ -58,7 +58,7 @@ cargo run -- node authorizeStake --withdrawer <address>
 
 ### Submit the Stake Transaction <a href="#bfe6" id="bfe6"></a>
 
-Once you have the authorization code, you can stake from any address that holds the $WIT you want to stake. This can be done using the node CLI or a wallet such as [myWitWallet](../intro/about/sheikah-witnet-wallet.md#mywitwallet).
+Once you have the authorization code, you can stake from any address that holds the WIT you want to stake. This can be done using the node CLI or a wallet such as [myWitWallet](../intro/about/sheikah-witnet-wallet.md#mywitwallet).
 
 Use the following command with required options:
 
