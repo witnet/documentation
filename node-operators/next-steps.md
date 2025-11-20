@@ -8,28 +8,102 @@ As soon as the `witnet_node` container is up, it will do the following things in
 2. Discover what is the tip of the block chain, and download all the blocks from that chain. This can take from several minutes to several hours. The synchronization time depends heavily on how long the block chain is, but also on your Internet bandwidth, CPU speed, memory size and speed, and storage drive write throughput.
 3. Go into _Synced_ status. In Synced status, your node will validate transactions and blocks in real time, and it will try itself to propose block candidates and participate in resolving _data requests_.
 
-## What to expect from your node's balance and reputation
+## What to expect from your node's balance and mining power.
 
-* Getting your first block proposal accepted by the network and minting your first wit tokens is not easy, and can take from a few days up to some weeks due to the probabilistic nature of the cryptographic sortition algorithm that rules the system.
-* As with minting blocks, being assigned a request for the first time can take some time. Once you have mined one block or resolved at least one request, your node will earn reputation and it will start getting assignments more often.
-
-{% hint style="info" %}
-Note that it is perfectly normal for a node to show 0 "balance", "reputation", "blocks included" or "accepted commits" for the first days of it being up. Please be patient, new identities in the system are subject to a slow start for critical security reasons. Read below for tips on how to increase your node's probability of mining.
-{% endhint %}
-
-## Stake some WIT tokens to increase your node's probability of mining
-
-The most efficient way to increase your node's probability of mining is to deposit some WIT tokens into its address.
-
-In doing so, your node will be able to start participating in resolving data requests, which allows it to earn reputation points and join the _Active Reputation Set (ARS)_ — a list of nodes that have recently proved their reliability.
-
-This is crucial to increasing the mining probability because the network prioritizes blocks from identities with reputation or belonging to the ARS.
-
-Once you transfer some amount of WIT tokens to your node, staking starts to happen automatically after 7 days.
+* Each nodes mining power is proportional to the amount of stake they have. You can calculate the expected APY using the [staking dashboard](https://staking.witnet.io/). When staking, your validator node cannot sign for directly any staked balance, only the withdrawer can sign for those funds. Your node will not show a balance direclty, to see the current stake of your node or withdrawer you can call [`queryStakes`](next-steps.md#querystakes).
+* As with minting blocks, being assigned a request is proportional to your stake. Once you have mined one block or resolved at least one request, your nodes power will reset and begin to accumulate power over time.
 
 {% hint style="info" %}
-Join the [Witnet community](https://t.me/witnetio) and the [Witnet OTC community](https://t.me/witnet\_market) on Telegram to find out how to get an initial amount of WIT tokens that you can put into your node.
+Only native WIT can be staked. If you bought WIT ERC20 on Uniswap, you need you unwrap them first here:\
+[http://erc20.witnet.io/unwrap](http://erc20.witnet.io/unwrap)
 {% endhint %}
+
+## How to stake $WIT
+
+To run validator node in Wit/Oracle network, you must stake $WIT coins. This stake allows you to propose blocks and fulfill data requests. The minimum required stake is 10,000 $WIT, while the maximum is 10,000,000 $WIT for a single validator.
+
+### Generate an Authorization Code <a href="#c499" id="c499"></a>
+
+Before staking, you must generate an authorization on the validator node itself.&#x20;
+
+Running this command will generate an authorization along with a QR code, consisting of the withdrawers address and the validators signature.
+
+{% tabs %}
+{% tab title="Docker" %}
+```bash
+docke exec -it witnet_node witnet node authorizeStake --withdrawer <address>
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```bash
+witnet node authorizeStake --withdrawer <address>
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```bash
+cargo run -- node authorizeStake --withdrawer <address>
+```
+{% endtab %}
+{% endtabs %}
+
+**Options:**
+
+* `--withdrawer`: The address you will use to unstake and withdraw funds
+
+> ⚠️ **You will need the private key of this withdrawer address to sign any unstake transactions.**
+>
+> ⚠️ **Do not use an exchange address as the withdrawer address, since you won’t control its private key.**
+
+### Submit the Stake Transaction <a href="#bfe6" id="bfe6"></a>
+
+Once you have the authorization code, you can stake from any address that holds the $WIT you want to stake. This can be done using the node CLI or a wallet such as [myWitWallet](../intro/about/sheikah-witnet-wallet.md#mywitwallet).
+
+Use the following command with required options:
+
+{% tabs %}
+{% tab title="Docker" %}
+```bash
+docke exec -it witnet_node witnet node stake \
+    --fee <fee (nanoWIT)> \
+    --value <amount to stake (nanoWit)> \
+    --withdrawer <withdrawer address> \
+    --authorization <authorization code> \
+```
+{% endtab %}
+
+{% tab title="Binary" %}
+```bash
+$ witnet node stake \
+    --fee <fee (nanoWIT)> \
+    --value <amount to stake (nanoWit)> \
+    --withdrawer <withdrawer address> \
+    --authorization <authorization code> \
+```
+{% endtab %}
+
+{% tab title="Cargo" %}
+```bash
+cargo -- node stake \
+    --fee <fee (nanoWIT)> \
+    --value <amount to stake (nanoWit)> \
+    --withdrawer <withdrawer address> \
+    --authorization <authorization code> \
+```
+{% endtab %}
+{% endtabs %}
+
+**Options:**
+
+* `--fee`: The priority fee for your stake transaction (in nanoWit)
+* `--value`: The amount to stake (in nanoWIT)
+* `--withdrawer`: The address you will use to unstake and withdraw funds
+* `--authorization`: Stake authorization code (the withdrawer address, signed by the validator node)
+
+### Confirm and Stake <a href="#id-39ca" id="id-39ca"></a>
+
+After executing the command, you will be prompted to confirm the transaction details. Once confirmed, your stake transaction will be sent into the network. Once the transaction is mined, your validator will officially be ready to start validating!
 
 ## Monitoring your node's progress
 
@@ -41,75 +115,52 @@ Among other information, this shows the synchronization state of your node, as w
 
 {% tabs %}
 {% tab title="Docker" %}
-```shell-session
-docker exec  witnet_node witnet node nodeStats
-```
-{% endtab %}
-
-{% tab title="Cargo" %}
-```
-cargo run --release -- node nodeStats
+```bash
+docker exec witnet_node witnet node nodeStats
 ```
 {% endtab %}
 
 {% tab title="Binary" %}
-```
+```bash
 witnet node nodeStats
 ```
 {% endtab %}
-{% endtabs %}
-
-### balance
-
-The `balance` command will print your node's current balance.
-
-{% tabs %}
-{% tab title="Docker" %}
-```
-docker exec witnet_node witnet node balance
-```
-{% endtab %}
-
-{% tab title="Binary" %}
-```
-witnet node balance
-```
-{% endtab %}
 
 {% tab title="Cargo" %}
-```
-cargo run --release -- node balance
+```bash
+cargo run --release -- node nodeStats
 ```
 {% endtab %}
 {% endtabs %}
 
-### reputation
+### queryStakes
 
-The `reputation` command will print your node's current reputation score.
+The `queryStakes`   command  will print a list of every stake entry. The stakes tracker can also be filtered by specifying a validator or withdrawer address.
+
+**Options**:
+
+* `-w`, `--withdrawer` : The withdrawer address
+* `-v`, `--validator` : The validator address
 
 {% tabs %}
 {% tab title="Docker" %}
-```
-docker exec witnet_node witnet node reputation
+```bash
+docker exec witnet_node witnet node queryStakes
 ```
 {% endtab %}
 
 {% tab title="Binary" %}
-```
+```bash
 witnet node reputation
 ```
 {% endtab %}
 
 {% tab title="Cargo" %}
-```
+```bash
 cargo run --release -- node reputation
 ```
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-The reputation score of a node gives a rough idea about its performance, but this metric is heavily influenced by randomness and luck. It is perfectly normal that the reputation score goes up and down over time, sometimes smoothly, sometimes more abruptly. Likewise, there is probably nothing wrong if your node shows 0 reputation points or is marked as _not active_. Do not get too obsessed about it!
-{% endhint %}
 
 ## Check ports and incoming connections
 
@@ -117,7 +168,7 @@ To check if the listening port is correctly opened to the Internet, you can use 
 
 {% tabs %}
 {% tab title="Telnet" %}
-```
+```bash
 # If you get stuck when running this command, it is indeed a good sign that
 # the connection was stablished. To exist a Telnet session, press "Ctrl + ]",
 # then write "quit" and press Enter.
@@ -126,7 +177,7 @@ telnet your_public_ip 21337
 {% endtab %}
 
 {% tab title="GNU NetCat" %}
-```
+```bash
 nc -vz your_public_ip:21337
 ```
 {% endtab %}
@@ -136,19 +187,19 @@ The final check to verify that your port is correctly forwarded is using the `pe
 
 {% tabs %}
 {% tab title="Docker" %}
-```
+```bash
 docker exec witnet_node witnet node peers
 ```
 {% endtab %}
 
 {% tab title="Binary" %}
-```
+```bash
 witnet node peers
 ```
 {% endtab %}
 
 {% tab title="Cargo" %}
-```
+```bash
 cargo run --release -- node peers
 ```
 {% endtab %}
@@ -170,19 +221,19 @@ This command will print your master key into your console terminal:
 
 {% tabs %}
 {% tab title="Docker" %}
-```
+```bash
 docker exec witnet_node witnet node masterKeyExport
 ```
 {% endtab %}
 
 {% tab title="Binary" %}
-```
+```bash
 witnet node masterKeyExport
 ```
 {% endtab %}
 
 {% tab title="Cargo" %}
-```
+```bash
 cargo run --release -- node masterKeyExport
 ```
 {% endtab %}
@@ -192,19 +243,19 @@ You can also add the `--write` flag to write a backup of your master key into a 
 
 {% tabs %}
 {% tab title="Docker" %}
-```
+```bash
 docker exec witnet_node witnet node masterKeyExport --write
 ```
 {% endtab %}
 
 {% tab title="Binary" %}
-```
+```bash
 witnet node masterKeyExport --write
 ```
 {% endtab %}
 
 {% tab title="Cargo" %}
-```
+```bash
 cargo run --release -- node masterKeyExport --write
 ```
 {% endtab %}
@@ -222,7 +273,7 @@ Importing master keys is only allowed when creating a new node, as overwriting a
 
 {% tabs %}
 {% tab title="Docker + nano" %}
-```
+```bash
 mkdir -p ~/.witnet/config
 
 nano ~/.witnet/config/master.key 
@@ -242,7 +293,7 @@ docker run -d \
 {% endtab %}
 
 {% tab title="Docker + vim" %}
-```
+```bash
 mkdir -p ~/.witnet/config
   
 vim ~/.witnet/config/master.key 
@@ -260,7 +311,7 @@ docker run -d \
 {% endtab %}
 
 {% tab title="Binary" %}
-```
+```bash
 witnet node server --master-key-import ~/.witnet/config/master.key
 ```
 {% endtab %}
@@ -280,13 +331,13 @@ You can easily edit the configuration file like this:
 
 {% tabs %}
 {% tab title="Vim (Mac OS and GNU/Linux)" %}
-```
+```bash
 vim ~/.witnet/config/witnet.toml
 ```
 {% endtab %}
 
 {% tab title="Nano (GNU/Linux)" %}
-```
+```bash
 nano ~/.witnet/config/witnet.toml
 ```
 {% endtab %}
@@ -298,14 +349,14 @@ Upgrading is as easy as it gets:
 
 **1. Remove the old container**
 
-```
+```bash
 docker stop witnet_node
 docker rm witnet_node
 ```
 
 **2. Pull the latest version of the Docker image**
 
-```
+```bash
 docker pull witnet/witnet-rust
 ```
 
@@ -313,7 +364,7 @@ docker pull witnet/witnet-rust
 
 {% tabs %}
 {% tab title="MacOS and Linux" %}
-```
+```bash
 docker run -d \    
     --name witnet_node \    
     --volume ~/.witnet:/.witnet \    
@@ -324,7 +375,7 @@ docker run -d \
 {% endtab %}
 
 {% tab title="Windows" %}
-```
+```bash
 docker run -d --name witnet_node --volume %USERPROFILE%\.witnet\:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
 ```
 {% endtab %}
@@ -332,7 +383,7 @@ docker run -d --name witnet_node --volume %USERPROFILE%\.witnet\:/.witnet --publ
 {% tab title="Raspberry Pi" %}
 Docker on Raspbian for all Raspberry models requires your containers to operate in privileged mode to have access to the system clock. When running the command above, simply add the `--privileged` flag:
 
-```
+```bash
 docker run -d --privileged --name witnet_node --volume ~/.witnet:/.witnet --publish 21337:21337 --restart always witnet/witnet-rust
 ```
 {% endtab %}
@@ -344,7 +395,7 @@ If you changed the persistent storage path in the past, change `~/.witnet` for w
 
 Voilà! Your Witnet node is now upgraded. Your master key is safe and your addresses will be the same. Remember that you can always double-check the Witnet version that you are running with this command:
 
-```
+```bash
 docker exec witnet_node witnet --version
 ```
 
@@ -352,7 +403,7 @@ docker exec witnet_node witnet --version
 
 There are some operations that are recommended from time to time to make sure your node is in perfect order:
 
-* Give a look to the result of the `nodeStats`, `balance` and `reputation` commands.
+* Give a look to the result of the `nodeStats`, `queryStakes` and `queryPowers` commands.
 * Check that you are getting incoming connections as explained above.
 * Keep an eye on announcements for software and networks upgrades through the Witnet Community [Discord](https://discord.gg/X4uurfP) and [Telegram](https://t.me/witnetio) to make sure that you are running the latest release, which should give your node the best performance, liveness and security.
 * Restart your node once in a while (e.g. `docker restart witnet_node`) so that the node can perform some housekeeping operations. This helps reducing memory footprint and optimize disk space.

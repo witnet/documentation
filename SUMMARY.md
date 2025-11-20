@@ -14,7 +14,7 @@
   * [📈 Price Feeds](intro/tutorials/data-feeds-tutorial.md)
   * [🎲 Randomness](intro/tutorials/randomness.md)
   * [🌐 APIs and HTTP GET/POST](intro/tutorials/apis-and-http-get-post.md)
-  * [⛏️ Mining Wit](intro/tutorials/mining-wit.md)
+  * [⛏️ Start earning WIT coins](intro/tutorials/mining-wit.md)
 
 ***
 
