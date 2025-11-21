@@ -2,17 +2,6 @@
 description: >-
   A complete list of the chains in which the Witnet oracle blockchain is
   currently bridged.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # ⛓️ Supported chains
@@ -33,8 +22,6 @@ Data requests to the Wit/Oracle get paid in native EVM currency:
 * No need to hold $WIT coins, either.&#x20;
 * No subscriptions or KYC workflows required.&#x20;
 * No need to run your own off-chain infrastructure.
-
-
 
 _**The Wit/Oracle solution works just right out of the box !**_
 {% endhint %}

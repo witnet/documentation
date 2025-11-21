@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📃 WitnetRequest
 
 Built out of non-parameterized data sources (i.e. Radon Retrievals) from the [_**WitnetRequestFactory**_](witnetrequestfactory.md), or from parameterized [_**WitnetRequestTemplate**_](witnetrequesttemplate.md) instances, _**WitnetRequest**_ instances contain the RAD hash and bytecode of some Witnet-compliant data requests, as well as introspective metadata about its public data sources, off-chain computations, data filtering and reducing methods.&#x20;

@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📃 WitnetRadonRegistry
 
 This contract contains a registry of validated data sources and data requests built up so far by any _dapp_ interacting with the [_**WitnetOracle**_](witnetoracle.md) singleton contract within a certain EVM chain, up to the present time. A unique identifier is generated for every Radon Retrieval (i.e. data sources) or Radon Request (i.e. retrieve-attestation-delivery part of Witnet-compliant data request objects) that gets successfully validated into this contract.&#x20;

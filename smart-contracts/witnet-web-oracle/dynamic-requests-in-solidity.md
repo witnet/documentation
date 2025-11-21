@@ -23,8 +23,7 @@ This API endpoint provides the weather forecast for a specific grid location.
 
     **`https://api.weather.gov/gridpoints/{gridId}/{gridX},{gridY}/forecast`**\
     &#x20;
-3. Convert JSON Object: Consider how you will convert the returned JSON object into a value that can be reported back to your smart contract. In the case of the weather forecast API, the response will likely be a JSON object containing various weather data fields. You will need to extract the relevant information, such as temperature, humidity, or precipitation, and convert it into a format suitable for your smart contract, such as integers or strings.\
-
+3. Convert JSON Object: Consider how you will convert the returned JSON object into a value that can be reported back to your smart contract. In the case of the weather forecast API, the response will likely be a JSON object containing various weather data fields. You will need to extract the relevant information, such as temperature, humidity, or precipitation, and convert it into a format suitable for your smart contract, such as integers or strings.<br>
 
 This public weather API endpoint will return JSON that looks something like this:
 

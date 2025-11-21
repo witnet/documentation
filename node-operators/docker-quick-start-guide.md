@@ -18,7 +18,7 @@ Hardware requirements are listed in the node operators docs:
 
 ### Up and running in 1 minute, using Docker <a href="#up-and-running-in-1-minute-using-docker" id="up-and-running-in-1-minute-using-docker"></a>
 
-The most convenient method for running a Witnet node is through the `witnet/witnet-rust` Docker image. For alternate installation methods or more complex setups, take a look at the [docker-compose](advanced-setups/docker-compose.md) and [systemd](advanced-setups/systemd.md) integrations.
+The most convenient method for running a Witnet node is through the `witnet/witnet-rust` Docker image. For alternate installation methods or more complex setups, take a look at the [docker-compose](reference-material/advanced-setups/docker-compose.md) and [systemd](reference-material/advanced-setups/systemd.md) integrations.
 
 Firstly, you need to [install Docker](https://docs.docker.com/get-docker/) on the device you will be running the node from. Note: some GNU/Linux distributions require some [extra steps](https://docs.docker.com/install/linux/linux-postinstall/) to get Docker up and running.
 

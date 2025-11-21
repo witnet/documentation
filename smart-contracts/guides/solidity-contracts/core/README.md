@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # Core
 
 This section includes description of the core contracts and artifacts that enable developers and smart contracts to interact at the lowest possible level with the Witnet oracle blockchain, in order to:

@@ -107,7 +107,7 @@ After executing the command, you will be prompted to confirm the transaction det
 
 ## Monitoring your node's progress
 
-Here are some useful commands that you can use to keep track of how your node is performing in the network. A complete documentation of all the CLI methods is available in the node [operator docs](cli.md).
+Here are some useful commands that you can use to keep track of how your node is performing in the network. A complete documentation of all the CLI methods is available in the node [operator docs](reference-material/cli.md).
 
 ### nodeStats
 

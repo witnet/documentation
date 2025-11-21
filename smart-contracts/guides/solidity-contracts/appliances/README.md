@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # Appliances
 
 This section contains ABI references of the public-domain smart contract appliances built on top of the [_**WitnetOracle**_](../core/witnetoracle.md) core bridging contract, as provided by the **Witnet Foundation**.&#x20;

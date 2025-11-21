@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # 🧙 Solidity Wizard
 
 The [**Witnet Solidity SDK**](../../smart-contracts-developers-v2/wit-oracle/parameterized-templates.md) package bundles the _**Solidity Wizard**_ tool that will ease the path when trying to programmatically interact with the **Wit/Oracle blockchain** from your own smart contracts.&#x20;

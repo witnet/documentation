@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # 📖 Solidity Contracts
 
 From a Solidity contract developer's point of view, this Guide describes the interfaces, events, data structures and enums to be aware of when trying to exploit any of the public-domain [appliances](appliances/) built on top of the [Witnet Solidity Bridge framework](../../../smart-contracts-developers-v2/wit-oracle/building-data-requests.md), build your own custom data feeds, or interact at a lower level with other [core artifacts](core/) of the framework.

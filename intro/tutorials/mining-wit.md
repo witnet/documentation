@@ -30,14 +30,14 @@ There are multiple ways to run a Witnet validator node. Listed below are the mos
 
 #### **As a `docker-compose` Service**
 
-{% content-ref url="../../node-operators/advanced-setups/docker-compose.md" %}
-[docker-compose.md](../../node-operators/advanced-setups/docker-compose.md)
+{% content-ref url="../../node-operators/reference-material/advanced-setups/docker-compose.md" %}
+[docker-compose.md](../../node-operators/reference-material/advanced-setups/docker-compose.md)
 {% endcontent-ref %}
 
 **As a `systemd` Service**
 
-{% content-ref url="../../node-operators/advanced-setups/systemd.md" %}
-[systemd.md](../../node-operators/advanced-setups/systemd.md)
+{% content-ref url="../../node-operators/reference-material/advanced-setups/systemd.md" %}
+[systemd.md](../../node-operators/reference-material/advanced-setups/systemd.md)
 {% endcontent-ref %}
 
 ### **What To Expect When Running a Witnet Node**

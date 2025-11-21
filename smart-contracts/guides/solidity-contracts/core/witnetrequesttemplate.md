@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📃 WitnetRequestTemplate
 
 Built from the [_**WitnetRequestFactory**_](witnetrequestfactory.md), contracts of this kind contain references to one or more parameterized data sources (i.e. Radon Retrievals). Concrete parameters can be provided on-the-fly from a smart contract, producing [_**WitnetRequest**_](witnetrequest.md) instances.

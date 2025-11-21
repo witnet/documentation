@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📃 WitnetRequestFactory
 
 Bound to the [_**WitnetOracle**_ ](witnetoracle.md)contract, this artifact enables smart contracts and offchain worfklows to programmatically build both [_WitnetRequest_](witnetrequest.md) and [_WitnetRequestTemplate_](witnetrequesttemplate.md) instances, based on a provided list of data sources, attestation filters and computational **Radon scripts** that transform and aggregate the data as extracted from those sources.&#x20;
