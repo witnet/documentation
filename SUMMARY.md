@@ -6,7 +6,7 @@
 
 * [❓ What is Witnet?](intro/about/README.md)
   * [⚙️ Oracle Architecture](intro/about/architecture.md)
-  * [🪙 The Witnet Coin (Wit)](intro/about/wit-coin.md)
+  * [🪙 The Witnet Coin ($WIT)](intro/about/the-witnet-coin-usdwit.md)
   * [👛 Witnet Wallets](intro/about/sheikah-witnet-wallet.md)
   * [🤔 Frequently Asked Questions](intro/about/frequently-asked-questions.md)
   * [😎 Awesome Witnet](intro/about/awesome-witnet.md)

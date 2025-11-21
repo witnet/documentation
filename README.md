@@ -1,5 +1,7 @@
 ---
-description: Multi-chain, secure and reliable data retrievals right from the outside world, made easy.
+description: >-
+  Multi-chain, secure and reliable data retrievals right from the outside world,
+  made easy.
 ---
 
 # 🏠 Witnet Oracle Docs
@@ -12,8 +14,8 @@ The Witnet oracle is currently available on Ethereum, Polygon, Avalanche, Celo, 
 
 ### Featured sections
 
-{% content-ref url="intro/about/wit-coin.md" %}
-[wit-coin.md](intro/about/wit-coin.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="smart-contracts/supported-chains.md" %}

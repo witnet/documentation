@@ -35,7 +35,7 @@ Sheikah and myWitWallet are open source projects developed and maintained by a g
 
 ## Wrapped WIT Wallets
 
-Native WIT coins can be converted into WIT tokens in **Ethereum** by means of the official ERC-20 token contract at [`0xcafe...CaFE`](https://etherscan.io/address/0xcafe5De18756817D98F4603F6828397406D4CaFE#tokentxns). Once wrapped into Ethereum, users can handle wrapped WIT tokens using standard EVM wallet, such as MetaMask, Rabby, Wallet3, among many others:
+Native WIT coins can be converted into WIT tokens in **Ethereum** by means of the official ERC-20 token contract at [`0xcafe...CaFE`](https://etherscan.io/token/0xcafe5De18756817D98F4603F6828397406D4CaFE). Once wrapped into Ethereum, users can handle wrapped WIT tokens using standard EVM wallet, such as MetaMask, Rabby, Wallet3, among many others:
 
 {% embed url="https://metamask.io/" %}
 

@@ -62,6 +62,6 @@ This is a web application built with [Vue3](https://vuejs.org/), leveraging the 
 {% endcolumn %}
 
 {% column %}
-<div data-with-frame="true"><figure><img src="https://sheikah.app/_nuxt/sheikah-app-image.DMYCBb_q.png" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../../../.gitbook/assets/erc20-witnet.png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
