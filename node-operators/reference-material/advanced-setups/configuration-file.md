@@ -1,4 +1,4 @@
-# Configuration file
+# ⚙️ Configuration file
 
 Advanced users may wish to customize specific properties of the node. To achieve this, users must modify the configuration file, which is typically named `witnet.toml` by default. Note that the default `witnet.toml` file does not include all configurable parameters. To view the complete configuration currently in use by your node, you can execute the [#config](../cli.md#config "mention") command.
 

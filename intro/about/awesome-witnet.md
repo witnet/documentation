@@ -48,11 +48,11 @@ description: >-
 
 ## Exchanges
 
-### Wrapped $WIT
+### Wrapped WIT
 
 {% embed url="https://app.uniswap.org/explore/tokens/ethereum/0xcafe5De18756817D98F4603F6828397406D4CaFE?inputCurrency=NATIVE" %}
 
-### Native $WIT
+### Native WIT
 
 {% embed url="https://www.mexc.com/exchange/WIT_USDT" %}
 

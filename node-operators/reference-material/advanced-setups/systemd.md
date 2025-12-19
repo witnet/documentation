@@ -1,4 +1,4 @@
-# Run Witnet as a systemd service
+# 💻 Run node as a systemd service
 
 The `runner.sh` script automatically downloads and installs the latest version of the Witnet node software (`witnet-rust`). It can also be used to update to the latest version, since it will keep all the block chain data and the configuration file in the hidden `.witnet` directory.
 

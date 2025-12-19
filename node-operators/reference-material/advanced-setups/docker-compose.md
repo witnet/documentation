@@ -1,4 +1,4 @@
-# Run Witnet as a docker compose service
+# 🐋 Run node with docker compose
 
 ### Prerequisites
 

@@ -1,4 +1,4 @@
-# 🔎 Next steps
+# 🏆 Keep Your Nodes Running
 
 ## The first minutes and hours in your node's life
 

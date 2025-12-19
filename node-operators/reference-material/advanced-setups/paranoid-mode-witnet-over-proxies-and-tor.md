@@ -4,7 +4,7 @@ description: >-
   proxies to protect itself from potential reputation loss and slashing.
 ---
 
-# Paranoid mode (Witnet over proxies and Tor)
+# 🧄 Paranoid mode (Witnet over proxies and Tor)
 
 Witnet-Rust now supports an opt-in functionality called _**paranoid mode**_. This mode protects nodes from being targeted by ill-intended data requests that may harm their reputation score and steal part of their collateralized Wit coins.
 

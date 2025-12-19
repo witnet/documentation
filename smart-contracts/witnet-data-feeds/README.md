@@ -1,2 +1,2 @@
-# 💹 Wit/Price Feeds
+# 📈 Witnet Price Feeds
 

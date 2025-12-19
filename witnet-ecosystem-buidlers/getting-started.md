@@ -20,7 +20,7 @@ _Witnet is a totally_ [_permissionless_](../intro/about/architecture.md#witnet-i
 
 ### Native support
 
-Applications in **Javascript**, **Dart** and **Rust** can autonomously create, sign and broadcast well-formed transactions to the Witnet network, as specific native libraries exists for these programming languages. Usage examples for these languages can be found in the How-to Guides in this section:
+Applications in **Javascript**, **Dart** and **Rust** can autonomously create, sign and broadcast well-formed transactions to the Witnet network, as specific native libraries exist for these programming languages. Usage examples for these languages can be found in the How-to Guides in this section:
 
 {% content-ref url="how-to-guides/" %}
 [how-to-guides](how-to-guides/)
@@ -54,7 +54,7 @@ Integration architecture:
 [YOUR APP] → [WITNET-RUST NODE] → [WITNET NETWORK]
 ```
 
-Once a `node` instance is fully synced, its [JSON-RPC over TCP API](broken-reference) offers a minimal single-account, single-address wallet. Running a Witnet-Rust node with the JSON-RPC API exposed on local port `21338` can easily be achieved with this Docker one-liner:
+Once a `node` instance is fully synced, its [JSON-RPC over TCP API](/broken/pages/jvJD8leVHzKoZ8xhh8bo) offers a minimal single-account, single-address wallet. Running a Witnet-Rust node with the JSON-RPC API exposed on local port `21338` can easily be achieved with this Docker one-liner:
 
 ```
 docker run -d \
@@ -70,7 +70,7 @@ Here is a quick guide on how to interact with a node using the JSON-RPC interfac
 
 {% embed url="https://medium.com/witnet/interacting-with-witnet-node-without-cli-7028e8f6cff7" %}
 
-The full list of supported JSON-RPC methods is available in the [Node API Reference](broken-reference):
+The full list of supported JSON-RPC methods is available in the [Node API Reference](/broken/pages/jvJD8leVHzKoZ8xhh8bo):
 
 {% content-ref url="../node-operators/reference-material/api-references/node-api.md" %}
 [node-api.md](../node-operators/reference-material/api-references/node-api.md)

@@ -6,16 +6,20 @@ description: >-
 
 # 🏠 Witnet Oracle Docs
 
-The [Witnet](https://winet.io) multichain decentralized oracle enables smart contracts to realize their true potential by giving them access to all sorts of valuable data sets, and by attesting and delivering that information securely thanks to its strong cryptoeconomic guarantees.
+The [Witnet](intro/about/) multichain decentralized oracle enables smart contracts to realize their true potential by giving them access to all sorts of valuable data sets, and by attesting and delivering that information securely thanks to its strong crypto economic guarantees.
 
 Witnet can power most DeFi primitives like price feeds, stablecoins, synthetics, etc., as well as acting as a reliable source of randomness for creating uniqueness in NFTs.
 
-The Witnet oracle is currently available on Ethereum, Polygon, Avalanche, Celo, Harmony, Metis, Boba, Conflux, KCC and other blockchains ([see full list](smart-contracts/supported-chains.md)).
+Witnet already supports dozens of live EVM-compatible chains and Layer-2s — giving you oracle connectivity anywhere smart contracts run ([see the full list here](smart-contracts/supported-chains.md)).
 
 ### Featured sections
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="intro/about/" %}
+[about](intro/about/)
+{% endcontent-ref %}
+
+{% content-ref url="intro/why-witnet-rocks/" %}
+[why-witnet-rocks](intro/why-witnet-rocks/)
 {% endcontent-ref %}
 
 {% content-ref url="smart-contracts/supported-chains.md" %}

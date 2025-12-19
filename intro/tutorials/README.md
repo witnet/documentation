@@ -1,34 +1,32 @@
-# 🚀 Quick Tutorials
+# 🐇 Quick Tutorials
 
-Here you can find straight-to-the-point tutorials on how to start using the Witnet oracle and other relevant topics like operating Witnet nodes and mining Wit tokens.
+### Getting Started with Witnet
 
-### Data Feeds Tutorial
+_Are you interested in integrating Witnet with your smart contracts or eager to join a permissionless network of operators for earning cryptocurrency?_&#x20;
 
-The [Data Feeds tutorial](data-feeds-tutorial.md) gives a quick overlook on what are data feeds, how the Witnet data feeds work, and how to start using them with only a few lines of Solidity:
+Whether you're a developer looking to enhance your blockchain applications or someone interested in participating as a node operator, Witnet offers a user-friendly approach.&#x20;
+
+These pages listed below provide you with straightforward tutorials for either leveraging the Witnet oracle within your smart contracts, or permitting you to become a Witnet node operator seamlessly.
+
+#### Using Witnet from Smart Contracts
+
+Enhance your blockchain solutions by interacting with the Wit/Oracle Framework, which allows your smart contracts to interact with real-world data, as well as with unbiased randomness. Follow our step-by-step tutorials to start leveraging the Witnet oracle blockchain efficiently. Whether you are integrating price feeds, synthetics, proofs of reserve, sports results, or any other types of data, you will find Witnet's implementation intuitive and secure:
 
 {% content-ref url="data-feeds-tutorial.md" %}
 [data-feeds-tutorial.md](data-feeds-tutorial.md)
 {% endcontent-ref %}
 
-### Randomness Tutorial
-
-The [Randomness tutorial](randomness.md) introduces the concept of randomness sources, how the Witnet randomness source work, and how to start generating random numbers with only a few lines of Solidity:
-
 {% content-ref url="randomness.md" %}
 [randomness.md](randomness.md)
 {% endcontent-ref %}
-
-### APIs and HTTP GET/POST Tutorial
-
-The [APIs and HTTP GET/POST tutorial](apis-and-http-get-post.md) is a quick introduction to how totally custom data requests can be built with Witnet to use any arbitrary HTTP(S) API as a data source for your smart contracts:
 
 {% content-ref url="apis-and-http-get-post.md" %}
 [apis-and-http-get-post.md](apis-and-http-get-post.md)
 {% endcontent-ref %}
 
-### Mining Wit Tutorial
+#### Becoming a Witnet Node Operator
 
-The [Mining Wit tutorial](mining-wit.md) teaches how to easily participate in the mining of the Wit token by running a Witnet _witnessing_ node on Docker:
+If you are interested in supporting the Witnet network and start earning WIT coins today, consider becoming a node operator. Our permissionless system makes it easy for you to set up your node, participate in data request resolution, and earn rewards. Follow our detailed guide to get your node up and running today and begin your journey as part of the Witnet community:
 
 {% content-ref url="mining-wit.md" %}
 [mining-wit.md](mining-wit.md)

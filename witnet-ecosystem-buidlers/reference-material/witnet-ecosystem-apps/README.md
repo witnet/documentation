@@ -1,8 +1,8 @@
-# 🥽 Witnet Ecosystem Apps
+# 🏙️ Witnet Ecosystem Apps
 
 Become a pro by having a closer look into the open source applications already built for the Witnet Ecosystem:
 
-{% columns %}
+{% columns fullWidth="false" %}
 {% column %}
 <figure><img src="https://mywitwallet.com/_nuxt/my-wit-wallet-app-image.Biq3eJ75.png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
