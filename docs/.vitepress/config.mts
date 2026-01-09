@@ -808,10 +808,14 @@ export default {
   themeConfig: {
     nav: [
       { text: 'Introduction', link: '/intro/about/' },
-      { text: 'Smart Contracts V2', link: '/smart-contracts-developers-v2/' },
       { text: 'Smart Contracts', link: '/smart-contracts/supported-chains' },
       { text: 'Node Operators', link: '/node-operators/requirements' },
-      { text: 'Ecosystem Builders', link: '/witnet-ecosystem-buidlers/introduction' }
+      { text: 'Ecosystem Builders', link: '/witnet-ecosystem-buidlers/introduction' },
+      { text: 'Website', link: 'https://witnet.io/' },
+      { text: 'Discord', link: 'https://discord.com/invite/witnet' },
+      { text: 'Telegram', link: 'https://t.me/witnetio' },
+      { text: 'X', link: 'https://t.me/witnetio' },
+
     ],
     sidebar: {
       '/': sidebar
