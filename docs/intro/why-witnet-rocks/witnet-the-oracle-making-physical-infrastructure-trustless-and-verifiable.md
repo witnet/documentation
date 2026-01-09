@@ -1,6 +1,5 @@
 ---
 draft: true
-outline: false
 ---
 
 # Witnet: The Oracle Making Physical Infrastructure Trustless and Verifiable

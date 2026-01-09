@@ -1,5 +1,5 @@
 ---
-hidden: true
+draft: true
 ---
 
 # Wit/Kermit REST API
