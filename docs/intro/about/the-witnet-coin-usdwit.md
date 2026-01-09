@@ -20,8 +20,17 @@ _The WIT token in **Ethereum** supports bridging to some L2 chains, such as **Ba
 :::
 
 
-<!-- TODO: replace table with custom component card with image + link + title -->
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Buy/Sell wrapped WIT</strong> </td><td><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Uniswap_Logo.svg/900px-Uniswap_Logo.svg.png">https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Uniswap_Logo.svg/900px-Uniswap_Logo.svg.png</a></td><td><a href="https://app.uniswap.io/">https://app.uniswap.io/</a></td></tr><tr><td align="center"><strong>Bridge wrapped WIT to L2s</strong></td><td><a href="https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-pbstwimgcom-profile_images-1718758184717049856-cmkdyis-_200x200jpg/public">https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-pbstwimgcom-profile_images-1718758184717049856-cmkdyis-_200x200jpg/public</a></td><td><a href="https://superbridge.app/?fromChainId=1&toChainId=8453&tokenAddress=0xcafe5De18756817D98F4603F6828397406D4CaFE">https://superbridge.app/?fromChainId=1&toChainId=8453&tokenAddress=0xcafe5De18756817D98F4603F6828397406D4CaFE</a></td></tr></tbody></table>
+<ExternalLinkButton
+  image="uniswap.svg"
+  title="Buy/Sell wrapped WIT"
+  website="https://app.uniswap.io"
+/>
+
+<ExternalLinkButton
+  image="superbridge.png"
+  title="Bridge wrapped WIT to L2s"
+  website="https://superbridge.app/?fromChainId=1&toChainId=8453&tokenAddress=0xcafe5De18756817D98F4603F6828397406D4CaFE"
+/>
 
 ## Tokenomics
 
@@ -62,8 +71,17 @@ The **Circulating Supply** equals the Total Supply minus the WIT coins that are 
 
 The current circulating supply can be checked in real time on CoinMarketCap and CoinGecko:
 
-<!-- TODO: replace table with custom component card with image + link + title -->
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td>Check WIT circulating supply in <strong>CoinGecko</strong></td><td><a href="https://www.coingecko.com/en/coins/witnet">https://www.coingecko.com/en/coins/witnet</a></td><td data-object-fit="cover"><a href="https://brand.coingecko.com/~gitbook/image?url=https%3A%2F%2F3936590801-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FuBDUa2ODcAkHHV15nEGc%252Fuploads%252FPp5vADRqbzDbXh8OivVj%252FCombo%2520Mark%2520Light.png%3Falt%3Dmedia%26token%3D69c7668a-50b0-4c4b-ab98-92244575abaa&width=400&dpr=3&quality=100&sign=3b7d3458&sv=2">https://brand.coingecko.com/~gitbook/image?url=https%3A%2F%2F3936590801-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FuBDUa2ODcAkHHV15nEGc%252Fuploads%252FPp5vADRqbzDbXh8OivVj%252FCombo%2520Mark%2520Light.png%3Falt%3Dmedia%26token%3D69c7668a-50b0-4c4b-ab98-92244575abaa&width=400&dpr=3&quality=100&sign=3b7d3458&sv=2</a></td></tr><tr><td>Check WIT distribution in the <strong>Witnet Explorer</strong></td><td><a href="https://witnet.network/balances">https://witnet.network/balances</a></td><td data-object-fit="contain"><a href="https://witnet.network/explorer_logo.png">https://witnet.network/explorer_logo.png</a></td></tr></tbody></table>
+<ExternalLinkButton
+  image="cg.svg"
+  title="Check WIT circulating supply in CoinGecko"
+  website="https://www.coingecko.com/en/coins/witnet"
+/>
+
+<ExternalLinkButton
+  image="witnet_explorer.png"
+  title="Check WIT distribution in the Witnet Explorer"
+  website="https://witnet.network/balances"
+/>
 
 #### Staking rewards
 
