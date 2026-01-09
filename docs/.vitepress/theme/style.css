@@ -1,4 +1,5 @@
 :root {
+  --vp-sidebar-width: 390px;
   --external-link-button-bg: var(--vp-c-bg-soft);
   --external-link-button-border: var(--vp-c-border);
   --external-link-button-text: var(--vp-c-text-1);
