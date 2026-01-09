@@ -1,0 +1,14 @@
+{
+  "name": "witnet-documentation",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vitepress-plugin-tabs": "^0.7.3"
+  }
+}

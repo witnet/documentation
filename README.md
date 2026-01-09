@@ -1,47 +1,35 @@
----
-description: >-
-  Multi-chain, secure and reliable data retrievals right from the outside world,
-  made easy.
----
+# Witnet Oracle Docs (VitePress)
 
-# 🏠 Witnet Oracle Docs
+This repository contains the Witnet documentation site powered by VitePress.
 
-The [Witnet](intro/about/) multichain decentralized oracle enables smart contracts to realize their true potential by giving them access to all sorts of valuable data sets, and by attesting and delivering that information securely thanks to its strong crypto economic guarantees.
+## Setup
 
-Witnet can power most DeFi primitives like price feeds, stablecoins, synthetics, etc., as well as acting as a reliable source of randomness for creating uniqueness in NFTs.
+Install dependencies:
 
-Witnet already supports dozens of live EVM-compatible chains and Layer-2s — giving you oracle connectivity anywhere smart contracts run ([see the full list here](smart-contracts/supported-chains.md)).
+```bash
+npm install
+```
 
-### Featured sections
+Run the dev server:
 
-{% content-ref url="intro/about/" %}
-[about](intro/about/)
-{% endcontent-ref %}
+```bash
+npm run dev
+```
 
-{% content-ref url="intro/why-witnet-rocks/" %}
-[why-witnet-rocks](intro/why-witnet-rocks/)
-{% endcontent-ref %}
+Build the site:
 
-{% content-ref url="smart-contracts/supported-chains.md" %}
-[supported-chains.md](smart-contracts/supported-chains.md)
-{% endcontent-ref %}
+```bash
+npm run build
+```
 
-{% content-ref url="intro/tutorials/data-feeds-tutorial.md" %}
-[data-feeds-tutorial.md](intro/tutorials/data-feeds-tutorial.md)
-{% endcontent-ref %}
+Preview the production build:
 
-{% content-ref url="intro/tutorials/randomness.md" %}
-[randomness.md](intro/tutorials/randomness.md)
-{% endcontent-ref %}
+```bash
+npm run preview
+```
 
-{% content-ref url="intro/tutorials/apis-and-http-get-post.md" %}
-[apis-and-http-get-post.md](intro/tutorials/apis-and-http-get-post.md)
-{% endcontent-ref %}
+## Structure
 
-{% content-ref url="intro/tutorials/mining-wit.md" %}
-[mining-wit.md](intro/tutorials/mining-wit.md)
-{% endcontent-ref %}
-
-{% content-ref url="intro/about/awesome-witnet.md" %}
-[awesome-witnet.md](intro/about/awesome-witnet.md)
-{% endcontent-ref %}
+- Documentation content lives in `docs/`.
+- VitePress config is in `docs/.vitepress/config.mts`.
+- Static assets are in `docs/public/assets`.

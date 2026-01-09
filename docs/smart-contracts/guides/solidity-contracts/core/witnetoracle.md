@@ -1,0 +1,94 @@
+# 📃 WitnetOracle
+
+Core bridging contract that enables your smart contract to pull all sorts of data from the real world, estimate required EVM fees and check for data results as reported from the underlying Witnet blockchain.
+
+(hint sobre extra fee ...)
+
+<InternalLinkButton
+  emoji="⛓️ "
+  text="Supported chains"
+  to="/smart-contracts/supported-chains"
+/>
+
+## Interfaces
+
+::: info
+^   Pure methods that neither write nor read from storage.
+
+\=   View methods that read from immutable code storage.
+
+::    View methods that read from storage.
+
+\+   Methods that may potentially alter storage.
+
+$   Payable methods that may potentially alter storage.
+
+\[]!  Methods that may revert under certain conditions.
+:::
+
+### IWitnetAppliance
+
+<table><thead><tr><th width="329">Methods</th><th>Description</th></tr></thead><tbody><tr><td>= <code>class():string</code></td><td>Returns the name of the actual contract implementing the underlying logic.</td></tr><tr><td>= <code>specs():bytes4</code></td><td>Returns the immutable ERC-165 id that represents the expected functionality as for the <em>WitnetOracle</em> ABI.</td></tr></tbody></table>
+
+### IWitnetOracle
+
+<table><thead><tr><th width="396">Methods</th><th>Description</th></tr></thead><tbody><tr><td>^ <code>channel()</code></td><td>Uniquely identifies this <em><strong>WitnetOracle</strong></em> contract and the chain on which it's deployed.</td></tr><tr><td>:: <code>estimateBaseFee(uint256,uint16)</code></td><td>Estimates the minimum reward required for requesting the Witnet blockchain to retrieve data up to the specified number of bytes passed as second parameter. The required reward depends also on the gas price of the transaction that calls upon any of the <code>postRequest(..)</code> methods., passed as first parameter.</td></tr><tr><td>:: <code>estimateBaseFee(uint256,bytes32)</code></td><td>Estimates the minimum reward required for making the Witnet blockchain solve the given data request specs (i.e. the RAD hash) passed as second parameter.  The required reward depends also on the gas price of the transaction that calls upon any of the <code>postRequest(bytes32,..)</code> methods, passed as first parameter. Reverts if the given RAD hash value was not previously verified into the <code>registry()</code>.</td></tr><tr><td>:: <code>estimateBaseFeeWithCallback(u,u24)</code></td><td>Estimates the minimum reward required for requesting the Witnet blockchain to solve some data request which result is to be reported as a callback to some requesting contract. The reward ultimately depends on the given gas price and the maximum gas expected to be consumed by the requester's callback method, passed as first and second parameters, respectively. </td></tr><tr><td>= <code>factory()</code></td><td>Returns the address of the <a href="witnetrequestfactory.md"><em>WitnetRequestFactory</em></a> appliance capable of building compliant data requests and templates, verified into the same<a href="witnetradonregistry.md"><em>WitnetRadonRegistry</em></a> instance as returned by <code>registry()</code>.</td></tr><tr><td>+! <code>fetchQueryResponse(uint256)</code></td><td>Retrieves a copy of all Witnet-provable data related to a previously posted request, removing such data from the <em>WitnetOracle</em> storage right away. Reverts if the referred query was not in <code>Reported</code> status, or if the caller is not the actual query's requester.</td></tr><tr><td>:: <code>getQuery(uint256)</code></td><td>Return all metadata currently stored in the EVM storage about the given query, no matter its current.</td></tr><tr><td>:: <code>getQueryEvmReward(uint256)</code></td><td>Returns the current EVM reward an eventual reporter (i.e. bridge) can potentially claim for the given query, if not done yet. </td></tr><tr><td>:: <code>getQueryRequest(uint256)</code></td><td>Retrieves the RAD hash and data SLA security parameters that were specified for the given query, if any.</td></tr><tr><td>:: <code>getQueryResponse(uint256)</code></td><td>Retrieves metadata related to the actual response reported from the Witnet blockchain, if any yet, about the given query.</td></tr><tr><td>:: <code>getQueryResponseStatus(uint256)</code></td><td>Returns the current response status to the given query from its requester's point of view. See <code>WitnetV2.ResponseStatus</code> below.</td></tr><tr><td>:: <code>getQueryResultCborBytes(uint256)</code></td><td>Retrieves the CBOR-encoded buffer containing the Witnet-provided result to the given query, if any.</td></tr><tr><td>:: <code>getQueryResultError(uint256)</code></td><td>Returns an error code identifying some possible failure on the resolution of the given query, and a human-readable description of such error, if any. See <code>Witnet.ResultError</code> below.</td></tr><tr><td>:: <code>getQueryStatus(uint256)</code></td><td>Returns the current general status of the given query. See <code>Witnet.QueryStatus</code> below.</td></tr><tr><td>:: <code>getQueryStatusBatch(uint256[])</code></td><td>Returns the current general status of the given queries. </td></tr><tr><td>:: <code>getNextQueryId()</code></td><td>Return the query sequential identifier to be assigned to the next query posted to the <em><strong>WitnetOracle</strong></em> contract.</td></tr><tr><td><p>$! <code>postRequest(</code><br>    <code>bytes32 witnetRadHash,</code><br>    <code>WitnetV2.RadonSLA witnetSLA</code></p><p><code>)</code></p></td><td><p>Requests the resolution of the given Witnet-compliant data request, in expectation that it will be relayed and solved on the Witnet oracle blockchain. </p><p></p><p>A reward is kept in escrow until some reporter (i.e. bridge) successfully relays back a Witnet-provable result to this query. </p><p></p><p>Reverts if:<br>- <code>witnetRadHash</code> corresponds to no previously verified data request in the <code>registry()</code>;<br>- invalid <code>witnetSLA</code> data security parameters were provided;<br>- insufficient <code>msg.value</code> is lesser than the required base fee;<br>- <code>msg.value</code> is greater than 10x times greater than the minimum base fee.</p></td></tr><tr><td><p>$! <code>postRequestWithCallback(</code></p><p>    <code>bytes32 witnetRadHash,</code></p><p>    <code>WitnetV2.RadonSLA witnetSLA,</code></p><p>    <code>uint24 callbackGasLimit</code></p><p><code>)</code></p></td><td><p>Requests the resolution of the given Witnet-compliant data request, in expectation that it will be relayed and solved on the Witnet oracle blockchain. </p><p></p><p>A reward is kept in escrow to be transferred to the reporter who relays back a Witnet-provable result to this query, directly to a callback method on the requesting contract. If the report callback fails for any reason an event will be triggered (see <em>IWitnetOracleEvents</em> below), some Witnet traceability data will be saved in the <em><strong>WitnetOracle</strong></em> storage as proof, but not so the actual result data. </p><p></p><p>Reasons to fail:<br>- the caller is not a contract implementing the <code>IWitnetConsumer</code> interface;<br>- <code>witnetRadHash</code> corresponds to no previously verified data request in the <code>registry()</code>;<br>- insufficient <code>msg.value</code> is lesser than the required base fee;<br>- <code>msg.value</code> is greater than 10x times greater than the minimum base fee.</p></td></tr><tr><td><p>$! <code>postRequestWithCallback(</code></p><p>    <code>bytes witnetBytecode,</code></p><p>    <code>WitnetV2.RadonSLA witnetSLA,</code></p><p>    <code>uint256 callbackGasLimit</code><br><code>)</code></p></td><td><p>Requests the resolution of the given unverified but yet Witnet-compliant data request, in expectation that it will be relayed and solved on the Witnet oracle blockchain. <br></p><p>A reward is kept in escrow to be transferred to the reporter who relays back a Witnet-provable result to this query, directly to a callback method on the requesting contract. If the report callback fails for any reason an event will be triggered (see <em>IWitnetOracleEvents</em> below), some Witnet traceability data will be saved in the <em><strong>WitnetOracle</strong></em> storage as proof, but not so the actual result data. <br><br>Reasons to fail:<br>- the caller is not a contract implementing the <code>IWitnetConsumer</code> interface;<br>- <code>witnetBytecode</code> is empty;<br>- insufficient <code>msg.value</code> is lesser than the required base fee;<br>- <code>msg.value</code> is greater than 10x times greater than the minimum base fee.<br></p></td></tr><tr><td>= <code>registry()</code></td><td>Returns the singleton <a href="witnetradonregistry.md"><em>WitnetRadonRegistry</em></a> in which all Witnet-compliant data requests and templates must be previously verified so they can be passed as reference when calling <code>postRequest(bytes32,..)</code> methods.</td></tr><tr><td>$! <code>upgradeQueryEvmReward(uint256)</code></td><td>Increments the reward of the given query by adding the transaction value to it. Reverts if the query is not in <code>Posted</code> status.</td></tr></tbody></table>
+
+## Events
+
+### IWitnetOracleEvents
+
+<table data-full-width="false"><thead><tr><th width="277">Events</th><th width="262">Arguments</th><th>Description</th></tr></thead><tbody><tr><td><strong><code>WitnetQuery</code></strong></td><td><p><code>address  evmRequester</code></p><p><code>uint256  evmGasPrice</code></p><p><code>uint256  evmReward</code></p><p><code>uint256  queryId</code></p><p><code>bytes32  queryRadHash</code></p><p><code>RadonSLA querySLA</code></p></td><td>Emitted every time a verified data request gets queried.</td></tr><tr><td><strong><code>WitnetQuery</code></strong></td><td><p><code>address  evmRequester</code></p><p><code>uint256  evmGasPrice</code></p><p><code>uint256  evmReward</code></p><p><code>uint256  queryId</code></p><p><code>bytes    queryBytecode</code></p><p><code>RadonSLA querySLA</code></p></td><td>Emitted every time a non-verified data request bytecode gets queried.</td></tr><tr><td><strong><code>WitnetQueryUpgrade</code></strong></td><td><p><code>uint256 queryId</code></p><p><code>address evmSender</code></p><p><code>uint256 evmGasPrice</code></p><p><code>uint256 evmReward</code></p></td><td>Emitted if the EVM reward for solving some query in course gets increased in any amount.</td></tr><tr><td><strong><code>WitnetQueryResponse</code></strong></td><td><p><code>uint256 queryId</code></p><p><code>uint256 evmGasPrice</code></p></td><td>Emitted when a response to a query with no callback gets reported into <em>WitnetOracle.</em></td></tr><tr><td>..<strong><code>ResponseDelivered</code></strong></td><td><p><code>uint256 queryId</code></p><p><code>uint256 evmGasPrice</code></p><p><code>uint256 evmCallbackGas</code></p></td><td>Emitted when a response to a query gets directly reported to its requesting contract.</td></tr><tr><td>..<strong><code>ResponseDeliveryFailed</code></strong></td><td><p><code>uint256 queryId</code></p><p><code>uint256 evmGasPrice</code></p><p><code>uint256 evmCallbackGas</code></p><p><code>string  evmRevertReason</code></p><p><code>bytes   resultCborBytes</code></p></td><td>Emitted when a query with a response to a query is expected to be reported directly to its requesting contract, but it's not possible for some reason.</td></tr></tbody></table>
+
+## Structs
+
+### Witnet.Query
+
+Contains both request and response metadata bound to every query posted to the _WitnetOracle_.
+
+<table><thead><tr><th width="133">Field</th><th width="263">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>request</code></td><td><code>WitnetV2.Request</code></td><td>Witnet request metadata.</td></tr><tr><td><code>response</code></td><td><code>WitnetV2.Response</code></td><td>Witnet response metadata.</td></tr></tbody></table>
+
+### Witnet.RadonSLA
+
+SLA security parameters to be fulfilled by the Witnet blockchain when solving some Witnet query posted into the _WitnetOracle_.
+
+<table><thead><tr><th width="256">Field</th><th width="153">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>committeeSize</code></td><td><code>uint8</code></td><td>Number of randomnly selected nodes in the Witnet oracle blockchain that will take part in solving some price update.</td></tr><tr><td><code>witnessingFeeNanoWit</code></td><td><code>uint256</code></td><td>Reward in nanowits that will be paid to every node in the Witnet oracle blockchain involved in solving some price update. Randomnly selected nodes in Witnet will have to stake a collateral 100x this amount in order to participate as witnesses.</td></tr></tbody></table>
+
+### Witnet.Request
+
+Request metadata that's kept in EVM-storage for every query posted to the _WitnetOracle_.
+
+<table><thead><tr><th width="214">Field</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>reporter</code></td><td><code>address</code></td><td>Bridge EVM address from which the query result was reported.</td></tr><tr><td><code>finality</code></td><td><code>uint64</code></td><td>Block number at which the query result can be considered to be final.</td></tr><tr><td><code>resultTimestamp</code></td><td><code>uint32</code></td><td>Timestamp at which the Witnet blockchain produced the reported result.</td></tr><tr><td><code>resultTallyHash</code></td><td><code>bytes32</code></td><td>Hash of the transaction on the Witnet blockchain that produced the actual query result.  </td></tr><tr><td><code>resultCborBytes</code></td><td><code>bytes</code></td><td>CBOR-encoded buffer containing the query result: either a primitive value (see <code>Witnet.RadonDataTypes</code> below), or an error. </td></tr></tbody></table>
+
+### Witnet.Response
+
+Actual data bridged from the Witnet blockchain in response to some query posted to the _WitnetOracle_.
+
+<table><thead><tr><th width="214">Field</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>reporter</code></td><td><code>address</code></td><td>Bridge EVM address from which the query result was reported.</td></tr><tr><td><code>finality</code></td><td><code>uint64</code></td><td>Block number at which the query result can be considered to be final.</td></tr><tr><td><code>resultTimestamp</code></td><td><code>uint32</code></td><td>Timestamp at which the Witnet blockchain produced the reported result.</td></tr><tr><td><code>resultTallyHash</code></td><td><code>bytes32</code></td><td>Hash of the transaction on the Witnet blockchain that produced the actual query result.  </td></tr><tr><td><code>resultCborBytes</code></td><td><code>bytes</code></td><td>CBOR-encoded buffer containing the query result: either a primitive value (see <code>Witnet.RadonDataTypes</code> below), or an error. </td></tr></tbody></table>
+
+### Witnet.ResultError
+
+Struct describing an error reported from the Witnet blockchain.
+
+<table><thead><tr><th width="119">Field</th><th width="263">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>code</code></td><td><code>Witnet.ResultErrorCodes</code></td><td>Unique code identifying the actual error as reported from the Witnet blockchain.</td></tr><tr><td><code>reason</code></td><td><code>string</code></td><td>Human-readable description of the reported error from the Witnet blockchain. </td></tr></tbody></table>
+
+## Enums
+
+### Witnet.QueryStatus
+
+Possible status of a Witnet query posted to the _WitnetOracle_.
+
+<table><thead><tr><th width="110">Hex</th><th width="148">Caption</th><th>Description</th></tr></thead><tbody><tr><td><code>0x00</code></td><td><code>Unknown</code></td><td>The given query does not exist, either because it has not been posted yet, or it was deleted by its requester. </td></tr><tr><td><code>0x01</code></td><td><code>Posted</code></td><td>The query is being solved on the Witnet blockchain but its result has not yet been reported to the EVM storage. </td></tr><tr><td><code>0x02</code></td><td><code>Reported</code></td><td>Some result to the query has been allegedly bridged from the Wit/oracle blockchain into the EVM storage, but cannot yet be considered final.</td></tr><tr><td><code>0x03</code></td><td><code>Finalized</code></td><td>The result to the query has been successfully reported into the EVM storage, and it can be considered to be finalized.</td></tr></tbody></table>
+
+### Witnet.RadonDataTypes
+
+Primitive data types that can be contained in successful results to Witnet data requests.
+
+<table><thead><tr><th width="110">Hex</th><th width="146">Caption</th><th>Description</th></tr></thead><tbody><tr><td><code>0x01</code></td><td><code>Array</code></td><td>An array of CBOR values.</td></tr><tr><td><code>0x02</code></td><td><code>Bool</code></td><td>A CBOR-encoded boolean value.</td></tr><tr><td><code>0x03</code></td><td><code>Bytes</code></td><td>A CBOR-encoded bytes buffer.</td></tr><tr><td><code>0x04</code></td><td><code>Integer</code></td><td>A CBOR-encoded integer value.</td></tr><tr><td><code>0x05</code></td><td><code>Float</code></td><td>A CBOR-encoded float value.</td></tr><tr><td><code>0x06</code></td><td><code>Map</code></td><td>Arrayed key/value map of CBOR values.</td></tr><tr><td><code>0x07</code></td><td><code>String</code></td><td>A CBOR-encoded string value.</td></tr></tbody></table>
+
+### Witnet.ResponseStatus
+
+Possible response status of some query posted to the _WitnetOracle_.
+
+<table><thead><tr><th width="110">Hex</th><th width="148">Caption</th><th>Description</th></tr></thead><tbody><tr><td><code>0x01</code></td><td><code>Awaiting</code></td><td>The underlying query is being solved on the Witnet blockchain and its result has not yet been reported to the EVM storage. </td></tr><tr><td><code>0x02</code></td><td><code>Ready</code></td><td>The underlying query was successfully solved on Witnet, and the reported result can be considered to be final.</td></tr><tr><td><code>0x03</code></td><td><code>Error</code></td><td>The underlying query was solved with errors on the Witnet blockchain, and the reported error can be considered to be final.</td></tr><tr><td><code>0x04</code></td><td><code>Finalizing</code></td><td>The result to the underlying query is being bridged from the Witnet blockchain but it cannot yet be considered to be final.</td></tr><tr><td><code>0x05</code></td><td><code>Delivered</code></td><td>The result to the underlying query, either successful or with errors, was already delivered to the requesting contract that paid for it. </td></tr></tbody></table>
+
