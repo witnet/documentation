@@ -1,7 +1,3 @@
----
-draft: true
----
-
 # Witnet: The Oracle Making Physical Infrastructure Trustless and Verifiable
 
 [<mark style="background-color:purple;">**DePIN**</mark>](#user-content-fn-1)[^1] <mark style="background-color:purple;">projects live or die by the reliability and verifiability of real-world data.</mark> Whether you’re coordinating sensors, devices, hardware operators, bandwidth providers, geolocation proofs, or energy contributors, you need an oracle that can’t be gamed, censored, or controlled by a central actor. **That’s where Witnet stands apart.**

@@ -1,6 +1,6 @@
 # 🧙 Solidity Wizard
 
-The [**Witnet Solidity SDK**](../../smart-contracts-developers-v2/wit-oracle/parameterized-templates.md) package bundles the _**Solidity Wizard**_ tool that will ease the path when trying to programmatically interact with the **Wit/Oracle blockchain** from your own smart contracts.
+The **Witnet Solidity SDK** package bundles the _**Solidity Wizard**_ tool that will ease the path when trying to programmatically interact with the **Wit/Oracle blockchain** from your own smart contracts.
 
 By answering a series of questions, and based on your actual needs, the _**Solidity Wizard**_ will create a customized Solidity contract that inherently implements multiple helper methods for either posting data queries to the Wit/Oracle blockchain, estimating minimum required fees, or checking current status of previously posted queries.
 
@@ -27,7 +27,7 @@ Now, depending on whether you wish to rely on the [_**WitOracle**_](solidity-con
 
 ### Run the Solidity Wizard
 
-First, install the [**Witnet Solidity SDK package**](../../smart-contracts-developers-v2/wit-oracle/parameterized-templates.md) into your project, if not done yet:
+First, install the **Witnet Solidity SDK package** into your project, if not done yet:
 
 ```bash
 $ npm install --save-dev witnet-solidity
@@ -48,7 +48,8 @@ If willing to fetch data from a selection of data sources on the Internet, you w
 
 These artifacts contain all required information for the Wit/oracle blockchain to know where to extract and transform data from. They also describe how to aggregate data when extracted from multiple sources, and how to reduce values revealed by the multiple witnessing nodes on the Wit/oracle blockchain.
 
-Building, testing and deploying [_WitnetRequest_](solidity-contracts/core/witnetrequest.md) and [_WitnetRequestTemplate_](solidity-contracts/core/witnetrequesttemplate.md) artifacts can be easily done by using the [**Radon Scripting toolkit**](radon-scripting.md)[.](../../smart-contracts-developers-v2/wit-oracle/parameterized-templates.md)
+Building, testing and deploying [_WitnetRequest_](solidity-contracts/core/witnetrequest.md) and [_WitnetRequestTemplate_](solidity-contracts/core/witnetrequesttemplate.md) artifacts can be easily done by using the **Radon Scripting toolkit**
+<!-- (/smart-contracts/guides/radon-scripting.md)[.](../../smart-contracts-developers-v2/wit-oracle/parameterized-templates.md) -->
 
 ### Querying data from the Wit/Oracle
 
@@ -117,7 +118,8 @@ Two internal methods can be used for this:
 
 ### Decoding data query results
 
-Decoding can be easily done in Solidity. You will find different helper methods depending on whether you opted for reading query results from the [_WitnetOracle_](solidity-contracts/core/witnetoracle.md) storage, or getting query results directly delivered to your smart contract. Please, have a look to [**Decoding results guide**](../../smart-contracts-developers-v2/wit-oracle/decoding-results.md) as to learn how to decode query successful results, and query resolution errors as well.
+Decoding can be easily done in Solidity. You will find different helper methods depending on whether you opted for reading query results from the [_WitnetOracle_](solidity-contracts/core/witnetoracle.md) storage, or getting query results directly delivered to your smart contract. 
+<!-- Please, have a look to [**Decoding results guide**](../../smart-contracts-developers-v2/wit-oracle/decoding-results.md) as to learn how to decode query successful results, and query resolution errors as well. -->
 
 ### Tesing contracts produced by the Solidity Wizard
 

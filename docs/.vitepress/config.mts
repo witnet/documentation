@@ -194,10 +194,10 @@ const rawSidebar: SidebarItem[] = [
         "text": "⛓️ Supported chains",
         "link": "smart-contracts/supported-chains.md"
       },
-      {
-        "text": "🧩 Integration Models",
-        "link": "smart-contracts/integration-models.md"
-      },
+      // {
+      //   "text": "🧩 Integration Models",
+      //   "link": "smart-contracts/integration-models.md"
+      // },
       {
         "text": "🔮 Wit/Oracle",
         "link": "smart-contracts/witnet-web-oracle/index.md",
@@ -538,29 +538,29 @@ const rawSidebar: SidebarItem[] = [
             "text": "🧙 Solidity Wizard",
             "link": "smart-contracts/guides/solidity-wizard.md"
           },
-          {
-            "text": "✒️ Radon Scripting",
-            "link": "smart-contracts/guides/radon-scripting.md"
-          },
-          {
-            "text": "🛠️ Witnet Toolkit",
-            "link": "smart-contracts/guides/witnet-toolkit/index.md",
-            collapsed: true,
-            "items": [
-              {
-                "text": "Blockchain info",
-                "link": "smart-contracts/guides/witnet-toolkit/blockchain-info.md"
-              },
-              {
-                "text": "Tracking data requests",
-                "link": "smart-contracts/guides/witnet-toolkit/tracking-data-requests.md"
-              },
-              {
-                "text": "Sending transactions",
-                "link": "smart-contracts/guides/witnet-toolkit/sending-transactions.md"
-              }
-            ]
-          }
+          // {
+          //   "text": "✒️ Radon Scripting",
+          //   "link": "smart-contracts/guides/radon-scripting.md"
+          // },
+          // {
+          //   "text": "🛠️ Witnet Toolkit",
+          //   "link": "smart-contracts/guides/witnet-toolkit/index.md",
+          //   collapsed: true,
+          //   "items": [
+          //     {
+          //       "text": "Blockchain info",
+          //       "link": "smart-contracts/guides/witnet-toolkit/blockchain-info.md"
+          //     },
+          //     {
+          //       "text": "Tracking data requests",
+          //       "link": "smart-contracts/guides/witnet-toolkit/tracking-data-requests.md"
+          //     },
+          //     {
+          //       "text": "Sending transactions",
+          //       "link": "smart-contracts/guides/witnet-toolkit/sending-transactions.md"
+          //     }
+          //   ]
+          // }
         ]
       },
       {
@@ -823,5 +823,14 @@ export default {
     search: {
       provider: 'local'
     }
-  }
+  },
+  srcExclude: [
+    '**/witnet-the-oracle-making-physical-infrastructure-trustless-and-verifiable.md',
+    '**/radon-scripting.md',
+    '**/smart-contracts/guides/witnet-toolkit/**',
+    '**/smart-contracts-developers-v2/**',
+    '**/smart-contracts/guides/witnet-toolkit/**',
+    '**/manage-radon-assets.md',
+    '**/wit-kermit-rest-api.md'
+  ]
 }

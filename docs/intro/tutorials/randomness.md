@@ -245,14 +245,13 @@ $ npx witeth randomness [--target <addr>] --randomize
 
 ***
 
-### Learn more about Witnet Randomness
+<!-- ### Learn more about Witnet Randomness
 
 For more information on how to interact with `WitRandomness` contracts, please go to:
 
-<!-- TODO: replace with custom component inner button -->
 [wit-randomness](../../smart-contracts-developers-v2/wit-randomness/)
 
 ::: tip
 👆 Check the comprehensive documentation and API reference for `WitRandomness` contracts. You will find numerous examples and guides on deriving multiple random numbers from a single seed, and details on setting up your own randomization infrastructure to eliminate reliance on third-party providers.
-:::
+::: -->
 
