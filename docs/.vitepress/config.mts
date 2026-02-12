@@ -41,13 +41,13 @@ const rawSidebar: SidebarItem[] = [
       {
         "text": "💎 Why Witnet Rocks!",
         "link": "intro/why-witnet-rocks/index.md",
-        collapsed: true,
-        "items": [
-          {
-            "text": "Witnet: The Oracle Making Physical Infrastructure Trustless and Verifiable",
-            "link": "intro/why-witnet-rocks/witnet-the-oracle-making-physical-infrastructure-trustless-and-verifiable.md"
-          }
-        ]
+        // collapsed: true,
+        // "items": [
+        //   {
+        //     "text": "Witnet: The Oracle Making Physical Infrastructure Trustless and Verifiable",
+        //     "link": "intro/why-witnet-rocks/witnet-the-oracle-making-physical-infrastructure-trustless-and-verifiable.md"
+        //   }
+        // ]
       },
       {
         "text": "🐇 Quick Tutorials",
@@ -681,10 +681,10 @@ const rawSidebar: SidebarItem[] = [
             "text": "Manage Witnet transactions",
             "link": "witnet-ecosystem-buidlers/how-to-guides/manage-witnet-transactions.md"
           },
-          {
-            "text": "Manage Radon assets",
-            "link": "witnet-ecosystem-buidlers/how-to-guides/manage-radon-assets.md"
-          }
+          // {
+          //   "text": "Manage Radon assets",
+          //   "link": "witnet-ecosystem-buidlers/how-to-guides/manage-radon-assets.md"
+          // }
         ]
       },
       {
@@ -700,10 +700,10 @@ const rawSidebar: SidebarItem[] = [
                 "text": "Wit/Explorer REST API",
                 "link": "https://witnet.network/api/documentation"
               },
-              {
-                "text": "Wit/Kermit REST API",
-                "link": "witnet-ecosystem-buidlers/reference-material/api-references/wit-kermit-rest-api.md"
-              },
+              // {
+              //   "text": "Wit/Kermit REST API",
+              //   "link": "witnet-ecosystem-buidlers/reference-material/api-references/wit-kermit-rest-api.md"
+              // },
               {
                 "text": "Wit/Node JSON-RPC",
                 "link": "node-operators/reference-material/api-references/node-api.md"
@@ -829,7 +829,6 @@ export default {
     '**/radon-scripting.md',
     '**/smart-contracts/guides/witnet-toolkit/**',
     '**/smart-contracts-developers-v2/**',
-    '**/smart-contracts/guides/witnet-toolkit/**',
     '**/manage-radon-assets.md',
     '**/wit-kermit-rest-api.md'
   ]
