@@ -12,6 +12,9 @@
   --internal-link-button-arrow: var(--vp-c-text-2);
   --internal-link-button-hover-bg: var(--vp-c-bg);
   --internal-link-button-hover-text: var(--vp-c-text-1);
+  --vp-font-family-base: 'Poppins', sans-serif;
+  --vp-font-family-headings: 'Outfit', sans-serif;
+  --vp-font-family-mono: 'Courier Prime', monospace;
 }
 
 .external-link-button {
