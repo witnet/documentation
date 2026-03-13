@@ -6,36 +6,26 @@ description: >-
 
 # ⛓️ Supported chains
 
-A complete list of the Wit/Oracle counter-factual contracts deployed by the _**Witnet Foundation**_ on more than 50 different chains.
+A complete list of the Wit/Oracle counter-factual contracts deployed by the _**Witnet Foundation**_.
 
-The Wit/Oracle EVM Bridging framework enables your **smart contracts** to:
+:::info Understanding the Capabilities
+- **Network**: The blockchain ecosystem where Witnet is currently operational.
 
-* Pull parameterized custom data from the real world.
-* Read latest updates on the subsidized price feeds by the Witnet Foundation.
-* Pull fresh price updates at your own device.
-* Pull and fetch unbiased and unmalleable randomness from the Wit/Oracle blockchain.
+- **PUSH Data Feeds**: Data is pushed to the blockchain based on a heartbeat (e.g., every 24 hours) or price deviation (e.g., 0.5% change). Ideal for simple "read" operations.
 
-::: tip
-Data requests to the Wit/Oracle get paid in native EVM currency:
+- **PULL Data Feeds**: On-demand updates. Users "pull" the data into their transaction to ensure the price is fresh at the exact moment of execution, often saving significant gas for the protocol.
 
-* No ERC-20 tokens involved.
-* No need to hold $WIT coins, either.
-* No subscriptions or KYC workflows required.
-* No need to run your own off-chain infrastructure.
+- **Backed Price Feeds**: These are specific feeds subsidized by the Witnet Foundation to ensure high-quality data is readily available for the community. Note: Anyone can still permissionlessly launch and fund their own custom price feeds on any supported network using the Witnet SDK.
 
-_**The Wit/Oracle solution works just right out of the box !**_
+- **Verifiable Randomness**: Confirms the availability of the Witnet Randomness Oracle, providing cryptographically secure, non-biasable entropy for gaming, NFTs, and lotteries.
+
+For more information check out the [quick tutorials](https://docs.witnet.io/intro/tutorials/). 
+
 :::
 
-::: info
-Not finding the chain you need for your project?
 
-* [_Request support for a new chain_](https://tally.so/r/mOP09R)
-:::
+<ClientOnly>
+<NetworkTable type="testnet" title="EVM-compatible Networks" :searchable="true" :enableImage="true" />
+</ClientOnly>
 
-::: info
-For every supported chain, external links to docs, market places, bridges, wallets and faucets (in the case of testnets) are also provided for your own convenience.
-:::
-<NetworkTable type="testnet" title="EVM-compatible testnets" placeholder="Search supported testnets..." searchable="true" enableImage="true" />
-
-<NetworkTable type="mainnet" title="EVM-compatible mainnets" placeholder="Search supported mainnets..." searchable="true" enableImage="true" />
 

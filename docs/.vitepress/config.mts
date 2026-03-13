@@ -797,6 +797,14 @@ export default {
   base: '/',
   cleanUrls: true,
   vite: {
+    ssr: {
+      noExternal: ['@witnet/price-feeds']
+    },
+    build: {
+      rollupOptions: {
+        external: ['@witnet/price-feeds', 'child_process', 'node:module']
+      }
+    },
     server: {
       host: '127.0.0.1',
       port: 5173
