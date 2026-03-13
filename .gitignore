@@ -142,3 +142,9 @@ vite.config.ts.timestamp-*
 
 # IntelliJ IDEA
 .idea/
+
+# Visual Studio
+.vs/
+
+# environment files
+**/.env*
